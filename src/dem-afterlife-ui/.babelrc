@@ -1,0 +1,52 @@
+{
+    "presets": [
+        "react",
+        "stage-3",
+        [
+            "es2015",
+            {
+                "modules": false,
+                "loose": true
+            }
+        ]
+    ],
+    "plugins": [
+        "transform-class-properties",
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./src/scripts"
+                ],
+                "alias": {
+                    "api": "./src/scripts/api",
+                    "components": "./src/scripts/components",
+                    "containers": "./src/scripts/containers",
+                    "images": "./src/images",
+                    "smiles": "./src/images/smiles",
+                    "styles": "./src/scripts/styles"
+                }
+            }
+        ]
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                "react-hot-loader/babel"
+            ]
+        },
+        "production": {
+            "plugins": [
+                "transform-react-remove-prop-types",
+                "transform-react-router-optimize",
+                "lodash"
+            ]
+        },
+        "test": {
+            "plugins": [
+                "transform-es2015-modules-commonjs",
+                "transform-runtime"
+            ]
+        }
+    }
+}
