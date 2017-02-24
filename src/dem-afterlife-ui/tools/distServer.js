@@ -13,7 +13,7 @@ const runExpressServer = () =>
             const app = express();
             const port = 60784;
 
-            app.use(express.static('../dem-afterlife'));
+            app.use(express.static('../dem-afterlife/wwwroot'));
             app.get('*', (req, res) => (res.sendFile(path.join(__dirname, '../../dem-afterlife/wwwroot/index.html'))));
             app.listen(port, (error) => {
                 if (error) {

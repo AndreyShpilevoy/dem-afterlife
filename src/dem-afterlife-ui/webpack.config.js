@@ -96,7 +96,7 @@ if (debug) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
 } else {
     output.path = path.join(__dirname, '../dem-afterlife/wwwroot');
-    output.publicPath = '/wwwroot/';
+    output.publicPath = '/';
     plugins.push(
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -117,8 +117,8 @@ if (debug) {
             template: path.join(__dirname, './src/index.html'),
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
             publicPath: '/wwwroot/',
-            paceCss: '/wwwroot/css/pace.css?' + checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css'),
-            paceJs: '/wwwroot/js/pace.min.js?' + checksum('./node_modules/pace-progress/pace.min.js'),
+            paceCss: '/css/pace.css?' + checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css'),
+            paceJs: '/js/pace.min.js?' + checksum('./node_modules/pace-progress/pace.min.js'),
         })
     );
 }
