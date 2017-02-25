@@ -2,12 +2,16 @@ import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
 
-export const constructClassNames = (sizesArray, classNames) =>(
-    sizesArray.filter(size => size.count)
-        .map((size) => `col-${ size.name }-${ size.count }`)
-        .reduce((previouse, current) => `${ previouse } ${ classNames[ current ] }`, ''));
+const constructClassNames = (sizesArray, className, classNames) => {
+    let result = sizesArray.filter(size => size.count)
+        .map((size) => `col-${size.name}-${size.count}`)
+        .reduce((previouse, current) =>
+            classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
+    result = className ? `${result} ${className}` : result;
+    return result;
+};
 
-const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames }) => {
+const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames }) => {
     const classes = constructClassNames([
         { name: 'xs', count: xs },
         { name: 'sm', count: sm },
@@ -18,7 +22,8 @@ const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlO
         { name: 'smOffset', count: smOffset },
         { name: 'mdOffset', count: mdOffset },
         { name: 'lgOffset', count: lgOffset },
-        { name: 'xlOffset', count: xlOffset }], classNames);
+        { name: 'xlOffset', count: xlOffset }],
+        className, classNames);
 
     return (
         <div className={classes}>
@@ -27,8 +32,9 @@ const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlO
     );
 };
 
-const {node, number} = PropTypes;
+const {node, number, string} = PropTypes;
 Column.propTypes = {
+    className: string,
     classNames: ClassNamesPropType,
     children: node,
     xs: number,
@@ -44,14 +50,14 @@ Column.propTypes = {
 };
 
 export const calculateStyles = (size) =>
-    [1,2,3,4,5,6,7,8,9,10,11,12].reduce((previouse, current) => {
-        const columnSize = `${8.333333333333334*current}%`;
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce((previouse, current) => {
+        const columnSize = `${8.333333333333334 * current}%`;
         return Object.assign({}, previouse, {
-            [ `col-${ size }-${ current }` ]: {
+            [`col-${size}-${current}`]: {
                 flexBasis: columnSize,
                 maxWidth: columnSize
             },
-            [ `col-${ size }Offset-${ current }` ]: {
+            [`col-${size}Offset-${current}`]: {
                 marginLeft: columnSize
             }
         });
@@ -60,7 +66,7 @@ export const calculateStyles = (size) =>
 export const constructStylesFromTheme = ({grid}) =>
     grid.containers.reduce((previouse, current) => (
         Object.assign({}, previouse, {
-            [ `@media (${ current.min })` ]: calculateStyles(current.size)
+            [`@media (${current.min})`]: calculateStyles(current.size)
         })
     ), {});
 
