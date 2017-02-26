@@ -2,23 +2,19 @@ import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
 
-const constructClassNameString = (fluid, className, classNames) => {
-    let result = fluid ? `${classNames.container} fluid` : classNames.container;
-    result = className ? `${result} ${className}` : result;
-    return result;
-};
+const constructClassNameString = (className, classNames) =>
+    className ? `${classNames.container} ${className}` : classNames.container;
 
-const Container = ({ fluid, children, className, classNames }) =>
-    <div className={constructClassNameString(fluid, className, classNames)}>
+const Container = ({ children, className, classNames }) =>
+    <div className={constructClassNameString(className, classNames)}>
         {children}
     </div>;
 
-const {bool, string, node} = PropTypes;
+const {string, node} = PropTypes;
 Container.propTypes = {
     className: string,
     classNames: ClassNamesPropType,
-    children: node,
-    fluid: bool
+    children: node
 };
 
 export const constructStylesFromTheme = ({grid}) =>
@@ -27,10 +23,8 @@ export const constructStylesFromTheme = ({grid}) =>
             [`@media (${current.min})`]: {
                 container: {
                     width: current.width,
-                    '&.fluid': {
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
-                    }
+                    marginLeft: 'auto',
+                    marginRight: 'auto'
                 }
             }
         })
