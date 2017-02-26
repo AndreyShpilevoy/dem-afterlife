@@ -32,6 +32,11 @@ const defaultTheme = {
                 width: '1140px'
             },
         ]
+    },
+    header: {
+        backgroundImageMd: 'images/DEM/header/Dem_NavBar_bg_md.png',
+        backgroundImageLg: 'images/DEM/header/Dem_NavBar_bg_lg.png',
+        backgroundImageXl: 'images/DEM/header/Dem_NavBar_bg_xl.png'
     }
 };
 
