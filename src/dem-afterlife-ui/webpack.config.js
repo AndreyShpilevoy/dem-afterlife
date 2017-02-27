@@ -15,7 +15,6 @@ const entryPoints = {
         'aesthetic-adapter-jss',
         'jss',
         'jss-camel-case',
-        'jss-default-unit',
         'jss-expand',
         'jss-extend',
         'jss-nested',

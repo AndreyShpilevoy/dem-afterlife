@@ -38,9 +38,24 @@ const defaultTheme = {
         ]
     },
     header: {
-        backgroundImageMd: headerBackgroundImageMd,
-        backgroundImageLg: headerBackgroundImageLg,
-        backgroundImageXl: headerBackgroundImageXl
+        xs: {
+            height: '3.4375rem'
+        },
+        sm: {
+            height: '3.4375rem'
+        },
+        md: {
+            backgroundImage: headerBackgroundImageMd,
+            height: '3.75rem'
+        },
+        lg: {
+            backgroundImage: headerBackgroundImageLg,
+            height: '5rem'
+        },
+        xl: {
+            backgroundImage: headerBackgroundImageXl,
+            height: '5rem'
+        }
     }
 };
 
