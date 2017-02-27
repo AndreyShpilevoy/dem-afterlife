@@ -1,3 +1,7 @@
+import headerBackgroundImageMd from 'images/DEM/header/Dem_NavBar_bg_md.png';
+import headerBackgroundImageLg from 'images/DEM/header/Dem_NavBar_bg_lg.png';
+import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
+
 const defaultTheme = {
     grid: {
         containers: [
@@ -34,9 +38,9 @@ const defaultTheme = {
         ]
     },
     header: {
-        backgroundImageMd: 'images/DEM/header/Dem_NavBar_bg_md.png',
-        backgroundImageLg: 'images/DEM/header/Dem_NavBar_bg_lg.png',
-        backgroundImageXl: 'images/DEM/header/Dem_NavBar_bg_xl.png'
+        backgroundImageMd: headerBackgroundImageMd,
+        backgroundImageLg: headerBackgroundImageLg,
+        backgroundImageXl: headerBackgroundImageXl
     }
 };
 
