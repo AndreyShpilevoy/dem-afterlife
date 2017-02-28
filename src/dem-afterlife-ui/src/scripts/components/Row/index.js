@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
+import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, className, classNames) => {
     let result = reverse ? `${classNames.row} reverse` : classNames.row;
@@ -21,16 +22,4 @@ Row.propTypes = {
     reverse: bool
 };
 
-export default styler(() => ({
-    row: {
-        width: '100%',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flex: 'initial',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        '&.reverse': {
-            flexDirection: 'row-reverse'
-        }
-    }
-}))(Row);
+export default styler((theme) => (calculateStyles(theme)))(Row);

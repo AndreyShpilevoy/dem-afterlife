@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
+import calculateStyles from './calculateStyles';
 
 export const constructClassNames = (sizesArray, className, classNames) => {
     let result = sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
@@ -38,13 +39,4 @@ Hidden.propTypes = {
     xl: string
 };
 
-export const constructStylesFromTheme = ({grid}) =>
-    grid.containers.reduce((previouse, current) => (
-        Object.assign({}, previouse, {
-            [`@media (${current.min})`]: { [`hidden-up-${current.size}`]: { display: 'none' } },
-            [`@media (${current.max})`]: { [`hidden-down-${current.size}`]: { display: 'none' } },
-            [`@media (${current.min}) and (${current.max})`]: { [`hidden-exact-${current.size}`]: { display: 'none' } }
-        })
-    ), {});
-
-export default styler((theme) => (constructStylesFromTheme(theme)))(Hidden);
+export default styler((theme) => (calculateStyles(theme)))(Hidden);

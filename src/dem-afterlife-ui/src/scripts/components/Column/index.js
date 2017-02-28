@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
+import calculateStyles from './calculateStyles'
 
 const constructClassNames = (sizesArray, className, classNames) => {
     let result = sizesArray.filter(size => size.count)
@@ -49,25 +50,4 @@ Column.propTypes = {
     xlOffset: number
 };
 
-export const calculateStyles = (size) =>
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce((previouse, current) => {
-        const columnSize = `${8.333333333333334 * current}%`;
-        return Object.assign({}, previouse, {
-            [`col-${size}-${current}`]: {
-                flexBasis: columnSize,
-                maxWidth: columnSize
-            },
-            [`col-${size}Offset-${current}`]: {
-                marginLeft: columnSize
-            }
-        });
-    }, {});
-
-export const constructStylesFromTheme = ({grid}) =>
-    grid.containers.reduce((previouse, current) => (
-        Object.assign({}, previouse, {
-            [`@media (${current.min})`]: calculateStyles(current.size)
-        })
-    ), {});
-
-export default styler((theme) => (constructStylesFromTheme(theme)))(Column);
+export default styler((theme) => (calculateStyles(theme)))(Column);
