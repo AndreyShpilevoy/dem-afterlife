@@ -2,6 +2,10 @@ import headerBackgroundImageMd from 'images/DEM/header/Dem_NavBar_bg_md.png';
 import headerBackgroundImageLg from 'images/DEM/header/Dem_NavBar_bg_lg.png';
 import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 
+const colors = {
+    headerBackground: `#322C27`
+};
+
 const defaultTheme = {
     grid: {
         containers: [
@@ -39,10 +43,12 @@ const defaultTheme = {
     },
     header: {
         xs: {
-            height: '3.4375rem'
+            height: '3.4375rem',
+            backgroundColor: colors.headerBackground
         },
         sm: {
-            height: '3.4375rem'
+            height: '3.4375rem',
+            backgroundColor: colors.headerBackground
         },
         md: {
             backgroundImage: headerBackgroundImageMd,

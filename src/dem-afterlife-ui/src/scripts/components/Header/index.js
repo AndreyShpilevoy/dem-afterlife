@@ -9,16 +9,31 @@ class Header extends Component {
     static propTypes = {
         classNames: ClassNamesPropType
     };
+
+    constructor(props){
+        super(props);
+        this.state = {value: false};
+    }
+
+    handleScroll = (node) => {
+        if (node) {
+            node.ownerDocument.addEventListener('scroll',
+                () => this.setState({
+                    value: true
+                }));
+        }
+    };
+
     render() {
         const {classNames} = this.props;
         return (
             <div>
-            <Container className={classNames.fixedOnTheTop}>
-                <div id='header' className={ classNames.header }>
+                <Container className={classNames.fixedOnTheTop}>
+                    <div className={classNames.header}>
 
-                </div>
-            </Container>
-                <div className={classNames.headerPadding}/>
+                    </div>
+                </Container>
+                <div className={classNames.headerPadding} ref={this.handleScroll} />
             </div>
         );
     }

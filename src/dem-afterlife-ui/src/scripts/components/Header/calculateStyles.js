@@ -7,20 +7,25 @@ const initialModel = {
 
 const template = (size, min, header) => {
     let model = {
-        [ `@media (${ min })` ]: {
+        [`@media (${min})`]: {
             header: {
-                height: header[ size ].height,
+                height: header[size].height,
                 width: '100%'
             },
             headerPadding: {
-                paddingTop: header[ size ].height,
+                paddingTop: header[size].height,
             }
         }
     };
     if (size !== 'xs' && size !== 'sm') {
-        model[ `@media (${ min })` ].header = Object.assign({}, model[ `@media (${ min })` ].header,
+        model[`@media (${min})`].header = Object.assign({}, model[`@media (${min})`].header,
             {
-                backgroundImage: `url(${ header[ `${ size }` ].backgroundImage })`
+                backgroundImage: `url(${header[`${size}`].backgroundImage})`
+            });
+    } else {
+        model[`@media (${min})`].header = Object.assign({}, model[`@media (${min})`].header,
+            {
+                backgroundColor: header[`${size}`].backgroundColor
             });
     }
     return model;
