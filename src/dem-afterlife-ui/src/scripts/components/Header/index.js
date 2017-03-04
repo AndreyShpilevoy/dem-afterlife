@@ -12,15 +12,13 @@ class Header extends Component {
 
     constructor(props){
         super(props);
-        this.state = {value: false};
+        this.state = {shrinkedHeader: false};
     }
 
     handleScroll = (node) => {
         if (node) {
             node.ownerDocument.addEventListener('scroll',
-                () => this.setState({
-                    value: true
-                }));
+                () => this.setState({shrinkedHeader: true}));
         }
     };
 

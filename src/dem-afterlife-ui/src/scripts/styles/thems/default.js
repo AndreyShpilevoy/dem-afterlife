@@ -3,7 +3,7 @@ import headerBackgroundImageLg from 'images/DEM/header/Dem_NavBar_bg_lg.png';
 import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 
 const colors = {
-    headerBackground: `#322C27`
+    headerBackground: '#322C27'
 };
 
 const defaultTheme = {
@@ -43,24 +43,24 @@ const defaultTheme = {
     },
     header: {
         xs: {
-            height: '3.4375rem',
+            height: 3.4375,
             backgroundColor: colors.headerBackground
         },
         sm: {
-            height: '3.4375rem',
+            height: 3.4375,
             backgroundColor: colors.headerBackground
         },
         md: {
             backgroundImage: headerBackgroundImageMd,
-            height: '3.75rem'
+            height: 3.75
         },
         lg: {
             backgroundImage: headerBackgroundImageLg,
-            height: '5rem'
+            height: 5
         },
         xl: {
             backgroundImage: headerBackgroundImageXl,
-            height: '5rem'
+            height: 5
         }
     }
 };
