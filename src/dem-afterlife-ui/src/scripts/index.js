@@ -2,18 +2,20 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 import root from 'lodash/_root';
 import configureStore from './store/configureStore';
 import routes from './routes';
 
-const store = configureStore()();
-const history = syncHistoryWithStore(browserHistory, store);
+const history = createHistory();
+const store = configureStore()(history);
 
 render(
     <Provider store={store}>
-        <Router history={history} routes={routes} />
+        <ConnectedRouter history={history}>
+            {routes}
+        </ConnectedRouter>
     </Provider>,
     root.document.getElementById('app')
 );

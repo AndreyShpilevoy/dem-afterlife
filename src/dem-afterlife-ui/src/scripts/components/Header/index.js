@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import _ from 'lodash';
 import { ClassNamesPropType } from 'aesthetic';
 import Container from 'components/Container';

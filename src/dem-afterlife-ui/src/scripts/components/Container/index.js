@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { ClassNamesPropType } from 'aesthetic';
 import styler from 'styles/styler';
-import calculateStyles from './calculateStyles'
+import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (className, classNames) =>
     className ? `${classNames.container} ${className}` : classNames.container;

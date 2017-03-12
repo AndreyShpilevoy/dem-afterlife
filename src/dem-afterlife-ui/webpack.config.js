@@ -13,6 +13,7 @@ const entryPoints = {
         'babel-polyfill',
         'aesthetic',
         'aesthetic-adapter-jss',
+        'history',
         'jss',
         'jss-camel-case',
         'jss-default-unit',

@@ -81,7 +81,7 @@
         "mkdirp": "0.5.1",
         "open": "0.0.5",
         "react-hot-loader": "3.0.0-beta.6",
-        "redux-immutable-state-invariant": "1.2.4",
+        "redux-immutable-state-invariant": "2.0.0",
         "redux-mock-store": "1.2.2",
         "rimraf": "2.6.1",
         "url-loader": "0.5.8",
@@ -90,10 +90,11 @@
         "webpack-hot-middleware": "2.17.1"
     },
     "dependencies": {
-        "aesthetic": "0.5.2",
-        "aesthetic-adapter-jss": "0.5.2",
+        "aesthetic": "1.0.1",
+        "aesthetic-adapter-jss": "1.0.1",
         "babel-polyfill": "6.23.0",
-        "jss": "6.3.0",
+        "history": "4.6.0",
+        "jss": "6.4.0",
         "jss-camel-case": "3.0.0",
         "jss-default-unit": "5.0.2",
         "jss-expand": "2.1.0",
@@ -108,8 +109,8 @@
         "react-dom": "15.4.2",
         "react-notification-system": "0.2.12",
         "react-redux": "5.0.3",
-        "react-router": "3.0.2",
-        "react-router-redux": "4.0.8",
+        "react-router": "4.0.0",
+        "react-router-redux": "5.0.0-alpha.2",
         "redux": "3.6.0",
         "redux-saga": "0.14.3"
     }
