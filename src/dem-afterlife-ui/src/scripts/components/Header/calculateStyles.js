@@ -1,11 +1,4 @@
-const initialModel = {
-    fixedOnTheTop: {
-        position: 'fixed',
-        top: 0
-    }
-};
-
-const headerModel = (size, min, header) => ({
+const constructHeaderModel = (size, min, header) => ({
     height: header[size].height,
     width: '100%'
 });
@@ -22,12 +15,11 @@ const addLgXlShrinkedStyles = (model, size, header) => ({
     ...model, '&.shrinkedHeader': { height: header[size].height / 2 }
 });
 
-const addHeaderPaddingStyles = (model, size, header) => ({
-    header: model, headerPadding: { paddingTop: header[size].height }
-});
 
-const template = (size, min, header) => {
-    let model = headerModel(size, min, header);
+const combineHeaderPaddingStyles = headerPadding => header => ({ header, headerPadding });
+
+const constructMediaModelForCurrentSize = (size, min, header) => {
+    let model = constructHeaderModel(size, min, header);
     model = (size === 'xs' || size === 'sm') ?
         addXsSmSpecificStyles(model, size, header) :
         addMdLgXlSpecificStyles(model, size, header);
@@ -35,13 +27,23 @@ const template = (size, min, header) => {
     if (size === 'lg' || size === 'xl') {
         model = addLgXlShrinkedStyles(model, size, header);
     }
-
-    return { [`@media (${min})`]: addHeaderPaddingStyles(model, size, header) };
+    return { [`@media (${min})`]: combineHeaderPaddingStyles({ headerPadding: { paddingTop: header[size].height } })(model) };
 };
 
-const calculateStyles = ({ grid, header }) =>
+const combineMediaModelsWithRootModel = (rootModel, grid, header) =>
     grid.containers.reduce((previous, { size, min }) =>
-        ({ ...previous, ...template(size, min, header) }),
-        initialModel);
+        ({ ...previous, ...constructMediaModelForCurrentSize(size, min, header) }),
+        rootModel);
+
+const calculateStyles = ({ grid, header }) => {
+    const rootModel = {
+        fixedOnTheTop: {
+            position: 'fixed',
+            top: 0
+        }
+    };
+    return combineMediaModelsWithRootModel(rootModel, grid, header);
+};
+
 
 export default calculateStyles;
