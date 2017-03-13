@@ -24,7 +24,8 @@
                     "containers": "./src/scripts/containers",
                     "images": "./src/images",
                     "smiles": "./src/images/smiles",
-                    "styles": "./src/scripts/styles"
+                    "styles": "./src/scripts/styles",
+                    "utils": "./src/scripts/utils"
                 }
             }
         ]

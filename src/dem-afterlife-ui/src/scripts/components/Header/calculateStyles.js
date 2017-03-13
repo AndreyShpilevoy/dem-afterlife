@@ -1,49 +1,44 @@
-const constructHeaderModel = (size, min, header) => ({
-    height: header[size].height,
+import { merge } from 'utils';
+
+export const headerModel = (gridSize, headerStyles) => ({
+    height: headerStyles[gridSize].height,
     width: '100%'
 });
 
-const addXsSmSpecificStyles = (model, size, header) => ({
-    ...model, backgroundColor: header[`${size}`].backgroundColor
+export const xsSmStyle = (gridSize, headerStyles) => ({
+    backgroundColor: headerStyles[`${gridSize}`].backgroundColor
 });
 
-const addMdLgXlSpecificStyles = (model, size, header) => ({
-    ...model, backgroundImage: `url(${header[`${size}`].backgroundImage})`
+export const mdLgXlStyle = (gridSize, headerStyles) => ({
+    backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`
 });
 
-const addLgXlShrinkedStyles = (model, size, header) => ({
-    ...model, '&.shrinkedHeader': { height: header[size].height / 2 }
+export const lgXlShrinkedStyle = (gridSize, headerStyles) => ({
+    '&.shrinkedHeader': { height: headerStyles[gridSize].height / 2 }
 });
 
-
-const combineHeaderPaddingStyles = headerPadding => header => ({ header, headerPadding });
-
-const constructMediaModelForCurrentSize = (size, min, header) => {
-    let model = constructHeaderModel(size, min, header);
-    model = (size === 'xs' || size === 'sm') ?
-        addXsSmSpecificStyles(model, size, header) :
-        addMdLgXlSpecificStyles(model, size, header);
-
-    if (size === 'lg' || size === 'xl') {
-        model = addLgXlShrinkedStyles(model, size, header);
+export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => {
+    let result;
+    if (gridSize === 'xs' || gridSize === 'sm') {
+        result = merge(headerModel(gridSize, headerStyles), xsSmStyle(gridSize, headerStyles));
+    } else if (gridSize === 'md') {
+        result = merge(headerModel(gridSize, headerStyles), mdLgXlStyle(gridSize, headerStyles));
+    } else if (gridSize === 'lg' || gridSize === 'xl') {
+        result = merge(headerModel(gridSize, headerStyles), mdLgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
     }
-    return { [`@media (${min})`]: combineHeaderPaddingStyles({ headerPadding: { paddingTop: header[size].height } })(model) };
+    return result;
 };
 
-const combineMediaModelsWithRootModel = (rootModel, grid, header) =>
-    grid.containers.reduce((previous, { size, min }) =>
-        ({ ...previous, ...constructMediaModelForCurrentSize(size, min, header) }),
-        rootModel);
+export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, headerStyles) => ({
+    [`@media (${mediaMinString})`]: {
+        header: constructHeaderStyle(gridSize, mediaMinString, headerStyles),
+        headerPadding: { paddingTop: headerStyles[gridSize].height }
+    }
+});
 
-const calculateStyles = ({ grid, header }) => {
-    const rootModel = {
-        fixedOnTheTop: {
-            position: 'fixed',
-            top: 0
-        }
-    };
-    return combineMediaModelsWithRootModel(rootModel, grid, header);
-};
-
+const calculateStyles = ({ grid, header }) => (
+    grid.containers.reduce((previous, { size, min }) => (
+        merge(previous, constructMediaModelForCurrentSize(size, min, header))
+    ), { fixedOnTheTop: { position: 'fixed', top: 0 } }));
 
 export default calculateStyles;
