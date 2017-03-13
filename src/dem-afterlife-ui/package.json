@@ -1,11 +1,11 @@
 {
-    "name": "deus-ex-machina-boilerplate",
+    "name": "deus-ex-machina-frontend",
     "version": "0.0.2",
-    "description": "Boilerplate for UI part of DeusExMachina website",
+    "description": "Frontend part for DeusExMachina website",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git://github.com/AndreyShpilevoy/DemUiBoilerplate"
+        "url": "git://github.com/AndreyShpilevoy/dem-afterlife"
     },
     "scripts": {
         "setEnv": "npm run setDevEnv && npm install -g npm-check-updates",
