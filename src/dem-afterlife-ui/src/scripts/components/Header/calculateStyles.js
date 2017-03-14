@@ -9,8 +9,13 @@ export const xsSmStyle = (gridSize, headerStyles) => ({
     backgroundColor: headerStyles[`${gridSize}`].backgroundColor
 });
 
-export const mdLgXlStyle = (gridSize, headerStyles) => ({
+export const mdStyle = (gridSize, headerStyles) => ({
     backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`
+});
+
+export const lgXlStyle = (gridSize, headerStyles) => ({
+    backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`,
+    transition: headerStyles[`${gridSize}`].transition
 });
 
 export const lgXlShrinkedStyle = (gridSize, headerStyles) => ({
@@ -22,9 +27,9 @@ export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => 
     if (gridSize === 'xs' || gridSize === 'sm') {
         result = merge(headerModel(gridSize, headerStyles), xsSmStyle(gridSize, headerStyles));
     } else if (gridSize === 'md') {
-        result = merge(headerModel(gridSize, headerStyles), mdLgXlStyle(gridSize, headerStyles));
+        result = merge(headerModel(gridSize, headerStyles), mdStyle(gridSize, headerStyles));
     } else if (gridSize === 'lg' || gridSize === 'xl') {
-        result = merge(headerModel(gridSize, headerStyles), mdLgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
+        result = merge(headerModel(gridSize, headerStyles), lgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
     }
     return result;
 };

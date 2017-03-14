@@ -23,7 +23,7 @@ class Header extends Component {
                     target.scrollingElement.scrollTop > 25 ?
                         this.setState({ shrinkedHeader: true }) :
                         this.setState({ shrinkedHeader: false });
-                }, 500));
+                }, 250));
         }
     };
 

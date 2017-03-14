@@ -56,11 +56,13 @@ const defaultTheme = {
         },
         lg: {
             backgroundImage: headerBackgroundImageLg,
-            height: 5
+            height: 5,
+            transition: 'all 400ms linear'
         },
         xl: {
             backgroundImage: headerBackgroundImageXl,
-            height: 5
+            height: 5,
+            transition: 'all 400ms linear'
         }
     }
 };
