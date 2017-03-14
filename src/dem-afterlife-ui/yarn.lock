@@ -3268,9 +3268,9 @@ jss-vendor-prefixer@4.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-6.4.0.tgz#a034453e4c2bac41def3ceb17bd8f9b546e22016"
+jss@6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-6.5.0.tgz#9294a367b658daa2036c36f563ff6bfb0c7b12a1"
   dependencies:
     is-in-browser "1.0.2"
     warning "3.0.0"
@@ -4100,9 +4100,9 @@ react-hot-loader@3.0.0-beta.6:
     redbox-react "^1.2.5"
     source-map "^0.4.4"
 
-react-notification-system@0.2.12:
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/react-notification-system/-/react-notification-system-0.2.12.tgz#8cadae3b09ed979e3be0150ac9b423879a7d8a24"
+react-notification-system@0.2.13:
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/react-notification-system/-/react-notification-system-0.2.13.tgz#59b4778b6befd950e9075738a7f61122afaa150c"
   dependencies:
     object-assign "^4.0.1"
 
