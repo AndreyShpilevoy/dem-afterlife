@@ -12,15 +12,15 @@ export const calculateColumnStyles = (gridSize) =>
         });
     }, {});
 
-export const constructMediaModelForCurrentSize = (gridSize, mediaMinString) => ({
-    [`@media (${mediaMinString})`]: calculateColumnStyles(gridSize)
+export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString) => ({
+    [`@media (${mediaMinString}) and (${mediaMaxString})`]: calculateColumnStyles(gridSize)
 });
 
 
 
 const calculateStyles = ({ grid }) =>
-    grid.containers.reduce((previouse, { size, min }) => (
-        { ...previouse, ...constructMediaModelForCurrentSize(size, min) }
+    grid.containers.reduce((previouse, { gridSize, mediaMinString, mediaMaxString }) => (
+        { ...previouse, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString) }
     ), {});
 
 export default calculateStyles;

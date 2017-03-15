@@ -1,7 +1,7 @@
 const calculateStyles = ({ grid }) =>
-    grid.containers.reduce((previouse, { width, min }) => ({
+    grid.containers.reduce((previouse, { width, mediaMinString, mediaMaxString }) => ({
         ...previouse,
-        [`@media (${min})`]: {
+        [`@media (${mediaMinString}) and (${mediaMaxString})`]: {
             container: {
                 width: width,
                 marginLeft: 'auto',

@@ -37,16 +37,16 @@ export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => 
     return result;
 };
 
-export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, headerStyles) => ({
-    [`@media (${mediaMinString})`]: {
+export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) => ({
+    [`@media (${mediaMinString}) and (${mediaMaxString})`]: {
         header: constructHeaderStyle(gridSize, mediaMinString, headerStyles),
         headerPadding: { paddingTop: headerStyles[gridSize].height }
     }
 });
 
 const calculateStyles = ({ grid, header }) => (
-    grid.containers.reduce((previous, { size, min }) => (
-        merge(previous, constructMediaModelForCurrentSize(size, min, header))
+    grid.containers.reduce((previous, { gridSize, mediaMinString, mediaMaxString }) => (
+        merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header))
     ), { fixedOnTheTop: { position: 'fixed', top: 0 } }));
 
 export default calculateStyles;
