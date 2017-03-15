@@ -1,6 +1,7 @@
 import headerBackgroundImageMd from 'images/DEM/header/Dem_NavBar_bg_md.png';
 import headerBackgroundImageLg from 'images/DEM/header/Dem_NavBar_bg_lg.png';
 import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
+import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 
 const colors = {
     headerBackground: '#322C27'
@@ -64,6 +65,12 @@ const defaultTheme = {
             height: 5,
             transition: 'all 400ms linear'
         }
+    },
+    logotype: {
+        backgroundImage: headerLogotypeImage,
+        backgroundSize: 'cover',
+        height: '100%',
+        width: '100%',
     }
 };
 

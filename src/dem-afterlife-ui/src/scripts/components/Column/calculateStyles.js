@@ -16,8 +16,6 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
     [`@media (${mediaMinString}) and (${mediaMaxString})`]: calculateColumnStyles(gridSize)
 });
 
-
-
 const calculateStyles = ({ grid }) =>
     grid.containers.reduce((previouse, { gridSize, mediaMinString, mediaMaxString }) => (
         { ...previouse, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString) }

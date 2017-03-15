@@ -4,6 +4,7 @@ import { ClassNamesPropType } from 'aesthetic';
 import Container from 'components/Container';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
+import Logotype from '../Logotype';
 
 //const {string, node} = PropTypes;
 class Header extends Component {
@@ -34,7 +35,9 @@ class Header extends Component {
         return (
             <div>
                 <Container className={classNames.fixedOnTheTop}>
-                    <div className={className} />
+                    <div className={className}>
+                        <Logotype/>
+                    </div>
                 </Container>
                 <div className={classNames.headerPadding} ref={this.handleScroll} />
             </div>
