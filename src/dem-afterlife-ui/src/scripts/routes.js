@@ -1,7 +1,7 @@
 /* eslint react/jsx-no-bind: 'off' */
 
 import React from 'react';
-import Route from 'react-router/Route';
+import Route from 'react-router-dom/Route';
 import Layout from 'containers/Layout';
 import Conference from 'containers/Conference';
 
