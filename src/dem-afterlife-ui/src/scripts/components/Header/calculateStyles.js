@@ -19,7 +19,10 @@ export const lgXlStyle = (gridSize, headerStyles) => ({
 });
 
 export const lgXlShrinkedStyle = (gridSize, headerStyles) => ({
-    '&.shrinkedHeader': { height: headerStyles[gridSize].height / 2 }
+    '&.shrinkedHeader': { 
+        height: headerStyles[gridSize].height / 2,        
+        backgroundPositionY: '50%'
+    }
 });
 
 export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => {
