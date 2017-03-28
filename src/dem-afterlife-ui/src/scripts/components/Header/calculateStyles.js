@@ -1,45 +1,41 @@
 import R from 'ramda';
 
-export const headerModel = (gridSize, headerStyles) => ({
+export const getCommonHeaderStyle = (gridSize, headerStyles) => ({
     height: headerStyles[gridSize].height,
     width: '100%'
 });
 
-export const xsSmStyle = (gridSize, headerStyles) => ({
+export const getXsSmStyle = (gridSize, headerStyles) => ({
     backgroundColor: headerStyles[`${gridSize}`].backgroundColor
 });
 
-export const mdStyle = (gridSize, headerStyles) => ({
+export const getMdStyle = (gridSize, headerStyles) => ({
     backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`
 });
 
-export const lgXlStyle = (gridSize, headerStyles) => ({
+export const getLgXlStyle = (gridSize, headerStyles) => ({
     backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`,
-    transition: headerStyles[`${gridSize}`].transition
-});
-
-export const lgXlShrinkedStyle = (gridSize, headerStyles) => ({
+    transition: headerStyles[`${gridSize}`].transition,
     '&.shrinkedHeader': {
         height: headerStyles[gridSize].height / 2,
         backgroundPositionY: '50%'
     }
 });
 
-export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => {
-    let result;
-    if (gridSize === 'xs' || gridSize === 'sm') {
-        result = R.merge(headerModel(gridSize, headerStyles), xsSmStyle(gridSize, headerStyles));
-    } else if (gridSize === 'md') {
-        result = R.merge(headerModel(gridSize, headerStyles), mdStyle(gridSize, headerStyles));
-    } else if (gridSize === 'lg' || gridSize === 'xl') {
-        result = R.merge(headerModel(gridSize, headerStyles), lgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
-    }
-    return result;
+export const getSpecificStyle = (gridSize, headerStyles) => {
+    const specificStyles = {
+        xs: getXsSmStyle,
+        sm: getXsSmStyle,
+        md: getMdStyle,
+        lg: getLgXlStyle,
+        xl: getLgXlStyle
+    };
+    return specificStyles[gridSize] ? specificStyles[gridSize](gridSize, headerStyles) : null;
 };
 
 export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) => ({
     [`@media (${mediaMinString}) and (${mediaMaxString})`]: {
-        header: constructHeaderStyle(gridSize, mediaMinString, headerStyles),
+        header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize, headerStyles)),
         headerPadding: { paddingTop: headerStyles[gridSize].height }
     }
 });
