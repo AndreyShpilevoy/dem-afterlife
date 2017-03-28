@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import { throttle } from 'utils';
 import { ClassNamesPropType } from 'aesthetic';
 import Container from 'components/Container';
 import styler from 'styles/styler';
@@ -20,7 +20,7 @@ class Header extends Component {
     handleScroll = (node) => {
         if (node) {
             node.ownerDocument.addEventListener('scroll',
-                _.throttle(({target}) => {
+                throttle(({target}) => {
                     target.scrollingElement.scrollTop > 25 ?
                         this.setState({ shrinkedHeader: true }) :
                         this.setState({ shrinkedHeader: false });

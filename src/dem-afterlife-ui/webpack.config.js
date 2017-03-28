@@ -35,22 +35,33 @@ const entryPoints = {
     app: [ './src/scripts/index' ]
 };
 
-const rules = [ {
-    test: /\.jsx$|\.js$/,
-    exclude: /(node_modules)/,
-    include: path.join(__dirname, './src'),
-    use: [ 'babel-loader' ]
-},
-{
-    test: /\.(jpe?g|png|gif|svg)$/i,
-    use: 'url-loader?limit=8192&name=images/[name]-[hash].[ext]'
-},
-{
-    test: /\.jsx$|\.js$/,
-    use: 'eslint-loader',
-    enforce: 'pre',
-    include: path.join(__dirname, './src')
-}
+const rules = [
+    {
+        test: /\.jsx$|\.js$/,
+        exclude: /(node_modules)/,
+        include: path.join(__dirname, './src'),
+        use: [ 'babel-loader' ]
+    },
+    {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: 'url-loader?limit=8192&name=images/[name]-[hash].[ext]'
+    },
+    {
+        test: /\.jsx$|\.js$/,
+        use: 'eslint-loader',
+        enforce: 'pre',
+        include: path.join(__dirname, './src')
+    },
+    {
+        test: /\.jsx$|\.js$/,
+        exclude: /node_modules/,
+        loader: 'ramda-loader',
+        query: {
+            debug: debug, // Will wrap Ramda functions in error handles with file name, line number and char location
+            strict: true, // Will disallow variables that have the same name as Ramda functions
+            imports: true // Will add import statements for every Ramda function found
+        }
+    }
 ];
 
 const eslint = {

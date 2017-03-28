@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import root from 'lodash/_root';
+import { root } from 'utils';
 import configureStore from './store/configureStore';
 import routes from './routes';
 
