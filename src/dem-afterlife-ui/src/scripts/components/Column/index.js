@@ -8,8 +8,7 @@ const constructClassNames = (sizesArray, className, classNames) => {
         .map((size) => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
-    result = className ? `${result} ${className}` : result;
-    return result;
+    return className ? `${result} ${className}` : result;
 };
 
 const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames }) => {

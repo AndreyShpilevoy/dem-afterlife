@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { getLocale } from './layout-reducer';
 import Presentation from './Presentation';
 
-
 const { node, func } = PropTypes;
 class Layout extends Component {
     static propTypes = {

@@ -7,8 +7,7 @@ export const constructClassNames = (sizesArray, className, classNames) => {
     let result = sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map((size) => `hidden-${size.direction}-${size.name}`)
         .reduce((previouse, current) => `${previouse} ${classNames[current]}`, '');
-    result = className ? `${result} ${className}` : result;
-    return result;
+    return className ? `${result} ${className}` : result;
 };
 
 const Hidden = ({ xs, sm, md, lg, xl, children, className, classNames }) => {

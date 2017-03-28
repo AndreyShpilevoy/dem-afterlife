@@ -27,6 +27,7 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_LOCALE_SUCCESS:
             localState = {...state, locale: payload.locale };
+            break;
     }
     return localState;
 };

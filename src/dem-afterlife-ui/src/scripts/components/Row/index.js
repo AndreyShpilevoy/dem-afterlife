@@ -5,8 +5,7 @@ import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, className, classNames) => {
     let result = reverse ? `${classNames.row} reverse` : classNames.row;
-    result = className ? `${result} ${className}` : result;
-    return result;
+    return className ? `${result} ${className}` : result;
 };
 
 const Row = ({ reverse, children, className, classNames }) =>
