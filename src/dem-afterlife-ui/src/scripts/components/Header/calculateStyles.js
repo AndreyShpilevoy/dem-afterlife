@@ -1,4 +1,4 @@
-import { merge } from 'utils';
+import R from 'ramda';
 
 export const headerModel = (gridSize, headerStyles) => ({
     height: headerStyles[gridSize].height,
@@ -28,11 +28,11 @@ export const lgXlShrinkedStyle = (gridSize, headerStyles) => ({
 export const constructHeaderStyle = (gridSize, mediaMinString, headerStyles) => {
     let result;
     if (gridSize === 'xs' || gridSize === 'sm') {
-        result = merge(headerModel(gridSize, headerStyles), xsSmStyle(gridSize, headerStyles));
+        result = R.merge(headerModel(gridSize, headerStyles), xsSmStyle(gridSize, headerStyles));
     } else if (gridSize === 'md') {
-        result = merge(headerModel(gridSize, headerStyles), mdStyle(gridSize, headerStyles));
+        result = R.merge(headerModel(gridSize, headerStyles), mdStyle(gridSize, headerStyles));
     } else if (gridSize === 'lg' || gridSize === 'xl') {
-        result = merge(headerModel(gridSize, headerStyles), lgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
+        result = R.merge(headerModel(gridSize, headerStyles), lgXlStyle(gridSize, headerStyles), lgXlShrinkedStyle(gridSize, headerStyles));
     }
     return result;
 };
@@ -46,7 +46,7 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
 
 const calculateStyles = ({ grid, header }) => (
     grid.containers.reduce((previous, { gridSize, mediaMinString, mediaMaxString }) => (
-        merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header))
+        R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header))
     ), { fixedOnTheTop: { position: 'fixed', top: 0 } }));
 
 export default calculateStyles;
