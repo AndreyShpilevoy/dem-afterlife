@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import NotificationSystem from 'react-notification-system';
-import { removeNotification } from './notification-reducer';
+import { removeNotification as removeNotificationAction } from './notification-reducer';
 
 const {func} = PropTypes;
 class Notification extends React.Component {
@@ -64,7 +64,7 @@ const mapStateToProps = ({notificationReducer}) => ({ notifications: notificatio
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
-        removeNotification
+        removeNotification: removeNotificationAction
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notification);

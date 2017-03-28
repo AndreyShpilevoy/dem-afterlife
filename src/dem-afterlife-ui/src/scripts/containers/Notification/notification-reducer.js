@@ -4,11 +4,6 @@ const initialState = {
     notifications: []
 };
 
-export const addInfoNotification = (notification) => addNotification(notification, 'info');
-export const addSuccessNotification = (notification) => addNotification(notification, 'success');
-export const addWarningNotification = (notification) => addNotification(notification, 'warning');
-export const addExceptionNotification = (notification) => addNotification(notification, 'error');
-
 export const ADD_NOTIFICATION = 'ADD_NOTIFICATION';
 export const addNotification = (notification, level) => (
     {
@@ -18,6 +13,11 @@ export const addNotification = (notification, level) => (
         }
     }
 );
+
+export const addInfoNotification = (notification) => addNotification(notification, 'info');
+export const addSuccessNotification = (notification) => addNotification(notification, 'success');
+export const addWarningNotification = (notification) => addNotification(notification, 'warning');
+export const addExceptionNotification = (notification) => addNotification(notification, 'error');
 
 export const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION';
 export const removeNotification = (uid) => (

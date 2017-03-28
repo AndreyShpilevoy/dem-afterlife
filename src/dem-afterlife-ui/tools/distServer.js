@@ -38,7 +38,7 @@ webpack(webpackConfig).run((error, stats) => {
     const jsonStats = stats.toJson();
 
     if (jsonStats.hasErrors) {
-        return jsonStats.errors.map(error => console.log(error.red));
+        return jsonStats.errors.map(innerError => console.log(innerError.red));
     }
 
     if (jsonStats.hasWarnings) {
@@ -54,8 +54,9 @@ webpack(webpackConfig).run((error, stats) => {
             console.log(message.green);
             return 0;
         })
-        .catch(error => {
-            console.log(error.red);
+        .catch(innerError => {
+            console.log(innerError.red);
             return 1;
         });
+    return 0;
 });

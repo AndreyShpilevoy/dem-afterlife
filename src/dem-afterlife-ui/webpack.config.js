@@ -87,7 +87,7 @@ const plugins = [
             output: { path: './' },
             resolveLoader: {
                 alias: {
-                    images: `${__dirname  }./src/images`
+                    images: `${__dirname}./src/images`
                 }
             },
             eslint
@@ -123,8 +123,8 @@ if (debug) {
             template: path.join(__dirname, './src/index.html'),
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
             publicPath: '/wwwroot/',
-            paceCss: `/css/pace.css?${  checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css')}`,
-            paceJs: `/js/pace.min.js?${  checksum('./node_modules/pace-progress/pace.min.js')}`
+            paceCss: `/css/pace.css?${checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css')}`,
+            paceJs: `/js/pace.min.js?${checksum('./node_modules/pace-progress/pace.min.js')}`
         })
     );
 }
