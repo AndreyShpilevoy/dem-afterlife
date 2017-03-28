@@ -1,3 +1,5 @@
+/* eslint quote-props: 'off' */
+
 export default {
     'animation-delay': 'ms',
     'animation-duration': 'ms',

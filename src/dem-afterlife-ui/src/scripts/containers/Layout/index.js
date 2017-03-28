@@ -24,10 +24,9 @@ class Layout extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = dispatch =>
     bindActionCreators({
         getLocale
-    }, dispatch)
-);
+    }, dispatch);
 
 export default connect(null, mapDispatchToProps)(Layout);

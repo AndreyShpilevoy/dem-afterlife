@@ -4,7 +4,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, className, classNames) => {
-    let result = sizesArray.filter(size => size.count)
+    const result = sizesArray.filter(size => size.count)
         .map((size) => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
@@ -49,4 +49,4 @@ Column.propTypes = {
     xlOffset: number
 };
 
-export default styler((theme) => (calculateStyles(theme)))(Column);
+export default styler((theme) => calculateStyles(theme))(Column);

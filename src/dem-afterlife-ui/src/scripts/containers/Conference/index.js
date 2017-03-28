@@ -4,7 +4,7 @@ import Presentation from './Presentation';
 
 class Conference extends React.Component {
     static propTypes = {
-        children: PropTypes.node,
+        children: PropTypes.node
     };
 
     render(){

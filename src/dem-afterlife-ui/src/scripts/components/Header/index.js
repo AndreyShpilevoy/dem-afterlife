@@ -45,4 +45,4 @@ class Header extends Component {
     }
 }
 
-export default styler((theme) => (calculateStyles(theme)))(Header);
+export default styler((theme) => calculateStyles(theme))(Header);

@@ -14,7 +14,7 @@ const runExpressServer = () =>
             const port = 60784;
 
             app.use(express.static('../dem-afterlife/wwwroot'));
-            app.get('*', (req, res) => (res.sendFile(path.join(__dirname, '../../dem-afterlife/wwwroot/index.html'))));
+            app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../../dem-afterlife/wwwroot/index.html')));
             app.listen(port, (error) => {
                 if (error) {
                     reject(error);
@@ -30,7 +30,6 @@ const runExpressServer = () =>
 console.log('Generating minified bundle for production via Webpack. This will take a moment...'.green);
 
 webpack(webpackConfig).run((error, stats) => {
-
     if (error) { // so a fatal error occurred. Stop here.
         console.log(error.bold.red);
         return 1;

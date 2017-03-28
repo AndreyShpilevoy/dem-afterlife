@@ -11,7 +11,7 @@ const Logotype = ({ classNames }) =>
     </Link>;
 
 Logotype.propTypes = {
-    classNames: ClassNamesPropType,
+    classNames: ClassNamesPropType
 };
 
-export default styler((theme) => (calculateStyles(theme)))(Logotype);
+export default styler((theme) => calculateStyles(theme))(Logotype);

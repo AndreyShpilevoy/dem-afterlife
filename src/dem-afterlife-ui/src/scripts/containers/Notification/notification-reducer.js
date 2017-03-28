@@ -4,10 +4,10 @@ const initialState = {
     notifications: []
 };
 
-export const addInfoNotification = (notification) => (addNotification(notification, 'info'));
-export const addSuccessNotification = (notification) => (addNotification(notification, 'success'));
-export const addWarningNotification = (notification) => (addNotification(notification, 'warning'));
-export const addExceptionNotification = (notification) => (addNotification(notification, 'error'));
+export const addInfoNotification = (notification) => addNotification(notification, 'info');
+export const addSuccessNotification = (notification) => addNotification(notification, 'success');
+export const addWarningNotification = (notification) => addNotification(notification, 'warning');
+export const addExceptionNotification = (notification) => addNotification(notification, 'error');
 
 export const ADD_NOTIFICATION = 'ADD_NOTIFICATION';
 export const addNotification = (notification, level) => (
@@ -36,7 +36,7 @@ export const notificationReducer = (state = initialState, {type, payload}) => {
 
         case REMOVE_NOTIFICATION:
             localState = {
-                notifications: R.filter(n => (n.uid !== payload.uid), localState.notifications)
+                notifications: R.filter(n => n.uid !== payload.uid, localState.notifications)
             };
             break;
     }

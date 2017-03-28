@@ -4,7 +4,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 export const constructClassNames = (sizesArray, className, classNames) => {
-    let result = sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
+    const result = sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map((size) => `hidden-${size.direction}-${size.name}`)
         .reduce((previouse, current) => `${previouse} ${classNames[current]}`, '');
     return className ? `${result} ${className}` : result;
@@ -38,4 +38,4 @@ Hidden.propTypes = {
     xl: string
 };
 
-export default styler((theme) => (calculateStyles(theme)))(Hidden);
+export default styler((theme) => calculateStyles(theme))(Hidden);

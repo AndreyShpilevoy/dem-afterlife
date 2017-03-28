@@ -5,7 +5,7 @@ const calculateStyles = ({ grid }) =>
         ...previouse,
         ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {
             container: {
-                width: width,
+                width,
                 marginLeft: 'auto',
                 marginRight: 'auto'
             }

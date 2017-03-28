@@ -4,7 +4,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, className, classNames) => {
-    let result = reverse ? `${classNames.row} reverse` : classNames.row;
+    const result = reverse ? `${classNames.row} reverse` : classNames.row;
     return className ? `${result} ${className}` : result;
 };
 
@@ -21,4 +21,4 @@ Row.propTypes = {
     reverse: bool
 };
 
-export default styler((theme) => (calculateStyles(theme)))(Row);
+export default styler((theme) => calculateStyles(theme))(Row);

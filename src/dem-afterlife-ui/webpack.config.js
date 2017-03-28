@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const checksum = require('checksum');
 
-const debug = process.env.BABEL_ENV === 'production' ? false : true;
+const debug = process.env.BABEL_ENV !== 'production';
 
 const entryPoints = {
     vendor: [
@@ -75,22 +75,22 @@ const plugins = [
     }),
     new webpack.DefinePlugin({
         'process.env': {
-            'NODE_ENV': JSON.stringify(process.env.BABEL_ENV)
+            NODE_ENV: JSON.stringify(process.env.BABEL_ENV)
         }
     }
     ),
     new webpack.LoaderOptionsPlugin({
-        debug: debug,
+        debug,
         noInfo: !debug,
         options: {
             context: __dirname,
             output: { path: './' },
             resolveLoader: {
                 alias: {
-                    'images': __dirname + './src/images',
-                },
+                    images: `${__dirname  }./src/images`
+                }
             },
-            eslint: eslint
+            eslint
         }
     })
 ];
@@ -123,8 +123,8 @@ if (debug) {
             template: path.join(__dirname, './src/index.html'),
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
             publicPath: '/wwwroot/',
-            paceCss: '/css/pace.css?' + checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css'),
-            paceJs: '/js/pace.min.js?' + checksum('./node_modules/pace-progress/pace.min.js'),
+            paceCss: `/css/pace.css?${  checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css')}`,
+            paceJs: `/js/pace.min.js?${  checksum('./node_modules/pace-progress/pace.min.js')}`
         })
     );
 }
@@ -134,9 +134,9 @@ module.exports = {
     devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
     entry: entryPoints,
     target: 'web',
-    output: output,
+    output,
     module: {
-        rules: rules
+        rules
     },
-    plugins: plugins
+    plugins
 };

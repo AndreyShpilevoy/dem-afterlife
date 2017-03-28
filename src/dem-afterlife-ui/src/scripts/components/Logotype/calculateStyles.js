@@ -1,5 +1,5 @@
 const calculateStyles = ({logotype}) => ({
-    'logotype': {
+    logotype: {
         backgroundImage: `url(${logotype.backgroundImage})`,
         backgroundSize: logotype.backgroundSize,
         height: logotype.height,

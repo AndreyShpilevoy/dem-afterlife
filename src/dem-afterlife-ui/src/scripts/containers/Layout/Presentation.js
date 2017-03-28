@@ -6,7 +6,7 @@ import Row from 'components/Row';
 import Column from 'components/Column';
 import Header from 'components/Header';
 
-const Presentation = ({children, theme}) => (
+const Presentation = ({children, theme}) =>
     <ThemeProvider name={theme}>
         <Container>
             {/*title*/}
@@ -23,8 +23,7 @@ const Presentation = ({children, theme}) => (
                 {/*Footer*/}
             </Row>
         </Container>
-    </ThemeProvider>
-);
+    </ThemeProvider>;
 
 const {node, string} = PropTypes;
 Presentation.propTypes = {

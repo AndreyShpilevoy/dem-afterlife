@@ -18,4 +18,4 @@ Container.propTypes = {
     children: node
 };
 
-export default styler((theme) => (calculateStyles(theme)))(Container);
+export default styler((theme) => calculateStyles(theme))(Container);

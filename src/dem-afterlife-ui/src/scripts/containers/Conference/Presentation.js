@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Presentation = ({children}) => (
+const Presentation = ({children}) =>
     <div>
         {'Some fake dataSome fake data'}
         {'Some fake dataSome fake data'}
@@ -129,8 +129,7 @@ const Presentation = ({children}) => (
         {'Some fake dataSome fake data'}
         {'Some fake dataSome fake data'}
         {children}
-    </div>
-);
+    </div>;
 Presentation.propTypes = {
     children: PropTypes.node
 };

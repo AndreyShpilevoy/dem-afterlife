@@ -21,7 +21,7 @@ class Notification extends React.Component {
                 onRemove: PropTypes.func,
                 uid: PropTypes.oneOfType([
                     PropTypes.string,
-                    PropTypes.number,
+                    PropTypes.number
                 ])
             })
         ).isRequired,
@@ -62,10 +62,9 @@ class Notification extends React.Component {
 
 const mapStateToProps = ({notificationReducer}) => ({ notifications: notificationReducer.notifications });
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = dispatch =>
     bindActionCreators({
         removeNotification
-    }, dispatch)
-);
+    }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Notification);

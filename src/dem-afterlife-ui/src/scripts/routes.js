@@ -7,11 +7,11 @@ import Conference from 'containers/Conference';
 
 export default (
     <Layout>
-        <Route render={() => (
+        <Route render={() =>
             <div>
                 <Route exact path='/' component={Conference} />
                 <Route path='/Conference' component={Conference} />
             </div>
-        )} />
+        } />
     </Layout>
 );

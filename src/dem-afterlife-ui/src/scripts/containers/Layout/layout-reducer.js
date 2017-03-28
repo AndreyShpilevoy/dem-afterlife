@@ -14,7 +14,7 @@ export const getLocaleSuccess = (locale) => ({
     payload: { locale }
 });
 
-export function* getLocaleSaga() {
+export function* getLocaleSaga() { //eslint-disable-line func-style
     while (true) {
         yield take(GET_LOCALE);
         const {locale} = yield call(getLocaleApi);

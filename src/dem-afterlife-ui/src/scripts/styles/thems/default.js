@@ -39,7 +39,7 @@ const defaultTheme = {
                 mediaMinString: 'min-width: 1200px',
                 mediaMaxString: 'max-width: 100vw',
                 width: '1140px'
-            },
+            }
         ]
     },
     header: {
@@ -70,7 +70,7 @@ const defaultTheme = {
         backgroundImage: headerLogotypeImage,
         backgroundSize: 'cover',
         height: '100%',
-        width: '100%',
+        width: '100%'
     }
 };
 
