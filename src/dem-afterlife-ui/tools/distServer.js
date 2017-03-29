@@ -1,6 +1,6 @@
-/* eslint-disable no-undef, no-console , import/no-extraneous-dependencies */
+/* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies */
 
-const colors = require('colors'); //eslint-disable-line no-unused-vars
+const colors = require('colors'); // eslint-disable-line no-unused-vars
 const express = require('express');
 const open = require('open');
 const path = require('path');
@@ -15,11 +15,10 @@ const runExpressServer = () =>
 
             app.use(express.static('../dem-afterlife/wwwroot'));
             app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../../dem-afterlife/wwwroot/index.html')));
-            app.listen(port, (error) => {
+            app.listen(port, error => {
                 if (error) {
                     reject(error);
-                }
-                else {
+                } else {
                     open(`http://localhost:${port}`);
                     resolve('It\'s ready to roll!');
                 }

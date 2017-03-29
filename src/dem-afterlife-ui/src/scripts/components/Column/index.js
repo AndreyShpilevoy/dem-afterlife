@@ -1,28 +1,28 @@
-import React, { PropTypes } from 'react';
-import { ClassNamesPropType } from 'aesthetic';
+import React, {PropTypes} from 'react';
+import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, className, classNames) => {
     const result = sizesArray.filter(size => size.count)
-        .map((size) => `col-${size.name}-${size.count}`)
+        .map(size => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
     return className ? `${result} ${className}` : result;
 };
 
-const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames }) => {
+const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
     const classes = constructClassNames([
-        { name: 'xs', count: xs },
-        { name: 'sm', count: sm },
-        { name: 'md', count: md },
-        { name: 'lg', count: lg },
-        { name: 'xl', count: xl },
-        { name: 'xsOffset', count: xsOffset },
-        { name: 'smOffset', count: smOffset },
-        { name: 'mdOffset', count: mdOffset },
-        { name: 'lgOffset', count: lgOffset },
-        { name: 'xlOffset', count: xlOffset }],
+        {name: 'xs', count: xs},
+        {name: 'sm', count: sm},
+        {name: 'md', count: md},
+        {name: 'lg', count: lg},
+        {name: 'xl', count: xl},
+        {name: 'xsOffset', count: xsOffset},
+        {name: 'smOffset', count: smOffset},
+        {name: 'mdOffset', count: mdOffset},
+        {name: 'lgOffset', count: lgOffset},
+        {name: 'xlOffset', count: xlOffset}],
         className, classNames);
 
     return (
@@ -49,4 +49,4 @@ Column.propTypes = {
     xlOffset: number
 };
 
-export default styler((theme) => calculateStyles(theme))(Column);
+export default styler(theme => calculateStyles(theme))(Column);

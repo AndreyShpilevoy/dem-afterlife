@@ -1,4 +1,4 @@
-import { createMediaQueryMinMax } from 'utils';
+import {createMediaQueryMinMax} from 'utils';
 import R from 'ramda';
 
 export const getCommonHeaderStyle = (gridSize, headerStyles) => ({
@@ -37,12 +37,12 @@ export const getSpecificStyle = (gridSize, headerStyles) => {
 export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
         header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize, headerStyles)),
-        headerPadding: { paddingTop: headerStyles[gridSize].height }
+        headerPadding: {paddingTop: headerStyles[gridSize].height}
     });
 
-const calculateStyles = ({ grid, header }) =>
-    grid.containers.reduce((previous, { gridSize, mediaMinString, mediaMaxString }) =>
+const calculateStyles = ({grid, header}) =>
+    grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header))
-    , { fixedOnTheTop: { position: 'fixed', top: 0 } });
+    , {fixedOnTheTop: {position: 'fixed', top: 0} });
 
 export default calculateStyles;

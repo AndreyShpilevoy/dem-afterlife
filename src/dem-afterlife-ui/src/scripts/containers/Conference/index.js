@@ -8,7 +8,7 @@ class Conference extends React.Component {
     };
 
     render(){
-        return(
+        return (
       <Presentation
         children={this.props.children}/>
         );

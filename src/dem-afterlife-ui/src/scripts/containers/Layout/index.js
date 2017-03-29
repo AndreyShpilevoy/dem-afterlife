@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getLocale } from './layout-reducer';
+import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {getLocale} from './layout-reducer';
 import Presentation from './Presentation';
 
-const { node, func } = PropTypes;
+const {node, func} = PropTypes;
 class Layout extends Component {
     static propTypes = {
         children: node,

@@ -1,4 +1,4 @@
-import Aesthetic, { createStyler } from 'aesthetic';
+import Aesthetic, {createStyler} from 'aesthetic';
 import JSSAdapter from 'aesthetic-adapter-jss';
 import jss from './jss-preset';
 import defaultTheme from './thems/default';

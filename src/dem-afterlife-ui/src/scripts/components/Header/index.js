@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { throttle } from 'utils';
-import { ClassNamesPropType } from 'aesthetic';
+import React, {Component} from 'react';
+import {throttle} from 'utils';
+import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 import Logotype from '../Logotype';
 
-//const {string, node} = PropTypes;
+// const {string, node} = PropTypes;
 class Header extends Component {
     static propTypes = {
         classNames: ClassNamesPropType
@@ -14,23 +14,23 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { shrinkedHeader: false };
+        this.state = {shrinkedHeader: false};
     }
 
-    handleScroll = (node) => {
+    handleScroll = node => {
         if (node) {
             node.ownerDocument.addEventListener('scroll',
                 throttle(({target}) => {
                     target.scrollingElement.scrollTop > 25 ?
-                        this.setState({ shrinkedHeader: true }) :
-                        this.setState({ shrinkedHeader: false });
+                        this.setState({shrinkedHeader: true}) :
+                        this.setState({shrinkedHeader: false});
                 }, 250));
         }
     };
 
     render() {
-        const { classNames } = this.props;
-        const { shrinkedHeader } = this.state;
+        const {classNames} = this.props;
+        const {shrinkedHeader} = this.state;
         const className = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
         return (
             <div>
@@ -45,4 +45,4 @@ class Header extends Component {
     }
 }
 
-export default styler((theme) => calculateStyles(theme))(Header);
+export default styler(theme => calculateStyles(theme))(Header);

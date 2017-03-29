@@ -1,10 +1,10 @@
 import 'babel-polyfill';
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+import {ConnectedRouter} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import { root } from 'utils';
+import {root} from 'utils';
 import configureStore from './store/configureStore';
 import routes from './routes';
 

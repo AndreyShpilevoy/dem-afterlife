@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, no-console , import/no-extraneous-dependencies */
 
-const colors = require('colors'); //eslint-disable-line no-unused-vars
+const colors = require('colors'); // eslint-disable-line no-unused-vars
 const express = require('express');
 const fs = require('fs');
 const open = require('open');
@@ -44,7 +44,7 @@ app.get('*', (req, res) => {
     res.send(newValue);
 });
 
-app.listen(port, (error) => {
+app.listen(port, error => {
     if (error) {
         console.log(error.red);
     } else {

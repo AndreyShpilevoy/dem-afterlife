@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { ThemeProvider } from 'aesthetic';
+import React, {PropTypes} from 'react';
+import {ThemeProvider} from 'aesthetic';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
 import Row from 'components/Row';
@@ -9,7 +9,7 @@ import Header from 'components/Header';
 const Presentation = ({children, theme}) =>
     <ThemeProvider name={theme}>
         <Container>
-            {/*title*/}
+            {/* title*/}
             <Notification />
             <Row>
                 <Header/>
@@ -20,7 +20,7 @@ const Presentation = ({children, theme}) =>
                 </Column>
             </Row>
             <Row>
-                {/*Footer*/}
+                {/* Footer*/}
             </Row>
         </Container>
     </ThemeProvider>;

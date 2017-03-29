@@ -1,4 +1,4 @@
-/*eslint no-undef: "off"*/
+/* eslint no-undef: "off"*/
 
 const webpack = require('webpack');
 const path = require('path');
@@ -36,7 +36,7 @@ const entryPoints = {
         'redux',
         'redux-saga'
     ],
-    app: [ './src/scripts/index' ]
+    app: ['./src/scripts/index']
 };
 
 const rules = [
@@ -44,7 +44,7 @@ const rules = [
         test: /\.jsx$|\.js$/,
         exclude: /(node_modules)/,
         include: path.join(__dirname, './src'),
-        use: [ 'babel-loader' ]
+        use: ['babel-loader']
     },
     {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -81,10 +81,10 @@ const plugins = [
     ),
     new webpack.LoaderOptionsPlugin({
         debug,
-        noInfo: !debug,
+        noInfo: ! debug,
         options: {
             context: __dirname,
-            output: { path: './' },
+            output: {path: './'},
             resolveLoader: {
                 alias: {
                     images: `${__dirname}./src/images`
@@ -106,19 +106,19 @@ if (debug) {
     plugins.push(
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false },
-            output: { comments: false },
+            compress: {warnings: false},
+            output: {comments: false},
             sourceMap: true
         }),
         new CopyWebpackPlugin(
             [
-                { from: './node_modules/pace-progress/themes/orange/pace-theme-flash.css', to: 'css/pace.css' },
-                { from: './node_modules/pace-progress/pace.min.js', to: 'js/pace.min.js' }
+                {from: './node_modules/pace-progress/themes/orange/pace-theme-flash.css', to: 'css/pace.css'},
+                {from: './node_modules/pace-progress/pace.min.js', to: 'js/pace.min.js'}
             ],
-            { copyUnmodified: false }
+            {copyUnmodified: false}
         ),
         new HtmlWebpackPlugin({
-            hash: !debug,
+            hash: ! debug,
             filename: 'index.html',
             template: path.join(__dirname, './src/index.html'),
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
