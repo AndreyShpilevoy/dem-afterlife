@@ -39,6 +39,8 @@ export const notificationReducer = (state = initialState, {type, payload}) => {
                 notifications: R.filter(n => n.uid !== payload.uid, localState.notifications)
             };
             break;
+        default:
+            break;
     }
     return localState;
 };

@@ -7,10 +7,10 @@ class Conference extends React.Component {
         children: PropTypes.node
     };
 
-    render(){
+    render() {
         return (
       <Presentation
-        children={this.props.children}/>
+          children={this.props.children}/>
         );
     }
 }

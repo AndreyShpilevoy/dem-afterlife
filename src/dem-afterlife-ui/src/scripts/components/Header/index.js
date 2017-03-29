@@ -21,7 +21,7 @@ class Header extends Component {
         if (node) {
             node.ownerDocument.addEventListener('scroll',
                 throttle(({target}) => {
-                    target.scrollingElement.scrollTop > 25 ?
+                    target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
                         this.setState({shrinkedHeader: true}) :
                         this.setState({shrinkedHeader: false});
                 }, 250));

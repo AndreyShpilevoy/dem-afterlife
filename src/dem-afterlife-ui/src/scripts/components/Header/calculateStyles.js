@@ -42,7 +42,8 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
 
 const calculateStyles = ({grid, header}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
-        R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header))
-    , {fixedOnTheTop: {position: 'fixed', top: 0} });
+        R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header)),
+        {fixedOnTheTop: {position: 'fixed', top: 0} }
+    );
 
 export default calculateStyles;
