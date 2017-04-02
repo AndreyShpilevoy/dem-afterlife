@@ -5,7 +5,7 @@ import Route from 'react-router-dom/Route';
 import Layout from 'containers/Layout';
 import Conference from 'containers/Conference';
 
-export default (
+const router = () =>
     <Layout>
         <Route render={() =>
             <div>
@@ -13,5 +13,6 @@ export default (
                 <Route path='/Conference' component={Conference} />
             </div>
         } />
-    </Layout>
-);
+    </Layout>;
+
+export default router();

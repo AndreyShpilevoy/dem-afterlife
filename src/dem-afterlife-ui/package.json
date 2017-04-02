@@ -49,7 +49,7 @@
         "babel-jest": "19.0.0",
         "babel-loader": "6.4.1",
         "babel-plugin-lodash": "3.2.11",
-        "babel-plugin-module-resolver": "2.5.0",
+        "babel-plugin-module-resolver": "2.7.0",
         "babel-plugin-ramda": "1.2.0",
         "babel-plugin-transform-class-properties": "6.23.0",
         "babel-plugin-transform-es2015-modules-commonjs": "6.24.0",
@@ -64,17 +64,17 @@
         "checksum": "0.1.1",
         "colors": "1.1.2",
         "copy-webpack-plugin": "4.0.1",
-        "cross-env": "3.2.4",
+        "cross-env": "4.0.0",
         "enzyme": "2.8.0",
-        "eslint": "3.18.0",
+        "eslint": "3.19.0",
         "eslint-config-airbnb-base": "11.1.2",
         "eslint-import-resolver-babel-module": "3.0.0",
-        "eslint-loader": "1.7.0",
+        "eslint-loader": "1.7.1",
         "eslint-plugin-import": "2.2.0",
         "eslint-plugin-ramda": "1.0.2",
         "eslint-plugin-react": "6.10.3",
         "express": "4.15.2",
-        "file-loader": "0.10.1",
+        "file-loader": "0.11.1",
         "html-webpack-plugin": "2.28.0",
         "jest-cli": "19.0.2",
         "jest-css-modules": "1.1.0",
@@ -88,11 +88,11 @@
         "url-loader": "0.5.8",
         "webpack": "2.3.2",
         "webpack-dev-middleware": "1.10.1",
-        "webpack-hot-middleware": "2.17.1"
+        "webpack-hot-middleware": "2.18.0"
     },
     "dependencies": {
-        "aesthetic": "1.1.2",
-        "aesthetic-adapter-jss": "1.1.2",
+        "aesthetic": "1.2.0",
+        "aesthetic-adapter-jss": "1.2.0",
         "babel-polyfill": "6.23.0",
         "history": "4.6.1",
         "jss": "6.5.0",
@@ -108,7 +108,7 @@
         "lodash.throttle": "4.1.1",
         "pace-progress": "1.0.2",
         "ramda": "0.23.0",
-        "raven-js": "3.13.1",
+        "raven-js": "3.14.0",
         "react": "15.4.2",
         "react-dom": "15.4.2",
         "react-notification-system": "0.2.13",
@@ -116,6 +116,6 @@
         "react-router-dom": "4.0.0",
         "react-router-redux": "5.0.0-alpha.4",
         "redux": "3.6.0",
-        "redux-saga": "0.14.3"
+        "redux-saga": "0.14.4"
     }
 }
