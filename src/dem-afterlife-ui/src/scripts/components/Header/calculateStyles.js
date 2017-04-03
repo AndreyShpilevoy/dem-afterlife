@@ -3,7 +3,10 @@ import R from 'ramda';
 
 export const getCommonHeaderStyle = (gridSize, headerStyles) => ({
     height: headerStyles[gridSize].height,
-    width: '100%'
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
 });
 
 export const getXsSmStyle = (gridSize, headerStyles) => ({

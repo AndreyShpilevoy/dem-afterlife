@@ -31,11 +31,11 @@ class Header extends Component {
     render() {
         const {classNames} = this.props;
         const {shrinkedHeader} = this.state;
-        const className = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
+        const headerClassName = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
         return (
             <div>
                 <Container className={classNames.fixedOnTheTop}>
-                    <div className={className}>
+                    <div className={headerClassName}>
                         <Logotype/>
                     </div>
                 </Container>

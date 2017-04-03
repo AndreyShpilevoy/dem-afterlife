@@ -6,7 +6,7 @@ import calculateStyles from './calculateStyles';
 
 
 const Logotype = ({classNames}) =>
-    <Link to='/'>
+    <Link className={classNames.logotypeContainer} to='/'>
         <div className={classNames.logotype} />
     </Link>;
 

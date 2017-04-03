@@ -1,9 +1,12 @@
 const calculateStyles = ({logotype}) => ({
     logotype: {
         backgroundImage: `url(${logotype.backgroundImage})`,
+        backgroundRepeat: logotype.backgroundRepeat,
         backgroundSize: logotype.backgroundSize,
-        height: logotype.height,
-        width: logotype.width
+        height: '100%'
+    },
+    logotypeContainer: {
+        height: logotype.height
     }
 });
 

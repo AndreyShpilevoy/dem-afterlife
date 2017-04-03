@@ -68,9 +68,9 @@ const defaultTheme = {
     },
     logotype: {
         backgroundImage: headerLogotypeImage,
-        backgroundSize: 'cover',
-        height: '100%',
-        width: '100%'
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        height: '81.5%'
     }
 };
 
