@@ -5,7 +5,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 
-const Logotype = ({classNames}) =>
+export const Logotype = ({classNames}) =>
     <Link className={classNames.logotypeContainer} to='/'>
         <div className={classNames.logotype} />
     </Link>;
