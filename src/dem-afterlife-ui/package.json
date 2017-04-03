@@ -22,9 +22,9 @@
     },
     "jest": {
         "collectCoverage": true,
-        "testRegex": "src/.+\\.test\\.js",
+        "testRegex": "src/.*/.*test.js",
         "transform": {
-            ".*": "<rootDir>/node_modules/babel-jest"
+            ".*": "<rootDir>/tools/jestPreProcessor"
         },
         "moduleFileExtensions": [
             "js",
@@ -77,10 +77,10 @@
         "file-loader": "0.11.1",
         "html-webpack-plugin": "2.28.0",
         "jest-cli": "19.0.2",
-        "jest-css-modules": "1.1.0",
         "jsdom": "9.12.0",
         "mkdirp": "0.5.1",
         "open": "0.0.5",
+        "react-addons-test-utils": "15.4.2",
         "react-hot-loader": "3.0.0-beta.6",
         "redux-immutable-state-invariant": "2.0.0",
         "redux-mock-store": "1.2.2",
