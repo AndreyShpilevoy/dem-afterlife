@@ -15,14 +15,11 @@ describe('Logotype', () => {
         }
     };
 
-    const mountHoc = () => shallow(<Logotype theme={hocProps.theme} />);
-    const mountPure = () => shallow(<LogotypePure classNames={hocProps.classNames}/>);
-
     it('HOC match expected snapshot', () => {
-        expect(mountHoc()).toMatchSnapshot();
+        expect(shallow(<Logotype theme={hocProps.theme} />)).toMatchSnapshot();
     });
 
     it('Pure component match expected snapshot', () => {
-        expect(mountPure()).toMatchSnapshot();
+        expect(shallow(<LogotypePure classNames={hocProps.classNames}/>)).toMatchSnapshot();
     });
 });

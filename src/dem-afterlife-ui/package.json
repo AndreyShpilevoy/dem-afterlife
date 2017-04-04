@@ -41,7 +41,9 @@
             "src/.+\\.test\\.js",
             "<rootDir>/node_modules/",
             "/__snapshots__/",
-            "/__mocks__/"
+            "/__mocks__/",
+            "src/scripts/styles/",
+            "src/images/"
         ],
         "snapshotSerializers": ["enzyme-to-json/serializer"]
     },

@@ -8,17 +8,17 @@ const constructClassNameString = (reverse, className, classNames) => {
     return className ? `${result} ${className}` : result;
 };
 
-const Row = ({reverse, children, className, classNames}) =>
+export const RowPure = ({reverse, children, className, classNames}) =>
     <div className={constructClassNameString(reverse, className, classNames)}>
         {children}
     </div>;
 
 const {bool, node, string} = PropTypes;
-Row.propTypes = {
+RowPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,
     children: node,
     reverse: bool
 };
 
-export default styler(theme => calculateStyles(theme))(Row);
+export default styler(theme => calculateStyles(theme))(RowPure);
