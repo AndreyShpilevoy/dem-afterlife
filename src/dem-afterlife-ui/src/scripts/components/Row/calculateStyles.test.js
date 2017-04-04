@@ -3,7 +3,7 @@
 
 import calculateStyles from './calculateStyles';
 
-describe('Logotype calculateStyles', () => {
+describe('Row calculateStyles', () => {
     it('should create expected object', () => {
         const expectedResult = {
             row: {
