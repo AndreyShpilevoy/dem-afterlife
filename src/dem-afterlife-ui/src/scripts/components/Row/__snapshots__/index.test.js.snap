@@ -15,11 +15,19 @@ exports[`Row HOC match expected snapshot 1`] = `
 exports[`Row Pure component match expected snapshot 1`] = `
 <div
   className="row-0-0"
-/>
+>
+  <div>
+    hidden
+  </div>
+</div>
 `;
 
 exports[`Row Pure component match expected snapshot with reverse prop 1`] = `
 <div
   className="row-0-0 reverse"
-/>
+>
+  <div>
+    hidden
+  </div>
+</div>
 `;

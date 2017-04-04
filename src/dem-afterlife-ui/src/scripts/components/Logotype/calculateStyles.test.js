@@ -1,5 +1,4 @@
 /* eslint no-undef: 'off'*/
-/* eslint import/no-extraneous-dependencies: 'off' */
 
 import defaultTheme from 'styles/thems/default';
 import calculateStyles from './calculateStyles';

@@ -1,5 +1,4 @@
 /* eslint no-undef: 'off'*/
-/* eslint import/no-extraneous-dependencies: 'off' */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -20,10 +19,10 @@ describe('Row', () => {
     });
 
     it('Pure component match expected snapshot', () => {
-        expect(shallow(<RowPure classNames={hocProps.classNames}/>)).toMatchSnapshot();
+        expect(shallow(<RowPure classNames={hocProps.classNames}><div>{'hidden'}</div></RowPure>)).toMatchSnapshot();
     });
 
     it('Pure component match expected snapshot with reverse prop', () => {
-        expect(shallow(<RowPure classNames={hocProps.classNames} reverse/>)).toMatchSnapshot();
+        expect(shallow(<RowPure classNames={hocProps.classNames} reverse><div>{'hidden'}</div></RowPure>)).toMatchSnapshot();
     });
 });

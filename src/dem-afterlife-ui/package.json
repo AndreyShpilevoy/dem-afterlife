@@ -35,13 +35,17 @@
         "testPathIgnorePatterns": [
             "<rootDir>/node_modules/",
             "/__snapshots__/",
-            "/__mocks__/"
+            "/__mocks__/",
+            "/__fakeApi__/",
+            "/__fakeData__/"
         ],
         "coveragePathIgnorePatterns": [
             "src/.+\\.test\\.js",
             "<rootDir>/node_modules/",
             "/__snapshots__/",
             "/__mocks__/",
+            "/__fakeApi__/",
+            "/__fakeData__/",
             "src/scripts/styles/",
             "src/images/"
         ],
