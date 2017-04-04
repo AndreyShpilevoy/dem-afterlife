@@ -5,13 +5,13 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 
-export const Logotype = ({classNames}) =>
+export const LogotypePure = ({classNames}) =>
     <Link className={classNames.logotypeContainer} to='/'>
         <div className={classNames.logotype} />
     </Link>;
 
-Logotype.propTypes = {
+LogotypePure.propTypes = {
     classNames: ClassNamesPropType
 };
 
-export default styler(theme => calculateStyles(theme))(Logotype);
+export default styler(theme => calculateStyles(theme))(LogotypePure);

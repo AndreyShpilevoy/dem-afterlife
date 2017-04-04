@@ -3,7 +3,7 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import LogotypeHoc, {Logotype} from './index';
+import Logotype, {LogotypePure} from './index';
 
 describe('Logotype', () => {
     const hocProps = {
@@ -15,24 +15,14 @@ describe('Logotype', () => {
         }
     };
 
-    const setupLogotypeHoc = () => shallow(<LogotypeHoc theme={'default'} />);
-    const setupLogotype = () => shallow(<Logotype classNames={hocProps.classNames}/>);
+    const mountHoc = () => shallow(<Logotype theme={hocProps.theme} />);
+    const mountPure = () => shallow(<LogotypePure classNames={hocProps.classNames}/>);
 
-    it('should render one "div"', () => {
-        const logotypeHoc = setupLogotypeHoc();
-        console.log(logotypeHoc.debug());
-        expect(logotypeHoc.props()).toEqual(hocProps);
+    it('HOC match expected snapshot', () => {
+        expect(mountHoc()).toMatchSnapshot();
     });
 
-    it('should render one "div"', () => {
-        const divElement = setupLogotype().find('div').first();
-        console.log(divElement.debug());
-        expect(divElement).toBeTruthy();
-    });
-
-    it('should render one "Link"', () => {
-        const linkElement = setupLogotype().find('Link').first();
-        console.log(linkElement.debug());
-        expect(linkElement).toBeTruthy();
+    it('Pure component match expected snapshot', () => {
+        expect(mountPure()).toMatchSnapshot();
     });
 });

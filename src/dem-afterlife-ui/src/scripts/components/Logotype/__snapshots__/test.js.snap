@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logotype Logotype match expected snapshot 1`] = `
+<LogotypePure
+  classNames={
+    Object {
+      "logotype": "logotype-0-0",
+      "logotypeContainer": "logotypeContainer-0-1",
+    }
+  }
+  theme="default"
+/>
+`;
+
+exports[`Logotype LogotypePure match expected snapshot 1`] = `
+<Link
+  className="logotypeContainer-0-1"
+  replace={false}
+  to="/"
+>
+  <div
+    className="logotype-0-0"
+  />
+</Link>
+`;
