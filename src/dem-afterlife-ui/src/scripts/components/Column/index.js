@@ -11,7 +11,7 @@ const constructClassNames = (sizesArray, className, classNames) => {
     return className ? `${result} ${className}` : result;
 };
 
-const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
+const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
@@ -33,7 +33,7 @@ const Column = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlO
 };
 
 const {node, number, string} = PropTypes;
-Column.propTypes = {
+ColumnPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,
     children: node,
@@ -49,4 +49,4 @@ Column.propTypes = {
     xlOffset: number
 };
 
-export default styler(theme => calculateStyles(theme))(Column);
+export default styler(theme => calculateStyles(theme))(ColumnPure);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hidden HOC match expected snapshot 1`] = `
+exports[`Hidden HOC component match expected snapshot 1`] = `
 <HiddenPure
   classNames={
     Object {
@@ -22,21 +22,5 @@ exports[`Hidden HOC match expected snapshot 1`] = `
     }
   }
   theme="default"
-/>
-`;
-
-exports[`Hidden Pure component match expected snapshot 1`] = `
-<div
-  className=""
->
-  <div>
-    hidden
-  </div>
-</div>
-`;
-
-exports[`Hidden Pure component with xs="down" md="exact" xl="up" match expected snapshot 1`] = `
-<div
-  className=" hidden-down-xs-0-1 hidden-exact-md-0-8 hidden-up-xl-0-12"
 />
 `;

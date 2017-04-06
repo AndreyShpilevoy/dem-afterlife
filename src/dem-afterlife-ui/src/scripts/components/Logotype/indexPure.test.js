@@ -2,11 +2,12 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import Logotype, {LogotypePure} from './index';
+import {LogotypePure} from './index';
 
-describe('Logotype', () => {
+jest.mock('styles/styler');
+
+describe('Logotype Pure', () => {
     const hocProps = {
-        theme: 'default',
         classNames:
         {
             logotype: 'logotype-0-0',
@@ -14,11 +15,7 @@ describe('Logotype', () => {
         }
     };
 
-    it('HOC match expected snapshot', () => {
-        expect(shallow(<Logotype theme={hocProps.theme} />)).toMatchSnapshot();
-    });
-
-    it('Pure component match expected snapshot', () => {
+    it('component match expected snapshot', () => {
         expect(shallow(<LogotypePure classNames={hocProps.classNames}/>)).toMatchSnapshot();
     });
 });

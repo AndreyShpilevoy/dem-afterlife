@@ -7,7 +7,7 @@ import calculateStyles from './calculateStyles';
 import Logotype from '../Logotype';
 
 // const {string, node} = PropTypes;
-class Header extends Component {
+export class HeaderPure extends Component {
     static propTypes = {
         classNames: ClassNamesPropType
     };
@@ -45,4 +45,4 @@ class Header extends Component {
     }
 }
 
-export default styler(theme => calculateStyles(theme))(Header);
+export default styler(theme => calculateStyles(theme))(HeaderPure);

@@ -2,11 +2,12 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import Hidden, {HiddenPure} from './index';
+import {HiddenPure} from './index';
 
-describe('Hidden', () => {
+jest.mock('styles/styler');
+
+describe('Hidden Pure', () => {
     const hocProps = {
-        theme: 'default',
         classNames:
         {
             'hidden-down-lg': 'hidden-down-lg-0-10',
@@ -27,15 +28,11 @@ describe('Hidden', () => {
         }
     };
 
-    it('HOC match expected snapshot', () => {
-        expect(shallow(<Hidden theme={hocProps.theme} />)).toMatchSnapshot();
+    it('component match expected snapshot', () => {
+        expect(shallow(<HiddenPure classNames={hocProps.classNames}><div>{'hidden text'}</div></HiddenPure>)).toMatchSnapshot();
     });
 
-    it('Pure component match expected snapshot', () => {
-        expect(shallow(<HiddenPure classNames={hocProps.classNames}><div>{'hidden'}</div></HiddenPure>)).toMatchSnapshot();
-    });
-
-    it('Pure component with xs="down" md="exact" xl="up" match expected snapshot', () => {
-        expect(shallow(<HiddenPure classNames={hocProps.classNames} xs={'down'} md={'exact'} xl={'up'}/>)).toMatchSnapshot();
+    it('component with xs="down" md="exact" xl="up" match expected snapshot', () => {
+        expect(shallow(<HiddenPure classNames={hocProps.classNames} xs={'down'} md={'exact'} xl={'up'}><div>{'hidden text'}</div></HiddenPure>)).toMatchSnapshot();
     });
 });

@@ -6,16 +6,16 @@ import calculateStyles from './calculateStyles';
 const constructClassNameString = (className, classNames) =>
     className ? `${classNames.container} ${className}` : classNames.container;
 
-const Container = ({children, className, classNames}) =>
+const ContainerPure = ({children, className, classNames}) =>
     <div className={constructClassNameString(className, classNames)}>
         {children}
     </div>;
 
 const {string, node} = PropTypes;
-Container.propTypes = {
+ContainerPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,
     children: node
 };
 
-export default styler(theme => calculateStyles(theme))(Container);
+export default styler(theme => calculateStyles(theme))(ContainerPure);

@@ -1,23 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Row HOC match expected snapshot 1`] = `
-<RowPure
-  classNames={
-    Object {
-      ".row-0-0.reverse": ".row-0-0.reverse-0-1",
-      "row": "row-0-0",
-    }
-  }
-  theme="default"
-/>
-`;
-
 exports[`Row Pure component match expected snapshot 1`] = `
 <div
   className="row-0-0"
 >
   <div>
-    hidden
+    row content
   </div>
 </div>
 `;
@@ -27,7 +15,7 @@ exports[`Row Pure component match expected snapshot with reverse prop 1`] = `
   className="row-0-0 reverse"
 >
   <div>
-    hidden
+    row content
   </div>
 </div>
 `;

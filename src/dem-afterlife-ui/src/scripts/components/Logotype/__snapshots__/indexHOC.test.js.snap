@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logotype HOC component match expected snapshot 1`] = `
+<LogotypePure
+  classNames={
+    Object {
+      "logotype": "logotype-0-0",
+      "logotypeContainer": "logotypeContainer-0-1",
+    }
+  }
+  theme="default"
+/>
+`;
