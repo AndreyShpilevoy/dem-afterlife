@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {throttle} from 'utils';
+import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import styler from 'styles/styler';
@@ -17,15 +17,13 @@ export class HeaderPure extends Component {
         this.state = {shrinkedHeader: false};
     }
 
-    handleScroll = node => {
-        if (node) {
-            node.ownerDocument.addEventListener('scroll',
-                throttle(({target}) => {
-                    target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
-                        this.setState({shrinkedHeader: true}) :
-                        this.setState({shrinkedHeader: false});
-                }, 250));
-        }
+    handleScroll = () => {
+        root.addEventListener('scroll',
+            throttle(({target}) => {
+                target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
+                    this.setState({shrinkedHeader: true}) :
+                    this.setState({shrinkedHeader: false});
+            }, 250));
     };
 
     render() {
