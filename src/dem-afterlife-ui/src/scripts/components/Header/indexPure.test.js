@@ -2,12 +2,16 @@
 
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import simulant from 'simulant';
 import {HeaderPure} from './index';
 
 jest.mock('styles/styler');
 
 describe('Header Pure', () => {
+    const map = {};
+    window.addEventListener = jest.genMockFn().mockImplementation((event, cb) => {
+        map[event] = cb;
+    });
+
     const hocProps = {
         classNames:
         {
@@ -22,20 +26,15 @@ describe('Header Pure', () => {
         expect(shallow(<HeaderPure classNames={hocProps.classNames} />)).toMatchSnapshot();
     });
 
-    it('component match expected snapshot', () => {
-        const appDiv = document.createElement('div');
-        appDiv.setAttribute('id', 'app');
-        document.body.appendChild(appDiv);
-        const wrapper = mount(<HeaderPure classNames={hocProps.classNames} />, {attachTo: document.getElementById('app')});
-        simulant.fire(document, 'scroll');
-        console.log(wrapper.debug());
+    it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {
+        const wrapper = mount(<HeaderPure classNames={hocProps.classNames} />);
+        map.scroll({target: {scrollingElement: {scrollTop: 100} } });
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('component with scrolled down document since to "scrollTop: 24" match expected snapshot', () => {
+        const wrapper = mount(<HeaderPure classNames={hocProps.classNames} />);
+        map.scroll({target: {scrollingElement: {scrollTop: 24} } });
+        expect(wrapper).toMatchSnapshot();
     });
 });
-
-// const map = {};
-// window.addEventListener = jest.genMockFn().mockImpl((event, cb) => {
-//   map[event] = cb;
-// });
-
-// const component = mount(<SomeComponent />);
-// map.mousemove({ pageX: 100, pageY: 100});
