@@ -34,7 +34,7 @@ export const getSpecificStyle = (gridSize, headerStyles) => {
         lg: getLgXlStyle,
         xl: getLgXlStyle
     };
-    return specificStyles[gridSize] ? specificStyles[gridSize](gridSize, headerStyles) : null;
+    return specificStyles[gridSize] ? specificStyles[gridSize](gridSize, headerStyles) : {};
 };
 
 export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>

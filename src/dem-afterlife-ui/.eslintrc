@@ -18,8 +18,7 @@
         }
     },
     "plugins": [
-        "react",
-        "ramda"
+        "react"
     ],
     "rules": {
         "arrow-parens": [2,"as-needed"],
@@ -58,7 +57,6 @@
         "object-curly-spacing": [1,"never",{"arraysInObjects":true,"objectsInObjects":true}],
         "operator-linebreak": [1,"after"],
         "quotes": [1,"single","avoid-escape"],
-        "ramda/prefer-reject": 2,
         "react/display-name": [1,{ "ignoreTranspilerName": false }],
         "react/jsx-closing-bracket-location": 0,
         "react/jsx-indent-props": [1, 4],

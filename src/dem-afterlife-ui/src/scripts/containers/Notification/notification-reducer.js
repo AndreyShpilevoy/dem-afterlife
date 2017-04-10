@@ -28,19 +28,14 @@ export const removeNotification = uid => (
 );
 
 export const notificationReducer = (state = initialState, {type, payload}) => {
-    let localState = state;
     switch (type) {
         case ADD_NOTIFICATION:
-            localState = {...state, notifications: [...localState.notifications, payload.notification] };
-            break;
+            return {...state, notifications: [...state.notifications, payload.notification] };
 
         case REMOVE_NOTIFICATION:
-            localState = {
-                notifications: R.filter(n => n.uid !== payload.uid, localState.notifications)
-            };
-            break;
+            return {notifications: R.filter(n => n.uid !== payload.uid, state.notifications)};
         default:
             break;
     }
-    return localState;
+    return state;
 };

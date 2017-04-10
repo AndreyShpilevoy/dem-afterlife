@@ -1,5 +1,3 @@
-/* eslint react/jsx-no-bind: 'off' */
-
 import React from 'react';
 import Route from 'react-router-dom/Route';
 import Layout from 'containers/Layout';

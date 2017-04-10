@@ -14,22 +14,22 @@ export const getLocaleSuccess = locale => ({
     payload: {locale}
 });
 
-export function* getLocaleSaga() { // eslint-disable-line func-style
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+export function* getLocaleSaga() {
     while (true) {
         yield take(GET_LOCALE);
         const {locale} = yield call(getLocaleApi);
         yield put(getLocaleSuccess(locale));
     }
 }
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
 
 export const layoutReducer = (state = initialState, {type, payload}) => {
-    let localState = state;
     switch (type) {
         case GET_LOCALE_SUCCESS:
-            localState = {...state, locale: payload.locale};
-            break;
+            return {...state, locale: payload.locale};
         default:
             break;
     }
-    return localState;
+    return state;
 };

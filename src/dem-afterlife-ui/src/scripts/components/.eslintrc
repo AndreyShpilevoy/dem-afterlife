@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "../../../.eslintrc",
+        "plugin:fp/recommended"
+    ],
+    "plugins": [
+        "react",
+        "fp"
+    ],
+    "rules": {
+        "fp/no-mutation": [2, {"exceptions": [{"property": "propTypes"}]}]
+    }
+}
