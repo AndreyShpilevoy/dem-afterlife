@@ -25,6 +25,7 @@ const entryPoints = {
         'lodash._root',
         'lodash.debounce',
         'lodash.throttle',
+        'prop-types',
         'ramda',
         'raven-js',
         'react',
