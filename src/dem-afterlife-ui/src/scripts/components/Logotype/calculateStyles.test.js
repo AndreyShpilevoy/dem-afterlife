@@ -1,9 +1,16 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
-
-import defaultTheme from 'styles/thems/default';
 import calculateStyles from './calculateStyles';
 
 describe('Logotype calculateStyles', () => {
+    const defaultThemeObject = {
+        logotype: {
+            backgroundImage: headerLogotypeImage,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            height: '81.5%'
+        }
+    };
+
     it('should create expected object', () => {
         const expectedResult = {
             logotype: {
@@ -16,7 +23,7 @@ describe('Logotype calculateStyles', () => {
                 height: '81.5%'
             }
         };
-        const calculatedStyle = calculateStyles(defaultTheme);
+        const calculatedStyle = calculateStyles(defaultThemeObject);
         expect(calculatedStyle).toEqual(expectedResult);
     });
 });
