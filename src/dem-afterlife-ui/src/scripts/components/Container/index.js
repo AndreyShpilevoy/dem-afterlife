@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {string, node} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -12,7 +12,6 @@ const ContainerPure = ({children, className, classNames}) =>
         {children}
     </div>;
 
-const {string, node} = PropTypes;
 ContainerPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,

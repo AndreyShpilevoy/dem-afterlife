@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {node} from 'prop-types';
 
 const Presentation = ({children}) =>
     <div>
@@ -132,7 +132,7 @@ const Presentation = ({children}) =>
         {children}
     </div>;
 Presentation.propTypes = {
-    children: PropTypes.node
+    children: node
 };
 
 export default Presentation;

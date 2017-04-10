@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {node, string} from 'prop-types';
 import {ThemeProvider} from 'aesthetic';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
@@ -26,7 +26,6 @@ const Presentation = ({children, theme}) =>
         </Container>
     </ThemeProvider>;
 
-const {node, string} = PropTypes;
 Presentation.propTypes = {
     children: node,
     theme: string

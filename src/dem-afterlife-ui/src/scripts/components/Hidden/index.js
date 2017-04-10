@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {node, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -28,7 +28,6 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames}) => {
     );
 };
 
-const {node, string} = PropTypes;
 HiddenPure.propTypes = {
     classNames: ClassNamesPropType,
     children: node,

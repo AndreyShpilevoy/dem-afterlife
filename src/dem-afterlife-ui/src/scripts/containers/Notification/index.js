@@ -1,30 +1,29 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import {func, arrayOf, node, string, number, bool, object, oneOfType, shape} from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import NotificationSystem from 'react-notification-system';
 import {removeNotification as removeNotificationAction} from './notification-reducer';
 
-const {func} = PropTypes;
 class Notification extends React.Component {
     static propTypes = {
-        notifications: PropTypes.arrayOf(
-            PropTypes.shape({
-                message: PropTypes.node.isRequired,
-                level: PropTypes.string.isRequired,
-                title: PropTypes.string,
-                position: PropTypes.string,
-                autoDismiss: PropTypes.number,
-                dismissible: PropTypes.bool,
-                action: PropTypes.object,
-                children: PropTypes.node,
-                onAdd: PropTypes.func,
-                onRemove: PropTypes.func,
-                uid: PropTypes.oneOfType([
-                    PropTypes.string,
-                    PropTypes.number
+        notifications: arrayOf(
+            shape({
+                message: node.isRequired,
+                level: string.isRequired,
+                title: string,
+                position: string,
+                autoDismiss: number,
+                dismissible: bool,
+                action: object,
+                children: node,
+                onAdd: func,
+                onRemove: func,
+                uid: oneOfType([
+                    string,
+                    number
                 ])
             })
         ).isRequired,

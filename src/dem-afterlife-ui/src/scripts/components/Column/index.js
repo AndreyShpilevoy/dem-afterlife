@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {node, number, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -33,7 +33,6 @@ const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset,
     );
 };
 
-const {node, number, string} = PropTypes;
 ColumnPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {bool, node} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -12,7 +12,6 @@ export const RowPure = ({reverse, children, classNames}) =>
         {children}
     </div>;
 
-const {bool, node} = PropTypes;
 RowPure.propTypes = {
     classNames: ClassNamesPropType,
     children: node,
