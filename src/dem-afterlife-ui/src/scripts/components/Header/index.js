@@ -8,7 +8,6 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 import Logotype from '../Logotype';
 
-// const {string, node} = PropTypes;
 export class HeaderPure extends Component {
     static propTypes = {
         classNames: ClassNamesPropType
