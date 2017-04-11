@@ -4,7 +4,7 @@ import calculateStyles from './calculateStyles';
 describe('Logotype calculateStyles', () => {
     const defaultThemeObject = {
         logotype: {
-            backgroundImage: headerLogotypeImage,
+            backgroundImage: 'logotype.png',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             height: '81.5%'
@@ -14,7 +14,7 @@ describe('Logotype calculateStyles', () => {
     it('should create expected object', () => {
         const expectedResult = {
             logotype: {
-                backgroundImage: 'url([object Object])',
+                backgroundImage: 'url(logotype.png)',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 height: '100%'
