@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container HOC component match expected snapshot 1`] = `
+<ContainerPure
+  classNames={
+    Object {
+      "container": "container-0-0",
+    }
+  }
+  theme="default"
+/>
+`;

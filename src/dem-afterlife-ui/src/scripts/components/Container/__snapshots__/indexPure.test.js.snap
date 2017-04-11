@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Pure component match expected snapshot 1`] = `
+<div
+  className="container-0-0"
+>
+  <div>
+    hidden text
+  </div>
+</div>
+`;

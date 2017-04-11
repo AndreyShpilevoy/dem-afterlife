@@ -7,7 +7,7 @@ import calculateStyles from './calculateStyles';
 const constructClassNameString = (className, classNames) =>
     className ? `${classNames.container} ${className}` : classNames.container;
 
-const ContainerPure = ({children, className, classNames}) =>
+export const ContainerPure = ({children, className, classNames}) =>
     <div className={constructClassNameString(className, classNames)}>
         {children}
     </div>;
