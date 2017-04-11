@@ -133,4 +133,12 @@ describe('Column Pure', () => {
     it('component match expected snapshot', () => {
         expect(shallow(<ColumnPure classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
     });
+
+    it('component with xs="1" md="3" xl="12" xsOffset="1" mdOffset="3" xlOffset="12" match expected snapshot', () => {
+        expect(shallow(<ColumnPure xs='1' md='3' xl='12' xsOffset='1' mdOffset='3' xlOffset='12' classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+    });
+
+    it('component with wrong xs="wrong" match expected snapshot', () => {
+        expect(shallow(<ColumnPure xs='wrong' classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+    });
 });

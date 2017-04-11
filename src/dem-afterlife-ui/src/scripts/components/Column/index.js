@@ -1,18 +1,16 @@
 import React from 'react';
-import {node, number, string} from 'prop-types';
+import {node, number} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
-const constructClassNames = (sizesArray, className, classNames) => {
-    const result = sizesArray.filter(size => size.count)
+const constructClassNames = (sizesArray, classNames) =>
+    sizesArray.filter(size => size.count)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
-    return className ? `${result} ${className}` : result;
-};
 
-export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
+export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames}) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
@@ -24,7 +22,7 @@ export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lg
         {name: 'mdOffset', count: mdOffset},
         {name: 'lgOffset', count: lgOffset},
         {name: 'xlOffset', count: xlOffset}],
-        className, classNames);
+        classNames);
 
     return (
         <div className={classes}>
@@ -34,7 +32,6 @@ export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lg
 };
 
 ColumnPure.propTypes = {
-    className: string,
     classNames: ClassNamesPropType,
     children: node,
     xs: number,

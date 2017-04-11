@@ -1,19 +1,15 @@
 import React from 'react';
-import {string, node} from 'prop-types';
+import {node} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
-const constructClassNameString = (className, classNames) =>
-    className ? `${classNames.container} ${className}` : classNames.container;
-
-export const ContainerPure = ({children, className, classNames}) =>
-    <div className={constructClassNameString(className, classNames)}>
+export const ContainerPure = ({children, classNames}) =>
+    <div className={classNames.container}>
         {children}
     </div>;
 
 ContainerPure.propTypes = {
-    className: string,
     classNames: ClassNamesPropType,
     children: node
 };
