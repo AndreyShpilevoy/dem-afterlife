@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number} from 'prop-types';
+import {node, number, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -10,7 +10,7 @@ const constructClassNames = (sizesArray, classNames) =>
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
 
-export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames}) => {
+export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames, className}) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
@@ -25,13 +25,14 @@ export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lg
         classNames);
 
     return (
-        <div className={classes}>
+        <div className={`${classes} ${className || ''}`}>
             {children}
         </div>
     );
 };
 
 ColumnPure.propTypes = {
+    className: string,
     classNames: ClassNamesPropType,
     children: node,
     xs: number,

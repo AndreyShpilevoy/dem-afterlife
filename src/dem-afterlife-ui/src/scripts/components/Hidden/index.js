@@ -9,7 +9,7 @@ const constructClassNames = (sizesArray, classNames) =>
         .map(size => `hidden-${size.direction}-${size.name}`)
         .reduce((previouse, current) => `${previouse} ${classNames[current]}`, '');
 
-export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames}) => {
+export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className}) => {
     const classes = constructClassNames(
         [
             {name: 'xs', direction: xs},
@@ -22,13 +22,14 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames}) => {
     );
 
     return (
-        <div className={classes}>
+        <div className={`${classes} ${className || ''}`}>
             {children}
         </div>
     );
 };
 
 HiddenPure.propTypes = {
+    className: string,
     classNames: ClassNamesPropType,
     children: node,
     xs: string,

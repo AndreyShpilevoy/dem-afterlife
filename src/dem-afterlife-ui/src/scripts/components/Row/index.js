@@ -1,5 +1,5 @@
 import React from 'react';
-import {bool, node} from 'prop-types';
+import {bool, node, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -7,12 +7,13 @@ import calculateStyles from './calculateStyles';
 const constructClassNameString = (reverse, classNames) =>
     reverse ? `${classNames.row} reverse` : classNames.row;
 
-export const RowPure = ({reverse, children, classNames}) =>
-    <div className={constructClassNameString(reverse, classNames)}>
+export const RowPure = ({reverse, children, classNames, className}) =>
+    <div className={`${constructClassNameString(reverse, classNames)} ${className || ''}`}>
         {children}
     </div>;
 
 RowPure.propTypes = {
+    className: string,
     classNames: ClassNamesPropType,
     children: node,
     reverse: bool
