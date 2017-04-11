@@ -7,14 +7,11 @@ import {ContainerPure} from './index';
 jest.mock('styles/styler');
 
 describe('Container Pure', () => {
-    const hocProps = {
-        classNames:
-        {
-            container: 'container-0-0'
-        }
+    const classNames = {
+        container: 'container-0-0'
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<ContainerPure classNames={hocProps.classNames}><div>{'hidden text'}</div></ContainerPure>)).toMatchSnapshot();
+        expect(shallow(<ContainerPure classNames={classNames}><div>{'Container content'}</div></ContainerPure>)).toMatchSnapshot();
     });
 });

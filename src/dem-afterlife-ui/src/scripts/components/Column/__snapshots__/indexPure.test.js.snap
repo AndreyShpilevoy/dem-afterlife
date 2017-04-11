@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column Pure component match expected snapshot 1`] = `
+<div
+  className=""
+>
+  <div>
+    Column content
+  </div>
+</div>
+`;

@@ -12,28 +12,25 @@ describe('Header Pure', () => {
         map[event] = cb;
     });
 
-    const hocProps = {
-        classNames:
-        {
-            '.header-0-1.shrinkedHeader': 'header-0-1',
-            fixedOnTheTop: 'fixedOnTheTop-0-0',
-            header: 'header-0-1',
-            headerPadding: 'headerPadding-0-2'
-        }
+    const classNames = {
+        '.header-0-1.shrinkedHeader': 'header-0-1',
+        fixedOnTheTop: 'fixedOnTheTop-0-0',
+        header: 'header-0-1',
+        headerPadding: 'headerPadding-0-2'
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<HeaderPure classNames={hocProps.classNames} />)).toMatchSnapshot();
+        expect(shallow(<HeaderPure classNames={classNames} />)).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={hocProps.classNames} />);
+        const wrapper = mount(<HeaderPure classNames={classNames} />);
         map.scroll({target: {scrollingElement: {scrollTop: 100} } });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 24" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={hocProps.classNames} />);
+        const wrapper = mount(<HeaderPure classNames={classNames} />);
         map.scroll({target: {scrollingElement: {scrollTop: 24} } });
         expect(wrapper).toMatchSnapshot();
     });

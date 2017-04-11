@@ -7,15 +7,12 @@ import {LogotypePure} from './index';
 jest.mock('styles/styler');
 
 describe('Logotype Pure', () => {
-    const hocProps = {
-        classNames:
-        {
-            logotype: 'logotype-0-0',
-            logotypeContainer: 'logotypeContainer-0-1'
-        }
+    const classNames = {
+        logotype: 'logotype-0-0',
+        logotypeContainer: 'logotypeContainer-0-1'
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<LogotypePure classNames={hocProps.classNames}/>)).toMatchSnapshot();
+        expect(shallow(<LogotypePure classNames={classNames}/>)).toMatchSnapshot();
     });
 });

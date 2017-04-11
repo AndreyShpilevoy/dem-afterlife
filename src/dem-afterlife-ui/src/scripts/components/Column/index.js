@@ -12,7 +12,7 @@ const constructClassNames = (sizesArray, className, classNames) => {
     return className ? `${result} ${className}` : result;
 };
 
-const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
+export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, className, classNames}) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},

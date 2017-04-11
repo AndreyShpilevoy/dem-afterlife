@@ -5,7 +5,7 @@ exports[`Container Pure component match expected snapshot 1`] = `
   className="container-0-0"
 >
   <div>
-    hidden text
+    Container content
   </div>
 </div>
 `;
