@@ -2,7 +2,7 @@
 
 exports[`Row Pure component match expected snapshot 1`] = `
 <div
-  className="row-0-0"
+  className="row-0-0 "
 >
   <div>
     row content
@@ -12,7 +12,7 @@ exports[`Row Pure component match expected snapshot 1`] = `
 
 exports[`Row Pure component match expected snapshot with reverse prop 1`] = `
 <div
-  className="row-0-0 reverse"
+  className="row-0-0 reverse "
 >
   <div>
     row content

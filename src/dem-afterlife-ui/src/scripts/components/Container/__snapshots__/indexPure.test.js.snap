@@ -2,7 +2,7 @@
 
 exports[`Container Pure component match expected snapshot 1`] = `
 <div
-  className="container-0-0"
+  className="container-0-0 "
 >
   <div>
     Container content
