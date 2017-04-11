@@ -26,7 +26,7 @@ export const getLgXlStyle = (gridSize, headerStyles) => ({
     }
 });
 
-export const getSpecificStyle = (gridSize, headerStyles) => {
+export const getSpecificStyle = gridSize => {
     const specificStyles = {
         xs: getXsSmStyle,
         sm: getXsSmStyle,
@@ -34,12 +34,12 @@ export const getSpecificStyle = (gridSize, headerStyles) => {
         lg: getLgXlStyle,
         xl: getLgXlStyle
     };
-    return specificStyles[gridSize] ? specificStyles[gridSize](gridSize, headerStyles) : {};
+    return specificStyles[gridSize] ? specificStyles[gridSize] : {};
 };
 
 export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
-        header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize, headerStyles)),
+        header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize)(gridSize, headerStyles)),
         headerPadding: {paddingTop: headerStyles[gridSize].height}
     });
 
