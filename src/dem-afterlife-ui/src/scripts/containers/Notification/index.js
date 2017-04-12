@@ -7,7 +7,7 @@ import {bindActionCreators} from 'redux';
 import NotificationSystem from 'react-notification-system';
 import {removeNotification as removeNotificationAction} from './notification-reducer';
 
-class Notification extends React.Component {
+export class NotificationPure extends React.Component {
     static propTypes = {
         notifications: arrayOf(
             shape({
@@ -48,7 +48,7 @@ class Notification extends React.Component {
 
         // create notification in NotificationSystem with overriden "onRemove" event
         // onRemove will be called on Removing of created notification
-        // onRemove will call action removeNotification from Notification component
+        // onRemove will call action removeNotification from NotificationPure component
         // and will delete this notification fom the store
         notifications.forEach(notification => {
             notifSysAdd({...notification, onRemove: () => { removeNotification(notification.uid); }});
@@ -69,4 +69,4 @@ const mapDispatchToProps = dispatch =>
         removeNotification: removeNotificationAction
     }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Notification);
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationPure);
