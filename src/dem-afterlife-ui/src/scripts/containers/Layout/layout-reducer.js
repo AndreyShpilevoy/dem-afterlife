@@ -18,7 +18,7 @@ export const getLocaleSuccess = locale => ({
 export function* getLocaleSaga() {
     while (true) {
         yield take(GET_LOCALE);
-        const {locale} = yield call(getLocaleApi);
+        const locale = yield call(getLocaleApi);
         yield put(getLocaleSuccess(locale));
     }
 }
