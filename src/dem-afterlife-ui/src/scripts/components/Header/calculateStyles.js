@@ -26,6 +26,17 @@ export const getLgXlStyle = (gridSize, headerStyles) => ({
     }
 });
 
+export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => {
+    if (gridSize !== 'lg' && gridSize !== 'xl') {
+        return {width: headerStyles[gridSize].logoContainerWidth};
+    }
+    return {width: headerStyles[gridSize].logoContainerWidth,
+        '&.shrinkedHeader': {
+            transition: headerStyles[`${gridSize}`].transition,
+            width: headerStyles[gridSize].logoContainerWidth / 2
+        } };
+};
+
 export const getSpecificStyle = gridSize => {
     const specificStyles = {
         xs: getXsSmStyle,
@@ -40,14 +51,18 @@ export const getSpecificStyle = gridSize => {
 export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
         header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize)(gridSize, headerStyles)),
-        headerPadding: {paddingTop: headerStyles[gridSize].height}
+        headerPadding: {paddingTop: headerStyles[gridSize].height},
+        headerLogoContainer: getHeaderLogoContainerStyle(gridSize, headerStyles)
     });
 
 const calculateStyles = ({grid, header}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header)),
         {
-            fixedOnTheTop: {position: 'fixed', top: 0},
+            fixedOnTheTop: {
+                position: 'fixed',
+                top: 0
+            },
             logotypeColumn: {
                 'min-height': '100%',
                 display: 'flex',

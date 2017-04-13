@@ -6,7 +6,8 @@ import calculateStyles, {
     getMdStyle,
     getLgXlStyle,
     getSpecificStyle,
-    constructMediaModelForCurrentSize
+    constructMediaModelForCurrentSize,
+    getHeaderLogoContainerStyle
 } from './calculateStyles';
 
 describe('Header calculateStyles', () => {
@@ -30,25 +31,30 @@ describe('Header calculateStyles', () => {
         header: {
             xs: {
                 height: 3.4375,
-                backgroundColor: '#322C27'
+                backgroundColor: '#322C27',
+                logoContainerWidth: 11.25
             },
             sm: {
                 height: 3.4375,
-                backgroundColor: '#322C27'
+                backgroundColor: '#322C27',
+                logoContainerWidth: 11.25
             },
             md: {
                 backgroundImage: 'headerBackgroundImageMd.png',
-                height: 3.75
+                height: 3.75,
+                logoContainerWidth: 12.1875
             },
             lg: {
                 backgroundImage: 'headerBackgroundImageLg.png',
                 height: 5,
-                transition: 'all 400ms linear'
+                transition: 'all 400ms linear',
+                logoContainerWidth: 16
             },
             xl: {
                 backgroundImage: 'headerBackgroundImageXl.png',
                 height: 5,
-                transition: 'all 400ms linear'
+                transition: 'all 400ms linear',
+                logoContainerWidth: 16
             }
         }
     };
@@ -59,7 +65,6 @@ describe('Header calculateStyles', () => {
                 position: 'fixed',
                 top: 0
             },
-
             logotypeColumn: {
                 display: 'flex',
                 flexDirection: 'column',
@@ -74,6 +79,9 @@ describe('Header calculateStyles', () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     backgroundColor: '#322C27'
+                },
+                headerLogoContainer: {
+                    width: 11.25
                 },
                 headerPadding: {
                     paddingTop: 3.4375
@@ -95,12 +103,39 @@ describe('Header calculateStyles', () => {
                         height: 2.5
                     }
                 },
+                headerLogoContainer: {
+                    width: 16,
+                    '&.shrinkedHeader': {
+                        transition: 'all 400ms linear',
+                        width: 8
+                    }
+                },
                 headerPadding: {
                     paddingTop: 5
                 }
             }
         };
         const calculatedStyle = calculateStyles(defaultThemeObject);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getHeaderLogoContainerStyle should create expected object from "xs" grid size', () => {
+        const expectedResult = {
+            width: 11.25
+        };
+        const calculatedStyle = getHeaderLogoContainerStyle('xs', defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getHeaderLogoContainerStyle should create expected object from "xl" grid size', () => {
+        const expectedResult = {
+            width: 16,
+            '&.shrinkedHeader': {
+                transition: 'all 400ms linear',
+                width: 8
+            }
+        };
+        const calculatedStyle = getHeaderLogoContainerStyle('xl', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
     });
 
@@ -197,7 +232,7 @@ describe('Header calculateStyles', () => {
         expect(calculatedStyle.name).toEqual('getLgXlStyle');
     });
 
-    it('constructMediaModelForCurrentSize with param xs should expected object', () => {
+    it('constructMediaModelForCurrentSize with param xl should expected object', () => {
         const {header, grid} = defaultThemeObject;
         const {mediaMinString, mediaMaxString} = grid.containers[1];
 
@@ -216,6 +251,13 @@ describe('Header calculateStyles', () => {
                     width: '100%'},
                 headerPadding: {
                     paddingTop: 5
+                },
+                headerLogoContainer: {
+                    width: 16,
+                    '&.shrinkedHeader': {
+                        transition: 'all 400ms linear',
+                        width: 8
+                    }
                 }
             }
         };

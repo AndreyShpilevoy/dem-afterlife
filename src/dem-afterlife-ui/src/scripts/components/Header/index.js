@@ -32,12 +32,13 @@ export class HeaderPure extends Component {
         const {classNames} = this.props;
         const {shrinkedHeader} = this.state;
         const headerClassName = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
+        const headerLogoContainerClassName = shrinkedHeader ? `${classNames.headerLogoContainer} shrinkedHeader` : classNames.headerLogoContainer;
         return (
             <div>
                 <Container className={classNames.fixedOnTheTop}>
                     <div className={headerClassName}>
-                        <Column xs='6' className={classNames.logotypeColumn}>
-                            <Logotype/>
+                        <Column xs={6} className={classNames.logotypeColumn}>
+                            <Logotype className={headerLogoContainerClassName}/>
                         </Column>
                     </div>
                 </Container>

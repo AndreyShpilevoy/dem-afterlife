@@ -7,12 +7,15 @@ import {NotificationPure} from './index';
 jest.mock('styles/styler');
 
 describe('Notification Pure', () => {
+    const props = {
+        removeNotification: () => {}
+    };
     it('component without notifications match expected snapshot', () => {
-        expect(mount(<NotificationPure/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<NotificationPure {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component with 2 notifications match expected snapshot', () => {
-        const wrapper = mount(<NotificationPure/>, {lifecycleExperimental: true});
+        const wrapper = mount(<NotificationPure {...props}/>, {lifecycleExperimental: true});
         wrapper.setProps({
             notifications: [{
                 message: 'message',

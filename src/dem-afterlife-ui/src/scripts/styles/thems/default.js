@@ -45,25 +45,30 @@ const defaultTheme = {
     header: {
         xs: {
             height: 3.4375,
-            backgroundColor: colors.headerBackground
+            backgroundColor: colors.headerBackground,
+            logoContainerWidth: 11.25
         },
         sm: {
             height: 3.4375,
-            backgroundColor: colors.headerBackground
+            backgroundColor: colors.headerBackground,
+            logoContainerWidth: 11.25
         },
         md: {
             backgroundImage: headerBackgroundImageMd,
-            height: 3.75
+            height: 3.75,
+            logoContainerWidth: 12.1875
         },
         lg: {
             backgroundImage: headerBackgroundImageLg,
             height: 5,
-            transition: 'all 400ms linear'
+            transition: 'all 400ms linear',
+            logoContainerWidth: 16
         },
         xl: {
             backgroundImage: headerBackgroundImageXl,
             height: 5,
-            transition: 'all 400ms linear'
+            transition: 'all 400ms linear',
+            logoContainerWidth: 16
         }
     },
     logotype: {

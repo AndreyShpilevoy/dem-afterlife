@@ -20,6 +20,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
       },
     ]
   }
+  removeNotification={[Function]}
 >
   <NotificationSystem
     allowHTML={false}
@@ -360,7 +361,9 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
 `;
 
 exports[`Notification Pure component without notifications match expected snapshot 1`] = `
-<NotificationPure>
+<NotificationPure
+  removeNotification={[Function]}
+>
   <NotificationSystem
     allowHTML={false}
     noAnimation={false}

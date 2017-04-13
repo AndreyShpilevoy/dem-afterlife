@@ -6,8 +6,7 @@ const calculateStyles = ({logotype}) => ({
         height: '100%'
     },
     logotypeContainer: {
-        height: logotype.height,
-        display: 'block'
+        height: logotype.height
     }
 });
 

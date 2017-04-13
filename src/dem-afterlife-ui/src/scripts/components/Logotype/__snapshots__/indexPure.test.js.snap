@@ -2,7 +2,7 @@
 
 exports[`Logotype Pure component match expected snapshot 1`] = `
 <Link
-  className="logotypeContainer-0-1"
+  className="logotypeContainer-0-1 "
   replace={false}
   to="/"
 >

@@ -26,7 +26,7 @@ export class NotificationPure extends React.Component {
                     number
                 ])
             })
-        ).isRequired,
+        ),
         removeNotification: func.isRequired
     };
 
