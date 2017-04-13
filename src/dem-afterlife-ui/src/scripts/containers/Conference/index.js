@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 import Presentation from './Presentation';
 
 const Conference = ({children}) =>
-    <Presentation children={children}/>;
+    <Presentation>
+        {children}
+    </Presentation>;
 
 Conference.propTypes = {
     children: node

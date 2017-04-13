@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Presentation component match expected snapshot 1`] = `
+<ThemeProvider
+  name="default"
+>
+  <ContainerPure>
+    <Connect(NotificationPure) />
+    <RowPure>
+      <HeaderPure />
+    </RowPure>
+    <RowPure>
+      <ColumnPure
+        xs={12}
+      >
+        <div>
+          Layout Presentation content
+        </div>
+      </ColumnPure>
+    </RowPure>
+    <RowPure />
+  </ContainerPure>
+</ThemeProvider>
+`;

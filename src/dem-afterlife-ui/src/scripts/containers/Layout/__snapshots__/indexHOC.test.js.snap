@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout HOC component match expected snapshot 1`] = `
+<Connect(Layout)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Layout
+    getLocale={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <Presentation
+      theme="default"
+    >
+      <div>
+        <div>
+          Layout content
+        </div>
+      </div>
+    </Presentation>
+  </Layout>
+</Connect(Layout)>
+`;

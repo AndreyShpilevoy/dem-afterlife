@@ -19,9 +19,9 @@ class Layout extends Component {
 
     render() {
         return (
-            <Presentation
-                children={this.props.children}
-                theme={'default'} />
+            <Presentation theme={ 'default' }>
+                {this.props.children}
+            </Presentation>
         );
     }
 }
