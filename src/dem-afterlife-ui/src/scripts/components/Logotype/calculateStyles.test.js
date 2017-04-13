@@ -20,7 +20,8 @@ describe('Logotype calculateStyles', () => {
                 height: '100%'
             },
             logotypeContainer: {
-                height: '81.5%'
+                height: '81.5%',
+                display: 'block'
             }
         };
         const calculatedStyle = calculateStyles(defaultThemeObject);

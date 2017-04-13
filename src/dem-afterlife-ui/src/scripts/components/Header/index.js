@@ -6,6 +6,7 @@ import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
+import Column from '../Column';
 import Logotype from '../Logotype';
 
 export class HeaderPure extends Component {
@@ -35,7 +36,9 @@ export class HeaderPure extends Component {
             <div>
                 <Container className={classNames.fixedOnTheTop}>
                     <div className={headerClassName}>
-                        <Logotype/>
+                        <Column xs='6' className={classNames.logotypeColumn}>
+                            <Logotype/>
+                        </Column>
                     </div>
                 </Container>
                 <div className={classNames.headerPadding} ref={this.handleScroll} />

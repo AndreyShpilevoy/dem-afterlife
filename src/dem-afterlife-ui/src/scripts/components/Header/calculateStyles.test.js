@@ -59,6 +59,13 @@ describe('Header calculateStyles', () => {
                 position: 'fixed',
                 top: 0
             },
+
+            logotypeColumn: {
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                'min-height': '100%'
+            },
             '@media (min-width: 0px) and (max-width: 575px)': {
                 header: {
                     height: 3.4375,

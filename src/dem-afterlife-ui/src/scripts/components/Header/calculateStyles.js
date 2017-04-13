@@ -46,7 +46,15 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
 const calculateStyles = ({grid, header}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         R.merge(previous, constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header)),
-        {fixedOnTheTop: {position: 'fixed', top: 0} }
+        {
+            fixedOnTheTop: {position: 'fixed', top: 0},
+            logotypeColumn: {
+                'min-height': '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+            }
+        }
     );
 
 export default calculateStyles;

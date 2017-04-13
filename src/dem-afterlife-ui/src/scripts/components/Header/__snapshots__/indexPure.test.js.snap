@@ -8,7 +8,11 @@ exports[`Header Pure component match expected snapshot 1`] = `
     <div
       className="header-0-1"
     >
-      <LogotypePure />
+      <ColumnPure
+        xs="6"
+      >
+        <LogotypePure />
+      </ColumnPure>
     </div>
   </ContainerPure>
   <div
@@ -35,7 +39,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       <div
         className="header-0-1"
       >
-        <LogotypePure />
+        <ColumnPure
+          xs="6"
+        >
+          <LogotypePure />
+        </ColumnPure>
       </div>
     </ContainerPure>
     <div
@@ -63,7 +71,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       <div
         className="header-0-1 shrinkedHeader"
       >
-        <LogotypePure />
+        <ColumnPure
+          xs="6"
+        >
+          <LogotypePure />
+        </ColumnPure>
       </div>
     </ContainerPure>
     <div
