@@ -1,4 +1,4 @@
-import {createMediaQueryMinMax} from 'utils';
+import {createMediaQueryMin} from 'utils';
 
 export const calculateColumnStyles = gridSize =>
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce((previouse, current) => {
@@ -15,8 +15,8 @@ export const calculateColumnStyles = gridSize =>
     }, {});
 
 const calculateStyles = ({grid}) =>
-    grid.containers.reduce((previouse, {gridSize, mediaMinString, mediaMaxString}) => (
-        {...previouse, ...createMediaQueryMinMax(mediaMinString, mediaMaxString, calculateColumnStyles(gridSize))}
+    grid.containers.reduce((previouse, {gridSize, mediaMinString}) => (
+        {...previouse, ...createMediaQueryMin(mediaMinString, calculateColumnStyles(gridSize))}
     ), {});
 
 export default calculateStyles;

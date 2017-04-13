@@ -1,9 +1,9 @@
-import {createMediaQueryMinMax} from 'utils';
+import {createMediaQueryMin} from 'utils';
 
 const calculateStyles = ({grid}) =>
-    grid.containers.reduce((previouse, {width, mediaMinString, mediaMaxString}) => ({
+    grid.containers.reduce((previouse, {width, mediaMinString}) => ({
         ...previouse,
-        ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {
+        ...createMediaQueryMin(mediaMinString, {
             container: {
                 width,
                 marginLeft: 'auto',

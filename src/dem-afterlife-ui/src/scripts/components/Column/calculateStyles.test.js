@@ -24,7 +24,7 @@ describe('Column calculateStyles', () => {
 
     it('should create expected object', () => {
         const expectedResult = {
-            '@media (min-width: 0px) and (max-width: 575px)': {
+            '@media (min-width: 0px)': {
                 'col-xs-1': {flexBasis: '8.333333333333334%', maxWidth: '8.333333333333334%'},
                 'col-xs-10': {flexBasis: '83.33333333333334%', maxWidth: '83.33333333333334%'},
                 'col-xs-11': {flexBasis: '91.66666666666667%', maxWidth: '91.66666666666667%'},
@@ -50,7 +50,7 @@ describe('Column calculateStyles', () => {
                 'col-xsOffset-8': {marginLeft: '66.66666666666667%'},
                 'col-xsOffset-9': {marginLeft: '75%'}
             },
-            '@media (min-width: 576px) and (max-width: 767px)': {
+            '@media (min-width: 576px)': {
                 'col-sm-1': {flexBasis: '8.333333333333334%', maxWidth: '8.333333333333334%'},
                 'col-sm-10': {flexBasis: '83.33333333333334%', maxWidth: '83.33333333333334%'},
                 'col-sm-11': {flexBasis: '91.66666666666667%', maxWidth: '91.66666666666667%'},
