@@ -76,8 +76,6 @@ describe('Header calculateStyles', () => {
                     height: 3.4375,
                     width: '100%',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
                     backgroundColor: '#322C27'
                 },
                 headerLogoContainer: {
@@ -94,8 +92,6 @@ describe('Header calculateStyles', () => {
                     height: 5,
                     width: '100%',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
                     backgroundImage: 'url(headerBackgroundImageXl.png)',
                     transition: 'all 400ms linear',
                     '&.shrinkedHeader': {
@@ -143,9 +139,7 @@ describe('Header calculateStyles', () => {
         const expectedResult = {
             height: 3.4375,
             width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
+            display: 'flex'
         };
         const calculatedStyle = getCommonHeaderStyle('xs', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
@@ -244,9 +238,7 @@ describe('Header calculateStyles', () => {
                     },
                     backgroundImage: 'url(headerBackgroundImageXl.png)',
                     display: 'flex',
-                    flexDirection: 'column',
                     height: 5,
-                    justifyContent: 'center',
                     transition: 'all 400ms linear',
                     width: '100%'},
                 headerPadding: {

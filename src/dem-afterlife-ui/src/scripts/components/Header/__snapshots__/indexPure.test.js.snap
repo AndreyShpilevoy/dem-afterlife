@@ -8,14 +8,24 @@ exports[`Header Pure component match expected snapshot 1`] = `
     <div
       className="header-0-2"
     >
-      <Aesthetic-ColumnPure
-        className="logotypeColumn-0-1"
-        xs={6}
-      >
-        <Aesthetic-LogotypePure
-          className="headerLogoContainer-0-4"
+      <Aesthetic-RowPure>
+        <Aesthetic-ColumnPure
+          className="logotypeColumn-0-1"
+          sm={4}
+          xl={3}
+          xs={6}
+        >
+          <Aesthetic-LogotypePure
+            className="headerLogoContainer-0-4"
+          />
+        </Aesthetic-ColumnPure>
+        <Aesthetic-ColumnPure
+          className="logotypeColumn-0-1"
+          sm={8}
+          xl={9}
+          xs={6}
         />
-      </Aesthetic-ColumnPure>
+      </Aesthetic-RowPure>
     </div>
   </Aesthetic-ContainerPure>
   <div
@@ -46,18 +56,32 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
         <div
           className="header-0-2"
         >
-          <Aesthetic-ColumnPure
-            className="logotypeColumn-0-1"
-            xs={6}
-          >
-            <ColumnPure>
-              <Aesthetic-LogotypePure
-                className="headerLogoContainer-0-4"
+          <Aesthetic-RowPure>
+            <RowPure>
+              <Aesthetic-ColumnPure
+                className="logotypeColumn-0-1"
+                sm={4}
+                xl={3}
+                xs={6}
               >
-                <LogotypePure />
-              </Aesthetic-LogotypePure>
-            </ColumnPure>
-          </Aesthetic-ColumnPure>
+                <ColumnPure>
+                  <Aesthetic-LogotypePure
+                    className="headerLogoContainer-0-4"
+                  >
+                    <LogotypePure />
+                  </Aesthetic-LogotypePure>
+                </ColumnPure>
+              </Aesthetic-ColumnPure>
+              <Aesthetic-ColumnPure
+                className="logotypeColumn-0-1"
+                sm={8}
+                xl={9}
+                xs={6}
+              >
+                <ColumnPure />
+              </Aesthetic-ColumnPure>
+            </RowPure>
+          </Aesthetic-RowPure>
         </div>
       </ContainerPure>
     </Aesthetic-ContainerPure>
@@ -90,18 +114,32 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
         <div
           className="header-0-2 shrinkedHeader"
         >
-          <Aesthetic-ColumnPure
-            className="logotypeColumn-0-1"
-            xs={6}
-          >
-            <ColumnPure>
-              <Aesthetic-LogotypePure
-                className="headerLogoContainer-0-4 shrinkedHeader"
+          <Aesthetic-RowPure>
+            <RowPure>
+              <Aesthetic-ColumnPure
+                className="logotypeColumn-0-1"
+                sm={4}
+                xl={3}
+                xs={6}
               >
-                <LogotypePure />
-              </Aesthetic-LogotypePure>
-            </ColumnPure>
-          </Aesthetic-ColumnPure>
+                <ColumnPure>
+                  <Aesthetic-LogotypePure
+                    className="headerLogoContainer-0-4 shrinkedHeader"
+                  >
+                    <LogotypePure />
+                  </Aesthetic-LogotypePure>
+                </ColumnPure>
+              </Aesthetic-ColumnPure>
+              <Aesthetic-ColumnPure
+                className="logotypeColumn-0-1"
+                sm={8}
+                xl={9}
+                xs={6}
+              >
+                <ColumnPure />
+              </Aesthetic-ColumnPure>
+            </RowPure>
+          </Aesthetic-RowPure>
         </div>
       </ContainerPure>
     </Aesthetic-ContainerPure>

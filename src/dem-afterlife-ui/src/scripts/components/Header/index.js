@@ -4,10 +4,11 @@ import React, {Component} from 'react';
 import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
+import Column from 'components/Column';
+import Row from 'components/Row';
+import Logotype from 'components/Logotype';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
-import Column from '../Column';
-import Logotype from '../Logotype';
 
 export class HeaderPure extends Component {
     static propTypes = {
@@ -37,9 +38,14 @@ export class HeaderPure extends Component {
             <div>
                 <Container className={classNames.fixedOnTheTop}>
                     <div className={headerClassName}>
-                        <Column xs={6} className={classNames.logotypeColumn}>
-                            <Logotype className={headerLogoContainerClassName}/>
-                        </Column>
+                        <Row>
+                            <Column xs={6} sm={4} xl={3} className={classNames.logotypeColumn}>
+                                <Logotype className={headerLogoContainerClassName}/>
+                            </Column>
+                            <Column xs={6} sm={8} xl={9} className={classNames.logotypeColumn}>
+
+                            </Column>
+                        </Row>
                     </div>
                 </Container>
                 <div className={classNames.headerPadding} ref={this.handleScroll} />

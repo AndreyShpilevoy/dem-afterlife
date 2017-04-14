@@ -3,7 +3,7 @@ const calculateStyles = () => ({
         width: '100%',
         boxSizing: 'border-box',
         display: 'flex',
-        flex: 'initial',
+        flex: '0 1 auto',
         flexDirection: 'row',
         flexWrap: 'wrap',
         '&.reverse': {
