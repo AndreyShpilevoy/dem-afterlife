@@ -762,9 +762,9 @@ babel-plugin-transform-react-jsx@^6.24.1:
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-remove-prop-types@0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.3.3.tgz#d09f48b9a9503a69c1ced39b3825c2f45d29333c"
+babel-plugin-transform-react-remove-prop-types@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.0.tgz#f63840e7953563d661be8c647b094d74d7363f17"
 
 babel-plugin-transform-regenerator@^6.24.1:
   version "6.24.1"
@@ -1658,9 +1658,9 @@ entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
-enzyme-to-json@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-1.5.0.tgz#bb94f21346866d68378adc9b26856dd6e2bfa60b"
+enzyme-to-json@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-1.5.1.tgz#e34f4d126bb3f4696ce3800b51f9ed83df708799"
   dependencies:
     lodash.filter "^4.6.0"
     lodash.isnil "^4.0.0"
@@ -1670,9 +1670,9 @@ enzyme-to-json@1.5.0:
     object-values "^1.0.0"
     object.entries "^1.0.3"
 
-enzyme@2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.8.1.tgz#53891a75c8fe4d56582c113b3da45713b8215738"
+enzyme@2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.8.2.tgz#6c8bcb05012abc4aa4bc3213fb23780b9b5b1714"
   dependencies:
     cheerio "^0.22.0"
     function.prototype.name "^1.0.0"
@@ -2452,8 +2452,8 @@ home-or-tmp@^2.0.0:
     os-tmpdir "^1.0.1"
 
 hosted-git-info@^2.1.4:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.4.1.tgz#4b0445e41c004a8bd1337773a4ff790ca40318c8"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.4.2.tgz#0076b9f46a270506ddbaaea56496897460612a67"
 
 html-encoding-sniffer@^1.0.1:
   version "1.0.1"
@@ -3161,9 +3161,9 @@ jss-camel-case@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jss-camel-case/-/jss-camel-case-4.0.0.tgz#39ef2a137aaa1e2f160ab826845305f8efabcfd5"
 
-jss-default-unit@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-6.0.0.tgz#c2fe4f6e62a319e01d9a8b19774fdda04dd5bb0e"
+jss-default-unit@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-6.1.0.tgz#ea6ca838de119c17adbce597b21ba9c20f7f4d84"
 
 jss-expand@3.0.0:
   version "3.0.0"
@@ -3185,15 +3185,15 @@ jss-props-sort@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-4.0.0.tgz#ef4239c6795ca304c18dce9e0395a1789ed9f78a"
 
-jss-vendor-prefixer@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-5.0.0.tgz#dea8e4e2cefc91f5f0bf9b8c391e583a9fb0c296"
+jss-vendor-prefixer@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-5.1.0.tgz#59b73544de81e6b2efd71f6d3b744671826865a2"
   dependencies:
     css-vendor "^0.3.8"
 
-jss@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-7.0.0.tgz#6fad0b0b429303e06c42248d50cf0fe9a6c8fd80"
+jss@7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-7.0.3.tgz#87a4ff5c9398f7ee7ddc06a6b02255a4c74d9e1b"
   dependencies:
     is-in-browser "1.0.2"
     warning "3.0.0"
