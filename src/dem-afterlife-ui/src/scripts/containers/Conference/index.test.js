@@ -5,7 +5,10 @@ import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Conference from './index';
 
-jest.mock('./Presentation');
+jest.mock('./Presentation', () => {
+    const Presentation = ({children}) => <div>{children}</div>; // eslint-disable-line react/prop-types
+    return Presentation;
+});
 
 describe('Conference HOC', () => {
     const mockStore = configureMockStore();

@@ -13,10 +13,13 @@ describe('Header Pure', () => {
     });
 
     const classNames = {
-        '.header-0-1.shrinkedHeader': 'header-0-1',
+        '.header-0-2.shrinkedHeader': 'header-0-2',
+        '.headerLogoContainer-0-4.shrinkedHeader': 'headerLogoContainer-0-4',
         fixedOnTheTop: 'fixedOnTheTop-0-0',
-        header: 'header-0-1',
-        headerPadding: 'headerPadding-0-2'
+        header: 'header-0-2',
+        headerLogoContainer: 'headerLogoContainer-0-4',
+        headerPadding: 'headerPadding-0-3',
+        logotypeColumn: 'logotypeColumn-0-1'
     };
 
     it('component match expected snapshot', () => {

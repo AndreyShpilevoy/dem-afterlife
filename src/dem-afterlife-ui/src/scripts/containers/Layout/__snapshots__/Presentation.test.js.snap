@@ -4,21 +4,21 @@ exports[`Layout Presentation component match expected snapshot 1`] = `
 <ThemeProvider
   name="default"
 >
-  <ContainerPure>
+  <Aesthetic-ContainerPure>
     <Connect(NotificationPure) />
-    <RowPure>
-      <HeaderPure />
-    </RowPure>
-    <RowPure>
-      <ColumnPure
+    <Aesthetic-RowPure>
+      <Aesthetic-HeaderPure />
+    </Aesthetic-RowPure>
+    <Aesthetic-RowPure>
+      <Aesthetic-ColumnPure
         xs={12}
       >
         <div>
           Layout Presentation content
         </div>
-      </ColumnPure>
-    </RowPure>
-    <RowPure />
-  </ContainerPure>
+      </Aesthetic-ColumnPure>
+    </Aesthetic-RowPure>
+    <Aesthetic-RowPure />
+  </Aesthetic-ContainerPure>
 </ThemeProvider>
 `;
