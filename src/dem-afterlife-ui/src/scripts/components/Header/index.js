@@ -7,6 +7,7 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Row from 'components/Row';
 import Logotype from 'components/Logotype';
+import MenuButton from 'components/MenuButton';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
@@ -43,7 +44,7 @@ export class HeaderPure extends Component {
                                 <Logotype className={headerLogoContainerClassName}/>
                             </Column>
                             <Column xs={6} sm={8} xl={9} className={classNames.logotypeColumn}>
-
+                                <MenuButton/>
                             </Column>
                         </Row>
                     </div>

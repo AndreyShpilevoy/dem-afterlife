@@ -24,7 +24,9 @@ exports[`Header Pure component match expected snapshot 1`] = `
           sm={8}
           xl={9}
           xs={6}
-        />
+        >
+          <Aesthetic-MenuButtonPure />
+        </Aesthetic-ColumnPure>
       </Aesthetic-RowPure>
     </div>
   </Aesthetic-ContainerPure>
@@ -78,7 +80,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 xl={9}
                 xs={6}
               >
-                <ColumnPure />
+                <ColumnPure>
+                  <Aesthetic-MenuButtonPure>
+                    <MenuButtonPure />
+                  </Aesthetic-MenuButtonPure>
+                </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>
           </Aesthetic-RowPure>
@@ -136,7 +142,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 xl={9}
                 xs={6}
               >
-                <ColumnPure />
+                <ColumnPure>
+                  <Aesthetic-MenuButtonPure>
+                    <MenuButtonPure />
+                  </Aesthetic-MenuButtonPure>
+                </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>
           </Aesthetic-RowPure>
