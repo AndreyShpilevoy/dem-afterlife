@@ -25,10 +25,10 @@ export class MenuButtonPure extends Component {
         const opened = this.state.opened ? 'open' : '';
         return (
             <div className={ classNames.container } onClick={this.onClick}>
-                <span className={ `${classNames.firstLine} ${classNames.allLines} ${opened}` } />
-                <span className={ `${classNames.secondLine} ${classNames.allLines} ${opened}` } />
-                <span className={ `${classNames.thirdLine} ${classNames.allLines} ${opened}` } />
-                <span className={ `${classNames.fourthLine} ${classNames.allLines} ${opened}` } />
+                <div className={ `${classNames.firstLine} ${classNames.allLines} ${opened}` } />
+                <div className={ `${classNames.secondLine} ${classNames.allLines} ${opened}` } />
+                <div className={ `${classNames.thirdLine} ${classNames.allLines} ${opened}` } />
+                <div className={ `${classNames.fourthLine} ${classNames.allLines} ${opened}` } />
             </div>
         );
     }

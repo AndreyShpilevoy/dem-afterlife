@@ -4,7 +4,8 @@ import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 
 const colors = {
-    headerBackground: '#322C27'
+    headerBackground: '#322C27',
+    orangeColor: '#AC6B37'
 };
 
 const defaultTheme = {
@@ -76,6 +77,14 @@ const defaultTheme = {
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         height: '81.5%'
+    },
+    menuButton: {
+        line: {
+            color: colors.orangeColor,
+            transition: '0.25s ease-in-out'
+        },
+        widthAndHeight: 2,
+        cursor: 'pointer'
     }
 };
 

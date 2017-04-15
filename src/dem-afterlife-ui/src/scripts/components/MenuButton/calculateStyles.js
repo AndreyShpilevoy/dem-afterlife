@@ -1,51 +1,47 @@
 const calculateStyles = ({menuButton}) => ({
     container: {
-        width: '60px',
-        height: '45px',
-        position: 'relative',
-        margin: '50px auto',
+        cursor: menuButton.cursor,
+        height: menuButton.widthAndHeight,
         transform: 'rotate(0deg)',
-        transition: '0.5s ease-in-out',
-        cursor: 'pointer'
+        width: menuButton.widthAndHeight
     },
     allLines: {
-        display: 'block',
-        position: 'absolute',
-        height: ' 9px',
-        width: '100%',
-        background: '#d3531a',
-        'border-radius': '9px',
-        opacity: 1,
+        'border-radius': '3.333%',
+        background: menuButton.line.color,
+        height: '10%',
         left: 0,
+        'margin-left': '10%',
+        position: 'absolute',
         transform: 'rotate(0deg)',
-        transition: '0.25s ease-in-out'
+        transition: menuButton.line.transition,
+        width: '80%'
     },
     firstLine: {
-        top: '0px',
+        top: '20%',
         '&.open': {
-            top: '18px',
-            width: '0%',
-            left: '50%'
-        }
-    },
-    fourthLine: {
-        top: '36px',
-        '&.open': {
-            top: '18px',
+            top: '45%',
             width: '0%',
             left: '50%'
         }
     },
     secondLine: {
-        top: '18px',
+        top: '45%',
         '&.open': {
             transform: 'rotate(45deg)'
         }
     },
     thirdLine: {
-        top: '18px',
+        top: '45%',
         '&.open': {
             transform: 'rotate(-45deg)'
+        }
+    },
+    fourthLine: {
+        top: '70%',
+        '&.open': {
+            top: '45%',
+            width: '0%',
+            left: '50%'
         }
     }
 });
