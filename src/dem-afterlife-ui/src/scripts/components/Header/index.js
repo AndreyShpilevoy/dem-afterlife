@@ -5,6 +5,7 @@ import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import Column from 'components/Column';
+import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import Logotype from 'components/Logotype';
 import MenuButton from 'components/MenuButton';
@@ -40,11 +41,16 @@ export class HeaderPure extends Component {
                 <Container className={classNames.fixedOnTheTop}>
                     <div className={headerClassName}>
                         <Row>
-                            <Column xs={6} sm={4} xl={3} className={classNames.logotypeColumn}>
+                            <Column xs={7} sm={4} xl={3} className={classNames.logotypeColumn}>
                                 <Logotype className={headerLogoContainerClassName}/>
                             </Column>
-                            <Column xs={6} sm={8} xl={9} className={classNames.logotypeColumn}>
-                                <MenuButton/>
+                            <Column xs={2} xsOffset={3}
+                                sm={1} smOffset={7}
+                                lg={8} lgOffset={0}
+                                xl={9} className={classNames.logotypeColumn}>
+                                <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
+                                    <MenuButton/>
+                                </Hidden>
                             </Column>
                         </Row>
                     </div>

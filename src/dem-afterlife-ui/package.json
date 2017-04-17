@@ -14,10 +14,11 @@
         "clean-wwwroot": "rimraf ../dem-afterlife/wwwroot && mkdirp ../dem-afterlife/wwwroot",
         "lint": "eslint --color webpack.config.* src tools",
         "lint-fix": "eslint --fix --color webpack.config.* src tools",
+        "test-cached": "cross-env BABEL_ENV=test jest",
         "test": "cross-env BABEL_ENV=test jest --no-cache",
-        "prebuild": "yarn run clean-wwwroot && yarn run lint && yarn run test",
+        "prebuild": "yarn run clean-wwwroot && yarn run lint && yarn run test-cached",
         "build": "cross-env BABEL_ENV=production babel-node tools/distServer.js",
-        "prestart": "yarn run test",
+        "prestart": "yarn run test-cached",
         "start": "cross-env BABEL_ENV=development babel-node tools/srcServer.js"
     },
     "jest": {

@@ -13,7 +13,7 @@ exports[`Header Pure component match expected snapshot 1`] = `
           className="logotypeColumn-0-1"
           sm={4}
           xl={3}
-          xs={6}
+          xs={7}
         >
           <Aesthetic-LogotypePure
             className="headerLogoContainer-0-4"
@@ -21,11 +21,19 @@ exports[`Header Pure component match expected snapshot 1`] = `
         </Aesthetic-ColumnPure>
         <Aesthetic-ColumnPure
           className="logotypeColumn-0-1"
-          sm={8}
+          lg={8}
+          lgOffset={0}
+          sm={1}
+          smOffset={7}
           xl={9}
-          xs={6}
+          xs={2}
+          xsOffset={3}
         >
-          <Aesthetic-MenuButtonPure />
+          <Aesthetic-HiddenPure
+            lg="up"
+          >
+            <Aesthetic-MenuButtonPure />
+          </Aesthetic-HiddenPure>
         </Aesthetic-ColumnPure>
       </Aesthetic-RowPure>
     </div>
@@ -64,7 +72,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 className="logotypeColumn-0-1"
                 sm={4}
                 xl={3}
-                xs={6}
+                xs={7}
               >
                 <ColumnPure>
                   <Aesthetic-LogotypePure
@@ -76,14 +84,24 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
                 className="logotypeColumn-0-1"
-                sm={8}
+                lg={8}
+                lgOffset={0}
+                sm={1}
+                smOffset={7}
                 xl={9}
-                xs={6}
+                xs={2}
+                xsOffset={3}
               >
                 <ColumnPure>
-                  <Aesthetic-MenuButtonPure>
-                    <MenuButtonPure />
-                  </Aesthetic-MenuButtonPure>
+                  <Aesthetic-HiddenPure
+                    lg="up"
+                  >
+                    <HiddenPure>
+                      <Aesthetic-MenuButtonPure>
+                        <MenuButtonPure />
+                      </Aesthetic-MenuButtonPure>
+                    </HiddenPure>
+                  </Aesthetic-HiddenPure>
                 </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>
@@ -126,7 +144,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 className="logotypeColumn-0-1"
                 sm={4}
                 xl={3}
-                xs={6}
+                xs={7}
               >
                 <ColumnPure>
                   <Aesthetic-LogotypePure
@@ -138,14 +156,24 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
                 className="logotypeColumn-0-1"
-                sm={8}
+                lg={8}
+                lgOffset={0}
+                sm={1}
+                smOffset={7}
                 xl={9}
-                xs={6}
+                xs={2}
+                xsOffset={3}
               >
                 <ColumnPure>
-                  <Aesthetic-MenuButtonPure>
-                    <MenuButtonPure />
-                  </Aesthetic-MenuButtonPure>
+                  <Aesthetic-HiddenPure
+                    lg="up"
+                  >
+                    <HiddenPure>
+                      <Aesthetic-MenuButtonPure>
+                        <MenuButtonPure />
+                      </Aesthetic-MenuButtonPure>
+                    </HiddenPure>
+                  </Aesthetic-HiddenPure>
                 </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>

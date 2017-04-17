@@ -7,7 +7,8 @@ import calculateStyles, {
     getLgXlStyle,
     getSpecificStyle,
     constructMediaModelForCurrentSize,
-    getHeaderLogoContainerStyle
+    getHeaderLogoContainerStyle,
+    getHeaderMenuButtonContainerStyle
 } from './calculateStyles';
 
 describe('Header calculateStyles', () => {
@@ -55,6 +56,14 @@ describe('Header calculateStyles', () => {
                 height: 5,
                 transition: 'all 400ms linear',
                 logoContainerWidth: 16
+            },
+            logotypeContainer: {
+                'margin-left': 0.3125,
+                'margin-right': 'auto'
+            },
+            menuButtonContainer: {
+                'margin-left': 'auto',
+                'margin-right': 0.3125
             }
         }
     };
@@ -79,7 +88,13 @@ describe('Header calculateStyles', () => {
                     backgroundColor: '#322C27'
                 },
                 headerLogoContainer: {
-                    width: 11.25
+                    width: 11.25,
+                    'margin-left': 0.3125,
+                    'margin-right': 'auto'
+                },
+                headerMenuButtonContainer: {
+                    'margin-left': 'auto',
+                    'margin-right': 0.3125
                 },
                 headerPadding: {
                     paddingTop: 3.4375
@@ -101,10 +116,17 @@ describe('Header calculateStyles', () => {
                 },
                 headerLogoContainer: {
                     width: 16,
+                    'margin-left': 0.3125,
+                    'margin-right': 'auto',
                     '&.shrinkedHeader': {
                         transition: 'all 400ms linear',
                         width: 8
+
                     }
+                },
+                headerMenuButtonContainer: {
+                    'margin-left': 'auto',
+                    'margin-right': 0.3125
                 },
                 headerPadding: {
                     paddingTop: 5
@@ -117,7 +139,10 @@ describe('Header calculateStyles', () => {
 
     it('getHeaderLogoContainerStyle should create expected object from "xs" grid size', () => {
         const expectedResult = {
-            width: 11.25
+            width: 11.25,
+            'margin-left': 0.3125,
+            'margin-right': 'auto'
+
         };
         const calculatedStyle = getHeaderLogoContainerStyle('xs', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
@@ -126,12 +151,23 @@ describe('Header calculateStyles', () => {
     it('getHeaderLogoContainerStyle should create expected object from "xl" grid size', () => {
         const expectedResult = {
             width: 16,
+            'margin-left': 0.3125,
+            'margin-right': 'auto',
             '&.shrinkedHeader': {
                 transition: 'all 400ms linear',
                 width: 8
             }
         };
         const calculatedStyle = getHeaderLogoContainerStyle('xl', defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getHeaderMenuButtonContainerStyle should create expected object from "xl" grid size', () => {
+        const expectedResult = {
+            'margin-left': 'auto',
+            'margin-right': 0.3125
+        };
+        const calculatedStyle = getHeaderMenuButtonContainerStyle(defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
     });
 
@@ -246,10 +282,16 @@ describe('Header calculateStyles', () => {
                 },
                 headerLogoContainer: {
                     width: 16,
+                    'margin-left': 0.3125,
+                    'margin-right': 'auto',
                     '&.shrinkedHeader': {
                         transition: 'all 400ms linear',
                         width: 8
                     }
+                },
+                headerMenuButtonContainer: {
+                    'margin-left': 'auto',
+                    'margin-right': 0.3125
                 }
             }
         };

@@ -26,14 +26,26 @@ export const getLgXlStyle = (gridSize, headerStyles) => ({
 
 export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => {
     if (gridSize !== 'lg' && gridSize !== 'xl') {
-        return {width: headerStyles[gridSize].logoContainerWidth};
+        return {
+            width: headerStyles[gridSize].logoContainerWidth,
+            'margin-left': headerStyles.logotypeContainer['margin-left'],
+            'margin-right': headerStyles.logotypeContainer['margin-right']
+        };
     }
-    return {width: headerStyles[gridSize].logoContainerWidth,
+    return {
+        width: headerStyles[gridSize].logoContainerWidth,
+        'margin-left': headerStyles.logotypeContainer['margin-left'],
+        'margin-right': headerStyles.logotypeContainer['margin-right'],
         '&.shrinkedHeader': {
             transition: headerStyles[`${gridSize}`].transition,
             width: headerStyles[gridSize].logoContainerWidth / 2
         } };
 };
+
+export const getHeaderMenuButtonContainerStyle = headerStyles => ({
+    'margin-left': headerStyles.menuButtonContainer['margin-left'],
+    'margin-right': headerStyles.menuButtonContainer['margin-right']
+});
 
 export const getSpecificStyle = gridSize => {
     const specificStyles = {
@@ -50,7 +62,8 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
         header: R.merge(getCommonHeaderStyle(gridSize, headerStyles), getSpecificStyle(gridSize)(gridSize, headerStyles)),
         headerPadding: {paddingTop: headerStyles[gridSize].height},
-        headerLogoContainer: getHeaderLogoContainerStyle(gridSize, headerStyles)
+        headerLogoContainer: getHeaderLogoContainerStyle(gridSize, headerStyles),
+        headerMenuButtonContainer: getHeaderMenuButtonContainerStyle(headerStyles)
     });
 
 const calculateStyles = ({grid, header}) =>

@@ -70,6 +70,14 @@ const defaultTheme = {
             height: 5,
             transition: 'all 400ms linear',
             logoContainerWidth: 16
+        },
+        logotypeContainer: {
+            'margin-left': 0.3125,
+            'margin-right': 'auto'
+        },
+        menuButtonContainer: {
+            'margin-left': 'auto',
+            'margin-right': 0.3125
         }
     },
     logotype: {
