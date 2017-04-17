@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuButton HOC match expected snapshot 1`] = `
+<MenuButtonPure
+  classNames={
+    Object {
+      ".firstLine-0-2.open": ".firstLine-0-2.open-0-6",
+      ".fourthLine-0-5.open": ".fourthLine-0-5.open-0-9",
+      ".secondLine-0-3.open": ".secondLine-0-3.open-0-7",
+      ".thirdLine-0-4.open": ".thirdLine-0-4.open-0-8",
+      "allLines": "allLines-0-1",
+      "container": "container-0-0",
+      "firstLine": "firstLine-0-2",
+      "fourthLine": "fourthLine-0-5",
+      "secondLine": "secondLine-0-3",
+      "thirdLine": "thirdLine-0-4",
+    }
+  }
+  theme="default"
+/>
+`;

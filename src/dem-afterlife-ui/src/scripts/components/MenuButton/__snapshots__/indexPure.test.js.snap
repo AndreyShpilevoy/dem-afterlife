@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuButton Pure after click on button child divs should added open css class name to theyr classNames component match expected snapshot 1`] = `
+<div
+  className="container-0-0"
+  onClick={[Function]}
+>
+  <div
+    className="firstLine-0-2 allLines-0-1 open"
+  />
+  <div
+    className="secondLine-0-3 allLines-0-1 open"
+  />
+  <div
+    className="thirdLine-0-4 allLines-0-1 open"
+  />
+  <div
+    className="fourthLine-0-5 allLines-0-1 open"
+  />
+</div>
+`;
+
+exports[`MenuButton Pure component match expected snapshot 1`] = `
+<div
+  className="container-0-0"
+  onClick={[Function]}
+>
+  <div
+    className="firstLine-0-2 allLines-0-1 "
+  />
+  <div
+    className="secondLine-0-3 allLines-0-1 "
+  />
+  <div
+    className="thirdLine-0-4 allLines-0-1 "
+  />
+  <div
+    className="fourthLine-0-5 allLines-0-1 "
+  />
+</div>
+`;
