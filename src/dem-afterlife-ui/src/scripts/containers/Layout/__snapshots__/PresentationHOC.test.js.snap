@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Presentation component match expected snapshot 1`] = `
+<PresentationPure
+  classNames={Object {}}
+  theme="default"
+>
+  <div>
+    Layout Presentation content
+  </div>
+</PresentationPure>
+`;

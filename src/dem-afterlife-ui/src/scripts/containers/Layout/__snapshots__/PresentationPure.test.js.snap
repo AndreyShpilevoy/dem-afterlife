@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout Presentation component match expected snapshot 1`] = `
+exports[`Layout Presentation Pure component match expected snapshot 1`] = `
 <ThemeProvider
   name="default"
 >

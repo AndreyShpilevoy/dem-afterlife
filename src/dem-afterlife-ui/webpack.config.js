@@ -19,6 +19,7 @@ const entryPoints = {
         'jss-default-unit',
         'jss-expand',
         'jss-extend',
+        'jss-global',
         'jss-nested',
         'jss-props-sort',
         'jss-vendor-prefixer',

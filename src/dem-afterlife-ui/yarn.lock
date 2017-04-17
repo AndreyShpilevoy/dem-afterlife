@@ -3175,6 +3175,10 @@ jss-extend@4.0.0:
   dependencies:
     warning "^3.0.0"
 
+jss-global@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jss-global/-/jss-global-1.0.0.tgz#ba87850cd56d32e0623c3878fd5ef376a61e6f65"
+
 jss-nested@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jss-nested/-/jss-nested-4.0.0.tgz#70d8aaaeb0ae1c0ca6ac74b329255b71e58bf72e"

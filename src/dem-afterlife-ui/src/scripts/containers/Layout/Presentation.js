@@ -6,8 +6,10 @@ import Container from 'components/Container';
 import Row from 'components/Row';
 import Column from 'components/Column';
 import Header from 'components/Header';
+import styler from 'styles/styler';
+import globalStyles from './globalStyles';
 
-const Presentation = ({children, theme}) =>
+export const PresentationPure = ({children, theme}) =>
     <ThemeProvider name={theme}>
         <Container>
             {/* title*/}
@@ -26,9 +28,9 @@ const Presentation = ({children, theme}) =>
         </Container>
     </ThemeProvider>;
 
-Presentation.propTypes = {
+PresentationPure.propTypes = {
     children: node,
     theme: string
 };
 
-export default Presentation;
+export default styler(globalStyles)(PresentationPure);

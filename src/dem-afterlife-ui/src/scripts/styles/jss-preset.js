@@ -1,4 +1,5 @@
 import jss from 'jss';
+import jssGlobal from 'jss-global';
 import jssExtend from 'jss-extend';
 import jssNested from 'jss-nested';
 import jssCamelCase from 'jss-camel-case';
@@ -9,6 +10,7 @@ import jssPropsSort from 'jss-props-sort';
 import defaultUnits from './defaultUnits';
 
 
+jss.use(jssGlobal());
 jss.use(jssExtend());
 jss.use(jssNested());
 jss.use(jssCamelCase());
