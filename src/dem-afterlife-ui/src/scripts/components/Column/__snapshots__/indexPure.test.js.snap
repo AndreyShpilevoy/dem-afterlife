@@ -22,7 +22,7 @@ exports[`Column Pure component with wrong xs="wrong" match expected snapshot 1`]
 
 exports[`Column Pure component with xs="1" md="3" xl="12" xsOffset="1" mdOffset="3" xlOffset="12" match expected snapshot 1`] = `
 <div
-  className=" col-xs-1-0-0 col-md-3-0-52 col-xl-12-0-118 col-xsOffset-1-0-1 col-mdOffset-3-0-53 col-xlOffset-12-0-119 "
+  className=" col-xs-1-0-2 col-md-3-0-58 col-xl-12-0-128 col-xsOffset-1-0-3 col-mdOffset-3-0-59 col-xlOffset-12-0-129 "
 >
   <div>
     Column content

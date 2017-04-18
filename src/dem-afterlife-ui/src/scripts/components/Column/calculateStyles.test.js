@@ -25,6 +25,7 @@ describe('Column calculateStyles', () => {
     it('should create expected object', () => {
         const expectedResult = {
             '@media (min-width: 0px)': {
+                'col-xs-0': {flexBasis: '0%', maxWidth: '0%'},
                 'col-xs-1': {flexBasis: '8.333333333333334%', maxWidth: '8.333333333333334%'},
                 'col-xs-10': {flexBasis: '83.33333333333334%', maxWidth: '83.33333333333334%'},
                 'col-xs-11': {flexBasis: '91.66666666666667%', maxWidth: '91.66666666666667%'},
@@ -37,6 +38,7 @@ describe('Column calculateStyles', () => {
                 'col-xs-7': {flexBasis: '58.333333333333336%', maxWidth: '58.333333333333336%'},
                 'col-xs-8': {flexBasis: '66.66666666666667%', maxWidth: '66.66666666666667%'},
                 'col-xs-9': {flexBasis: '75%', maxWidth: '75%'},
+                'col-xsOffset-0': {marginLeft: '0%'},
                 'col-xsOffset-1': {marginLeft: '8.333333333333334%'},
                 'col-xsOffset-10': {marginLeft: '83.33333333333334%'},
                 'col-xsOffset-11': {marginLeft: '91.66666666666667%'},
@@ -51,6 +53,7 @@ describe('Column calculateStyles', () => {
                 'col-xsOffset-9': {marginLeft: '75%'}
             },
             '@media (min-width: 576px)': {
+                'col-sm-0': {flexBasis: '0%', maxWidth: '0%'},
                 'col-sm-1': {flexBasis: '8.333333333333334%', maxWidth: '8.333333333333334%'},
                 'col-sm-10': {flexBasis: '83.33333333333334%', maxWidth: '83.33333333333334%'},
                 'col-sm-11': {flexBasis: '91.66666666666667%', maxWidth: '91.66666666666667%'},
@@ -63,6 +66,7 @@ describe('Column calculateStyles', () => {
                 'col-sm-7': {flexBasis: '58.333333333333336%', maxWidth: '58.333333333333336%'},
                 'col-sm-8': {flexBasis: '66.66666666666667%', maxWidth: '66.66666666666667%'},
                 'col-sm-9': {flexBasis: '75%', maxWidth: '75%'},
+                'col-smOffset-0': {marginLeft: '0%'},
                 'col-smOffset-1': {marginLeft: '8.333333333333334%'},
                 'col-smOffset-10': {marginLeft: '83.33333333333334%'},
                 'col-smOffset-11': {marginLeft: '91.66666666666667%'},
@@ -83,6 +87,7 @@ describe('Column calculateStyles', () => {
 
     it('calculateColumnStyles should create expected object', () => {
         const expectedResult = {
+            'col-sm-0': {flexBasis: '0%', maxWidth: '0%'},
             'col-sm-1': {flexBasis: '8.333333333333334%', maxWidth: '8.333333333333334%'},
             'col-sm-10': {flexBasis: '83.33333333333334%', maxWidth: '83.33333333333334%'},
             'col-sm-11': {flexBasis: '91.66666666666667%', maxWidth: '91.66666666666667%'},
@@ -95,6 +100,7 @@ describe('Column calculateStyles', () => {
             'col-sm-7': {flexBasis: '58.333333333333336%', maxWidth: '58.333333333333336%'},
             'col-sm-8': {flexBasis: '66.66666666666667%', maxWidth: '66.66666666666667%'},
             'col-sm-9': {flexBasis: '75%', maxWidth: '75%'},
+            'col-smOffset-0': {marginLeft: '0%'},
             'col-smOffset-1': {marginLeft: '8.333333333333334%'},
             'col-smOffset-10': {marginLeft: '83.33333333333334%'},
             'col-smOffset-11': {marginLeft: '91.66666666666667%'},

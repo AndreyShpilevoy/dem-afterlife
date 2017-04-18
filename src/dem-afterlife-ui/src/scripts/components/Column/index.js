@@ -5,7 +5,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, classNames) =>
-    sizesArray.filter(size => size.count)
+    sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
