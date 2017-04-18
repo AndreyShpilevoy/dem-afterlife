@@ -5,7 +5,30 @@ import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 
 const colors = {
     headerBackground: '#322C27',
+    navigationLinksBackground: '#252525',
     orangeColor: '#AC6B37'
+};
+
+const headerXsSm = {
+    height: 3.4375,
+    backgroundColor: colors.headerBackground,
+    logoContainerWidth: 11.25
+};
+
+const headerLgXl = {
+    backgroundImage: headerBackgroundImageLg,
+    height: 5,
+    transition: 'all 400ms linear',
+    logoContainerWidth: 16
+};
+
+const headerRightColumns = {
+    'margin-left': 'auto',
+    'margin-right': 0.3125
+};
+
+const navigationLinksXsSmMd = {
+    'background-color': colors.navigationLinksBackground
 };
 
 const defaultTheme = {
@@ -44,45 +67,21 @@ const defaultTheme = {
         ]
     },
     header: {
-        xs: {
-            height: 3.4375,
-            backgroundColor: colors.headerBackground,
-            logoContainerWidth: 11.25
-        },
-        sm: {
-            height: 3.4375,
-            backgroundColor: colors.headerBackground,
-            logoContainerWidth: 11.25
-        },
+        xs: headerXsSm,
+        sm: headerXsSm,
         md: {
             backgroundImage: headerBackgroundImageMd,
             height: 3.75,
             logoContainerWidth: 12.1875
         },
-        lg: {
-            backgroundImage: headerBackgroundImageLg,
-            height: 5,
-            transition: 'all 400ms linear',
-            logoContainerWidth: 16
-        },
-        xl: {
-            backgroundImage: headerBackgroundImageXl,
-            height: 5,
-            transition: 'all 400ms linear',
-            logoContainerWidth: 16
-        },
+        lg: headerLgXl,
+        xl: headerLgXl,
         logotypeContainer: {
             'margin-left': 0.3125,
             'margin-right': 'auto'
         },
-        menuButtonContainer: {
-            'margin-left': 'auto',
-            'margin-right': 0.3125
-        },
-        navigationLinks: {
-            'margin-left': 'auto',
-            'margin-right': 0.3125
-        }
+        menuButtonContainer: headerRightColumns,
+        navigationLinks: headerRightColumns
     },
     logotype: {
         backgroundImage: headerLogotypeImage,
@@ -97,6 +96,13 @@ const defaultTheme = {
         },
         widthAndHeight: 2,
         cursor: 'pointer'
+    },
+    navigationLinks: {
+        xs: navigationLinksXsSmMd,
+        sm: navigationLinksXsSmMd,
+        md: navigationLinksXsSmMd,
+        lg: {},
+        xl: {}
     }
 };
 

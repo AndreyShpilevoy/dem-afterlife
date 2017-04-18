@@ -13,7 +13,7 @@ const mapNavigationLinks = navigationLinkArray =>
     );
 
 export const NavigationLinkArrayPure = ({classNames, className, navigationLinkArray}) =>
-    <ul className={className || ''}>
+    <ul className={`${classNames.list} ${className || ''}`}>
         {mapNavigationLinks(navigationLinkArray || [])}
     </ul>;
 
