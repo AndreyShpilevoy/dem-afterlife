@@ -1,6 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {Component} from 'react';
+import {arrayOf, shape, number, string} from 'prop-types';
 import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
@@ -9,12 +10,20 @@ import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import Logotype from 'components/Logotype';
 import MenuButton from 'components/MenuButton';
+import NavigationLinkArray from 'components/NavigationLinkArray';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 export class HeaderPure extends Component {
     static propTypes = {
-        classNames: ClassNamesPropType
+        classNames: ClassNamesPropType,
+        navigationLinkArray: arrayOf(
+        shape({
+            id: number.isRequired,
+            title: string.isRequired,
+            href: string.isRequired,
+            order: number.isRequired
+        })).isRequired
     };
 
     constructor(props) {
@@ -32,7 +41,7 @@ export class HeaderPure extends Component {
     };
 
     render() {
-        const {classNames} = this.props;
+        const {classNames, navigationLinkArray} = this.props;
         const {shrinkedHeader} = this.state;
         const headerClassName = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
         const headerLogoContainerClassName = shrinkedHeader ? `${classNames.headerLogoContainer} shrinkedHeader` : classNames.headerLogoContainer;
@@ -51,6 +60,7 @@ export class HeaderPure extends Component {
                                 <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
                                     <MenuButton/>
                                 </Hidden>
+                                <NavigationLinkArray navigationLinkArray={navigationLinkArray}/>
                             </Column>
                         </Row>
                     </div>

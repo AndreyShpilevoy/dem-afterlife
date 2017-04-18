@@ -14,7 +14,7 @@ describe('Layout HOC', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot', () => {
-        const props = {store: mockStore({layoutReducer: {locale: 'ru'} })};
+        const props = {store: mockStore({layoutReducer: {locale: 'ru', navigationLinkArray: [] } })};
         expect(mount(<Layout {...props}><div>{'Layout content'}</div></Layout>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

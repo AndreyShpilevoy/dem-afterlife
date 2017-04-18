@@ -6,6 +6,6 @@ import Presentation from './Presentation';
 
 describe('Layout Presentation', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Presentation theme={'default'}><div>{'Layout Presentation content'}</div></Presentation>)).toMatchSnapshot();
+        expect(shallow(<Presentation theme={'default'} navigationLinkArray={[]}><div>{'Layout Presentation content'}</div></Presentation>)).toMatchSnapshot();
     });
 });

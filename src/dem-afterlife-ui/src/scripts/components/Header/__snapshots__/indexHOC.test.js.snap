@@ -14,6 +14,7 @@ exports[`Header HOC component match expected snapshot 1`] = `
       "logotypeColumn": "logotypeColumn-0-1",
     }
   }
+  navigationLinkArray={Array []}
   theme="default"
 />
 `;

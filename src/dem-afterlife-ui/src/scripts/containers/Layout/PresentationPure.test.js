@@ -8,6 +8,6 @@ jest.mock('styles/styler');
 
 describe('Layout Presentation Pure', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<PresentationPure theme={'default'}><div>{'Layout Presentation content'}</div></PresentationPure>)).toMatchSnapshot();
+        expect(shallow(<PresentationPure theme={'default'} navigationLinkArray={[]}><div>{'Layout Presentation content'}</div></PresentationPure>)).toMatchSnapshot();
     });
 });

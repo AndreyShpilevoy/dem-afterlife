@@ -6,5 +6,8 @@
     "plugins": [
         "react",
         "fp"
-    ]
+    ],
+    "rules": {
+        "fp/no-mutating-methods": ["error", {"allowedObjects": ["R"]}]
+    }
 }

@@ -23,17 +23,17 @@ describe('Header Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<HeaderPure classNames={classNames} />)).toMatchSnapshot();
+        expect(shallow(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>)).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={classNames} />);
+        const wrapper = mount(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>);
         map.scroll({target: {scrollingElement: {scrollTop: 100} } });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 24" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={classNames} />);
+        const wrapper = mount(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>);
         map.scroll({target: {scrollingElement: {scrollTop: 24} } });
         expect(wrapper).toMatchSnapshot();
     });

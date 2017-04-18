@@ -8,6 +8,7 @@
         "fp"
     ],
     "rules": {
-        "fp/no-mutation": [2, {"exceptions": [{"property": "propTypes"}]}]
+        "fp/no-mutation": [2, {"exceptions": [{"property": "propTypes"}]}],
+        "fp/no-mutating-methods": ["error", {"allowedObjects": ["R"]}]
     }
 }

@@ -34,6 +34,9 @@ exports[`Header Pure component match expected snapshot 1`] = `
           >
             <Aesthetic-MenuButtonPure />
           </Aesthetic-HiddenPure>
+          <Aesthetic-NavigationLinkArrayPure
+            navigationLinkArray={Array []}
+          />
         </Aesthetic-ColumnPure>
       </Aesthetic-RowPure>
     </div>
@@ -57,6 +60,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       "logotypeColumn": "logotypeColumn-0-1",
     }
   }
+  navigationLinkArray={Array []}
 >
   <div>
     <Aesthetic-ContainerPure
@@ -102,6 +106,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
                   </Aesthetic-HiddenPure>
+                  <Aesthetic-NavigationLinkArrayPure
+                    navigationLinkArray={Array []}
+                  >
+                    <NavigationLinkArrayPure />
+                  </Aesthetic-NavigationLinkArrayPure>
                 </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>
@@ -129,6 +138,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       "logotypeColumn": "logotypeColumn-0-1",
     }
   }
+  navigationLinkArray={Array []}
 >
   <div>
     <Aesthetic-ContainerPure
@@ -174,6 +184,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
                   </Aesthetic-HiddenPure>
+                  <Aesthetic-NavigationLinkArrayPure
+                    navigationLinkArray={Array []}
+                  >
+                    <NavigationLinkArrayPure />
+                  </Aesthetic-NavigationLinkArrayPure>
                 </ColumnPure>
               </Aesthetic-ColumnPure>
             </RowPure>

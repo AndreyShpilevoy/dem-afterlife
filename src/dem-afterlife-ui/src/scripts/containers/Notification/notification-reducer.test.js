@@ -22,7 +22,7 @@ describe('Notification reducer', () => {
             autoDismiss: 5
         };
         const expectedResult = {
-            type: 'ADD_NOTIFICATION',
+            type: ADD_NOTIFICATION,
             payload: {
                 notification: {
                     message: 'message',
@@ -40,7 +40,7 @@ describe('Notification reducer', () => {
             autoDismiss: 5
         };
         const expectedResult = {
-            type: 'ADD_NOTIFICATION',
+            type: ADD_NOTIFICATION,
             payload: {
                 notification: {
                     message: 'message',
@@ -58,7 +58,7 @@ describe('Notification reducer', () => {
             autoDismiss: 5
         };
         const expectedResult = {
-            type: 'ADD_NOTIFICATION',
+            type: ADD_NOTIFICATION,
             payload: {
                 notification: {
                     message: 'message',
@@ -76,7 +76,7 @@ describe('Notification reducer', () => {
             autoDismiss: 5
         };
         const expectedResult = {
-            type: 'ADD_NOTIFICATION',
+            type: ADD_NOTIFICATION,
             payload: {
                 notification: {
                     message: 'message',
@@ -94,7 +94,7 @@ describe('Notification reducer', () => {
             autoDismiss: 5
         };
         const expectedResult = {
-            type: 'ADD_NOTIFICATION',
+            type: ADD_NOTIFICATION,
             payload: {
                 notification: {
                     message: 'message',
@@ -107,7 +107,7 @@ describe('Notification reducer', () => {
 
     it('removeNotification should create expected object', () => {
         const expectedResult = {
-            type: 'REMOVE_NOTIFICATION',
+            type: REMOVE_NOTIFICATION,
             payload: {uid: 1492003118322}
         };
         expect(removeNotification(1492003118322)).toEqual(expectedResult);

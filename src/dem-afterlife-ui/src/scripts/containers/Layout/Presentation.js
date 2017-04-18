@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, string} from 'prop-types';
+import {arrayOf, shape, number, string, node} from 'prop-types';
 import {ThemeProvider} from 'aesthetic';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
@@ -9,13 +9,13 @@ import Header from 'components/Header';
 import styler from 'styles/styler';
 import globalStyles from './globalStyles';
 
-export const PresentationPure = ({children, theme}) =>
+export const PresentationPure = ({children, theme, navigationLinkArray}) =>
     <ThemeProvider name={theme}>
         <Container>
             {/* title*/}
             <Notification />
             <Row>
-                <Header/>
+                <Header navigationLinkArray={navigationLinkArray}/>
             </Row>
             <Row>
                 <Column xs={12}>
@@ -30,7 +30,14 @@ export const PresentationPure = ({children, theme}) =>
 
 PresentationPure.propTypes = {
     children: node,
-    theme: string
+    theme: string,
+    navigationLinkArray: arrayOf(
+        shape({
+            id: number.isRequired,
+            title: string.isRequired,
+            href: string.isRequired,
+            order: number.isRequired
+        })).isRequired
 };
 
 export default styler(globalStyles)(PresentationPure);

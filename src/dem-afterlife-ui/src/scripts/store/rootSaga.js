@@ -1,7 +1,8 @@
-import {getLocaleSaga} from 'containers/Layout/layout-reducer';
+import {getLocaleSaga, getNavigationLinkArraySaga} from 'containers/Layout/layout-reducer';
 
 export default function* root() {
     yield [
-        getLocaleSaga()
+        getLocaleSaga(),
+        getNavigationLinkArraySaga()
     ];
 }

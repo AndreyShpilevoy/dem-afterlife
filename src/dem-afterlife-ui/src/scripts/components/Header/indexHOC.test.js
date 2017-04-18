@@ -10,6 +10,6 @@ describe('Header HOC', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<Header theme={hocProps.theme} />)).toMatchSnapshot();
+        expect(shallow(<Header theme={hocProps.theme} navigationLinkArray={[]}/>)).toMatchSnapshot();
     });
 });

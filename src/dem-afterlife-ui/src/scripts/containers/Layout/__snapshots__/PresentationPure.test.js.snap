@@ -7,7 +7,9 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
   <Aesthetic-ContainerPure>
     <Connect(NotificationPure) />
     <Aesthetic-RowPure>
-      <Aesthetic-HeaderPure />
+      <Aesthetic-HeaderPure
+        navigationLinkArray={Array []}
+      />
     </Aesthetic-RowPure>
     <Aesthetic-RowPure>
       <Aesthetic-ColumnPure
