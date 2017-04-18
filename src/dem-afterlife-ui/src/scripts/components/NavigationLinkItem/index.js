@@ -8,7 +8,7 @@ import calculateStyles from './calculateStyles';
 
 export const NavigationLinkItemPure = ({classNames, navigationLinkItem}) =>
     <li>
-        <Link className={classNames.logotypeContainer} to={navigationLinkItem.href}>
+        <Link className={classNames.link} to={navigationLinkItem.href}>
             {navigationLinkItem.title}
         </Link>
     </li>;

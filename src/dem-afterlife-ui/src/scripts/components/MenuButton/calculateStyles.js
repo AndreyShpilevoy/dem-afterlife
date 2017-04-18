@@ -6,11 +6,11 @@ const calculateStyles = ({menuButton}) => ({
         width: menuButton.widthAndHeight
     },
     allLines: {
-        'border-radius': '3.333%',
+        borderRadius: '3.333%',
         background: menuButton.line.color,
         height: '10%',
         left: 0,
-        'margin-left': '10%',
+        marginLeft: '10%',
         position: 'absolute',
         transform: 'rotate(0deg)',
         transition: menuButton.line.transition,

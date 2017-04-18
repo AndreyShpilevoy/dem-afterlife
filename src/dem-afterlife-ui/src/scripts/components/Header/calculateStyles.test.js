@@ -59,16 +59,16 @@ describe('Header calculateStyles', () => {
                 logoContainerWidth: 16
             },
             logotypeContainer: {
-                'margin-left': 0.3125,
-                'margin-right': 'auto'
+                marginLeft: 0.3125,
+                marginRight: 'auto'
             },
             menuButtonContainer: {
-                'margin-left': 'auto',
-                'margin-right': 0.3125
+                marginLeft: 'auto',
+                marginRight: 0.3125
             },
             navigationLinks: {
-                'margin-left': 'auto',
-                'margin-right': 0.3125
+                marginLeft: 'auto',
+                marginRight: 0.3125
             }
         }
     };
@@ -83,7 +83,7 @@ describe('Header calculateStyles', () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                'min-height': '100%'
+                minHeight: '100%'
             },
             '@media (min-width: 0px) and (max-width: 575px)': {
                 header: {
@@ -94,20 +94,20 @@ describe('Header calculateStyles', () => {
                 },
                 headerLogoContainer: {
                     width: 11.25,
-                    'margin-left': 0.3125,
-                    'margin-right': 'auto'
+                    marginLeft: 0.3125,
+                    marginRight: 'auto'
                 },
                 headerMenuButtonContainer: {
-                    'margin-left': 'auto',
-                    'margin-right': 0.3125
+                    marginLeft: 'auto',
+                    marginRight: 0.3125
                 },
                 headerPadding: {
                     paddingTop: 3.4375
                 },
                 navigationLinks: {
                     display: 'flex',
-                    'flex-direction': 'column',
-                    'list-style-type': 'none'
+                    flexDirection: 'column',
+                    listStyleType: 'none'
                 }
             },
             '@media (min-width: 1200px) and (max-width: 100vw)':
@@ -126,8 +126,8 @@ describe('Header calculateStyles', () => {
                 },
                 headerLogoContainer: {
                     width: 16,
-                    'margin-left': 0.3125,
-                    'margin-right': 'auto',
+                    marginLeft: 0.3125,
+                    marginRight: 'auto',
                     '&.shrinkedHeader': {
                         transition: 'all 400ms linear',
                         width: 8
@@ -135,18 +135,18 @@ describe('Header calculateStyles', () => {
                     }
                 },
                 headerMenuButtonContainer: {
-                    'margin-left': 'auto',
-                    'margin-right': 0.3125
+                    marginLeft: 'auto',
+                    marginRight: 0.3125
                 },
                 headerPadding: {
                     paddingTop: 5
                 },
                 navigationLinks: {
                     display: 'flex',
-                    'flex-direction': 'row',
-                    'list-style-type': 'none',
-                    'margin-left': 'auto',
-                    'margin-right': 0.3125
+                    flexDirection: 'row',
+                    listStyleType: 'none',
+                    marginLeft: 'auto',
+                    marginRight: 0.3125
                 }
             }
         };
@@ -157,8 +157,8 @@ describe('Header calculateStyles', () => {
     it('getHeaderLogoContainerStyle should create expected object from "xs" grid size', () => {
         const expectedResult = {
             width: 11.25,
-            'margin-left': 0.3125,
-            'margin-right': 'auto'
+            marginLeft: 0.3125,
+            marginRight: 'auto'
 
         };
         const calculatedStyle = getHeaderLogoContainerStyle('xs', defaultThemeObject.header);
@@ -168,8 +168,8 @@ describe('Header calculateStyles', () => {
     it('getHeaderLogoContainerStyle should create expected object from "xl" grid size', () => {
         const expectedResult = {
             width: 16,
-            'margin-left': 0.3125,
-            'margin-right': 'auto',
+            marginLeft: 0.3125,
+            marginRight: 'auto',
             '&.shrinkedHeader': {
                 transition: 'all 400ms linear',
                 width: 8
@@ -181,8 +181,8 @@ describe('Header calculateStyles', () => {
 
     it('getHeaderMenuButtonContainerStyle should create expected object', () => {
         const expectedResult = {
-            'margin-left': 'auto',
-            'margin-right': 0.3125
+            marginLeft: 'auto',
+            marginRight: 0.3125
         };
         const calculatedStyle = getHeaderMenuButtonContainerStyle(defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
@@ -191,8 +191,8 @@ describe('Header calculateStyles', () => {
     it('getNavigationLinksStyle should create expected object from "xs" grid size', () => {
         const expectedResult = {
             display: 'flex',
-            'flex-direction': 'column',
-            'list-style-type': 'none'
+            flexDirection: 'column',
+            listStyleType: 'none'
         };
         const calculatedStyle = getNavigationLinksStyle('xs', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
@@ -201,10 +201,10 @@ describe('Header calculateStyles', () => {
     it('getNavigationLinksStyle should create expected object from "xl" grid size', () => {
         const expectedResult = {
             display: 'flex',
-            'flex-direction': 'row',
-            'list-style-type': 'none',
-            'margin-left': 'auto',
-            'margin-right': 0.3125
+            flexDirection: 'row',
+            listStyleType: 'none',
+            marginLeft: 'auto',
+            marginRight: 0.3125
         };
         const calculatedStyle = getNavigationLinksStyle('xl', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
@@ -321,23 +321,23 @@ describe('Header calculateStyles', () => {
                 },
                 headerLogoContainer: {
                     width: 16,
-                    'margin-left': 0.3125,
-                    'margin-right': 'auto',
+                    marginLeft: 0.3125,
+                    marginRight: 'auto',
                     '&.shrinkedHeader': {
                         transition: 'all 400ms linear',
                         width: 8
                     }
                 },
                 headerMenuButtonContainer: {
-                    'margin-left': 'auto',
-                    'margin-right': 0.3125
+                    marginLeft: 'auto',
+                    marginRight: 0.3125
                 },
                 navigationLinks: {
                     display: 'flex',
-                    'flex-direction': 'row',
-                    'list-style-type': 'none',
-                    'margin-left': 'auto',
-                    'margin-right': 0.3125
+                    flexDirection: 'row',
+                    listStyleType: 'none',
+                    marginLeft: 'auto',
+                    marginRight: 0.3125
                 }
             }
         };

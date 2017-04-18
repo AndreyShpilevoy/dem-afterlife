@@ -32,8 +32,8 @@ export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
         }
     } : {},
     ...{
-        'margin-left': headerStyles.logotypeContainer['margin-left'],
-        'margin-right': headerStyles.logotypeContainer['margin-right'],
+        marginLeft: headerStyles.logotypeContainer.marginLeft,
+        marginRight: headerStyles.logotypeContainer.marginRight,
         width: headerStyles[gridSize].logoContainerWidth
     }
 });
@@ -41,16 +41,16 @@ export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
 export const getNavigationLinksStyle = (gridSize, headerStyles) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
     {
-        'flex-direction': 'row',
-        'margin-left': headerStyles.navigationLinks['margin-left'],
-        'margin-right': headerStyles.navigationLinks['margin-right']
-    } : {'flex-direction': 'column'},
-    ...{display: 'flex', 'list-style-type': 'none'}
+        flexDirection: 'row',
+        marginLeft: headerStyles.navigationLinks.marginLeft,
+        marginRight: headerStyles.navigationLinks.marginRight
+    } : {flexDirection: 'column'},
+    ...{display: 'flex', listStyleType: 'none'}
 });
 
 export const getHeaderMenuButtonContainerStyle = headerStyles => ({
-    'margin-left': headerStyles.menuButtonContainer['margin-left'],
-    'margin-right': headerStyles.menuButtonContainer['margin-right']
+    marginLeft: headerStyles.menuButtonContainer.marginLeft,
+    marginRight: headerStyles.menuButtonContainer.marginRight
 });
 
 export const getSpecificStyle = gridSize => {
@@ -82,7 +82,7 @@ const calculateStyles = ({grid, header}) =>
                 top: 0
             },
             headerColumn: {
-                'min-height': '100%',
+                minHeight: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center'

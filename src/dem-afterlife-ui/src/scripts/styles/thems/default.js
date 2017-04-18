@@ -4,9 +4,13 @@ import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 
 const colors = {
+    backgroundColor: '#171717',
     headerBackground: '#322C27',
     navigationLinksBackground: '#252525',
-    orangeColor: '#AC6B37'
+    orangeColor: '#AC6B37',
+    orangeColorHovered: '#EF9853',
+    yellowTextColor: '#CBC065',
+    yellowTextColorHovered: '#FFF495'
 };
 
 const headerXsSm = {
@@ -22,15 +26,41 @@ const headerLgXl = {
 };
 
 const headerRightColumns = {
-    'margin-left': 'auto',
-    'margin-right': 0.3125
+    marginLeft: 'auto',
+    marginRight: 0.3125
 };
 
 const navigationLinksXsSmMd = {
-    'background-color': colors.navigationLinksBackground
+    backgroundColor: colors.navigationLinksBackground,
+    color: colors.orangeColor,
+    colorHovered: colors.orangeColorHovered,
+    fontSize: 1.3125,
+    separator: {
+        backgroundColor: colors.orangeColor,
+        height: 0.1875
+    }
 };
 
 const defaultTheme = {
+    global: {
+        html: {
+            fontSize: '16px'
+        },
+        body: {
+            backgroundColor: colors.backgroundColor,
+            fontFamily: 'Arial,sans-serif',
+            fontSize: 1,
+            lineHeight: '1.5',
+            minWidth: '290px',
+            margin: 'initial'
+        },
+        link: {
+            color: colors.yellowTextColor,
+            textDecoration: 'none',
+            hoveredColor: colors.yellowTextColorHovered,
+            hoveredTextDecoration: 'underline'
+        }
+    },
     grid: {
         containers: [
             {
@@ -76,8 +106,8 @@ const defaultTheme = {
         lg: {...headerLgXl, backgroundImage: headerBackgroundImageLg},
         xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
-            'margin-left': 0.3125,
-            'margin-right': 'auto'
+            marginLeft: 0.3125,
+            marginRight: 'auto'
         },
         menuButtonContainer: headerRightColumns,
         navigationLinks: headerRightColumns
@@ -97,11 +127,11 @@ const defaultTheme = {
         cursor: 'pointer'
     },
     navigationLinks: {
-        xs: navigationLinksXsSmMd,
-        sm: navigationLinksXsSmMd,
-        md: navigationLinksXsSmMd,
-        lg: {},
-        xl: {}
+        xs: {...navigationLinksXsSmMd, padding: 0.5},
+        sm: {...navigationLinksXsSmMd, padding: 0.5},
+        md: {...navigationLinksXsSmMd, padding: 0.5},
+        lg: {padding: 0.5},
+        xl: {padding: 0.5}
     }
 };
 

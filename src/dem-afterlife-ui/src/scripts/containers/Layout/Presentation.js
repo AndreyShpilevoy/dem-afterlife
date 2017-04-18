@@ -40,4 +40,4 @@ PresentationPure.propTypes = {
         })).isRequired
 };
 
-export default styler(globalStyles)(PresentationPure);
+export default styler(theme => globalStyles(theme))(PresentationPure);

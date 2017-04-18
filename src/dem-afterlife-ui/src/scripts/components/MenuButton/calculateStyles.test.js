@@ -17,10 +17,10 @@ describe('MenuButton calculateStyles', () => {
         const expectedResult = {
             allLines: {
                 background: '#AC6B37',
-                'border-radius': '3.333%',
+                borderRadius: '3.333%',
                 height: '10%',
                 left: 0,
-                'margin-left': '10%',
+                marginLeft: '10%',
                 position: 'absolute',
                 transform: 'rotate(0deg)',
                 transition: '0.25s ease-in-out',
