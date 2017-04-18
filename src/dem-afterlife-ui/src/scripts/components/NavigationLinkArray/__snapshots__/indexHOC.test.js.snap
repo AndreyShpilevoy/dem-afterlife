@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkArray HOC match expected snapshot 1`] = `
+<NavigationLinkArrayPure
+  classNames={
+    Object {
+      "list": "list-0-0",
+      "separator": "separator-0-1",
+    }
+  }
+  navigationLinkArray={Array []}
+  theme="default"
+/>
+`;

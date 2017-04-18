@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkItem Pure component match expected snapshot 1`] = `
+<li>
+  <Link
+    className="link-0-0"
+    replace={false}
+    to="/"
+  >
+    Conference
+  </Link>
+</li>
+`;
