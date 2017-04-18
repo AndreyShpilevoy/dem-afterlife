@@ -1,5 +1,3 @@
-import R from 'ramda';
-
 const initialState = {
     notifications: []
 };
@@ -33,7 +31,7 @@ export const notificationReducer = (state = initialState, {type, payload}) => {
             return {...state, notifications: [...state.notifications, payload.notification] };
 
         case REMOVE_NOTIFICATION:
-            return {notifications: R.filter(n => n.uid !== payload.uid, state.notifications)};
+            return {notifications: state.notifications.filter(n => n.uid !== payload.uid)};
         default:
             break;
     }

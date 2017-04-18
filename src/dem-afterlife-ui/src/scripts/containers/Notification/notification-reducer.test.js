@@ -138,7 +138,7 @@ describe('Notification reducer', () => {
         expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
     });
 
-    it('notificationReducer with action REMOVE_NOTIFICATION should return expected state', () => {
+    it('notificationReducer with one tasks in store with action REMOVE_NOTIFICATION should return expected state', () => {
         const defaulState = {
             notifications: [{
                 autoDismiss: 5,
@@ -153,6 +153,38 @@ describe('Notification reducer', () => {
         };
         const expectedResult = {
             notifications: []
+        };
+        expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
+    });
+
+    it('notificationReducer with two tasks in store with action REMOVE_NOTIFICATION should return expected state', () => {
+        const defaulState = {
+            notifications: [{
+                autoDismiss: 5,
+                level: 'info',
+                message: 'message',
+                title: 'title',
+                uid: 1492003118322
+            },
+            {
+                autoDismiss: 5,
+                level: 'info',
+                message: 'message',
+                title: 'title',
+                uid: 1492003118323
+            }] };
+        const action = {
+            type: REMOVE_NOTIFICATION,
+            payload: {uid: 1492003118322}
+        };
+        const expectedResult = {
+            notifications: [{
+                autoDismiss: 5,
+                level: 'info',
+                message: 'message',
+                title: 'title',
+                uid: 1492003118323
+            }]
         };
         expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
     });

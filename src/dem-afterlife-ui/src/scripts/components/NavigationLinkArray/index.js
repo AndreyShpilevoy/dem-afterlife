@@ -6,9 +6,11 @@ import NavigationLinkItem from 'components/NavigationLinkItem';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
-const mapNavigationLinks = navigationLinkArray => R.map(
-    navigationLinkItem => <NavigationLinkItem key={navigationLinkItem.id} navigationLinkItem = {navigationLinkItem} />,
-    R.sortBy(R.prop('order'), navigationLinkArray));
+const mapNavigationLinks = navigationLinkArray =>
+    R.sortBy(
+        R.prop('order'),
+        navigationLinkArray.map(item => <NavigationLinkItem key={item.id} navigationLinkItem = {item} />)
+    );
 
 export const NavigationLinkArrayPure = ({classNames, navigationLinkArray}) =>
     <ul>
