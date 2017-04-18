@@ -12,13 +12,14 @@ const mapNavigationLinks = navigationLinkArray =>
         navigationLinkArray.map(item => <NavigationLinkItem key={item.id} navigationLinkItem = {item} />)
     );
 
-export const NavigationLinkArrayPure = ({classNames, navigationLinkArray}) =>
-    <ul>
+export const NavigationLinkArrayPure = ({classNames, className, navigationLinkArray}) =>
+    <ul className={className || ''}>
         {mapNavigationLinks(navigationLinkArray || [])}
     </ul>;
 
 NavigationLinkArrayPure.propTypes = {
     classNames: ClassNamesPropType,
+    className: string,
     navigationLinkArray: arrayOf(
         shape({
             id: number.isRequired,

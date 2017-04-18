@@ -23,23 +23,30 @@ export const getLgXlStyle = (gridSize, headerStyles) => ({
     }
 });
 
-export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => {
-    if (gridSize !== 'lg' && gridSize !== 'xl') {
-        return {
-            width: headerStyles[gridSize].logoContainerWidth,
-            'margin-left': headerStyles.logotypeContainer['margin-left'],
-            'margin-right': headerStyles.logotypeContainer['margin-right']
-        };
-    }
-    return {
-        width: headerStyles[gridSize].logoContainerWidth,
-        'margin-left': headerStyles.logotypeContainer['margin-left'],
-        'margin-right': headerStyles.logotypeContainer['margin-right'],
+export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
+    ...gridSize === 'lg' || gridSize === 'xl' ?
+    {
         '&.shrinkedHeader': {
             transition: headerStyles[`${gridSize}`].transition,
             width: headerStyles[gridSize].logoContainerWidth / 2
-        } };
-};
+        }
+    } : {},
+    ...{
+        'margin-left': headerStyles.logotypeContainer['margin-left'],
+        'margin-right': headerStyles.logotypeContainer['margin-right'],
+        width: headerStyles[gridSize].logoContainerWidth
+    }
+});
+
+export const getNavigationLinksStyle = (gridSize, headerStyles) => ({
+    ...gridSize === 'lg' || gridSize === 'xl' ?
+    {
+        'flex-direction': 'row',
+        'margin-left': headerStyles.navigationLinks['margin-left'],
+        'margin-right': headerStyles.navigationLinks['margin-right']
+    } : {'flex-direction': 'column'},
+    ...{display: 'flex', 'list-style-type': 'none'}
+});
 
 export const getHeaderMenuButtonContainerStyle = headerStyles => ({
     'margin-left': headerStyles.menuButtonContainer['margin-left'],
@@ -62,6 +69,7 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
         header: {...getCommonHeaderStyle(gridSize, headerStyles), ...getSpecificStyle(gridSize)(gridSize, headerStyles)},
         headerPadding: {paddingTop: headerStyles[gridSize].height},
         headerLogoContainer: getHeaderLogoContainerStyle(gridSize, headerStyles),
+        navigationLinks: getNavigationLinksStyle(gridSize, headerStyles),
         headerMenuButtonContainer: getHeaderMenuButtonContainerStyle(headerStyles)
     });
 
@@ -73,7 +81,7 @@ const calculateStyles = ({grid, header}) =>
                 position: 'fixed',
                 top: 0
             },
-            logotypeColumn: {
+            headerColumn: {
                 'min-height': '100%',
                 display: 'flex',
                 flexDirection: 'column',

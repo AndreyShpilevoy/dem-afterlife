@@ -17,9 +17,11 @@ describe('Header Pure', () => {
         '.headerLogoContainer-0-4.shrinkedHeader': 'headerLogoContainer-0-4',
         fixedOnTheTop: 'fixedOnTheTop-0-0',
         header: 'header-0-2',
+        headerColumn: 'headerColumn-0-1',
         headerLogoContainer: 'headerLogoContainer-0-4',
+        headerMenuButtonContainer: 'headerMenuButtonContainer-0-6',
         headerPadding: 'headerPadding-0-3',
-        logotypeColumn: 'logotypeColumn-0-1'
+        navigationLinks: 'navigationLinks-0-5'
     };
 
     it('component match expected snapshot', () => {

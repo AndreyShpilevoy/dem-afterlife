@@ -10,7 +10,7 @@ exports[`Header Pure component match expected snapshot 1`] = `
     >
       <Aesthetic-RowPure>
         <Aesthetic-ColumnPure
-          className="logotypeColumn-0-1"
+          className="headerColumn-0-1"
           sm={4}
           xl={3}
           xs={7}
@@ -20,21 +20,29 @@ exports[`Header Pure component match expected snapshot 1`] = `
           />
         </Aesthetic-ColumnPure>
         <Aesthetic-ColumnPure
-          className="logotypeColumn-0-1"
-          lg={8}
+          className="headerColumn-0-1"
+          lg={0}
           lgOffset={0}
           sm={1}
           smOffset={7}
-          xl={9}
           xs={2}
           xsOffset={3}
         >
           <Aesthetic-HiddenPure
+            className="headerMenuButtonContainer-0-6"
             lg="up"
           >
             <Aesthetic-MenuButtonPure />
           </Aesthetic-HiddenPure>
+        </Aesthetic-ColumnPure>
+        <Aesthetic-ColumnPure
+          className="headerColumn-0-1"
+          lg={8}
+          xl={9}
+          xs={12}
+        >
           <Aesthetic-NavigationLinkArrayPure
+            className="navigationLinks-0-5"
             navigationLinkArray={Array []}
           />
         </Aesthetic-ColumnPure>
@@ -55,9 +63,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
       "fixedOnTheTop": "fixedOnTheTop-0-0",
       "header": "header-0-2",
+      "headerColumn": "headerColumn-0-1",
       "headerLogoContainer": "headerLogoContainer-0-4",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-6",
       "headerPadding": "headerPadding-0-3",
-      "logotypeColumn": "logotypeColumn-0-1",
+      "navigationLinks": "navigationLinks-0-5",
     }
   }
   navigationLinkArray={Array []}
@@ -73,7 +83,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
           <Aesthetic-RowPure>
             <RowPure>
               <Aesthetic-ColumnPure
-                className="logotypeColumn-0-1"
+                className="headerColumn-0-1"
                 sm={4}
                 xl={3}
                 xs={7}
@@ -87,17 +97,17 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 </ColumnPure>
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
-                className="logotypeColumn-0-1"
-                lg={8}
+                className="headerColumn-0-1"
+                lg={0}
                 lgOffset={0}
                 sm={1}
                 smOffset={7}
-                xl={9}
                 xs={2}
                 xsOffset={3}
               >
                 <ColumnPure>
                   <Aesthetic-HiddenPure
+                    className="headerMenuButtonContainer-0-6"
                     lg="up"
                   >
                     <HiddenPure>
@@ -106,7 +116,17 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
                   </Aesthetic-HiddenPure>
+                </ColumnPure>
+              </Aesthetic-ColumnPure>
+              <Aesthetic-ColumnPure
+                className="headerColumn-0-1"
+                lg={8}
+                xl={9}
+                xs={12}
+              >
+                <ColumnPure>
                   <Aesthetic-NavigationLinkArrayPure
+                    className="navigationLinks-0-5"
                     navigationLinkArray={Array []}
                   >
                     <NavigationLinkArrayPure />
@@ -133,9 +153,11 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
       ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
       "fixedOnTheTop": "fixedOnTheTop-0-0",
       "header": "header-0-2",
+      "headerColumn": "headerColumn-0-1",
       "headerLogoContainer": "headerLogoContainer-0-4",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-6",
       "headerPadding": "headerPadding-0-3",
-      "logotypeColumn": "logotypeColumn-0-1",
+      "navigationLinks": "navigationLinks-0-5",
     }
   }
   navigationLinkArray={Array []}
@@ -151,7 +173,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
           <Aesthetic-RowPure>
             <RowPure>
               <Aesthetic-ColumnPure
-                className="logotypeColumn-0-1"
+                className="headerColumn-0-1"
                 sm={4}
                 xl={3}
                 xs={7}
@@ -165,17 +187,17 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 </ColumnPure>
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
-                className="logotypeColumn-0-1"
-                lg={8}
+                className="headerColumn-0-1"
+                lg={0}
                 lgOffset={0}
                 sm={1}
                 smOffset={7}
-                xl={9}
                 xs={2}
                 xsOffset={3}
               >
                 <ColumnPure>
                   <Aesthetic-HiddenPure
+                    className="headerMenuButtonContainer-0-6"
                     lg="up"
                   >
                     <HiddenPure>
@@ -184,7 +206,17 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
                   </Aesthetic-HiddenPure>
+                </ColumnPure>
+              </Aesthetic-ColumnPure>
+              <Aesthetic-ColumnPure
+                className="headerColumn-0-1"
+                lg={8}
+                xl={9}
+                xs={12}
+              >
+                <ColumnPure>
                   <Aesthetic-NavigationLinkArrayPure
+                    className="navigationLinks-0-5"
                     navigationLinkArray={Array []}
                   >
                     <NavigationLinkArrayPure />

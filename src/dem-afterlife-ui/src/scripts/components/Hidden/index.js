@@ -22,9 +22,9 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className}
     );
 
     return (
-        <div className={`${classes} ${className || ''}`}>
+        <span className={`${classes} ${className || ''}`}>
             {children}
-        </div>
+        </span>
     );
 };
 

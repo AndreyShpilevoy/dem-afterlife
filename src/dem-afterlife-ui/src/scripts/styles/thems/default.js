@@ -78,6 +78,10 @@ const defaultTheme = {
         menuButtonContainer: {
             'margin-left': 'auto',
             'margin-right': 0.3125
+        },
+        navigationLinks: {
+            'margin-left': 'auto',
+            'margin-right': 0.3125
         }
     },
     logotype: {

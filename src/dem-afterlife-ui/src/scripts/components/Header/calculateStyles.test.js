@@ -8,7 +8,8 @@ import calculateStyles, {
     getSpecificStyle,
     constructMediaModelForCurrentSize,
     getHeaderLogoContainerStyle,
-    getHeaderMenuButtonContainerStyle
+    getHeaderMenuButtonContainerStyle,
+    getNavigationLinksStyle
 } from './calculateStyles';
 
 describe('Header calculateStyles', () => {
@@ -64,6 +65,10 @@ describe('Header calculateStyles', () => {
             menuButtonContainer: {
                 'margin-left': 'auto',
                 'margin-right': 0.3125
+            },
+            navigationLinks: {
+                'margin-left': 'auto',
+                'margin-right': 0.3125
             }
         }
     };
@@ -74,7 +79,7 @@ describe('Header calculateStyles', () => {
                 position: 'fixed',
                 top: 0
             },
-            logotypeColumn: {
+            headerColumn: {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -98,6 +103,11 @@ describe('Header calculateStyles', () => {
                 },
                 headerPadding: {
                     paddingTop: 3.4375
+                },
+                navigationLinks: {
+                    display: 'flex',
+                    'flex-direction': 'column',
+                    'list-style-type': 'none'
                 }
             },
             '@media (min-width: 1200px) and (max-width: 100vw)':
@@ -130,6 +140,13 @@ describe('Header calculateStyles', () => {
                 },
                 headerPadding: {
                     paddingTop: 5
+                },
+                navigationLinks: {
+                    display: 'flex',
+                    'flex-direction': 'row',
+                    'list-style-type': 'none',
+                    'margin-left': 'auto',
+                    'margin-right': 0.3125
                 }
             }
         };
@@ -162,12 +179,34 @@ describe('Header calculateStyles', () => {
         expect(calculatedStyle).toEqual(expectedResult);
     });
 
-    it('getHeaderMenuButtonContainerStyle should create expected object from "xl" grid size', () => {
+    it('getHeaderMenuButtonContainerStyle should create expected object', () => {
         const expectedResult = {
             'margin-left': 'auto',
             'margin-right': 0.3125
         };
         const calculatedStyle = getHeaderMenuButtonContainerStyle(defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getNavigationLinksStyle should create expected object from "xs" grid size', () => {
+        const expectedResult = {
+            display: 'flex',
+            'flex-direction': 'column',
+            'list-style-type': 'none'
+        };
+        const calculatedStyle = getNavigationLinksStyle('xs', defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getNavigationLinksStyle should create expected object from "xl" grid size', () => {
+        const expectedResult = {
+            display: 'flex',
+            'flex-direction': 'row',
+            'list-style-type': 'none',
+            'margin-left': 'auto',
+            'margin-right': 0.3125
+        };
+        const calculatedStyle = getNavigationLinksStyle('xl', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
     });
 
@@ -290,6 +329,13 @@ describe('Header calculateStyles', () => {
                     }
                 },
                 headerMenuButtonContainer: {
+                    'margin-left': 'auto',
+                    'margin-right': 0.3125
+                },
+                navigationLinks: {
+                    display: 'flex',
+                    'flex-direction': 'row',
+                    'list-style-type': 'none',
                     'margin-left': 'auto',
                     'margin-right': 0.3125
                 }

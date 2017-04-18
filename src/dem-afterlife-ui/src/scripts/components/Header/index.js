@@ -50,17 +50,16 @@ export class HeaderPure extends Component {
                 <Container className={classNames.fixedOnTheTop}>
                     <div className={headerClassName}>
                         <Row>
-                            <Column xs={7} sm={4} xl={3} className={classNames.logotypeColumn}>
+                            <Column xs={7} sm={4} xl={3} className={classNames.headerColumn}>
                                 <Logotype className={headerLogoContainerClassName}/>
                             </Column>
-                            <Column xs={2} xsOffset={3}
-                                sm={1} smOffset={7}
-                                lg={8} lgOffset={0}
-                                xl={9} className={classNames.logotypeColumn}>
+                            <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={classNames.headerColumn}>
                                 <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
-                                    <MenuButton/>
+                                        <MenuButton/>
                                 </Hidden>
-                                <NavigationLinkArray navigationLinkArray={navigationLinkArray}/>
+                            </Column>
+                            <Column xs={12} lg={8} xl={9} className={classNames.headerColumn}>
+                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={classNames.navigationLinks}/>
                             </Column>
                         </Row>
                     </div>
