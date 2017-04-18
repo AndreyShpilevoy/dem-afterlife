@@ -16,7 +16,6 @@ const headerXsSm = {
 };
 
 const headerLgXl = {
-    backgroundImage: headerBackgroundImageLg,
     height: 5,
     transition: 'all 400ms linear',
     logoContainerWidth: 16
@@ -74,8 +73,8 @@ const defaultTheme = {
             height: 3.75,
             logoContainerWidth: 12.1875
         },
-        lg: headerLgXl,
-        xl: headerLgXl,
+        lg: {...headerLgXl, backgroundImage: headerBackgroundImageLg},
+        xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
             'margin-left': 0.3125,
             'margin-right': 'auto'
