@@ -2,7 +2,12 @@
 
 exports[`Layout Presentation component match expected snapshot 1`] = `
 <PresentationPure
-  classNames={Object {}}
+  classNames={
+    Object {
+      "container": "container-0-0",
+      "content": "content-0-1",
+    }
+  }
   navigationLinkArray={Array []}
   theme="default"
 >

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer HOC component match expected snapshot 1`] = `
+<FooterPure
+  classNames={
+    Object {
+      "copyright": "copyright-0-0",
+      "footer": "footer-0-1",
+    }
+  }
+  theme="default"
+/>
+`;

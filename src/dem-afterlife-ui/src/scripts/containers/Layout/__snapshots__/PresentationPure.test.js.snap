@@ -4,14 +4,18 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
 <ThemeProvider
   name="default"
 >
-  <Aesthetic-ContainerPure>
+  <Aesthetic-ContainerPure
+    className="container-0-0"
+  >
     <Connect(NotificationPure) />
     <Aesthetic-RowPure>
       <Aesthetic-HeaderPure
         navigationLinkArray={Array []}
       />
     </Aesthetic-RowPure>
-    <Aesthetic-RowPure>
+    <Aesthetic-RowPure
+      className="content-0-1"
+    >
       <Aesthetic-ColumnPure
         xs={12}
       >
@@ -20,7 +24,9 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
         </div>
       </Aesthetic-ColumnPure>
     </Aesthetic-RowPure>
-    <Aesthetic-RowPure />
+    <Aesthetic-RowPure>
+      <Aesthetic-FooterPure />
+    </Aesthetic-RowPure>
   </Aesthetic-ContainerPure>
 </ThemeProvider>
 `;

@@ -69,6 +69,8 @@ describe('Header calculateStyles', () => {
             },
             navigationLinks: {
                 marginLeft: 'auto',
+                marginBottom: 'auto',
+                marginTop: 'auto',
                 marginRight: 0.3125,
                 transition: '0.35s ease-in-out'
             }
@@ -155,6 +157,8 @@ describe('Header calculateStyles', () => {
                     flexDirection: 'row',
                     listStyleType: 'none',
                     marginLeft: 'auto',
+                    marginBottom: 'auto',
+                    marginTop: 'auto',
                     marginRight: 0.3125
                 },
                 navigationLinksContainer: {}
@@ -214,6 +218,8 @@ describe('Header calculateStyles', () => {
             flexDirection: 'row',
             listStyleType: 'none',
             marginLeft: 'auto',
+            marginBottom: 'auto',
+            marginTop: 'auto',
             marginRight: 0.3125
         };
         const calculatedStyle = getNavigationLinksStyle('xl', defaultThemeObject.header);
@@ -365,6 +371,8 @@ describe('Header calculateStyles', () => {
                     flexDirection: 'row',
                     listStyleType: 'none',
                     marginLeft: 'auto',
+                    marginBottom: 'auto',
+                    marginTop: 'auto',
                     marginRight: 0.3125
                 },
                 navigationLinksContainer: {}

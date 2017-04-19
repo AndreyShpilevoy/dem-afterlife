@@ -7,7 +7,20 @@ import {PresentationPure} from './Presentation';
 jest.mock('styles/styler');
 
 describe('Layout Presentation Pure', () => {
+    const classNames = {
+        container: 'container-0-0',
+        content: 'content-0-1'
+    };
     it('component match expected snapshot', () => {
-        expect(shallow(<PresentationPure theme={'default'} navigationLinkArray={[]}><div>{'Layout Presentation content'}</div></PresentationPure>)).toMatchSnapshot();
+        expect(shallow(
+        <PresentationPure
+            theme={'default'}
+            navigationLinkArray={[]}
+            classNames={classNames}>
+            <div>
+                {'Layout Presentation content'}
+            </div>
+        </PresentationPure>
+        )).toMatchSnapshot();
     });
 });

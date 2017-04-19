@@ -2,7 +2,7 @@
 
 import globalStyles from './globalStyles';
 
-describe('Header calculateStyles', () => {
+describe('Layout calculateStyles', () => {
     it('should create expected object', () => {
         const defaultTheme = {
             global: {

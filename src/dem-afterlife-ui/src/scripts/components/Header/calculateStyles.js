@@ -43,7 +43,9 @@ export const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
     {
         flexDirection: 'row',
         marginLeft: navigationLinks.marginLeft,
-        marginRight: navigationLinks.marginRight
+        marginRight: navigationLinks.marginRight,
+        marginTop: navigationLinks.marginTop,
+        marginBottom: navigationLinks.marginBottom
     } : {flexDirection: 'column'},
     ...{display: 'flex', listStyleType: 'none'}
 });

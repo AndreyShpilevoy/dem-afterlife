@@ -2,6 +2,8 @@ import headerBackgroundImageMd from 'images/DEM/header/Dem_NavBar_bg_md.png';
 import headerBackgroundImageLg from 'images/DEM/header/Dem_NavBar_bg_lg.png';
 import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
+import footerBackgroundImageLg from 'images/DEM/footer/Dem_Footer_bg_lg.png';
+import footerBackgroundImageXl from 'images/DEM/footer/Dem_Footer_bg_xl.png';
 
 const colors = {
     backgroundColor: '#171717',
@@ -10,7 +12,9 @@ const colors = {
     orangeColor: '#AC6B37',
     orangeColorHovered: '#EF9853',
     yellowTextColor: '#CBC065',
-    yellowTextColorHovered: '#FFF495'
+    yellowTextColorHovered: '#FFF495',
+    footerBackgroundColor: '#3E3025',
+    footerTextColor: '#CFB095'
 };
 
 const headerXsSm = {
@@ -31,6 +35,8 @@ const defaultTransition = '0.35s ease-in-out';
 
 const headerRightColumns = {
     marginLeft: 'auto',
+    marginBottom: 'auto',
+    marginTop: 'auto',
     marginRight: headerSideMargin
 };
 
@@ -47,6 +53,19 @@ const navigationLinksXsSmMd = {
 
 const navigationLinksPadding = {
     padding: 0.5
+};
+
+const footerCommon = {
+    color: colors.footerTextColor
+};
+
+const footerXsSmMd = {
+    height: 1.875,
+    backgroundColor: colors.footerBackgroundColor
+};
+
+const footerLgXl = {
+    height: 2.5
 };
 
 const defaultTheme = {
@@ -115,7 +134,7 @@ const defaultTheme = {
         xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
             marginLeft: headerSideMargin,
-            marginRight: 'auto'
+            marginTop: 'auto'
         },
         menuButtonContainer: headerRightColumns,
         navigationLinks: {...headerRightColumns, transition: defaultTransition}
@@ -140,6 +159,13 @@ const defaultTheme = {
         md: {...navigationLinksXsSmMd, ...navigationLinksPadding},
         lg: navigationLinksPadding,
         xl: navigationLinksPadding
+    },
+    footer: {
+        xs: {...footerCommon, ...footerXsSmMd},
+        sm: {...footerCommon, ...footerXsSmMd},
+        md: {...footerCommon, ...footerXsSmMd},
+        lg: {...footerCommon, ...footerLgXl, backgroundImage: footerBackgroundImageLg},
+        xl: {...footerCommon, ...footerLgXl, backgroundImage: footerBackgroundImageXl}
     }
 };
 
