@@ -25,9 +25,13 @@ const headerLgXl = {
     logoContainerWidth: 16
 };
 
+const headerSideMargin = 0.9375;
+
+const defaultTransition = '0.35s ease-in-out';
+
 const headerRightColumns = {
     marginLeft: 'auto',
-    marginRight: 0.3125
+    marginRight: headerSideMargin
 };
 
 const navigationLinksXsSmMd = {
@@ -39,6 +43,10 @@ const navigationLinksXsSmMd = {
         backgroundColor: colors.orangeColor,
         height: 0.1875
     }
+};
+
+const navigationLinksPadding = {
+    padding: 0.5
 };
 
 const defaultTheme = {
@@ -106,11 +114,11 @@ const defaultTheme = {
         lg: {...headerLgXl, backgroundImage: headerBackgroundImageLg},
         xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
-            marginLeft: 0.3125,
+            marginLeft: headerSideMargin,
             marginRight: 'auto'
         },
         menuButtonContainer: headerRightColumns,
-        navigationLinks: {...headerRightColumns, transition: '0.35s ease-in-out'}
+        navigationLinks: {...headerRightColumns, transition: defaultTransition}
     },
     logotype: {
         backgroundImage: headerLogotypeImage,
@@ -121,17 +129,17 @@ const defaultTheme = {
     menuButton: {
         line: {
             color: colors.orangeColor,
-            transition: '0.35s ease-in-out'
+            transition: defaultTransition
         },
         widthAndHeight: 2,
         cursor: 'pointer'
     },
     navigationLinks: {
-        xs: {...navigationLinksXsSmMd, padding: 0.5},
-        sm: {...navigationLinksXsSmMd, padding: 0.5},
-        md: {...navigationLinksXsSmMd, padding: 0.5},
-        lg: {padding: 0.5},
-        xl: {padding: 0.5}
+        xs: {...navigationLinksXsSmMd, ...navigationLinksPadding},
+        sm: {...navigationLinksXsSmMd, ...navigationLinksPadding},
+        md: {...navigationLinksXsSmMd, ...navigationLinksPadding},
+        lg: navigationLinksPadding,
+        xl: navigationLinksPadding
     }
 };
 
