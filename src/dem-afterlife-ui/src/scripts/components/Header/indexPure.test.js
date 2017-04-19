@@ -15,13 +15,15 @@ describe('Header Pure', () => {
     const classNames = {
         '.header-0-2.shrinkedHeader': 'header-0-2',
         '.headerLogoContainer-0-4.shrinkedHeader': 'headerLogoContainer-0-4',
+        '.navigationLinksContainer-0-6.closed': 'navigationLinksContainer-0-6',
         fixedOnTheTop: 'fixedOnTheTop-0-0',
         header: 'header-0-2',
         headerColumn: 'headerColumn-0-1',
         headerLogoContainer: 'headerLogoContainer-0-4',
-        headerMenuButtonContainer: 'headerMenuButtonContainer-0-6',
+        headerMenuButtonContainer: 'headerMenuButtonContainer-0-7',
         headerPadding: 'headerPadding-0-3',
-        navigationLinks: 'navigationLinks-0-5'
+        navigationLinks: 'navigationLinks-0-5',
+        navigationLinksContainer: 'navigationLinksContainer-0-6'
     };
 
     it('component match expected snapshot', () => {

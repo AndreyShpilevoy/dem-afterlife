@@ -6,7 +6,7 @@ exports[`Header Pure component match expected snapshot 1`] = `
     className="fixedOnTheTop-0-0"
   >
     <div
-      className="header-0-2"
+      className="header-0-2 "
     >
       <Aesthetic-RowPure>
         <Aesthetic-ColumnPure
@@ -16,7 +16,7 @@ exports[`Header Pure component match expected snapshot 1`] = `
           xs={7}
         >
           <Aesthetic-LogotypePure
-            className="headerLogoContainer-0-4"
+            className="headerLogoContainer-0-4 "
           />
         </Aesthetic-ColumnPure>
         <Aesthetic-ColumnPure
@@ -29,14 +29,16 @@ exports[`Header Pure component match expected snapshot 1`] = `
           xsOffset={3}
         >
           <Aesthetic-HiddenPure
-            className="headerMenuButtonContainer-0-6"
+            className="headerMenuButtonContainer-0-7"
             lg="up"
           >
-            <Aesthetic-MenuButtonPure />
+            <Aesthetic-MenuButtonPure
+              onClick={[Function]}
+            />
           </Aesthetic-HiddenPure>
         </Aesthetic-ColumnPure>
         <Aesthetic-ColumnPure
-          className="headerColumn-0-1"
+          className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
           lg={8}
           xl={9}
           xs={12}
@@ -61,13 +63,15 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
     Object {
       ".header-0-2.shrinkedHeader": "header-0-2",
       ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
+      ".navigationLinksContainer-0-6.closed": "navigationLinksContainer-0-6",
       "fixedOnTheTop": "fixedOnTheTop-0-0",
       "header": "header-0-2",
       "headerColumn": "headerColumn-0-1",
       "headerLogoContainer": "headerLogoContainer-0-4",
-      "headerMenuButtonContainer": "headerMenuButtonContainer-0-6",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-7",
       "headerPadding": "headerPadding-0-3",
       "navigationLinks": "navigationLinks-0-5",
+      "navigationLinksContainer": "navigationLinksContainer-0-6",
     }
   }
   navigationLinkArray={Array []}
@@ -78,7 +82,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
     >
       <ContainerPure>
         <div
-          className="header-0-2"
+          className="header-0-2 "
         >
           <Aesthetic-RowPure>
             <RowPure>
@@ -90,7 +94,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
               >
                 <ColumnPure>
                   <Aesthetic-LogotypePure
-                    className="headerLogoContainer-0-4"
+                    className="headerLogoContainer-0-4 "
                   >
                     <LogotypePure />
                   </Aesthetic-LogotypePure>
@@ -107,11 +111,13 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
               >
                 <ColumnPure>
                   <Aesthetic-HiddenPure
-                    className="headerMenuButtonContainer-0-6"
+                    className="headerMenuButtonContainer-0-7"
                     lg="up"
                   >
                     <HiddenPure>
-                      <Aesthetic-MenuButtonPure>
+                      <Aesthetic-MenuButtonPure
+                        onClick={[Function]}
+                      >
                         <MenuButtonPure />
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
@@ -119,7 +125,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 </ColumnPure>
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
-                className="headerColumn-0-1"
+                className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
                 lg={8}
                 xl={9}
                 xs={12}
@@ -151,13 +157,15 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
     Object {
       ".header-0-2.shrinkedHeader": "header-0-2",
       ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
+      ".navigationLinksContainer-0-6.closed": "navigationLinksContainer-0-6",
       "fixedOnTheTop": "fixedOnTheTop-0-0",
       "header": "header-0-2",
       "headerColumn": "headerColumn-0-1",
       "headerLogoContainer": "headerLogoContainer-0-4",
-      "headerMenuButtonContainer": "headerMenuButtonContainer-0-6",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-7",
       "headerPadding": "headerPadding-0-3",
       "navigationLinks": "navigationLinks-0-5",
+      "navigationLinksContainer": "navigationLinksContainer-0-6",
     }
   }
   navigationLinkArray={Array []}
@@ -197,11 +205,13 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
               >
                 <ColumnPure>
                   <Aesthetic-HiddenPure
-                    className="headerMenuButtonContainer-0-6"
+                    className="headerMenuButtonContainer-0-7"
                     lg="up"
                   >
                     <HiddenPure>
-                      <Aesthetic-MenuButtonPure>
+                      <Aesthetic-MenuButtonPure
+                        onClick={[Function]}
+                      >
                         <MenuButtonPure />
                       </Aesthetic-MenuButtonPure>
                     </HiddenPure>
@@ -209,7 +219,7 @@ exports[`Header Pure component with scrolled down document since to "scrollTop: 
                 </ColumnPure>
               </Aesthetic-ColumnPure>
               <Aesthetic-ColumnPure
-                className="headerColumn-0-1"
+                className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
                 lg={8}
                 xl={9}
                 xs={12}

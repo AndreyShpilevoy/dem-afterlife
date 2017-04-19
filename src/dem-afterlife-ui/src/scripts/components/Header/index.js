@@ -28,7 +28,10 @@ export class HeaderPure extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {shrinkedHeader: false};
+        this.state = {
+            shrinkedHeader: false,
+            menuIsClosed: true
+        };
     }
 
     handleScroll = () => {
@@ -40,11 +43,16 @@ export class HeaderPure extends Component {
             }, 250));
     };
 
+    handleMenuButtonClick = () => {
+        this.setState({menuIsClosed: !this.state.menuIsClosed});
+    }
+
     render() {
         const {classNames, navigationLinkArray} = this.props;
-        const {shrinkedHeader} = this.state;
-        const headerClassName = shrinkedHeader ? `${classNames.header} shrinkedHeader` : classNames.header;
-        const headerLogoContainerClassName = shrinkedHeader ? `${classNames.headerLogoContainer} shrinkedHeader` : classNames.headerLogoContainer;
+        const {shrinkedHeader, menuIsClosed} = this.state;
+        const headerClassName = `${classNames.header} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
+        const headerLogoContainerClassName = `${classNames.headerLogoContainer} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
+        const navigationLinksContainerClassName = `${classNames.headerColumn} ${classNames.navigationLinksContainer} ${menuIsClosed ? 'closed' : ''}`;
         return (
             <div>
                 <Container className={classNames.fixedOnTheTop}>
@@ -55,10 +63,10 @@ export class HeaderPure extends Component {
                             </Column>
                             <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={classNames.headerColumn}>
                                 <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
-                                        <MenuButton/>
+                                        <MenuButton onClick={this.handleMenuButtonClick}/>
                                 </Hidden>
                             </Column>
-                            <Column xs={12} lg={8} xl={9} className={classNames.headerColumn}>
+                            <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>
                                 <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={classNames.navigationLinks}/>
                             </Column>
                         </Row>

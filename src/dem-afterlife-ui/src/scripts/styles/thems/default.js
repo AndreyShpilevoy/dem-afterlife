@@ -110,7 +110,7 @@ const defaultTheme = {
             marginRight: 'auto'
         },
         menuButtonContainer: headerRightColumns,
-        navigationLinks: headerRightColumns
+        navigationLinks: {...headerRightColumns, transition: '0.35s ease-in-out'}
     },
     logotype: {
         backgroundImage: headerLogotypeImage,
@@ -121,7 +121,7 @@ const defaultTheme = {
     menuButton: {
         line: {
             color: colors.orangeColor,
-            transition: '0.25s ease-in-out'
+            transition: '0.35s ease-in-out'
         },
         widthAndHeight: 2,
         cursor: 'pointer'

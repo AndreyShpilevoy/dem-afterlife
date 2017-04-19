@@ -9,7 +9,8 @@ import calculateStyles, {
     constructMediaModelForCurrentSize,
     getHeaderLogoContainerStyle,
     getHeaderMenuButtonContainerStyle,
-    getNavigationLinksStyle
+    getNavigationLinksStyle,
+    getNavigationLinksContainerStyle
 } from './calculateStyles';
 
 describe('Header calculateStyles', () => {
@@ -68,7 +69,8 @@ describe('Header calculateStyles', () => {
             },
             navigationLinks: {
                 marginLeft: 'auto',
-                marginRight: 0.3125
+                marginRight: 0.3125,
+                transition: '0.35s ease-in-out'
             }
         }
     };
@@ -108,6 +110,13 @@ describe('Header calculateStyles', () => {
                     display: 'flex',
                     flexDirection: 'column',
                     listStyleType: 'none'
+                },
+                navigationLinksContainer: {
+                    '&.closed': {
+                        transform: 'scaleY(0)'
+                    },
+                    transformOrigin: 'top',
+                    transition: '0.35s ease-in-out'
                 }
             },
             '@media (min-width: 1200px) and (max-width: 100vw)':
@@ -147,7 +156,8 @@ describe('Header calculateStyles', () => {
                     listStyleType: 'none',
                     marginLeft: 'auto',
                     marginRight: 0.3125
-                }
+                },
+                navigationLinksContainer: {}
             }
         };
         const calculatedStyle = calculateStyles(defaultThemeObject);
@@ -207,6 +217,24 @@ describe('Header calculateStyles', () => {
             marginRight: 0.3125
         };
         const calculatedStyle = getNavigationLinksStyle('xl', defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getNavigationLinksContainerStyle should create expected object from "xs" grid size', () => {
+        const expectedResult = {
+            '&.closed': {
+                transform: 'scaleY(0)'
+            },
+            transformOrigin: 'top',
+            transition: '0.35s ease-in-out'
+        };
+        const calculatedStyle = getNavigationLinksContainerStyle('xs', defaultThemeObject.header);
+        expect(calculatedStyle).toEqual(expectedResult);
+    });
+
+    it('getNavigationLinksContainerStyle should create expected object from "xl" grid size', () => {
+        const expectedResult = {};
+        const calculatedStyle = getNavigationLinksContainerStyle('xl', defaultThemeObject.header);
         expect(calculatedStyle).toEqual(expectedResult);
     });
 
@@ -338,7 +366,8 @@ describe('Header calculateStyles', () => {
                     listStyleType: 'none',
                     marginLeft: 'auto',
                     marginRight: 0.3125
-                }
+                },
+                navigationLinksContainer: {}
             }
         };
 

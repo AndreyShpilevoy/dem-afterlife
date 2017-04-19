@@ -38,15 +38,25 @@ export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
     }
 });
 
-export const getNavigationLinksStyle = (gridSize, headerStyles) => ({
+export const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
     {
         flexDirection: 'row',
-        marginLeft: headerStyles.navigationLinks.marginLeft,
-        marginRight: headerStyles.navigationLinks.marginRight
+        marginLeft: navigationLinks.marginLeft,
+        marginRight: navigationLinks.marginRight
     } : {flexDirection: 'column'},
     ...{display: 'flex', listStyleType: 'none'}
 });
+
+export const getNavigationLinksContainerStyle = (gridSize, {navigationLinks}) =>
+    gridSize !== 'lg' && gridSize !== 'xl' ?
+    {
+        transformOrigin: 'top',
+        transition: navigationLinks.transition,
+        '&.closed': {
+            transform: 'scaleY(0)'
+        }
+    } : {};
 
 export const getHeaderMenuButtonContainerStyle = headerStyles => ({
     marginLeft: headerStyles.menuButtonContainer.marginLeft,
@@ -70,6 +80,7 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
         headerPadding: {paddingTop: headerStyles[gridSize].height},
         headerLogoContainer: getHeaderLogoContainerStyle(gridSize, headerStyles),
         navigationLinks: getNavigationLinksStyle(gridSize, headerStyles),
+        navigationLinksContainer: getNavigationLinksContainerStyle(gridSize, headerStyles),
         headerMenuButtonContainer: getHeaderMenuButtonContainerStyle(headerStyles)
     });
 
