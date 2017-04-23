@@ -8,6 +8,8 @@ import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import styler from 'styles/styler';
+import SVGInline from 'react-svg-inline';
+import iconSVG from 'images/svg/barcode.svg';
 import calculateStyles from './calculateStyles';
 
 export const FooterPure = ({classNames}) =>
@@ -24,6 +26,7 @@ export const FooterPure = ({classNames}) =>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
+                                <SVGInline svg={ iconSVG } />
                                 {'SocialMediaLinkArray'}
                             </Hidden>
                         </Column>

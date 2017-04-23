@@ -36,7 +36,9 @@ const entryPoints = {
         'react-router-dom',
         'react-router-redux',
         'redux',
-        'redux-saga'
+        'redux-saga',
+        'raw-loader',
+        'react-svg-inline'
     ],
     app: ['./src/scripts/index']
 };
@@ -49,8 +51,12 @@ const rules = [
         use: ['babel-loader']
     },
     {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         use: 'url-loader?limit=8192&name=images/[name]-[hash].[ext]'
+    },
+    {
+        test: /\.svg$/,
+        loader: 'raw-loader'
     },
     {
         test: /\.jsx$|\.js$/,
@@ -83,7 +89,7 @@ const plugins = [
     ),
     new webpack.LoaderOptionsPlugin({
         debug,
-        noInfo: ! debug,
+        noInfo: !debug,
         options: {
             context: __dirname,
             output: {path: './'},
@@ -120,7 +126,7 @@ if (debug) {
             {copyUnmodified: false}
         ),
         new HtmlWebpackPlugin({
-            hash: ! debug,
+            hash: !debug,
             filename: 'index.html',
             template: path.join(__dirname, './src/index.html'),
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
