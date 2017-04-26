@@ -15,7 +15,8 @@ exports[`Layout HOC component match expected snapshot 1`] = `
 >
   <Layout
     getLocale={[Function]}
-    getnavigationLinkArray={[Function]}
+    getNavigationLinkArray={[Function]}
+    getSocialMediaLinkArray={[Function]}
     navigationLinkArray={Array []}
     store={
       Object {

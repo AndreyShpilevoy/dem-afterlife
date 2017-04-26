@@ -1,9 +1,10 @@
 import {call, put, take} from 'redux-saga/effects';
-import {getLocaleApi, getNavigationLinkArrayApi} from 'api';
+import {getLocaleApi, getNavigationLinkArrayApi, getSocialMediaLinkArrayApi} from 'api';
 
 const initialState = {
     locale: 'en',
-    navigationLinkArray: []
+    navigationLinkArray: [],
+    socialMediaLinkArray: []
 };
 
 export const GET_LOCALE = 'GET_LOCALE';
@@ -16,13 +17,36 @@ export const getLocaleSuccess = locale => ({
 });
 
 export const GET_NAVIGATIONLINKARRAY = 'GET_NAVIGATIONLINKARRAY';
-export const getnavigationLinkArray = () => ({type: GET_NAVIGATIONLINKARRAY});
+export const getNavigationLinkArray = () => ({type: GET_NAVIGATIONLINKARRAY});
 
 export const GET_NAVIGATIONLINKARRAY_SUCCESS = 'GET_NAVIGATIONLINKARRAY_SUCCESS';
-export const getnavigationLinkArraySuccess = navigationLinkArray => ({
+export const getNavigationLinkArraySuccess = navigationLinkArray => ({
     type: GET_NAVIGATIONLINKARRAY_SUCCESS,
     payload: {navigationLinkArray}
 });
+
+export const GET_SOCIALMEDIALINKARRAY = 'GET_SOCIALMEDIALINKARRAY';
+export const getSocialMediaLinkArray = () => ({type: GET_SOCIALMEDIALINKARRAY});
+
+export const GET_SOCIALMEDIALINKARRAY_SUCCESS = 'GET_SOCIALMEDIALINKARRAY_SUCCESS';
+export const getSocialMediaLinkArraySuccess = socialMediaLinkArray => ({
+    type: GET_SOCIALMEDIALINKARRAY_SUCCESS,
+    payload: {socialMediaLinkArray}
+});
+
+export const layoutReducer = (state = initialState, {type, payload}) => {
+    switch (type) {
+        case GET_LOCALE_SUCCESS:
+            return {...state, locale: payload.locale};
+        case GET_NAVIGATIONLINKARRAY_SUCCESS:
+            return {...state, navigationLinkArray: payload.navigationLinkArray};
+        case GET_SOCIALMEDIALINKARRAY_SUCCESS:
+            return {...state, socialMediaLinkArray: payload.socialMediaLinkArray};
+        default:
+            break;
+    }
+    return state;
+};
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
 export function* getLocaleSaga() {
@@ -37,19 +61,24 @@ export function* getNavigationLinkArraySaga() {
     while (true) {
         yield take(GET_NAVIGATIONLINKARRAY);
         const navigationLinkArray = yield call(getNavigationLinkArrayApi);
-        yield put(getnavigationLinkArraySuccess(navigationLinkArray));
+        yield put(getNavigationLinkArraySuccess(navigationLinkArray));
     }
 }
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
 
-export const layoutReducer = (state = initialState, {type, payload}) => {
-    switch (type) {
-        case GET_LOCALE_SUCCESS:
-            return {...state, locale: payload.locale};
-        case GET_NAVIGATIONLINKARRAY_SUCCESS:
-            return {...state, navigationLinkArray: payload.navigationLinkArray};
-        default:
-            break;
+export function* getSocialMediaLinkArraySaga() {
+    while (true) {
+        yield take(GET_SOCIALMEDIALINKARRAY);
+        const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
+        yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
     }
-    return state;
-};
+}
+
+export function* layoutSaga() {
+    yield [
+        getLocaleSaga(),
+        getNavigationLinkArraySaga(),
+        getSocialMediaLinkArraySaga()
+    ];
+}
+
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
