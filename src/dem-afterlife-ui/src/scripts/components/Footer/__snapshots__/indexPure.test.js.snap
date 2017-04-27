@@ -36,7 +36,7 @@ exports[`Footer Pure component match expected snapshot 1`] = `
                 cleanup={Array []}
                 cleanupExceptions={Array []}
                 component="span"
-                svg={Object {}}
+                svg="test-file-stub"
               />
               SocialMediaLinkArray
             </Aesthetic-HiddenPure>

@@ -49,6 +49,7 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getLocaleSaga() {
     while (true) {
         yield take(GET_LOCALE);
@@ -57,6 +58,7 @@ export function* getLocaleSaga() {
     }
 }
 
+/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getNavigationLinkArraySaga() {
     while (true) {
         yield take(GET_NAVIGATIONLINKARRAY);
@@ -65,6 +67,7 @@ export function* getNavigationLinkArraySaga() {
     }
 }
 
+/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSocialMediaLinkArraySaga() {
     while (true) {
         yield take(GET_SOCIALMEDIALINKARRAY);
@@ -73,6 +76,7 @@ export function* getSocialMediaLinkArraySaga() {
     }
 }
 
+/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* layoutSaga() {
     yield [
         getLocaleSaga(),

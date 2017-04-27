@@ -18,6 +18,7 @@ exports[`Layout HOC component match expected snapshot 1`] = `
     getNavigationLinkArray={[Function]}
     getSocialMediaLinkArray={[Function]}
     navigationLinkArray={Array []}
+    socialMediaLinkArray={Array []}
     store={
       Object {
         "clearActions": [Function],

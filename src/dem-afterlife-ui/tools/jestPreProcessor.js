@@ -3,10 +3,6 @@ const babelJest = require('babel-jest');
 
 module.exports = {
     process(src, filename) {
-        if (filename.match(/\.(png|gif|jpeg|jpg|svg|tiff|bmp)$/)) {
-            return '';
-        }
-
         return babelJest.process(src, filename);
     }
 };
