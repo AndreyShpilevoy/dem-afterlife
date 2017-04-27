@@ -763,9 +763,9 @@ babel-plugin-transform-react-jsx@^6.24.1:
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-remove-prop-types@0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.2.tgz#97e3cab4d05938df91e16c0473737ef6c575a2e6"
+babel-plugin-transform-react-remove-prop-types@0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.3.tgz#fdff5c12933efc3ac979817adcdc0f612c5e3563"
 
 babel-plugin-transform-regenerator@^6.24.1:
   version "6.24.1"
@@ -1462,9 +1462,15 @@ debug@2.6.1:
   dependencies:
     ms "0.7.2"
 
-debug@2.6.4, debug@^2.1.1, debug@^2.2.0:
+debug@2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.4.tgz#7586a9b3c39741c0282ae33445c4e8ac74734fe0"
+  dependencies:
+    ms "0.7.3"
+
+debug@^2.1.1, debug@^2.2.0:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.5.tgz#7a76247781acd4ef2a85f0fb8abf763cd1af249e"
   dependencies:
     ms "0.7.3"
 
@@ -2905,8 +2911,8 @@ jest-cli@19.0.2:
     yargs "^6.3.0"
 
 jest-config@^19.0.2:
-  version "19.0.2"
-  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-19.0.2.tgz#1b9bd2db0ddd16df61c2b10a54009e1768da6411"
+  version "19.0.3"
+  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-19.0.3.tgz#829c6356c6e7e8abdd5657580707a5922b9fc90d"
   dependencies:
     chalk "^1.1.1"
     jest-environment-jsdom "^19.0.2"
