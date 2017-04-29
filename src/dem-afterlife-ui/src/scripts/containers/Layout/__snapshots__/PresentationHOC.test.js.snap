@@ -9,6 +9,7 @@ exports[`Layout Presentation component match expected snapshot 1`] = `
     }
   }
   navigationLinkArray={Array []}
+  socialMediaLinkArray={Array []}
   theme="default"
 >
   <div>

@@ -16,6 +16,7 @@ describe('Layout Presentation Pure', () => {
         <PresentationPure
             theme={'default'}
             navigationLinkArray={[]}
+            socialMediaLinkArray={[]}
             classNames={classNames}>
             <div>
                 {'Layout Presentation content'}

@@ -52,6 +52,7 @@ exports[`Layout HOC component match expected snapshot 1`] = `
   >
     <Presentation
       navigationLinkArray={Array []}
+      socialMediaLinkArray={Array []}
       theme="default"
     >
       <div>

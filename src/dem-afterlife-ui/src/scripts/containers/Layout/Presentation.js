@@ -11,7 +11,7 @@ import styler from 'styles/styler';
 import globalStyles from './globalStyles';
 import calculateStyles from './calculateStyles';
 
-export const PresentationPure = ({children, theme, navigationLinkArray, classNames}) =>
+export const PresentationPure = ({children, theme, navigationLinkArray, socialMediaLinkArray, classNames}) =>
     <ThemeProvider name={theme}>
         <Container className={classNames.container}>
             {/* title*/}
@@ -25,7 +25,7 @@ export const PresentationPure = ({children, theme, navigationLinkArray, classNam
                 </Column>
             </Row>
             <Row>
-                <Footer/>
+                <Footer socialMediaLinkArray={socialMediaLinkArray}/>
             </Row>
         </Container>
     </ThemeProvider>;
@@ -40,7 +40,17 @@ PresentationPure.propTypes = {
             title: string.isRequired,
             href: string.isRequired,
             order: number.isRequired
-        })).isRequired
+        })
+    ).isRequired,
+    socialMediaLinkArray: arrayOf(
+        shape({
+            id: number.isRequired,
+            title: string.isRequired,
+            href: string.isRequired,
+            svgImageName: string.isRequired,
+            order: number.isRequired
+        })
+    ).isRequired
 };
 
 export default styler(theme => ({...globalStyles(theme), ...calculateStyles()}))(PresentationPure);

@@ -39,9 +39,12 @@ class Layout extends Component {
     }
 
     render() {
-        const {navigationLinkArray} = this.props;
+        const {navigationLinkArray, socialMediaLinkArray} = this.props;
         return (
-            <Presentation theme={ 'default' } navigationLinkArray={navigationLinkArray}>
+            <Presentation
+                theme={ 'default' }
+                navigationLinkArray={navigationLinkArray}
+                socialMediaLinkArray={socialMediaLinkArray}>
                 {this.props.children}
             </Presentation>
         );

@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React from 'react';
-import {} from 'prop-types';
+import {arrayOf, shape, number, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import Column from 'components/Column';
@@ -12,7 +12,7 @@ import SVGInline from 'react-svg-inline';
 import iconSVG from 'images/svg/barcode.svg';
 import calculateStyles from './calculateStyles';
 
-export const FooterPure = ({classNames}) =>
+export const FooterPure = ({classNames, socialMediaLinkArray}) =>
     <Container>
         <Row>
             <Column xs={12}>
@@ -38,7 +38,16 @@ export const FooterPure = ({classNames}) =>
 ;
 
 FooterPure.propTypes = {
-    classNames: ClassNamesPropType
+    classNames: ClassNamesPropType,
+    socialMediaLinkArray: arrayOf(
+        shape({
+            id: number.isRequired,
+            title: string.isRequired,
+            href: string.isRequired,
+            svgImageName: string.isRequired,
+            order: number.isRequired
+        })
+    ).isRequired
 };
 
 export default styler(theme => calculateStyles(theme))(FooterPure);

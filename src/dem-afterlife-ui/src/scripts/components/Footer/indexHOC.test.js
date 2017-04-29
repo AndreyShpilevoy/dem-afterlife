@@ -10,6 +10,6 @@ describe('Footer HOC', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<Footer theme={hocProps.theme} />)).toMatchSnapshot();
+        expect(shallow(<Footer theme={hocProps.theme} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
     });
 });

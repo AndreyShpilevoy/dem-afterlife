@@ -25,7 +25,9 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
       </Aesthetic-ColumnPure>
     </Aesthetic-RowPure>
     <Aesthetic-RowPure>
-      <Aesthetic-FooterPure />
+      <Aesthetic-FooterPure
+        socialMediaLinkArray={Array []}
+      />
     </Aesthetic-RowPure>
   </Aesthetic-ContainerPure>
 </ThemeProvider>

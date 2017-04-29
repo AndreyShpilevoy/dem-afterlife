@@ -18,6 +18,6 @@ describe('Footer Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<FooterPure classNames={classNames}/>)).toMatchSnapshot();
+        expect(shallow(<FooterPure classNames={classNames} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
     });
 });

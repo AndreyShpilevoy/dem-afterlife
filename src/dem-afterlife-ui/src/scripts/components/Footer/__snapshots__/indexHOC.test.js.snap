@@ -8,6 +8,7 @@ exports[`Footer HOC component match expected snapshot 1`] = `
       "footer": "footer-0-1",
     }
   }
+  socialMediaLinkArray={Array []}
   theme="default"
 />
 `;
