@@ -22,7 +22,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
   }
   removeNotification={[Function]}
 >
-  <NotificationSystem
+  <Component
     allowHTML={false}
     noAnimation={false}
     style={Object {}}
@@ -31,7 +31,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
       className="notifications-wrapper"
       style={Object {}}
     >
-      <NotificationContainer
+      <Component
         allowHTML={false}
         getStyles={
           Object {
@@ -103,7 +103,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
             }
           }
         >
-          <NotificationItem
+          <Component
             allowHTML={false}
             getStyles={
               Object {
@@ -227,8 +227,8 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
                 ×
               </span>
             </div>
-          </NotificationItem>
-          <NotificationItem
+          </Component>
+          <Component
             allowHTML={false}
             getStyles={
               Object {
@@ -352,11 +352,11 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
                 ×
               </span>
             </div>
-          </NotificationItem>
+          </Component>
         </div>
-      </NotificationContainer>
+      </Component>
     </div>
-  </NotificationSystem>
+  </Component>
 </NotificationPure>
 `;
 
@@ -364,7 +364,7 @@ exports[`Notification Pure component without notifications match expected snapsh
 <NotificationPure
   removeNotification={[Function]}
 >
-  <NotificationSystem
+  <Component
     allowHTML={false}
     noAnimation={false}
     style={Object {}}
@@ -373,6 +373,6 @@ exports[`Notification Pure component without notifications match expected snapsh
       className="notifications-wrapper"
       style={Object {}}
     />
-  </NotificationSystem>
+  </Component>
 </NotificationPure>
 `;
