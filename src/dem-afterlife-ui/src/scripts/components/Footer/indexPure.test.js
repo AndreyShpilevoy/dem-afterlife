@@ -14,7 +14,8 @@ describe('Footer Pure', () => {
 
     const classNames = {
         copyright: 'copyright-0-0',
-        footer: 'footer-0-1'
+        footer: 'footer-0-1',
+        socialMediaLinkIcon: 'socialMediaLinkIcon-0-1'
     };
 
     it('component match expected snapshot', () => {

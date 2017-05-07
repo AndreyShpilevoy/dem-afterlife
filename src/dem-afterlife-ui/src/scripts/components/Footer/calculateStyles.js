@@ -31,7 +31,7 @@ export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, medi
         footer: {...getCommonFooterStyle(gridSize, footerStyles), ...getSpecificStyle(gridSize)(gridSize, footerStyles)}
     });
 
-const calculateStyles = ({grid, footer}) =>
+const calculateStyles = ({grid, footer, socialMediaLinkIcons}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         ({...previous, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, footer)}),
         {
@@ -40,6 +40,13 @@ const calculateStyles = ({grid, footer}) =>
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
+            },
+            socialMediaLinkIcon: {
+                '& > .SVGInline-svg': {
+                    opacity: socialMediaLinkIcons.svg.opacity,
+                    width: socialMediaLinkIcons.svg.width,
+                    height: socialMediaLinkIcons.svg.height
+                }
             }
         }
     );

@@ -4,8 +4,10 @@ exports[`Footer HOC component match expected snapshot 1`] = `
 <FooterPure
   classNames={
     Object {
+      ".socialMediaLinkIcon-0-1 > .SVGInline-svg": ".socialMediaLinkIcon-0-1 > .SVGInline-svg-0-3",
       "copyright": "copyright-0-0",
-      "footer": "footer-0-1",
+      "footer": "footer-0-2",
+      "socialMediaLinkIcon": "socialMediaLinkIcon-0-1",
     }
   }
   socialMediaLinkArray={Array []}

@@ -166,6 +166,13 @@ const defaultTheme = {
         md: {...footerCommon, ...footerXsSmMd},
         lg: {...footerCommon, ...footerLgXl, backgroundImage: footerBackgroundImageLg},
         xl: {...footerCommon, ...footerLgXl, backgroundImage: footerBackgroundImageXl}
+    },
+    socialMediaLinkIcons: {
+        svg: {
+            opacity: 0.6,
+            width: 2,
+            height: 2
+        }
     }
 };
 

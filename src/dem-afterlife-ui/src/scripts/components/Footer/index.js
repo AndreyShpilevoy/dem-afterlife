@@ -7,9 +7,8 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
+import Steam from 'components/Steam';
 import styler from 'styles/styler';
-import SVGInline from 'react-svg-inline';
-import iconSVG from 'images/svg/barcode.svg';
 import calculateStyles from './calculateStyles';
 
 export const FooterPure = ({classNames, socialMediaLinkArray}) =>
@@ -26,7 +25,7 @@ export const FooterPure = ({classNames, socialMediaLinkArray}) =>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
-                                <SVGInline svg={ iconSVG } />
+                                <Steam className={classNames.socialMediaLinkIcon}/>
                                 {'SocialMediaLinkArray'}
                             </Hidden>
                         </Column>

@@ -38,6 +38,13 @@ describe('Footer calculateStyles', () => {
                 height: 2.5,
                 backgroundImage: 'xlImage.png'
             }
+        },
+        socialMediaLinkIcons: {
+            svg: {
+                opacity: 0.6,
+                width: 2,
+                height: 2
+            }
         }
     };
 
@@ -59,7 +66,18 @@ describe('Footer calculateStyles', () => {
                     display: 'flex',
                     height: 2.5,
                     width: '100%'} },
-            copyright: {alignItems: 'center', display: 'flex', height: '100%', justifyContent: 'center'
+            copyright: {
+                alignItems: 'center',
+                display: 'flex',
+                height: '100%',
+                justifyContent: 'center'
+            },
+            socialMediaLinkIcon: {
+                '& > .SVGInline-svg': {
+                    opacity: 0.6,
+                    height: 2,
+                    width: 2
+                }
             }
         };
         const calculatedStyle = calculateStyles(defaultThemeObject);

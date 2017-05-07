@@ -31,12 +31,8 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             <Aesthetic-HiddenPure
               md="down"
             >
-              <SVGInline
-                classSuffix="-svg"
-                cleanup={Array []}
-                cleanupExceptions={Array []}
-                component="span"
-                svg="test-file-stub"
+              <Steam
+                className="socialMediaLinkIcon-0-1"
               />
               SocialMediaLinkArray
             </Aesthetic-HiddenPure>
