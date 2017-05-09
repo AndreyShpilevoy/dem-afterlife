@@ -3,13 +3,18 @@
 import React from 'react';
 import {arrayOf, shape, number, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
+import R from 'ramda';
 import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import Steam from 'components/Steam';
+import SvgIconsMapper from 'components/SvgIconsMapper';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
+
+const mapSocialMediaArray = (socialMediaLinkArray, className) =>
+    R.sortBy(R.prop('order'), socialMediaLinkArray).map((item, key) =>
+        <SvgIconsMapper key={key} className={className} iconName={item.svgImageName}/>);
 
 export const FooterPure = ({classNames, socialMediaLinkArray}) =>
     <Container>
@@ -25,7 +30,7 @@ export const FooterPure = ({classNames, socialMediaLinkArray}) =>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
-                                <Steam className={classNames.socialMediaLinkIcon}/>
+                                {mapSocialMediaArray(socialMediaLinkArray, classNames.socialMediaLinkIcon)}
                                 {'SocialMediaLinkArray'}
                             </Hidden>
                         </Column>

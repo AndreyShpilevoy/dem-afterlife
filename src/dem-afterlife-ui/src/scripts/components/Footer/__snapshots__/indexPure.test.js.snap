@@ -31,9 +31,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             <Aesthetic-HiddenPure
               md="down"
             >
-              <Steam
-                className="socialMediaLinkIcon-0-1"
-              />
               SocialMediaLinkArray
             </Aesthetic-HiddenPure>
           </Aesthetic-ColumnPure>
