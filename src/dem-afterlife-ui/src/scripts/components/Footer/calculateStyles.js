@@ -41,8 +41,17 @@ const calculateStyles = ({grid, footer, socialMediaLinkIcons}) =>
                 alignItems: 'center',
                 justifyContent: 'center'
             },
+            socialMediaLinkIconContainer: {
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                marginRight: socialMediaLinkIcons.svg.padding * 7.5
+            },
             socialMediaLinkIcon: {
                 '& > .SVGInline-svg': {
+                    display: 'block',
+                    padding: socialMediaLinkIcons.svg.padding,
                     opacity: socialMediaLinkIcons.svg.opacity,
                     width: socialMediaLinkIcons.svg.width,
                     height: socialMediaLinkIcons.svg.height

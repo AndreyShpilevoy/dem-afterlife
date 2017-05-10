@@ -13,9 +13,11 @@ describe('Footer Pure', () => {
     });
 
     const classNames = {
+        '.socialMediaLinkIcon-0-2 > .SVGInline-svg': '.socialMediaLinkIcon-0-2 > .SVGInline-svg-0-4',
         copyright: 'copyright-0-0',
-        footer: 'footer-0-1',
-        socialMediaLinkIcon: 'socialMediaLinkIcon-0-1'
+        footer: 'footer-0-3',
+        socialMediaLinkIcon: 'socialMediaLinkIcon-0-2',
+        socialMediaLinkIconContainer: 'socialMediaLinkIconContainer-0-1'
     };
 
     const socialMediaLinksArray = [

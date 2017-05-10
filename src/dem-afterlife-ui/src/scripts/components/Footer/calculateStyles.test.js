@@ -43,7 +43,8 @@ describe('Footer calculateStyles', () => {
             svg: {
                 opacity: 0.6,
                 width: 2,
-                height: 2
+                height: 2,
+                padding: 0.125
             }
         }
     };
@@ -72,11 +73,20 @@ describe('Footer calculateStyles', () => {
                 height: '100%',
                 justifyContent: 'center'
             },
+            socialMediaLinkIconContainer: {
+                alignItems: 'center',
+                display: 'flex',
+                height: '100%',
+                justifyContent: 'flex-end',
+                marginRight: 0.9375
+            },
             socialMediaLinkIcon: {
                 '& > .SVGInline-svg': {
+                    display: 'block',
                     opacity: 0.6,
                     height: 2,
-                    width: 2
+                    width: 2,
+                    padding: 0.125
                 }
             }
         };

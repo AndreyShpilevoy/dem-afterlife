@@ -7,7 +7,7 @@ exports[`Footer Pure component match expected snapshot 1`] = `
       xs={12}
     >
       <div
-        className="footer-0-1"
+        className="footer-0-3"
       >
         <Aesthetic-RowPure>
           <Aesthetic-ColumnPure
@@ -30,7 +30,11 @@ exports[`Footer Pure component match expected snapshot 1`] = `
           >
             <Aesthetic-HiddenPure
               md="down"
-            />
+            >
+              <div
+                className="socialMediaLinkIconContainer-0-1"
+              />
+            </Aesthetic-HiddenPure>
           </Aesthetic-ColumnPure>
         </Aesthetic-RowPure>
       </div>
@@ -46,7 +50,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
       xs={12}
     >
       <div
-        className="footer-0-1"
+        className="footer-0-3"
       >
         <Aesthetic-RowPure>
           <Aesthetic-ColumnPure
@@ -70,30 +74,34 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             <Aesthetic-HiddenPure
               md="down"
             >
-              <SocialMediaLink
-                className="socialMediaLinkIcon-0-1"
-                socialMediaLinkItem={
-                  Object {
-                    "href": "http://steamcommunity.com/groups/Ex_Machina",
-                    "id": 1,
-                    "order": 1,
-                    "svgImageName": "Steam",
-                    "title": "Steam - Ex Machina Community",
+              <div
+                className="socialMediaLinkIconContainer-0-1"
+              >
+                <SocialMediaLink
+                  className="socialMediaLinkIcon-0-2"
+                  socialMediaLinkItem={
+                    Object {
+                      "href": "http://steamcommunity.com/groups/Ex_Machina",
+                      "id": 1,
+                      "order": 1,
+                      "svgImageName": "Steam",
+                      "title": "Steam - Ex Machina Community",
+                    }
                   }
-                }
-              />
-              <SocialMediaLink
-                className="socialMediaLinkIcon-0-1"
-                socialMediaLinkItem={
-                  Object {
-                    "href": "https://vk.com/exmachina2",
-                    "id": 2,
-                    "order": 2,
-                    "svgImageName": "Vk",
-                    "title": "VK - Ex Machina group",
+                />
+                <SocialMediaLink
+                  className="socialMediaLinkIcon-0-2"
+                  socialMediaLinkItem={
+                    Object {
+                      "href": "https://vk.com/exmachina2",
+                      "id": 2,
+                      "order": 2,
+                      "svgImageName": "Vk",
+                      "title": "VK - Ex Machina group",
+                    }
                   }
-                }
-              />
+                />
+              </div>
             </Aesthetic-HiddenPure>
           </Aesthetic-ColumnPure>
         </Aesthetic-RowPure>

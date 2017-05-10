@@ -30,7 +30,9 @@ export const FooterPure = ({classNames, socialMediaLinkArray}) =>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
-                                {mapSocialMediaArray(socialMediaLinkArray, classNames.socialMediaLinkIcon)}
+                                <div className={classNames.socialMediaLinkIconContainer}>
+                                    {mapSocialMediaArray(socialMediaLinkArray, classNames.socialMediaLinkIcon)}
+                                </div>
                             </Hidden>
                         </Column>
                     </Row>

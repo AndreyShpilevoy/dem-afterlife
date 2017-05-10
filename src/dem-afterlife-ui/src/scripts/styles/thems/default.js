@@ -171,7 +171,8 @@ const defaultTheme = {
         svg: {
             opacity: 0.6,
             width: 2,
-            height: 2
+            height: 2,
+            padding: 0.125
         }
     }
 };
