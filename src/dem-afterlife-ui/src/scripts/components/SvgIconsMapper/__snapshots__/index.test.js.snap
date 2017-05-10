@@ -13,7 +13,7 @@ exports[`SvgIconsMapper component match expected snapshot with Vk icon 1`] = `
 `;
 
 exports[`SvgIconsMapper component match expected snapshot with wrong icon 1`] = `
-<Component
+<Link
   className="svgIconsMapperIconClassName"
 />
 `;

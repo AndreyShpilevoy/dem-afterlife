@@ -8,13 +8,13 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import SvgIconsMapper from 'components/SvgIconsMapper';
+import SocialMediaLink from 'components/SocialMediaLink';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const mapSocialMediaArray = (socialMediaLinkArray, className) =>
     R.sortBy(R.prop('order'), socialMediaLinkArray).map((item, key) =>
-        <SvgIconsMapper key={key} className={className} iconName={item.svgImageName}/>);
+        <SocialMediaLink key={key} className={className} socialMediaLinkItem={item}/>);
 
 export const FooterPure = ({classNames, socialMediaLinkArray}) =>
     <Container>
@@ -31,7 +31,6 @@ export const FooterPure = ({classNames, socialMediaLinkArray}) =>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
                                 {mapSocialMediaArray(socialMediaLinkArray, classNames.socialMediaLinkIcon)}
-                                {'SocialMediaLinkArray'}
                             </Hidden>
                         </Column>
                     </Row>
