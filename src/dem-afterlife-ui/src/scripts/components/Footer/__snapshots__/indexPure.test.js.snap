@@ -40,3 +40,52 @@ exports[`Footer Pure component match expected snapshot 1`] = `
   </Aesthetic-RowPure>
 </Aesthetic-ContainerPure>
 `;
+
+exports[`Footer Pure component with socialMediaLinkArray match expected snapshot 1`] = `
+<Aesthetic-ContainerPure>
+  <Aesthetic-RowPure>
+    <Aesthetic-ColumnPure
+      xs={12}
+    >
+      <div
+        className="footer-0-1"
+      >
+        <Aesthetic-RowPure>
+          <Aesthetic-ColumnPure
+            lg={4}
+            xs={0}
+          />
+          <Aesthetic-ColumnPure
+            lg={4}
+            xs={12}
+          >
+            <div
+              className="copyright-0-0"
+            >
+              DEM Team - 04.03.2007
+            </div>
+          </Aesthetic-ColumnPure>
+          <Aesthetic-ColumnPure
+            lg={4}
+            xs={0}
+          >
+            <Aesthetic-HiddenPure
+              md="down"
+            >
+              <SvgIconsMapper
+                className="socialMediaLinkIcon-0-1"
+                iconName="Steam"
+              />
+              <SvgIconsMapper
+                className="socialMediaLinkIcon-0-1"
+                iconName="Vk"
+              />
+              SocialMediaLinkArray
+            </Aesthetic-HiddenPure>
+          </Aesthetic-ColumnPure>
+        </Aesthetic-RowPure>
+      </div>
+    </Aesthetic-ColumnPure>
+  </Aesthetic-RowPure>
+</Aesthetic-ContainerPure>
+`;

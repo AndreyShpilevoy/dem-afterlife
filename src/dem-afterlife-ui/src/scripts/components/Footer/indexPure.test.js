@@ -18,7 +18,28 @@ describe('Footer Pure', () => {
         socialMediaLinkIcon: 'socialMediaLinkIcon-0-1'
     };
 
+    const socialMediaLinksArray = [
+        {
+            id: 2,
+            title: 'VK - Ex Machina group',
+            svgImageName: 'Vk',
+            href: 'https://vk.com/exmachina2',
+            order: 2
+        },
+        {
+            id: 1,
+            title: 'Steam - Ex Machina Community',
+            svgImageName: 'Steam',
+            href: 'http://steamcommunity.com/groups/Ex_Machina',
+            order: 1
+        }
+    ];
+
     it('component match expected snapshot', () => {
         expect(shallow(<FooterPure classNames={classNames} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
+    });
+
+    it('component with socialMediaLinkArray match expected snapshot', () => {
+        expect(shallow(<FooterPure classNames={classNames} socialMediaLinkArray={socialMediaLinksArray}/>)).toMatchSnapshot();
     });
 });
