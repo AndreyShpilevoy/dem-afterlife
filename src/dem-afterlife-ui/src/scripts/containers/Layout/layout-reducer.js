@@ -1,4 +1,4 @@
-import {call, put, take} from 'redux-saga/effects';
+import {all, call, put, take} from 'redux-saga/effects';
 import {getLocaleApi, getNavigationLinkArrayApi, getSocialMediaLinkArrayApi} from 'api';
 
 const initialState = {
@@ -13,7 +13,7 @@ export const getLocale = () => ({type: GET_LOCALE});
 export const GET_LOCALE_SUCCESS = 'GET_LOCALE_SUCCESS';
 export const getLocaleSuccess = locale => ({
     type: GET_LOCALE_SUCCESS,
-    payload: {locale}
+    payload: locale
 });
 
 export const GET_NAVIGATIONLINKARRAY = 'GET_NAVIGATIONLINKARRAY';
@@ -78,11 +78,11 @@ export function* getSocialMediaLinkArraySaga() {
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* layoutSaga() {
-    yield [
+    yield all([
         getLocaleSaga(),
         getNavigationLinkArraySaga(),
         getSocialMediaLinkArraySaga()
-    ];
+    ]);
 }
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/

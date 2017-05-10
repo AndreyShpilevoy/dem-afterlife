@@ -33,7 +33,7 @@ describe('Layout reducer', () => {
     it('getLocaleSuccess should create expected object', () => {
         const expectedResult = {
             type: GET_LOCALE_SUCCESS,
-            payload: {locale: 'ru'}
+            payload: 'ru'
         };
         expect(getLocaleSuccess('ru')).toEqual(expectedResult);
     });
@@ -169,7 +169,7 @@ describe('Layout reducer', () => {
 
         generator.next();
         generator.next();
-        expect(IsPromise(generator.next(getLocaleApi()).value.PUT.action.payload.locale)).toBeTruthy();
+        expect(IsPromise(generator.next(getLocaleApi()).value.PUT.action.payload)).toBeTruthy();
     });
 
     it('getLocaleSaga fourth yeald should return the same result as first', () => {
@@ -256,6 +256,6 @@ describe('Layout reducer', () => {
 
     it('should return 3 Sagas from default generator', () => {
         const generator = layoutSaga();
-        expect(generator.next().value.length).toEqual(3);
+        expect(generator.next().value.ALL.length).toEqual(3);
     });
 });
