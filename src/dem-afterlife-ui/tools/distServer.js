@@ -38,8 +38,6 @@ webpack(webpackConfig).run((error, stats) => {
 
     const jsonStats = stats.toJson();
 
-    // fs.appendFile('message.json', JSON.stringify(jsonStats));
-
     if (jsonStats.errors.length > 0) {
         return jsonStats.errors.map(innerError => console.log(innerError.red));
     }

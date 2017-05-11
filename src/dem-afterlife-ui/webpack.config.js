@@ -112,7 +112,7 @@ if (debug) {
     output.path = path.join(__dirname, '../dem-afterlife/wwwroot');
     output.publicPath = '/';
     plugins.push(
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {warnings: false},
             output: {comments: false},
