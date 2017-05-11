@@ -29,7 +29,6 @@ export const notificationReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case ADD_NOTIFICATION:
             return {...state, notifications: [...state.notifications, payload.notification] };
-
         case REMOVE_NOTIFICATION:
             return {notifications: state.notifications.filter(n => n.uid !== payload.uid)};
         default:
