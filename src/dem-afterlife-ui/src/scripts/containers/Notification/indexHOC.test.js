@@ -9,7 +9,7 @@ describe('Notification HOC', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot', () => {
-        const props = {store: mockStore({notificationReducer: {allNotifications: [] } })};
+        const props = {store: mockStore({notificationReducer: {notifications: [] } })};
         expect(shallow(<Notification {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

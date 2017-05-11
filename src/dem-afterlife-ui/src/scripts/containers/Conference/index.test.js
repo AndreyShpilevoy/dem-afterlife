@@ -14,7 +14,9 @@ describe('Conference HOC', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot', () => {
-        const props = {store: mockStore({})};
+        const props = {
+            store: mockStore({conferenceReducer: {chapterArray: [] } })
+        };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

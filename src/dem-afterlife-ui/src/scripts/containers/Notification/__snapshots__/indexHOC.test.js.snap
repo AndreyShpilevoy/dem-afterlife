@@ -2,6 +2,7 @@
 
 exports[`Notification HOC component match expected snapshot 1`] = `
 <NotificationPure
+  notifications={Array []}
   removeNotification={[Function]}
   store={
     Object {

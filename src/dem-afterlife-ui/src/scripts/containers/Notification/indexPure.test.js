@@ -8,7 +8,8 @@ jest.mock('styles/styler');
 
 describe('Notification Pure', () => {
     const props = {
-        removeNotification: () => {}
+        removeNotification: () => {},
+        notifications: []
     };
     it('component without notifications match expected snapshot', () => {
         expect(mount(<NotificationPure {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();

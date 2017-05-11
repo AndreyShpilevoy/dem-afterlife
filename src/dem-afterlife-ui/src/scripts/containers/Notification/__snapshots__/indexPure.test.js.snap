@@ -362,6 +362,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
 
 exports[`Notification Pure component without notifications match expected snapshot 1`] = `
 <NotificationPure
+  notifications={Array []}
   removeNotification={[Function]}
 >
   <Component
