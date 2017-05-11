@@ -64,11 +64,23 @@
         "react/jsx-no-literals": 1,
         "react/no-direct-mutation-state": 1,
         "react/no-multi-comp": 1,
-        "space-unary-ops": [2,{"words":true,"nonwords":true,"overrides": {"!": false}}]
+        "space-unary-ops": [
+            2,
+            {
+                "words":true,
+                "nonwords":true,
+                "overrides": {
+                    "!": false,
+                    "++": false,
+                    "--": false
+                }
+            }
+        ],
+        "no-plusplus": 0
     },
     "settings": {
         "import/resolver": {
-            "babel-module": {}
+            "webpack": {}
         }
     }
 }

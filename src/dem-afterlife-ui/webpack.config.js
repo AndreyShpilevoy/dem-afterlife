@@ -137,6 +137,20 @@ if (debug) {
     );
 }
 
+const resolve = {
+    alias: {
+        api: path.join(__dirname, './src/scripts/api'),
+        components: path.join(__dirname, './src/scripts/components'),
+        containers: path.join(__dirname, './src/scripts/containers'),
+        images: path.join(__dirname, './src/images'),
+        smiles: path.join(__dirname, './src/images/smiles'),
+        styles: path.join(__dirname, './src/scripts/styles'),
+        store: path.join(__dirname, './src/scripts/store'),
+        utils: path.join(__dirname, './src/scripts/utils'),
+        tools: path.join(__dirname, './tools')
+    }
+};
+
 
 module.exports = {
     devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
@@ -146,5 +160,6 @@ module.exports = {
     module: {
         rules
     },
-    plugins
+    plugins,
+    resolve
 };

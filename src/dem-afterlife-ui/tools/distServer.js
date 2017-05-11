@@ -7,6 +7,8 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackConfig = require('../webpack.config');
 
+// const fs = require('fs');
+
 const runExpressServer = () =>
     new Promise(
         (resolve, reject) => {
@@ -36,11 +38,13 @@ webpack(webpackConfig).run((error, stats) => {
 
     const jsonStats = stats.toJson();
 
-    if (jsonStats.hasErrors) {
+    // fs.appendFile('message.json', JSON.stringify(jsonStats));
+
+    if (jsonStats.errors.length > 0) {
         return jsonStats.errors.map(innerError => console.log(innerError.red));
     }
 
-    if (jsonStats.hasWarnings) {
+    if (jsonStats.warnings.length > 0) {
         console.log('Webpack generated the following warnings: '.bold.yellow);
         jsonStats.warnings.map(warning => console.log(warning.yellow));
     }

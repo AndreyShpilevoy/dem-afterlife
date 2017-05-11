@@ -11,25 +11,7 @@
         ]
     ],
     "plugins": [
-        "transform-class-properties",
-        [
-            "module-resolver",
-            {
-                "root": [
-                    "./src/scripts"
-                ],
-                "alias": {
-                    "api": "./src/scripts/api",
-                    "components": "./src/scripts/components",
-                    "containers": "./src/scripts/containers",
-                    "images": "./src/images",
-                    "smiles": "./src/images/smiles",
-                    "styles": "./src/scripts/styles",
-                    "utils": "./src/scripts/utils",
-                    "tools": "./tools"
-                }
-            }
-        ]
+        "transform-class-properties"
     ],
     "env": {
         "development": {
