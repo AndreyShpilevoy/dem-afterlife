@@ -60,9 +60,16 @@ const rules = [
     },
     {
         test: /\.jsx$|\.js$/,
-        use: 'eslint-loader',
         enforce: 'pre',
-        include: path.join(__dirname, './src')
+        include: path.join(__dirname, './src'),
+        use: [
+            {
+                loader: 'eslint-loader',
+                options: {
+                    fix: true
+                }
+            }
+        ]
     }
 ];
 
