@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, string} from 'prop-types';
+import {node, string, func} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -9,7 +9,7 @@ const constructClassNames = (sizesArray, classNames) =>
         .map(size => `hidden-${size.direction}-${size.name}`)
         .reduce((previouse, current) => `${previouse} ${classNames[current]}`, '');
 
-export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className}) => {
+export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className, onClick}) => {
     const classes = constructClassNames(
         [
             {name: 'xs', direction: xs},
@@ -22,13 +22,14 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className}
     );
 
     return (
-        <span className={`${classes} ${className || ''}`}>
+        <span className={`${classes} ${className || ''}`} onClick={onClick}>
             {children}
         </span>
     );
 };
 
 HiddenPure.propTypes = {
+    onClick: func,
     className: string,
     classNames: ClassNamesPropType,
     children: node,

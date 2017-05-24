@@ -18,9 +18,9 @@ export class MenuButtonPure extends Component {
         this.state = {opened: false};
     }
 
-    onClickLocal = () => {
+    onClickLocal = value => {
         const {onClick} = this.props;
-        this.setState({opened: !this.state.opened});
+        this.setState({opened: value});
         if (onClick) {
             onClick();
         }
@@ -28,13 +28,14 @@ export class MenuButtonPure extends Component {
 
     render() {
         const {classNames} = this.props;
-        const opened = this.state.opened ? 'open' : '';
+        const {opened} = this.state;
+        const openedClassName = opened ? 'open' : '';
         return (
-            <div className={ classNames.container } onClick={this.onClickLocal}>
-                <div className={ `${classNames.firstLine} ${classNames.allLines} ${opened}` } />
-                <div className={ `${classNames.secondLine} ${classNames.allLines} ${opened}` } />
-                <div className={ `${classNames.thirdLine} ${classNames.allLines} ${opened}` } />
-                <div className={ `${classNames.fourthLine} ${classNames.allLines} ${opened}` } />
+            <div className={ classNames.container } onClick={() => this.onClickLocal(!opened)}>
+                <div className={ `${classNames.firstLine} ${classNames.allLines} ${openedClassName}` } />
+                <div className={ `${classNames.secondLine} ${classNames.allLines} ${openedClassName}` } />
+                <div className={ `${classNames.thirdLine} ${classNames.allLines} ${openedClassName}` } />
+                <div className={ `${classNames.fourthLine} ${classNames.allLines} ${openedClassName}` } />
             </div>
         );
     }

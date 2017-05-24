@@ -1,12 +1,20 @@
 import React from 'react';
-import {node} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
+import R from 'ramda';
+import Chapter from 'components/Chapter';
 
-const Presentation = ({children}) =>
+const mapChapterArrayToComponent = chapterArray =>
+    R.sortBy(R.prop('order'), chapterArray).map((chapterItem, key) =>
+        <Chapter key={key} chapterItem={chapterItem}>
+        </Chapter>);
+
+const Presentation = ({chapterArray}) =>
     <div>
-        {children}
+        {mapChapterArrayToComponent(chapterArray)}
     </div>;
+
 Presentation.propTypes = {
-    children: node
+    chapterArray: sharedPropTypes.chapterArray
 };
 
 export default Presentation;

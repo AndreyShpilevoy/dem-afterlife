@@ -14,7 +14,15 @@ const colors = {
     yellowTextColor: '#CBC065',
     yellowTextColorHovered: '#FFF495',
     footerBackgroundColor: '#3E3025',
-    footerTextColor: '#CFB095'
+    footerTextColor: '#CFB095',
+    collapsebleSectionHeaderBackgroundColor: '#564B41',
+    contentHolderBodyTextColor: '#48423D',
+    collapsebleSectionBodyBackgroundColor: '#7B736B'
+};
+
+const sizes = {
+    marginBetweenBlocks: 0.3125,
+    horizontalPadingAndMargin: 0.9375
 };
 
 const headerXsSm = {
@@ -23,21 +31,20 @@ const headerXsSm = {
     logoContainerWidth: 11.25
 };
 
+const defaultTransition = 'all 350ms ease-in-out';
+const linearTransition = 'all 400ms linear';
+
 const headerLgXl = {
     height: 5,
-    transition: 'all 400ms linear',
+    transition: linearTransition,
     logoContainerWidth: 16
 };
-
-const headerSideMargin = 0.9375;
-
-const defaultTransition = '0.35s ease-in-out';
 
 const headerRightColumns = {
     marginLeft: 'auto',
     marginBottom: 'auto',
     marginTop: 'auto',
-    marginRight: headerSideMargin
+    marginRight: sizes.horizontalPadingAndMargin
 };
 
 const navigationLinksXsSmMd = {
@@ -56,6 +63,7 @@ const navigationLinksPadding = {
 };
 
 const footerCommon = {
+    marginTop: sizes.marginBetweenBlocks,
     color: colors.footerTextColor
 };
 
@@ -133,7 +141,7 @@ const defaultTheme = {
         lg: {...headerLgXl, backgroundImage: headerBackgroundImageLg},
         xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
-            marginLeft: headerSideMargin,
+            marginLeft: sizes.horizontalPadingAndMargin,
             marginTop: 'auto'
         },
         menuButtonContainer: headerRightColumns,
@@ -173,6 +181,23 @@ const defaultTheme = {
             width: 2,
             height: 2,
             padding: 0.125
+        }
+    },
+    collapsebleSection: {
+        general: {
+            marginTop: sizes.marginBetweenBlocks,
+            padding: sizes.horizontalPadingAndMargin
+        },
+        header: {
+            backgroundColor: colors.collapsebleSectionHeaderBackgroundColor,
+            color: colors.orangeColor,
+            height: 2.5,
+            fontSize: 1.25
+        },
+        body: {
+            backgroundColor: colors.collapsebleSectionBodyBackgroundColor,
+            color: colors.contentHolderBodyTextColor,
+            transition: linearTransition
         }
     }
 };

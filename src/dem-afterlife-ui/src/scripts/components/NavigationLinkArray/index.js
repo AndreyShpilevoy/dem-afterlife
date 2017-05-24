@@ -1,5 +1,6 @@
 import React from 'react';
-import {arrayOf, string, shape, number} from 'prop-types';
+import {string} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
 import R from 'ramda';
 import {ClassNamesPropType} from 'aesthetic';
 import NavigationLinkItem from 'components/NavigationLinkItem';
@@ -21,13 +22,7 @@ export const NavigationLinkArrayPure = ({classNames, className, navigationLinkAr
 NavigationLinkArrayPure.propTypes = {
     classNames: ClassNamesPropType,
     className: string,
-    navigationLinkArray: arrayOf(
-        shape({
-            id: number.isRequired,
-            title: string.isRequired,
-            href: string.isRequired,
-            order: number.isRequired
-        })).isRequired
+    navigationLinkArray: sharedPropTypes.navigationLinkArray
 };
 
 export default styler(theme => calculateStyles(theme))(NavigationLinkArrayPure);

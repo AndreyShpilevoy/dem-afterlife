@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {Component} from 'react';
-import {arrayOf, shape, number, string} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
 import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
@@ -17,13 +17,7 @@ import calculateStyles from './calculateStyles';
 export class HeaderPure extends Component {
     static propTypes = {
         classNames: ClassNamesPropType,
-        navigationLinkArray: arrayOf(
-        shape({
-            id: number.isRequired,
-            title: string.isRequired,
-            href: string.isRequired,
-            order: number.isRequired
-        })).isRequired
+        navigationLinkArray: sharedPropTypes.navigationLinkArray
     };
 
     constructor(props) {
@@ -43,8 +37,8 @@ export class HeaderPure extends Component {
             }, 250));
     };
 
-    handleMenuButtonClick = () => {
-        this.setState({menuIsClosed: !this.state.menuIsClosed});
+    handleMenuButtonClick = value => {
+        this.setState({menuIsClosed: value});
     }
 
     render() {
@@ -63,7 +57,7 @@ export class HeaderPure extends Component {
                             </Column>
                             <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={classNames.headerColumn}>
                                 <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
-                                        <MenuButton onClick={this.handleMenuButtonClick}/>
+                                        <MenuButton onClick={() => this.handleMenuButtonClick(!menuIsClosed)}/>
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>

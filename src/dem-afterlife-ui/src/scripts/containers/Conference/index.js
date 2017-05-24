@@ -1,6 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 import React, {Component} from 'react';
-import {node, func, arrayOf, shape, number, string} from 'prop-types';
+import {func} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getChapterArray} from './conference-reducer';
@@ -8,15 +9,8 @@ import Presentation from './Presentation';
 
 class Conference extends Component {
     static propTypes = {
-        children: node,
         getChapterArray: func.isRequired,
-        chapterArray: arrayOf(
-            shape({
-                id: number.isRequired,
-                title: string.isRequired,
-                order: number.isRequired
-            })
-        ).isRequired
+        chapterArray: sharedPropTypes.chapterArray
     };
 
     componentDidMount() {
@@ -24,11 +18,9 @@ class Conference extends Component {
     }
 
     render() {
-        const {children} = this.props;
+        const {chapterArray} = this.props;
         return (
-            <Presentation>
-                {children}
-            </Presentation>
+            <Presentation chapterArray={chapterArray}/>
         );
     }
 }

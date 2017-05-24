@@ -1,5 +1,6 @@
 import React from 'react';
-import {arrayOf, shape, number, string, node} from 'prop-types';
+import {string, node} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
 import {ClassNamesPropType, ThemeProvider} from 'aesthetic';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
@@ -34,23 +35,8 @@ PresentationPure.propTypes = {
     classNames: ClassNamesPropType,
     children: node,
     theme: string,
-    navigationLinkArray: arrayOf(
-        shape({
-            id: number.isRequired,
-            title: string.isRequired,
-            href: string.isRequired,
-            order: number.isRequired
-        })
-    ).isRequired,
-    socialMediaLinkArray: arrayOf(
-        shape({
-            id: number.isRequired,
-            title: string.isRequired,
-            href: string.isRequired,
-            svgImageName: string.isRequired,
-            order: number.isRequired
-        })
-    ).isRequired
+    navigationLinkArray: sharedPropTypes.navigationLinkArray,
+    socialMediaLinkArray: sharedPropTypes.socialMediaLinkArray
 };
 
 export default styler(theme => ({...globalStyles(theme), ...calculateStyles()}))(PresentationPure);

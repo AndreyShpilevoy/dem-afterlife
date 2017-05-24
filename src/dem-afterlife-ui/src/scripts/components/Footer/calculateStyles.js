@@ -4,7 +4,8 @@ export const getCommonFooterStyle = (gridSize, footerStyles) => ({
     height: footerStyles[gridSize].height,
     color: footerStyles[gridSize].color,
     width: '100%',
-    display: 'flex'
+    display: 'flex',
+    marginTop: footerStyles[gridSize].marginTop
 });
 
 export const getXsSmMdStyle = (gridSize, footerStyles) => ({

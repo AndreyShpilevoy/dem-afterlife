@@ -1,7 +1,8 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {Component} from 'react';
-import {node, func, arrayOf, shape, number, string} from 'prop-types';
+import {node, func} from 'prop-types';
+import sharedPropTypes from 'utils/sharedPropTypes';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getLocale, getNavigationLinkArray, getSocialMediaLinkArray} from './layout-reducer';
@@ -13,23 +14,8 @@ class Layout extends Component {
         getLocale: func.isRequired,
         getNavigationLinkArray: func.isRequired,
         getSocialMediaLinkArray: func.isRequired,
-        navigationLinkArray: arrayOf(
-            shape({
-                id: number.isRequired,
-                title: string.isRequired,
-                href: string.isRequired,
-                order: number.isRequired
-            })
-        ).isRequired,
-        socialMediaLinkArray: arrayOf(
-            shape({
-                id: number.isRequired,
-                title: string.isRequired,
-                href: string.isRequired,
-                svgImageName: string.isRequired,
-                order: number.isRequired
-            })
-        ).isRequired
+        navigationLinkArray: sharedPropTypes.navigationLinkArray,
+        socialMediaLinkArray: sharedPropTypes.socialMediaLinkArray
     };
 
     componentDidMount() {

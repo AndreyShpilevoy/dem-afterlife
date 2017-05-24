@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number, string, oneOfType} from 'prop-types';
+import {func, node, number, string, oneOfType} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
@@ -10,7 +10,9 @@ const constructClassNames = (sizesArray, classNames) =>
         .reduce((previouse, current) =>
             classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
 
-export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames, className}) => {
+export const ColumnPure = (
+        {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames, className, onClick}
+    ) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
@@ -25,7 +27,7 @@ export const ColumnPure = ({xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lg
         classNames);
 
     return (
-        <div className={`${classes} ${className || ''}`}>
+        <div className={`${classes} ${className || ''}`} onClick={onClick}>
             {children}
         </div>
     );
@@ -35,6 +37,7 @@ ColumnPure.propTypes = {
     className: string,
     classNames: ClassNamesPropType,
     children: node,
+    onClick: func,
     xs: oneOfType([number, string]),
     sm: oneOfType([number, string]),
     md: oneOfType([number, string]),
