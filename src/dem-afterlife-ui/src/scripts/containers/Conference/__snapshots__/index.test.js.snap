@@ -47,12 +47,10 @@ exports[`Conference HOC component match expected snapshot 1`] = `
       }
     }
   >
-    <Presentation>
-      <div>
-        <div>
-          Conference content
-        </div>
-      </div>
+    <Presentation
+      chapterArray={Array []}
+    >
+      <div />
     </Presentation>
   </Conference>
 </Connect(Conference)>

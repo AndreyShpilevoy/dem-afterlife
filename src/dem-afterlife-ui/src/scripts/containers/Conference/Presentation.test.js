@@ -8,6 +8,6 @@ jest.mock('styles/styler');
 
 describe('Conference Presentation', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Presentation><div>{'Conference Presentation content'}</div></Presentation>)).toMatchSnapshot();
+        expect(shallow(<Presentation chapterArray={[]}/>)).toMatchSnapshot();
     });
 });
