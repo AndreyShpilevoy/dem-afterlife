@@ -6,6 +6,7 @@ import {ClassNamesPropType} from 'aesthetic';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
+import SvgIconsMapper from 'components/SvgIconsMapper';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
@@ -21,7 +22,7 @@ export class CollapsebleSectionPure extends Component {
             thirdColumnTerm: node
         }),
         collapseSettings: shape({
-            defaultCollapsebleState: bool.isRequired,
+            collapsedByDefault: bool.isRequired,
             isCollapseble: bool.isRequired
         })
     }
@@ -32,45 +33,41 @@ export class CollapsebleSectionPure extends Component {
             firstColumnTerm: null,
             secondColumnTerm: null,
             thirdColumnTerm: null
-        },
-        collapseSettings: {
-            defaultCollapsebleState: false,
-            isCollapseble: true
         }
     };
 
-    constructor(props, defaultProps) {
-        super(props, defaultProps);
-        const collapseSettings = props.collapseSettings || defaultProps.collapseSettings;
-
+    constructor(props) {
+        super(props);
+        const collapseSettings = props.collapseSettings || {};
         this.state = {
-            collapsedState: false,
-            collapsedByDefault: collapseSettings.defaultCollapsebleState,
-            isCollapseble: collapseSettings.isCollapseble
+            collapsedState: collapseSettings.collapsedByDefault || false,
+            isCollapseble: collapseSettings.isCollapseble || true
         };
     }
 
     handleTitleClick = value => {
-        this.setState({collapsedState: value});
+        const {isCollapseble} = this.state;
+        if (isCollapseble) {
+            this.setState({collapsedState: value});
+        }
     }
 
-    getRotatedImageComponent = () => null;
-
     render() {
-        const {collapsedState, collapsedByDefault, isCollapseble} = this.state;
+        const {collapsedState, isCollapseble} = this.state;
         const {children, headerSettings, classNames} = this.props;
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} =
             headerSettings || this.defaultProps.headerSettings;
-        const bodyHolder = `${classNames.bodyHolder} ${collapsedState ? 'closed' : ''}`;
+        const bodyHolder = `${classNames.bodyHolder} ${isCollapseble ? classNames.headerCursor : ''} ${collapsedState ? 'closed' : ''}`;
+        const headerArrow = `${classNames.headerArrow} ${collapsedState ? 'closed' : ''}`;
         return (
             <div className={classNames.general}>
                 <Row className={classNames.header} onClick={() => this.handleTitleClick(!collapsedState)}>
-                    <Column lg={6} className={`${classNames.headerText} ${classNames.headerHolder}`}>
+                    <Column md={11} lg={6} className={`${classNames.headerText} ${classNames.headerHolder}`}>
                         <span className={classNames.title}>
                             {title}
                         </span>
                     </Column>
-                    <Column lg={6} className={classNames.headerHolder}>
+                    <Column md={1} lg={6} className={classNames.headerHolder}>
                         <Hidden md={'down'}>
                             <Row>
                                 <Column lg={3} className={classNames.headerText}>
@@ -84,8 +81,10 @@ export class CollapsebleSectionPure extends Component {
                                 </Column>
                             </Row>
                         </Hidden>
+                        <Hidden sm={'down'} lg={'up'} className={classNames.headerArrowHolder}>
+                            <SvgIconsMapper className={headerArrow} iconName={'SortLeft'}/>
+                        </Hidden>
                     </Column>
-                    {this.getRotatedImageComponent()}
                 </Row>
                 <div className={bodyHolder}>
                     <div className={classNames.body}>

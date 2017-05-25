@@ -59,8 +59,28 @@ const getSizeSpecific = (grid, collapsebleSection) =>
                 mediaMinString,
                 mediaMaxString,
             {
-                header: {
+                headerCursor: {
                     cursor: 'pointer'
+                },
+                headerArrowHolder: {
+                    marginLeft: 'auto',
+                    marginRight: 1
+                },
+                headerArrow: {
+                    display: 'block',
+                    width: 1.3,
+                    height: 1.3,
+                    transform: 'rotate(-90deg)',
+                    transformOrigin: 'center center',
+                    transition: 'transform 0.5s ease-in',
+                    '&.closed': {
+                        transform: 'rotate(0deg)'
+                    },
+                    '& > .SVGInline-svg': {
+                        width: 1.3,
+                        height: 1.3,
+                        fill: collapsebleSection.header.color
+                    }
                 },
                 bodyHolder: {
                     transformOrigin: 'top',
