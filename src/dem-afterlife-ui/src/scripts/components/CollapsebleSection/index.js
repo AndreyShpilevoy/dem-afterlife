@@ -68,7 +68,7 @@ export class CollapsebleSectionPure extends Component {
                         </span>
                     </Column>
                     <Column md={1} lg={6} className={classNames.headerHolder}>
-                        <Hidden md={'down'}>
+                        <Hidden md={'down'} className={classNames.termedSection}>
                             <Row>
                                 <Column lg={3} className={classNames.headerText}>
                                     {firstColumnTerm}

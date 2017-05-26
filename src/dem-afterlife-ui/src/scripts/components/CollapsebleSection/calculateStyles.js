@@ -48,6 +48,9 @@ const getCommonPart = ({general, header, body}) => ({
         paddingBottom: general.padding / 2,
         paddingLeft: general.padding,
         paddingRight: general.padding
+    },
+    termedSection: {
+        width: '100%'
     }
 });
 
