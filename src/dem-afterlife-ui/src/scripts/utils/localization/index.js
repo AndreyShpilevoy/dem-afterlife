@@ -27,7 +27,7 @@ export const getTermTranslation = (term, locale) => {
     return 'no term';
 };
 
-export const transformRelativeMoment = (msDeltaTime, locale) => getTermTranslation({id: 5, value: 'less than a minute'}, locale);
+export const transformRelativeLessThanMinute = (msDeltaTime, locale) => getTermTranslation({id: 5, value: 'less than a minute'}, locale);
 
 export const transformRelativeMinute = (msDeltaTime, locale, dateTimeDeclension) => {
     const number = Math.round(msDeltaTime / milliseconds.perMinute);
@@ -73,7 +73,7 @@ export const transformRelativeYear = (msDeltaTime, locale, dateTimeDeclension) =
 /* eslint "complexity": [1, 6]*/
 export const getTransformForPeriod = msDeltaTime => {
     if (msDeltaTime < milliseconds.perMinute) {
-        return transformRelativeMoment;
+        return transformRelativeLessThanMinute;
     } else if (msDeltaTime < milliseconds.perHour) {
         return transformRelativeMinute;
     } else if (msDeltaTime < milliseconds.perDay) {
