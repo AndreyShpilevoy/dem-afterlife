@@ -59,10 +59,11 @@ export class CollapsebleSectionPure extends Component {
             headerSettings || this.defaultProps.headerSettings;
         const bodyHolder = `${classNames.bodyHolder} ${isCollapseble ? classNames.headerCursor : ''} ${collapsedState ? 'closed' : ''}`;
         const headerArrow = `${classNames.headerArrow} ${collapsedState ? 'closed' : ''}`;
+        const headerTextHolder = `${classNames.headerText} ${classNames.headerHolder}`;
         return (
             <div className={classNames.general}>
                 <Row className={classNames.header} onClick={() => this.handleTitleClick(!collapsedState)}>
-                    <Column md={11} lg={6} className={`${classNames.headerText} ${classNames.headerHolder}`}>
+                    <Column md={11} lg={6} className={headerTextHolder}>
                         <span className={classNames.title}>
                             {title}
                         </span>
@@ -70,14 +71,20 @@ export class CollapsebleSectionPure extends Component {
                     <Column md={1} lg={6} className={classNames.headerHolder}>
                         <Hidden md={'down'} className={classNames.termedSection}>
                             <Row>
-                                <Column lg={3} className={classNames.headerText}>
-                                    {firstColumnTerm}
+                                <Column lg={3} className={classNames.headerColumn}>
+                                    <div className={classNames.headerText}>
+                                        {firstColumnTerm}
+                                    </div>
                                 </Column>
-                                <Column lg={3} className={classNames.headerText}>
-                                    {secondColumnTerm}
+                                <Column lg={3} className={classNames.headerColumn}>
+                                    <div className={classNames.headerText}>
+                                        {secondColumnTerm}
+                                    </div>
                                 </Column>
-                                <Column lg={6} className={classNames.headerText}>
-                                    {thirdColumnTerm}
+                                <Column lg={6} className={classNames.headerColumn}>
+                                    <div className={classNames.headerText}>
+                                        {thirdColumnTerm}
+                                    </div>
                                 </Column>
                             </Row>
                         </Hidden>

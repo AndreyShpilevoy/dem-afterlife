@@ -51,6 +51,10 @@ const getCommonPart = ({general, header, body}) => ({
     },
     termedSection: {
         width: '100%'
+    },
+    headerColumn: {
+        display: 'flex',
+        justifyContent: 'center'
     }
 });
 

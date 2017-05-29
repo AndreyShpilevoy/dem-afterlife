@@ -99,7 +99,7 @@ export const getRelativeDateTime = (date, locale) => {
     const suffixAgo = getTermTranslation({id: 4, value: 'ago'}, locale);
     const msDeltaTime = new Date() - date;
 
-    return `${getTransformForPeriod()(msDeltaTime, locale, currentTranslations.dateTimeDeclension)} ${suffixAgo}`;
+    return `${getTransformForPeriod(msDeltaTime)(msDeltaTime, locale, currentTranslations.dateTimeDeclension)} ${suffixAgo}`;
 };
 
 export const getLocaleDateTime = (date, locale, options) => {
