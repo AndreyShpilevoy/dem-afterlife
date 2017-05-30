@@ -11,17 +11,17 @@ const milliseconds = {
 const getCurrentTranslations = locale => translations.find(x => x.locale === locale);
 
 export const getTermTranslation = (term, locale) => {
-    if (term && locale) {
+    const termIsValid = term && Number.isInteger(Number.parseInt(term.id, 10)) && term.value;
+    if (termIsValid && locale) {
         const currentTranslations = getCurrentTranslations(locale);
         if (currentTranslations) {
             const translation = currentTranslations.translationArray.find(x => x.id === term.id);
             if (translation) {
                 return translation.value;
             }
-            return term.value;
         }
         return term.value;
-    } else if (term) {
+    } else if (termIsValid) {
         return term.value;
     }
     return 'no term';
@@ -87,24 +87,26 @@ export const getTransformForPeriod = msDeltaTime => {
 };
 
 export const getRelativeDateTime = (date, locale) => {
-    if (!date) {
-        return 'date is not defined';
+    const parsedDate = new Date(date);
+    if (parsedDate.toString() === 'Invalid Date') {
+        return 'Invalid Date';
     }
 
     const currentTranslations = getCurrentTranslations(locale);
     if (!currentTranslations) {
-        return `${date.toLocaleDateString()} ${date.getHours()}:${date.getMinutes()}`;
+        return `${parsedDate.toLocaleDateString()} ${parsedDate.getHours()}:${parsedDate.getMinutes()}`;
     }
 
     const suffixAgo = getTermTranslation({id: 4, value: 'ago'}, locale);
-    const msDeltaTime = new Date() - date;
+    const msDeltaTime = new Date() - parsedDate;
 
     return `${getTransformForPeriod(msDeltaTime)(msDeltaTime, locale, currentTranslations.dateTimeDeclension)} ${suffixAgo}`;
 };
 
 export const getLocaleDateTime = (date, locale, options) => {
-    if (!date) {
-        return 'date is not defined';
+    const parsedDate = new Date(date);
+    if (parsedDate.toString() === 'Invalid Date') {
+        return 'Invalid Date';
     }
-    return date.toLocaleTimeString(locale, options);
+    return parsedDate.toLocaleTimeString(locale, options);
 };

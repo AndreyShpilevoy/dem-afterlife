@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
+/* eslint no-undefined: 0, no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0 max-statements: 0*/
 import dateTimeDeclension from './translations/dateTimeDeclensions/ruUa';
 import {
     getTermTranslation,
@@ -8,7 +8,9 @@ import {
     transformRelativeDay,
     transformRelativeMonth,
     transformRelativeYear,
-    getTransformForPeriod
+    getTransformForPeriod,
+    getRelativeDateTime,
+    getLocaleDateTime
 } from './index';
 
 const milliseconds = {
@@ -26,6 +28,14 @@ describe('EN dateTimeDeclension', () => {
 
     it('getTermTranslation should return default form if locale not found', () => {
         expect(getTermTranslation({id: 1, value: 'Topics'}, 'ururur')).toEqual('Topics');
+    });
+
+    it('getTermTranslation should return default form if locale is undefined', () => {
+        expect(getTermTranslation({id: 1, value: 'Topics'}, undefined)).toEqual('Topics');
+    });
+
+    it('getTermTranslation should return error message if term is undefined', () => {
+        expect(getTermTranslation(undefined, 'ru')).toEqual('no term');
     });
 
     it('getTermTranslation should return default if locale ru and id wasnt found', () => {
@@ -78,5 +88,32 @@ describe('EN dateTimeDeclension', () => {
         expect(getTransformForPeriod(milliseconds.perDay).name).toEqual('transformRelativeDay');
         expect(getTransformForPeriod(milliseconds.perMonth).name).toEqual('transformRelativeMonth');
         expect(getTransformForPeriod(milliseconds.perYear).name).toEqual('transformRelativeYear');
+    });
+
+    it('getRelativeDateTime should return expected string for wrong date', () => {
+        expect(getRelativeDateTime('bla-bla', 'ru')).toEqual('Invalid Date');
+    });
+
+    it('getRelativeDateTime should return expected string for wrong locale', () => {
+        expect(getRelativeDateTime('Tue May 30 2017 12:32:49 GMT+0300 (FLE Daylight Time)', 'ururur')).toEqual('5/30/2017 12:32');
+    });
+
+    it('getRelativeDateTime should return expected string for right params', () => {
+        expect(getRelativeDateTime(new Date(), 'ru')).toEqual('меньше минуты назад');
+    });
+
+    it('getLocaleDateTime should return expected string for corect date', () => {
+        const options = {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        expect(getLocaleDateTime('Tue May 30 2017 12:32:49 GMT+0300 (FLE Daylight Time)', 'en', options)).toEqual('May 30, 2017, 12:32 PM');
+    });
+
+    it('getLocaleDateTime should return expected string for wrong date', () => {
+        expect(getLocaleDateTime('bla-bla', 'ru')).toEqual('Invalid Date');
     });
 });
