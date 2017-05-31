@@ -92,7 +92,8 @@ const calculateStyles = ({grid, header}) =>
         {
             fixedOnTheTop: {
                 position: 'fixed',
-                top: 0
+                top: 0,
+                zIndex: 1030
             },
             headerColumn: {
                 minHeight: '100%',

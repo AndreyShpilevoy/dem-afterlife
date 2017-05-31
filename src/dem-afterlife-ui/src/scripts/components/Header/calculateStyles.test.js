@@ -81,7 +81,8 @@ describe('Header calculateStyles', () => {
         const expectedResult = {
             fixedOnTheTop: {
                 position: 'fixed',
-                top: 0
+                top: 0,
+                zIndex: 1030
             },
             headerColumn: {
                 display: 'flex',
