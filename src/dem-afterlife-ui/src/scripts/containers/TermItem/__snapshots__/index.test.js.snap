@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TermItem HOC component match expected snapshot for simple term 1`] = `
+<Connect(TermItem)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <TermItem
+    dispatch={[Function]}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+  >
+    <span>
+      Тем
+    </span>
+  </TermItem>
+</Connect(TermItem)>
+`;
+
+exports[`TermItem HOC component match expected snapshot for simple term with spase after 1`] = `
+<Connect(TermItem)
+  spaceAfter={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <TermItem
+    dispatch={[Function]}
+    locale="ru"
+    spaceAfter={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+  >
+    <span>
+      Тем 
+    </span>
+  </TermItem>
+</Connect(TermItem)>
+`;
+
+exports[`TermItem HOC component match expected snapshot for simple term with spase before and after 1`] = `
+<Connect(TermItem)
+  spaceAfter={true}
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <TermItem
+    dispatch={[Function]}
+    locale="ru"
+    spaceAfter={true}
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+  >
+    <span>
+       Тем 
+    </span>
+  </TermItem>
+</Connect(TermItem)>
+`;
+
+exports[`TermItem HOC component match expected snapshot for term with spase before 1`] = `
+<Connect(TermItem)
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <TermItem
+    dispatch={[Function]}
+    locale="ru"
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+  >
+    <span>
+       Тем
+    </span>
+  </TermItem>
+</Connect(TermItem)>
+`;

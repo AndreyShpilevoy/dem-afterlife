@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocaleDateTime HOC component match expected snapshot for locale date 1`] = `
+<Connect(LocaleDateTime)
+  localeDateTime={2017-06-02T00:00:00.000Z}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <LocaleDateTime
+    dispatch={[Function]}
+    locale="ru"
+    localeDateTime={2017-06-02T00:00:00.000Z}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span>
+      Jun 2, 2017, 3:00 AM
+    </span>
+  </LocaleDateTime>
+</Connect(LocaleDateTime)>
+`;
+
+exports[`LocaleDateTime HOC component match expected snapshot for locale date with spase after 1`] = `
+<Connect(LocaleDateTime)
+  localeDateTime={2017-06-02T00:00:00.000Z}
+  spaceAfter={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <LocaleDateTime
+    dispatch={[Function]}
+    locale="ru"
+    localeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span>
+      Jun 2, 2017, 3:00 AM 
+    </span>
+  </LocaleDateTime>
+</Connect(LocaleDateTime)>
+`;
+
+exports[`LocaleDateTime HOC component match expected snapshot for locale date with spase before 1`] = `
+<Connect(LocaleDateTime)
+  localeDateTime={2017-06-02T00:00:00.000Z}
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <LocaleDateTime
+    dispatch={[Function]}
+    locale="ru"
+    localeDateTime={2017-06-02T00:00:00.000Z}
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span>
+       Jun 2, 2017, 3:00 AM
+    </span>
+  </LocaleDateTime>
+</Connect(LocaleDateTime)>
+`;
+
+exports[`LocaleDateTime HOC component match expected snapshot for locale date with spase before and after 1`] = `
+<Connect(LocaleDateTime)
+  localeDateTime={2017-06-02T00:00:00.000Z}
+  spaceAfter={true}
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <LocaleDateTime
+    dispatch={[Function]}
+    locale="ru"
+    localeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={true}
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span>
+       Jun 2, 2017, 3:00 AM 
+    </span>
+  </LocaleDateTime>
+</Connect(LocaleDateTime)>
+`;
