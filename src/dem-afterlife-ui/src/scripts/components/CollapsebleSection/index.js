@@ -33,15 +33,19 @@ export class CollapsebleSectionPure extends Component {
             firstColumnTerm: null,
             secondColumnTerm: null,
             thirdColumnTerm: null
+        },
+        collapseSettings: {
+            collapsedByDefault: false,
+            isCollapseble: true
         }
     };
 
     constructor(props) {
         super(props);
-        const collapseSettings = props.collapseSettings || {};
+        const {collapsedByDefault, isCollapseble} = props.collapseSettings;
         this.state = {
-            collapsedState: collapseSettings.collapsedByDefault || false,
-            isCollapseble: collapseSettings.isCollapseble || true
+            collapsedState: collapsedByDefault,
+            isCollapseble
         };
     }
 
@@ -55,8 +59,7 @@ export class CollapsebleSectionPure extends Component {
     render() {
         const {collapsedState, isCollapseble} = this.state;
         const {children, headerSettings, classNames} = this.props;
-        const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} =
-            headerSettings || this.defaultProps.headerSettings;
+        const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
         const bodyHolder = `${classNames.bodyHolder} ${isCollapseble ? classNames.headerCursor : ''} ${collapsedState ? 'closed' : ''}`;
         const headerArrow = `${classNames.headerArrow} ${collapsedState ? 'closed' : ''}`;
         const headerTextHolder = `${classNames.headerText} ${classNames.headerHolder}`;

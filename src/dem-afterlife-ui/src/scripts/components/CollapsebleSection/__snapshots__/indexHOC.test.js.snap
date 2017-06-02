@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapsebleSection HOC component match expected snapshot 1`] = `
+<CollapsebleSectionPure
+  classNames={
+    Object {
+      ".bodyHolder-0-11.closed": "bodyHolder-0-11",
+      ".headerArrow-0-10 > .SVGInline-svg": "headerArrow-0-10",
+      ".headerArrow-0-10.closed": "headerArrow-0-10",
+      "body": "body-0-5",
+      "bodyHolder": "bodyHolder-0-11",
+      "from": "from",
+      "general": "general-0-0",
+      "header": "header-0-1",
+      "headerArrow": "headerArrow-0-10",
+      "headerArrowHolder": "headerArrowHolder-0-9",
+      "headerColumn": "headerColumn-0-7",
+      "headerCursor": "headerCursor-0-8",
+      "headerHolder": "headerHolder-0-3",
+      "headerText": "headerText-0-4",
+      "termedSection": "termedSection-0-6",
+      "title": "title-0-2",
+      "to": "to",
+    }
+  }
+  collapseSettings={
+    Object {
+      "collapsedByDefault": false,
+      "isCollapseble": true,
+    }
+  }
+  headerSettings={
+    Object {
+      "firstColumnTerm": null,
+      "secondColumnTerm": null,
+      "thirdColumnTerm": null,
+      "title": null,
+    }
+  }
+  theme="default"
+/>
+`;
