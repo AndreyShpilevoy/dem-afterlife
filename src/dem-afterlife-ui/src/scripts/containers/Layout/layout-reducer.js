@@ -16,21 +16,21 @@ export const getLocaleSuccess = locale => ({
     payload: locale
 });
 
-export const GET_NAVIGATIONLINKARRAY = 'GET_NAVIGATIONLINKARRAY';
-export const getNavigationLinkArray = () => ({type: GET_NAVIGATIONLINKARRAY});
+export const GET_NAVIGATIONLINK_ARRAY = 'GET_NAVIGATIONLINK_ARRAY';
+export const getNavigationLinkArray = () => ({type: GET_NAVIGATIONLINK_ARRAY});
 
-export const GET_NAVIGATIONLINKARRAY_SUCCESS = 'GET_NAVIGATIONLINKARRAY_SUCCESS';
+export const GET_NAVIGATIONLINK_ARRAY_SUCCESS = 'GET_NAVIGATIONLINK_ARRAY_SUCCESS';
 export const getNavigationLinkArraySuccess = navigationLinkArray => ({
-    type: GET_NAVIGATIONLINKARRAY_SUCCESS,
+    type: GET_NAVIGATIONLINK_ARRAY_SUCCESS,
     payload: {navigationLinkArray}
 });
 
-export const GET_SOCIALMEDIALINKARRAY = 'GET_SOCIALMEDIALINKARRAY';
-export const getSocialMediaLinkArray = () => ({type: GET_SOCIALMEDIALINKARRAY});
+export const GET_SOCIALMEDIALINK_ARRAY = 'GET_SOCIALMEDIALINK_ARRAY';
+export const getSocialMediaLinkArray = () => ({type: GET_SOCIALMEDIALINK_ARRAY});
 
-export const GET_SOCIALMEDIALINKARRAY_SUCCESS = 'GET_SOCIALMEDIALINKARRAY_SUCCESS';
+export const GET_SOCIALMEDIALINK_ARRAY_SUCCESS = 'GET_SOCIALMEDIALINK_ARRAY_SUCCESS';
 export const getSocialMediaLinkArraySuccess = socialMediaLinkArray => ({
-    type: GET_SOCIALMEDIALINKARRAY_SUCCESS,
+    type: GET_SOCIALMEDIALINK_ARRAY_SUCCESS,
     payload: {socialMediaLinkArray}
 });
 
@@ -38,9 +38,9 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_LOCALE_SUCCESS:
             return {...state, locale: payload.locale};
-        case GET_NAVIGATIONLINKARRAY_SUCCESS:
+        case GET_NAVIGATIONLINK_ARRAY_SUCCESS:
             return {...state, navigationLinkArray: payload.navigationLinkArray};
-        case GET_SOCIALMEDIALINKARRAY_SUCCESS:
+        case GET_SOCIALMEDIALINK_ARRAY_SUCCESS:
             return {...state, socialMediaLinkArray: payload.socialMediaLinkArray};
         default:
             break;
@@ -61,7 +61,7 @@ export function* getLocaleSaga() {
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getNavigationLinkArraySaga() {
     while (true) {
-        yield take(GET_NAVIGATIONLINKARRAY);
+        yield take(GET_NAVIGATIONLINK_ARRAY);
         const navigationLinkArray = yield call(getNavigationLinkArrayApi);
         yield put(getNavigationLinkArraySuccess(navigationLinkArray));
     }
@@ -70,7 +70,7 @@ export function* getNavigationLinkArraySaga() {
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSocialMediaLinkArraySaga() {
     while (true) {
-        yield take(GET_SOCIALMEDIALINKARRAY);
+        yield take(GET_SOCIALMEDIALINK_ARRAY);
         const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
         yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
     }

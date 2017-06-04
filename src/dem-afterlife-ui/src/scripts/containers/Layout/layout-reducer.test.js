@@ -13,10 +13,10 @@ import {
     getNavigationLinkArraySuccess,
     getSocialMediaLinkArray,
     getSocialMediaLinkArraySuccess,
-    GET_NAVIGATIONLINKARRAY,
-    GET_NAVIGATIONLINKARRAY_SUCCESS,
-    GET_SOCIALMEDIALINKARRAY,
-    GET_SOCIALMEDIALINKARRAY_SUCCESS,
+    GET_NAVIGATIONLINK_ARRAY,
+    GET_NAVIGATIONLINK_ARRAY_SUCCESS,
+    GET_SOCIALMEDIALINK_ARRAY,
+    GET_SOCIALMEDIALINK_ARRAY_SUCCESS,
     getNavigationLinkArraySaga,
     getSocialMediaLinkArraySaga,
     layoutSaga
@@ -39,26 +39,26 @@ describe('Layout reducer', () => {
     });
 
     it('getNavigationLinkArray should create expected object', () => {
-        const expectedResult = {type: GET_NAVIGATIONLINKARRAY};
+        const expectedResult = {type: GET_NAVIGATIONLINK_ARRAY};
         expect(getNavigationLinkArray()).toEqual(expectedResult);
     });
 
     it('getNavigationLinkArraySuccess should create expected object', () => {
         const expectedResult = {
-            type: GET_NAVIGATIONLINKARRAY_SUCCESS,
+            type: GET_NAVIGATIONLINK_ARRAY_SUCCESS,
             payload: {navigationLinkArray: [{id: 1, title: 'Conference', href: '/', order: 1}] }
         };
         expect(getNavigationLinkArraySuccess([{id: 1, title: 'Conference', href: '/', order: 1}])).toEqual(expectedResult);
     });
 
     it('getSocialMediaLinkArray should create expected object', () => {
-        const expectedResult = {type: GET_SOCIALMEDIALINKARRAY};
+        const expectedResult = {type: GET_SOCIALMEDIALINK_ARRAY};
         expect(getSocialMediaLinkArray()).toEqual(expectedResult);
     });
 
     it('getSocialMediaLinkArraySuccess should create expected object', () => {
         const expectedResult = {
-            type: GET_SOCIALMEDIALINKARRAY_SUCCESS,
+            type: GET_SOCIALMEDIALINK_ARRAY_SUCCESS,
             payload: {socialMediaLinkArray: [{id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1}] }
         };
         expect(getSocialMediaLinkArraySuccess([{id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1}])).toEqual(expectedResult);
@@ -78,13 +78,13 @@ describe('Layout reducer', () => {
         expect(layoutReducer(defaulState, action)).toEqual(expectedResult);
     });
 
-    it('layoutReducer with action GET_NAVIGATIONLINKARRAY_SUCCESS should return expected state', () => {
+    it('layoutReducer with action GET_NAVIGATIONLINK_ARRAY_SUCCESS should return expected state', () => {
         const defaulState = {
             locale: 'en',
             navigationLinkArray: []
         };
         const action = {
-            type: GET_NAVIGATIONLINKARRAY_SUCCESS,
+            type: GET_NAVIGATIONLINK_ARRAY_SUCCESS,
             payload: {
                 navigationLinkArray: [
                     {id: 1, title: 'Conference', href: '/', order: 1},
@@ -107,12 +107,12 @@ describe('Layout reducer', () => {
         expect(layoutReducer(defaulState, action)).toEqual(expectedResult);
     });
 
-    it('layoutReducer with action GET_SOCIALMEDIALINKARRAY_SUCCESS should return expected state', () => {
+    it('layoutReducer with action GET_SOCIALMEDIALINK_ARRAY_SUCCESS should return expected state', () => {
         const defaulState = {
             locale: 'en'
         };
         const action = {
-            type: GET_SOCIALMEDIALINKARRAY_SUCCESS,
+            type: GET_SOCIALMEDIALINK_ARRAY_SUCCESS,
             payload: {
                 socialMediaLinkArray: [
                     {id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1},
@@ -180,10 +180,10 @@ describe('Layout reducer', () => {
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getNavigationLinkArraySaga first yeald should return TAKE pattern "GET_NAVIGATIONLINKARRAY"', () => {
+    it('getNavigationLinkArraySaga first yeald should return TAKE pattern "GET_NAVIGATIONLINK_ARRAY"', () => {
         const generator = getNavigationLinkArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_NAVIGATIONLINKARRAY);
+        expect(generator.next().value.TAKE.pattern).toEqual(GET_NAVIGATIONLINK_ARRAY);
     });
 
     it('getNavigationLinkArraySaga second yeald should return CALL to function "getNavigationLinkArrayApi"', () => {
@@ -193,12 +193,12 @@ describe('Layout reducer', () => {
         expect(generator.next().value.CALL.fn).toEqual(getNavigationLinkArrayApi);
     });
 
-    it('getNavigationLinkArraySaga third yeald should return PUT action.type "GET_NAVIGATIONLINKARRAY_SUCCESS"', () => {
+    it('getNavigationLinkArraySaga third yeald should return PUT action.type "GET_NAVIGATIONLINK_ARRAY_SUCCESS"', () => {
         const generator = getNavigationLinkArraySaga();
 
         generator.next();
         generator.next();
-        expect(generator.next(getNavigationLinkArrayApi()).value.PUT.action.type).toEqual(GET_NAVIGATIONLINKARRAY_SUCCESS);
+        expect(generator.next(getNavigationLinkArrayApi()).value.PUT.action.type).toEqual(GET_NAVIGATIONLINK_ARRAY_SUCCESS);
     });
 
     it('getNavigationLinkArraySaga third yeald should return PUT action..payload.navigationLinkArray that is a Promise', () => {
@@ -217,10 +217,10 @@ describe('Layout reducer', () => {
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getSocialMediaLinkArraySaga first yeald should return TAKE pattern "GET_SOCIALMEDIALINKARRAY"', () => {
+    it('getSocialMediaLinkArraySaga first yeald should return TAKE pattern "GET_SOCIALMEDIALINK_ARRAY"', () => {
         const generator = getSocialMediaLinkArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_SOCIALMEDIALINKARRAY);
+        expect(generator.next().value.TAKE.pattern).toEqual(GET_SOCIALMEDIALINK_ARRAY);
     });
 
     it('getSocialMediaLinkArraySaga second yeald should return CALL to function "getSocialMediaLinkArrayApi"', () => {
@@ -230,12 +230,12 @@ describe('Layout reducer', () => {
         expect(generator.next().value.CALL.fn).toEqual(getSocialMediaLinkArrayApi);
     });
 
-    it('getSocialMediaLinkArraySaga third yeald should return PUT action.type "GET_SOCIALMEDIALINKARRAY_SUCCESS"', () => {
+    it('getSocialMediaLinkArraySaga third yeald should return PUT action.type "GET_SOCIALMEDIALINK_ARRAY_SUCCESS"', () => {
         const generator = getSocialMediaLinkArraySaga();
 
         generator.next();
         generator.next();
-        expect(generator.next(getSocialMediaLinkArrayApi()).value.PUT.action.type).toEqual(GET_SOCIALMEDIALINKARRAY_SUCCESS);
+        expect(generator.next(getSocialMediaLinkArrayApi()).value.PUT.action.type).toEqual(GET_SOCIALMEDIALINK_ARRAY_SUCCESS);
     });
 
     it('getSocialMediaLinkArraySaga third yeald should return PUT action..payload.socialMediaLinkArray that is a Promise', () => {
