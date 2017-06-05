@@ -10,22 +10,38 @@ import Presentation from './Presentation';
 class Conference extends Component {
     static propTypes = {
         getChapterArray: func.isRequired,
-        chapterArray: sharedPropTypes.chapterArray
+        chapterArray: sharedPropTypes.chapterArray,
+        forumArray: sharedPropTypes.forumArray
     };
 
     componentDidMount() {
         this.props.getChapterArray();
     }
 
+    mapForumItemsToChapterItems = (chapterArray, forumArray) => {
+        if (forumArray && forumArray.length > 0) {
+            return chapterArray.reduce((previouse, current) => {
+                const filteredForumArray = forumArray.filter(x => x.chapterId === current.id);
+                const chapterItemWithForumArray = {...current, ...{forumArray: filteredForumArray} };
+                return [...previouse, chapterItemWithForumArray];
+            }, []);
+        }
+        return chapterArray;
+    };
+
     render() {
-        const {chapterArray} = this.props;
+        const {chapterArray, forumArray} = this.props;
+        const chapterArrayWithForums = this.mapForumItemsToChapterItems(chapterArray, forumArray);
         return (
-            <Presentation chapterArray={chapterArray}/>
+            <Presentation chapterArray={chapterArrayWithForums}/>
         );
     }
 }
 
-const mapStateToProps = ({conferenceReducer}) => ({chapterArray: conferenceReducer.chapterArray});
+const mapStateToProps = ({conferenceReducer}) => ({
+    chapterArray: conferenceReducer.chapterArray,
+    forumArray: conferenceReducer.forumArray
+});
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators({

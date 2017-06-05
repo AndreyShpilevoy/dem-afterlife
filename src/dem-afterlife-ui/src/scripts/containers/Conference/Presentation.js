@@ -4,9 +4,7 @@ import R from 'ramda';
 import Chapter from 'components/Chapter';
 
 const mapChapterArrayToComponent = chapterArray =>
-    R.sortBy(R.prop('order'), chapterArray).map((chapterItem, key) =>
-        <Chapter key={key} chapterItem={chapterItem}>
-        </Chapter>);
+    R.sortBy(R.prop('order'), chapterArray).map((chapterItem, key) => <Chapter key={key} chapterItem={chapterItem}/>);
 
 const Presentation = ({chapterArray}) =>
     <div>

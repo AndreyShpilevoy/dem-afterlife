@@ -1,9 +1,33 @@
-import {arrayOf, shape, number, string} from 'prop-types';
+import {arrayOf, shape, number, string, instanceOf} from 'prop-types';
 
-const chapterItem = shape({
+const subForumItem = shape({
     id: number.isRequired,
     title: string.isRequired,
     order: number.isRequired
+});
+const forumItem = shape({
+    id: number.isRequired,
+    chapterId: number,
+    order: number.isRequired,
+    title: string.isRequired,
+    description: string.isRequired,
+    topicsCount: number.isRequired,
+    postsCount: number.isRequired,
+    lastTopicInfo: shape({
+        lastActiveTopicId: number.isRequired,
+        lastActiveTopic: string.isRequired,
+        latesPostTimeCreation: instanceOf(Date),
+        latesPostAutorId: number.isRequired,
+        latesPostAutorName: string.isRequired,
+        latesPostAutorGroupColor: string.isRequired
+    }).isRequired,
+    subForumArray: arrayOf(subForumItem)
+});
+const chapterItem = shape({
+    id: number.isRequired,
+    title: string.isRequired,
+    order: number.isRequired,
+    forumArray: arrayOf(forumItem)
 });
 const navigationLinkItem = shape({
     id: number.isRequired,
@@ -23,6 +47,10 @@ const sharedPropTypes = {
     navigationLinkArray: arrayOf(navigationLinkItem).isRequired,
     socialMediaLinkItem,
     socialMediaLinkArray: arrayOf(socialMediaLinkItem).isRequired,
+    forumItem,
+    forumArray: arrayOf(forumItem).isRequired,
+    subForumItem,
+    subForumArray: arrayOf(subForumItem).isRequired,
     chapterItem,
     chapterArray: arrayOf(chapterItem).isRequired
 };
