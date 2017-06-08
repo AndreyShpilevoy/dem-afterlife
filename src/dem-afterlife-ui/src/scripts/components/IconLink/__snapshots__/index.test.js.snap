@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SortLeft component match expected snapshot 1`] = `
+exports[`IconLink component match expected snapshot 1`] = `
 <SVGInline
-  className="sortLeftIconClassName"
+  className="linkIconClassName"
   classSuffix="-svg"
   cleanup={Array []}
   cleanupExceptions={Array []}

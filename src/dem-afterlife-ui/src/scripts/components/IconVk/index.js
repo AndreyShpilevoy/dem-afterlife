@@ -1,16 +1,16 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import sortLeft from 'images/svg/sort-left.svg';
+import vk from 'images/svg/vk.svg';
 
 
-const SortLeft = ({className}) =>
+const IconVk = ({className}) =>
     <SVGInline
         className={className}
-        svg={ sortLeft } />;
+        svg={ vk } />;
 
-SortLeft.propTypes = {
+IconVk.propTypes = {
     className: string
 };
 
-export default SortLeft;
+export default IconVk;

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import Steam from './index';
+import IconSortLeft from './index';
 
-describe('Steam', () => {
+describe('IconSortLeft', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Steam className={'steamIconClassName'}/>)).toMatchSnapshot();
+        expect(shallow(<IconSortLeft className={'sortLeftIconClassName'}/>)).toMatchSnapshot();
     });
 });

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import Link from './index';
+import IconSteam from './index';
 
-describe('Link', () => {
+describe('IconSteam', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Link className={'linkIconClassName'}/>)).toMatchSnapshot();
+        expect(shallow(<IconSteam className={'steamIconClassName'}/>)).toMatchSnapshot();
     });
 });

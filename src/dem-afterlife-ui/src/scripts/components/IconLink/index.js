@@ -4,13 +4,13 @@ import SVGInline from 'react-svg-inline';
 import link from 'images/svg/link.svg';
 
 
-const Link = ({className}) =>
+const IconLink = ({className}) =>
     <SVGInline
         className={className}
         svg={ link } />;
 
-Link.propTypes = {
+IconLink.propTypes = {
     className: string
 };
 
-export default Link;
+export default IconLink;

@@ -60,7 +60,7 @@ exports[`CollapsebleSection Pure not default collapseSettings 1`] = `
       >
         <SvgIconsMapper
           className="headerArrow-0-10 closed"
-          iconName="SortLeft"
+          iconName="IconSortLeft"
         />
       </Aesthetic-HiddenPure>
     </Aesthetic-ColumnPure>
@@ -147,7 +147,7 @@ exports[`CollapsebleSection Pure with headerSettings 1`] = `
       >
         <SvgIconsMapper
           className="headerArrow-0-10 "
-          iconName="SortLeft"
+          iconName="IconSortLeft"
         />
       </Aesthetic-HiddenPure>
     </Aesthetic-ColumnPure>
@@ -226,7 +226,7 @@ exports[`CollapsebleSection Pure without headerSettings 1`] = `
       >
         <SvgIconsMapper
           className="headerArrow-0-10 "
-          iconName="SortLeft"
+          iconName="IconSortLeft"
         />
       </Aesthetic-HiddenPure>
     </Aesthetic-ColumnPure>
@@ -305,7 +305,7 @@ exports[`CollapsebleSection Pure without headerSettings 2`] = `
       >
         <SvgIconsMapper
           className="headerArrow-0-10 closed"
-          iconName="SortLeft"
+          iconName="IconSortLeft"
         />
       </Aesthetic-HiddenPure>
     </Aesthetic-ColumnPure>

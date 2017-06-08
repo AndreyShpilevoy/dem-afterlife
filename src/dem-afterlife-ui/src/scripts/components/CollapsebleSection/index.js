@@ -92,7 +92,7 @@ export class CollapsebleSectionPure extends Component {
                             </Row>
                         </Hidden>
                         <Hidden sm={'down'} lg={'up'} className={classNames.headerArrowHolder}>
-                            <SvgIconsMapper className={headerArrow} iconName={'SortLeft'}/>
+                            <SvgIconsMapper className={headerArrow} iconName={'IconSortLeft'}/>
                         </Hidden>
                     </Column>
                 </Row>

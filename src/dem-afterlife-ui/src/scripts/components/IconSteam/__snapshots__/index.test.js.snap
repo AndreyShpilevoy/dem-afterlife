@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Vk component match expected snapshot 1`] = `
+exports[`IconSteam component match expected snapshot 1`] = `
 <SVGInline
-  className="vkIconClassName"
+  className="steamIconClassName"
   classSuffix="-svg"
   cleanup={Array []}
   cleanupExceptions={Array []}

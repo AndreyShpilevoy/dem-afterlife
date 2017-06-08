@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import Vk from './index';
+import IconVk from './index';
 
-describe('Vk', () => {
+describe('IconVk', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Vk className={'vkIconClassName'}/>)).toMatchSnapshot();
+        expect(shallow(<IconVk className={'vkIconClassName'}/>)).toMatchSnapshot();
     });
 });
