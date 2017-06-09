@@ -28,7 +28,11 @@ const getCommonPart = ({general, header, body}) => ({
         height: header.height
     },
     title: {
-        paddingLeft: general.padding
+        paddingLeft: general.padding,
+        display: 'block',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
     },
     headerHolder: {
         display: 'flex',

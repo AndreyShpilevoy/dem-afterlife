@@ -90,7 +90,11 @@ Object {
     "width": "100%",
   },
   "title": Object {
+    "display": "block",
+    "overflow": "hidden",
     "paddingLeft": "sizes.horizontalPadingAndMargin",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
   },
 }
 `;

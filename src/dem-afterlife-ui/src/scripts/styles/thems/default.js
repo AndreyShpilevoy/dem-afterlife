@@ -192,7 +192,7 @@ const defaultTheme = {
             backgroundColor: colors.collapsebleSectionHeaderBackgroundColor,
             color: colors.orangeColor,
             height: 2.5,
-            fontSize: 1.25
+            fontSize: 1.3125
         },
         body: {
             backgroundColor: colors.collapsebleSectionBodyBackgroundColor,
