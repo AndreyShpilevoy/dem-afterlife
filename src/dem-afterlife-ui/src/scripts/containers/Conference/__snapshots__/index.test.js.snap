@@ -15,7 +15,6 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
 >
   <Conference
     chapterArray={Array []}
-    forumArray={Array []}
     getChapterArray={[Function]}
     store={
       Object {
@@ -48,11 +47,7 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
       }
     }
   >
-    <Presentation
-      chapterArray={Array []}
-    >
-      <div />
-    </Presentation>
+    <div />
   </Conference>
 </Connect(Conference)>
 `;
@@ -74,69 +69,70 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
     chapterArray={
       Array [
         Object {
+          "forumArray": Array [
+            Object {
+              "chapterId": 1,
+              "description": "Все вопросы касательно геймплея и мира игры Ex Machina в целом.",
+              "id": 10,
+              "lastTopicInfo": Object {
+                "lastActiveTopic": "Идеи к Ex Machina -2 часть четвертая",
+                "lastActiveTopicId": 1,
+                "latesPostAutorGroupColor": "#ffa510",
+                "latesPostAutorId": 1,
+                "latesPostAutorName": "kto",
+                "latesPostTimeCreation": 2015-08-17T10:42:32.000Z,
+              },
+              "order": 1,
+              "postsCount": 4113,
+              "subForumArray": Array [
+                Object {
+                  "id": 11,
+                  "order": 2,
+                  "title": "Самопал",
+                },
+                Object {
+                  "id": 12,
+                  "order": 1,
+                  "title": "Архив форумки",
+                },
+              ],
+              "title": "Общие вопросы",
+              "topicsCount": 26,
+            },
+          ],
           "id": 1,
           "order": 1,
           "title": "Ex Machina",
         },
         Object {
-          "id": 3,
-          "order": 3,
-          "title": "Ex Machina: Arcade",
-        },
-        Object {
+          "forumArray": Array [
+            Object {
+              "chapterId": 2,
+              "description": "Вопросы технического характера по игре Ex Machina.",
+              "id": 20,
+              "lastTopicInfo": Object {
+                "lastActiveTopic": "Проблемы с игрой",
+                "lastActiveTopicId": 2,
+                "latesPostAutorGroupColor": "#fbeab2",
+                "latesPostAutorId": 2,
+                "latesPostAutorName": "Bykawka",
+                "latesPostTimeCreation": 2016-09-22T09:53:09.000Z,
+              },
+              "order": 2,
+              "postsCount": 857,
+              "title": "Технические вопросы",
+              "topicsCount": 13,
+            },
+          ],
           "id": 2,
           "order": 2,
           "title": "Ex Machina Меридиан 113",
         },
-      ]
-    }
-    forumArray={
-      Array [
         Object {
-          "chapterId": 1,
-          "description": "Все вопросы касательно геймплея и мира игры Ex Machina в целом.",
-          "id": 10,
-          "lastTopicInfo": Object {
-            "lastActiveTopic": "Идеи к Ex Machina -2 часть четвертая",
-            "lastActiveTopicId": 1,
-            "latesPostAutorGroupColor": "#ffa510",
-            "latesPostAutorId": 1,
-            "latesPostAutorName": "kto",
-            "latesPostTimeCreation": 2015-08-17T10:42:32.000Z,
-          },
-          "order": 1,
-          "postsCount": 4113,
-          "subForumArray": Array [
-            Object {
-              "id": 11,
-              "order": 2,
-              "title": "Самопал",
-            },
-            Object {
-              "id": 12,
-              "order": 1,
-              "title": "Архив форумки",
-            },
-          ],
-          "title": "Общие вопросы",
-          "topicsCount": 26,
-        },
-        Object {
-          "chapterId": 2,
-          "description": "Вопросы технического характера по игре Ex Machina.",
-          "id": 20,
-          "lastTopicInfo": Object {
-            "lastActiveTopic": "Проблемы с игрой",
-            "lastActiveTopicId": 2,
-            "latesPostAutorGroupColor": "#fbeab2",
-            "latesPostAutorId": 2,
-            "latesPostAutorName": "Bykawka",
-            "latesPostTimeCreation": 2016-09-22T09:53:09.000Z,
-          },
-          "order": 2,
-          "postsCount": 857,
-          "title": "Технические вопросы",
-          "topicsCount": 13,
+          "forumArray": Array [],
+          "id": 3,
+          "order": 3,
+          "title": "Ex Machina: Arcade",
         },
       ]
     }
@@ -172,9 +168,9 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
       }
     }
   >
-    <Presentation
-      chapterArray={
-        Array [
+    <div>
+      <Chapter
+        chapterItem={
           Object {
             "forumArray": Array [
               Object {
@@ -210,13 +206,13 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
             "id": 1,
             "order": 1,
             "title": "Ex Machina",
-          },
-          Object {
-            "forumArray": Array [],
-            "id": 3,
-            "order": 3,
-            "title": "Ex Machina: Arcade",
-          },
+          }
+        }
+      >
+        <div />
+      </Chapter>
+      <Chapter
+        chapterItem={
           Object {
             "forumArray": Array [
               Object {
@@ -240,12 +236,24 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
             "id": 2,
             "order": 2,
             "title": "Ex Machina Меридиан 113",
-          },
-        ]
-      }
-    >
-      <div />
-    </Presentation>
+          }
+        }
+      >
+        <div />
+      </Chapter>
+      <Chapter
+        chapterItem={
+          Object {
+            "forumArray": Array [],
+            "id": 3,
+            "order": 3,
+            "title": "Ex Machina: Arcade",
+          }
+        }
+      >
+        <div />
+      </Chapter>
+    </div>
   </Conference>
 </Connect(Conference)>
 `;

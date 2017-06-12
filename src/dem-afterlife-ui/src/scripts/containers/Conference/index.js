@@ -4,43 +4,34 @@ import {func} from 'prop-types';
 import sharedPropTypes from 'utils/sharedPropTypes';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import Chapter from 'components/Chapter';
 import {getChapterArray} from './conference-reducer';
-import Presentation from './Presentation';
+import chaptersWithForumsArraySelector from './selectors';
 
 class Conference extends Component {
     static propTypes = {
         getChapterArray: func.isRequired,
-        chapterArray: sharedPropTypes.chapterArray,
-        forumArray: sharedPropTypes.forumArray
+        chapterArray: sharedPropTypes.chapterArray
     };
 
     componentDidMount() {
         this.props.getChapterArray();
     }
 
-    mapForumItemsToChapterItems = (chapterArray, forumArray) => {
-        if (forumArray && forumArray.length > 0) {
-            return chapterArray.reduce((previouse, current) => {
-                const filteredForumArray = forumArray.filter(x => x.chapterId === current.id);
-                const chapterItemWithForumArray = {...current, ...{forumArray: filteredForumArray} };
-                return [...previouse, chapterItemWithForumArray];
-            }, []);
-        }
-        return chapterArray;
-    };
+    mapChapterArrayToComponent = chapterArray =>
+        chapterArray.map((chapterItem, key) => <Chapter key={key} chapterItem={chapterItem}/>);
 
     render() {
-        const {chapterArray, forumArray} = this.props;
-        const chapterArrayWithForums = this.mapForumItemsToChapterItems(chapterArray, forumArray);
         return (
-            <Presentation chapterArray={chapterArrayWithForums}/>
+            <div>
+                {this.mapChapterArrayToComponent(this.props.chapterArray)}
+            </div>
         );
     }
 }
 
-const mapStateToProps = ({conferenceReducer}) => ({
-    chapterArray: conferenceReducer.chapterArray,
-    forumArray: conferenceReducer.forumArray
+const mapStateToProps = state => ({
+    chapterArray: chaptersWithForumsArraySelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
