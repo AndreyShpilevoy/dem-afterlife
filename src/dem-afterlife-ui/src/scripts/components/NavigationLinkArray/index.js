@@ -8,7 +8,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const mapNavigationLinks = (navigationLinkArray, classNames) =>
-    R.sortBy(R.prop('order'), navigationLinkArray).map((item, key) =>
+    navigationLinkArray.map((item, key) =>
         <div key={key}>
             <NavigationLinkItem navigationLinkItem = {item} />
             <div className={classNames.separator}/>

@@ -13,7 +13,7 @@ import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 const mapSocialMediaArray = (socialMediaLinkArray, className) =>
-    R.sortBy(R.prop('order'), socialMediaLinkArray).map((item, key) =>
+    socialMediaLinkArray.map((item, key) =>
         <SocialMediaLink key={key} className={className} socialMediaLinkItem={item}/>);
 
 export const FooterPure = ({classNames, socialMediaLinkArray}) =>

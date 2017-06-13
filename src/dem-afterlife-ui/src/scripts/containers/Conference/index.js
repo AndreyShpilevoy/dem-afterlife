@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
 import {getChapterArray} from './conference-reducer';
-import chaptersWithForumsArraySelector from './selectors';
+import {chaptersWithForumsArraySelector} from './selectors';
 
 class Conference extends Component {
     static propTypes = {

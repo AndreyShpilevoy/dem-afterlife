@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getLocale, getNavigationLinkArray, getSocialMediaLinkArray} from './layout-reducer';
 import Presentation from './Presentation';
+import {sortedNavigationLinkSelector, sortedSocialMediaLinkSelector} from './selectors';
 
 class Layout extends Component {
     static propTypes = {
@@ -37,9 +38,9 @@ class Layout extends Component {
     }
 }
 
-const mapStateToProps = ({layoutReducer}) => ({
-    navigationLinkArray: layoutReducer.navigationLinkArray,
-    socialMediaLinkArray: layoutReducer.socialMediaLinkArray
+const mapStateToProps = state => ({
+    navigationLinkArray: sortedNavigationLinkSelector(state),
+    socialMediaLinkArray: sortedSocialMediaLinkSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>

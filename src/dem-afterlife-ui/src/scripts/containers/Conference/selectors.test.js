@@ -1,10 +1,11 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
 
-import chaptersWithForumsArraySelector, {
+import {
     chapterArraySelector,
     forumArraySelector,
     sortedChapterArraySelector,
-    sortedForumArraySelector
+    sortedForumArraySelector,
+    chaptersWithForumsArraySelector
 } from './selectors';
 
 describe('Conference selectors', () => {

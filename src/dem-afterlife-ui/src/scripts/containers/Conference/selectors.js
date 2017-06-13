@@ -14,7 +14,7 @@ export const sortedForumArraySelector = createSelector(
     forumArray => R.sortBy(R.prop('order'), forumArray)
 );
 
-const chaptersWithForumsArraySelector = createSelector(
+export const chaptersWithForumsArraySelector = createSelector(
     sortedChapterArraySelector,
     sortedForumArraySelector,
     (chapterArray, forumArray) => {
@@ -28,5 +28,3 @@ const chaptersWithForumsArraySelector = createSelector(
         return chapterArray;
     }
 );
-
-export default chaptersWithForumsArraySelector;
