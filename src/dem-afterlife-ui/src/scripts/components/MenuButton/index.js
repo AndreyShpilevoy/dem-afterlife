@@ -1,13 +1,13 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {func} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
 
-export class MenuButtonPure extends Component {
+export class MenuButtonPure extends PureComponent {
     static propTypes = {
         classNames: ClassNamesPropType,
         onClick: func

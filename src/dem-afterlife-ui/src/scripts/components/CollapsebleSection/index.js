@@ -1,6 +1,6 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {node, bool, string, shape} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
 import Column from 'components/Column';
@@ -10,7 +10,7 @@ import SvgIconsMapper from 'components/SvgIconsMapper';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
-export class CollapsebleSectionPure extends Component {
+export class CollapsebleSectionPure extends PureComponent {
     static propTypes = {
         classNames: ClassNamesPropType,
         className: string,

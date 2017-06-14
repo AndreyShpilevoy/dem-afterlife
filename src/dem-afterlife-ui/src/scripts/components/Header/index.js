@@ -1,6 +1,6 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import sharedPropTypes from 'utils/sharedPropTypes';
 import {throttle, root} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
@@ -14,7 +14,7 @@ import NavigationLinkArray from 'components/NavigationLinkArray';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
-export class HeaderPure extends Component {
+export class HeaderPure extends PureComponent {
     static propTypes = {
         classNames: ClassNamesPropType,
         navigationLinkArray: sharedPropTypes.navigationLinkArray

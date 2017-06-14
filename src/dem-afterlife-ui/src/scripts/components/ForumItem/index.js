@@ -10,6 +10,9 @@ import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';
 
+const topicsTerm = {id: 1, value: 'Topics'};
+const postsTerm = {id: 2, value: 'Posts'};
+
 
 export const ForumItemPure = ({forumItem, classNames}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forumItem;
@@ -31,13 +34,13 @@ export const ForumItemPure = ({forumItem, classNames}) => {
                             </Column>
                             <Column lg={2} className={classNames.center}>
                                 <Hidden lg={'up'}>
-                                    <TermItem term={{id: 1, value: 'Topics'}}/>
+                                    <TermItem term={topicsTerm}/>
                                 </Hidden>
                                 {topicsCount}
                             </Column>
                             <Column lg={2} className={classNames.center}>
                                 <Hidden lg={'up'}>
-                                    <TermItem term={{id: 2, value: 'Posts'}}/>
+                                    <TermItem term={postsTerm}/>
                                 </Hidden>
                                 {postsCount}
                             </Column>
