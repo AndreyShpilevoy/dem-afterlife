@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {shape, number, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {getTermTranslation} from 'utils/localization';
+import {localization} from 'utils';
 
 class TermItem extends PureComponent {
     static propTypes = {
@@ -19,7 +19,7 @@ class TermItem extends PureComponent {
 
     render() {
         const {term, locale, className, spaceBefore, spaceAfter} = this.props;
-        const content = `${spaceBefore ? ' ' : ''}${getTermTranslation(term, locale)}${spaceAfter ? ' ' : ''}`;
+        const content = `${spaceBefore ? ' ' : ''}${localization.getTermTranslation(term, locale)}${spaceAfter ? ' ' : ''}`;
         return (
             <span className={className}>
                 {content}

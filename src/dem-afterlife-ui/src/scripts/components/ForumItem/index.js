@@ -5,7 +5,7 @@ import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import TermItem from 'containers/TermItem';
 import RelativeDateTime from 'containers/RelativeDateTime';
-import sharedPropTypes from 'utils/sharedPropTypes';
+import {sharedPropTypes} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import styler from 'styles/styler';
 import calculateStyles from './calculateStyles';

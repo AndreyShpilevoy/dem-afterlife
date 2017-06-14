@@ -2,7 +2,7 @@
 
 import React, {PureComponent} from 'react';
 import {node, func} from 'prop-types';
-import sharedPropTypes from 'utils/sharedPropTypes';
+import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getLocale, getNavigationLinkArray, getSocialMediaLinkArray} from './layout-reducer';

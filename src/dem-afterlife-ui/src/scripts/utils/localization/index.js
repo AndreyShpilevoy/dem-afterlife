@@ -110,3 +110,5 @@ export const getLocaleDateTime = (date, locale, options) => {
     }
     return parsedDate.toLocaleTimeString(locale, options);
 };
+
+export default {getLocaleDateTime, getRelativeDateTime, getTermTranslation};

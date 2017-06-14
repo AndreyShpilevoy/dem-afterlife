@@ -1,6 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
-import sharedPropTypes from 'utils/sharedPropTypes';
+import {sharedPropTypes, defaults} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import NavigationLinkItem from 'components/NavigationLinkItem';
 import styler from 'styles/styler';
@@ -15,7 +15,7 @@ const mapNavigationLinks = (navigationLinkArray, classNames) =>
 
 export const NavigationLinkArrayPure = ({classNames, className, navigationLinkArray}) =>
     <ul className={`${classNames.list} ${className || ''}`}>
-        {mapNavigationLinks(navigationLinkArray || [], classNames)}
+        {mapNavigationLinks(navigationLinkArray || defaults.emptyArray, classNames)}
     </ul>;
 
 NavigationLinkArrayPure.propTypes = {

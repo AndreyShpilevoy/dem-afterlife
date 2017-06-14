@@ -48,7 +48,7 @@ const getForumArrayByChapterIdArrayApi = chapterIdArray => {
     }, this);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(Object.assign([], result));
+            resolve(result);
         }, delay);
     });
 };

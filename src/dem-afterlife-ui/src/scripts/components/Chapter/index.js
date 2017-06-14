@@ -1,6 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
-import sharedPropTypes from 'utils/sharedPropTypes';
+import {sharedPropTypes} from 'utils';
 import CollapsebleSection from 'components/CollapsebleSection';
 import ForumItem from 'components/ForumItem';
 import TermItem from 'containers/TermItem';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {string, node} from 'prop-types';
-import sharedPropTypes from 'utils/sharedPropTypes';
+import {sharedPropTypes} from 'utils';
 import {ClassNamesPropType, ThemeProvider} from 'aesthetic';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';

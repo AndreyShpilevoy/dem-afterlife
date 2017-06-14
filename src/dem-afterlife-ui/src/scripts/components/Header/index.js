@@ -1,8 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import sharedPropTypes from 'utils/sharedPropTypes';
-import {throttle, root} from 'utils';
+import {throttle, root, sharedPropTypes} from 'utils';
 import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import Column from 'components/Column';

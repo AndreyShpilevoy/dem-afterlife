@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {instanceOf, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {getLocaleDateTime} from 'utils/localization';
+import {localization} from 'utils';
 
 class LocaleDateTime extends PureComponent {
     static propTypes = {
@@ -23,7 +23,7 @@ class LocaleDateTime extends PureComponent {
             hour: '2-digit',
             minute: '2-digit'
         };
-        const content = `${spaceBefore ? ' ' : ''}${getLocaleDateTime(localeDateTime, locale, options)}${spaceAfter ? ' ' : ''}`;
+        const content = `${spaceBefore ? ' ' : ''}${localization.getLocaleDateTime(localeDateTime, locale, options)}${spaceAfter ? ' ' : ''}`;
         return (
             <span className={className}>
                 {content}
