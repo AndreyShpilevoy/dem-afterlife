@@ -3,7 +3,6 @@
 import React from 'react';
 import {arrayOf, shape, number, string} from 'prop-types';
 import {ClassNamesPropType} from 'aesthetic';
-import R from 'ramda';
 import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';

@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import sharedPropTypes from 'utils/sharedPropTypes';
-import R from 'ramda';
 import {ClassNamesPropType} from 'aesthetic';
 import NavigationLinkItem from 'components/NavigationLinkItem';
 import styler from 'styles/styler';
