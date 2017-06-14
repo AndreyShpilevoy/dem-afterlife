@@ -46,6 +46,7 @@ export class HeaderPure extends PureComponent {
         const headerClassName = `${classNames.header} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
         const headerLogoContainerClassName = `${classNames.headerLogoContainer} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
         const navigationLinksContainerClassName = `${classNames.headerColumn} ${classNames.navigationLinksContainer} ${menuIsClosed ? 'closed' : ''}`;
+        const menuButtonOnClick = () => this.handleMenuButtonClick(!menuIsClosed);
         return (
             <div>
                 <Container className={classNames.fixedOnTheTop}>
@@ -56,7 +57,7 @@ export class HeaderPure extends PureComponent {
                             </Column>
                             <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={classNames.headerColumn}>
                                 <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
-                                        <MenuButton onClick={() => this.handleMenuButtonClick(!menuIsClosed)}/>
+                                        <MenuButton onClick={menuButtonOnClick}/>
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>

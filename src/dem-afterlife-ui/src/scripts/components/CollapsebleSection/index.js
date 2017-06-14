@@ -63,9 +63,10 @@ export class CollapsebleSectionPure extends PureComponent {
         const bodyHolder = `${classNames.bodyHolder} ${isCollapseble ? classNames.headerCursor : ''} ${collapsedState ? 'closed' : ''}`;
         const headerArrow = `${classNames.headerArrow} ${collapsedState ? 'closed' : ''}`;
         const headerTextHolder = `${classNames.headerText} ${classNames.headerHolder}`;
+        const rowOnClick = () => this.handleTitleClick(!collapsedState);
         return (
             <div className={classNames.general}>
-                <Row className={classNames.header} onClick={() => this.handleTitleClick(!collapsedState)}>
+                <Row className={classNames.header} onClick={rowOnClick}>
                     <Column md={11} lg={6} className={headerTextHolder}>
                         <span className={classNames.title}>
                             {title}

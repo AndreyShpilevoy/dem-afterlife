@@ -30,8 +30,9 @@ export class MenuButtonPure extends PureComponent {
         const {classNames} = this.props;
         const {opened} = this.state;
         const openedClassName = opened ? 'open' : '';
+        const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
-            <div className={ classNames.container } onClick={() => this.onClickLocal(!opened)}>
+            <div className={ classNames.container } onClick={menuButtonOnClick}>
                 <div className={ `${classNames.firstLine} ${classNames.allLines} ${openedClassName}` } />
                 <div className={ `${classNames.secondLine} ${classNames.allLines} ${openedClassName}` } />
                 <div className={ `${classNames.thirdLine} ${classNames.allLines} ${openedClassName}` } />
