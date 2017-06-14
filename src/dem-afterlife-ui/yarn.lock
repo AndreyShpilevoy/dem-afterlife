@@ -2470,7 +2470,17 @@ he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-history@4.6.1, history@^4.5.1, history@^4.6.0:
+history@4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/history/-/history-4.6.2.tgz#716e863e1da0e97a028eed6da644061dd1e1ed1d"
+  dependencies:
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    resolve-pathname "^2.0.0"
+    value-equal "^0.2.0"
+    warning "^3.0.0"
+
+history@^4.5.1, history@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/history/-/history-4.6.1.tgz#911cf8eb65728555a94f2b12780a0c531a14d2fd"
   dependencies:
@@ -3306,9 +3316,9 @@ jss-vendor-prefixer@5.1.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@7.1.5:
-  version "7.1.5"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.5.tgz#7d27b07b0f2f7f1a2ec9fe0ee1e2ab3f9d903de5"
+jss@7.1.6:
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.6.tgz#8daf0bf130fc8aa218106f58be60490e2a151f88"
   dependencies:
     is-in-browser "1.0.2"
     warning "3.0.0"
