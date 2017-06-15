@@ -22,7 +22,7 @@ const calculateStyles = ({grid, navigationLinks}) =>
                 list: getNavigationLinksStyle(gridSize, navigationLinks),
                 separator: getNavigationSeparatorStyle(gridSize, navigationLinks)
             })
-        }), {});
+        }), {options: {meta: 'NavigationLinkArray'} });
 
 export default calculateStyles;
 

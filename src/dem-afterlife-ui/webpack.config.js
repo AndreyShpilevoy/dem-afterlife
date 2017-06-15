@@ -11,8 +11,7 @@ const debug = process.env.BABEL_ENV !== 'production';
 const entryPoints = {
     vendor: [
         'babel-polyfill',
-        'aesthetic',
-        'aesthetic-adapter-jss',
+        'classnames',
         'history',
         'jss',
         'jss-camel-case',
@@ -23,6 +22,7 @@ const entryPoints = {
         'jss-nested',
         'jss-props-sort',
         'jss-vendor-prefixer',
+        'jss-isolate',
         'lodash._root',
         'lodash.debounce',
         'lodash.throttle',
@@ -35,6 +35,7 @@ const entryPoints = {
         'react-redux',
         'react-router-dom',
         'react-router-redux',
+        'react-with-styles',
         'redux',
         'redux-saga',
         'raw-loader',

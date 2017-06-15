@@ -57,7 +57,8 @@ const calculateStyles = ({grid, footer, socialMediaLinkIcons}) =>
                     width: socialMediaLinkIcons.svg.width,
                     height: socialMediaLinkIcons.svg.height
                 }
-            }
+            },
+            options: {meta: 'Footer'}
         }
     );
 

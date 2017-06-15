@@ -16,7 +16,7 @@
         "test": "cross-env BABEL_ENV=test jest --no-cache",
         "prebuild": "yarn run clean-wwwroot && yarn run test-cached",
         "build": "cross-env BABEL_ENV=production babel-node tools/distServer.js",
-        "prestart": "yarn run test-cached",
+        "prestart1": "yarn run test-cached",
         "start": "cross-env BABEL_ENV=development babel-node tools/srcServer.js"
     },
     "jest": {
@@ -101,7 +101,7 @@
         "mkdirp": "0.5.1",
         "open": "0.0.5",
         "react-hot-loader": "3.0.0-beta.6",
-        "react-test-renderer": "15.5.4",
+        "react-test-renderer": "15.6.1",
         "redux-immutable-state-invariant": "2.0.0",
         "redux-mock-store": "1.2.3",
         "rimraf": "2.6.1",
@@ -112,9 +112,8 @@
         "webpack-hot-middleware": "2.18.0"
     },
     "dependencies": {
-        "aesthetic": "1.4.0",
-        "aesthetic-adapter-jss": "1.4.0",
         "babel-polyfill": "6.23.0",
+        "classnames": "2.2.5",
         "history": "4.6.2",
         "jss": "7.1.6",
         "jss-camel-case": "4.0.0",
@@ -122,6 +121,7 @@
         "jss-expand": "3.0.1",
         "jss-extend": "4.0.1",
         "jss-global": "1.0.1",
+        "jss-isolate": "3.0.0",
         "jss-nested": "4.0.1",
         "jss-props-sort": "4.0.0",
         "jss-vendor-prefixer": "5.1.0",
@@ -133,13 +133,14 @@
         "ramda": "0.24.1",
         "raven-js": "3.16.0",
         "raw-loader": "0.5.1",
-        "react": "15.6.0",
-        "react-dom": "15.6.0",
+        "react": "15.6.1",
+        "react-dom": "15.6.1",
         "react-notification-system": "0.2.14",
         "react-redux": "5.0.5",
         "react-router-dom": "4.1.1",
         "react-router-redux": "5.0.0-alpha.6",
         "react-svg-inline": "2.0.0",
+        "react-with-styles": "1.4.0",
         "redux": "3.6.0",
         "redux-saga": "0.15.3",
         "reselect": "3.0.1"

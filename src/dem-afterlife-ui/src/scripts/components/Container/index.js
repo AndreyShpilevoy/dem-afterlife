@@ -1,19 +1,18 @@
 import React from 'react';
-import {node, string, func} from 'prop-types';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {node, string, func, object} from 'prop-types';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const ContainerPure = ({children, classNames, className, onClick}) =>
-    <div className={`${classNames.container} ${className || ''}`} onClick={onClick}>
+export const ContainerPure = ({children, styles, className, onClick}) =>
+    <div className={`${css(styles.container)} ${className || ''}`} onClick={onClick}>
         {children}
     </div>;
 
 ContainerPure.propTypes = {
     className: string,
-    classNames: ClassNamesPropType,
+    styles: object,
     children: node,
     onClick: func
 };
 
-export default styler(theme => calculateStyles(theme))(ContainerPure);
+export default withStyles(theme => calculateStyles(theme))(ContainerPure);

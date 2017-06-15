@@ -1,5 +1,4 @@
 import React from 'react';
-import {string} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import CollapsebleSection from 'components/CollapsebleSection';
 import ForumItem from 'components/ForumItem';
@@ -21,14 +20,13 @@ const collapseSettings = {
 
 const mapForumItems = forumArray => forumArray ? forumArray.map(x => <ForumItem key={x.id} forumItem={x} />) : '';
 
-const Chapter = ({className, chapterItem}) =>
-    <CollapsebleSection className={className} headerSettings={headerSettings(chapterItem.title)} collapseSettings={collapseSettings}>
+const Chapter = ({chapterItem}) =>
+    <CollapsebleSection headerSettings={headerSettings(chapterItem.title)} collapseSettings={collapseSettings}>
         {mapForumItems(chapterItem.forumArray)}
     </CollapsebleSection>;
 
 
 Chapter.propTypes = {
-    className: string,
     chapterItem: sharedPropTypes.chapterItem
 };
 

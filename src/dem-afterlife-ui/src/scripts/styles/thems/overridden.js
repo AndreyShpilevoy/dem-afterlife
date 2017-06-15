@@ -1,3 +1,11 @@
-const overriddenTheme = {};
+import defaultTheme from './default';
 
-export default overriddenTheme;
+const overriddenTheme = {
+    menuButton: {
+        line: {
+            color: 'green'
+        }
+    }
+};
+
+export default ({...defaultTheme, ...overriddenTheme});

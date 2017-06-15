@@ -29,7 +29,7 @@ class Layout extends PureComponent {
         const {navigationLinkArray, socialMediaLinkArray} = this.props;
         return (
             <Presentation
-                theme={ 'default' }
+                themeName={ 'default' }
                 navigationLinkArray={navigationLinkArray}
                 socialMediaLinkArray={socialMediaLinkArray}>
                 {this.props.children}

@@ -1,18 +1,17 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {node, bool, string, shape} from 'prop-types';
-import {ClassNamesPropType} from 'aesthetic';
+import {node, bool, string, shape, object} from 'prop-types';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import SvgIconsMapper from 'components/SvgIconsMapper';
-import styler from 'styles/styler';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 export class CollapsebleSectionPure extends PureComponent {
     static propTypes = {
-        classNames: ClassNamesPropType,
+        styles: object.isRequired,
         className: string,
         children: node,
         headerSettings: shape({
@@ -58,47 +57,47 @@ export class CollapsebleSectionPure extends PureComponent {
 
     render() {
         const {collapsedState, isCollapseble} = this.state;
-        const {children, headerSettings, classNames} = this.props;
+        const {children, headerSettings, styles} = this.props;
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
-        const bodyHolder = `${classNames.bodyHolder} ${isCollapseble ? classNames.headerCursor : ''} ${collapsedState ? 'closed' : ''}`;
-        const headerArrow = `${classNames.headerArrow} ${collapsedState ? 'closed' : ''}`;
-        const headerTextHolder = `${classNames.headerText} ${classNames.headerHolder}`;
+        const bodyHolder = `${css(styles.bodyHolder)} ${isCollapseble ? css(styles.headerCursor) : ''} ${collapsedState ? 'closed' : ''}`;
+        const headerArrow = `${css(styles.headerArrow)} ${collapsedState ? 'closed' : ''}`;
+        const headerTextHolder = `${css(styles.headerText)} ${css(styles.headerHolder)}`;
         const rowOnClick = () => this.handleTitleClick(!collapsedState);
         return (
-            <div className={classNames.general}>
-                <Row className={classNames.header} onClick={rowOnClick}>
+            <div className={css(styles.general)}>
+                <Row className={css(styles.header)} onClick={rowOnClick}>
                     <Column md={11} lg={6} className={headerTextHolder}>
-                        <span className={classNames.title}>
+                        <span className={css(styles.title)}>
                             {title}
                         </span>
                     </Column>
-                    <Column md={1} lg={6} className={classNames.headerHolder}>
-                        <Hidden md={'down'} className={classNames.termedSection}>
+                    <Column md={1} lg={6} className={css(styles.headerHolder)}>
+                        <Hidden md={'down'} className={css(styles.termedSection)}>
                             <Row>
-                                <Column lg={3} className={classNames.headerColumn}>
-                                    <div className={classNames.headerText}>
+                                <Column lg={3} className={css(styles.headerColumn)}>
+                                    <div className={css(styles.headerText)}>
                                         {firstColumnTerm}
                                     </div>
                                 </Column>
-                                <Column lg={3} className={classNames.headerColumn}>
-                                    <div className={classNames.headerText}>
+                                <Column lg={3} className={css(styles.headerColumn)}>
+                                    <div className={css(styles.headerText)}>
                                         {secondColumnTerm}
                                     </div>
                                 </Column>
-                                <Column lg={6} className={classNames.headerColumn}>
-                                    <div className={classNames.headerText}>
+                                <Column lg={6} className={css(styles.headerColumn)}>
+                                    <div className={css(styles.headerText)}>
                                         {thirdColumnTerm}
                                     </div>
                                 </Column>
                             </Row>
                         </Hidden>
-                        <Hidden sm={'down'} lg={'up'} className={classNames.headerArrowHolder}>
+                        <Hidden sm={'down'} lg={'up'} className={css(styles.headerArrowHolder)}>
                             <SvgIconsMapper className={headerArrow} iconName={'IconSortLeft'}/>
                         </Hidden>
                     </Column>
                 </Row>
                 <div className={bodyHolder}>
-                    <div className={classNames.body}>
+                    <div className={css(styles.body)}>
                         {children}
                     </div>
                 </div>
@@ -107,4 +106,4 @@ export class CollapsebleSectionPure extends PureComponent {
     }
 }
 
-export default styler(theme => calculateStyles(theme))(CollapsebleSectionPure);
+export default withStyles(theme => calculateStyles(theme))(CollapsebleSectionPure);

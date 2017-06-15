@@ -1,15 +1,14 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {func} from 'prop-types';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {func, object} from 'prop-types';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
 export class MenuButtonPure extends PureComponent {
     static propTypes = {
-        classNames: ClassNamesPropType,
+        styles: object,
         onClick: func
     };
 
@@ -27,19 +26,19 @@ export class MenuButtonPure extends PureComponent {
     }
 
     render() {
-        const {classNames} = this.props;
+        const {styles} = this.props;
         const {opened} = this.state;
         const openedClassName = opened ? 'open' : '';
         const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
-            <div className={ classNames.container } onClick={menuButtonOnClick}>
-                <div className={ `${classNames.firstLine} ${classNames.allLines} ${openedClassName}` } />
-                <div className={ `${classNames.secondLine} ${classNames.allLines} ${openedClassName}` } />
-                <div className={ `${classNames.thirdLine} ${classNames.allLines} ${openedClassName}` } />
-                <div className={ `${classNames.fourthLine} ${classNames.allLines} ${openedClassName}` } />
+            <div className={ css(styles.container) } onClick={menuButtonOnClick}>
+                <div className={ `${css(styles.firstLine)} ${css(styles.allLines)} ${openedClassName}` } />
+                <div className={ `${css(styles.secondLine)} ${css(styles.allLines)} ${openedClassName}` } />
+                <div className={ `${css(styles.thirdLine)} ${css(styles.allLines)} ${openedClassName}` } />
+                <div className={ `${css(styles.fourthLine)} ${css(styles.allLines)} ${openedClassName}` } />
             </div>
         );
     }
 }
 
-export default styler(theme => calculateStyles(theme))(MenuButtonPure);
+export default withStyles(theme => calculateStyles(theme))(MenuButtonPure);

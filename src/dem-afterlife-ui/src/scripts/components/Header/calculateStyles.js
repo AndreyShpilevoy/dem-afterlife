@@ -100,7 +100,8 @@ const calculateStyles = ({grid, header}) =>
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center'
-            }
+            },
+            options: {meta: 'Header'}
         }
     );
 

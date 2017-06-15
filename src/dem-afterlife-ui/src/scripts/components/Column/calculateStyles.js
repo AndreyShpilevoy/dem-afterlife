@@ -20,6 +20,6 @@ export const calculateColumnStyles = gridSize =>
 const calculateStyles = ({grid}) =>
     grid.containers.reduce((previouse, {gridSize, mediaMinString}) => (
         {...previouse, ...createMediaQueryMin(mediaMinString, calculateColumnStyles(gridSize))}
-    ), {});
+    ), {options: {meta: 'Column'} });
 
 export default calculateStyles;

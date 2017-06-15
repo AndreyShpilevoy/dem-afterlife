@@ -1,8 +1,8 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
+import {object} from 'prop-types';
 import {throttle, root, sharedPropTypes} from 'utils';
-import {ClassNamesPropType} from 'aesthetic';
 import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
@@ -10,12 +10,12 @@ import Row from 'components/Row';
 import Logotype from 'components/Logotype';
 import MenuButton from 'components/MenuButton';
 import NavigationLinkArray from 'components/NavigationLinkArray';
-import styler from 'styles/styler';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 export class HeaderPure extends PureComponent {
     static propTypes = {
-        classNames: ClassNamesPropType,
+        styles: object,
         navigationLinkArray: sharedPropTypes.navigationLinkArray
     };
 
@@ -41,35 +41,35 @@ export class HeaderPure extends PureComponent {
     }
 
     render() {
-        const {classNames, navigationLinkArray} = this.props;
+        const {styles, navigationLinkArray} = this.props;
         const {shrinkedHeader, menuIsClosed} = this.state;
-        const headerClassName = `${classNames.header} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
-        const headerLogoContainerClassName = `${classNames.headerLogoContainer} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
-        const navigationLinksContainerClassName = `${classNames.headerColumn} ${classNames.navigationLinksContainer} ${menuIsClosed ? 'closed' : ''}`;
+        const headerClassName = `${css(styles.header)} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
+        const headerLogoContainerClassName = `${css(styles.headerLogoContainer)} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
+        const navigationLinksContainerClassName = `${css(styles.headerColumn)} ${css(styles.navigationLinksContainer)} ${menuIsClosed ? 'closed' : ''}`;
         const menuButtonOnClick = () => this.handleMenuButtonClick(!menuIsClosed);
         return (
             <div>
-                <Container className={classNames.fixedOnTheTop}>
+                <Container className={css(styles.fixedOnTheTop)}>
                     <div className={headerClassName}>
                         <Row>
-                            <Column xs={7} sm={4} xl={3} className={classNames.headerColumn}>
+                            <Column xs={7} sm={4} xl={3} className={css(styles.headerColumn)}>
                                 <Logotype className={headerLogoContainerClassName}/>
                             </Column>
-                            <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={classNames.headerColumn}>
-                                <Hidden lg={'up'} className={classNames.headerMenuButtonContainer}>
+                            <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={css(styles.headerColumn)}>
+                                <Hidden lg={'up'} className={css(styles.headerMenuButtonContainer)}>
                                         <MenuButton onClick={menuButtonOnClick}/>
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>
-                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={classNames.navigationLinks}/>
+                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={css(styles.navigationLinks)}/>
                             </Column>
                         </Row>
                     </div>
                 </Container>
-                <div className={classNames.headerPadding} ref={this.handleScroll} />
+                <div className={css(styles.headerPadding)} ref={this.handleScroll} />
             </div>
         );
     }
 }
 
-export default styler(theme => calculateStyles(theme))(HeaderPure);
+export default withStyles(theme => calculateStyles(theme))(HeaderPure);

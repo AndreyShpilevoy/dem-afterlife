@@ -10,6 +10,6 @@ const calculateStyles = ({grid}) =>
                 marginRight: 'auto'
             }
         })
-    }), {});
+    }), {options: {meta: 'Container'} });
 
 export default calculateStyles;

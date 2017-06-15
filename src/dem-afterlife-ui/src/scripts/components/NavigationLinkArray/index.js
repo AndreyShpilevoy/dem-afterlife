@@ -1,27 +1,26 @@
 import React from 'react';
-import {string} from 'prop-types';
+import {string, object} from 'prop-types';
 import {sharedPropTypes, defaults} from 'utils';
-import {ClassNamesPropType} from 'aesthetic';
 import NavigationLinkItem from 'components/NavigationLinkItem';
-import styler from 'styles/styler';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const mapNavigationLinks = (navigationLinkArray, classNames) =>
+const mapNavigationLinks = (navigationLinkArray, styles) =>
     navigationLinkArray.map((item, key) =>
         <div key={key}>
             <NavigationLinkItem navigationLinkItem = {item} />
-            <div className={classNames.separator}/>
+            <div className={css(styles.separator)}/>
         </div>);
 
-export const NavigationLinkArrayPure = ({classNames, className, navigationLinkArray}) =>
-    <ul className={`${classNames.list} ${className || ''}`}>
-        {mapNavigationLinks(navigationLinkArray || defaults.emptyArray, classNames)}
+export const NavigationLinkArrayPure = ({styles, className, navigationLinkArray}) =>
+    <ul className={`${css(styles.list)} ${className || ''}`}>
+        {mapNavigationLinks(navigationLinkArray || defaults.emptyArray, styles)}
     </ul>;
 
 NavigationLinkArrayPure.propTypes = {
-    classNames: ClassNamesPropType,
+    styles: object,
     className: string,
     navigationLinkArray: sharedPropTypes.navigationLinkArray
 };
 
-export default styler(theme => calculateStyles(theme))(NavigationLinkArrayPure);
+export default withStyles(theme => calculateStyles(theme))(NavigationLinkArrayPure);

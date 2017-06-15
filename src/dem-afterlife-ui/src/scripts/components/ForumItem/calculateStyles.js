@@ -37,7 +37,8 @@ const calculateStyles = () => ({
     lastTopicInfoWrapper: {
         width: '100%',
         textAlign: 'center'
-    }
+    },
+    options: {meta: 'ForumItem'}
 });
 
 export default calculateStyles;

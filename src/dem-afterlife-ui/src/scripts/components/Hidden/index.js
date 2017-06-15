@@ -1,15 +1,14 @@
 import React from 'react';
-import {node, string, func} from 'prop-types';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {node, string, func, object} from 'prop-types';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const constructClassNames = (sizesArray, classNames) =>
+const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map(size => `hidden-${size.direction}-${size.name}`)
-        .reduce((previouse, current) => `${previouse} ${classNames[current]}`, '');
+        .reduce((previouse, current) => `${previouse} ${css(styles[current])}`, '');
 
-export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className, onClick}) => {
+export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onClick}) => {
     const classes = constructClassNames(
         [
             {name: 'xs', direction: xs},
@@ -18,7 +17,7 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className,
             {name: 'lg', direction: lg},
             {name: 'xl', direction: xl}
         ],
-        classNames
+        styles
     );
 
     return (
@@ -31,7 +30,7 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classNames, className,
 HiddenPure.propTypes = {
     onClick: func,
     className: string,
-    classNames: ClassNamesPropType,
+    styles: object,
     children: node,
     xs: string,
     sm: string,
@@ -40,4 +39,4 @@ HiddenPure.propTypes = {
     xl: string
 };
 
-export default styler(theme => calculateStyles(theme))(HiddenPure);
+export default withStyles(theme => calculateStyles(theme))(HiddenPure);

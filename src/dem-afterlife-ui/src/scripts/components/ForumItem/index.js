@@ -1,44 +1,44 @@
 import React from 'react';
-import Link from 'react-router-dom/Link';
+import {object} from 'prop-types';
+import Link from 'components/Link';
 import Row from 'components/Row';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import TermItem from 'containers/TermItem';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import {sharedPropTypes} from 'utils';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const topicsTerm = {id: 1, value: 'Topics'};
 const postsTerm = {id: 2, value: 'Posts'};
 
 
-export const ForumItemPure = ({forumItem, classNames}) => {
+export const ForumItemPure = ({forumItem, styles}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forumItem;
     return (
-            <div className={classNames.mainContainer}>
+            <div className={css(styles.mainContainer)}>
                 <Row>
                     <Column xs={12} md={5} lg={9}>
                         <Row>
                             <Column xs={12} lg={8}>
-                                <Link className={classNames.bigText} to={`/Conference/Forum/${id}`}>
+                                <Link className={css(styles.bigText)} to={`/Conference/Forum/${id}`}>
                                     {title}
                                 </Link>
-                                <Hidden className={classNames.smallText} md={'down'}>
+                                <Hidden className={css(styles.smallText)} md={'down'}>
                                     {description}
                                 </Hidden>
                                 <Hidden md={'down'}>
                                     {'subForumArray'}
                                 </Hidden>
                             </Column>
-                            <Column lg={2} className={classNames.center}>
+                            <Column lg={2} className={css(styles.center)}>
                                 <Hidden lg={'up'}>
                                     <TermItem term={topicsTerm}/>
                                 </Hidden>
                                 {topicsCount}
                             </Column>
-                            <Column lg={2} className={classNames.center}>
+                            <Column lg={2} className={css(styles.center)}>
                                 <Hidden lg={'up'}>
                                     <TermItem term={postsTerm}/>
                                 </Hidden>
@@ -46,7 +46,7 @@ export const ForumItemPure = ({forumItem, classNames}) => {
                             </Column>
                         </Row>
                     </Column>
-                    <Column xs={12} md={7} lg={3} className={classNames.center}>
+                    <Column xs={12} md={7} lg={3} className={css(styles.center)}>
                         <Hidden sm={'down'}>
                             <Hidden md={'down'}>
                                 {lastTopicInfo.latesPostAutorName}
@@ -55,21 +55,21 @@ export const ForumItemPure = ({forumItem, classNames}) => {
                             </Hidden>
                             <RelativeDateTime relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
                         </Hidden>
-                        <div className={classNames.lastTopicInfoWrapper}>
-                            <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={classNames.smallText}>
+                        <div className={css(styles.lastTopicInfoWrapper)}>
+                            <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={css(styles.smallText)}>
                                 {lastTopicInfo.lastActiveTopic}
                             </Link>
                         </div>
                     </Column>
                 </Row>
-                <div className={classNames.separator}/>
+                <div className={css(styles.separator)}/>
             </div>
     );
 };
 
 ForumItemPure.propTypes = {
     forumItem: sharedPropTypes.forumItem,
-    classNames: ClassNamesPropType
+    styles: object
 };
 
-export default styler(theme => calculateStyles(theme))(ForumItemPure);
+export default withStyles(theme => calculateStyles(theme))(ForumItemPure);

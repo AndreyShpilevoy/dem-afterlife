@@ -1,20 +1,19 @@
 import React from 'react';
-import {string, shape, number} from 'prop-types';
-import Link from 'react-router-dom/Link';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {string, shape, number, object} from 'prop-types';
+import Link from 'components/Link';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const NavigationLinkItemPure = ({classNames, navigationLinkItem}) =>
+export const NavigationLinkItemPure = ({styles, navigationLinkItem}) =>
     <li>
-        <Link className={classNames.link} to={navigationLinkItem.href}>
+        <Link className={css(styles.link)} to={navigationLinkItem.href}>
             {navigationLinkItem.title}
         </Link>
     </li>;
 
 NavigationLinkItemPure.propTypes = {
-    classNames: ClassNamesPropType,
+    styles: object,
     navigationLinkItem: shape({
         id: number.isRequired,
         title: string.isRequired,
@@ -23,4 +22,4 @@ NavigationLinkItemPure.propTypes = {
     }).isRequired
 };
 
-export default styler(theme => calculateStyles(theme))(NavigationLinkItemPure);
+export default withStyles(theme => calculateStyles(theme))(NavigationLinkItemPure);

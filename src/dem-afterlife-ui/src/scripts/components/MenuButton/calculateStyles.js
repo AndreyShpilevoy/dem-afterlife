@@ -43,7 +43,8 @@ const calculateStyles = ({menuButton}) => ({
             width: '0%',
             left: '50%'
         }
-    }
+    },
+    options: {meta: 'MenuButton'}
 });
 
 export default calculateStyles;

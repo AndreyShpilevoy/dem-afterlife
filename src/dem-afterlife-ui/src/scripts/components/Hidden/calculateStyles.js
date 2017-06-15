@@ -6,6 +6,6 @@ const calculateStyles = ({grid}) =>
         ...createMediaQueryMin(mediaMinString, {[`hidden-up-${gridSize}`]: {display: 'none'} }),
         ...createMediaQueryMax(mediaMaxString, {[`hidden-down-${gridSize}`]: {display: 'none'} }),
         ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {[`hidden-exact-${gridSize}`]: {display: 'none'} })
-    }), {});
+    }), {options: {meta: 'Hidden'} });
 
 export default calculateStyles;

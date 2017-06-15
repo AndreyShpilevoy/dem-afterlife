@@ -77,25 +77,6 @@ const footerLgXl = {
 };
 
 const defaultTheme = {
-    global: {
-        html: {
-            fontSize: '16px'
-        },
-        body: {
-            backgroundColor: colors.backgroundColor,
-            fontFamily: 'Arial,sans-serif',
-            fontSize: 1,
-            lineHeight: '1.5',
-            minWidth: '290px',
-            margin: 'initial'
-        },
-        link: {
-            color: colors.yellowTextColor,
-            textDecoration: 'none',
-            hoveredColor: colors.yellowTextColorHovered,
-            hoveredTextDecoration: 'underline'
-        }
-    },
     grid: {
         containers: [
             {
@@ -129,6 +110,18 @@ const defaultTheme = {
                 width: '1140px'
             }
         ]
+    },
+    mainWrapper: {
+        fontSize: '16px',
+        backgroundColor: colors.backgroundColor,
+        fontFamily: 'Arial,sans-serif',
+        lineHeight: '1.5'
+    },
+    link: {
+        color: colors.yellowTextColor,
+        textDecoration: 'none',
+        hoveredColor: colors.yellowTextColorHovered,
+        hoveredTextDecoration: 'underline'
     },
     header: {
         xs: headerXsSm,

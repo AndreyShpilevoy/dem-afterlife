@@ -7,7 +7,8 @@ const calculateStyles = ({logotype}) => ({
     },
     logotypeContainer: {
         height: logotype.height
-    }
+    },
+    options: {meta: 'Logotype'}
 });
 
 export default calculateStyles;

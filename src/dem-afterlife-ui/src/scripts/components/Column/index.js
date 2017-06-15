@@ -1,17 +1,16 @@
 import React from 'react';
-import {func, node, number, string, oneOfType} from 'prop-types';
-import {ClassNamesPropType} from 'aesthetic';
-import styler from 'styles/styler';
+import {func, node, number, string, oneOfType, object} from 'prop-types';
+import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const constructClassNames = (sizesArray, classNames) =>
+const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
-            classNames[current] ? `${previouse} ${classNames[current]}` : '', '');
+            css(styles[current]) ? `${previouse} ${css(styles[current])}` : '', '');
 
 export const ColumnPure = (
-        {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classNames, className, onClick}
+        {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
     ) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
@@ -24,7 +23,7 @@ export const ColumnPure = (
         {name: 'mdOffset', count: mdOffset},
         {name: 'lgOffset', count: lgOffset},
         {name: 'xlOffset', count: xlOffset}],
-        classNames);
+        styles);
 
     return (
         <div className={`${classes} ${className || ''}`} onClick={onClick}>
@@ -35,7 +34,7 @@ export const ColumnPure = (
 
 ColumnPure.propTypes = {
     className: string,
-    classNames: ClassNamesPropType,
+    styles: object,
     children: node,
     onClick: func,
     xs: oneOfType([number, string]),
@@ -50,4 +49,4 @@ ColumnPure.propTypes = {
     xlOffset: oneOfType([number, string])
 };
 
-export default styler(theme => calculateStyles(theme))(ColumnPure);
+export default withStyles(theme => calculateStyles(theme))(ColumnPure);

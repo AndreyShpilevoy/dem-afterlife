@@ -9,7 +9,8 @@ const calculateStyles = () => ({
         '&.reverse': {
             flexDirection: 'row-reverse'
         }
-    }
+    },
+    options: {meta: 'Row'}
 });
 
 export default calculateStyles;
