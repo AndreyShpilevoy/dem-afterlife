@@ -12,7 +12,7 @@ It's new engine for [DeusExMachina](http://dem.org.ua) website
 - Routing via ```react-router``` and ```react-router-redux```
 - Notifications via ```react-notification-system``` (integrated with redux)
 - css-in-js via ```jss``` and plugins
-- Theming via ```aesthetic```
+- Theming via ```react-with-styles```
 - Bootstrap-like grid system
 - Error logging via ```raven-js```
 - ESLint + Jest + Enzyme
