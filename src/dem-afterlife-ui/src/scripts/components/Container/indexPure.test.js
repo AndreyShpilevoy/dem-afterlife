@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {ContainerPure} from './index';
 
-
-
 describe('Container Pure', () => {
     const styles = {
         container: 'container-0-0'

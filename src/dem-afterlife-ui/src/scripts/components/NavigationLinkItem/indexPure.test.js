@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {NavigationLinkItemPure} from './index';
 
-
-
 describe('NavigationLinkItem Pure', () => {
     const styles = {
         '.link-0-0:hover': 'link-0-0',

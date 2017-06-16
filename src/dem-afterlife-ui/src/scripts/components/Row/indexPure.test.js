@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {RowPure} from './index';
 
-
-
 describe('Row Pure', () => {
     const styles = {
         '.row-0-0.reverse': '.row-0-0.reverse-0-1',

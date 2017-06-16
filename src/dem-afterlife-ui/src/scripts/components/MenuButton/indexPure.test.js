@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {MenuButtonPure} from './index';
 
-
-
 describe('MenuButton Pure', () => {
     const styles = {
         '.firstLine-0-2.open': '.firstLine-0-2.open-0-6',

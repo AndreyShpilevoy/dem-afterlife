@@ -4,8 +4,6 @@ import React from 'react';
 import {mount} from 'enzyme';
 import {NotificationPure} from './index';
 
-
-
 describe('Notification Pure', () => {
     const props = {
         removeNotification: () => {},

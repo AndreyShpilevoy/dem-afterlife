@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {CollapsebleSectionPure} from './index';
 
-
-
 describe('CollapsebleSection Pure', () => {
     const styles = {
         '.bodyHolder-0-11.closed': 'bodyHolder-0-11',

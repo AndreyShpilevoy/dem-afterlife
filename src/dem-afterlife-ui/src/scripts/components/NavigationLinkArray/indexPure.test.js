@@ -4,8 +4,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {NavigationLinkArrayPure} from './index';
 
-
-
 describe('NavigationLinkArray Pure', () => {
     const styles = {
         list: 'list-0-0',
