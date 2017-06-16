@@ -1,15 +1,14 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0*/
 
 import React from 'react';
 import {shallow} from 'enzyme';
+import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
 import Header from './index';
 
-describe('Header HOC', () => {
-    const hocProps = {
-        theme: 'default'
-    };
+ThemedStyleSheet.default.get = () => {};
 
+describe('Header HOC', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<Header theme={hocProps.theme} navigationLinkArray={[]}/>)).toMatchSnapshot();
+        expect(shallow(<Header navigationLinkArray={[]}/>)).toMatchSnapshot();
     });
 });

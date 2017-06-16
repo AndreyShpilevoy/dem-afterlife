@@ -5,8 +5,6 @@ import defaultTheme from './thems/default';
 import overriddenTheme from './thems/overridden';
 
 ThemedStyleSheet.registerDefaultTheme(defaultTheme);
-
-// ThemedStyleSheet.registerTheme('default', defaultTheme);
 ThemedStyleSheet.registerTheme('overridden', overriddenTheme);
 ThemedStyleSheet.registerInterface(jssInterface);
 

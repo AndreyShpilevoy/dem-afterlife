@@ -2,7 +2,7 @@
 
 exports[`Column HOC component match expected snapshot 1`] = `
 <ColumnPure
-  classNames={
+  styles={
     Object {
       "col-lg-0": "col-lg-0-0-78",
       "col-lg-1": "col-lg-1-0-80",
@@ -136,6 +136,5 @@ exports[`Column HOC component match expected snapshot 1`] = `
       "col-xsOffset-9": "col-xsOffset-9-0-19",
     }
   }
-  theme="default"
 />
 `;

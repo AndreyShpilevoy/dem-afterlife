@@ -4,10 +4,10 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {CollapsebleSectionPure} from './index';
 
-jest.mock('styles/styler');
+
 
 describe('CollapsebleSection Pure', () => {
-    const classNames = {
+    const styles = {
         '.bodyHolder-0-11.closed': 'bodyHolder-0-11',
         '.headerArrow-0-10 > .SVGInline-svg': 'headerArrow-0-10',
         '.headerArrow-0-10.closed': 'headerArrow-0-10',
@@ -28,11 +28,11 @@ describe('CollapsebleSection Pure', () => {
     };
 
     it('without headerSettings', () => {
-        expect(shallow(<CollapsebleSectionPure classNames={classNames}><div>{'Column content'}</div></CollapsebleSectionPure>)).toMatchSnapshot();
+        expect(shallow(<CollapsebleSectionPure styles={styles}><div>{'Column content'}</div></CollapsebleSectionPure>)).toMatchSnapshot();
     });
 
     it('without headerSettings', () => {
-        const wrapper = shallow(<CollapsebleSectionPure classNames={classNames}><div>{'Column content'}</div></CollapsebleSectionPure>);
+        const wrapper = shallow(<CollapsebleSectionPure styles={styles}><div>{'Column content'}</div></CollapsebleSectionPure>);
         wrapper.find('Aesthetic-RowPure').first().simulate('click');
         expect(wrapper).toMatchSnapshot();
     });
@@ -45,7 +45,7 @@ describe('CollapsebleSection Pure', () => {
             thirdColumnTerm: 'thirdColumnTerm'
         };
         expect(shallow(
-            <CollapsebleSectionPure classNames={classNames} headerSettings={headerSettings}>
+            <CollapsebleSectionPure styles={styles} headerSettings={headerSettings}>
                 <div>
                     {'Column content'}
                 </div>
@@ -59,7 +59,7 @@ describe('CollapsebleSection Pure', () => {
             isCollapseble: false
         };
         expect(shallow(
-            <CollapsebleSectionPure classNames={classNames} collapseSettings={collapseSettings}>
+            <CollapsebleSectionPure styles={styles} collapseSettings={collapseSettings}>
                 <div>
                     {'Column content'}
                 </div>

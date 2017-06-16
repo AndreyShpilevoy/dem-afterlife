@@ -1,0 +1,1307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Pure Mount component with scrolled down document since to "scrollTop: 24" match expected snapshot 1`] = `
+<HeaderPure
+  navigationLinkArray={Array []}
+  styles={
+    Object {
+      ".header-0-2.shrinkedHeader": "header-0-2",
+      ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
+      ".navigationLinksContainer-0-6.closed": "navigationLinksContainer-0-6",
+      "fixedOnTheTop": "fixedOnTheTop-0-0",
+      "header": "header-0-2",
+      "headerColumn": "headerColumn-0-1",
+      "headerLogoContainer": "headerLogoContainer-0-4",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-7",
+      "headerPadding": "headerPadding-0-3",
+      "navigationLinks": "navigationLinks-0-5",
+      "navigationLinksContainer": "navigationLinksContainer-0-6",
+    }
+  }
+>
+  <div>
+    <withStyles(ContainerPure)
+      className="fixedOnTheTop-0-0"
+    >
+      <ContainerPure
+        className="fixedOnTheTop-0-0"
+        styles={
+          Object {
+            "container": "container-0-0",
+          }
+        }
+      >
+        <div
+          className="container-0-0 fixedOnTheTop-0-0"
+        >
+          <div
+            className="header-0-2 "
+          >
+            <withStyles(RowPure)>
+              <RowPure
+                styles={
+                  Object {
+                    ".row-0-292.reverse": ".row-0-292.reverse-0-293",
+                    "row": "row-0-292",
+                  }
+                }
+              >
+                <div
+                  className="row-0-292 "
+                >
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1"
+                    sm={4}
+                    xl={3}
+                    xs={7}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1"
+                      sm={4}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xl={3}
+                      xs={7}
+                    >
+                      <div
+                        className=" col-xs-7-0-16 col-sm-4-0-36 col-xl-3-0-112 headerColumn-0-1"
+                      >
+                        <withStyles(LogotypePure)
+                          className="headerLogoContainer-0-4 "
+                        >
+                          <LogotypePure
+                            className="headerLogoContainer-0-4 "
+                            styles={
+                              Object {
+                                "logotype": "logotype-0-304",
+                                "logotypeContainer": "logotypeContainer-0-305",
+                              }
+                            }
+                          >
+                            <withStyles(LinkPure)
+                              className="logotypeContainer-0-305 headerLogoContainer-0-4 "
+                              to="/"
+                            >
+                              <LinkPure
+                                className="logotypeContainer-0-305 headerLogoContainer-0-4 "
+                                styles={
+                                  Object {
+                                    ".link-0-296:hover": ".link-0-296:hover-0-298",
+                                    ".link-0-296:visited": ".link-0-296:visited-0-297",
+                                    ".link-0-296:visited:hover": ".link-0-296:visited:hover-0-299",
+                                    "link": "link-0-296",
+                                  }
+                                }
+                                to="/"
+                              >
+                                <Link
+                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4 "
+                                  replace={false}
+                                  to="/"
+                                />
+                              </LinkPure>
+                            </withStyles(LinkPure)>
+                          </LogotypePure>
+                        </withStyles(LogotypePure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1"
+                    lg={0}
+                    lgOffset={0}
+                    sm={1}
+                    smOffset={7}
+                    xs={2}
+                    xsOffset={3}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1"
+                      lg={0}
+                      lgOffset={0}
+                      sm={1}
+                      smOffset={7}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xs={2}
+                      xsOffset={3}
+                    >
+                      <div
+                        className=" col-xs-2-0-6 col-sm-1-0-30 col-lg-0-0-80 col-xsOffset-3-0-9 col-smOffset-7-0-43 col-lgOffset-0-0-81 headerColumn-0-1"
+                      >
+                        <withStyles(HiddenPure)
+                          className="headerMenuButtonContainer-0-7"
+                          lg="up"
+                        >
+                          <HiddenPure
+                            className="headerMenuButtonContainer-0-7"
+                            lg="up"
+                            styles={
+                              Object {
+                                "hidden-down-lg": "hidden-down-lg-0-272",
+                                "hidden-down-md": "hidden-down-md-0-269",
+                                "hidden-down-sm": "hidden-down-sm-0-266",
+                                "hidden-down-xl": "hidden-down-xl-0-275",
+                                "hidden-down-xs": "hidden-down-xs-0-263",
+                                "hidden-exact-lg": "hidden-exact-lg-0-273",
+                                "hidden-exact-md": "hidden-exact-md-0-270",
+                                "hidden-exact-sm": "hidden-exact-sm-0-267",
+                                "hidden-exact-xl": "hidden-exact-xl-0-276",
+                                "hidden-exact-xs": "hidden-exact-xs-0-264",
+                                "hidden-up-lg": "hidden-up-lg-0-271",
+                                "hidden-up-md": "hidden-up-md-0-268",
+                                "hidden-up-sm": "hidden-up-sm-0-265",
+                                "hidden-up-xl": "hidden-up-xl-0-274",
+                                "hidden-up-xs": "hidden-up-xs-0-262",
+                              }
+                            }
+                          >
+                            <span
+                              className=" hidden-up-lg-0-271 headerMenuButtonContainer-0-7"
+                            >
+                              <withStyles(MenuButtonPure)
+                                onClick={[Function]}
+                              >
+                                <MenuButtonPure
+                                  onClick={[Function]}
+                                  styles={
+                                    Object {
+                                      ".firstLine-0-310.open": ".firstLine-0-310.open-0-314",
+                                      ".fourthLine-0-313.open": ".fourthLine-0-313.open-0-317",
+                                      ".secondLine-0-311.open": ".secondLine-0-311.open-0-315",
+                                      ".thirdLine-0-312.open": ".thirdLine-0-312.open-0-316",
+                                      "allLines": "allLines-0-309",
+                                      "container": "container-0-308",
+                                      "firstLine": "firstLine-0-310",
+                                      "fourthLine": "fourthLine-0-313",
+                                      "secondLine": "secondLine-0-311",
+                                      "thirdLine": "thirdLine-0-312",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="container-0-308"
+                                    onClick={[Function]}
+                                  >
+                                    <div
+                                      className="firstLine-0-310 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="secondLine-0-311 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="thirdLine-0-312 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="fourthLine-0-313 allLines-0-309 "
+                                    />
+                                  </div>
+                                </MenuButtonPure>
+                              </withStyles(MenuButtonPure)>
+                            </span>
+                          </HiddenPure>
+                        </withStyles(HiddenPure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                    lg={8}
+                    xl={9}
+                    xs={12}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                      lg={8}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xl={9}
+                      xs={12}
+                    >
+                      <div
+                        className=" col-xs-12-0-26 col-lg-8-0-96 col-xl-9-0-124 headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                      >
+                        <withStyles(NavigationLinkArrayPure)
+                          className="navigationLinks-0-5"
+                          navigationLinkArray={Array []}
+                        >
+                          <NavigationLinkArrayPure
+                            className="navigationLinks-0-5"
+                            navigationLinkArray={Array []}
+                            styles={
+                              Object {
+                                "list": "list-0-332",
+                                "separator": "separator-0-333",
+                              }
+                            }
+                          >
+                            <ul
+                              className="list-0-332 navigationLinks-0-5"
+                            />
+                          </NavigationLinkArrayPure>
+                        </withStyles(NavigationLinkArrayPure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                </div>
+              </RowPure>
+            </withStyles(RowPure)>
+          </div>
+        </div>
+      </ContainerPure>
+    </withStyles(ContainerPure)>
+    <div
+      className="headerPadding-0-3"
+    />
+  </div>
+</HeaderPure>
+`;
+
+exports[`Header Pure Mount component with scrolled down document since to "scrollTop: 100" match expected snapshot 1`] = `
+<HeaderPure
+  navigationLinkArray={Array []}
+  styles={
+    Object {
+      ".header-0-2.shrinkedHeader": "header-0-2",
+      ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
+      ".navigationLinksContainer-0-6.closed": "navigationLinksContainer-0-6",
+      "fixedOnTheTop": "fixedOnTheTop-0-0",
+      "header": "header-0-2",
+      "headerColumn": "headerColumn-0-1",
+      "headerLogoContainer": "headerLogoContainer-0-4",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-7",
+      "headerPadding": "headerPadding-0-3",
+      "navigationLinks": "navigationLinks-0-5",
+      "navigationLinksContainer": "navigationLinksContainer-0-6",
+    }
+  }
+>
+  <div>
+    <withStyles(ContainerPure)
+      className="fixedOnTheTop-0-0"
+    >
+      <ContainerPure
+        className="fixedOnTheTop-0-0"
+        styles={
+          Object {
+            "container": "container-0-0",
+          }
+        }
+      >
+        <div
+          className="container-0-0 fixedOnTheTop-0-0"
+        >
+          <div
+            className="header-0-2 shrinkedHeader"
+          >
+            <withStyles(RowPure)>
+              <RowPure
+                styles={
+                  Object {
+                    ".row-0-292.reverse": ".row-0-292.reverse-0-293",
+                    "row": "row-0-292",
+                  }
+                }
+              >
+                <div
+                  className="row-0-292 "
+                >
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1"
+                    sm={4}
+                    xl={3}
+                    xs={7}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1"
+                      sm={4}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xl={3}
+                      xs={7}
+                    >
+                      <div
+                        className=" col-xs-7-0-16 col-sm-4-0-36 col-xl-3-0-112 headerColumn-0-1"
+                      >
+                        <withStyles(LogotypePure)
+                          className="headerLogoContainer-0-4 shrinkedHeader"
+                        >
+                          <LogotypePure
+                            className="headerLogoContainer-0-4 shrinkedHeader"
+                            styles={
+                              Object {
+                                "logotype": "logotype-0-304",
+                                "logotypeContainer": "logotypeContainer-0-305",
+                              }
+                            }
+                          >
+                            <withStyles(LinkPure)
+                              className="logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                              to="/"
+                            >
+                              <LinkPure
+                                className="logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                                styles={
+                                  Object {
+                                    ".link-0-296:hover": ".link-0-296:hover-0-298",
+                                    ".link-0-296:visited": ".link-0-296:visited-0-297",
+                                    ".link-0-296:visited:hover": ".link-0-296:visited:hover-0-299",
+                                    "link": "link-0-296",
+                                  }
+                                }
+                                to="/"
+                              >
+                                <Link
+                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                                  replace={false}
+                                  to="/"
+                                />
+                              </LinkPure>
+                            </withStyles(LinkPure)>
+                          </LogotypePure>
+                        </withStyles(LogotypePure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1"
+                    lg={0}
+                    lgOffset={0}
+                    sm={1}
+                    smOffset={7}
+                    xs={2}
+                    xsOffset={3}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1"
+                      lg={0}
+                      lgOffset={0}
+                      sm={1}
+                      smOffset={7}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xs={2}
+                      xsOffset={3}
+                    >
+                      <div
+                        className=" col-xs-2-0-6 col-sm-1-0-30 col-lg-0-0-80 col-xsOffset-3-0-9 col-smOffset-7-0-43 col-lgOffset-0-0-81 headerColumn-0-1"
+                      >
+                        <withStyles(HiddenPure)
+                          className="headerMenuButtonContainer-0-7"
+                          lg="up"
+                        >
+                          <HiddenPure
+                            className="headerMenuButtonContainer-0-7"
+                            lg="up"
+                            styles={
+                              Object {
+                                "hidden-down-lg": "hidden-down-lg-0-272",
+                                "hidden-down-md": "hidden-down-md-0-269",
+                                "hidden-down-sm": "hidden-down-sm-0-266",
+                                "hidden-down-xl": "hidden-down-xl-0-275",
+                                "hidden-down-xs": "hidden-down-xs-0-263",
+                                "hidden-exact-lg": "hidden-exact-lg-0-273",
+                                "hidden-exact-md": "hidden-exact-md-0-270",
+                                "hidden-exact-sm": "hidden-exact-sm-0-267",
+                                "hidden-exact-xl": "hidden-exact-xl-0-276",
+                                "hidden-exact-xs": "hidden-exact-xs-0-264",
+                                "hidden-up-lg": "hidden-up-lg-0-271",
+                                "hidden-up-md": "hidden-up-md-0-268",
+                                "hidden-up-sm": "hidden-up-sm-0-265",
+                                "hidden-up-xl": "hidden-up-xl-0-274",
+                                "hidden-up-xs": "hidden-up-xs-0-262",
+                              }
+                            }
+                          >
+                            <span
+                              className=" hidden-up-lg-0-271 headerMenuButtonContainer-0-7"
+                            >
+                              <withStyles(MenuButtonPure)
+                                onClick={[Function]}
+                              >
+                                <MenuButtonPure
+                                  onClick={[Function]}
+                                  styles={
+                                    Object {
+                                      ".firstLine-0-310.open": ".firstLine-0-310.open-0-314",
+                                      ".fourthLine-0-313.open": ".fourthLine-0-313.open-0-317",
+                                      ".secondLine-0-311.open": ".secondLine-0-311.open-0-315",
+                                      ".thirdLine-0-312.open": ".thirdLine-0-312.open-0-316",
+                                      "allLines": "allLines-0-309",
+                                      "container": "container-0-308",
+                                      "firstLine": "firstLine-0-310",
+                                      "fourthLine": "fourthLine-0-313",
+                                      "secondLine": "secondLine-0-311",
+                                      "thirdLine": "thirdLine-0-312",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="container-0-308"
+                                    onClick={[Function]}
+                                  >
+                                    <div
+                                      className="firstLine-0-310 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="secondLine-0-311 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="thirdLine-0-312 allLines-0-309 "
+                                    />
+                                    <div
+                                      className="fourthLine-0-313 allLines-0-309 "
+                                    />
+                                  </div>
+                                </MenuButtonPure>
+                              </withStyles(MenuButtonPure)>
+                            </span>
+                          </HiddenPure>
+                        </withStyles(HiddenPure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                  <withStyles(ColumnPure)
+                    className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                    lg={8}
+                    xl={9}
+                    xs={12}
+                  >
+                    <ColumnPure
+                      className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                      lg={8}
+                      styles={
+                        Object {
+                          "col-lg-0": "col-lg-0-0-80",
+                          "col-lg-1": "col-lg-1-0-82",
+                          "col-lg-10": "col-lg-10-0-100",
+                          "col-lg-11": "col-lg-11-0-102",
+                          "col-lg-12": "col-lg-12-0-104",
+                          "col-lg-2": "col-lg-2-0-84",
+                          "col-lg-3": "col-lg-3-0-86",
+                          "col-lg-4": "col-lg-4-0-88",
+                          "col-lg-5": "col-lg-5-0-90",
+                          "col-lg-6": "col-lg-6-0-92",
+                          "col-lg-7": "col-lg-7-0-94",
+                          "col-lg-8": "col-lg-8-0-96",
+                          "col-lg-9": "col-lg-9-0-98",
+                          "col-lgOffset-0": "col-lgOffset-0-0-81",
+                          "col-lgOffset-1": "col-lgOffset-1-0-83",
+                          "col-lgOffset-10": "col-lgOffset-10-0-101",
+                          "col-lgOffset-11": "col-lgOffset-11-0-103",
+                          "col-lgOffset-12": "col-lgOffset-12-0-105",
+                          "col-lgOffset-2": "col-lgOffset-2-0-85",
+                          "col-lgOffset-3": "col-lgOffset-3-0-87",
+                          "col-lgOffset-4": "col-lgOffset-4-0-89",
+                          "col-lgOffset-5": "col-lgOffset-5-0-91",
+                          "col-lgOffset-6": "col-lgOffset-6-0-93",
+                          "col-lgOffset-7": "col-lgOffset-7-0-95",
+                          "col-lgOffset-8": "col-lgOffset-8-0-97",
+                          "col-lgOffset-9": "col-lgOffset-9-0-99",
+                          "col-md-0": "col-md-0-0-54",
+                          "col-md-1": "col-md-1-0-56",
+                          "col-md-10": "col-md-10-0-74",
+                          "col-md-11": "col-md-11-0-76",
+                          "col-md-12": "col-md-12-0-78",
+                          "col-md-2": "col-md-2-0-58",
+                          "col-md-3": "col-md-3-0-60",
+                          "col-md-4": "col-md-4-0-62",
+                          "col-md-5": "col-md-5-0-64",
+                          "col-md-6": "col-md-6-0-66",
+                          "col-md-7": "col-md-7-0-68",
+                          "col-md-8": "col-md-8-0-70",
+                          "col-md-9": "col-md-9-0-72",
+                          "col-mdOffset-0": "col-mdOffset-0-0-55",
+                          "col-mdOffset-1": "col-mdOffset-1-0-57",
+                          "col-mdOffset-10": "col-mdOffset-10-0-75",
+                          "col-mdOffset-11": "col-mdOffset-11-0-77",
+                          "col-mdOffset-12": "col-mdOffset-12-0-79",
+                          "col-mdOffset-2": "col-mdOffset-2-0-59",
+                          "col-mdOffset-3": "col-mdOffset-3-0-61",
+                          "col-mdOffset-4": "col-mdOffset-4-0-63",
+                          "col-mdOffset-5": "col-mdOffset-5-0-65",
+                          "col-mdOffset-6": "col-mdOffset-6-0-67",
+                          "col-mdOffset-7": "col-mdOffset-7-0-69",
+                          "col-mdOffset-8": "col-mdOffset-8-0-71",
+                          "col-mdOffset-9": "col-mdOffset-9-0-73",
+                          "col-sm-0": "col-sm-0-0-28",
+                          "col-sm-1": "col-sm-1-0-30",
+                          "col-sm-10": "col-sm-10-0-48",
+                          "col-sm-11": "col-sm-11-0-50",
+                          "col-sm-12": "col-sm-12-0-52",
+                          "col-sm-2": "col-sm-2-0-32",
+                          "col-sm-3": "col-sm-3-0-34",
+                          "col-sm-4": "col-sm-4-0-36",
+                          "col-sm-5": "col-sm-5-0-38",
+                          "col-sm-6": "col-sm-6-0-40",
+                          "col-sm-7": "col-sm-7-0-42",
+                          "col-sm-8": "col-sm-8-0-44",
+                          "col-sm-9": "col-sm-9-0-46",
+                          "col-smOffset-0": "col-smOffset-0-0-29",
+                          "col-smOffset-1": "col-smOffset-1-0-31",
+                          "col-smOffset-10": "col-smOffset-10-0-49",
+                          "col-smOffset-11": "col-smOffset-11-0-51",
+                          "col-smOffset-12": "col-smOffset-12-0-53",
+                          "col-smOffset-2": "col-smOffset-2-0-33",
+                          "col-smOffset-3": "col-smOffset-3-0-35",
+                          "col-smOffset-4": "col-smOffset-4-0-37",
+                          "col-smOffset-5": "col-smOffset-5-0-39",
+                          "col-smOffset-6": "col-smOffset-6-0-41",
+                          "col-smOffset-7": "col-smOffset-7-0-43",
+                          "col-smOffset-8": "col-smOffset-8-0-45",
+                          "col-smOffset-9": "col-smOffset-9-0-47",
+                          "col-xl-0": "col-xl-0-0-106",
+                          "col-xl-1": "col-xl-1-0-108",
+                          "col-xl-10": "col-xl-10-0-126",
+                          "col-xl-11": "col-xl-11-0-128",
+                          "col-xl-12": "col-xl-12-0-130",
+                          "col-xl-2": "col-xl-2-0-110",
+                          "col-xl-3": "col-xl-3-0-112",
+                          "col-xl-4": "col-xl-4-0-114",
+                          "col-xl-5": "col-xl-5-0-116",
+                          "col-xl-6": "col-xl-6-0-118",
+                          "col-xl-7": "col-xl-7-0-120",
+                          "col-xl-8": "col-xl-8-0-122",
+                          "col-xl-9": "col-xl-9-0-124",
+                          "col-xlOffset-0": "col-xlOffset-0-0-107",
+                          "col-xlOffset-1": "col-xlOffset-1-0-109",
+                          "col-xlOffset-10": "col-xlOffset-10-0-127",
+                          "col-xlOffset-11": "col-xlOffset-11-0-129",
+                          "col-xlOffset-12": "col-xlOffset-12-0-131",
+                          "col-xlOffset-2": "col-xlOffset-2-0-111",
+                          "col-xlOffset-3": "col-xlOffset-3-0-113",
+                          "col-xlOffset-4": "col-xlOffset-4-0-115",
+                          "col-xlOffset-5": "col-xlOffset-5-0-117",
+                          "col-xlOffset-6": "col-xlOffset-6-0-119",
+                          "col-xlOffset-7": "col-xlOffset-7-0-121",
+                          "col-xlOffset-8": "col-xlOffset-8-0-123",
+                          "col-xlOffset-9": "col-xlOffset-9-0-125",
+                          "col-xs-0": "col-xs-0-0-2",
+                          "col-xs-1": "col-xs-1-0-4",
+                          "col-xs-10": "col-xs-10-0-22",
+                          "col-xs-11": "col-xs-11-0-24",
+                          "col-xs-12": "col-xs-12-0-26",
+                          "col-xs-2": "col-xs-2-0-6",
+                          "col-xs-3": "col-xs-3-0-8",
+                          "col-xs-4": "col-xs-4-0-10",
+                          "col-xs-5": "col-xs-5-0-12",
+                          "col-xs-6": "col-xs-6-0-14",
+                          "col-xs-7": "col-xs-7-0-16",
+                          "col-xs-8": "col-xs-8-0-18",
+                          "col-xs-9": "col-xs-9-0-20",
+                          "col-xsOffset-0": "col-xsOffset-0-0-3",
+                          "col-xsOffset-1": "col-xsOffset-1-0-5",
+                          "col-xsOffset-10": "col-xsOffset-10-0-23",
+                          "col-xsOffset-11": "col-xsOffset-11-0-25",
+                          "col-xsOffset-12": "col-xsOffset-12-0-27",
+                          "col-xsOffset-2": "col-xsOffset-2-0-7",
+                          "col-xsOffset-3": "col-xsOffset-3-0-9",
+                          "col-xsOffset-4": "col-xsOffset-4-0-11",
+                          "col-xsOffset-5": "col-xsOffset-5-0-13",
+                          "col-xsOffset-6": "col-xsOffset-6-0-15",
+                          "col-xsOffset-7": "col-xsOffset-7-0-17",
+                          "col-xsOffset-8": "col-xsOffset-8-0-19",
+                          "col-xsOffset-9": "col-xsOffset-9-0-21",
+                        }
+                      }
+                      xl={9}
+                      xs={12}
+                    >
+                      <div
+                        className=" col-xs-12-0-26 col-lg-8-0-96 col-xl-9-0-124 headerColumn-0-1 navigationLinksContainer-0-6 closed"
+                      >
+                        <withStyles(NavigationLinkArrayPure)
+                          className="navigationLinks-0-5"
+                          navigationLinkArray={Array []}
+                        >
+                          <NavigationLinkArrayPure
+                            className="navigationLinks-0-5"
+                            navigationLinkArray={Array []}
+                            styles={
+                              Object {
+                                "list": "list-0-332",
+                                "separator": "separator-0-333",
+                              }
+                            }
+                          >
+                            <ul
+                              className="list-0-332 navigationLinks-0-5"
+                            />
+                          </NavigationLinkArrayPure>
+                        </withStyles(NavigationLinkArrayPure)>
+                      </div>
+                    </ColumnPure>
+                  </withStyles(ColumnPure)>
+                </div>
+              </RowPure>
+            </withStyles(RowPure)>
+          </div>
+        </div>
+      </ContainerPure>
+    </withStyles(ContainerPure)>
+    <div
+      className="headerPadding-0-3"
+    />
+  </div>
+</HeaderPure>
+`;

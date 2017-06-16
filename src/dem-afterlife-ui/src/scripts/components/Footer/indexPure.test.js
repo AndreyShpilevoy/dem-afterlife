@@ -4,7 +4,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {FooterPure} from './index';
 
-jest.mock('styles/styler');
+
 
 describe('Footer Pure', () => {
     const map = {};
@@ -12,7 +12,7 @@ describe('Footer Pure', () => {
         map[event] = cb;
     });
 
-    const classNames = {
+    const styles = {
         '.socialMediaLinkIcon-0-2 > .SVGInline-svg': '.socialMediaLinkIcon-0-2 > .SVGInline-svg-0-4',
         copyright: 'copyright-0-0',
         footer: 'footer-0-3',
@@ -38,10 +38,10 @@ describe('Footer Pure', () => {
     ];
 
     it('component match expected snapshot', () => {
-        expect(shallow(<FooterPure classNames={classNames} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
+        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
     });
 
     it('component with socialMediaLinkArray match expected snapshot', () => {
-        expect(shallow(<FooterPure classNames={classNames} socialMediaLinkArray={socialMediaLinksArray}/>)).toMatchSnapshot();
+        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={socialMediaLinksArray}/>)).toMatchSnapshot();
     });
 });

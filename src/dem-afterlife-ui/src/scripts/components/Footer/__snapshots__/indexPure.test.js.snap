@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer Pure component match expected snapshot 1`] = `
-<Aesthetic-ContainerPure>
-  <Aesthetic-RowPure>
-    <Aesthetic-ColumnPure
+<withStyles(ContainerPure)>
+  <withStyles(RowPure)>
+    <withStyles(ColumnPure)
       xs={12}
     >
       <div
         className="footer-0-3"
       >
-        <Aesthetic-RowPure>
-          <Aesthetic-ColumnPure
+        <withStyles(RowPure)>
+          <withStyles(ColumnPure)
             lg={4}
             xs={0}
           />
-          <Aesthetic-ColumnPure
+          <withStyles(ColumnPure)
             lg={4}
             xs={12}
           >
@@ -23,41 +23,41 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             >
               DEM Team - 04.03.2007
             </div>
-          </Aesthetic-ColumnPure>
-          <Aesthetic-ColumnPure
+          </withStyles(ColumnPure)>
+          <withStyles(ColumnPure)
             lg={4}
             xs={0}
           >
-            <Aesthetic-HiddenPure
+            <withStyles(HiddenPure)
               md="down"
             >
               <div
                 className="socialMediaLinkIconContainer-0-1"
               />
-            </Aesthetic-HiddenPure>
-          </Aesthetic-ColumnPure>
-        </Aesthetic-RowPure>
+            </withStyles(HiddenPure)>
+          </withStyles(ColumnPure)>
+        </withStyles(RowPure)>
       </div>
-    </Aesthetic-ColumnPure>
-  </Aesthetic-RowPure>
-</Aesthetic-ContainerPure>
+    </withStyles(ColumnPure)>
+  </withStyles(RowPure)>
+</withStyles(ContainerPure)>
 `;
 
 exports[`Footer Pure component with socialMediaLinkArray match expected snapshot 1`] = `
-<Aesthetic-ContainerPure>
-  <Aesthetic-RowPure>
-    <Aesthetic-ColumnPure
+<withStyles(ContainerPure)>
+  <withStyles(RowPure)>
+    <withStyles(ColumnPure)
       xs={12}
     >
       <div
         className="footer-0-3"
       >
-        <Aesthetic-RowPure>
-          <Aesthetic-ColumnPure
+        <withStyles(RowPure)>
+          <withStyles(ColumnPure)
             lg={4}
             xs={0}
           />
-          <Aesthetic-ColumnPure
+          <withStyles(ColumnPure)
             lg={4}
             xs={12}
           >
@@ -66,12 +66,12 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             >
               DEM Team - 04.03.2007
             </div>
-          </Aesthetic-ColumnPure>
-          <Aesthetic-ColumnPure
+          </withStyles(ColumnPure)>
+          <withStyles(ColumnPure)
             lg={4}
             xs={0}
           >
-            <Aesthetic-HiddenPure
+            <withStyles(HiddenPure)
               md="down"
             >
               <div
@@ -102,11 +102,11 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
                   }
                 />
               </div>
-            </Aesthetic-HiddenPure>
-          </Aesthetic-ColumnPure>
-        </Aesthetic-RowPure>
+            </withStyles(HiddenPure)>
+          </withStyles(ColumnPure)>
+        </withStyles(RowPure)>
       </div>
-    </Aesthetic-ColumnPure>
-  </Aesthetic-RowPure>
-</Aesthetic-ContainerPure>
+    </withStyles(ColumnPure)>
+  </withStyles(RowPure)>
+</withStyles(ContainerPure)>
 `;

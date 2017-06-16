@@ -4,10 +4,8 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {HiddenPure} from './index';
 
-jest.mock('styles/styler');
-
 describe('Hidden Pure', () => {
-    const classNames = {
+    const styles = {
         'hidden-down-lg': 'hidden-down-lg-0-10',
         'hidden-down-md': 'hidden-down-md-0-7',
         'hidden-down-sm': 'hidden-down-sm-0-4',
@@ -26,10 +24,10 @@ describe('Hidden Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<HiddenPure classNames={classNames}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
+        expect(shallow(<HiddenPure styles={styles}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
     });
 
     it('component with xs="down" md="exact" xl="up" match expected snapshot', () => {
-        expect(shallow(<HiddenPure classNames={classNames} xs={'down'} md={'exact'} xl={'up'}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
+        expect(shallow(<HiddenPure styles={styles} xs={'down'} md={'exact'} xl={'up'}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
     });
 });

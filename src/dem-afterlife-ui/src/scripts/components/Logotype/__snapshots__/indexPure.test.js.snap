@@ -1,13 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Logotype Pure component match expected snapshot 1`] = `
-<Link
+<withStyles(LinkPure)
   className="logotypeContainer-0-1 "
-  replace={false}
   to="/"
 >
   <div
     className="logotype-0-0"
   />
-</Link>
+</withStyles(LinkPure)>
 `;

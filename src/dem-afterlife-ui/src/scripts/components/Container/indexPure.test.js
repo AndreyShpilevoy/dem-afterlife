@@ -4,14 +4,14 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {ContainerPure} from './index';
 
-jest.mock('styles/styler');
+
 
 describe('Container Pure', () => {
-    const classNames = {
+    const styles = {
         container: 'container-0-0'
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<ContainerPure classNames={classNames}><div>{'Container content'}</div></ContainerPure>)).toMatchSnapshot();
+        expect(shallow(<ContainerPure styles={styles}><div>{'Container content'}</div></ContainerPure>)).toMatchSnapshot();
     });
 });

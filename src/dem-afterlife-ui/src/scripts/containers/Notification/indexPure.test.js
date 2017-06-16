@@ -4,7 +4,7 @@ import React from 'react';
 import {mount} from 'enzyme';
 import {NotificationPure} from './index';
 
-jest.mock('styles/styler');
+
 
 describe('Notification Pure', () => {
     const props = {

@@ -2,22 +2,21 @@
 
 exports[`Header HOC component match expected snapshot 1`] = `
 <HeaderPure
-  classNames={
+  navigationLinkArray={Array []}
+  styles={
     Object {
-      ".header-0-2.shrinkedHeader": "header-0-2",
-      ".headerLogoContainer-0-4.shrinkedHeader": "headerLogoContainer-0-4",
-      ".navigationLinksContainer-0-6.closed": "navigationLinksContainer-0-6",
-      "fixedOnTheTop": "fixedOnTheTop-0-0",
-      "header": "header-0-2",
-      "headerColumn": "headerColumn-0-1",
-      "headerLogoContainer": "headerLogoContainer-0-4",
-      "headerMenuButtonContainer": "headerMenuButtonContainer-0-7",
-      "headerPadding": "headerPadding-0-3",
-      "navigationLinks": "navigationLinks-0-5",
-      "navigationLinksContainer": "navigationLinksContainer-0-6",
+      ".header-0-338.shrinkedHeader": "header-0-338",
+      ".headerLogoContainer-0-340.shrinkedHeader": "headerLogoContainer-0-340",
+      ".navigationLinksContainer-0-342.closed": "navigationLinksContainer-0-342",
+      "fixedOnTheTop": "fixedOnTheTop-0-336",
+      "header": "header-0-338",
+      "headerColumn": "headerColumn-0-337",
+      "headerLogoContainer": "headerLogoContainer-0-340",
+      "headerMenuButtonContainer": "headerMenuButtonContainer-0-343",
+      "headerPadding": "headerPadding-0-339",
+      "navigationLinks": "navigationLinks-0-341",
+      "navigationLinksContainer": "navigationLinksContainer-0-342",
     }
   }
-  navigationLinkArray={Array []}
-  theme="default"
 />
 `;

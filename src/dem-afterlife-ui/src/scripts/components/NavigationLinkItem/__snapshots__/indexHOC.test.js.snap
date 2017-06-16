@@ -2,12 +2,6 @@
 
 exports[`NavigationLinkItem HOC match expected snapshot 1`] = `
 <NavigationLinkItemPure
-  classNames={
-    Object {
-      ".link-0-0:hover": "link-0-0",
-      "link": "link-0-0",
-    }
-  }
   navigationLinkItem={
     Object {
       "href": "/",
@@ -16,6 +10,11 @@ exports[`NavigationLinkItem HOC match expected snapshot 1`] = `
       "title": "title",
     }
   }
-  theme="default"
+  styles={
+    Object {
+      ".link-0-8:hover": "link-0-8",
+      "link": "link-0-8",
+    }
+  }
 />
 `;

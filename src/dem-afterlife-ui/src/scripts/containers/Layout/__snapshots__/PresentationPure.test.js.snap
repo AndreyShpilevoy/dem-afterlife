@@ -4,31 +4,35 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
 <ThemeProvider
   name="default"
 >
-  <Aesthetic-ContainerPure
-    className="container-0-0"
+  <div
+    className="contentWrapper-0-2"
   >
-    <Connect(NotificationPure) />
-    <Aesthetic-RowPure>
-      <Aesthetic-HeaderPure
-        navigationLinkArray={Array []}
-      />
-    </Aesthetic-RowPure>
-    <Aesthetic-RowPure
-      className="content-0-1"
+    <withStyles(ContainerPure)
+      className="container-0-0"
     >
-      <Aesthetic-ColumnPure
-        xs={12}
+      <Connect(NotificationPure) />
+      <withStyles(RowPure)>
+        <withStyles(HeaderPure)
+          navigationLinkArray={Array []}
+        />
+      </withStyles(RowPure)>
+      <withStyles(RowPure)
+        className="content-0-1"
       >
-        <div>
-          Layout Presentation content
-        </div>
-      </Aesthetic-ColumnPure>
-    </Aesthetic-RowPure>
-    <Aesthetic-RowPure>
-      <Aesthetic-FooterPure
-        socialMediaLinkArray={Array []}
-      />
-    </Aesthetic-RowPure>
-  </Aesthetic-ContainerPure>
+        <withStyles(ColumnPure)
+          xs={12}
+        >
+          <div>
+            Layout Presentation content
+          </div>
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+      <withStyles(RowPure)>
+        <withStyles(FooterPure)
+          socialMediaLinkArray={Array []}
+        />
+      </withStyles(RowPure)>
+    </withStyles(ContainerPure)>
+  </div>
 </ThemeProvider>
 `;

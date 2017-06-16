@@ -2,7 +2,7 @@
 
 exports[`Hidden HOC component match expected snapshot 1`] = `
 <HiddenPure
-  classNames={
+  styles={
     Object {
       "hidden-down-lg": "hidden-down-lg-0-10",
       "hidden-down-md": "hidden-down-md-0-7",
@@ -21,6 +21,5 @@ exports[`Hidden HOC component match expected snapshot 1`] = `
       "hidden-up-xs": "hidden-up-xs-0-0",
     }
   }
-  theme="default"
 />
 `;

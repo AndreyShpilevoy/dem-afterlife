@@ -11,7 +11,7 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
   className="list-0-0 "
 >
   <div>
-    <Aesthetic-NavigationLinkItemPure
+    <withStyles(NavigationLinkItemPure)
       navigationLinkItem={
         Object {
           "href": "/",
@@ -26,7 +26,7 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
     />
   </div>
   <div>
-    <Aesthetic-NavigationLinkItemPure
+    <withStyles(NavigationLinkItemPure)
       navigationLinkItem={
         Object {
           "href": "/",

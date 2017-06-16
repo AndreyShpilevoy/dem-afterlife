@@ -2,12 +2,11 @@
 
 exports[`NavigationLinkItem Pure component match expected snapshot 1`] = `
 <li>
-  <Link
+  <withStyles(LinkPure)
     className="link-0-0"
-    replace={false}
     to="/"
   >
     Conference
-  </Link>
+  </withStyles(LinkPure)>
 </li>
 `;

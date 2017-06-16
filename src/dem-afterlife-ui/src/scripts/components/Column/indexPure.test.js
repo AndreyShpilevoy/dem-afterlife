@@ -4,10 +4,10 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {ColumnPure} from './index';
 
-jest.mock('styles/styler');
+
 
 describe('Column Pure', () => {
-    const classNames = {
+    const styles = {
         'col-lg-0': 'col-lg-0-0-78',
         'col-lg-1': 'col-lg-1-0-80',
         'col-lg-10': 'col-lg-10-0-98',
@@ -141,14 +141,14 @@ describe('Column Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<ColumnPure classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure styles={styles}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
     });
 
     it('component with xs="1" md="3" xl="12" xsOffset="1" mdOffset="3" xlOffset="12" match expected snapshot', () => {
-        expect(shallow(<ColumnPure xs={1} md={3} xl='12' xsOffset='1' mdOffset='3' xlOffset='12' classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure xs={1} md={3} xl='12' xsOffset='1' mdOffset='3' xlOffset='12' styles={styles}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
     });
 
     it('component with wrong xs="wrong" match expected snapshot', () => {
-        expect(shallow(<ColumnPure xs='wrong' classNames={classNames}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure xs='wrong' styles={styles}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
     });
 });

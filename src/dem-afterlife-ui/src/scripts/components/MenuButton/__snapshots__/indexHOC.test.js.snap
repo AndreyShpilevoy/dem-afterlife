@@ -2,7 +2,7 @@
 
 exports[`MenuButton HOC match expected snapshot 1`] = `
 <MenuButtonPure
-  classNames={
+  styles={
     Object {
       ".firstLine-0-2.open": ".firstLine-0-2.open-0-6",
       ".fourthLine-0-5.open": ".fourthLine-0-5.open-0-9",
@@ -16,6 +16,5 @@ exports[`MenuButton HOC match expected snapshot 1`] = `
       "thirdLine": "thirdLine-0-4",
     }
   }
-  theme="default"
 />
 `;

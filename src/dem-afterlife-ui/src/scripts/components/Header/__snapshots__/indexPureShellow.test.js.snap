@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Pure Shallow component match expected snapshot 1`] = `
+<div>
+  <withStyles(ContainerPure)
+    className="fixedOnTheTop-0-0"
+  >
+    <div
+      className="header-0-2 "
+    >
+      <withStyles(RowPure)>
+        <withStyles(ColumnPure)
+          className="headerColumn-0-1"
+          sm={4}
+          xl={3}
+          xs={7}
+        >
+          <withStyles(LogotypePure)
+            className="headerLogoContainer-0-4 "
+          />
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="headerColumn-0-1"
+          lg={0}
+          lgOffset={0}
+          sm={1}
+          smOffset={7}
+          xs={2}
+          xsOffset={3}
+        >
+          <withStyles(HiddenPure)
+            className="headerMenuButtonContainer-0-7"
+            lg="up"
+          >
+            <withStyles(MenuButtonPure)
+              onClick={[Function]}
+            />
+          </withStyles(HiddenPure)>
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+          lg={8}
+          xl={9}
+          xs={12}
+        >
+          <withStyles(NavigationLinkArrayPure)
+            className="navigationLinks-0-5"
+            navigationLinkArray={Array []}
+          />
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+    </div>
+  </withStyles(ContainerPure)>
+  <div
+    className="headerPadding-0-3"
+  />
+</div>
+`;

@@ -2,15 +2,16 @@
 
 exports[`Layout Presentation component match expected snapshot 1`] = `
 <PresentationPure
-  classNames={
-    Object {
-      "container": "container-0-0",
-      "content": "content-0-1",
-    }
-  }
   navigationLinkArray={Array []}
   socialMediaLinkArray={Array []}
-  theme="default"
+  styles={
+    Object {
+      "container": "container-0-365",
+      "content": "content-0-366",
+      "contentWrapper": "contentWrapper-0-364",
+    }
+  }
+  themeName="default"
 >
   <div>
     Layout Presentation content

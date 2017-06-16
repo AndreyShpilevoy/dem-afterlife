@@ -1,18 +1,20 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
 
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {mount} from 'enzyme';
+import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
 import {HeaderPure} from './index';
 
-jest.mock('styles/styler');
+jest.mock('react-router-dom/Link');
+ThemedStyleSheet.default.get = () => {};
 
-describe('Header Pure', () => {
+describe('Header Pure Mount', () => {
     const map = {};
     window.addEventListener = jest.genMockFn().mockImplementation((event, cb) => {
         map[event] = cb;
     });
 
-    const classNames = {
+    const styles = {
         '.header-0-2.shrinkedHeader': 'header-0-2',
         '.headerLogoContainer-0-4.shrinkedHeader': 'headerLogoContainer-0-4',
         '.navigationLinksContainer-0-6.closed': 'navigationLinksContainer-0-6',
@@ -26,18 +28,14 @@ describe('Header Pure', () => {
         navigationLinksContainer: 'navigationLinksContainer-0-6'
     };
 
-    it('component match expected snapshot', () => {
-        expect(shallow(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>)).toMatchSnapshot();
-    });
-
     it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>);
+        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]}/>);
         map.scroll({target: {scrollingElement: {scrollTop: 100} } });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 24" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure classNames={classNames} navigationLinkArray={[]}/>);
+        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]}/>);
         map.scroll({target: {scrollingElement: {scrollTop: 24} } });
         expect(wrapper).toMatchSnapshot();
     });
