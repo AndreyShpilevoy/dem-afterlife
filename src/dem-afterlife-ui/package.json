@@ -115,7 +115,7 @@
         "babel-polyfill": "6.23.0",
         "classnames": "2.2.5",
         "history": "4.6.2",
-        "jss": "7.1.6",
+        "jss": "7.1.7",
         "jss-camel-case": "4.0.0",
         "jss-default-unit": "6.1.2",
         "jss-expand": "3.0.1",

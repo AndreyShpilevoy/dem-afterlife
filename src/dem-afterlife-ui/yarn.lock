@@ -65,30 +65,6 @@ acorn@^5.0.0, acorn@^5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.3.tgz#c460df08491463f028ccb82eab3730bf01087b3d"
 
-aesthetic-adapter-jss@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/aesthetic-adapter-jss/-/aesthetic-adapter-jss-1.4.0.tgz#8b56d4a1b408acc77569440dbe823770198f44d0"
-  dependencies:
-    aesthetic-utils "^1.4.0"
-    babel-runtime "^6.23.0"
-    prop-types "^15.5.9"
-
-aesthetic-utils@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/aesthetic-utils/-/aesthetic-utils-1.4.0.tgz#e459a582d65a7fd7284bee3d2d964d407aded74f"
-  dependencies:
-    babel-runtime "^6.23.0"
-
-aesthetic@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/aesthetic/-/aesthetic-1.4.0.tgz#7e7a2ad6660cbb0d2f3f7a0b16e0350c4cd3e311"
-  dependencies:
-    aesthetic-utils "^1.4.0"
-    babel-runtime "^6.23.0"
-    hoist-non-react-statics "^1.2.0"
-    lodash.merge "^4.6.0"
-    prop-types "^15.5.9"
-
 ajv-keywords@^1.0.0, ajv-keywords@^1.1.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
@@ -883,7 +859,7 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -3321,9 +3297,9 @@ jss-vendor-prefixer@5.1.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@7.1.6:
-  version "7.1.6"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.6.tgz#8daf0bf130fc8aa218106f58be60490e2a151f88"
+jss@7.1.7:
+  version "7.1.7"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.7.tgz#f2ace208247f1a68166dd20ccd69c866105fa404"
   dependencies:
     is-in-browser "1.0.2"
     warning "3.0.0"
@@ -3496,7 +3472,7 @@ lodash.map@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
 
-lodash.merge@^4.4.0, lodash.merge@^4.6.0:
+lodash.merge@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
 
@@ -4185,7 +4161,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9:
+prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
