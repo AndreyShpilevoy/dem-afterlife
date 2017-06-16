@@ -14,39 +14,6 @@ describe('MenuButton calculateStyles', () => {
     };
 
     it('should create expected object', () => {
-        const expectedResult = {
-            allLines: {
-                background: '#AC6B37',
-                borderRadius: '3.333%',
-                height: '10%',
-                left: 0,
-                marginLeft: '10%',
-                position: 'absolute',
-                transform: 'rotate(0deg)',
-                transition: '0.25s ease-in-out',
-                width: '80%'},
-            container: {
-                cursor: 'pointer',
-                height: 2,
-                transform: 'rotate(0deg)',
-                width: 2},
-            firstLine: {
-                '&.open': {
-                    left: '50%', top: '45%', width: '0%'},
-                top: '20%'},
-            fourthLine: {
-                '&.open': {
-                    left: '50%', top: '45%', width: '0%'},
-                top: '70%'},
-            secondLine: {
-                '&.open': {
-                    transform: 'rotate(45deg)'},
-                top: '45%'},
-            thirdLine: {
-                '&.open': {
-                    transform: 'rotate(-45deg)'},
-                top: '45%'} };
-        const calculatedStyle = calculateStyles(defaultThemeObject);
-        expect(calculatedStyle).toEqual(expectedResult);
+        expect(calculateStyles(defaultThemeObject)).toMatchSnapshot();
     });
 });

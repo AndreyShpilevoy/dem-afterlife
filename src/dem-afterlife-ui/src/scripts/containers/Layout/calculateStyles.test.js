@@ -3,17 +3,16 @@
 import calculateStyles from './calculateStyles';
 
 describe('Layout calculateStyles', () => {
+    const defaultThemeObject = {
+        mainWrapper: {
+            fontSize: '16px',
+            backgroundColor: 'red',
+            fontFamily: 'Arial,sans-serif',
+            lineHeight: '1.5'
+        }
+    };
+
     it('should create expected object', () => {
-        const expectedResult = {
-            container: {
-                display: 'flex',
-                minHeight: '100vh',
-                flexDirection: 'column'
-            },
-            content: {
-                flex: '1 !important'
-            }
-        };
-        expect(calculateStyles()).toEqual(expectedResult);
+        expect(calculateStyles(defaultThemeObject)).toMatchSnapshot();
     });
 });

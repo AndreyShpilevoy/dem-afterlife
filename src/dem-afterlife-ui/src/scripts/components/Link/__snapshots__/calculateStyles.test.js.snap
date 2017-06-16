@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column calculateStyles should create expected object 1`] = `
+Object {
+  "link": Object {
+    "&:hover": Object {
+      "color": "green",
+      "textDecoration": "underline",
+    },
+    "&:visited": Object {
+      "color": "red",
+      "textDecoration": "none",
+    },
+    "&:visited:hover": Object {
+      "color": "green",
+      "textDecoration": "underline",
+    },
+    "color": "red",
+    "textDecoration": "none",
+  },
+  "options": Object {
+    "meta": "Link",
+  },
+}
+`;

@@ -23,15 +23,6 @@ describe('Hidden calculateStyles', () => {
     };
 
     it('should create expected object', () => {
-        const expectedResult = {
-            '@media (min-width: 0px)': {'hidden-up-xs': {display: 'none'} },
-            '@media (max-width: 575px)': {'hidden-down-xs': {display: 'none'} },
-            '@media (min-width: 0px) and (max-width: 575px)': {'hidden-exact-xs': {display: 'none'} },
-            '@media (min-width: 576px)': {'hidden-up-sm': {display: 'none'} },
-            '@media (max-width: 767px)': {'hidden-down-sm': {display: 'none'} },
-            '@media (min-width: 576px) and (max-width: 767px)': {'hidden-exact-sm': {display: 'none'} }
-        };
-        const calculatedStyle = calculateStyles(defaultThemeObject);
-        expect(calculatedStyle).toEqual(expectedResult);
+        expect(calculateStyles(defaultThemeObject)).toMatchSnapshot();
     });
 });

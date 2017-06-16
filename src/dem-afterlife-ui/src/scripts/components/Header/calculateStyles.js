@@ -1,20 +1,20 @@
 import {createMediaQueryMinMax} from 'utils';
 
-export const getCommonHeaderStyle = (gridSize, headerStyles) => ({
+const getCommonHeaderStyle = (gridSize, headerStyles) => ({
     height: headerStyles[gridSize].height,
     width: '100%',
     display: 'flex'
 });
 
-export const getXsSmStyle = (gridSize, headerStyles) => ({
+const getXsSmStyle = (gridSize, headerStyles) => ({
     backgroundColor: headerStyles[`${gridSize}`].backgroundColor
 });
 
-export const getMdStyle = (gridSize, headerStyles) => ({
+const getMdStyle = (gridSize, headerStyles) => ({
     backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`
 });
 
-export const getLgXlStyle = (gridSize, headerStyles) => ({
+const getLgXlStyle = (gridSize, headerStyles) => ({
     backgroundImage: `url(${headerStyles[`${gridSize}`].backgroundImage})`,
     transition: headerStyles[`${gridSize}`].transition,
     '&.shrinkedHeader': {
@@ -23,7 +23,7 @@ export const getLgXlStyle = (gridSize, headerStyles) => ({
     }
 });
 
-export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
+const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
     {
         '&.shrinkedHeader': {
@@ -38,7 +38,7 @@ export const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
     }
 });
 
-export const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
+const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
     {
         flexDirection: 'row',
@@ -50,7 +50,7 @@ export const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
     ...{display: 'flex', listStyleType: 'none'}
 });
 
-export const getNavigationLinksContainerStyle = (gridSize, {navigationLinks}) =>
+const getNavigationLinksContainerStyle = (gridSize, {navigationLinks}) =>
     gridSize !== 'lg' && gridSize !== 'xl' ?
     {
         transformOrigin: 'top',
@@ -58,14 +58,15 @@ export const getNavigationLinksContainerStyle = (gridSize, {navigationLinks}) =>
         '&.closed': {
             transform: 'scaleY(0)'
         }
-    } : {};
+    } :
+    {};
 
-export const getHeaderMenuButtonContainerStyle = headerStyles => ({
+const getHeaderMenuButtonContainerStyle = headerStyles => ({
     marginLeft: headerStyles.menuButtonContainer.marginLeft,
     marginRight: headerStyles.menuButtonContainer.marginRight
 });
 
-export const getSpecificStyle = gridSize => {
+const getSpecificStyle = gridSize => {
     const specificStyles = {
         xs: getXsSmStyle,
         sm: getXsSmStyle,
@@ -76,7 +77,7 @@ export const getSpecificStyle = gridSize => {
     return specificStyles[gridSize] ? specificStyles[gridSize] : {};
 };
 
-export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>
+const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, headerStyles) =>
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
         header: {...getCommonHeaderStyle(gridSize, headerStyles), ...getSpecificStyle(gridSize)(gridSize, headerStyles)},
         headerPadding: {paddingTop: headerStyles[gridSize].height},

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout calculateStyles should create expected object 1`] = `
+Object {
+  "container": Object {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "100vh",
+  },
+  "content": Object {
+    "flex": "1 !important",
+  },
+  "contentWrapper": Object {
+    "backgroundColor": "red",
+    "fontFamily": "Arial,sans-serif",
+    "fontSize": "16px",
+    "lineHeight": "1.5",
+  },
+  "options": Object {
+    "meta": "LayoutContainer",
+  },
+}
+`;

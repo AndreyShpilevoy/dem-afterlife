@@ -1,6 +1,6 @@
 import {createMediaQueryMinMax} from 'utils';
 
-export const getCommonFooterStyle = (gridSize, footerStyles) => ({
+const getCommonFooterStyle = (gridSize, footerStyles) => ({
     height: footerStyles[gridSize].height,
     color: footerStyles[gridSize].color,
     width: '100%',
@@ -8,15 +8,15 @@ export const getCommonFooterStyle = (gridSize, footerStyles) => ({
     marginTop: footerStyles[gridSize].marginTop
 });
 
-export const getXsSmMdStyle = (gridSize, footerStyles) => ({
+const getXsSmMdStyle = (gridSize, footerStyles) => ({
     backgroundColor: footerStyles[`${gridSize}`].backgroundColor
 });
 
-export const getLgXlStyle = (gridSize, footerStyles) => ({
+const getLgXlStyle = (gridSize, footerStyles) => ({
     backgroundImage: `url(${footerStyles[`${gridSize}`].backgroundImage})`
 });
 
-export const getSpecificStyle = gridSize => {
+const getSpecificStyle = gridSize => {
     const specificStyles = {
         xs: getXsSmMdStyle,
         sm: getXsSmMdStyle,
@@ -27,7 +27,7 @@ export const getSpecificStyle = gridSize => {
     return specificStyles[gridSize] ? specificStyles[gridSize] : {};
 };
 
-export const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, footerStyles) =>
+const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, footerStyles) =>
     createMediaQueryMinMax(mediaMinString, mediaMaxString, {
         footer: {...getCommonFooterStyle(gridSize, footerStyles), ...getSpecificStyle(gridSize)(gridSize, footerStyles)}
     });

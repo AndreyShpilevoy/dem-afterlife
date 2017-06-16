@@ -1,18 +1,21 @@
 import {createMediaQueryMinMax} from 'utils';
 
-export const getNavigationLinksStyle = (gridSize, navigationLinks) =>
+const getNavigationLinksStyle = (gridSize, navigationLinks) =>
     gridSize !== 'lg' && gridSize !== 'xl' ?
     {
         backgroundColor: navigationLinks[gridSize].backgroundColor,
         margin: 'initial',
         padding: 'initial'
-    } : {};
-export const getNavigationSeparatorStyle = (gridSize, navigationLinks) =>
+    } :
+    {};
+
+const getNavigationSeparatorStyle = (gridSize, navigationLinks) =>
     gridSize !== 'lg' && gridSize !== 'xl' ?
     {
         backgroundColor: navigationLinks[gridSize].separator.backgroundColor,
         height: navigationLinks[gridSize].separator.height
-    } : {};
+    } :
+    {};
 
 const calculateStyles = ({grid, navigationLinks}) =>
     grid.containers.reduce(

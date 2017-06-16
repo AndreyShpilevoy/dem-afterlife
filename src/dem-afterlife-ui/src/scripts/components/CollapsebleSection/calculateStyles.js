@@ -106,7 +106,8 @@ const getSizeSpecific = (grid, collapsebleSection) =>
             }
             )
     } :
-        previouse, {});
+    previouse,
+{});
 
 const calculateStyles = ({grid, collapsebleSection}) => ({
     ...getCommonPart(collapsebleSection),

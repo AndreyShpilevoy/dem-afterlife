@@ -86,6 +86,9 @@ Object {
     "whiteSpace": "nowrap",
     "width": "initial",
   },
+  "options": Object {
+    "meta": "CollapsebleSection",
+  },
   "termedSection": Object {
     "width": "100%",
   },

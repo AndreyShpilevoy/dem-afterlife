@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logotype calculateStyles should create expected object 1`] = `
+Object {
+  "logotype": Object {
+    "backgroundImage": "url(logotype.png)",
+    "backgroundRepeat": "no-repeat",
+    "backgroundSize": "contain",
+    "height": "100%",
+  },
+  "logotypeContainer": Object {
+    "height": "81.5%",
+  },
+  "options": Object {
+    "meta": "Logotype",
+  },
+}
+`;

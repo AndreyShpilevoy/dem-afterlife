@@ -1,6 +1,6 @@
 import {createMediaQueryMinMax} from 'utils';
 
-export const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
+const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
     ...gridSize !== 'lg' && gridSize !== 'xl' ?
     {
         display: 'block',

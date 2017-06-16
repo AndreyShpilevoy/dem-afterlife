@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuButton calculateStyles should create expected object 1`] = `
+Object {
+  "allLines": Object {
+    "background": "#AC6B37",
+    "borderRadius": "3.333%",
+    "height": "10%",
+    "left": 0,
+    "marginLeft": "10%",
+    "position": "absolute",
+    "transform": "rotate(0deg)",
+    "transition": "0.25s ease-in-out",
+    "width": "80%",
+  },
+  "container": Object {
+    "cursor": "pointer",
+    "height": 2,
+    "transform": "rotate(0deg)",
+    "width": 2,
+  },
+  "firstLine": Object {
+    "&.open": Object {
+      "left": "50%",
+      "top": "45%",
+      "width": "0%",
+    },
+    "top": "20%",
+  },
+  "fourthLine": Object {
+    "&.open": Object {
+      "left": "50%",
+      "top": "45%",
+      "width": "0%",
+    },
+    "top": "70%",
+  },
+  "options": Object {
+    "meta": "MenuButton",
+  },
+  "secondLine": Object {
+    "&.open": Object {
+      "transform": "rotate(45deg)",
+    },
+    "top": "45%",
+  },
+  "thirdLine": Object {
+    "&.open": Object {
+      "transform": "rotate(-45deg)",
+    },
+    "top": "45%",
+  },
+}
+`;

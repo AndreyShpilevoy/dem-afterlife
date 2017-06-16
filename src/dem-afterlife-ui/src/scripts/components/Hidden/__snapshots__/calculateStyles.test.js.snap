@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hidden calculateStyles should create expected object 1`] = `
+Object {
+  "@media (max-width: 575px)": Object {
+    "hidden-down-xs": Object {
+      "display": "none",
+    },
+  },
+  "@media (max-width: 767px)": Object {
+    "hidden-down-sm": Object {
+      "display": "none",
+    },
+  },
+  "@media (min-width: 0px)": Object {
+    "hidden-up-xs": Object {
+      "display": "none",
+    },
+  },
+  "@media (min-width: 0px) and (max-width: 575px)": Object {
+    "hidden-exact-xs": Object {
+      "display": "none",
+    },
+  },
+  "@media (min-width: 576px)": Object {
+    "hidden-up-sm": Object {
+      "display": "none",
+    },
+  },
+  "@media (min-width: 576px) and (max-width: 767px)": Object {
+    "hidden-exact-sm": Object {
+      "display": "none",
+    },
+  },
+  "options": Object {
+    "meta": "Hidden",
+  },
+}
+`;
