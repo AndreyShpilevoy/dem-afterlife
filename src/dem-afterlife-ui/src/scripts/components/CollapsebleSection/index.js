@@ -106,4 +106,4 @@ export class CollapsebleSectionPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme))(CollapsebleSectionPure);
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(CollapsebleSectionPure);

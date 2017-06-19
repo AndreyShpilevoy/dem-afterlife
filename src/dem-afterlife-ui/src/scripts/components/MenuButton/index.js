@@ -41,4 +41,4 @@ export class MenuButtonPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme))(MenuButtonPure);
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(MenuButtonPure);

@@ -72,4 +72,4 @@ export class HeaderPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme))(HeaderPure);
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(HeaderPure);
