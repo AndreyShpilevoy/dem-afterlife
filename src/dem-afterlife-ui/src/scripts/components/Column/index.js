@@ -1,13 +1,13 @@
 import React from 'react';
 import {func, node, number, string, oneOfType, object} from 'prop-types';
-import {css, withStyles} from 'styles';
+import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previouse, current) =>
-            css(styles[current]) ? `${previouse} ${css(styles[current])}` : '', '');
+            styles[current] ? `${previouse} ${styles[current]}` : '', '');
 
 export const ColumnPure = (
         {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
@@ -25,8 +25,9 @@ export const ColumnPure = (
         {name: 'xlOffset', count: xlOffset}],
         styles);
 
+    const localeClassName = `${classes} ${className || ''}`;
     return (
-        <div className={`${classes} ${className || ''}`} onClick={onClick}>
+        <div className={localeClassName} onClick={onClick}>
             {children}
         </div>
     );

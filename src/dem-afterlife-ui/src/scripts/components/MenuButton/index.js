@@ -27,15 +27,20 @@ export class MenuButtonPure extends PureComponent {
 
     render() {
         const {styles} = this.props;
+        const {container, firstLine, secondLine, thirdLine, fourthLine, allLines} = styles;
         const {opened} = this.state;
         const openedClassName = opened ? 'open' : '';
+        const firstLineStyle = css([firstLine, allLines, openedClassName]);
+        const secondLineStyle = css([secondLine, allLines, openedClassName]);
+        const thirdLineStyle = css([thirdLine, allLines, openedClassName]);
+        const fourthLineStyle = css([fourthLine, allLines, openedClassName]);
         const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
-            <div className={ css(styles.container) } onClick={menuButtonOnClick}>
-                <div className={ `${css(styles.firstLine)} ${css(styles.allLines)} ${openedClassName}` } />
-                <div className={ `${css(styles.secondLine)} ${css(styles.allLines)} ${openedClassName}` } />
-                <div className={ `${css(styles.thirdLine)} ${css(styles.allLines)} ${openedClassName}` } />
-                <div className={ `${css(styles.fourthLine)} ${css(styles.allLines)} ${openedClassName}` } />
+            <div className={container} onClick={menuButtonOnClick}>
+                <div className={firstLineStyle} />
+                <div className={secondLineStyle} />
+                <div className={thirdLineStyle} />
+                <div className={fourthLineStyle} />
             </div>
         );
     }

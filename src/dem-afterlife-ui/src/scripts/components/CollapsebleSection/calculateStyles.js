@@ -27,7 +27,7 @@ const getCommonPart = ({general, header, body}) => ({
         color: header.color,
         height: header.height
     },
-    title: {
+    titleClass: {
         paddingLeft: general.padding,
         display: 'block',
         overflow: 'hidden',

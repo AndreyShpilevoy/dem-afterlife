@@ -21,7 +21,7 @@ describe('CollapsebleSection Pure', () => {
         headerHolder: 'headerHolder-0-3',
         headerText: 'headerText-0-4',
         termedSection: 'termedSection-0-6',
-        title: 'title-0-2',
+        titleClass: 'title-0-2',
         to: 'to'
     };
 

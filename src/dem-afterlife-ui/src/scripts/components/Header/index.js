@@ -43,30 +43,32 @@ export class HeaderPure extends PureComponent {
     render() {
         const {styles, navigationLinkArray} = this.props;
         const {shrinkedHeader, menuIsClosed} = this.state;
-        const headerClassName = `${css(styles.header)} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
-        const headerLogoContainerClassName = `${css(styles.headerLogoContainer)} ${shrinkedHeader ? 'shrinkedHeader' : ''}`;
-        const navigationLinksContainerClassName = `${css(styles.headerColumn)} ${css(styles.navigationLinksContainer)} ${menuIsClosed ? 'closed' : ''}`;
+        const {header, headerLogoContainer, headerColumn, navigationLinksContainer, fixedOnTheTop,
+            headerMenuButtonContainer, navigationLinks, headerPadding} = styles;
+        const headerClassName = css([header, shrinkedHeader ? 'shrinkedHeader' : '']);
+        const headerLogoContainerClassName = css([headerLogoContainer, shrinkedHeader ? 'shrinkedHeader' : '']);
+        const navigationLinksContainerClassName = css([headerColumn, navigationLinksContainer, menuIsClosed ? 'closed' : '']);
         const menuButtonOnClick = () => this.handleMenuButtonClick(!menuIsClosed);
         return (
             <div>
-                <Container className={css(styles.fixedOnTheTop)}>
+                <Container className={fixedOnTheTop}>
                     <div className={headerClassName}>
                         <Row>
-                            <Column xs={7} sm={4} xl={3} className={css(styles.headerColumn)}>
+                            <Column xs={7} sm={4} xl={3} className={headerColumn}>
                                 <Logotype className={headerLogoContainerClassName}/>
                             </Column>
-                            <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={css(styles.headerColumn)}>
-                                <Hidden lg={'up'} className={css(styles.headerMenuButtonContainer)}>
+                            <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={headerColumn}>
+                                <Hidden lg={'up'} className={headerMenuButtonContainer}>
                                         <MenuButton onClick={menuButtonOnClick}/>
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>
-                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={css(styles.navigationLinks)}/>
+                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={navigationLinks}/>
                             </Column>
                         </Row>
                     </div>
                 </Container>
-                <div className={css(styles.headerPadding)} ref={this.handleScroll} />
+                <div className={headerPadding} ref={this.handleScroll} />
             </div>
         );
     }

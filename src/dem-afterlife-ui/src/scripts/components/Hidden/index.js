@@ -1,12 +1,13 @@
 import React from 'react';
 import {node, string, func, object} from 'prop-types';
-import {css, withStyles} from 'styles';
+import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map(size => `hidden-${size.direction}-${size.name}`)
-        .reduce((previouse, current) => `${previouse} ${css(styles[current])}`, '');
+        .reduce((previouse, current) =>
+        styles[current] ? `${previouse} ${styles[current]}` : '', '');
 
 export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onClick}) => {
     const classes = constructClassNames(
@@ -20,8 +21,9 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onC
         styles
     );
 
+    const localClassName = `${classes} ${className || ''}`;
     return (
-        <span className={`${classes} ${className || ''}`} onClick={onClick}>
+        <span className={localClassName} onClick={onClick}>
             {children}
         </span>
     );

@@ -7,7 +7,7 @@ import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import SocialMediaLink from 'components/SocialMediaLink';
-import {css, withStyles} from 'styles';
+import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const mapSocialMediaArray = (socialMediaLinkArray, className) =>
@@ -18,18 +18,18 @@ export const FooterPure = ({styles, socialMediaLinkArray}) =>
     <Container>
         <Row>
             <Column xs={12}>
-                <div className={css(styles.footer)}>
+                <div className={styles.footer}>
                     <Row>
                         <Column xs={0} lg={4}/>
                         <Column xs={12} lg={4}>
-                            <div className={css(styles.copyright)}>
+                            <div className={styles.copyright}>
                                 {'DEM Team - 04.03.2007'}
                             </div>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
-                                <div className={css(styles.socialMediaLinkIconContainer)}>
-                                    {mapSocialMediaArray(socialMediaLinkArray, css(styles.socialMediaLinkIcon))}
+                                <div className={styles.socialMediaLinkIconContainer}>
+                                    {mapSocialMediaArray(socialMediaLinkArray, styles.socialMediaLinkIcon)}
                                 </div>
                             </Hidden>
                         </Column>

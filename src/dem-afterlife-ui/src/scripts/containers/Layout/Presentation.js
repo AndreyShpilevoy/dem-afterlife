@@ -7,20 +7,21 @@ import Row from 'components/Row';
 import Column from 'components/Column';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import {css, withStyles, ThemeProvider} from 'styles';
+import {withStyles, ThemeProvider} from 'styles';
 import globalStyles from './globalStyles';
 import calculateStyles from './calculateStyles';
 
-export const PresentationPure = ({children, themeName, navigationLinkArray, socialMediaLinkArray, styles}) =>
-    <ThemeProvider name={themeName}>
-        <div className={css(styles.contentWrapper)}>
-            <Container className={css(styles.container)}>
+export const PresentationPure = ({children, themeName, navigationLinkArray, socialMediaLinkArray, styles}) => {
+    const {contentWrapper, container, content} = styles;
+    return <ThemeProvider name={themeName}>
+        <div className={contentWrapper}>
+            <Container className={container}>
                 {/* title*/}
                 <Notification />
                 <Row>
                     <Header navigationLinkArray={navigationLinkArray}/>
                 </Row>
-                <Row className={css(styles.content)}>
+                <Row className={content}>
                     <Column xs={12}>
                         {children}
                     </Column>
@@ -31,6 +32,7 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
             </Container>
         </div>
     </ThemeProvider>;
+};
 
 PresentationPure.propTypes = {
     styles: object.isRequired,

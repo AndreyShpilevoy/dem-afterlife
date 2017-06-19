@@ -2,7 +2,7 @@
 import React from 'react';
 import {object, string} from 'prop-types';
 import {Link as NativeLink} from 'react-router-dom';
-import {css, withStyles} from 'styles';
+import {withStyles} from 'styles';
 import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
@@ -15,8 +15,8 @@ const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((p
     });
 
 export const LinkPure = props => {
-    const className = `${css(props.styles.link)} ${props.className}`;
-    return <NativeLink className={className} {...mapPropsNativeProps(props)}/>;
+    const localeClassName = `${props.styles.link} ${props.className}`;
+    return <NativeLink className={localeClassName} {...mapPropsNativeProps(props)}/>;
 };
 
 

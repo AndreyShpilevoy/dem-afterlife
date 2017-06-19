@@ -6,7 +6,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
     className="fixedOnTheTop-0-0"
   >
     <div
-      className="header-0-2 "
+      className="header-0-2"
     >
       <withStyles(RowPure)>
         <withStyles(ColumnPure)
@@ -16,7 +16,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           xs={7}
         >
           <withStyles(LogotypePure)
-            className="headerLogoContainer-0-4 "
+            className="headerLogoContainer-0-4"
           />
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)

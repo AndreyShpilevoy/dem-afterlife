@@ -26,16 +26,16 @@ exports[`MenuButton Pure component match expected snapshot 1`] = `
   onClick={[Function]}
 >
   <div
-    className="firstLine-0-2 allLines-0-1 "
+    className="firstLine-0-2 allLines-0-1"
   />
   <div
-    className="secondLine-0-3 allLines-0-1 "
+    className="secondLine-0-3 allLines-0-1"
   />
   <div
-    className="thirdLine-0-4 allLines-0-1 "
+    className="thirdLine-0-4 allLines-0-1"
   />
   <div
-    className="fourthLine-0-5 allLines-0-1 "
+    className="fourthLine-0-5 allLines-0-1"
   />
 </div>
 `;

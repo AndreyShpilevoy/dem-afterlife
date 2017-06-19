@@ -4,12 +4,16 @@ import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, styles) =>
-    reverse ? `${css(styles.row)} reverse` : css(styles.row);
+    css([styles.row, reverse ? 'reverse' : '']);
 
-export const RowPure = ({reverse, children, styles, className, onClick}) =>
-    <div className={`${constructClassNameString(reverse, styles)} ${className || ''}`} onClick={onClick}>
-        {children}
-    </div>;
+export const RowPure = ({reverse, children, styles, className, onClick}) => {
+    const localeClassName = `${constructClassNameString(reverse, styles)} ${className || ''}`;
+    return (
+        <div className={localeClassName} onClick={onClick}>
+            {children}
+        </div>
+    );
+};
 
 RowPure.propTypes = {
     className: string,

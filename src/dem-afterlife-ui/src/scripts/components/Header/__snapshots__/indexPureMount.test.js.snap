@@ -35,7 +35,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
           className="container-0-0 fixedOnTheTop-0-0"
         >
           <div
-            className="header-0-2 "
+            className="header-0-2"
           >
             <withStyles(RowPure)>
               <RowPure
@@ -199,10 +199,10 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                         className=" col-xs-7-0-16 col-sm-4-0-36 col-xl-3-0-112 headerColumn-0-1"
                       >
                         <withStyles(LogotypePure)
-                          className="headerLogoContainer-0-4 "
+                          className="headerLogoContainer-0-4"
                         >
                           <LogotypePure
-                            className="headerLogoContainer-0-4 "
+                            className="headerLogoContainer-0-4"
                             styles={
                               Object {
                                 "logotype": "logotype-0-304",
@@ -211,11 +211,11 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             }
                           >
                             <withStyles(LinkPure)
-                              className="logotypeContainer-0-305 headerLogoContainer-0-4 "
+                              className="logotypeContainer-0-305 headerLogoContainer-0-4"
                               to="/"
                             >
                               <LinkPure
-                                className="logotypeContainer-0-305 headerLogoContainer-0-4 "
+                                className="logotypeContainer-0-305 headerLogoContainer-0-4"
                                 styles={
                                   Object {
                                     ".link-0-296:hover": ".link-0-296:hover-0-298",
@@ -227,7 +227,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                 to="/"
                               >
                                 <Link
-                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4 "
+                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4"
                                   replace={false}
                                   to="/"
                                 />
@@ -448,16 +448,16 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="firstLine-0-310 allLines-0-309 "
+                                      className="firstLine-0-310 allLines-0-309"
                                     />
                                     <div
-                                      className="secondLine-0-311 allLines-0-309 "
+                                      className="secondLine-0-311 allLines-0-309"
                                     />
                                     <div
-                                      className="thirdLine-0-312 allLines-0-309 "
+                                      className="thirdLine-0-312 allLines-0-309"
                                     />
                                     <div
-                                      className="fourthLine-0-313 allLines-0-309 "
+                                      className="fourthLine-0-313 allLines-0-309"
                                     />
                                   </div>
                                 </MenuButtonPure>
@@ -1101,16 +1101,16 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="firstLine-0-310 allLines-0-309 "
+                                      className="firstLine-0-310 allLines-0-309"
                                     />
                                     <div
-                                      className="secondLine-0-311 allLines-0-309 "
+                                      className="secondLine-0-311 allLines-0-309"
                                     />
                                     <div
-                                      className="thirdLine-0-312 allLines-0-309 "
+                                      className="thirdLine-0-312 allLines-0-309"
                                     />
                                     <div
-                                      className="fourthLine-0-313 allLines-0-309 "
+                                      className="fourthLine-0-313 allLines-0-309"
                                     />
                                   </div>
                                 </MenuButtonPure>

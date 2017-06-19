@@ -92,7 +92,7 @@ Object {
   "termedSection": Object {
     "width": "100%",
   },
-  "title": Object {
+  "titleClass": Object {
     "display": "block",
     "overflow": "hidden",
     "paddingLeft": "sizes.horizontalPadingAndMargin",
