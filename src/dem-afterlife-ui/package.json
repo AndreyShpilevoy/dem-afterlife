@@ -12,57 +12,12 @@
         "setDevEnv": "npm config set production false && npm config set dev true",
         "setProdEnv": "npm config set production true && npm config set dev false",
         "clean-wwwroot": "rimraf ../dem-afterlife/wwwroot && mkdirp ../dem-afterlife/wwwroot",
-        "test-cached": "cross-env BABEL_ENV=test jest",
-        "test": "cross-env BABEL_ENV=test jest --no-cache",
+        "test-cached": "cross-env BABEL_ENV=test jest --config jest.config.json",
+        "test": "cross-env BABEL_ENV=test jest --config jest.config.json --no-cache",
         "prebuild": "yarn run clean-wwwroot && yarn run test-cached",
         "build": "cross-env BABEL_ENV=production babel-node tools/distServer.js",
         "prestart": "yarn run test-cached",
         "start": "cross-env BABEL_ENV=development babel-node tools/srcServer.js"
-    },
-    "jest": {
-        "coverageThreshold": {
-            "global": {
-                "statements": 80,
-                "branches": 80,
-                "functions": 80,
-                "lines": 80
-            }
-        },
-        "collectCoverage": true,
-        "testRegex": "src/.*/.*test.js",
-        "transform": {
-            ".*": "<rootDir>/tools/jestPreProcessor"
-        },
-        "moduleNameMapper": {
-            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js"
-        },
-        "moduleFileExtensions": [
-            "js",
-            "es6",
-            "jsx",
-            "json"
-        ],
-        "testPathIgnorePatterns": [
-            "<rootDir>/node_modules/",
-            "/__snapshots__/",
-            "/__mocks__/",
-            "/__fakeApi__/",
-            "/__fakeData__/"
-        ],
-        "coveragePathIgnorePatterns": [
-            "src/.+\\.test\\.js",
-            "<rootDir>/node_modules/",
-            "/__snapshots__/",
-            "/__mocks__/",
-            "/__fakeApi__/",
-            "/__fakeData__/",
-            "src/scripts/styles/",
-            "src/images/",
-            "tools/"
-        ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ]
     },
     "devDependencies": {
         "babel-cli": "6.24.1",
