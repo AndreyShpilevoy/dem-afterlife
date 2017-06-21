@@ -38,7 +38,6 @@ const entryPoints = {
         'react-with-styles',
         'redux',
         'redux-saga',
-        'raw-loader',
         'react-svg-inline'
     ],
     app: ['./src/scripts/index']
