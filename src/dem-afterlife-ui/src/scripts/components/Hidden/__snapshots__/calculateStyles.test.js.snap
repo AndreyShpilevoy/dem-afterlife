@@ -34,6 +34,7 @@ Object {
   },
   "options": Object {
     "meta": "Hidden",
+    "themeName": "default",
   },
 }
 `;

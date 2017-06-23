@@ -30,6 +30,7 @@ Object {
   },
   "options": Object {
     "meta": "Footer",
+    "themeName": "default",
   },
   "socialMediaLinkIcon": Object {
     "& > .SVGInline-svg": Object {

@@ -1,6 +1,6 @@
 import {createMediaQueryMin} from 'utils';
 
-const calculateStyles = ({grid}) =>
+const calculateStyles = ({themeName, grid}) =>
     grid.containers.reduce((previouse, {width, mediaMinString}) => ({
         ...previouse,
         ...createMediaQueryMin(mediaMinString, {
@@ -10,6 +10,6 @@ const calculateStyles = ({grid}) =>
                 marginRight: 'auto'
             }
         })
-    }), {options: {meta: 'Container'} });
+    }), {options: {meta: 'Container', themeName} });
 
 export default calculateStyles;

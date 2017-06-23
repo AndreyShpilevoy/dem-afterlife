@@ -5,17 +5,17 @@ exports[`Header HOC component match expected snapshot 1`] = `
   navigationLinkArray={Array []}
   styles={
     Object {
-      ".header-0-320.shrinkedHeader": "header-0-320.shrinkedHeader",
-      ".headerLogoContainer-0-322.shrinkedHeader": "headerLogoContainer-0-322.shrinkedHeader",
-      ".navigationLinksContainer-0-324.closed": "navigationLinksContainer-0-324.closed",
-      "fixedOnTheTop": "fixedOnTheTop-0-318",
-      "header": "header-0-320",
-      "headerColumn": "headerColumn-0-319",
-      "headerLogoContainer": "headerLogoContainer-0-322",
-      "headerMenuButtonContainer": "headerMenuButtonContainer-0-325",
-      "headerPadding": "headerPadding-0-321",
-      "navigationLinks": "navigationLinks-0-323",
-      "navigationLinksContainer": "navigationLinksContainer-0-324",
+      ".default-Header-header.shrinkedHeader": "default-Header-header.shrinkedHeader",
+      ".default-Header-headerLogoContainer.shrinkedHeader": "default-Header-headerLogoContainer.shrinkedHeader",
+      ".default-Header-navigationLinksContainer.closed": "default-Header-navigationLinksContainer.closed",
+      "fixedOnTheTop": "default-Header-fixedOnTheTop",
+      "header": "default-Header-header",
+      "headerColumn": "default-Header-headerColumn",
+      "headerLogoContainer": "default-Header-headerLogoContainer",
+      "headerMenuButtonContainer": "default-Header-headerMenuButtonContainer",
+      "headerPadding": "default-Header-headerPadding",
+      "navigationLinks": "default-Header-navigationLinks",
+      "navigationLinksContainer": "default-Header-navigationLinksContainer",
     }
   }
 />

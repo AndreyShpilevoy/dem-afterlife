@@ -17,7 +17,7 @@ const getNavigationSeparatorStyle = (gridSize, navigationLinks) =>
     } :
     {};
 
-const calculateStyles = ({grid, navigationLinks}) =>
+const calculateStyles = ({themeName, grid, navigationLinks}) =>
     grid.containers.reduce(
         (previous, {gridSize, mediaMinString, mediaMaxString}) => ({
             ...previous,
@@ -25,7 +25,7 @@ const calculateStyles = ({grid, navigationLinks}) =>
                 list: getNavigationLinksStyle(gridSize, navigationLinks),
                 separator: getNavigationSeparatorStyle(gridSize, navigationLinks)
             })
-        }), {options: {meta: 'NavigationLinkArray'} });
+        }), {options: {meta: 'NavigationLinkArray', themeName} });
 
 export default calculateStyles;
 

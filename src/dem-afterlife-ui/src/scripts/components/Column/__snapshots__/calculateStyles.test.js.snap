@@ -190,6 +190,7 @@ Object {
   },
   "options": Object {
     "meta": "Column",
+    "themeName": "default",
   },
 }
 `;

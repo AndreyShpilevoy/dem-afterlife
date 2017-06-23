@@ -2,11 +2,11 @@
 
 exports[`Logotype Pure component match expected snapshot 1`] = `
 <withStyles(LinkPure)
-  className="logotypeContainer-0-1 "
+  className="default-Logotype-logotypeContainer "
   to="/"
 >
   <div
-    className="logotype-0-0"
+    className="default-Logotype-logotype"
   />
 </withStyles(LinkPure)>
 `;

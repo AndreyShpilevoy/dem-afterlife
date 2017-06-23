@@ -5,10 +5,10 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
   name="default"
 >
   <div
-    className="contentWrapper-0-2"
+    className="default-LayoutContainer-contentWrapper"
   >
     <withStyles(ContainerPure)
-      className="container-0-0"
+      className="default-LayoutContainer-container"
     >
       <Connect(NotificationPure) />
       <withStyles(RowPure)>
@@ -17,7 +17,7 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
         />
       </withStyles(RowPure)>
       <withStyles(RowPure)
-        className="content-0-1"
+        className="default-LayoutContainer-content"
       >
         <withStyles(ColumnPure)
           xs={12}

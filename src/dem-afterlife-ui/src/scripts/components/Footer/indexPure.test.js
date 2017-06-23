@@ -5,7 +5,6 @@ import {shallow} from 'enzyme';
 import {FooterPure} from './index';
 
 
-
 describe('Footer Pure', () => {
     const map = {};
     window.addEventListener = jest.genMockFn().mockImplementation((event, cb) => {
@@ -13,11 +12,11 @@ describe('Footer Pure', () => {
     });
 
     const styles = {
-        '.socialMediaLinkIcon-0-2 > .SVGInline-svg': '.socialMediaLinkIcon-0-2 > .SVGInline-svg-0-4',
-        copyright: 'copyright-0-0',
-        footer: 'footer-0-3',
-        socialMediaLinkIcon: 'socialMediaLinkIcon-0-2',
-        socialMediaLinkIconContainer: 'socialMediaLinkIconContainer-0-1'
+        '.default-Footer-socialMediaLinkIcon > .SVGInline-svg': 'default-Footer-socialMediaLinkIcon > .SVGInline-svg',
+        copyright: 'default-Footer-copyright',
+        footer: 'default-Footer-footer',
+        socialMediaLinkIcon: 'default-Footer-socialMediaLinkIcon',
+        socialMediaLinkIconContainer: 'default-Footer-socialMediaLinkIconContainer'
     };
 
     const socialMediaLinksArray = [

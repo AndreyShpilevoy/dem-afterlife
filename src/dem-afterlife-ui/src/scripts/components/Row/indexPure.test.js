@@ -6,8 +6,8 @@ import {RowPure} from './index';
 
 describe('Row Pure', () => {
     const styles = {
-        '.row-0-0.reverse': '.row-0-0.reverse-0-1',
-        row: 'row-0-0'
+        '.default-Row-row.reverse': 'default-Row-row.reverse',
+        row: 'default-Row-row'
     };
 
     it('component match expected snapshot', () => {

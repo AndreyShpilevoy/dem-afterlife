@@ -12,7 +12,7 @@ exports[`Hidden Pure component match expected snapshot 1`] = `
 
 exports[`Hidden Pure component with xs="down" md="exact" xl="up" match expected snapshot 1`] = `
 <span
-  className=" hidden-down-xs-0-1 hidden-exact-md-0-8 hidden-up-xl-0-12 "
+  className=" default-Hidden-hidden-down-xs default-Hidden-hidden-exact-md default-Hidden-hidden-up-xl "
 >
   <div>
     hidden content

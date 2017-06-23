@@ -1,4 +1,4 @@
-const calculateStyles = ({logotype}) => ({
+const calculateStyles = ({themeName, logotype}) => ({
     logotype: {
         backgroundImage: `url(${logotype.backgroundImage})`,
         backgroundRepeat: logotype.backgroundRepeat,
@@ -8,7 +8,7 @@ const calculateStyles = ({logotype}) => ({
     logotypeContainer: {
         height: logotype.height
     },
-    options: {meta: 'Logotype'}
+    options: {meta: 'Logotype', themeName}
 });
 
 export default calculateStyles;

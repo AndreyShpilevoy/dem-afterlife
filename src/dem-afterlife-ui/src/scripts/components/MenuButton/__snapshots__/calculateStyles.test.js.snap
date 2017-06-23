@@ -37,6 +37,7 @@ Object {
   },
   "options": Object {
     "meta": "MenuButton",
+    "themeName": "default",
   },
   "secondLine": Object {
     "&.open": Object {

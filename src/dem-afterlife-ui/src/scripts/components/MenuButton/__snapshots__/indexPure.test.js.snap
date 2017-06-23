@@ -2,40 +2,40 @@
 
 exports[`MenuButton Pure after click on button child divs should added open css class name to theyr classNames component match expected snapshot 1`] = `
 <div
-  className="container-0-0"
+  className="default-MenuButton-container"
   onClick={[Function]}
 >
   <div
-    className="firstLine-0-2 allLines-0-1 open"
+    className="default-MenuButton-firstLine default-MenuButton-allLines open"
   />
   <div
-    className="secondLine-0-3 allLines-0-1 open"
+    className="default-MenuButton-secondLine default-MenuButton-allLines open"
   />
   <div
-    className="thirdLine-0-4 allLines-0-1 open"
+    className="default-MenuButton-thirdLine default-MenuButton-allLines open"
   />
   <div
-    className="fourthLine-0-5 allLines-0-1 open"
+    className="default-MenuButton-fourthLine default-MenuButton-allLines open"
   />
 </div>
 `;
 
 exports[`MenuButton Pure component match expected snapshot 1`] = `
 <div
-  className="container-0-0"
+  className="default-MenuButton-container"
   onClick={[Function]}
 >
   <div
-    className="firstLine-0-2 allLines-0-1"
+    className="default-MenuButton-firstLine default-MenuButton-allLines"
   />
   <div
-    className="secondLine-0-3 allLines-0-1"
+    className="default-MenuButton-secondLine default-MenuButton-allLines"
   />
   <div
-    className="thirdLine-0-4 allLines-0-1"
+    className="default-MenuButton-thirdLine default-MenuButton-allLines"
   />
   <div
-    className="fourthLine-0-5 allLines-0-1"
+    className="default-MenuButton-fourthLine default-MenuButton-allLines"
   />
 </div>
 `;

@@ -19,14 +19,14 @@ const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
     }
 });
 
-const calculateStyles = ({grid, navigationLinks}) =>
+const calculateStyles = ({themeName, grid, navigationLinks}) =>
     grid.containers.reduce(
         (previous, {gridSize, mediaMinString, mediaMaxString}) => ({
             ...previous,
             ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {
                 link: getNavigationLinkStyle(gridSize, navigationLinks)
             })
-        }), {options: {meta: 'NavigationLinkItem'} });
+        }), {options: {meta: 'NavigationLinkItem', themeName} });
 
 export default calculateStyles;
 

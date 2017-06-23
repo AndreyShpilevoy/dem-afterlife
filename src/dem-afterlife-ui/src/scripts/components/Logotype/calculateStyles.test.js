@@ -3,6 +3,7 @@ import calculateStyles from './calculateStyles';
 
 describe('Logotype calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         logotype: {
             backgroundImage: 'logotype.png',
             backgroundSize: 'contain',

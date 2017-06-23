@@ -13,6 +13,7 @@ Object {
   },
   "options": Object {
     "meta": "Logotype",
+    "themeName": "default",
   },
 }
 `;

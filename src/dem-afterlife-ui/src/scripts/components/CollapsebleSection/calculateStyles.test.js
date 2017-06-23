@@ -4,6 +4,7 @@ import calculateStyles from './calculateStyles';
 
 describe('CollapsebleSection calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         grid: {
             containers: [
                 {

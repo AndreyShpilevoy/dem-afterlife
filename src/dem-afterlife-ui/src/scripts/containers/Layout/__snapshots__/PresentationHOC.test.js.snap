@@ -7,9 +7,9 @@ exports[`Layout Presentation component match expected snapshot 1`] = `
   styles={
     Object {
       "body": "ody",
-      "container": "container-0-343",
-      "content": "content-0-344",
-      "contentWrapper": "contentWrapper-0-342",
+      "container": "default-LayoutContainer-container",
+      "content": "default-LayoutContainer-content",
+      "contentWrapper": "default-LayoutContainer-contentWrapper",
     }
   }
   themeName="default"

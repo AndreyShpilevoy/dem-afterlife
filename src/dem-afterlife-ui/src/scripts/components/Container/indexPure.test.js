@@ -6,7 +6,7 @@ import {ContainerPure} from './index';
 
 describe('Container Pure', () => {
     const styles = {
-        container: 'container-0-0'
+        container: 'default-Container-container'
     };
 
     it('component match expected snapshot', () => {

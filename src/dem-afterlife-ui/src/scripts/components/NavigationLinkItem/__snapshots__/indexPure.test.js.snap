@@ -3,7 +3,7 @@
 exports[`NavigationLinkItem Pure component match expected snapshot 1`] = `
 <li>
   <withStyles(LinkPure)
-    className="link-0-0"
+    className="default-NavigationLinkItem-link"
     to="/"
   >
     Conference

@@ -4,6 +4,7 @@ exports[`Row calculateStyles should create expected object 1`] = `
 Object {
   "options": Object {
     "meta": "Row",
+    "themeName": "default",
   },
   "row": Object {
     "&.reverse": Object {

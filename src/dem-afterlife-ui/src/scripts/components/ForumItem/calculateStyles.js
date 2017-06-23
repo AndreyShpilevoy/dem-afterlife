@@ -1,4 +1,4 @@
-const calculateStyles = () => ({
+const calculateStyles = ({themeName}) => ({
     separator: {
         backgroundColor: '#9C877C',
         height: 0.125,
@@ -38,7 +38,7 @@ const calculateStyles = () => ({
         width: '100%',
         textAlign: 'center'
     },
-    options: {meta: 'ForumItem'}
+    options: {meta: 'ForumItem', themeName}
 });
 
 export default calculateStyles;

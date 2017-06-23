@@ -5,8 +5,8 @@ exports[`NavigationLinkArray HOC match expected snapshot 1`] = `
   navigationLinkArray={Array []}
   styles={
     Object {
-      "list": "list-0-4",
-      "separator": "separator-0-5",
+      "list": "default-NavigationLinkArray-list",
+      "separator": "default-NavigationLinkArray-separator",
     }
   }
 />

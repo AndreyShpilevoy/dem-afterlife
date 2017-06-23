@@ -15,17 +15,17 @@ describe('Header Pure Mount', () => {
     });
 
     const styles = {
-        '.header-0-2.shrinkedHeader': 'header-0-2',
-        '.headerLogoContainer-0-4.shrinkedHeader': 'headerLogoContainer-0-4',
-        '.navigationLinksContainer-0-6.closed': 'navigationLinksContainer-0-6',
-        fixedOnTheTop: 'fixedOnTheTop-0-0',
-        header: 'header-0-2',
-        headerColumn: 'headerColumn-0-1',
-        headerLogoContainer: 'headerLogoContainer-0-4',
-        headerMenuButtonContainer: 'headerMenuButtonContainer-0-7',
-        headerPadding: 'headerPadding-0-3',
-        navigationLinks: 'navigationLinks-0-5',
-        navigationLinksContainer: 'navigationLinksContainer-0-6'
+        '.default-Header-header.shrinkedHeader': 'default-Header-header.shrinkedHeader',
+        '.default-Header-headerLogoContainer.shrinkedHeader': 'default-Header-headerLogoContainer.shrinkedHeader',
+        '.default-Header-navigationLinksContainer.closed': 'default-Header-navigationLinksContainer.closed',
+        fixedOnTheTop: 'default-Header-fixedOnTheTop',
+        header: 'default-Header-header',
+        headerColumn: 'default-Header-headerColumn',
+        headerLogoContainer: 'default-Header-headerLogoContainer',
+        headerMenuButtonContainer: 'default-Header-headerMenuButtonContainer',
+        headerPadding: 'default-Header-headerPadding',
+        navigationLinks: 'default-Header-navigationLinks',
+        navigationLinksContainer: 'default-Header-navigationLinksContainer'
     };
 
     it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {

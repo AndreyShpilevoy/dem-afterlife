@@ -3,6 +3,7 @@ import calculateStyles from './calculateStyles';
 
 describe('NavigationLinkArray calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         navigationLinks: {
             xs: {
                 backgroundColor: '#252525',

@@ -2,13 +2,13 @@
 
 exports[`NavigationLinkArray Pure component match expected snapshot 1`] = `
 <ul
-  className="list-0-0 "
+  className="default-NavigationLinkArray-list "
 />
 `;
 
 exports[`NavigationLinkArray Pure component with many navigationLinkItems match expected snapshot 1`] = `
 <ul
-  className="list-0-0 "
+  className="default-NavigationLinkArray-list "
 >
   <div>
     <withStyles(NavigationLinkItemPure)
@@ -22,7 +22,7 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
       }
     />
     <div
-      className="separator-0-1"
+      className="default-NavigationLinkArray-separator"
     />
   </div>
   <div>
@@ -37,7 +37,7 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
       }
     />
     <div
-      className="separator-0-1"
+      className="default-NavigationLinkArray-separator"
     />
   </div>
 </ul>

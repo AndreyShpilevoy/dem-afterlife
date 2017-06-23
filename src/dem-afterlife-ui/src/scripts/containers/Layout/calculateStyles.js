@@ -1,4 +1,4 @@
-const calculateStyles = ({mainWrapper}) => ({
+const calculateStyles = ({themeName, mainWrapper}) => ({
     contentWrapper: {
         fontSize: mainWrapper.fontSize,
         backgroundColor: mainWrapper.backgroundColor,
@@ -13,7 +13,7 @@ const calculateStyles = ({mainWrapper}) => ({
     content: {
         flex: '1 !important'
     },
-    options: {meta: 'LayoutContainer'}
+    options: {meta: 'LayoutContainer', themeName}
 });
 
 export default calculateStyles;

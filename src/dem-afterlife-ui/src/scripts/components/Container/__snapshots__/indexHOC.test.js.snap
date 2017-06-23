@@ -4,7 +4,7 @@ exports[`Container HOC component match expected snapshot 1`] = `
 <ContainerPure
   styles={
     Object {
-      "container": "container-0-0",
+      "container": "default-Container-container",
     }
   }
 />

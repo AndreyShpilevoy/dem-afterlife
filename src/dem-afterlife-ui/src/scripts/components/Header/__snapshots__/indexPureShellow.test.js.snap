@@ -3,24 +3,24 @@
 exports[`Header Pure Shallow component match expected snapshot 1`] = `
 <div>
   <withStyles(ContainerPure)
-    className="fixedOnTheTop-0-0"
+    className="default-Header-fixedOnTheTop"
   >
     <div
-      className="header-0-2"
+      className="default-Header-header"
     >
       <withStyles(RowPure)>
         <withStyles(ColumnPure)
-          className="headerColumn-0-1"
+          className="default-Header-headerColumn"
           sm={4}
           xl={3}
           xs={7}
         >
           <withStyles(LogotypePure)
-            className="headerLogoContainer-0-4"
+            className="default-Header-headerLogoContainer"
           />
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="headerColumn-0-1"
+          className="default-Header-headerColumn"
           lg={0}
           lgOffset={0}
           sm={1}
@@ -29,7 +29,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           xsOffset={3}
         >
           <withStyles(HiddenPure)
-            className="headerMenuButtonContainer-0-7"
+            className="default-Header-headerMenuButtonContainer"
             lg="up"
           >
             <withStyles(MenuButtonPure)
@@ -38,13 +38,13 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           </withStyles(HiddenPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="headerColumn-0-1 navigationLinksContainer-0-6 closed"
+          className="default-Header-headerColumn default-Header-navigationLinksContainer closed"
           lg={8}
           xl={9}
           xs={12}
         >
           <withStyles(NavigationLinkArrayPure)
-            className="navigationLinks-0-5"
+            className="default-Header-navigationLinks"
             navigationLinkArray={Array []}
           />
         </withStyles(ColumnPure)>
@@ -52,7 +52,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
     </div>
   </withStyles(ContainerPure)>
   <div
-    className="headerPadding-0-3"
+    className="default-Header-headerPadding"
   />
 </div>
 `;

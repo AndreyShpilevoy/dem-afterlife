@@ -1,8 +1,9 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
-import calculateStyles, {getNavigationLinkStyle} from './calculateStyles';
+import calculateStyles from './calculateStyles';
 
 describe('NavigationLinkItem calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         navigationLinks: {
             xs: {
                 backgroundColor: '#252525',

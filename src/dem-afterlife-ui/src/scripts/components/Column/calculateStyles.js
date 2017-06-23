@@ -17,9 +17,9 @@ const calculateColumnStyles = gridSize =>
         };
     }, {});
 
-const calculateStyles = ({grid}) =>
+const calculateStyles = ({themeName, grid}) =>
     grid.containers.reduce((previouse, {gridSize, mediaMinString}) => (
         {...previouse, ...createMediaQueryMin(mediaMinString, calculateColumnStyles(gridSize))}
-    ), {options: {meta: 'Column'} });
+    ), {options: {meta: 'Column', themeName} });
 
 export default calculateStyles;

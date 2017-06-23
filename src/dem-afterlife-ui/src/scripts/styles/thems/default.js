@@ -77,6 +77,7 @@ const footerLgXl = {
 };
 
 const defaultTheme = {
+    themeName: 'default',
     grid: {
         containers: [
             {

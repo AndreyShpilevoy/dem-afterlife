@@ -1,4 +1,4 @@
-const calculateStyles = ({menuButton}) => ({
+const calculateStyles = ({themeName, menuButton}) => ({
     container: {
         cursor: menuButton.cursor,
         height: menuButton.widthAndHeight,
@@ -44,7 +44,7 @@ const calculateStyles = ({menuButton}) => ({
             left: '50%'
         }
     },
-    options: {meta: 'MenuButton'}
+    options: {meta: 'MenuButton', themeName}
 });
 
 export default calculateStyles;

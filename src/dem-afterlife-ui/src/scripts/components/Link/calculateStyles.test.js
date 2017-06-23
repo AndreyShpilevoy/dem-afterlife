@@ -4,6 +4,7 @@ import calculateStyles from './calculateStyles';
 
 describe('Column calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         link: {
             color: 'red',
             textDecoration: 'none',

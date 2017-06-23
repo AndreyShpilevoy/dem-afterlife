@@ -18,6 +18,7 @@ Object {
   },
   "options": Object {
     "meta": "Container",
+    "themeName": "default",
   },
 }
 `;

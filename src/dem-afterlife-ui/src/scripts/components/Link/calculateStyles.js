@@ -8,14 +8,14 @@ const getLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({link}) => ({
+const calculateStyles = ({themeName, link}) => ({
     link: {
         ...getLinkStyle(link),
         '&:visited': getLinkStyle(link),
         '&:hover': getLinkHoverStyle(link),
         '&:visited:hover': getLinkHoverStyle(link)
     },
-    options: {meta: 'Link'}
+    options: {meta: 'Link', themeName}
 });
 
 export default calculateStyles;

@@ -6,8 +6,8 @@ import {NavigationLinkArrayPure} from './index';
 
 describe('NavigationLinkArray Pure', () => {
     const styles = {
-        list: 'list-0-0',
-        separator: 'separator-0-1'
+        list: 'default-NavigationLinkArray-list',
+        separator: 'default-NavigationLinkArray-separator'
     };
 
     it('component match expected snapshot', () => {

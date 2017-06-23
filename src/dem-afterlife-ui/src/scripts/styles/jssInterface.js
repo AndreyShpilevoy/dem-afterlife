@@ -11,7 +11,9 @@ import jssIsolate from 'jss-isolate';
 import classNames from 'classnames';
 import defaultUnits from './defaultUnits';
 
-const jss = create();
+const createGenerateClassName = () => (rule, sheet) => `${sheet.options.themeName}-${sheet.options.meta}-${rule.key}`;
+
+const jss = create({createGenerateClassName});
 jss.use(jssGlobal());
 jss.use(jssExtend());
 jss.use(jssNested());

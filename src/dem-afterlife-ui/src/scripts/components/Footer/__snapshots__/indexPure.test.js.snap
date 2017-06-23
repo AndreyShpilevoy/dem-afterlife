@@ -7,7 +7,7 @@ exports[`Footer Pure component match expected snapshot 1`] = `
       xs={12}
     >
       <div
-        className="footer-0-3"
+        className="default-Footer-footer"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
@@ -19,7 +19,7 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             xs={12}
           >
             <div
-              className="copyright-0-0"
+              className="default-Footer-copyright"
             >
               DEM Team - 04.03.2007
             </div>
@@ -32,7 +32,7 @@ exports[`Footer Pure component match expected snapshot 1`] = `
               md="down"
             >
               <div
-                className="socialMediaLinkIconContainer-0-1"
+                className="default-Footer-socialMediaLinkIconContainer"
               />
             </withStyles(HiddenPure)>
           </withStyles(ColumnPure)>
@@ -50,7 +50,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
       xs={12}
     >
       <div
-        className="footer-0-3"
+        className="default-Footer-footer"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
@@ -62,7 +62,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             xs={12}
           >
             <div
-              className="copyright-0-0"
+              className="default-Footer-copyright"
             >
               DEM Team - 04.03.2007
             </div>
@@ -75,10 +75,10 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
               md="down"
             >
               <div
-                className="socialMediaLinkIconContainer-0-1"
+                className="default-Footer-socialMediaLinkIconContainer"
               >
                 <SocialMediaLink
-                  className="socialMediaLinkIcon-0-2"
+                  className="default-Footer-socialMediaLinkIcon"
                   socialMediaLinkItem={
                     Object {
                       "href": "https://vk.com/exmachina2",
@@ -90,7 +90,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
                   }
                 />
                 <SocialMediaLink
-                  className="socialMediaLinkIcon-0-2"
+                  className="default-Footer-socialMediaLinkIcon"
                   socialMediaLinkItem={
                     Object {
                       "href": "http://steamcommunity.com/groups/Ex_Machina",

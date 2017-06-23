@@ -4,6 +4,7 @@ import calculateStyles from './calculateStyles';
 
 describe('Layout calculateStyles', () => {
     const defaultThemeObject = {
+        themeName: 'default',
         mainWrapper: {
             fontSize: '16px',
             backgroundColor: 'red',

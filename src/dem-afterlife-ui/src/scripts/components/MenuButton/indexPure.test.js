@@ -6,16 +6,16 @@ import {MenuButtonPure} from './index';
 
 describe('MenuButton Pure', () => {
     const styles = {
-        '.firstLine-0-2.open': '.firstLine-0-2.open-0-6',
-        '.fourthLine-0-5.open': '.fourthLine-0-5.open-0-9',
-        '.secondLine-0-3.open': '.secondLine-0-3.open-0-7',
-        '.thirdLine-0-4.open': '.thirdLine-0-4.open-0-8',
-        allLines: 'allLines-0-1',
-        container: 'container-0-0',
-        firstLine: 'firstLine-0-2',
-        fourthLine: 'fourthLine-0-5',
-        secondLine: 'secondLine-0-3',
-        thirdLine: 'thirdLine-0-4'
+        '.default-MenuButton-firstLine.open': 'default-MenuButton-firstLine.open',
+        '.default-MenuButton-fourthLine.open': 'default-MenuButton-fourthLine.open',
+        '.default-MenuButton-secondLine.open': 'default-MenuButton-secondLine.open',
+        '.default-MenuButton-thirdLine.open': 'default-MenuButton-thirdLine.open',
+        allLines: 'default-MenuButton-allLines',
+        container: 'default-MenuButton-container',
+        firstLine: 'default-MenuButton-firstLine',
+        fourthLine: 'default-MenuButton-fourthLine',
+        secondLine: 'default-MenuButton-secondLine',
+        thirdLine: 'default-MenuButton-thirdLine'
     };
 
     it('component match expected snapshot', () => {

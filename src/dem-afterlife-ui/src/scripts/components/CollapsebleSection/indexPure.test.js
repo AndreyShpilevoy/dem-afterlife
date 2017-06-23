@@ -6,22 +6,22 @@ import {CollapsebleSectionPure} from './index';
 
 describe('CollapsebleSection Pure', () => {
     const styles = {
-        '.bodyHolder-0-11.closed': 'bodyHolder-0-11',
-        '.headerArrow-0-10 > .SVGInline-svg': 'headerArrow-0-10',
-        '.headerArrow-0-10.closed': 'headerArrow-0-10',
-        body: 'body-0-5',
-        bodyHolder: 'bodyHolder-0-11',
+        '.default-CollapsebleSection-bodyHolder.closed': 'default-CollapsebleSection-bodyHolder.closed',
+        '.default-CollapsebleSection-headerArrow > .SVGInline-svg': 'default-CollapsebleSection-headerArrow > .SVGInline-svg',
+        '.default-CollapsebleSection-headerArrow.closed': 'default-CollapsebleSection-headerArrow.closed',
+        body: 'default-CollapsebleSection-body',
+        bodyHolder: 'default-CollapsebleSection-bodyHolder',
         from: 'from',
-        general: 'general-0-0',
-        header: 'header-0-1',
-        headerArrow: 'headerArrow-0-10',
-        headerArrowHolder: 'headerArrowHolder-0-9',
-        headerColumn: 'headerColumn-0-7',
-        headerCursor: 'headerCursor-0-8',
-        headerHolder: 'headerHolder-0-3',
-        headerText: 'headerText-0-4',
-        termedSection: 'termedSection-0-6',
-        titleClass: 'title-0-2',
+        general: 'default-CollapsebleSection-general',
+        header: 'default-CollapsebleSection-header',
+        headerArrow: 'default-CollapsebleSection-headerArrow',
+        headerArrowHolder: 'default-CollapsebleSection-headerArrowHolder',
+        headerColumn: 'default-CollapsebleSection-headerColumn',
+        headerCursor: 'default-CollapsebleSection-headerCursor',
+        headerHolder: 'default-CollapsebleSection-headerHolder',
+        headerText: 'default-CollapsebleSection-headerText',
+        termedSection: 'default-CollapsebleSection-termedSection',
+        titleClass: 'default-CollapsebleSection-titleClass',
         to: 'to'
     };
 

@@ -6,8 +6,8 @@ import {NavigationLinkItemPure} from './index';
 
 describe('NavigationLinkItem Pure', () => {
     const styles = {
-        '.link-0-0:hover': 'link-0-0',
-        link: 'link-0-0'
+        '.default-NavigationLinkItem-link:hover': 'default-NavigationLinkItem-link:hover',
+        link: 'default-NavigationLinkItem-link'
     };
 
     it('component match expected snapshot', () => {

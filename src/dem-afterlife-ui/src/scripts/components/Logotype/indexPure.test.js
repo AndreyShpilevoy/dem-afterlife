@@ -6,8 +6,8 @@ import {LogotypePure} from './index';
 
 describe('Logotype Pure', () => {
     const styles = {
-        logotype: 'logotype-0-0',
-        logotypeContainer: 'logotypeContainer-0-1'
+        logotype: 'default-Logotype-logotype',
+        logotypeContainer: 'default-Logotype-logotypeContainer'
     };
 
     it('component match expected snapshot', () => {

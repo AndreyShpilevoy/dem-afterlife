@@ -109,10 +109,10 @@ const getSizeSpecific = (grid, collapsebleSection) =>
     previouse,
 {});
 
-const calculateStyles = ({grid, collapsebleSection}) => ({
+const calculateStyles = ({themeName, grid, collapsebleSection}) => ({
     ...getCommonPart(collapsebleSection),
     ...getSizeSpecific(grid, collapsebleSection),
-    ...{options: {meta: 'CollapsebleSection'} }
+    ...{options: {meta: 'CollapsebleSection', themeName} }
 });
 
 export default calculateStyles;

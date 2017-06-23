@@ -6,21 +6,21 @@ import {HiddenPure} from './index';
 
 describe('Hidden Pure', () => {
     const styles = {
-        'hidden-down-lg': 'hidden-down-lg-0-10',
-        'hidden-down-md': 'hidden-down-md-0-7',
-        'hidden-down-sm': 'hidden-down-sm-0-4',
-        'hidden-down-xl': 'hidden-down-xl-0-13',
-        'hidden-down-xs': 'hidden-down-xs-0-1',
-        'hidden-exact-lg': 'hidden-exact-lg-0-11',
-        'hidden-exact-md': 'hidden-exact-md-0-8',
-        'hidden-exact-sm': 'hidden-exact-sm-0-5',
-        'hidden-exact-xl': 'hidden-exact-xl-0-14',
-        'hidden-exact-xs': 'hidden-exact-xs-0-2',
-        'hidden-up-lg': 'hidden-up-lg-0-9',
-        'hidden-up-md': 'hidden-up-md-0-6',
-        'hidden-up-sm': 'hidden-up-sm-0-3',
-        'hidden-up-xl': 'hidden-up-xl-0-12',
-        'hidden-up-xs': 'hidden-up-xs-0-0'
+        'hidden-down-lg': 'default-Hidden-hidden-down-lg',
+        'hidden-down-md': 'default-Hidden-hidden-down-md',
+        'hidden-down-sm': 'default-Hidden-hidden-down-sm',
+        'hidden-down-xl': 'default-Hidden-hidden-down-xl',
+        'hidden-down-xs': 'default-Hidden-hidden-down-xs',
+        'hidden-exact-lg': 'default-Hidden-hidden-exact-lg',
+        'hidden-exact-md': 'default-Hidden-hidden-exact-md',
+        'hidden-exact-sm': 'default-Hidden-hidden-exact-sm',
+        'hidden-exact-xl': 'default-Hidden-hidden-exact-xl',
+        'hidden-exact-xs': 'default-Hidden-hidden-exact-xs',
+        'hidden-up-lg': 'default-Hidden-hidden-up-lg',
+        'hidden-up-md': 'default-Hidden-hidden-up-md',
+        'hidden-up-sm': 'default-Hidden-hidden-up-sm',
+        'hidden-up-xl': 'default-Hidden-hidden-up-xl',
+        'hidden-up-xs': 'default-Hidden-hidden-up-xs'
     };
 
     it('component match expected snapshot', () => {

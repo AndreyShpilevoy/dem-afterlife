@@ -86,6 +86,7 @@ Object {
   },
   "options": Object {
     "meta": "Header",
+    "themeName": "default",
   },
 }
 `;
