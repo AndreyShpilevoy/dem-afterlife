@@ -4,10 +4,10 @@ exports[`MenuButton HOC match expected snapshot 1`] = `
 <MenuButtonPure
   styles={
     Object {
-      ".firstLine-0-2.open": ".firstLine-0-2.open-0-6",
-      ".fourthLine-0-5.open": ".fourthLine-0-5.open-0-9",
-      ".secondLine-0-3.open": ".secondLine-0-3.open-0-7",
-      ".thirdLine-0-4.open": ".thirdLine-0-4.open-0-8",
+      ".firstLine-0-2.open": "firstLine-0-2.open",
+      ".fourthLine-0-5.open": "fourthLine-0-5.open",
+      ".secondLine-0-3.open": "secondLine-0-3.open",
+      ".thirdLine-0-4.open": "thirdLine-0-4.open",
       "allLines": "allLines-0-1",
       "container": "container-0-0",
       "firstLine": "firstLine-0-2",

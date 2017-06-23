@@ -6,9 +6,10 @@ exports[`Layout Presentation component match expected snapshot 1`] = `
   socialMediaLinkArray={Array []}
   styles={
     Object {
-      "container": "container-0-365",
-      "content": "content-0-366",
-      "contentWrapper": "contentWrapper-0-364",
+      "body": "ody",
+      "container": "container-0-343",
+      "content": "content-0-344",
+      "contentWrapper": "contentWrapper-0-342",
     }
   }
   themeName="default"

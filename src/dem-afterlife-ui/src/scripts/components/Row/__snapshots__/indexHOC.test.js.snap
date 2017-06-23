@@ -4,7 +4,7 @@ exports[`Row HOC match expected snapshot 1`] = `
 <RowPure
   styles={
     Object {
-      ".row-0-0.reverse": ".row-0-0.reverse-0-1",
+      ".row-0-0.reverse": "row-0-0.reverse",
       "row": "row-0-0",
     }
   }

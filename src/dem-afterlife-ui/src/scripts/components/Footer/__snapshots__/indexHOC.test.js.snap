@@ -5,11 +5,11 @@ exports[`Footer HOC component match expected snapshot 1`] = `
   socialMediaLinkArray={Array []}
   styles={
     Object {
-      ".socialMediaLinkIcon-0-298 > .SVGInline-svg": ".socialMediaLinkIcon-0-298 > .SVGInline-svg-0-300",
-      "copyright": "copyright-0-296",
-      "footer": "footer-0-299",
-      "socialMediaLinkIcon": "socialMediaLinkIcon-0-298",
-      "socialMediaLinkIconContainer": "socialMediaLinkIconContainer-0-297",
+      ".socialMediaLinkIcon-0-296 > .SVGInline-svg": "socialMediaLinkIcon-0-296 > .SVGInline-svg",
+      "copyright": "copyright-0-294",
+      "footer": "footer-0-297",
+      "socialMediaLinkIcon": "socialMediaLinkIcon-0-296",
+      "socialMediaLinkIconContainer": "socialMediaLinkIconContainer-0-295",
     }
   }
 />

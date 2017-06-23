@@ -41,7 +41,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
               <RowPure
                 styles={
                   Object {
-                    ".row-0-292.reverse": ".row-0-292.reverse-0-293",
+                    ".row-0-292.reverse": "row-0-292.reverse",
                     "row": "row-0-292",
                   }
                 }
@@ -205,29 +205,29 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="headerLogoContainer-0-4"
                             styles={
                               Object {
-                                "logotype": "logotype-0-304",
-                                "logotypeContainer": "logotypeContainer-0-305",
+                                "logotype": "logotype-0-296",
+                                "logotypeContainer": "logotypeContainer-0-297",
                               }
                             }
                           >
                             <withStyles(LinkPure)
-                              className="logotypeContainer-0-305 headerLogoContainer-0-4"
+                              className="logotypeContainer-0-297 headerLogoContainer-0-4"
                               to="/"
                             >
                               <LinkPure
-                                className="logotypeContainer-0-305 headerLogoContainer-0-4"
+                                className="logotypeContainer-0-297 headerLogoContainer-0-4"
                                 styles={
                                   Object {
-                                    ".link-0-296:hover": ".link-0-296:hover-0-298",
-                                    ".link-0-296:visited": ".link-0-296:visited-0-297",
-                                    ".link-0-296:visited:hover": ".link-0-296:visited:hover-0-299",
-                                    "link": "link-0-296",
+                                    ".link-0-294:hover": "link-0-294:hover",
+                                    ".link-0-294:visited": "link-0-294:visited",
+                                    ".link-0-294:visited:hover": "link-0-294:visited:hover",
+                                    "link": "link-0-294",
                                   }
                                 }
                                 to="/"
                               >
                                 <Link
-                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4"
+                                  className="link-0-294 logotypeContainer-0-297 headerLogoContainer-0-4"
                                   replace={false}
                                   to="/"
                                 />
@@ -430,34 +430,34 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   onClick={[Function]}
                                   styles={
                                     Object {
-                                      ".firstLine-0-310.open": ".firstLine-0-310.open-0-314",
-                                      ".fourthLine-0-313.open": ".fourthLine-0-313.open-0-317",
-                                      ".secondLine-0-311.open": ".secondLine-0-311.open-0-315",
-                                      ".thirdLine-0-312.open": ".thirdLine-0-312.open-0-316",
-                                      "allLines": "allLines-0-309",
-                                      "container": "container-0-308",
-                                      "firstLine": "firstLine-0-310",
-                                      "fourthLine": "fourthLine-0-313",
-                                      "secondLine": "secondLine-0-311",
-                                      "thirdLine": "thirdLine-0-312",
+                                      ".firstLine-0-302.open": "firstLine-0-302.open",
+                                      ".fourthLine-0-305.open": "fourthLine-0-305.open",
+                                      ".secondLine-0-303.open": "secondLine-0-303.open",
+                                      ".thirdLine-0-304.open": "thirdLine-0-304.open",
+                                      "allLines": "allLines-0-301",
+                                      "container": "container-0-300",
+                                      "firstLine": "firstLine-0-302",
+                                      "fourthLine": "fourthLine-0-305",
+                                      "secondLine": "secondLine-0-303",
+                                      "thirdLine": "thirdLine-0-304",
                                     }
                                   }
                                 >
                                   <div
-                                    className="container-0-308"
+                                    className="container-0-300"
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="firstLine-0-310 allLines-0-309"
+                                      className="firstLine-0-302 allLines-0-301"
                                     />
                                     <div
-                                      className="secondLine-0-311 allLines-0-309"
+                                      className="secondLine-0-303 allLines-0-301"
                                     />
                                     <div
-                                      className="thirdLine-0-312 allLines-0-309"
+                                      className="thirdLine-0-304 allLines-0-301"
                                     />
                                     <div
-                                      className="fourthLine-0-313 allLines-0-309"
+                                      className="fourthLine-0-305 allLines-0-301"
                                     />
                                   </div>
                                 </MenuButtonPure>
@@ -626,13 +626,13 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             navigationLinkArray={Array []}
                             styles={
                               Object {
-                                "list": "list-0-332",
-                                "separator": "separator-0-333",
+                                "list": "list-0-314",
+                                "separator": "separator-0-315",
                               }
                             }
                           >
                             <ul
-                              className="list-0-332 navigationLinks-0-5"
+                              className="list-0-314 navigationLinks-0-5"
                             />
                           </NavigationLinkArrayPure>
                         </withStyles(NavigationLinkArrayPure)>
@@ -694,7 +694,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
               <RowPure
                 styles={
                   Object {
-                    ".row-0-292.reverse": ".row-0-292.reverse-0-293",
+                    ".row-0-292.reverse": "row-0-292.reverse",
                     "row": "row-0-292",
                   }
                 }
@@ -858,29 +858,29 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="headerLogoContainer-0-4 shrinkedHeader"
                             styles={
                               Object {
-                                "logotype": "logotype-0-304",
-                                "logotypeContainer": "logotypeContainer-0-305",
+                                "logotype": "logotype-0-296",
+                                "logotypeContainer": "logotypeContainer-0-297",
                               }
                             }
                           >
                             <withStyles(LinkPure)
-                              className="logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                              className="logotypeContainer-0-297 headerLogoContainer-0-4 shrinkedHeader"
                               to="/"
                             >
                               <LinkPure
-                                className="logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                                className="logotypeContainer-0-297 headerLogoContainer-0-4 shrinkedHeader"
                                 styles={
                                   Object {
-                                    ".link-0-296:hover": ".link-0-296:hover-0-298",
-                                    ".link-0-296:visited": ".link-0-296:visited-0-297",
-                                    ".link-0-296:visited:hover": ".link-0-296:visited:hover-0-299",
-                                    "link": "link-0-296",
+                                    ".link-0-294:hover": "link-0-294:hover",
+                                    ".link-0-294:visited": "link-0-294:visited",
+                                    ".link-0-294:visited:hover": "link-0-294:visited:hover",
+                                    "link": "link-0-294",
                                   }
                                 }
                                 to="/"
                               >
                                 <Link
-                                  className="link-0-296 logotypeContainer-0-305 headerLogoContainer-0-4 shrinkedHeader"
+                                  className="link-0-294 logotypeContainer-0-297 headerLogoContainer-0-4 shrinkedHeader"
                                   replace={false}
                                   to="/"
                                 />
@@ -1083,34 +1083,34 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   onClick={[Function]}
                                   styles={
                                     Object {
-                                      ".firstLine-0-310.open": ".firstLine-0-310.open-0-314",
-                                      ".fourthLine-0-313.open": ".fourthLine-0-313.open-0-317",
-                                      ".secondLine-0-311.open": ".secondLine-0-311.open-0-315",
-                                      ".thirdLine-0-312.open": ".thirdLine-0-312.open-0-316",
-                                      "allLines": "allLines-0-309",
-                                      "container": "container-0-308",
-                                      "firstLine": "firstLine-0-310",
-                                      "fourthLine": "fourthLine-0-313",
-                                      "secondLine": "secondLine-0-311",
-                                      "thirdLine": "thirdLine-0-312",
+                                      ".firstLine-0-302.open": "firstLine-0-302.open",
+                                      ".fourthLine-0-305.open": "fourthLine-0-305.open",
+                                      ".secondLine-0-303.open": "secondLine-0-303.open",
+                                      ".thirdLine-0-304.open": "thirdLine-0-304.open",
+                                      "allLines": "allLines-0-301",
+                                      "container": "container-0-300",
+                                      "firstLine": "firstLine-0-302",
+                                      "fourthLine": "fourthLine-0-305",
+                                      "secondLine": "secondLine-0-303",
+                                      "thirdLine": "thirdLine-0-304",
                                     }
                                   }
                                 >
                                   <div
-                                    className="container-0-308"
+                                    className="container-0-300"
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="firstLine-0-310 allLines-0-309"
+                                      className="firstLine-0-302 allLines-0-301"
                                     />
                                     <div
-                                      className="secondLine-0-311 allLines-0-309"
+                                      className="secondLine-0-303 allLines-0-301"
                                     />
                                     <div
-                                      className="thirdLine-0-312 allLines-0-309"
+                                      className="thirdLine-0-304 allLines-0-301"
                                     />
                                     <div
-                                      className="fourthLine-0-313 allLines-0-309"
+                                      className="fourthLine-0-305 allLines-0-301"
                                     />
                                   </div>
                                 </MenuButtonPure>
@@ -1279,13 +1279,13 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             navigationLinkArray={Array []}
                             styles={
                               Object {
-                                "list": "list-0-332",
-                                "separator": "separator-0-333",
+                                "list": "list-0-314",
+                                "separator": "separator-0-315",
                               }
                             }
                           >
                             <ul
-                              className="list-0-332 navigationLinks-0-5"
+                              className="list-0-314 navigationLinks-0-5"
                             />
                           </NavigationLinkArrayPure>
                         </withStyles(NavigationLinkArrayPure)>

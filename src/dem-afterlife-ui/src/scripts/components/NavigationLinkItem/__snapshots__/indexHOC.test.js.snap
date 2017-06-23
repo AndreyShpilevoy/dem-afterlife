@@ -12,8 +12,8 @@ exports[`NavigationLinkItem HOC match expected snapshot 1`] = `
   }
   styles={
     Object {
-      ".link-0-8:hover": "link-0-8",
-      "link": "link-0-8",
+      ".link-0-2:hover": "link-0-2:hover",
+      "link": "link-0-2",
     }
   }
 />
