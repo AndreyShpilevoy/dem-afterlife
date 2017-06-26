@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React from 'react';
-import {arrayOf, shape, number, string, object} from 'prop-types';
+import {arrayOf, shape, number, string} from 'prop-types';
 import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
@@ -41,7 +41,7 @@ export const FooterPure = ({styles, socialMediaLinkArray}) =>
 ;
 
 FooterPure.propTypes = {
-    styles: object,
+    styles: shape().isRequired,
     socialMediaLinkArray: arrayOf(
         shape({
             id: number.isRequired,

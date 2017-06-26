@@ -1,5 +1,5 @@
 import React from 'react';
-import {bool, node, string, func, object} from 'prop-types';
+import {bool, node, string, func, shape} from 'prop-types';
 import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -17,7 +17,7 @@ export const RowPure = ({reverse, children, styles, className, onClick}) => {
 
 RowPure.propTypes = {
     className: string,
-    styles: object,
+    styles: shape().isRequired,
     children: node,
     reverse: bool,
     onClick: func

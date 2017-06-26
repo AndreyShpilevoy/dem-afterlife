@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, string, func, object} from 'prop-types';
+import {node, string, func, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -14,7 +14,7 @@ export const ContainerPure = ({children, styles, className, onClick}) => {
 
 ContainerPure.propTypes = {
     className: string,
-    styles: object,
+    styles: shape().isRequired,
     children: node,
     onClick: func
 };

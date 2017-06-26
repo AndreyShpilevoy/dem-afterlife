@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, object} from 'prop-types';
+import {string, node, shape} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
@@ -35,7 +35,7 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
 };
 
 PresentationPure.propTypes = {
-    styles: object.isRequired,
+    styles: shape().isRequired,
     children: node,
     themeName: string,
     navigationLinkArray: sharedPropTypes.navigationLinkArray,

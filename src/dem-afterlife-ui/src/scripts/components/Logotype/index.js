@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, object} from 'prop-types';
+import {string, shape} from 'prop-types';
 import Link from 'components/Link';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
@@ -15,7 +15,7 @@ export const LogotypePure = ({styles, className}) => {
 };
 
 LogotypePure.propTypes = {
-    styles: object,
+    styles: shape().isRequired,
     className: string
 };
 

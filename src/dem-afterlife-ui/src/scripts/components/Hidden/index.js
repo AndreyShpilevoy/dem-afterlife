@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, string, func, object} from 'prop-types';
+import {node, string, func, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -32,7 +32,7 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onC
 HiddenPure.propTypes = {
     onClick: func,
     className: string,
-    styles: object,
+    styles: shape().isRequired,
     children: node,
     xs: string,
     sm: string,

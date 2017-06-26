@@ -1,5 +1,5 @@
 import React from 'react';
-import {func, node, number, string, oneOfType, object} from 'prop-types';
+import {func, node, number, string, oneOfType, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -35,7 +35,7 @@ export const ColumnPure = (
 
 ColumnPure.propTypes = {
     className: string,
-    styles: object,
+    styles: shape().isRequired,
     children: node,
     onClick: func,
     xs: oneOfType([number, string]),

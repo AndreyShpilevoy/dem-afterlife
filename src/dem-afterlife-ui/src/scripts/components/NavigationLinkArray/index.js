@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, object} from 'prop-types';
+import {string, shape} from 'prop-types';
 import {sharedPropTypes, defaults} from 'utils';
 import NavigationLinkItem from 'components/NavigationLinkItem';
 import {withStyles} from 'styles';
@@ -23,7 +23,7 @@ export const NavigationLinkArrayPure = ({styles, className, navigationLinkArray}
 };
 
 NavigationLinkArrayPure.propTypes = {
-    styles: object,
+    styles: shape().isRequired,
     className: string,
     navigationLinkArray: sharedPropTypes.navigationLinkArray
 };

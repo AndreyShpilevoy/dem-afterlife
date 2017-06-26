@@ -1,6 +1,6 @@
 /* eslint no-console:0, fp/no-unused-expression:0 */
 import React from 'react';
-import {object, string} from 'prop-types';
+import {shape, string} from 'prop-types';
 import {Link as NativeLink} from 'react-router-dom';
 import {withStyles} from 'styles';
 import {defaults} from 'utils';
@@ -21,7 +21,7 @@ export const LinkPure = props => {
 
 
 LinkPure.propTypes = {
-    styles: object,
+    styles: shape().isRequired,
     className: string
 };
 

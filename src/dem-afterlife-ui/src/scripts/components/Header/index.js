@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {object} from 'prop-types';
+import {shape} from 'prop-types';
 import {throttle, root, sharedPropTypes} from 'utils';
 import Container from 'components/Container';
 import Column from 'components/Column';
@@ -15,7 +15,7 @@ import calculateStyles from './calculateStyles';
 
 export class HeaderPure extends PureComponent {
     static propTypes = {
-        styles: object,
+        styles: shape().isRequired,
         navigationLinkArray: sharedPropTypes.navigationLinkArray
     };
 

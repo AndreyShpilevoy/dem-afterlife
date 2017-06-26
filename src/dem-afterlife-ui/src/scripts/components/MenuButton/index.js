@@ -1,14 +1,14 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {func, object} from 'prop-types';
+import {func, shape} from 'prop-types';
 import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
 export class MenuButtonPure extends PureComponent {
     static propTypes = {
-        styles: object,
+        styles: shape().isRequired,
         onClick: func
     };
 

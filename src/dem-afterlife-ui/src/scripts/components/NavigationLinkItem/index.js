@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, shape, number, object} from 'prop-types';
+import {string, shape, number} from 'prop-types';
 import Link from 'components/Link';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
@@ -13,7 +13,7 @@ export const NavigationLinkItemPure = ({styles, navigationLinkItem}) =>
     </li>;
 
 NavigationLinkItemPure.propTypes = {
-    styles: object,
+    styles: shape().isRequired,
     navigationLinkItem: shape({
         id: number.isRequired,
         title: string.isRequired,

@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {node, bool, string, shape, object} from 'prop-types';
+import {node, bool, string, shape} from 'prop-types';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
@@ -11,7 +11,7 @@ import calculateStyles from './calculateStyles';
 
 export class CollapsebleSectionPure extends PureComponent {
     static propTypes = {
-        styles: object.isRequired,
+        styles: shape().isRequired,
         className: string,
         children: node,
         headerSettings: shape({

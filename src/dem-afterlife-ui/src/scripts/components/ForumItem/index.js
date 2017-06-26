@@ -1,5 +1,5 @@
 import React from 'react';
-import {object} from 'prop-types';
+import {shape} from 'prop-types';
 import Link from 'components/Link';
 import Row from 'components/Row';
 import Column from 'components/Column';
@@ -70,7 +70,7 @@ export const ForumItemPure = ({forumItem, styles}) => {
 
 ForumItemPure.propTypes = {
     forumItem: sharedPropTypes.forumItem,
-    styles: object
+    styles: shape().isRequired
 };
 
 export default withStyles(theme => calculateStyles(theme))(ForumItemPure);
