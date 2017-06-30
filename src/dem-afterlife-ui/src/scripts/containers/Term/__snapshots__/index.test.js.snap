@@ -58,8 +58,16 @@ exports[`Term HOC component match expected snapshot for simple term 1`] = `
         "value": "Тем",
       }
     }
+    untermedPostfix=""
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       Тем
     </span>
   </Term>
@@ -126,8 +134,16 @@ exports[`Term HOC component match expected snapshot for simple term with spase a
         "value": "Тем",
       }
     }
+    untermedPostfix=""
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       Тем 
     </span>
   </Term>
@@ -196,8 +212,16 @@ exports[`Term HOC component match expected snapshot for simple term with spase b
         "value": "Тем",
       }
     }
+    untermedPostfix=""
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        Тем 
     </span>
   </Term>
@@ -264,8 +288,16 @@ exports[`Term HOC component match expected snapshot for term with spase before 1
         "value": "Тем",
       }
     }
+    untermedPostfix=""
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        Тем
     </span>
   </Term>

@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {shape, number, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {localization} from 'utils';
+import {localization, defaults} from 'utils';
 
 class Term extends PureComponent {
     static propTypes = {
@@ -14,14 +14,27 @@ class Term extends PureComponent {
         className: string,
         spaceBefore: bool,
         spaceAfter: bool,
+        indentBefore: bool,
+        indentAfter: bool,
+        untermedPostfix: string,
         locale: string.isRequired
     };
 
+    static defaultProps = {
+        untermedPostfix: defaults.emptyString
+    };
+
     render() {
-        const {term, locale, className, spaceBefore, spaceAfter} = this.props;
-        const content = `${spaceBefore ? ' ' : ''}${localization.getTermTranslation(term, locale)}${spaceAfter ? ' ' : ''}`;
+        const {term, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter, untermedPostfix} = this.props;
+        const spaceBeforeString = spaceBefore ? defaults.spaceString : defaults.emptyString;
+        const spaceAfterString = spaceAfter ? defaults.spaceString : defaults.emptyString;
+        const content = `${spaceBeforeString}${localization.getTermTranslation(term, locale)}${untermedPostfix}${spaceAfterString}`;
+        const style = {
+            paddingLeft: indentBefore ? defaults.spaceWidth : defaults.emptyString,
+            paddingRight: indentAfter ? defaults.spaceWidth : defaults.emptyString
+        };
         return (
-            <span className={className}>
+            <span className={className} style={style}>
                 {content}
             </span>
         );

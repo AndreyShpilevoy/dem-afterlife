@@ -17,7 +17,9 @@ const createMediaQueryMinMax = (mediaMinString, mediaMaxString, model) => ({
 const defaults = {
     emptyObject: {},
     emptyArray: [],
-    emptyString: ''
+    emptyString: '',
+    spaceWidth: '0.25rem',
+    spaceString: ' '
 };
 
 export {root};

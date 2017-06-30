@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {instanceOf, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {localization} from 'utils';
+import {localization, defaults} from 'utils';
 
 class LocaleDateTime extends PureComponent {
     static propTypes = {
@@ -11,11 +11,13 @@ class LocaleDateTime extends PureComponent {
         locale: string.isRequired,
         className: string,
         spaceBefore: bool,
-        spaceAfter: bool
+        spaceAfter: bool,
+        indentBefore: bool,
+        indentAfter: bool
     };
 
     render() {
-        const {localeDateTime, locale, className, spaceBefore, spaceAfter} = this.props;
+        const {localeDateTime, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter} = this.props;
         const options = {
             day: 'numeric',
             month: 'short',
@@ -23,9 +25,15 @@ class LocaleDateTime extends PureComponent {
             hour: '2-digit',
             minute: '2-digit'
         };
-        const content = `${spaceBefore ? ' ' : ''}${localization.getLocaleDateTime(localeDateTime, locale, options)}${spaceAfter ? ' ' : ''}`;
+        const spaceBeforeString = spaceBefore ? defaults.spaceString : defaults.emptyString;
+        const spaceAfterString = spaceAfter ? defaults.spaceString : defaults.emptyString;
+        const content = `${spaceBeforeString}${localization.getLocaleDateTime(localeDateTime, locale, options)}${spaceAfterString}`;
+        const style = {
+            paddingLeft: indentBefore ? '0.3125rem' : defaults.emptyString,
+            paddingRight: indentAfter ? '0.3125rem' : defaults.emptyString
+        };
         return (
-            <span className={className}>
+            <span className={className} style={style}>
                 {content}
             </span>
         );

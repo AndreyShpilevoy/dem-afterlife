@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {instanceOf, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {localization} from 'utils';
+import {localization, defaults} from 'utils';
 
 class RelativeDateTime extends PureComponent {
     static propTypes = {
@@ -11,14 +11,22 @@ class RelativeDateTime extends PureComponent {
         locale: string.isRequired,
         className: string,
         spaceBefore: bool,
-        spaceAfter: bool
+        spaceAfter: bool,
+        indentBefore: bool,
+        indentAfter: bool
     };
 
     render() {
-        const {relativeDateTime, locale, className, spaceBefore, spaceAfter} = this.props;
-        const content = `${spaceBefore ? ' ' : ''}${localization.getRelativeDateTime(relativeDateTime, locale)}${spaceAfter ? ' ' : ''}`;
+        const {relativeDateTime, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter} = this.props;
+        const spaceBeforeString = spaceBefore ? defaults.spaceString : defaults.emptyString;
+        const spaceAfterString = spaceAfter ? defaults.spaceString : defaults.emptyString;
+        const content = `${spaceBeforeString}${localization.getRelativeDateTime(relativeDateTime, locale)}${spaceAfterString}`;
+        const style = {
+            paddingLeft: indentBefore ? '0.3125rem' : defaults.emptyString,
+            paddingRight: indentAfter ? '0.3125rem' : defaults.emptyString
+        };
         return (
-            <span className={className}>
+            <span className={className} style={style}>
                 {content}
             </span>
         );

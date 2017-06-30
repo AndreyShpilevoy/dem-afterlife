@@ -49,7 +49,14 @@ exports[`RelativeDateTime HOC component match expected snapshot for relative dat
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       some time ago
     </span>
   </RelativeDateTime>
@@ -107,7 +114,14 @@ exports[`RelativeDateTime HOC component match expected snapshot for relative dat
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       some time ago 
     </span>
   </RelativeDateTime>
@@ -165,7 +179,14 @@ exports[`RelativeDateTime HOC component match expected snapshot for relative dat
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        some time ago
     </span>
   </RelativeDateTime>
@@ -225,7 +246,14 @@ exports[`RelativeDateTime HOC component match expected snapshot for relative dat
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        some time ago 
     </span>
   </RelativeDateTime>

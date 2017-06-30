@@ -49,7 +49,14 @@ exports[`LocaleDateTime HOC component match expected snapshot for locale date 1`
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       Jun 2, 2017, 3:00 AM
     </span>
   </LocaleDateTime>
@@ -107,7 +114,14 @@ exports[`LocaleDateTime HOC component match expected snapshot for locale date wi
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
       Jun 2, 2017, 3:00 AM 
     </span>
   </LocaleDateTime>
@@ -165,7 +179,14 @@ exports[`LocaleDateTime HOC component match expected snapshot for locale date wi
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        Jun 2, 2017, 3:00 AM
     </span>
   </LocaleDateTime>
@@ -225,7 +246,14 @@ exports[`LocaleDateTime HOC component match expected snapshot for locale date wi
       }
     }
   >
-    <span>
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
        Jun 2, 2017, 3:00 AM 
     </span>
   </LocaleDateTime>

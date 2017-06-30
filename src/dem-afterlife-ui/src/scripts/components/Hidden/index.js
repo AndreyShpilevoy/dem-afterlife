@@ -8,7 +8,7 @@ const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map(size => `hidden-${size.direction}-${size.name}`)
         .reduce((previouse, current) =>
-        styles[current] ? `${previouse} ${styles[current]}` : '', '');
+        styles[current] ? `${previouse} ${styles[current]}` : defaults.emptyString, defaults.emptyString);
 
 export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onClick}) => {
     const classes = constructClassNames(

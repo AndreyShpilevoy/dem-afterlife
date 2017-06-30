@@ -13,11 +13,13 @@ import calculateStyles from './calculateStyles';
 
 const topicsTerm = {id: 1, value: 'Topics'};
 const postsTerm = {id: 2, value: 'Posts'};
-
+const lastPostTerm = {id: 3, value: 'Last message'};
 
 export const ForumPure = ({forumItem, styles}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forumItem;
-    const {bigText, smallText, center, lastTopicInfoWrapper} = styles;
+    const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline} = styles;
+    const centerAndRow = `${center} ${flexBoxRow}`;
+    const smallTextAndInline = `${smallText} ${displayInline}`;
     return (
             <div className={styles.mainContainer}>
                 <Row>
@@ -36,34 +38,43 @@ export const ForumPure = ({forumItem, styles}) => {
                                     {'subForumArray'}
                                 </Hidden>
                             </Column>
-                            <Column lg={2} className={center}>
+                            <Column lg={2} className={centerAndRow}>
                                 <Hidden lg={'up'}>
-                                    <Term term={topicsTerm}/>
+                                    <Term indentAfter term={topicsTerm} untermedPostfix={':'}/>
                                 </Hidden>
                                 {topicsCount}
                             </Column>
-                            <Column lg={2} className={center}>
+                            <Column lg={2} className={centerAndRow}>
                                 <Hidden lg={'up'}>
-                                    <Term term={postsTerm}/>
+                                    <Term indentBefore indentAfter term={postsTerm} untermedPostfix={':'}/>
                                 </Hidden>
                                 {postsCount}
                             </Column>
                         </Row>
                     </Column>
                     <Column xs={12} md={7} lg={3} className={center}>
-                        <Hidden sm={'down'}>
-                            <Hidden md={'down'}>
-                                <UserName color={lastTopicInfo.latesPostAutorGroupColor}
-                                    id={lastTopicInfo.latesPostAutorId}
-                                    name={lastTopicInfo.latesPostAutorName}/>
-                            </Hidden>
-                            <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
-                        </Hidden>
-                        <div className={lastTopicInfoWrapper}>
-                            <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={smallText}>
-                                {lastTopicInfo.lastActiveTopic}
-                            </Link>
-                        </div>
+                        <Row>
+                            <Column md={6} lg={12} className={center}>
+                                <Hidden sm={'down'}>
+                                    <Hidden md={'down'}>
+                                        <UserName color={lastTopicInfo.latesPostAutorGroupColor}
+                                            id={lastTopicInfo.latesPostAutorId}
+                                            name={lastTopicInfo.latesPostAutorName}/>
+                                    </Hidden>
+                                    <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
+                                </Hidden>
+                            </Column>
+                            <Column md={6} lg={12} className={center}>
+                                <div className={lastTopicInfoWrapper}>
+                                    <Hidden lg={'up'}>
+                                        <Term indentAfter term={lastPostTerm} untermedPostfix={':'}/>
+                                    </Hidden>
+                                    <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={smallTextAndInline}>
+                                        {lastTopicInfo.lastActiveTopic}
+                                    </Link>
+                                </div>
+                            </Column>
+                        </Row>
                     </Column>
                 </Row>
                 <div className={styles.separator}/>

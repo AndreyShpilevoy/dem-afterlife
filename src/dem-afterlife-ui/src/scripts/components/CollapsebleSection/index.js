@@ -7,6 +7,7 @@ import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import SvgIconsMapper from 'components/SvgIconsMapper';
 import {css, withStyles} from 'styles';
+import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 export class CollapsebleSectionPure extends PureComponent {
@@ -24,8 +25,7 @@ export class CollapsebleSectionPure extends PureComponent {
             collapsedByDefault: bool.isRequired,
             isCollapseble: bool.isRequired
         })
-    }
-    ;
+    };
     static defaultProps = {
         headerSettings: {
             title: null,
@@ -61,8 +61,8 @@ export class CollapsebleSectionPure extends PureComponent {
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
         const {bodyHolder, headerCursor, headerArrow, headerText, headerHolder, general, header, titleClass,
             termedSection, headerColumn, headerArrowHolder, body} = styles;
-        const classNameForClosedClass = collapsedState ? 'closed' : '';
-        const bodyHolderClass = css([bodyHolder, ...isCollapseble ? headerCursor : '', classNameForClosedClass]);
+        const classNameForClosedClass = collapsedState ? 'closed' : defaults.emptyString;
+        const bodyHolderClass = css([bodyHolder, ...isCollapseble ? headerCursor : defaults.emptyString, classNameForClosedClass]);
         const headerArrowClass = css([headerArrow, classNameForClosedClass]);
         const headerTextHolder = css([headerText, headerHolder]);
         const rowOnClick = () => this.handleTitleClick(!collapsedState);

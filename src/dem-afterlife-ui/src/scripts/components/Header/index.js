@@ -2,7 +2,7 @@
 
 import React, {PureComponent} from 'react';
 import {shape} from 'prop-types';
-import {throttle, root, sharedPropTypes} from 'utils';
+import {throttle, root, sharedPropTypes, defaults} from 'utils';
 import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
@@ -45,9 +45,9 @@ export class HeaderPure extends PureComponent {
         const {shrinkedHeader, menuIsClosed} = this.state;
         const {header, headerLogoContainer, headerColumn, navigationLinksContainer, fixedOnTheTop,
             headerMenuButtonContainer, navigationLinks, headerPadding} = styles;
-        const headerClassName = css([header, shrinkedHeader ? 'shrinkedHeader' : '']);
-        const headerLogoContainerClassName = css([headerLogoContainer, shrinkedHeader ? 'shrinkedHeader' : '']);
-        const navigationLinksContainerClassName = css([headerColumn, navigationLinksContainer, menuIsClosed ? 'closed' : '']);
+        const headerClassName = css([header, shrinkedHeader ? 'shrinkedHeader' : defaults.emptyString]);
+        const headerLogoContainerClassName = css([headerLogoContainer, shrinkedHeader ? 'shrinkedHeader' : defaults.emptyString]);
+        const navigationLinksContainerClassName = css([headerColumn, navigationLinksContainer, menuIsClosed ? 'closed' : defaults.emptyString]);
         const menuButtonOnClick = () => this.handleMenuButtonClick(!menuIsClosed);
         return (
             <div>

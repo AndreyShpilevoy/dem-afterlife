@@ -1,5 +1,5 @@
 import React from 'react';
-import {sharedPropTypes} from 'utils';
+import {sharedPropTypes, defaults} from 'utils';
 import CollapsebleSection from 'components/CollapsebleSection';
 import Forum from 'components/Forum';
 import Term from 'containers/Term';
@@ -18,7 +18,7 @@ const collapseSettings = {
     isCollapseble: true
 };
 
-const mapForums = forumArray => forumArray ? forumArray.map(x => <Forum key={x.id} forumItem={x} />) : '';
+const mapForums = forumArray => forumArray ? forumArray.map(x => <Forum key={x.id} forumItem={x} />) : defaults.emptyString;
 
 const Chapter = ({chapterItem}) =>
     <CollapsebleSection headerSettings={headerSettings(chapterItem.title)} collapseSettings={collapseSettings}>

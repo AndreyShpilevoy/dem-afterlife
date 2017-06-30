@@ -5,7 +5,7 @@ import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, styles) =>
-    css([styles.row, reverse ? 'reverse' : '']);
+    css([styles.row, reverse ? 'reverse' : defaults.emptyString]);
 
 export const RowPure = ({reverse, children, styles, className, onClick}) => {
     const localeClassName = `${constructClassNameString(reverse, styles)} ${className || defaults.emptyString}`;

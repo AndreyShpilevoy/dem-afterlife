@@ -3,6 +3,7 @@
 import React, {PureComponent} from 'react';
 import {func, shape} from 'prop-types';
 import {css, withStyles} from 'styles';
+import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 
@@ -29,7 +30,7 @@ export class MenuButtonPure extends PureComponent {
         const {styles} = this.props;
         const {container, firstLine, secondLine, thirdLine, fourthLine, allLines} = styles;
         const {opened} = this.state;
-        const openedClassName = opened ? 'open' : '';
+        const openedClassName = opened ? 'open' : defaults.emptyString;
         const firstLineStyle = css([firstLine, allLines, openedClassName]);
         const secondLineStyle = css([secondLine, allLines, openedClassName]);
         const thirdLineStyle = css([thirdLine, allLines, openedClassName]);
