@@ -4,6 +4,7 @@ import Link from 'components/Link';
 import Row from 'components/Row';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
+import UserName from 'components/UserName';
 import TermItem from 'containers/TermItem';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import {sharedPropTypes} from 'utils';
@@ -26,8 +27,10 @@ export const ForumPure = ({forumItem, styles}) => {
                                 <Link className={bigText} to={`/Conference/Forum/${id}`}>
                                     {title}
                                 </Link>
-                                <Hidden className={smallText} md={'down'}>
-                                    {description}
+                                <Hidden md={'down'}>
+                                    <div className={smallText}>
+                                        {description}
+                                    </div>
                                 </Hidden>
                                 <Hidden md={'down'}>
                                     {'subForumArray'}
@@ -50,11 +53,11 @@ export const ForumPure = ({forumItem, styles}) => {
                     <Column xs={12} md={7} lg={3} className={center}>
                         <Hidden sm={'down'}>
                             <Hidden md={'down'}>
-                                {lastTopicInfo.latesPostAutorName}
-                                {lastTopicInfo.latesPostAutorGroupColor}
-                                {lastTopicInfo.latesPostAutorId}
+                                <UserName color={lastTopicInfo.latesPostAutorGroupColor}
+                                    id={lastTopicInfo.latesPostAutorId}
+                                    name={lastTopicInfo.latesPostAutorName}/>
                             </Hidden>
-                            <RelativeDateTime relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
+                            <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
                         </Hidden>
                         <div className={lastTopicInfoWrapper}>
                             <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={smallText}>

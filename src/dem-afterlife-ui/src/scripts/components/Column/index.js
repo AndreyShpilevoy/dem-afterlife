@@ -1,6 +1,7 @@
 import React from 'react';
 import {func, node, number, string, oneOfType, shape} from 'prop-types';
 import {withStyles} from 'styles';
+import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, styles) =>
@@ -25,7 +26,7 @@ export const ColumnPure = (
         {name: 'xlOffset', count: xlOffset}],
         styles);
 
-    const localeClassName = `${classes} ${className || ''}`;
+    const localeClassName = `${classes} ${className || defaults.emptyString}`;
     return (
         <div className={localeClassName} onClick={onClick}>
             {children}

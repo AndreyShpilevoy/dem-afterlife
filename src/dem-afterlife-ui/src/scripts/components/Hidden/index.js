@@ -1,6 +1,7 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
 import {withStyles} from 'styles';
+import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, styles) =>
@@ -21,7 +22,7 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onC
         styles
     );
 
-    const localClassName = `${classes} ${className || ''}`;
+    const localClassName = `${classes} ${className || defaults.emptyString}`;
     return (
         <span className={localClassName} onClick={onClick}>
             {children}
