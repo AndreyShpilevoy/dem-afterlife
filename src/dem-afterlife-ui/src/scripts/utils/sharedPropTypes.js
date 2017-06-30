@@ -1,6 +1,6 @@
 import {arrayOf, shape, number, string, instanceOf} from 'prop-types';
 
-const subForumItem = shape({
+const subForum = shape({
     id: number.isRequired,
     title: string.isRequired,
     order: number.isRequired
@@ -21,7 +21,7 @@ const forumItem = shape({
         latesPostAutorName: string.isRequired,
         latesPostAutorGroupColor: string.isRequired
     }).isRequired,
-    subForumArray: arrayOf(subForumItem)
+    subForumArray: arrayOf(subForum)
 });
 const chapterItem = shape({
     id: number.isRequired,
@@ -49,8 +49,8 @@ const sharedPropTypes = {
     socialMediaLinkArray: arrayOf(socialMediaLinkItem).isRequired,
     forumItem,
     forumArray: arrayOf(forumItem).isRequired,
-    subForumItem,
-    subForumArray: arrayOf(subForumItem).isRequired,
+    subForum,
+    subForumArray: arrayOf(subForum).isRequired,
     chapterItem,
     chapterArray: arrayOf(chapterItem).isRequired
 };

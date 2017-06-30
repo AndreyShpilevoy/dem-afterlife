@@ -5,7 +5,7 @@ Object {
   "@global": Object {
     "body": Object {
       "margin": "initial",
-      "minWidth": "535px",
+      "minWidth": "initial",
     },
   },
 }

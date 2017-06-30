@@ -14,7 +14,7 @@ const topicsTerm = {id: 1, value: 'Topics'};
 const postsTerm = {id: 2, value: 'Posts'};
 
 
-export const ForumItemPure = ({forumItem, styles}) => {
+export const ForumPure = ({forumItem, styles}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forumItem;
     const {bigText, smallText, center, lastTopicInfoWrapper} = styles;
     return (
@@ -68,9 +68,9 @@ export const ForumItemPure = ({forumItem, styles}) => {
     );
 };
 
-ForumItemPure.propTypes = {
+ForumPure.propTypes = {
     forumItem: sharedPropTypes.forumItem,
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(ForumItemPure);
+export default withStyles(theme => calculateStyles(theme))(ForumPure);
