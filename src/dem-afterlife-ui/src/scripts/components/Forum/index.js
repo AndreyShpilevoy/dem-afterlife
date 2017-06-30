@@ -5,7 +5,7 @@ import Row from 'components/Row';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import UserName from 'components/UserName';
-import TermItem from 'containers/TermItem';
+import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
@@ -38,13 +38,13 @@ export const ForumPure = ({forumItem, styles}) => {
                             </Column>
                             <Column lg={2} className={center}>
                                 <Hidden lg={'up'}>
-                                    <TermItem term={topicsTerm}/>
+                                    <Term term={topicsTerm}/>
                                 </Hidden>
                                 {topicsCount}
                             </Column>
                             <Column lg={2} className={center}>
                                 <Hidden lg={'up'}>
-                                    <TermItem term={postsTerm}/>
+                                    <Term term={postsTerm}/>
                                 </Hidden>
                                 {postsCount}
                             </Column>

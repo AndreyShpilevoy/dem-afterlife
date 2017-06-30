@@ -5,7 +5,7 @@ import {shape, number, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
 import {localization} from 'utils';
 
-class TermItem extends PureComponent {
+class Term extends PureComponent {
     static propTypes = {
         term: shape({
             id: number.isRequired,
@@ -32,4 +32,4 @@ const mapStateToProps = ({layoutReducer}) => ({
     locale: layoutReducer.locale
 });
 
-export default connect(mapStateToProps)(TermItem);
+export default connect(mapStateToProps)(Term);
