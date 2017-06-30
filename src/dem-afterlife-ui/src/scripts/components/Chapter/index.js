@@ -1,7 +1,7 @@
 import React from 'react';
 import {sharedPropTypes} from 'utils';
 import CollapsebleSection from 'components/CollapsebleSection';
-import ForumItem from 'components/ForumItem';
+import Forum from 'components/Forum';
 import TermItem from 'containers/TermItem';
 
 const topicsTerm = {id: 1, value: 'Topics'};
@@ -18,11 +18,11 @@ const collapseSettings = {
     isCollapseble: true
 };
 
-const mapForumItems = forumArray => forumArray ? forumArray.map(x => <ForumItem key={x.id} forumItem={x} />) : '';
+const mapForums = forumArray => forumArray ? forumArray.map(x => <Forum key={x.id} forumItem={x} />) : '';
 
 const Chapter = ({chapterItem}) =>
     <CollapsebleSection headerSettings={headerSettings(chapterItem.title)} collapseSettings={collapseSettings}>
-        {mapForumItems(chapterItem.forumArray)}
+        {mapForums(chapterItem.forumArray)}
     </CollapsebleSection>;
 
 

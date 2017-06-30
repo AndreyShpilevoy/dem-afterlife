@@ -25,7 +25,7 @@ const calculateStyles = ({themeName, grid, navigationLinks}) =>
                 list: getNavigationLinksStyle(gridSize, navigationLinks),
                 separator: getNavigationSeparatorStyle(gridSize, navigationLinks)
             })
-        }), {options: {meta: 'NavigationLinkArray', themeName} });
+        }), {options: {meta: 'NavigationLinkList', themeName} });
 
 export default calculateStyles;
 

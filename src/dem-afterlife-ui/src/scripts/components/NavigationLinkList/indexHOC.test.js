@@ -3,12 +3,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
-import NavigationLinkArray from './index';
+import NavigationLinkList from './index';
 
 ThemedStyleSheet.default.get = () => {};
 
-describe('NavigationLinkArray HOC', () => {
+describe('NavigationLinkList HOC', () => {
     it('match expected snapshot', () => {
-        expect(shallow(<NavigationLinkArray theme={'default'} navigationLinkArray={[]}/>)).toMatchSnapshot();
+        expect(shallow(<NavigationLinkList theme={'default'} navigationLinkArray={[]}/>)).toMatchSnapshot();
     });
 });

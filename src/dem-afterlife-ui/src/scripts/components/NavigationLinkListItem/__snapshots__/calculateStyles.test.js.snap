@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavigationLinkItem calculateStyles should create expected object 1`] = `
+exports[`NavigationLinkListItem calculateStyles should create expected object 1`] = `
 Object {
   "@media (min-width: 0px) and (max-width: 575px)": Object {
     "link": Object {
@@ -23,7 +23,7 @@ Object {
     },
   },
   "options": Object {
-    "meta": "NavigationLinkItem",
+    "meta": "NavigationLinkListItem",
     "themeName": "default",
   },
 }

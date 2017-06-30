@@ -43,7 +43,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           xl={9}
           xs={12}
         >
-          <withStyles(NavigationLinkArrayPure)
+          <withStyles(NavigationLinkListPure)
             className="default-Header-navigationLinks"
             navigationLinkArray={Array []}
           />

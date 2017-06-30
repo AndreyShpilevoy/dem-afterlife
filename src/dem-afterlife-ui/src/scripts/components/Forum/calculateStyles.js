@@ -38,7 +38,7 @@ const calculateStyles = ({themeName}) => ({
         width: '100%',
         textAlign: 'center'
     },
-    options: {meta: 'ForumItem', themeName}
+    options: {meta: 'Forum', themeName}
 });
 
 export default calculateStyles;

@@ -2,20 +2,20 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import {NavigationLinkArrayPure} from './index';
+import {NavigationLinkListPure} from './index';
 
-describe('NavigationLinkArray Pure', () => {
+describe('NavigationLinkList Pure', () => {
     const styles = {
-        list: 'default-NavigationLinkArray-list',
-        separator: 'default-NavigationLinkArray-separator'
+        list: 'default-NavigationLinkList-list',
+        separator: 'default-NavigationLinkList-separator'
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<NavigationLinkArrayPure styles={styles} navigationLinkArray={[]}/>)).toMatchSnapshot();
+        expect(shallow(<NavigationLinkListPure styles={styles} navigationLinkArray={[]}/>)).toMatchSnapshot();
     });
 
     it('component with many navigationLinkItems match expected snapshot', () => {
         const navigationLinkItems = [{id: 1, title: 'Conference', href: '/', order: 1}, {id: 2, title: 'Link 2 autogen', href: '/', order: 2}];
-        expect(shallow(<NavigationLinkArrayPure styles={styles} navigationLinkArray={navigationLinkItems}/>)).toMatchSnapshot();
+        expect(shallow(<NavigationLinkListPure styles={styles} navigationLinkArray={navigationLinkItems}/>)).toMatchSnapshot();
     });
 });

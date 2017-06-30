@@ -3,12 +3,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
-import NavigationLinkItem from './index';
+import NavigationLinkListItem from './index';
 
 ThemedStyleSheet.default.get = () => {};
 
-describe('NavigationLinkItem HOC', () => {
+describe('NavigationLinkListItem HOC', () => {
     it('match expected snapshot', () => {
-        expect(shallow(<NavigationLinkItem theme={'default'} navigationLinkItem={{id: 1, title: 'title', href: '/', order: 1}}/>)).toMatchSnapshot();
+        expect(shallow(<NavigationLinkListItem theme={'default'} navigationLinkItem={{id: 1, title: 'title', href: '/', order: 1}}/>)).toMatchSnapshot();
     });
 });
