@@ -5,14 +5,14 @@ import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const NavigationLinkItemPure = ({styles, navigationLinkItem}) =>
+export const NavigationLinkListItemPure = ({styles, navigationLinkItem}) =>
     <li>
         <Link className={styles.link} to={navigationLinkItem.href}>
             {navigationLinkItem.title}
         </Link>
     </li>;
 
-NavigationLinkItemPure.propTypes = {
+NavigationLinkListItemPure.propTypes = {
     styles: shape().isRequired,
     navigationLinkItem: shape({
         id: number.isRequired,
@@ -22,4 +22,4 @@ NavigationLinkItemPure.propTypes = {
     }).isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(NavigationLinkItemPure);
+export default withStyles(theme => calculateStyles(theme))(NavigationLinkListItemPure);

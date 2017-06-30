@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavigationLinkArray Pure component match expected snapshot 1`] = `
+exports[`NavigationLinkList Pure component match expected snapshot 1`] = `
 <ul
-  className="default-NavigationLinkArray-list "
+  className="default-NavigationLinkList-list "
 />
 `;
 
-exports[`NavigationLinkArray Pure component with many navigationLinkItems match expected snapshot 1`] = `
+exports[`NavigationLinkList Pure component with many navigationLinkItems match expected snapshot 1`] = `
 <ul
-  className="default-NavigationLinkArray-list "
+  className="default-NavigationLinkList-list "
 >
   <div>
-    <withStyles(NavigationLinkItemPure)
+    <withStyles(NavigationLinkListItemPure)
       navigationLinkItem={
         Object {
           "href": "/",
@@ -22,11 +22,11 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
       }
     />
     <div
-      className="default-NavigationLinkArray-separator"
+      className="default-NavigationLinkList-separator"
     />
   </div>
   <div>
-    <withStyles(NavigationLinkItemPure)
+    <withStyles(NavigationLinkListItemPure)
       navigationLinkItem={
         Object {
           "href": "/",
@@ -37,7 +37,7 @@ exports[`NavigationLinkArray Pure component with many navigationLinkItems match 
       }
     />
     <div
-      className="default-NavigationLinkArray-separator"
+      className="default-NavigationLinkList-separator"
     />
   </div>
 </ul>

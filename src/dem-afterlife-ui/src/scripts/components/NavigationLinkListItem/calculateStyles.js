@@ -26,7 +26,7 @@ const calculateStyles = ({themeName, grid, navigationLinks}) =>
             ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {
                 link: getNavigationLinkStyle(gridSize, navigationLinks)
             })
-        }), {options: {meta: 'NavigationLinkItem', themeName} });
+        }), {options: {meta: 'NavigationLinkListItem', themeName} });
 
 export default calculateStyles;
 

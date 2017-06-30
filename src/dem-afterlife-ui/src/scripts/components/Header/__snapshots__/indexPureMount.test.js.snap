@@ -617,25 +617,25 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       <div
                         className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Column-col-xl-9 default-Header-headerColumn default-Header-navigationLinksContainer closed"
                       >
-                        <withStyles(NavigationLinkArrayPure)
+                        <withStyles(NavigationLinkListPure)
                           className="default-Header-navigationLinks"
                           navigationLinkArray={Array []}
                         >
-                          <NavigationLinkArrayPure
+                          <NavigationLinkListPure
                             className="default-Header-navigationLinks"
                             navigationLinkArray={Array []}
                             styles={
                               Object {
-                                "list": "default-NavigationLinkArray-list",
-                                "separator": "default-NavigationLinkArray-separator",
+                                "list": "default-NavigationLinkList-list",
+                                "separator": "default-NavigationLinkList-separator",
                               }
                             }
                           >
                             <ul
-                              className="default-NavigationLinkArray-list default-Header-navigationLinks"
+                              className="default-NavigationLinkList-list default-Header-navigationLinks"
                             />
-                          </NavigationLinkArrayPure>
-                        </withStyles(NavigationLinkArrayPure)>
+                          </NavigationLinkListPure>
+                        </withStyles(NavigationLinkListPure)>
                       </div>
                     </ColumnPure>
                   </withStyles(ColumnPure)>
@@ -1270,25 +1270,25 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       <div
                         className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Column-col-xl-9 default-Header-headerColumn default-Header-navigationLinksContainer closed"
                       >
-                        <withStyles(NavigationLinkArrayPure)
+                        <withStyles(NavigationLinkListPure)
                           className="default-Header-navigationLinks"
                           navigationLinkArray={Array []}
                         >
-                          <NavigationLinkArrayPure
+                          <NavigationLinkListPure
                             className="default-Header-navigationLinks"
                             navigationLinkArray={Array []}
                             styles={
                               Object {
-                                "list": "default-NavigationLinkArray-list",
-                                "separator": "default-NavigationLinkArray-separator",
+                                "list": "default-NavigationLinkList-list",
+                                "separator": "default-NavigationLinkList-separator",
                               }
                             }
                           >
                             <ul
-                              className="default-NavigationLinkArray-list default-Header-navigationLinks"
+                              className="default-NavigationLinkList-list default-Header-navigationLinks"
                             />
-                          </NavigationLinkArrayPure>
-                        </withStyles(NavigationLinkArrayPure)>
+                          </NavigationLinkListPure>
+                        </withStyles(NavigationLinkListPure)>
                       </div>
                     </ColumnPure>
                   </withStyles(ColumnPure)>

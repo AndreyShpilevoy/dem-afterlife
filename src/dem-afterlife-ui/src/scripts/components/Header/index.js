@@ -9,7 +9,7 @@ import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import Logotype from 'components/Logotype';
 import MenuButton from 'components/MenuButton';
-import NavigationLinkArray from 'components/NavigationLinkArray';
+import NavigationLinkList from 'components/NavigationLinkList';
 import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -63,7 +63,7 @@ export class HeaderPure extends PureComponent {
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>
-                                <NavigationLinkArray navigationLinkArray={navigationLinkArray} className={navigationLinks}/>
+                                <NavigationLinkList navigationLinkArray={navigationLinkArray} className={navigationLinks}/>
                             </Column>
                         </Row>
                     </div>

@@ -1,7 +1,7 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
 import calculateStyles from './calculateStyles';
 
-describe('NavigationLinkItem calculateStyles', () => {
+describe('NavigationLinkListItem calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
         navigationLinks: {

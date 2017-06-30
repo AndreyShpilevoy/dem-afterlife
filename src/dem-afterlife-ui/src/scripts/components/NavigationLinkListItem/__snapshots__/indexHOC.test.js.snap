@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkListItem HOC match expected snapshot 1`] = `
+<NavigationLinkListItemPure
+  navigationLinkItem={
+    Object {
+      "href": "/",
+      "id": 1,
+      "order": 1,
+      "title": "title",
+    }
+  }
+  styles={
+    Object {
+      ".default-NavigationLinkListItem-link:hover": "default-NavigationLinkListItem-link:hover",
+      "link": "default-NavigationLinkListItem-link",
+    }
+  }
+/>
+`;
