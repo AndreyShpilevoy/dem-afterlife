@@ -6,10 +6,12 @@ const getStyles = color => ({
     color
 });
 
-const UserName = ({name, color, id}) =>
-    <Link style={getStyles(color)} to={`/UserProfile/${id}`}>
+const UserName = ({name, color, id}) => {
+    const linkToProfile = `/UserProfile/${id}`;
+    return <Link style={getStyles(color)} to={linkToProfile}>
         {name}
     </Link>;
+};
 
 UserName.propTypes = {
     color: string,

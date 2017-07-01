@@ -1,0 +1,11 @@
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+
+import React from 'react';
+import {shallow} from 'enzyme';
+import IconSubForum from './index';
+
+describe('IconSubForum', () => {
+    it('component match expected snapshot', () => {
+        expect(shallow(<IconSubForum className={'steamIconClassName'}/>)).toMatchSnapshot();
+    });
+});
