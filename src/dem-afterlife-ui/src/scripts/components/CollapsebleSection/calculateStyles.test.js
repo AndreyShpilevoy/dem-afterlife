@@ -30,7 +30,8 @@ describe('CollapsebleSection calculateStyles', () => {
                 backgroundColor: 'colors.collapsebleSectionHeaderBackgroundColor',
                 color: 'colors.orangeColor',
                 height: 2.5,
-                fontSize: 1.25
+                fontSize: 1.25,
+                iconSize: 1.3
             },
             body: {
                 backgroundColor: 'colors.collapsebleSectionBodyBackgroundColor',

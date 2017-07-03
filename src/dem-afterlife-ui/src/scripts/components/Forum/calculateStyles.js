@@ -6,17 +6,18 @@ createMediaQueryMax(mediaMaxString, {flexDirection: 'row'});
 const getDisplayInline = mediaMaxString =>
 createMediaQueryMax(mediaMaxString, {display: 'inline'});
 
-const calculateStyles = ({themeName, grid}) => {
+const calculateStyles = ({themeName, grid, forum}) => {
+    const {separator, text, subForumContainer} = forum;
     const {mediaMaxString: mdMediaMaxString} = grid.containers.find(x => x.gridSize === 'md');
     const {mediaMaxString: smMediaMaxString} = grid.containers.find(x => x.gridSize === 'sm');
     return {
         separator: {
-            backgroundColor: '#9C877C',
-            height: 0.125,
-            marginTop: 0.3,
-            marginBottom: 0.3,
-            marginLeft: 0,
-            marginRight: 0.3
+            backgroundColor: separator.backgroundColor,
+            height: separator.height,
+            marginTop: separator.marginVertical,
+            marginBottom: separator.marginVertical,
+            marginLeft: separator.marginHorizontal,
+            marginRight: separator.marginHorizontal
         },
         mainContainer: {
             '&:last-child': {
@@ -27,14 +28,14 @@ const calculateStyles = ({themeName, grid}) => {
         },
         bigText: {
             display: 'block',
-            fontSize: 1.3125,
+            fontSize: text.big,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap'
         },
         smallText: {
             display: 'block',
-            fontSize: 0.8,
+            fontSize: text.small,
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap'
@@ -50,7 +51,7 @@ const calculateStyles = ({themeName, grid}) => {
             textAlign: 'center'
         },
         subForumContainer: {
-            marginTop: 0.5
+            marginTop: subForumContainer.marginTop
         },
         flexBoxRow: getFlexDirection(mdMediaMaxString),
         displayInline: getDisplayInline(smMediaMaxString),

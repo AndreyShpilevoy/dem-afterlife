@@ -79,8 +79,8 @@ const getSizeSpecific = (grid, collapsebleSection) =>
                 },
                 headerArrow: {
                     display: 'block',
-                    width: 1.3,
-                    height: 1.3,
+                    width: collapsebleSection.header.iconSize,
+                    height: collapsebleSection.header.iconSize,
                     transform: 'rotate(-90deg)',
                     transformOrigin: 'center center',
                     transition: 'transform 0.5s ease-in',
@@ -88,8 +88,8 @@ const getSizeSpecific = (grid, collapsebleSection) =>
                         transform: 'rotate(0deg)'
                     },
                     '& > .SVGInline-svg': {
-                        width: 1.3,
-                        height: 1.3,
+                        width: collapsebleSection.header.iconSize,
+                        height: collapsebleSection.header.iconSize,
                         fill: collapsebleSection.header.color
                     }
                 },

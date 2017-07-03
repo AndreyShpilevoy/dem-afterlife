@@ -17,7 +17,9 @@ const colors = {
     footerTextColor: '#CFB095',
     collapsebleSectionHeaderBackgroundColor: '#564B41',
     contentHolderBodyTextColor: '#48423D',
-    collapsebleSectionBodyBackgroundColor: '#7B736B'
+    collapsebleSectionBodyBackgroundColor: '#7B736B',
+    forumSecondaryBackgroungColor: '#9C877C'
+
 };
 
 const sizes = {
@@ -74,6 +76,14 @@ const footerXsSmMd = {
 
 const footerLgXl = {
     height: 2.5
+};
+
+const subForum = {
+    marginTop: 0.5,
+    backgroundColor: colors.forumSecondaryBackgroungColor,
+    paddingLeft: 0.125,
+    iconTransform: 'translateY(-0.125rem)',
+    iconSize: 1.3125
 };
 
 const defaultTheme = {
@@ -186,14 +196,32 @@ const defaultTheme = {
             backgroundColor: colors.collapsebleSectionHeaderBackgroundColor,
             color: colors.orangeColor,
             height: 2.5,
-            fontSize: 1.3125
+            fontSize: 1.3125,
+            iconSize: 1.3
         },
         body: {
             backgroundColor: colors.collapsebleSectionBodyBackgroundColor,
             color: colors.contentHolderBodyTextColor,
             transition: linearTransition
         }
-    }
+    },
+    forum: {
+        separator: {
+            backgroundColor: colors.forumSecondaryBackgroungColor,
+            height: 0.125,
+            marginVertical: 0.3,
+            marginHorizontal: 0
+        },
+        text: {
+            big: 1.3125,
+            small: 0.8
+        },
+        subForumContainer: {
+            marginTop: subForum.marginTop
+        }
+    },
+    subForum
+
 };
 
 export default defaultTheme;

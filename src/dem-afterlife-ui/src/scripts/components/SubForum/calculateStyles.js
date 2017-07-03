@@ -1,17 +1,17 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = ({themeName, subForum}) => ({
     link: {
-        paddingLeft: 0.125
+        paddingLeft: subForum.paddingLeft
     },
     icon: {
         '& > .SVGInline-svg': {
-            height: 1.3125,
-            width: 1.3125,
-            fill: '#9C877C',
-            transform: `translateY(${- 0.125}rem)`
+            height: subForum.iconSize,
+            width: subForum.iconSize,
+            fill: subForum.backgroundColor,
+            transform: subForum.iconTransform
         }
     },
     container: {
-        marginTop: - 0.5
+        marginTop: - subForum.marginTop
     },
     options: {meta: 'SubForum', themeName}
 });
