@@ -16,8 +16,8 @@ const topicsTerm = {id: 1, value: 'Topics'};
 const postsTerm = {id: 2, value: 'Posts'};
 const lastPostTerm = {id: 3, value: 'Last message'};
 
-export const ForumPure = ({forumItem, styles}) => {
-    const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forumItem;
+export const ForumPure = ({forum, styles}) => {
+    const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forum;
     const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline} = styles;
     const centerAndRow = `${center} ${flexBoxRow}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
@@ -88,7 +88,7 @@ export const ForumPure = ({forumItem, styles}) => {
 };
 
 ForumPure.propTypes = {
-    forumItem: sharedPropTypes.forumItem,
+    forum: sharedPropTypes.forum,
     styles: shape().isRequired
 };
 

@@ -5,7 +5,7 @@ const subForum = shape({
     title: string.isRequired,
     order: number.isRequired
 });
-const forumItem = shape({
+const forum = shape({
     id: number.isRequired,
     chapterId: number,
     order: number.isRequired,
@@ -23,11 +23,11 @@ const forumItem = shape({
     }).isRequired,
     subForumArray: arrayOf(subForum)
 });
-const chapterItem = shape({
+const chapter = shape({
     id: number.isRequired,
     title: string.isRequired,
     order: number.isRequired,
-    forumArray: arrayOf(forumItem)
+    forumArray: arrayOf(forum)
 });
 const navigationLinkItem = shape({
     id: number.isRequired,
@@ -47,12 +47,12 @@ const sharedPropTypes = {
     navigationLinkArray: arrayOf(navigationLinkItem).isRequired,
     socialMediaLinkItem,
     socialMediaLinkArray: arrayOf(socialMediaLinkItem).isRequired,
-    forumItem,
-    forumArray: arrayOf(forumItem).isRequired,
+    forum,
+    forumArray: arrayOf(forum).isRequired,
     subForum,
     subForumArray: arrayOf(subForum).isRequired,
-    chapterItem,
-    chapterArray: arrayOf(chapterItem).isRequired
+    chapter,
+    chapterArray: arrayOf(chapter).isRequired
 };
 
 export default sharedPropTypes;

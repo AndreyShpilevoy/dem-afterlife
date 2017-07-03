@@ -19,7 +19,7 @@ class Conference extends PureComponent {
     }
 
     mapChapterArrayToComponent = chapterArray =>
-        chapterArray.map((chapterItem, key) => <Chapter key={key} chapterItem={chapterItem}/>);
+        chapterArray.map((chapter, key) => <Chapter key={key} chapter={chapter}/>);
 
     render() {
         return (

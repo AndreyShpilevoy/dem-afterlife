@@ -91,10 +91,10 @@ const forumArray = [
             latesPostAutorGroupColor: '#ff00ff'
         },
         subForumArray: [
-            {id: 51, title: 'FAQ', order: 51},
+            {id: 51, title: 'FAQ', order: 57},
             {id: 52, title: 'Юзербары', order: 52},
             {id: 53, title: 'О игре', order: 53},
-            {id: 54, title: 'Видео', order: 54},
+            {id: 54, title: 'Видео', order: 51},
             {id: 55, title: 'Рассказы', order: 55},
             {id: 56, title: 'Каталог файлов', order: 56}
         ]

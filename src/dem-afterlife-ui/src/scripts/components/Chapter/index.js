@@ -18,16 +18,16 @@ const collapseSettings = {
     isCollapseble: true
 };
 
-const mapForums = forumArray => forumArray ? forumArray.map(x => <Forum key={x.id} forumItem={x} />) : defaults.emptyString;
+const mapForums = forumArray => forumArray ? forumArray.map(x => <Forum key={x.id} forum={x} />) : defaults.emptyString;
 
-const Chapter = ({chapterItem}) =>
-    <CollapsebleSection headerSettings={headerSettings(chapterItem.title)} collapseSettings={collapseSettings}>
-        {mapForums(chapterItem.forumArray)}
+const Chapter = ({chapter}) =>
+    <CollapsebleSection headerSettings={headerSettings(chapter.title)} collapseSettings={collapseSettings}>
+        {mapForums(chapter.forumArray)}
     </CollapsebleSection>;
 
 
 Chapter.propTypes = {
-    chapterItem: sharedPropTypes.chapterItem
+    chapter: sharedPropTypes.chapter
 };
 
 export default Chapter;
