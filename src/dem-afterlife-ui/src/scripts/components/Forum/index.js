@@ -7,6 +7,7 @@ import Hidden from 'components/Hidden';
 import UserName from 'components/UserName';
 import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
+import SvgIconsMapper from 'components/SvgIconsMapper';
 import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
@@ -20,13 +21,15 @@ export const ForumPure = ({forumItem, styles}) => {
     const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline} = styles;
     const centerAndRow = `${center} ${flexBoxRow}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
+    const linkToForum = `/Conference/Forum/${id}`;
+    const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`;
     return (
             <div className={styles.mainContainer}>
                 <Row>
                     <Column xs={12} md={5} lg={9}>
                         <Row>
                             <Column xs={12} lg={8}>
-                                <Link className={bigText} to={`/Conference/Forum/${id}`}>
+                                <Link className={bigText} to={linkToForum}>
                                     {title}
                                 </Link>
                                 <Hidden md={'down'}>
@@ -36,6 +39,7 @@ export const ForumPure = ({forumItem, styles}) => {
                                 </Hidden>
                                 <Hidden md={'down'}>
                                     {'subForumArray'}
+                                    <SvgIconsMapper iconName={'IconSubForum'}/>
                                 </Hidden>
                             </Column>
                             <Column lg={2} className={centerAndRow}>
@@ -60,6 +64,7 @@ export const ForumPure = ({forumItem, styles}) => {
                                         <UserName color={lastTopicInfo.latesPostAutorGroupColor}
                                             id={lastTopicInfo.latesPostAutorId}
                                             name={lastTopicInfo.latesPostAutorName}/>
+                                        {' - '}
                                     </Hidden>
                                     <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
                                 </Hidden>
@@ -69,7 +74,7 @@ export const ForumPure = ({forumItem, styles}) => {
                                     <Hidden lg={'up'}>
                                         <Term indentAfter term={lastPostTerm} untermedPostfix={':'}/>
                                     </Hidden>
-                                    <Link to={`/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`} className={smallTextAndInline}>
+                                    <Link to={linkToLastActiveTopic} className={smallTextAndInline}>
                                         {lastTopicInfo.lastActiveTopic}
                                     </Link>
                                 </div>
