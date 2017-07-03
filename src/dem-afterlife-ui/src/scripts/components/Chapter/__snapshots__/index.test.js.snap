@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chapter component match expected snapshot with forumArray 1`] = `
+<withStyles(CollapsebleSectionPure)
+  collapseSettings={
+    Object {
+      "collapsedByDefault": true,
+      "isCollapseble": true,
+    }
+  }
+  headerSettings={
+    Object {
+      "firstColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 1,
+                "value": "Topics",
+              }
+        }
+    />,
+      "secondColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 2,
+                "value": "Posts",
+              }
+        }
+    />,
+      "thirdColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 3,
+                "value": "Last message in",
+              }
+        }
+    />,
+      "title": "Ex Machina Меридиан 113",
+    }
+  }
+>
+  <withStyles(ForumPure)
+    forum={
+      Object {
+        "chapterId": 4,
+        "description": "Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.",
+        "id": 40,
+        "lastTopicInfo": Object {
+          "lastActiveTopic": "Exporter Ex Machina for Maya",
+          "lastActiveTopicId": 4,
+          "latesPostAutorGroupColor": "#00AA00",
+          "latesPostAutorId": 4,
+          "latesPostAutorName": "Buba",
+          "latesPostTimeCreation": 2007-09-06T19:33:09.000Z,
+        },
+        "order": 4,
+        "postsCount": 864,
+        "title": "Вопросы по созданию моделей",
+        "topicsCount": 4,
+      }
+    }
+  />
+</withStyles(CollapsebleSectionPure)>
+`;
+
+exports[`Chapter component match expected snapshot without forumArray 1`] = `
+<withStyles(CollapsebleSectionPure)
+  collapseSettings={
+    Object {
+      "collapsedByDefault": true,
+      "isCollapseble": true,
+    }
+  }
+  headerSettings={
+    Object {
+      "firstColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 1,
+                "value": "Topics",
+              }
+        }
+    />,
+      "secondColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 2,
+                "value": "Posts",
+              }
+        }
+    />,
+      "thirdColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 3,
+                "value": "Last message in",
+              }
+        }
+    />,
+      "title": "Ex Machina Меридиан 113",
+    }
+  }
+/>
+`;

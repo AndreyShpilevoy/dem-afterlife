@@ -4,8 +4,37 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import Chapter from './index';
 
+jest.mock('components/Forum');
+
 describe('Chapter', () => {
-    it('component match expected snapshot', () => {
-        // expect(shallow(<Chapter className={'chapterClassName'}/>)).toMatchSnapshot();
+    it('component match expected snapshot without forumArray', () => {
+        const chapter = {id: 2, title: 'Ex Machina Меридиан 113', order: 2, forumArray: [] };
+        expect(shallow(<Chapter className={'chapterClassName'} chapter={chapter}/>)).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot with forumArray', () => {
+        const chapter = {
+            id: 2,
+            title: 'Ex Machina Меридиан 113',
+            order: 2,
+            forumArray: [{
+                id: 40,
+                chapterId: 4,
+                order: 4,
+                title: 'Вопросы по созданию моделей',
+                description: 'Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.',
+                topicsCount: 4,
+                postsCount: 864,
+                lastTopicInfo: {
+                    lastActiveTopicId: 4,
+                    lastActiveTopic: 'Exporter Ex Machina for Maya',
+                    latesPostTimeCreation: new Date('2007/09/06 22:33:09'),
+                    latesPostAutorId: 4,
+                    latesPostAutorName: 'Buba',
+                    latesPostAutorGroupColor: '#00AA00'
+                } }
+            ]
+        };
+        expect(shallow(<Chapter className={'chapterClassName'} chapter={chapter}/>)).toMatchSnapshot();
     });
 });

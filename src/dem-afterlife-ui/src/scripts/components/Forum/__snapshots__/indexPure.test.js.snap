@@ -1,0 +1,354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
+<div
+  className="default-Forum-mainContainer"
+>
+  <withStyles(RowPure)>
+    <withStyles(ColumnPure)
+      lg={9}
+      md={5}
+      xs={12}
+    >
+      <withStyles(RowPure)>
+        <withStyles(ColumnPure)
+          lg={8}
+          xs={12}
+        >
+          <withStyles(LinkPure)
+            className="default-Forum-bigText"
+            to="/Conference/Forum/40"
+          >
+            Вопросы по созданию моделей
+          </withStyles(LinkPure)>
+          <withStyles(HiddenPure)
+            md="down"
+          >
+            <div
+              className="default-Forum-smallText"
+            >
+              Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.
+            </div>
+          </withStyles(HiddenPure)>
+          <withStyles(HiddenPure)
+            md="down"
+          >
+            <div
+              className="default-Forum-subForumContainer"
+            >
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 51,
+                    "order": 57,
+                    "title": "FAQ",
+                  }
+                }
+              />
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 52,
+                    "order": 52,
+                    "title": "Юзербары",
+                  }
+                }
+              />
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 53,
+                    "order": 53,
+                    "title": "О игре",
+                  }
+                }
+              />
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 54,
+                    "order": 51,
+                    "title": "Видео",
+                  }
+                }
+              />
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 55,
+                    "order": 55,
+                    "title": "Рассказы",
+                  }
+                }
+              />
+              <withStyles(SubForumPure)
+                subForum={
+                  Object {
+                    "id": 56,
+                    "order": 56,
+                    "title": "Каталог файлов",
+                  }
+                }
+              />
+            </div>
+          </withStyles(HiddenPure)>
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center default-Forum-flexBoxRow"
+          lg={2}
+        >
+          <withStyles(HiddenPure)
+            lg="up"
+          >
+            <Connect(Term)
+              indentAfter={true}
+              term={
+                Object {
+                  "id": 1,
+                  "value": "Topics",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </withStyles(HiddenPure)>
+          4
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center default-Forum-flexBoxRow"
+          lg={2}
+        >
+          <withStyles(HiddenPure)
+            lg="up"
+          >
+            <Connect(Term)
+              indentAfter={true}
+              indentBefore={true}
+              term={
+                Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </withStyles(HiddenPure)>
+          864
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+    </withStyles(ColumnPure)>
+    <withStyles(ColumnPure)
+      className="default-Forum-center"
+      lg={3}
+      md={7}
+      xs={12}
+    >
+      <withStyles(RowPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          md={6}
+        >
+          <withStyles(HiddenPure)
+            sm="down"
+          >
+            <withStyles(HiddenPure)
+              md="down"
+            >
+              <UserName
+                color="#00AA00"
+                id={4}
+                name="Buba"
+              />
+               - 
+            </withStyles(HiddenPure)>
+            <Connect(RelativeDateTime)
+              relativeDateTime={2007-09-06T19:33:09.000Z}
+              spaceBefore={true}
+            />
+          </withStyles(HiddenPure)>
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          md={6}
+        >
+          <div
+            className="default-Forum-lastTopicInfoWrapper"
+          >
+            <withStyles(HiddenPure)
+              lg="up"
+            >
+              <Connect(Term)
+                indentAfter={true}
+                term={
+                  Object {
+                    "id": 3,
+                    "value": "Last message",
+                  }
+                }
+                untermedPostfix=":"
+              />
+            </withStyles(HiddenPure)>
+            <withStyles(LinkPure)
+              className="default-Forum-smallText default-Forum-displayInline"
+              to="/Conference/Topic/4"
+            >
+              Exporter Ex Machina for Maya
+            </withStyles(LinkPure)>
+          </div>
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+    </withStyles(ColumnPure)>
+  </withStyles(RowPure)>
+  <div
+    className="default-Forum-separator"
+  />
+</div>
+`;
+
+exports[`ForumPure component match expected snapshot without subForumArray 1`] = `
+<div
+  className="default-Forum-mainContainer"
+>
+  <withStyles(RowPure)>
+    <withStyles(ColumnPure)
+      lg={9}
+      md={5}
+      xs={12}
+    >
+      <withStyles(RowPure)>
+        <withStyles(ColumnPure)
+          lg={8}
+          xs={12}
+        >
+          <withStyles(LinkPure)
+            className="default-Forum-bigText"
+            to="/Conference/Forum/40"
+          >
+            Вопросы по созданию моделей
+          </withStyles(LinkPure)>
+          <withStyles(HiddenPure)
+            md="down"
+          >
+            <div
+              className="default-Forum-smallText"
+            >
+              Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.
+            </div>
+          </withStyles(HiddenPure)>
+          <withStyles(HiddenPure)
+            md="down"
+          />
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center default-Forum-flexBoxRow"
+          lg={2}
+        >
+          <withStyles(HiddenPure)
+            lg="up"
+          >
+            <Connect(Term)
+              indentAfter={true}
+              term={
+                Object {
+                  "id": 1,
+                  "value": "Topics",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </withStyles(HiddenPure)>
+          4
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center default-Forum-flexBoxRow"
+          lg={2}
+        >
+          <withStyles(HiddenPure)
+            lg="up"
+          >
+            <Connect(Term)
+              indentAfter={true}
+              indentBefore={true}
+              term={
+                Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </withStyles(HiddenPure)>
+          864
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+    </withStyles(ColumnPure)>
+    <withStyles(ColumnPure)
+      className="default-Forum-center"
+      lg={3}
+      md={7}
+      xs={12}
+    >
+      <withStyles(RowPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          md={6}
+        >
+          <withStyles(HiddenPure)
+            sm="down"
+          >
+            <withStyles(HiddenPure)
+              md="down"
+            >
+              <UserName
+                color="#00AA00"
+                id={4}
+                name="Buba"
+              />
+               - 
+            </withStyles(HiddenPure)>
+            <Connect(RelativeDateTime)
+              relativeDateTime={2007-09-06T19:33:09.000Z}
+              spaceBefore={true}
+            />
+          </withStyles(HiddenPure)>
+        </withStyles(ColumnPure)>
+        <withStyles(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          md={6}
+        >
+          <div
+            className="default-Forum-lastTopicInfoWrapper"
+          >
+            <withStyles(HiddenPure)
+              lg="up"
+            >
+              <Connect(Term)
+                indentAfter={true}
+                term={
+                  Object {
+                    "id": 3,
+                    "value": "Last message",
+                  }
+                }
+                untermedPostfix=":"
+              />
+            </withStyles(HiddenPure)>
+            <withStyles(LinkPure)
+              className="default-Forum-smallText default-Forum-displayInline"
+              to="/Conference/Topic/4"
+            >
+              Exporter Ex Machina for Maya
+            </withStyles(LinkPure)>
+          </div>
+        </withStyles(ColumnPure)>
+      </withStyles(RowPure)>
+    </withStyles(ColumnPure)>
+  </withStyles(RowPure)>
+  <div
+    className="default-Forum-separator"
+  />
+</div>
+`;

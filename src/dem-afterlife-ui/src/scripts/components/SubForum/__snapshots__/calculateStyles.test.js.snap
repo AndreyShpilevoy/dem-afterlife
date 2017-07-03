@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubForum calculateStyles should create expected object 1`] = `
+Object {
+  "container": Object {
+    "marginTop": -0.5,
+  },
+  "icon": Object {
+    "& > .SVGInline-svg": Object {
+      "fill": "red",
+      "height": 1.3125,
+      "transform": "translateY(-0.125rem)",
+      "width": 1.3125,
+    },
+  },
+  "link": Object {
+    "paddingLeft": 0.125,
+  },
+  "options": Object {
+    "meta": "SubForum",
+    "themeName": "default",
+  },
+}
+`;
