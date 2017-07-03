@@ -23,17 +23,20 @@ exports[`Forum HOC component match expected snapshot 1`] = `
   }
   styles={
     Object {
+      ".default-Forum-lastTopicInfoWrapper>div": "default-Forum-lastTopicInfoWrapper>div",
       ".default-Forum-mainContainer:last-child": "default-Forum-mainContainer:last-child",
       ".default-Forum-mainContainer:last-child>.default-Forum-separator": "default-Forum-mainContainer:last-child>.default-Forum-separator",
       "bigText": "default-Forum-bigText",
       "center": "default-Forum-center",
+      "centerMdUp": "default-Forum-centerMdUp",
+      "disableRowOnSmXs": "default-Forum-disableRowOnSmXs",
       "displayInline": "default-Forum-displayInline",
-      "flexBoxRow": "default-Forum-flexBoxRow",
       "lastTopicInfoWrapper": "default-Forum-lastTopicInfoWrapper",
       "mainContainer": "default-Forum-mainContainer",
       "separator": "default-Forum-separator",
       "smallText": "default-Forum-smallText",
       "subForumContainer": "default-Forum-subForumContainer",
+      "topicsMessages": "default-Forum-topicsMessages",
     }
   }
 />

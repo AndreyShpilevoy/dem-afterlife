@@ -21,8 +21,9 @@ const mapSubForumArray = subForumArray =>
 
 export const ForumPure = ({forum, styles}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo, subForumArray} = forum;
-    const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline, subForumContainer} = styles;
-    const centerAndRow = `${center} ${flexBoxRow}`;
+    const {bigText, smallText, center, centerMdUp, lastTopicInfoWrapper, topicsMessages,
+        displayInline, subForumContainer, disableRowOnSmXs} = styles;
+    const centerAndRow = `${center} ${topicsMessages}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Conference/Forum/${id}`;
     const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`;
@@ -64,8 +65,8 @@ export const ForumPure = ({forum, styles}) => {
                             </Column>
                         </Row>
                     </Column>
-                    <Column xs={12} md={7} lg={3} className={center}>
-                        <Row>
+                    <Column xs={12} md={7} lg={3} className={centerMdUp}>
+                        <Row className={disableRowOnSmXs}>
                             <Column md={6} lg={12} className={center}>
                                 <Hidden sm={'down'}>
                                     <Hidden md={'down'}>
@@ -77,8 +78,8 @@ export const ForumPure = ({forum, styles}) => {
                                     <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
                                 </Hidden>
                             </Column>
-                            <Column md={6} lg={12} className={center}>
-                                <div className={lastTopicInfoWrapper}>
+                            <Column md={6} lg={12} className={lastTopicInfoWrapper}>
+                                <div>
                                     <Hidden lg={'up'}>
                                         <Term indentAfter term={lastPostTerm} untermedPostfix={':'}/>
                                     </Hidden>

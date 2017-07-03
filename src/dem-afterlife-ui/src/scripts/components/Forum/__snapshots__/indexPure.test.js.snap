@@ -94,7 +94,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
           </withStyles(HiddenPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center default-Forum-flexBoxRow"
+          className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
         >
           <withStyles(HiddenPure)
@@ -114,7 +114,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
           4
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center default-Forum-flexBoxRow"
+          className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
         >
           <withStyles(HiddenPure)
@@ -137,12 +137,14 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
       </withStyles(RowPure)>
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-Forum-center"
+      className="default-Forum-centerMdUp"
       lg={3}
       md={7}
       xs={12}
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className="default-Forum-disableRowOnSmXs"
+      >
         <withStyles(ColumnPure)
           className="default-Forum-center"
           lg={12}
@@ -168,13 +170,11 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
           </withStyles(HiddenPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center"
+          className="default-Forum-lastTopicInfoWrapper"
           lg={12}
           md={6}
         >
-          <div
-            className="default-Forum-lastTopicInfoWrapper"
-          >
+          <div>
             <withStyles(HiddenPure)
               lg="up"
             >
@@ -241,7 +241,7 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
           />
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center default-Forum-flexBoxRow"
+          className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
         >
           <withStyles(HiddenPure)
@@ -261,7 +261,7 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
           4
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center default-Forum-flexBoxRow"
+          className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
         >
           <withStyles(HiddenPure)
@@ -284,12 +284,14 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
       </withStyles(RowPure)>
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-Forum-center"
+      className="default-Forum-centerMdUp"
       lg={3}
       md={7}
       xs={12}
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className="default-Forum-disableRowOnSmXs"
+      >
         <withStyles(ColumnPure)
           className="default-Forum-center"
           lg={12}
@@ -315,13 +317,11 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
           </withStyles(HiddenPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
-          className="default-Forum-center"
+          className="default-Forum-lastTopicInfoWrapper"
           lg={12}
           md={6}
         >
-          <div
-            className="default-Forum-lastTopicInfoWrapper"
-          >
+          <div>
             <withStyles(HiddenPure)
               lg="up"
             >

@@ -1,10 +1,53 @@
 import {createMediaQueryMax} from 'utils';
 
-const getFlexDirection = mediaMaxString =>
-createMediaQueryMax(mediaMaxString, {flexDirection: 'row'});
+const center = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column'
+};
+
+const textBase = {
+    display: 'block',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
+};
 
 const getDisplayInline = mediaMaxString =>
 createMediaQueryMax(mediaMaxString, {display: 'inline'});
+
+const getDisableRow = mediaMaxString =>
+createMediaQueryMax(mediaMaxString, {
+    flex: 'initial',
+    width: 'initial',
+    display: 'initial',
+    flexWrap: 'initial',
+    boxSizing: 'initial',
+    flexDirection: 'initial'
+});
+
+const getDisableCenter = mediaMaxString =>
+createMediaQueryMax(mediaMaxString, {
+    display: 'initial',
+    alignItems: 'initial',
+    flexDirection: 'initial',
+    justifyContent: 'initial'
+});
+
+const getSmLastTopicInfoContainer = mediaMaxString =>
+createMediaQueryMax(mediaMaxString, {
+    textAlign: 'initial',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
+});
+
+const getSmSmallText = (mediaMaxString, size) =>
+createMediaQueryMax(mediaMaxString, {fontSize: size});
+
+const getTopicsMessagesContainer = (mediaMaxString, size) =>
+createMediaQueryMax(mediaMaxString, {fontSize: size, flexDirection: 'row'});
 
 const calculateStyles = ({themeName, grid, forum}) => {
     const {separator, text, subForumContainer} = forum;
@@ -27,34 +70,33 @@ const calculateStyles = ({themeName, grid, forum}) => {
             }
         },
         bigText: {
-            display: 'block',
-            fontSize: text.big,
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap'
+            ...textBase,
+            fontSize: text.big
         },
         smallText: {
-            display: 'block',
-            fontSize: text.small,
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap'
+            ...textBase,
+            fontSize: text.small
         },
-        center: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column'
+        center,
+        centerMdUp: {
+            ...center,
+            ...getDisableCenter(smMediaMaxString)
         },
         lastTopicInfoWrapper: {
-            width: '100%',
-            textAlign: 'center'
+            ...center,
+            ...getSmSmallText(smMediaMaxString, text.small),
+            '&>div': {
+                width: '100%',
+                textAlign: 'center',
+                ...getSmLastTopicInfoContainer(smMediaMaxString)
+            }
         },
         subForumContainer: {
             marginTop: subForumContainer.marginTop
         },
-        flexBoxRow: getFlexDirection(mdMediaMaxString),
+        topicsMessages: getTopicsMessagesContainer(mdMediaMaxString, text.small),
         displayInline: getDisplayInline(smMediaMaxString),
+        disableRowOnSmXs: getDisableRow(smMediaMaxString),
         options: {meta: 'Forum', themeName}
     };
 };
