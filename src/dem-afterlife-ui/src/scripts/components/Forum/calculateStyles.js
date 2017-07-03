@@ -49,6 +49,9 @@ const calculateStyles = ({themeName, grid}) => {
             width: '100%',
             textAlign: 'center'
         },
+        subForumContainer: {
+            marginTop: 0.5
+        },
         flexBoxRow: getFlexDirection(mdMediaMaxString),
         displayInline: getDisplayInline(smMediaMaxString),
         options: {meta: 'Forum', themeName}

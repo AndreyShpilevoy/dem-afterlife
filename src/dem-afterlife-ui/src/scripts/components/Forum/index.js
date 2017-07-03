@@ -7,8 +7,8 @@ import Hidden from 'components/Hidden';
 import UserName from 'components/UserName';
 import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
-import SvgIconsMapper from 'components/SvgIconsMapper';
-import {sharedPropTypes} from 'utils';
+import SubForum from 'components/SubForum';
+import {sharedPropTypes, defaults} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -16,9 +16,12 @@ const topicsTerm = {id: 1, value: 'Topics'};
 const postsTerm = {id: 2, value: 'Posts'};
 const lastPostTerm = {id: 3, value: 'Last message'};
 
+const mapSubForumArray = subForumArray =>
+    subForumArray.map((item, key) => <SubForum key={key} subForum={item} />);
+
 export const ForumPure = ({forum, styles}) => {
-    const {id, title, description, topicsCount, postsCount, lastTopicInfo} = forum;
-    const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline} = styles;
+    const {id, title, description, topicsCount, postsCount, lastTopicInfo, subForumArray} = forum;
+    const {bigText, smallText, center, lastTopicInfoWrapper, flexBoxRow, displayInline, subForumContainer} = styles;
     const centerAndRow = `${center} ${flexBoxRow}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Conference/Forum/${id}`;
@@ -38,8 +41,13 @@ export const ForumPure = ({forum, styles}) => {
                                     </div>
                                 </Hidden>
                                 <Hidden md={'down'}>
-                                    {'subForumArray'}
-                                    <SvgIconsMapper iconName={'IconSubForum'}/>
+                                    {
+                                        subForumArray ?
+                                        <div className={subForumContainer}>
+                                            {mapSubForumArray(subForumArray)}
+                                        </div> :
+                                        defaults.emptyString
+                                    }
                                 </Hidden>
                             </Column>
                             <Column lg={2} className={centerAndRow}>
