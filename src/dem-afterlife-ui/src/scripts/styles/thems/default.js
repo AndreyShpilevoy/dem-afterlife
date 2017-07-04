@@ -86,6 +86,13 @@ const subForum = {
     iconSize: 1.3125
 };
 
+const forumTopicSeparator = {
+    backgroundColor: colors.forumSecondaryBackgroungColor,
+    height: 0.125,
+    marginVertical: 0.3,
+    marginHorizontal: 0
+};
+
 const defaultTheme = {
     themeName: 'default',
     grid: {
@@ -206,12 +213,7 @@ const defaultTheme = {
         }
     },
     forum: {
-        separator: {
-            backgroundColor: colors.forumSecondaryBackgroungColor,
-            height: 0.125,
-            marginVertical: 0.3,
-            marginHorizontal: 0
-        },
+        separator: forumTopicSeparator,
         text: {
             big: 1.3125,
             small: 0.8
@@ -219,6 +221,9 @@ const defaultTheme = {
         subForumContainer: {
             marginTop: subForum.marginTop
         }
+    },
+    topic: {
+        separator: forumTopicSeparator
     },
     subForum
 
