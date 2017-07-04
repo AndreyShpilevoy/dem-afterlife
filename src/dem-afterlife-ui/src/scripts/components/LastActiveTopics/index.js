@@ -1,6 +1,7 @@
 import React from 'react';
 import {sharedPropTypes, defaults} from 'utils';
 import CollapsebleSection from 'components/CollapsebleSection';
+import Topic from 'components/Topic';
 import Term from 'containers/Term';
 
 const title = {id: 26, value: 'Last messages'};
@@ -20,7 +21,7 @@ const collapseSettings = {
     isCollapseble: true
 };
 
-const mapTopics = lastActiveTopicArray => lastActiveTopicArray.map(x => <div key={x.id}>{x.title}</div>);
+const mapTopics = lastActiveTopicArray => lastActiveTopicArray.map(x => <Topic key={x.id} topic={x}/>);
 
 const LastActiveTopics = ({lastActiveTopicArray}) =>
     <CollapsebleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
@@ -29,7 +30,7 @@ const LastActiveTopics = ({lastActiveTopicArray}) =>
 
 
 LastActiveTopics.propTypes = {
-    lastActiveTopicArray: sharedPropTypes.lastActiveTopicArray
+    lastActiveTopicArray: sharedPropTypes.topicArray
 };
 
 export default LastActiveTopics;

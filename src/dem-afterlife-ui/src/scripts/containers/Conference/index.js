@@ -14,7 +14,7 @@ class Conference extends PureComponent {
         getChapterArray: func.isRequired,
         getLastActiveTopicArray: func.isRequired,
         chapterArray: sharedPropTypes.chapterArray,
-        lastActiveTopicArray: sharedPropTypes.lastActiveTopicArray
+        lastActiveTopicArray: sharedPropTypes.topicArray
     };
 
     componentDidMount() {
