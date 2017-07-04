@@ -3,7 +3,7 @@ import getNavigationLinkArrayApi from 'api/__fakeApi__/getNavigationLinkArrayApi
 import getSocialMediaLinkArrayApi from 'api/__fakeApi__/getSocialMediaLinkArrayApi';
 import getChapterArrayApi from 'api/__fakeApi__/getChapterArrayApi';
 import getForumArrayByChapterIdArrayApi from 'api/__fakeApi__/getForumArrayByChapterIdArrayApi';
-import getLastActiveTopicsArrayApi from 'api/__fakeApi__/getLastActiveTopicsArrayApi';
+import getLastActiveTopicArrayApi from 'api/__fakeApi__/getLastActiveTopicArrayApi';
 
 export {
   getLocaleApi,
@@ -11,5 +11,5 @@ export {
   getSocialMediaLinkArrayApi,
   getChapterArrayApi,
   getForumArrayByChapterIdArrayApi,
-  getLastActiveTopicsArrayApi
+  getLastActiveTopicArrayApi
 };

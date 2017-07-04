@@ -3,7 +3,7 @@
 import {
     getChapterArrayApi,
     getForumArrayByChapterIdArrayApi,
-    getLastActiveTopicsArrayApi
+    getLastActiveTopicArrayApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
 import {
@@ -17,14 +17,14 @@ import {
     getChapterArraySuccess,
     getForumArrayByChapterIdArray,
     getForumArrayByChapterIdArraySuccess,
-    getLastActiveTopicsArray,
-    getLastActiveTopicsArraySuccess,
+    getLastActiveTopicArray,
+    getLastActiveTopicArraySuccess,
     conferenceReducer,
     getChapterArraySaga,
     conferenceSaga,
     getForumsByChapterIdArraySaga,
     getForumsByChapterIdArrayNonBlockSaga,
-    getLastActiveTopicsArraySaga
+    getLastActiveTopicArraySaga
 } from './conference-reducer';
 
 describe('Conference reducer', () => {
@@ -74,23 +74,23 @@ describe('Conference reducer', () => {
         ])).toEqual(expectedResult);
     });
 
-    it('getLastActiveTopicsArray should create expected object', () => {
+    it('getLastActiveTopicArray should create expected object', () => {
         const expectedResult = {type: GET_LAST_ACTIVE_TOPICS_ARRAY};
-        expect(getLastActiveTopicsArray()).toEqual(expectedResult);
+        expect(getLastActiveTopicArray()).toEqual(expectedResult);
     });
 
-    it('getLastActiveTopicsArraySuccess should create expected object', () => {
+    it('getLastActiveTopicArraySuccess should create expected object', () => {
         const expectedResult = {
             type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
             payload: {
-                lastActiveTopicsArray: [
+                lastActiveTopicArray: [
                     {id: 1, title: 'Ex Machina', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
                 ]
             }
         };
-        expect(getLastActiveTopicsArraySuccess([
+        expect(getLastActiveTopicArraySuccess([
             {id: 1, title: 'Ex Machina', order: 1},
             {id: 3, title: 'Ex Machina: Arcade', order: 3},
             {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
@@ -147,12 +147,12 @@ describe('Conference reducer', () => {
 
     it('conferenceReducer with action GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS should return expected state', () => {
         const defaulState = {
-            lastActiveTopicsArray: []
+            lastActiveTopicArray: []
         };
         const action = {
             type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
             payload: {
-                lastActiveTopicsArray: [
+                lastActiveTopicArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -160,7 +160,7 @@ describe('Conference reducer', () => {
             }
         };
         const expectedResult = {
-            lastActiveTopicsArray: [
+            lastActiveTopicArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -257,33 +257,33 @@ describe('Conference reducer', () => {
         expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();
     });
 
-    it('getLastActiveTopicsArraySaga first yeald should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
-        const generator = getLastActiveTopicsArraySaga();
+    it('getLastActiveTopicArraySaga first yeald should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
+        const generator = getLastActiveTopicArraySaga();
 
         expect(generator.next().value.TAKE.pattern).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY);
     });
 
-    it('getLastActiveTopicsArraySaga second yeald should return CALL to function "getLastActiveTopicsArrayApi"', () => {
-        const generator = getLastActiveTopicsArraySaga();
+    it('getLastActiveTopicArraySaga second yeald should return CALL to function "getLastActiveTopicArrayApi"', () => {
+        const generator = getLastActiveTopicArraySaga();
 
         generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getLastActiveTopicsArrayApi);
+        expect(generator.next().value.CALL.fn).toEqual(getLastActiveTopicArrayApi);
     });
 
-    it('getLastActiveTopicsArraySaga third yeald should return PUT action.type "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS"', () => {
-        const generator = getLastActiveTopicsArraySaga();
+    it('getLastActiveTopicArraySaga third yeald should return PUT action.type "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS"', () => {
+        const generator = getLastActiveTopicArraySaga();
 
         generator.next();
         generator.next();
-        expect(generator.next(getLastActiveTopicsArrayApi()).value.PUT.action.type).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS);
+        expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS);
     });
 
-    it('getLastActiveTopicsArraySaga third yeald should return PUT action.payload.chapterArray that is a Promise', () => {
-        const generator = getLastActiveTopicsArraySaga();
+    it('getLastActiveTopicArraySaga third yeald should return PUT action.payload.chapterArray that is a Promise', () => {
+        const generator = getLastActiveTopicArraySaga();
 
         generator.next();
         generator.next();
-        expect(IsPromise(generator.next(getLastActiveTopicsArrayApi()).value.PUT.action.payload.lastActiveTopicsArray)).toBeTruthy();
+        expect(IsPromise(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.payload.lastActiveTopicArray)).toBeTruthy();
     });
 
     it('should return 3 Sagas from default generator', () => {

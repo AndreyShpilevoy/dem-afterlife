@@ -2,13 +2,13 @@ import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
     getChapterArrayApi,
     getForumArrayByChapterIdArrayApi,
-    getLastActiveTopicsArrayApi
+    getLastActiveTopicArrayApi
 } from 'api';
 
 const initialState = {
     chapterArray: [],
     forumArray: [],
-    lastActiveTopicsArray: []
+    lastActiveTopicArray: []
 };
 
 export const GET_CHAPTER_ARRAY = 'GET_CHAPTER_ARRAY';
@@ -33,12 +33,12 @@ export const getForumArrayByChapterIdArraySuccess = forumArray => ({
 });
 
 export const GET_LAST_ACTIVE_TOPICS_ARRAY = 'GET_LAST_ACTIVE_TOPICS_ARRAY';
-export const getLastActiveTopicsArray = () => ({type: GET_LAST_ACTIVE_TOPICS_ARRAY});
+export const getLastActiveTopicArray = () => ({type: GET_LAST_ACTIVE_TOPICS_ARRAY});
 
 export const GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS = 'GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS';
-export const getLastActiveTopicsArraySuccess = lastActiveTopicsArray => ({
+export const getLastActiveTopicArraySuccess = lastActiveTopicArray => ({
     type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
-    payload: {lastActiveTopicsArray}
+    payload: {lastActiveTopicArray}
 });
 
 export const conferenceReducer = (state = initialState, {type, payload}) => {
@@ -48,7 +48,7 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
         case GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS:
             return {...state, forumArray: payload.forumArray};
         case GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS:
-            return {...state, lastActiveTopicsArray: payload.lastActiveTopicsArray};
+            return {...state, lastActiveTopicArray: payload.lastActiveTopicArray};
         default:
             break;
     }
@@ -82,11 +82,11 @@ export function* getForumsByChapterIdArraySaga() {
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* getLastActiveTopicsArraySaga() {
+export function* getLastActiveTopicArraySaga() {
     while (true) {
         yield take(GET_LAST_ACTIVE_TOPICS_ARRAY);
-        const lastActiveTopicsArray = yield call(getLastActiveTopicsArrayApi);
-        yield put(getLastActiveTopicsArraySuccess(lastActiveTopicsArray));
+        const lastActiveTopicArray = yield call(getLastActiveTopicArrayApi);
+        yield put(getLastActiveTopicArraySuccess(lastActiveTopicArray));
     }
 }
 
@@ -95,7 +95,7 @@ export function* conferenceSaga() {
     yield all([
         getChapterArraySaga(),
         getForumsByChapterIdArraySaga(),
-        getLastActiveTopicsArraySaga()
+        getLastActiveTopicArraySaga()
     ]);
 }
 

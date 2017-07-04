@@ -5,20 +5,21 @@ import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
-import {getChapterArray, getLastActiveTopicsArray} from './conference-reducer';
+import LastActiveTopics from 'components/LastActiveTopics';
+import {getChapterArray, getLastActiveTopicArray} from './conference-reducer';
 import {chaptersWithForumsArraySelector, lastActiveTopicsOrderedArraySelector} from './selectors';
 
 class Conference extends PureComponent {
     static propTypes = {
         getChapterArray: func.isRequired,
-        getLastActiveTopicsArray: func.isRequired,
+        getLastActiveTopicArray: func.isRequired,
         chapterArray: sharedPropTypes.chapterArray,
         lastActiveTopicArray: sharedPropTypes.lastActiveTopicArray
     };
 
     componentDidMount() {
         this.props.getChapterArray();
-        this.props.getLastActiveTopicsArray();
+        this.props.getLastActiveTopicArray();
     }
 
     mapChapterArrayToComponent = chapterArray =>
@@ -27,6 +28,7 @@ class Conference extends PureComponent {
     render() {
         return (
             <div>
+                <LastActiveTopics lastActiveTopicArray={this.props.lastActiveTopicArray}/>
                 {this.mapChapterArrayToComponent(this.props.chapterArray)}
             </div>
         );
@@ -41,7 +43,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
         getChapterArray,
-        getLastActiveTopicsArray
+        getLastActiveTopicArray
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Conference);

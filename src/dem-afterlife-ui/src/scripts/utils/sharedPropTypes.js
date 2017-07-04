@@ -47,7 +47,7 @@ const socialMediaLinkItem = shape({
     order: number.isRequired
 });
 
-const topicDescription = shape({
+const lastActiveTopic = shape({
     id: number.isRequired,
     title: string.isRequired,
     postsCount: number.isRequired,
@@ -74,8 +74,8 @@ const sharedPropTypes = {
     subForumArray: arrayOf(subForum).isRequired,
     chapter,
     chapterArray: arrayOf(chapter).isRequired,
-    topicDescription,
-    lastActiveTopicArray: arrayOf(topicDescription).isRequired
+    lastActiveTopic,
+    lastActiveTopicArray: arrayOf(lastActiveTopic).isRequired
 };
 
 export default sharedPropTypes;

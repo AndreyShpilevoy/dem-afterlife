@@ -11,7 +11,7 @@ export const forumArraySelector = state => state.conferenceReducer.forumArray.re
         return [...previouse, current];
     }, []
 );
-export const lastActiveTopicsArraySelector = state => state.conferenceReducer.lastActiveTopicsArray;
+export const lastActiveTopicArraySelector = state => state.conferenceReducer.lastActiveTopicArray;
 
 export const sortedChapterArraySelector = createSelector(
     chapterArraySelector,
@@ -24,13 +24,13 @@ export const sortedForumArraySelector = createSelector(
 );
 
 export const lastActiveTopicsOrderedArraySelector = createSelector(
-    lastActiveTopicsArraySelector,
-    lastActiveTopicsArray => R.sort((first, second) => {
+    lastActiveTopicArraySelector,
+    lastActiveTopicArray => R.sort((first, second) => {
         if (first && second && first.lastPostInfo && second.lastPostInfo) {
             return second.lastPostInfo.timeCreation.getTime() - first.lastPostInfo.timeCreation.getTime();
         }
         return 0;
-    }, lastActiveTopicsArray)
+    }, lastActiveTopicArray)
 );
 
 export const chaptersWithForumsArraySelector = createSelector(

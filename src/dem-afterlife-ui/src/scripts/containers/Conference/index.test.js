@@ -15,7 +15,7 @@ describe('Conference HOC', () => {
 
     it('component with empty chapter and forum arrays match expected snapshot', () => {
         const props = {
-            store: mockStore({conferenceReducer: {chapterArray: [], forumArray: [], lastActiveTopicsArray: [] } })
+            store: mockStore({conferenceReducer: {chapterArray: [], forumArray: [], lastActiveTopicArray: [] } })
         };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
@@ -68,7 +68,7 @@ describe('Conference HOC', () => {
                         }
                     }
                 ],
-                lastActiveTopicsArray: [
+                lastActiveTopicArray: [
                     {
                         id: 1,
                         parentForumId: 10,

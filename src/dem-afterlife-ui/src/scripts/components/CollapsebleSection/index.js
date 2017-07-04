@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 
 import React, {PureComponent} from 'react';
-import {node, bool, string, shape} from 'prop-types';
+import {node, bool, string, shape, oneOfType} from 'prop-types';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
@@ -16,7 +16,7 @@ export class CollapsebleSectionPure extends PureComponent {
         className: string,
         children: node,
         headerSettings: shape({
-            title: string,
+            title: oneOfType([string, node]),
             firstColumnTerm: node,
             secondColumnTerm: node,
             thirdColumnTerm: node

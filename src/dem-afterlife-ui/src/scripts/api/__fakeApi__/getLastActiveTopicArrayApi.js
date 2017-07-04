@@ -2,7 +2,7 @@
 import delay from 'api/__fakeApi__/delay';
 import topicArray from 'api/__fakeData__/topicArray';
 
-const LastActiveTopicsArrayApi = () => new Promise(resolve => {
+const LastActiveTopicArrayApi = () => new Promise(resolve => {
     setTimeout(() => {
         const result = [
             {...topicArray[0], ...{parentForumId: 10, parentForumTitle: 'Общие вопросы'} },
@@ -15,4 +15,4 @@ const LastActiveTopicsArrayApi = () => new Promise(resolve => {
     }, delay);
 });
 
-export default LastActiveTopicsArrayApi;
+export default LastActiveTopicArrayApi;
