@@ -15,7 +15,7 @@ describe('Conference HOC', () => {
 
     it('component with empty chapter and forum arrays match expected snapshot', () => {
         const props = {
-            store: mockStore({conferenceReducer: {chapterArray: [], forumArray: [] } })
+            store: mockStore({conferenceReducer: {chapterArray: [], forumArray: [], lastActiveTopicsArray: [] } })
         };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
@@ -38,8 +38,8 @@ describe('Conference HOC', () => {
                         topicsCount: 26,
                         postsCount: 4113,
                         lastTopicInfo: {
-                            lastActiveTopicId: 1,
-                            lastActiveTopic: 'Идеи к Ex Machina -2 часть четвертая',
+                            topicId: 1,
+                            topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
                             latesPostTimeCreation: new Date('2015/08/17 13:42:32'),
                             latesPostAutorId: 1,
                             latesPostAutorName: 'kto',
@@ -59,12 +59,44 @@ describe('Conference HOC', () => {
                         topicsCount: 13,
                         postsCount: 857,
                         lastTopicInfo: {
-                            lastActiveTopicId: 2,
-                            lastActiveTopic: 'Проблемы с игрой',
+                            topicId: 2,
+                            topicDescription: 'Проблемы с игрой',
                             latesPostTimeCreation: new Date('2016/9/22 12:53:09'),
                             latesPostAutorId: 2,
                             latesPostAutorName: 'Bykawka',
                             latesPostAutorGroupColor: '#fbeab2'
+                        }
+                    }
+                ],
+                lastActiveTopicsArray: [
+                    {
+                        id: 1,
+                        parentForumId: 10,
+                        parentForumTitle: 'Общие вопросы',
+                        title: 'Как деактивировать бомбу',
+                        postsCount: 215,
+                        topicViewsCount: 1315,
+                        lastPostInfo: {
+                            timeCreation: new Date('2016/09/19 13:42:32'),
+                            autorId: 4,
+                            autorName: 'Buba',
+                            autorAvatart: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
+                            autorGroupColor: '#00AA00'
+                        }
+                    },
+                    {
+                        id: 2,
+                        parentForumId: 10,
+                        parentForumTitle: 'Общие вопросы',
+                        title: 'Как активировать бомбу.',
+                        postsCount: 57,
+                        topicViewsCount: 847,
+                        lastPostInfo: {
+                            timeCreation: new Date('2017/01/22 12:53:09'),
+                            autorId: 2,
+                            autorName: 'Bykawka',
+                            autorAvatart: null,
+                            autorGroupColor: '#fbeab2'
                         }
                     }
                 ] } })

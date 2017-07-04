@@ -16,6 +16,8 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
   <Conference
     chapterArray={Array []}
     getChapterArray={[Function]}
+    getLastActiveTopicsArray={[Function]}
+    lastActiveTopicArray={Array []}
     store={
       Object {
         "clearActions": [Function],
@@ -75,12 +77,12 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
               "description": "Все вопросы касательно геймплея и мира игры Ex Machina в целом.",
               "id": 10,
               "lastTopicInfo": Object {
-                "lastActiveTopic": "Идеи к Ex Machina -2 часть четвертая",
-                "lastActiveTopicId": 1,
                 "latesPostAutorGroupColor": "#ffa510",
                 "latesPostAutorId": 1,
                 "latesPostAutorName": "kto",
                 "latesPostTimeCreation": 2015-08-17T10:42:32.000Z,
+                "topicDescription": "Идеи к Ex Machina -2 часть четвертая",
+                "topicId": 1,
               },
               "order": 1,
               "postsCount": 4113,
@@ -111,12 +113,12 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
               "description": "Вопросы технического характера по игре Ex Machina.",
               "id": 20,
               "lastTopicInfo": Object {
-                "lastActiveTopic": "Проблемы с игрой",
-                "lastActiveTopicId": 2,
                 "latesPostAutorGroupColor": "#fbeab2",
                 "latesPostAutorId": 2,
                 "latesPostAutorName": "Bykawka",
                 "latesPostTimeCreation": 2016-09-22T09:53:09.000Z,
+                "topicDescription": "Проблемы с игрой",
+                "topicId": 2,
               },
               "order": 2,
               "postsCount": 857,
@@ -137,6 +139,41 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
       ]
     }
     getChapterArray={[Function]}
+    getLastActiveTopicsArray={[Function]}
+    lastActiveTopicArray={
+      Array [
+        Object {
+          "id": 2,
+          "lastPostInfo": Object {
+            "autorAvatart": null,
+            "autorGroupColor": "#fbeab2",
+            "autorId": 2,
+            "autorName": "Bykawka",
+            "timeCreation": 2017-01-22T10:53:09.000Z,
+          },
+          "parentForumId": 10,
+          "parentForumTitle": "Общие вопросы",
+          "postsCount": 57,
+          "title": "Как активировать бомбу.",
+          "topicViewsCount": 847,
+        },
+        Object {
+          "id": 1,
+          "lastPostInfo": Object {
+            "autorAvatart": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+            "autorGroupColor": "#00AA00",
+            "autorId": 4,
+            "autorName": "Buba",
+            "timeCreation": 2016-09-19T10:42:32.000Z,
+          },
+          "parentForumId": 10,
+          "parentForumTitle": "Общие вопросы",
+          "postsCount": 215,
+          "title": "Как деактивировать бомбу",
+          "topicViewsCount": 1315,
+        },
+      ]
+    }
     store={
       Object {
         "clearActions": [Function],
@@ -178,12 +215,12 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
                 "description": "Все вопросы касательно геймплея и мира игры Ex Machina в целом.",
                 "id": 10,
                 "lastTopicInfo": Object {
-                  "lastActiveTopic": "Идеи к Ex Machina -2 часть четвертая",
-                  "lastActiveTopicId": 1,
                   "latesPostAutorGroupColor": "#ffa510",
                   "latesPostAutorId": 1,
                   "latesPostAutorName": "kto",
                   "latesPostTimeCreation": 2015-08-17T10:42:32.000Z,
+                  "topicDescription": "Идеи к Ex Machina -2 часть четвертая",
+                  "topicId": 1,
                 },
                 "order": 1,
                 "postsCount": 4113,
@@ -220,12 +257,12 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
                 "description": "Вопросы технического характера по игре Ex Machina.",
                 "id": 20,
                 "lastTopicInfo": Object {
-                  "lastActiveTopic": "Проблемы с игрой",
-                  "lastActiveTopicId": 2,
                   "latesPostAutorGroupColor": "#fbeab2",
                   "latesPostAutorId": 2,
                   "latesPostAutorName": "Bykawka",
                   "latesPostTimeCreation": 2016-09-22T09:53:09.000Z,
+                  "topicDescription": "Проблемы с игрой",
+                  "topicId": 2,
                 },
                 "order": 2,
                 "postsCount": 857,

@@ -81,6 +81,7 @@ Object {
   },
   "headerText": Object {
     "fontSize": 1.25,
+    "height": "100%",
     "overflow": "hidden",
     "textOverflow": "ellipsis",
     "whiteSpace": "nowrap",

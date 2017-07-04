@@ -18,8 +18,8 @@ describe('Forum HOC', () => {
             topicsCount: 4,
             postsCount: 864,
             lastTopicInfo: {
-                lastActiveTopicId: 4,
-                lastActiveTopic: 'Exporter Ex Machina for Maya',
+                topicId: 4,
+                topicDescription: 'Exporter Ex Machina for Maya',
                 latesPostTimeCreation: new Date('2007/09/06 22:33:09'),
                 latesPostAutorId: 4,
                 latesPostAutorName: 'Buba',

@@ -1,21 +1,30 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
 
-import {getChapterArrayApi, getForumArrayByChapterIdArrayApi} from 'api';
+import {
+    getChapterArrayApi,
+    getForumArrayByChapterIdArrayApi,
+    getLastActiveTopicsArrayApi
+} from 'api';
 import IsPromise from 'tools/testHelper';
 import {
     GET_CHAPTER_ARRAY,
     GET_CHAPTER_ARRAY_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS,
+    GET_LAST_ACTIVE_TOPICS_ARRAY,
+    GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
     getChapterArray,
     getChapterArraySuccess,
     getForumArrayByChapterIdArray,
     getForumArrayByChapterIdArraySuccess,
+    getLastActiveTopicsArray,
+    getLastActiveTopicsArraySuccess,
     conferenceReducer,
     getChapterArraySaga,
     conferenceSaga,
     getForumsByChapterIdArraySaga,
-    getForumsByChapterIdArrayNonBlockSaga
+    getForumsByChapterIdArrayNonBlockSaga,
+    getLastActiveTopicsArraySaga
 } from './conference-reducer';
 
 describe('Conference reducer', () => {
@@ -65,6 +74,29 @@ describe('Conference reducer', () => {
         ])).toEqual(expectedResult);
     });
 
+    it('getLastActiveTopicsArray should create expected object', () => {
+        const expectedResult = {type: GET_LAST_ACTIVE_TOPICS_ARRAY};
+        expect(getLastActiveTopicsArray()).toEqual(expectedResult);
+    });
+
+    it('getLastActiveTopicsArraySuccess should create expected object', () => {
+        const expectedResult = {
+            type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
+            payload: {
+                lastActiveTopicsArray: [
+                    {id: 1, title: 'Ex Machina', order: 1},
+                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
+                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+                ]
+            }
+        };
+        expect(getLastActiveTopicsArraySuccess([
+            {id: 1, title: 'Ex Machina', order: 1},
+            {id: 3, title: 'Ex Machina: Arcade', order: 3},
+            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+        ])).toEqual(expectedResult);
+    });
+
     it('conferenceReducer with action GET_CHAPTER_ARRAY_SUCCESS should return expected state', () => {
         const defaulState = {
             chapterArray: []
@@ -105,6 +137,30 @@ describe('Conference reducer', () => {
         };
         const expectedResult = {
             forumArray: [
+                    {id: 1, title: 'Ex Machina Forum', order: 1},
+                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
+            ]
+        };
+        expect(conferenceReducer(defaulState, action)).toEqual(expectedResult);
+    });
+
+    it('conferenceReducer with action GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS should return expected state', () => {
+        const defaulState = {
+            lastActiveTopicsArray: []
+        };
+        const action = {
+            type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
+            payload: {
+                lastActiveTopicsArray: [
+                    {id: 1, title: 'Ex Machina Forum', order: 1},
+                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
+                ]
+            }
+        };
+        const expectedResult = {
+            lastActiveTopicsArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -201,8 +257,37 @@ describe('Conference reducer', () => {
         expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();
     });
 
-    it('should return 1 Sagas from default generator', () => {
+    it('getLastActiveTopicsArraySaga first yeald should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
+        const generator = getLastActiveTopicsArraySaga();
+
+        expect(generator.next().value.TAKE.pattern).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY);
+    });
+
+    it('getLastActiveTopicsArraySaga second yeald should return CALL to function "getLastActiveTopicsArrayApi"', () => {
+        const generator = getLastActiveTopicsArraySaga();
+
+        generator.next();
+        expect(generator.next().value.CALL.fn).toEqual(getLastActiveTopicsArrayApi);
+    });
+
+    it('getLastActiveTopicsArraySaga third yeald should return PUT action.type "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS"', () => {
+        const generator = getLastActiveTopicsArraySaga();
+
+        generator.next();
+        generator.next();
+        expect(generator.next(getLastActiveTopicsArrayApi()).value.PUT.action.type).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS);
+    });
+
+    it('getLastActiveTopicsArraySaga third yeald should return PUT action.payload.chapterArray that is a Promise', () => {
+        const generator = getLastActiveTopicsArraySaga();
+
+        generator.next();
+        generator.next();
+        expect(IsPromise(generator.next(getLastActiveTopicsArrayApi()).value.PUT.action.payload.lastActiveTopicsArray)).toBeTruthy();
+    });
+
+    it('should return 3 Sagas from default generator', () => {
         const generator = conferenceSaga();
-        expect(generator.next().value.ALL.length).toEqual(2);
+        expect(generator.next().value.ALL.length).toEqual(3);
     });
 });

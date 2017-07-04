@@ -26,7 +26,7 @@ export const ForumPure = ({forum, styles}) => {
     const centerAndRow = `${center} ${topicsMessages}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Conference/Forum/${id}`;
-    const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.lastActiveTopicId}`;
+    const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.topicId}`;
     return (
             <div className={styles.mainContainer}>
                 <Row>
@@ -84,7 +84,7 @@ export const ForumPure = ({forum, styles}) => {
                                         <Term indentAfter term={lastPostTerm} untermedPostfix={':'}/>
                                     </Hidden>
                                     <Link to={linkToLastActiveTopic} className={smallTextAndInline}>
-                                        {lastTopicInfo.lastActiveTopic}
+                                        {lastTopicInfo.topicDescription}
                                     </Link>
                                 </div>
                             </Column>
