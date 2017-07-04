@@ -43,7 +43,8 @@ const getCommonPart = ({general, header, body}) => ({
         fontSize: header.fontSize,
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
+        height: '100%'
     },
     body: {
         backgroundColor: body.backgroundColor,
