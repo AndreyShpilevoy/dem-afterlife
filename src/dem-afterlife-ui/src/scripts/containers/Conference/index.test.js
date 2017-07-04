@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, react/no-multi-comp:0, react/prop-types:0*/
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -6,8 +6,13 @@ import configureMockStore from 'redux-mock-store';
 import Conference from './index';
 
 jest.mock('components/Chapter', () => {
-    const Chapter = ({children}) => <div>{children}</div>; // eslint-disable-line react/prop-types
+    const Chapter = ({children}) => <div>{children}</div>;
     return Chapter;
+});
+
+jest.mock('components/LastActiveTopics', () => {
+    const LastActiveTopic = ({children}) => <div>{children}</div>;
+    return LastActiveTopic;
 });
 
 describe('Conference HOC', () => {

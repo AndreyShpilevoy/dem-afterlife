@@ -49,7 +49,13 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
       }
     }
   >
-    <div />
+    <div>
+      <LastActiveTopic
+        lastActiveTopicArray={Array []}
+      >
+        <div />
+      </LastActiveTopic>
+    </div>
   </Conference>
 </Connect(Conference)>
 `;
@@ -206,6 +212,44 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
     }
   >
     <div>
+      <LastActiveTopic
+        lastActiveTopicArray={
+          Array [
+            Object {
+              "id": 2,
+              "lastPostInfo": Object {
+                "autorAvatart": null,
+                "autorGroupColor": "#fbeab2",
+                "autorId": 2,
+                "autorName": "Bykawka",
+                "timeCreation": 2017-01-22T10:53:09.000Z,
+              },
+              "parentForumId": 10,
+              "parentForumTitle": "Общие вопросы",
+              "postsCount": 57,
+              "title": "Как активировать бомбу.",
+              "topicViewsCount": 847,
+            },
+            Object {
+              "id": 1,
+              "lastPostInfo": Object {
+                "autorAvatart": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+                "autorGroupColor": "#00AA00",
+                "autorId": 4,
+                "autorName": "Buba",
+                "timeCreation": 2016-09-19T10:42:32.000Z,
+              },
+              "parentForumId": 10,
+              "parentForumTitle": "Общие вопросы",
+              "postsCount": 215,
+              "title": "Как деактивировать бомбу",
+              "topicViewsCount": 1315,
+            },
+          ]
+        }
+      >
+        <div />
+      </LastActiveTopic>
       <Chapter
         chapter={
           Object {
