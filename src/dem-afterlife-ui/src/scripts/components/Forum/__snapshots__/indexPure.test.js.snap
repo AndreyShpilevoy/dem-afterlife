@@ -161,7 +161,14 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 id={4}
                 name="Buba"
               />
-               - 
+              <Connect(Term)
+                doNotTerm={true}
+                indentAfter={true}
+                indentBefore={true}
+                spaceAfter={true}
+                spaceBefore={true}
+                untermedPostfix="-"
+              />
             </withStyles(HiddenPure)>
             <Connect(RelativeDateTime)
               relativeDateTime={2007-09-06T19:33:09.000Z}
@@ -308,7 +315,14 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
                 id={4}
                 name="Buba"
               />
-               - 
+              <Connect(Term)
+                doNotTerm={true}
+                indentAfter={true}
+                indentBefore={true}
+                spaceAfter={true}
+                spaceBefore={true}
+                untermedPostfix="-"
+              />
             </withStyles(HiddenPure)>
             <Connect(RelativeDateTime)
               relativeDateTime={2007-09-06T19:33:09.000Z}

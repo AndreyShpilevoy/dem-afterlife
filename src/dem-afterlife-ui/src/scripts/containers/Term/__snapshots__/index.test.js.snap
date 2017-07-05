@@ -1,6 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Term HOC component match expected snapshot for simple term 1`] = `
+exports[`Term component match expected snapshot for not term and untermedPostfix 1`] = `
+<Connect(Term)
+  doNotTerm={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  untermedPostfix=":"
+>
+  <Term
+    dispatch={[Function]}
+    doNotTerm={true}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    untermedPostfix=":"
+  >
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+      :
+    </span>
+  </Term>
+</Connect(Term)>
+`;
+
+exports[`Term component match expected snapshot for simple term 1`] = `
 <Connect(Term)
   store={
     Object {
@@ -21,6 +86,7 @@ exports[`Term HOC component match expected snapshot for simple term 1`] = `
 >
   <Term
     dispatch={[Function]}
+    doNotTerm={false}
     locale="ru"
     store={
       Object {
@@ -74,7 +140,239 @@ exports[`Term HOC component match expected snapshot for simple term 1`] = `
 </Connect(Term)>
 `;
 
-exports[`Term HOC component match expected snapshot for simple term with spase after 1`] = `
+exports[`Term component match expected snapshot for simple term and untermedPostfix 1`] = `
+<Connect(Term)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+  untermedPostfix=":"
+>
+  <Term
+    dispatch={[Function]}
+    doNotTerm={false}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+    untermedPostfix=":"
+  >
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+      Тем:
+    </span>
+  </Term>
+</Connect(Term)>
+`;
+
+exports[`Term component match expected snapshot for simple term with indent after 1`] = `
+<Connect(Term)
+  indentAfter={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <Term
+    dispatch={[Function]}
+    doNotTerm={false}
+    indentAfter={true}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+    untermedPostfix=""
+  >
+    <span
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "0.25rem",
+        }
+      }
+    >
+      Тем
+    </span>
+  </Term>
+</Connect(Term)>
+`;
+
+exports[`Term component match expected snapshot for simple term with indent before and after 1`] = `
+<Connect(Term)
+  indentAfter={true}
+  indentBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <Term
+    dispatch={[Function]}
+    doNotTerm={false}
+    indentAfter={true}
+    indentBefore={true}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+    untermedPostfix=""
+  >
+    <span
+      style={
+        Object {
+          "paddingLeft": "0.25rem",
+          "paddingRight": "0.25rem",
+        }
+      }
+    >
+      Тем
+    </span>
+  </Term>
+</Connect(Term)>
+`;
+
+exports[`Term component match expected snapshot for simple term with spase after 1`] = `
 <Connect(Term)
   spaceAfter={true}
   store={
@@ -96,6 +394,7 @@ exports[`Term HOC component match expected snapshot for simple term with spase a
 >
   <Term
     dispatch={[Function]}
+    doNotTerm={false}
     locale="ru"
     spaceAfter={true}
     store={
@@ -150,7 +449,7 @@ exports[`Term HOC component match expected snapshot for simple term with spase a
 </Connect(Term)>
 `;
 
-exports[`Term HOC component match expected snapshot for simple term with spase before and after 1`] = `
+exports[`Term component match expected snapshot for simple term with spase before and after 1`] = `
 <Connect(Term)
   spaceAfter={true}
   spaceBefore={true}
@@ -173,6 +472,7 @@ exports[`Term HOC component match expected snapshot for simple term with spase b
 >
   <Term
     dispatch={[Function]}
+    doNotTerm={false}
     locale="ru"
     spaceAfter={true}
     spaceBefore={true}
@@ -228,7 +528,84 @@ exports[`Term HOC component match expected snapshot for simple term with spase b
 </Connect(Term)>
 `;
 
-exports[`Term HOC component match expected snapshot for term with spase before 1`] = `
+exports[`Term component match expected snapshot for term with indent before 1`] = `
+<Connect(Term)
+  indentBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  term={
+    Object {
+      "id": 1,
+      "value": "Тем",
+    }
+  }
+>
+  <Term
+    dispatch={[Function]}
+    doNotTerm={false}
+    indentBefore={true}
+    locale="ru"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    term={
+      Object {
+        "id": 1,
+        "value": "Тем",
+      }
+    }
+    untermedPostfix=""
+  >
+    <span
+      style={
+        Object {
+          "paddingLeft": "0.25rem",
+          "paddingRight": "",
+        }
+      }
+    >
+      Тем
+    </span>
+  </Term>
+</Connect(Term)>
+`;
+
+exports[`Term component match expected snapshot for term with spase before 1`] = `
 <Connect(Term)
   spaceBefore={true}
   store={
@@ -250,6 +627,7 @@ exports[`Term HOC component match expected snapshot for term with spase before 1
 >
   <Term
     dispatch={[Function]}
+    doNotTerm={false}
     locale="ru"
     spaceBefore={true}
     store={

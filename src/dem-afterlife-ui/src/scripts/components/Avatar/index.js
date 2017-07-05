@@ -9,14 +9,14 @@ const getContainerStyles = size => size ? {width: `${size}rem`} : {};
 
 const getImageStyles = size => size ? {height: `${size}rem`} : {};
 
-export const UserAvatarPure = ({avatarUrl, size}) =>
-      <div className={`${'userAvatarContainer'} ${'flexRowCenter'}`} style={getContainerStyles(size)}>
-        <Link className={'userAvatar'} to={'/'} style={getImageStyles(size)}>
-          {avatarUrl ? <img src={avatarUrl} /> : <div className={'userAvatarDefault'}/>}
+export const AvatarPure = ({avatarUrl, size, styles}) =>
+      <div className={styles.container} style={getContainerStyles(size)}>
+        <Link className={styles.avatar} to={'/'} style={getImageStyles(size)}>
+          {avatarUrl ? <img src={avatarUrl} /> : <div className={styles.avatarDefault}/>}
         </Link>
       </div>;
 
-UserAvatarPure.propTypes = {
+AvatarPure.propTypes = {
     id: number.isRequired,
     avatarUrl: string,
     className: string,
@@ -24,4 +24,4 @@ UserAvatarPure.propTypes = {
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(UserAvatarPure);
+export default withStyles(theme => calculateStyles(theme))(AvatarPure);

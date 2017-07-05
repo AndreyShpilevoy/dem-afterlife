@@ -22,19 +22,19 @@ const en = [
   {id: 21, value: 'years', description: 'several years for TransformDateTime'},
   {id: 22, value: 'Views', description: 'for topics label on topicArray component'},
   {id: 23, value: 'Topics', description: 'for topics label on topicArray component'},
-  {id: 24, value: '>>', description: 'for topics body on topicArray component'},
-  {id: 25, value: 'Forum:', description: 'for topics body on topicArray component'},
+  {id: 24, value: '>>', description: 'for topics body on topicArray component'}, // todo empty
+  {id: 25, value: 'Forum', description: 'for topics body on topicArray component'},
   {id: 26, value: 'Last messages', description: 'title for lastActiveTopicArray component'},
   {id: 27, value: 'DeusExMachina', description: 'web site name for title'},
   {id: 28, value: 'View forum', description: 'action name for title'},
   {id: 29, value: 'View topic', description: 'action name for title'},
   {id: 30, value: 'Posts', description: 'action name for title'},
-  {id: 31, value: 'Offtopic:', description: 'header for Offtopic bbCode'},
-  {id: 32, value: 'wrote:', description: 'header for Quote bbCode'},
-  {id: 33, value: 'Quote:', description: 'header for Quote bbCode'},
-  {id: 34, value: 'Code:', description: 'header for Code bbCode'},
+  {id: 31, value: 'Offtopic', description: 'header for Offtopic bbCode'},
+  {id: 32, value: 'wrote', description: 'header for Quote bbCode'},
+  {id: 33, value: 'Quote', description: 'header for Quote bbCode'},
+  {id: 34, value: 'Code', description: 'header for Code bbCode'},
   {id: 35, value: 'Ctrl+A, Ctrl+C', description: 'header for Code bbCode'},
-  {id: 36, value: 'Last modified:', description: 'Post edit text label'}
+  {id: 36, value: 'Last modified', description: 'Post edit text label'}
 ];
 
 export default en;

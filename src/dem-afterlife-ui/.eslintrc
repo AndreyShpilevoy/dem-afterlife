@@ -24,7 +24,7 @@
         "arrow-parens": [2,"as-needed"],
         "camelcase": [2,{"properties":"always"}],
         "comma-dangle": [2,"never"],
-        "complexity": [1,5],
+        "complexity": [1,7],
         "curly": [2,"all"],
         "eol-last": 0,
         "func-style": [1, "expression"],

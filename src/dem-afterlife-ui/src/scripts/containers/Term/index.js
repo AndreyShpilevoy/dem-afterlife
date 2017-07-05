@@ -10,25 +10,28 @@ class Term extends PureComponent {
         term: shape({
             id: number.isRequired,
             value: string.isRequired
-        }).isRequired,
+        }),
         className: string,
         spaceBefore: bool,
         spaceAfter: bool,
         indentBefore: bool,
         indentAfter: bool,
         untermedPostfix: string,
-        locale: string.isRequired
+        locale: string.isRequired,
+        doNotTerm: bool
     };
 
     static defaultProps = {
-        untermedPostfix: defaults.emptyString
+        untermedPostfix: defaults.emptyString,
+        doNotTerm: false
     };
 
     render() {
-        const {term, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter, untermedPostfix} = this.props;
+        const {term, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter, untermedPostfix, doNotTerm} = this.props;
         const spaceBeforeString = spaceBefore ? defaults.spaceString : defaults.emptyString;
         const spaceAfterString = spaceAfter ? defaults.spaceString : defaults.emptyString;
-        const content = `${spaceBeforeString}${localization.getTermTranslation(term, locale)}${untermedPostfix}${spaceAfterString}`;
+        const termedString = doNotTerm ? defaults.emptyString : localization.getTermTranslation(term, locale);
+        const content = `${spaceBeforeString}${termedString}${untermedPostfix}${spaceAfterString}`;
         const style = {
             paddingLeft: indentBefore ? defaults.spaceWidth : defaults.emptyString,
             paddingRight: indentAfter ? defaults.spaceWidth : defaults.emptyString

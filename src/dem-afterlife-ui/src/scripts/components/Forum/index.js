@@ -12,10 +12,6 @@ import {sharedPropTypes, defaults} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const topicsTerm = {id: 1, value: 'Topics'};
-const postsTerm = {id: 2, value: 'Posts'};
-const lastPostTerm = {id: 3, value: 'Last message'};
-
 const mapSubForumArray = subForumArray =>
     subForumArray.map((item, key) => <SubForum key={key} subForum={item} />);
 
@@ -27,6 +23,9 @@ export const ForumPure = ({forum, styles}) => {
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Conference/Forum/${id}`;
     const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.topicId}`;
+    const topicsTerm = {id: 1, value: 'Topics'};
+    const postsTerm = {id: 2, value: 'Posts'};
+    const lastPostTerm = {id: 3, value: 'Last message'};
     return (
             <div className={styles.mainContainer}>
                 <Row>
@@ -73,7 +72,7 @@ export const ForumPure = ({forum, styles}) => {
                                         <UserName color={lastTopicInfo.latesPostAutorGroupColor}
                                             id={lastTopicInfo.latesPostAutorId}
                                             name={lastTopicInfo.latesPostAutorName}/>
-                                        {' - '}
+                                        <Term doNotTerm untermedPostfix={'-'} spaceBefore indentBefore spaceAfter indentAfter/>
                                     </Hidden>
                                     <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
                                 </Hidden>

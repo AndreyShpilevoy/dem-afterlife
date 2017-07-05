@@ -9,7 +9,7 @@ jest.mock('utils/localization', () => ({
     getRelativeDateTime: () => 'some time ago'
 }));
 
-describe('RelativeDateTime HOC', () => {
+describe('RelativeDateTime', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot for relative date', () => {

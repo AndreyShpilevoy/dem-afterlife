@@ -5,7 +5,7 @@ import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import LocaleDateTime from './index';
 
-describe('LocaleDateTime HOC', () => {
+describe('LocaleDateTime', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot for locale date', () => {

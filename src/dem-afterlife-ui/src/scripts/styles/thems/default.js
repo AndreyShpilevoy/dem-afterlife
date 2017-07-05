@@ -4,6 +4,7 @@ import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 import footerBackgroundImageLg from 'images/DEM/footer/Dem_Footer_bg_lg.png';
 import footerBackgroundImageXl from 'images/DEM/footer/Dem_Footer_bg_xl.png';
+import defaultAvarat from 'images/DEM/default_avatar.png';
 
 const colors = {
     backgroundColor: '#171717',
@@ -11,6 +12,7 @@ const colors = {
     navigationLinksBackground: '#252525',
     orangeColor: '#AC6B37',
     orangeColorHovered: '#EF9853',
+    orangeColorBright: '#c57b3f',
     yellowTextColor: '#CBC065',
     yellowTextColorHovered: '#FFF495',
     footerBackgroundColor: '#3E3025',
@@ -24,7 +26,9 @@ const colors = {
 
 const sizes = {
     marginBetweenBlocks: 0.3125,
-    horizontalPadingAndMargin: 0.9375
+    horizontalPadingAndMargin: 0.9375,
+    textBig: 1.3125,
+    textmall: 0.8
 };
 
 const headerXsSm = {
@@ -215,18 +219,27 @@ const defaultTheme = {
     forum: {
         separator: forumTopicSeparator,
         text: {
-            big: 1.3125,
-            small: 0.8
+            big: sizes.textBig,
+            small: sizes.textSmall
         },
         subForumContainer: {
             marginTop: subForum.marginTop
         }
     },
     topic: {
-        separator: forumTopicSeparator
+        separator: forumTopicSeparator,
+        text: {
+            big: sizes.textBig,
+            small: sizes.textSmall
+        },
+        parentForumColor: colors.orangeColorBright,
+        parentForumColorHover: colors.orangeColorHovered
     },
-    subForum
-
+    subForum,
+    avatar: {
+        defaultImage: defaultAvarat,
+        size: 2.5
+    }
 };
 
 export default defaultTheme;

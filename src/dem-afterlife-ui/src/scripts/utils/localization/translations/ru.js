@@ -22,19 +22,19 @@ const ru = [
   {id: 21, value: 'лет', description: 'several years for TransformDateTime'},
   {id: 22, value: 'Просмотров', description: 'for topics label on topicArray component'},
   {id: 23, value: 'Темы', description: 'for topics label on topicArray component'},
-  {id: 24, value: '>>', description: 'for topics body on topicArray component'},
-  {id: 25, value: 'Форум:', description: 'for topics body on topicArray component'},
+  {id: 24, value: '>>', description: 'for topics body on topicArray component'}, // todo empty
+  {id: 25, value: 'Форум', description: 'for topics body on topicArray component'},
   {id: 26, value: 'Последние сообщения', description: 'title for lastActiveTopicArray component'},
   {id: 27, value: 'DeusExMachina', description: 'web site name for title'},
   {id: 28, value: 'Просмотр форума', description: 'action name for title'},
   {id: 29, value: 'Просмотр темы', description: 'action name for title'},
   {id: 30, value: 'Сообщения', description: 'action name for title'},
-  {id: 31, value: 'Оффтоп:', description: 'header for Offtopic bbCode'},
-  {id: 32, value: 'писал(а):', description: 'header for Quote bbCode'},
-  {id: 33, value: 'Цитата:', description: 'header for Quote bbCode'},
-  {id: 34, value: 'Код:', description: 'header for Code bbCode'},
+  {id: 31, value: 'Оффтоп', description: 'header for Offtopic bbCode'},
+  {id: 32, value: 'писал(а)', description: 'header for Quote bbCode'},
+  {id: 33, value: 'Цитата', description: 'header for Quote bbCode'},
+  {id: 34, value: 'Код', description: 'header for Code bbCode'},
   {id: 35, value: 'Ctrl+A, Ctrl+C', description: 'header for Code bbCode'},
-  {id: 36, value: 'Последний раз отредактировано:', description: 'Post edit text label'}
+  {id: 36, value: 'Последний раз отредактировано', description: 'Post edit text label'}
 ];
 
 export default ru;

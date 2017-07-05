@@ -5,13 +5,31 @@ import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Term from './index';
 
-describe('Term HOC', () => {
+describe('Term', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot for simple term', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'}
+        };
+        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot for simple term and untermedPostfix', () => {
+        const props = {
+            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            term: {id: 1, value: 'Тем'},
+            untermedPostfix: ':'
+        };
+        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot for not term and untermedPostfix', () => {
+        const props = {
+            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            doNotTerm: true,
+            untermedPostfix: ':'
         };
         expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
@@ -40,6 +58,34 @@ describe('Term HOC', () => {
             term: {id: 1, value: 'Тем'},
             spaceBefore: true,
             spaceAfter: true
+        };
+        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot for term with indent before', () => {
+        const props = {
+            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            term: {id: 1, value: 'Тем'},
+            indentBefore: true
+        };
+        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot for simple term with indent after', () => {
+        const props = {
+            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            term: {id: 1, value: 'Тем'},
+            indentAfter: true
+        };
+        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot for simple term with indent before and after', () => {
+        const props = {
+            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            term: {id: 1, value: 'Тем'},
+            indentBefore: true,
+            indentAfter: true
         };
         expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
