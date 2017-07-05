@@ -28,7 +28,7 @@ const sizes = {
     marginBetweenBlocks: 0.3125,
     horizontalPadingAndMargin: 0.9375,
     textBig: 1.3125,
-    textmall: 0.8
+    textSmall: 0.8
 };
 
 const headerXsSm = {

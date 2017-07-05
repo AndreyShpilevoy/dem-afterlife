@@ -12,7 +12,8 @@ const calculateStyles = ({themeName, grid, topic}) => {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            height: '100%'
         },
         titleContainer: {
             width: '100%'

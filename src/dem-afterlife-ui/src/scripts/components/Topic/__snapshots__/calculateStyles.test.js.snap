@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Topic calculateStyles should create expected object 1`] = `
+Object {
+  "centerRow": Object {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "row",
+    "height": "100%",
+    "justifyContent": "center",
+  },
+  "heightFull": Object {
+    "height": "100%",
+  },
+  "lastPostInfoStyle": Object {
+    "@media (max-width: 100vw)": Object {
+      "fontSize": 0.8,
+      "justifyContent": "left",
+    },
+    "@media (max-width: 575px)": Object {
+      "flexDirection": "row",
+    },
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "height": "100%",
+    "justifyContent": "center",
+    "whiteSpace": "nowrap",
+  },
+  "noWrap": Object {
+    "whiteSpace": "nowrap",
+  },
+  "options": Object {
+    "meta": "Topic",
+    "themeName": "default",
+  },
+  "parentForumTitleStyle": Object {
+    "&:hover": Object {
+      "color": "blue",
+    },
+    "&:visited": Object {
+      "color": "red",
+    },
+    "&:visited:hover": Object {
+      "color": "blue",
+    },
+    "color": "red",
+  },
+  "parentForumWrapper": Object {
+    "display": "block",
+    "fontSize": 0.8,
+    "overflow": "hidden",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
+  },
+  "separator": Object {
+    "backgroundColor": "red",
+    "height": 0.125,
+    "marginBottom": 0.3,
+    "marginLeft": 0,
+    "marginRight": 0,
+    "marginTop": 0.3,
+  },
+  "textSmallMd": Object {
+    "@media (max-width: 575px)": Object {
+      "fontSize": 0.8,
+    },
+  },
+  "titleContainer": Object {
+    "width": "100%",
+  },
+  "titleStyle": Object {
+    "display": "block",
+    "fontSize": 1.3125,
+    "overflow": "hidden",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
+  },
+  "wrapper": Object {
+    "&:last-child": Object {
+      "&>$separator": Object {
+        "display": "none",
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar HOC component match expected snapshot with className 1`] = `
+<AvatarPure
+  avatarUrl="urlToImg.png"
+  className="AvatarClassName"
+  id={111}
+  size={3}
+  styles={
+    Object {
+      ".default-UserAvatar-avatar>img": "default-UserAvatar-avatar>img",
+      ".default-UserAvatar-avatarDefault>img": "default-UserAvatar-avatarDefault>img",
+      "avatar": "default-UserAvatar-avatar",
+      "avatarDefault": "default-UserAvatar-avatarDefault",
+      "container": "default-UserAvatar-container",
+    }
+  }
+/>
+`;

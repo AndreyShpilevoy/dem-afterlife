@@ -34,18 +34,18 @@ export const TopicPure = ({topic, styles}) => {
                                         </Column>
                                     </Row>
                                     <Row className={textSmallMd}>
-                                        <Column xs={12} md={7} lg={12}>
                                             {
                                                 parentForumId || parentForumTitle ?
-                                                    <span className={parentForumWrapper}>
-                                                        <Term term={forumTerm} untermedPostfix={':'} spaceAfter />
-                                                        <Link className={parentForumTitleStyle} to={linkToParentForum}>
-                                                            {parentForumTitle}
-                                                        </Link>
-                                                    </span> :
+                                                    <Column xs={12} md={7} lg={12}>
+                                                        <span className={parentForumWrapper}>
+                                                            <Term term={forumTerm} untermedPostfix={':'} spaceAfter />
+                                                            <Link className={parentForumTitleStyle} to={linkToParentForum}>
+                                                                {parentForumTitle}
+                                                            </Link>
+                                                        </span>
+                                                    </Column> :
                                                     defaults.emptyString
                                             }
-                                        </Column>
                                         <Column md={5}>
                                             <Hidden lg={'up'} sm={'down'} className={noWrap}>
                                                 <Term term={postTerm} untermedPostfix={':'} spaceAfter />

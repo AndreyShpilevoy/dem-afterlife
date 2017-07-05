@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LastActiveTopics component match expected snapshot without forumArray 1`] = `
+<withStyles(CollapsebleSectionPure)
+  collapseSettings={
+    Object {
+      "collapsedByDefault": false,
+      "isCollapseble": true,
+    }
+  }
+  headerSettings={
+    Object {
+      "firstColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 2,
+                "value": "Posts",
+              }
+        }
+    />,
+      "secondColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 22,
+                "value": "Views",
+              }
+        }
+    />,
+      "thirdColumnTerm": <Connect(Term)
+        term={
+            Object {
+                "id": 3,
+                "value": "Last message in",
+              }
+        }
+    />,
+      "title": <Connect(Term)
+        term={
+            Object {
+                "id": 26,
+                "value": "Last messages",
+              }
+        }
+    />,
+    }
+  }
+>
+  <withStyles(TopicPure)
+    topic={
+      Object {
+        "id": 1,
+        "lastPostInfo": Object {
+          "autorAvatart": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+          "autorGroupColor": "#00AA00",
+          "autorId": 4,
+          "autorName": "Buba",
+          "timeCreation": 2016-09-19T10:42:32.000Z,
+        },
+        "parentForumId": 10,
+        "parentForumTitle": "Общие вопросы",
+        "postsCount": 215,
+        "title": "Как деактивировать бомбу",
+        "topicViewsCount": 1315,
+      }
+    }
+  />
+  <withStyles(TopicPure)
+    topic={
+      Object {
+        "id": 2,
+        "lastPostInfo": Object {
+          "autorAvatart": null,
+          "autorGroupColor": "#fbeab2",
+          "autorId": 2,
+          "autorName": "Bykawka",
+          "timeCreation": 2017-01-22T10:53:09.000Z,
+        },
+        "parentForumId": 20,
+        "parentForumTitle": "Технические вопросы",
+        "postsCount": 57,
+        "title": "Как активировать бомбу.",
+        "topicViewsCount": 847,
+      }
+    }
+  />
+</withStyles(CollapsebleSectionPure)>
+`;

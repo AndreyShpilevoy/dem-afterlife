@@ -59,8 +59,8 @@ const topic = shape({
         autorAvatart: string,
         autorGroupColor: string.isRequired
     }).isRequired,
-    parentForumId: number.isRequired,
-    parentForumTitle: string.isRequired
+    parentForumId: number,
+    parentForumTitle: string
 });
 
 const sharedPropTypes = {

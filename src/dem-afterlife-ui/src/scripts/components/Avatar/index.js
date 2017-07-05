@@ -9,12 +9,17 @@ const getContainerStyles = size => size ? {width: `${size}rem`} : {};
 
 const getImageStyles = size => size ? {height: `${size}rem`} : {};
 
-export const AvatarPure = ({avatarUrl, size, styles}) =>
-      <div className={styles.container} style={getContainerStyles(size)}>
-        <Link className={styles.avatar} to={'/'} style={getImageStyles(size)}>
-          {avatarUrl ? <img src={avatarUrl} /> : <div className={styles.avatarDefault}/>}
+export const AvatarPure = ({avatarUrl, size, styles, className, id}) => {
+    const localeClassName = className ? `${className} ${styles.container}` : styles.container;
+    const linkToProfile = `/${id}`;
+    return (
+    <div className={localeClassName} style={getContainerStyles(size)}>
+        <Link className={styles.avatar} to={linkToProfile} style={getImageStyles(size)}>
+            {avatarUrl ? <img src={avatarUrl} /> : <div className={styles.avatarDefault}/>}
         </Link>
-      </div>;
+    </div>
+    );
+};
 
 AvatarPure.propTypes = {
     id: number.isRequired,
