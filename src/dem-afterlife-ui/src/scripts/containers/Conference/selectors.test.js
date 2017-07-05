@@ -3,9 +3,11 @@
 import {
     chapterArraySelector,
     forumArraySelector,
+    lastActiveTopicArraySelector,
     sortedChapterArraySelector,
     sortedForumArraySelector,
-    chaptersWithForumsArraySelector
+    chaptersWithForumsArraySelector,
+    lastActiveTopicsOrderedArraySelector
 } from './selectors';
 
 describe('Conference selectors', () => {
@@ -23,6 +25,20 @@ describe('Conference selectors', () => {
         expect(chapterArraySelector(state)).toEqual(expectedResult);
     });
 
+    it('lastActiveTopicArraySelector should return expected array', () => {
+        const state = {
+            conferenceReducer: {
+                lastActiveTopicArray: [
+                    {id: 1, lastPostInfo: {timeCreation: new Date('2015/08/17 13:42:32')} },
+                    {id: 3, lastPostInfo: {timeCreation: new Date('2017/08/17 13:42:32')} },
+                    {id: 2, lastPostInfo: {timeCreation: new Date('2016/08/17 13:42:32')} }
+                ]
+            }
+        };
+        const expectedResult = state.conferenceReducer.lastActiveTopicArray;
+        expect(lastActiveTopicArraySelector(state)).toEqual(expectedResult);
+    });
+
     it('forumArraySelector should return expected array', () => {
         const state = {
             conferenceReducer: {
@@ -34,6 +50,24 @@ describe('Conference selectors', () => {
             }
         };
         const expectedResult = state.conferenceReducer.forumArray;
+        expect(forumArraySelector(state)).toEqual(expectedResult);
+    });
+
+    it('forumArraySelector with subForumArray should return expected array', () => {
+        const state = {
+            conferenceReducer: {
+                forumArray: [
+                    {id: 1, order: 1, chapterId: 1, subForumArray: [{id: 3, order: 3}, {id: 2, order: 1}, {id: 1, order: 2}] },
+                    {id: 3, order: 3, chapterId: 1, subForumArray: [{id: 3, order: 3}, {id: 2, order: 1}, {id: 1, order: 2}] },
+                    {id: 2, order: 2, chapterId: 3}
+                ]
+            }
+        };
+        const expectedResult = [
+            {id: 1, order: 1, chapterId: 1, subForumArray: [{id: 2, order: 1}, {id: 1, order: 2}, {id: 3, order: 3}] },
+            {id: 3, order: 3, chapterId: 1, subForumArray: [{id: 2, order: 1}, {id: 1, order: 2}, {id: 3, order: 3}] },
+            {id: 2, order: 2, chapterId: 3}
+        ];
         expect(forumArraySelector(state)).toEqual(expectedResult);
     });
 
@@ -130,5 +164,41 @@ describe('Conference selectors', () => {
             }
         ];
         expect(chaptersWithForumsArraySelector(state)).toEqual(expectedResult);
+    });
+
+    it('lastActiveTopicsOrderedArraySelector should return expected array', () => {
+        const state = {
+            conferenceReducer: {
+                lastActiveTopicArray: [
+                    {id: 1, lastPostInfo: {timeCreation: new Date('2015/08/17 13:42:32')} },
+                    {id: 3, lastPostInfo: {timeCreation: new Date('2017/08/17 13:42:32')} },
+                    {id: 2, lastPostInfo: {timeCreation: new Date('2016/08/17 13:42:32')} }
+                ]
+            }
+        };
+        const expectedResult = [
+            {id: 3, lastPostInfo: {timeCreation: new Date('2017/08/17 13:42:32')} },
+            {id: 2, lastPostInfo: {timeCreation: new Date('2016/08/17 13:42:32')} },
+            {id: 1, lastPostInfo: {timeCreation: new Date('2015/08/17 13:42:32')} }
+        ];
+        expect(lastActiveTopicsOrderedArraySelector(state)).toEqual(expectedResult);
+    });
+
+    it('lastActiveTopicsOrderedArraySelector without lastPostInfo should return expected array', () => {
+        const state = {
+            conferenceReducer: {
+                lastActiveTopicArray: [
+                    {id: 1},
+                    {id: 3},
+                    {id: 2}
+                ]
+            }
+        };
+        const expectedResult = [
+            {id: 1},
+            {id: 3},
+            {id: 2}
+        ];
+        expect(lastActiveTopicsOrderedArraySelector(state)).toEqual(expectedResult);
     });
 });
