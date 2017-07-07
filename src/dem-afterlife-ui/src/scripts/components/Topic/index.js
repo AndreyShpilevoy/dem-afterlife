@@ -69,9 +69,9 @@ export const TopicPure = ({topic, styles}) => {
                         <Column xs={12} md={5} lg={3}>
                             <Row className={heightFull}>
                                 <Column xs={12} lg={10} className={lastPostInfoStyle}>
-                                    <UserName name={lastPostInfo.autorName}
-                                        id={lastPostInfo.autorId}
-                                        color={lastPostInfo.autorGroupColor}/>
+                                    <UserName name={lastPostInfo.authorName}
+                                        id={lastPostInfo.authorId}
+                                        color={lastPostInfo.authorGroupColor}/>
                                     <Hidden lg={'up'}>
                                         <Term doNotTerm untermedPostfix={'-'} spaceBefore indentBefore spaceAfter indentAfter/>
                                     </Hidden>
@@ -79,7 +79,7 @@ export const TopicPure = ({topic, styles}) => {
                                 </Column>
                                 <Column lg={2}>
                                     <Hidden md={'down'} className={lastPostInfoStyle}>
-                                        <Avatar id={lastPostInfo.autorId} avatarUrl={lastPostInfo.autorAvatart} size={2.5}/>
+                                        <Avatar id={lastPostInfo.authorId} avatarUrl={lastPostInfo.authorAvatar} size={2.5}/>
                                     </Hidden>
                                 </Column>
                             </Row>

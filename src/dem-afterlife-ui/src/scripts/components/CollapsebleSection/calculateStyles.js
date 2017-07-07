@@ -64,9 +64,9 @@ const getCommonPart = ({general, header, body}) => ({
 });
 
 const getSizeSpecific = (grid, collapsebleSection) =>
-    grid.containers.reduce((previouse, {gridSize, mediaMinString, mediaMaxString}) => gridSize !== 'lg' && gridSize !== 'xl' ?
+    grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) => gridSize !== 'lg' && gridSize !== 'xl' ?
     {
-        ...previouse,
+        ...previous,
         ...createMediaQueryMinMax(
                 mediaMinString,
                 mediaMaxString,
@@ -107,7 +107,7 @@ const getSizeSpecific = (grid, collapsebleSection) =>
             }
             )
     } :
-    previouse,
+    previous,
 {});
 
 const calculateStyles = ({themeName, grid, collapsebleSection}) => ({

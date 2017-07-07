@@ -1,8 +1,8 @@
 import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
 import {css, withStyles, ThemeProvider} from 'react-with-styles';
 import jssInterface from './jssInterface';
-import defaultTheme from './thems/default';
-import overriddenTheme from './thems/overridden';
+import defaultTheme from './themes/default';
+import overriddenTheme from './themes/overridden';
 
 ThemedStyleSheet.registerDefaultTheme(defaultTheme);
 ThemedStyleSheet.registerTheme('overridden', overriddenTheme);

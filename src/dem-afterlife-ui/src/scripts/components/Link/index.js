@@ -6,10 +6,10 @@ import {withStyles} from 'styles';
 import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
-const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((previouse, current) =>
+const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((previous, current) =>
     props[current] ?
-        {...{[current]: props[current]}, ...previouse} :
-        previouse,
+        {...{[current]: props[current]}, ...previous} :
+        previous,
     {
         children: props.children || defaults.emptyString,
         style: props.style || defaults.emptyObject

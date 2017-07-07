@@ -1,8 +1,8 @@
 import {createMediaQueryMin} from 'utils';
 
 const calculateStyles = ({themeName, grid}) =>
-    grid.containers.reduce((previouse, {width, mediaMinString}) => ({
-        ...previouse,
+    grid.containers.reduce((previous, {width, mediaMinString}) => ({
+        ...previous,
         ...createMediaQueryMin(mediaMinString, {
             container: {
                 width,

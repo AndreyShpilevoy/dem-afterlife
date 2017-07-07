@@ -7,8 +7,8 @@ import calculateStyles from './calculateStyles';
 const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
-        .reduce((previouse, current) =>
-            styles[current] ? `${previouse} ${styles[current]}` : defaults.emptyString, defaults.emptyString);
+        .reduce((previous, current) =>
+            styles[current] ? `${previous} ${styles[current]}` : defaults.emptyString, defaults.emptyString);
 
 export const ColumnPure = (
         {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}

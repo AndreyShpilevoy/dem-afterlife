@@ -31,16 +31,16 @@ export default {
     'border-vertical-spacing': 'rem',
     'bottom': 'rem',
     'box-shadow': 'rem',
-    'box-shadow-x': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
-    'box-shadow-y': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
-    'box-shadow-blur': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
-    'box-shadow-spread': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
+    'box-shadow-x': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
+    'box-shadow-y': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
+    'box-shadow-blur': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
+    'box-shadow-spread': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
     'column-gap': 'rem',
     'column-rule': 'rem',
     'column-rule-width': 'rem',
     'column-width': 'rem',
     'flex-basis': 'rem',
-    'font-line-height': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
+    'font-line-height': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
     'font-size': 'rem',
     'font-size-delta': 'rem',
     'height': 'rem',
@@ -89,9 +89,9 @@ export default {
     'shape-margin': 'rem',
     'size': 'rem',
     'text-indent': 'rem',
-    'text-shadow-x': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
-    'text-shadow-y': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
-    'text-shadow-blur': 'rem', // Not existing property. Used to avoid issues with jss-expand intergration
+    'text-shadow-x': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
+    'text-shadow-y': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
+    'text-shadow-blur': 'rem', // Not existing property. Used to avoid issues with jss-expand integration
     'text-stroke': 'rem',
     'text-stroke-width': 'rem',
     'top': 'rem',

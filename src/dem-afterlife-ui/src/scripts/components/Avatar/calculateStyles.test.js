@@ -2,11 +2,11 @@
 
 import calculateStyles from './calculateStyles';
 
-describe('Avarat calculateStyles', () => {
+describe('Avatar calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
         avatar: {
-            defaultImage: 'defaultAvarat.img',
+            defaultImage: 'defaultAvatar.img',
             size: 2.5
         }
     };

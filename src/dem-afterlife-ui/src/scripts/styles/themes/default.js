@@ -4,7 +4,7 @@ import headerBackgroundImageXl from 'images/DEM/header/Dem_NavBar_bg_xl.png';
 import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 import footerBackgroundImageLg from 'images/DEM/footer/Dem_Footer_bg_lg.png';
 import footerBackgroundImageXl from 'images/DEM/footer/Dem_Footer_bg_xl.png';
-import defaultAvarat from 'images/DEM/default_avatar.png';
+import defaultAvatar from 'images/DEM/default_avatar.png';
 
 const colors = {
     backgroundColor: '#171717',
@@ -237,7 +237,7 @@ const defaultTheme = {
     },
     subForum,
     avatar: {
-        defaultImage: defaultAvarat,
+        defaultImage: defaultAvatar,
         size: 2.5
     }
 };

@@ -36,10 +36,10 @@ describe('ForumPure', () => {
             lastTopicInfo: {
                 topicId: 4,
                 topicDescription: 'Exporter Ex Machina for Maya',
-                latesPostTimeCreation: new Date('2007/09/06 22:33:09'),
-                latesPostAutorId: 4,
-                latesPostAutorName: 'Buba',
-                latesPostAutorGroupColor: '#00AA00'
+                latestPostTimeCreation: new Date('2007/09/06 22:33:09'),
+                latestPostAuthorId: 4,
+                latestPostAuthorName: 'Buba',
+                latestPostAuthorGroupColor: '#00AA00'
             }
         };
         expect(shallow(<ForumPure className={'forumClassName'} styles={styles} forum={forum}/>)).toMatchSnapshot();
@@ -57,10 +57,10 @@ describe('ForumPure', () => {
             lastTopicInfo: {
                 topicId: 4,
                 topicDescription: 'Exporter Ex Machina for Maya',
-                latesPostTimeCreation: new Date('2007/09/06 22:33:09'),
-                latesPostAutorId: 4,
-                latesPostAutorName: 'Buba',
-                latesPostAutorGroupColor: '#00AA00'
+                latestPostTimeCreation: new Date('2007/09/06 22:33:09'),
+                latestPostAuthorId: 4,
+                latestPostAuthorName: 'Buba',
+                latestPostAuthorGroupColor: '#00AA00'
             },
             subForumArray: [
                 {id: 51, title: 'FAQ', order: 57},

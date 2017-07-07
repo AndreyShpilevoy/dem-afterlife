@@ -45,10 +45,10 @@ describe('Conference HOC', () => {
                         lastTopicInfo: {
                             topicId: 1,
                             topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
-                            latesPostTimeCreation: new Date('2015/08/17 13:42:32'),
-                            latesPostAutorId: 1,
-                            latesPostAutorName: 'kto',
-                            latesPostAutorGroupColor: '#ffa510'
+                            latestPostTimeCreation: new Date('2015/08/17 13:42:32'),
+                            latestPostAuthorId: 1,
+                            latestPostAuthorName: 'kto',
+                            latestPostAuthorGroupColor: '#ffa510'
                         },
                         subForumArray: [
                             {id: 11, title: 'Самопал', order: 2},
@@ -66,10 +66,10 @@ describe('Conference HOC', () => {
                         lastTopicInfo: {
                             topicId: 2,
                             topicDescription: 'Проблемы с игрой',
-                            latesPostTimeCreation: new Date('2016/9/22 12:53:09'),
-                            latesPostAutorId: 2,
-                            latesPostAutorName: 'Bykawka',
-                            latesPostAutorGroupColor: '#fbeab2'
+                            latestPostTimeCreation: new Date('2016/9/22 12:53:09'),
+                            latestPostAuthorId: 2,
+                            latestPostAuthorName: 'Bykawka',
+                            latestPostAuthorGroupColor: '#fbeab2'
                         }
                     }
                 ],
@@ -83,10 +83,10 @@ describe('Conference HOC', () => {
                         topicViewsCount: 1315,
                         lastPostInfo: {
                             timeCreation: new Date('2016/09/19 13:42:32'),
-                            autorId: 4,
-                            autorName: 'Buba',
-                            autorAvatart: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
-                            autorGroupColor: '#00AA00'
+                            authorId: 4,
+                            authorName: 'Buba',
+                            authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
+                            authorGroupColor: '#00AA00'
                         }
                     },
                     {
@@ -98,10 +98,10 @@ describe('Conference HOC', () => {
                         topicViewsCount: 847,
                         lastPostInfo: {
                             timeCreation: new Date('2017/01/22 12:53:09'),
-                            autorId: 2,
-                            autorName: 'Bykawka',
-                            autorAvatart: null,
-                            autorGroupColor: '#fbeab2'
+                            authorId: 2,
+                            authorName: 'Bykawka',
+                            authorAvatar: null,
+                            authorGroupColor: '#fbeab2'
                         }
                     }
                 ] } })

@@ -17,10 +17,10 @@ const forum = shape({
     lastTopicInfo: shape({
         topicId: number.isRequired,
         topicDescription: string.isRequired,
-        latesPostTimeCreation: instanceOf(Date).isRequired,
-        latesPostAutorId: number.isRequired,
-        latesPostAutorName: string.isRequired,
-        latesPostAutorGroupColor: string.isRequired
+        latestPostTimeCreation: instanceOf(Date).isRequired,
+        latestPostAuthorId: number.isRequired,
+        latestPostAuthorName: string.isRequired,
+        latestPostAuthorGroupColor: string.isRequired
     }).isRequired,
     subForumArray: arrayOf(subForum)
 });
@@ -54,10 +54,10 @@ const topic = shape({
     topicViewsCount: number.isRequired,
     lastPostInfo: shape({
         timeCreation: instanceOf(Date).isRequired,
-        autorId: number.isRequired,
-        autorName: string.isRequired,
-        autorAvatart: string,
-        autorGroupColor: string.isRequired
+        authorId: number.isRequired,
+        authorName: string.isRequired,
+        authorAvatar: string,
+        authorGroupColor: string.isRequired
     }).isRequired,
     parentForumId: number,
     parentForumTitle: string

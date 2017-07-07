@@ -62,7 +62,7 @@ export function* getChapterArraySaga() {
         yield take(GET_CHAPTER_ARRAY);
         const chapterArray = yield call(getChapterArrayApi);
         yield put(getChapterArraySuccess(chapterArray));
-        const chapterIdArray = chapterArray.reduce((previouse, current) => [...previouse, current.id], []);
+        const chapterIdArray = chapterArray.reduce((previous, current) => [...previous, current.id], []);
         yield put(getForumArrayByChapterIdArray(chapterIdArray));
     }
 }

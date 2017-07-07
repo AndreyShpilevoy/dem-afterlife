@@ -35,10 +35,10 @@ describe('TopicPure', () => {
             topicViewsCount: 1315,
             lastPostInfo: {
                 timeCreation: new Date('2016-09-19T10:42:32.000Z'),
-                autorId: 4,
-                autorName: 'Buba',
-                autorAvatart: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
-                autorGroupColor: '#00AA00'
+                authorId: 4,
+                authorName: 'Buba',
+                authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
+                authorGroupColor: '#00AA00'
             }
         };
         expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic}/>)).toMatchSnapshot();
@@ -52,10 +52,10 @@ describe('TopicPure', () => {
             topicViewsCount: 1315,
             lastPostInfo: {
                 timeCreation: new Date('2016-09-19T10:42:32.000Z'),
-                autorId: 4,
-                autorName: 'Buba',
-                autorAvatart: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
-                autorGroupColor: '#00AA00'
+                authorId: 4,
+                authorName: 'Buba',
+                authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
+                authorGroupColor: '#00AA00'
             },
             parentForumId: 10,
             parentForumTitle: 'Общие вопросы'

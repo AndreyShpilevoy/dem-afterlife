@@ -69,12 +69,12 @@ export const ForumPure = ({forum, styles}) => {
                             <Column md={6} lg={12} className={center}>
                                 <Hidden sm={'down'}>
                                     <Hidden md={'down'}>
-                                        <UserName color={lastTopicInfo.latesPostAutorGroupColor}
-                                            id={lastTopicInfo.latesPostAutorId}
-                                            name={lastTopicInfo.latesPostAutorName}/>
+                                        <UserName color={lastTopicInfo.latestPostAuthorGroupColor}
+                                            id={lastTopicInfo.latestPostAuthorId}
+                                            name={lastTopicInfo.latestPostAuthorName}/>
                                         <Term doNotTerm untermedPostfix={'-'} spaceBefore indentBefore spaceAfter indentAfter/>
                                     </Hidden>
-                                    <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latesPostTimeCreation}/>
+                                    <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latestPostTimeCreation}/>
                                 </Hidden>
                             </Column>
                             <Column md={6} lg={12} className={lastTopicInfoWrapper}>

@@ -46,42 +46,42 @@ describe('EN dateTimeDeclension', () => {
         expect(transformRelativeLessThanMinute(5, 'ru')).toEqual('меньше минуты');
     });
 
-    it('transformRelativeMinute should return 4 rigt forms for ru locale', () => {
+    it('transformRelativeMinute should return 4 right forms for ru locale', () => {
         expect(transformRelativeMinute(milliseconds.perMinute, 'ru', dateTimeDeclension)).toEqual('минуту');
         expect(transformRelativeMinute(2 * milliseconds.perMinute, 'ru', dateTimeDeclension)).toEqual('2 минуты');
         expect(transformRelativeMinute(5 * milliseconds.perMinute, 'ru', dateTimeDeclension)).toEqual('5 минут');
         expect(transformRelativeMinute(21 * milliseconds.perMinute, 'ru', dateTimeDeclension)).toEqual('21 минута');
     });
 
-    it('transformRelativeHour should return 4 rigt forms for ru locale', () => {
+    it('transformRelativeHour should return 4 right forms for ru locale', () => {
         expect(transformRelativeHour(milliseconds.perHour, 'ru', dateTimeDeclension)).toEqual('час');
         expect(transformRelativeHour(2 * milliseconds.perHour, 'ru', dateTimeDeclension)).toEqual('2 часа');
         expect(transformRelativeHour(5 * milliseconds.perHour, 'ru', dateTimeDeclension)).toEqual('5 часов');
         expect(transformRelativeHour(21 * milliseconds.perHour, 'ru', dateTimeDeclension)).toEqual('21 час');
     });
 
-    it('transformRelativeDay should return 4 rigt forms for ru locale', () => {
+    it('transformRelativeDay should return 4 right forms for ru locale', () => {
         expect(transformRelativeDay(milliseconds.perDay, 'ru', dateTimeDeclension)).toEqual('день');
         expect(transformRelativeDay(2 * milliseconds.perDay, 'ru', dateTimeDeclension)).toEqual('2 дня');
         expect(transformRelativeDay(5 * milliseconds.perDay, 'ru', dateTimeDeclension)).toEqual('5 дней');
         expect(transformRelativeDay(21 * milliseconds.perDay, 'ru', dateTimeDeclension)).toEqual('21 день');
     });
 
-    it('transformRelativeMonth should return 4 rigt forms for ru locale', () => {
+    it('transformRelativeMonth should return 4 right forms for ru locale', () => {
         expect(transformRelativeMonth(milliseconds.perMonth, 'ru', dateTimeDeclension)).toEqual('месяц');
         expect(transformRelativeMonth(2 * milliseconds.perMonth, 'ru', dateTimeDeclension)).toEqual('2 месяца');
         expect(transformRelativeMonth(5 * milliseconds.perMonth, 'ru', dateTimeDeclension)).toEqual('5 месяцев');
         expect(transformRelativeMonth(21 * milliseconds.perMonth, 'ru', dateTimeDeclension)).toEqual('21 месяц');
     });
 
-    it('transformRelativeYear should return 4 rigt forms for ru locale', () => {
+    it('transformRelativeYear should return 4 right forms for ru locale', () => {
         expect(transformRelativeYear(milliseconds.perYear, 'ru', dateTimeDeclension)).toEqual('год');
         expect(transformRelativeYear(2 * milliseconds.perYear, 'ru', dateTimeDeclension)).toEqual('2 года');
         expect(transformRelativeYear(5 * milliseconds.perYear, 'ru', dateTimeDeclension)).toEqual('5 лет');
         expect(transformRelativeYear(21 * milliseconds.perYear, 'ru', dateTimeDeclension)).toEqual('21 год');
     });
 
-    it('getTransformForPeriod should return rigt functions per each deltaTime', () => {
+    it('getTransformForPeriod should return right functions per each deltaTime', () => {
         expect(getTransformForPeriod(1).name).toEqual('transformRelativeLessThanMinute');
         expect(getTransformForPeriod(milliseconds.perMinute).name).toEqual('transformRelativeMinute');
         expect(getTransformForPeriod(milliseconds.perHour).name).toEqual('transformRelativeHour');
@@ -102,7 +102,7 @@ describe('EN dateTimeDeclension', () => {
         expect(getRelativeDateTime(new Date(), 'ru')).toEqual('меньше минуты назад');
     });
 
-    it('getLocaleDateTime should return expected string for corect date', () => {
+    it('getLocaleDateTime should return expected string for correct date', () => {
         const options = {
             day: 'numeric',
             month: 'short',

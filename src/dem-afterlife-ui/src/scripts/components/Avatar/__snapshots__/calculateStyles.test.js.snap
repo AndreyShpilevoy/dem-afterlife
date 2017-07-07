@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Avarat calculateStyles should create expected object 1`] = `
+exports[`Avatar calculateStyles should create expected object 1`] = `
 Object {
   "avatar": Object {
     "&>img": Object {
@@ -28,7 +28,7 @@ Object {
       "maxWidth": "100%",
       "objectFit": "scale-down",
     },
-    "backgroundImage": "url(defaultAvarat.img)",
+    "backgroundImage": "url(defaultAvatar.img)",
     "backgroundRepeat": "no-repeat",
     "backgroundSize": "contain",
     "minHeight": "100%",

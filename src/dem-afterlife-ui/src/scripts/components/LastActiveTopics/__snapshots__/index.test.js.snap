@@ -50,10 +50,10 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
       Object {
         "id": 1,
         "lastPostInfo": Object {
-          "autorAvatart": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
-          "autorGroupColor": "#00AA00",
-          "autorId": 4,
-          "autorName": "Buba",
+          "authorAvatar": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+          "authorGroupColor": "#00AA00",
+          "authorId": 4,
+          "authorName": "Buba",
           "timeCreation": 2016-09-19T10:42:32.000Z,
         },
         "parentForumId": 10,
@@ -69,10 +69,10 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
       Object {
         "id": 2,
         "lastPostInfo": Object {
-          "autorAvatart": null,
-          "autorGroupColor": "#fbeab2",
-          "autorId": 2,
-          "autorName": "Bykawka",
+          "authorAvatar": null,
+          "authorGroupColor": "#fbeab2",
+          "authorId": 2,
+          "authorName": "Bykawka",
           "timeCreation": 2017-01-22T10:53:09.000Z,
         },
         "parentForumId": 20,

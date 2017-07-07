@@ -26,10 +26,10 @@ exports[`Topic HOC component match expected snapshot 1`] = `
     Object {
       "id": 1,
       "lastPostInfo": Object {
-        "autorAvatart": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
-        "autorGroupColor": "#00AA00",
-        "autorId": 4,
-        "autorName": "Buba",
+        "authorAvatar": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+        "authorGroupColor": "#00AA00",
+        "authorId": 4,
+        "authorName": "Buba",
         "timeCreation": 2016-09-19T10:42:32.000Z,
       },
       "parentForumId": 10,
