@@ -1,75 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CollapsebleSection Pure not default collapseSettings 1`] = `
+exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
 <div
-  className="default-CollapsebleSection-general"
+  className="default-CollapsibleSection-general"
 >
   <withStyles(RowPure)
-    className="default-CollapsebleSection-header"
+    className="default-CollapsibleSection-header"
     onClick={[Function]}
   >
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerText default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
       md={11}
     >
       <span
-        className="default-CollapsebleSection-titleClass"
+        className="default-CollapsibleSection-titleClass"
       />
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerHolder"
       lg={6}
       md={1}
     >
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-termedSection"
+        className="default-CollapsibleSection-termedSection"
         md="down"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={6}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
         </withStyles(RowPure)>
       </withStyles(HiddenPure)>
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-headerArrowHolder"
+        className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
         sm="down"
       >
         <SvgIconsMapper
-          className="default-CollapsebleSection-headerArrow closed"
+          className="default-CollapsibleSection-headerArrow closed"
           iconName="IconSortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
   </withStyles(RowPure)>
   <div
-    className="default-CollapsebleSection-bodyHolder closed"
+    className="default-CollapsibleSection-bodyHolder closed"
   >
     <div
-      className="default-CollapsebleSection-body"
+      className="default-CollapsibleSection-body"
     >
       <div>
         Column content
@@ -79,61 +79,61 @@ exports[`CollapsebleSection Pure not default collapseSettings 1`] = `
 </div>
 `;
 
-exports[`CollapsebleSection Pure with headerSettings 1`] = `
+exports[`CollapsibleSection Pure with headerSettings 1`] = `
 <div
-  className="default-CollapsebleSection-general"
+  className="default-CollapsibleSection-general"
 >
   <withStyles(RowPure)
-    className="default-CollapsebleSection-header"
+    className="default-CollapsibleSection-header"
     onClick={[Function]}
   >
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerText default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
       md={11}
     >
       <span
-        className="default-CollapsebleSection-titleClass"
+        className="default-CollapsibleSection-titleClass"
       >
         title
       </span>
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerHolder"
       lg={6}
       md={1}
     >
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-termedSection"
+        className="default-CollapsibleSection-termedSection"
         md="down"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             >
               firstColumnTerm
             </div>
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             >
               secondColumnTerm
             </div>
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={6}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             >
               thirdColumnTerm
             </div>
@@ -141,22 +141,22 @@ exports[`CollapsebleSection Pure with headerSettings 1`] = `
         </withStyles(RowPure)>
       </withStyles(HiddenPure)>
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-headerArrowHolder"
+        className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
         sm="down"
       >
         <SvgIconsMapper
-          className="default-CollapsebleSection-headerArrow"
+          className="default-CollapsibleSection-headerArrow"
           iconName="IconSortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
   </withStyles(RowPure)>
   <div
-    className="default-CollapsebleSection-bodyHolder default-CollapsebleSection-headerCursor"
+    className="default-CollapsibleSection-bodyHolder default-CollapsibleSection-headerCursor"
   >
     <div
-      className="default-CollapsebleSection-body"
+      className="default-CollapsibleSection-body"
     >
       <div>
         Column content
@@ -166,76 +166,76 @@ exports[`CollapsebleSection Pure with headerSettings 1`] = `
 </div>
 `;
 
-exports[`CollapsebleSection Pure without headerSettings 1`] = `
+exports[`CollapsibleSection Pure without headerSettings 1`] = `
 <div
-  className="default-CollapsebleSection-general"
+  className="default-CollapsibleSection-general"
 >
   <withStyles(RowPure)
-    className="default-CollapsebleSection-header"
+    className="default-CollapsibleSection-header"
     onClick={[Function]}
   >
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerText default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
       md={11}
     >
       <span
-        className="default-CollapsebleSection-titleClass"
+        className="default-CollapsibleSection-titleClass"
       />
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerHolder"
       lg={6}
       md={1}
     >
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-termedSection"
+        className="default-CollapsibleSection-termedSection"
         md="down"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={6}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
         </withStyles(RowPure)>
       </withStyles(HiddenPure)>
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-headerArrowHolder"
+        className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
         sm="down"
       >
         <SvgIconsMapper
-          className="default-CollapsebleSection-headerArrow"
+          className="default-CollapsibleSection-headerArrow"
           iconName="IconSortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
   </withStyles(RowPure)>
   <div
-    className="default-CollapsebleSection-bodyHolder default-CollapsebleSection-headerCursor"
+    className="default-CollapsibleSection-bodyHolder default-CollapsibleSection-headerCursor"
   >
     <div
-      className="default-CollapsebleSection-body"
+      className="default-CollapsibleSection-body"
     >
       <div>
         Column content
@@ -245,76 +245,76 @@ exports[`CollapsebleSection Pure without headerSettings 1`] = `
 </div>
 `;
 
-exports[`CollapsebleSection Pure without headerSettings 2`] = `
+exports[`CollapsibleSection Pure without headerSettings 2`] = `
 <div
-  className="default-CollapsebleSection-general"
+  className="default-CollapsibleSection-general"
 >
   <withStyles(RowPure)
-    className="default-CollapsebleSection-header"
+    className="default-CollapsibleSection-header"
     onClick={[Function]}
   >
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerText default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
       md={11}
     >
       <span
-        className="default-CollapsebleSection-titleClass"
+        className="default-CollapsibleSection-titleClass"
       />
     </withStyles(ColumnPure)>
     <withStyles(ColumnPure)
-      className="default-CollapsebleSection-headerHolder"
+      className="default-CollapsibleSection-headerHolder"
       lg={6}
       md={1}
     >
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-termedSection"
+        className="default-CollapsibleSection-termedSection"
         md="down"
       >
         <withStyles(RowPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={3}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
-            className="default-CollapsebleSection-headerColumn"
+            className="default-CollapsibleSection-headerColumn"
             lg={6}
           >
             <div
-              className="default-CollapsebleSection-headerText"
+              className="default-CollapsibleSection-headerText"
             />
           </withStyles(ColumnPure)>
         </withStyles(RowPure)>
       </withStyles(HiddenPure)>
       <withStyles(HiddenPure)
-        className="default-CollapsebleSection-headerArrowHolder"
+        className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
         sm="down"
       >
         <SvgIconsMapper
-          className="default-CollapsebleSection-headerArrow"
+          className="default-CollapsibleSection-headerArrow"
           iconName="IconSortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
   </withStyles(RowPure)>
   <div
-    className="default-CollapsebleSection-bodyHolder default-CollapsebleSection-headerCursor"
+    className="default-CollapsibleSection-bodyHolder default-CollapsibleSection-headerCursor"
   >
     <div
-      className="default-CollapsebleSection-body"
+      className="default-CollapsibleSection-body"
     >
       <div>
         Column content

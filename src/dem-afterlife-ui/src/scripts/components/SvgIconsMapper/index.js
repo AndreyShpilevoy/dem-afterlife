@@ -4,13 +4,13 @@ import {string} from 'prop-types';
 import IconLink from 'components/IconLink';
 
 const SvgIconsMapper = ({className, iconName}) => {
-    const avaliableIcons = {
+    const availableIcons = {
         IconSteam: require('components/IconSteam').default,
         IconVk: require('components/IconVk').default,
         IconSortLeft: require('components/IconSortLeft').default,
         IconSubForum: require('components/IconSubForum').default
     };
-    const SelectedIcon = avaliableIcons[iconName] ? avaliableIcons[iconName] : IconLink;
+    const SelectedIcon = availableIcons[iconName] ? availableIcons[iconName] : IconLink;
     return <SelectedIcon className={className}/>;
 };
 

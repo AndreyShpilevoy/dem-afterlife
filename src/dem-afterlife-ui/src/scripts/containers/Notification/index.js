@@ -34,30 +34,30 @@ export class NotificationPure extends React.Component {
         const {removeNotification} = this.props;
         const notificationsIdArray = notifications.map(notification => notification.uid);
         const {
-            state: notifSysState,
-            addNotification: notifSysAdd,
-            removeNotification: notifSysRemove
-        } = this.notifSys;
+            state: notificationSysState,
+            addNotification: notificationSysAdd,
+            removeNotification: notificationSysRemove
+        } = this.notificationSys;
 
         // check and remove from screen all notifications than not in the store anymore
-        notifSysState.notifications.forEach(notification => {
+        notificationSysState.notifications.forEach(notification => {
             if (notificationsIdArray.indexOf(notification.uid) < 0) {
-                notifSysRemove(notification.uid);
+                notificationSysRemove(notification.uid);
             }
         });
 
-        // create notification in NotificationSystem with overriden "onRemove" event
+        // create notification in NotificationSystem with overridden "onRemove" event
         // onRemove will be called on Removing of created notification
         // onRemove will call action removeNotification from NotificationPure component
         // and will delete this notification fom the store
         notifications.forEach(notification => {
-            notifSysAdd({...notification, onRemove: () => { removeNotification(notification.uid); }});
+            notificationSysAdd({...notification, onRemove: () => { removeNotification(notification.uid); }});
         });
     }
 
     render() {
         return (
-            <NotificationSystem ref={component => { this.notifSys = component; }} />
+            <NotificationSystem ref={component => { this.notificationSys = component; }} />
         );
     }
 }

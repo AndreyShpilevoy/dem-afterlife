@@ -63,7 +63,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date 1`
 </Connect(RelativeDateTime)>
 `;
 
-exports[`RelativeDateTime component match expected snapshot for relative date with spase after 1`] = `
+exports[`RelativeDateTime component match expected snapshot for relative date with space after 1`] = `
 <Connect(RelativeDateTime)
   relativeDateTime={2017-06-02T00:00:00.000Z}
   spaceAfter={true}
@@ -128,7 +128,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
 </Connect(RelativeDateTime)>
 `;
 
-exports[`RelativeDateTime component match expected snapshot for relative date with spase before 1`] = `
+exports[`RelativeDateTime component match expected snapshot for relative date with space before 1`] = `
 <Connect(RelativeDateTime)
   relativeDateTime={2017-06-02T00:00:00.000Z}
   spaceBefore={true}
@@ -193,7 +193,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
 </Connect(RelativeDateTime)>
 `;
 
-exports[`RelativeDateTime component match expected snapshot for relative date with spase before and after 1`] = `
+exports[`RelativeDateTime component match expected snapshot for relative date with space before and after 1`] = `
 <Connect(RelativeDateTime)
   relativeDateTime={2017-06-02T00:00:00.000Z}
   spaceAfter={true}

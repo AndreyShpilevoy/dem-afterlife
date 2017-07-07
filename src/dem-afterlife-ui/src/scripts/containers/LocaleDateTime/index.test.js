@@ -16,7 +16,7 @@ describe('LocaleDateTime', () => {
         expect(mount(<LocaleDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for locale date with spase before', () => {
+    it('component match expected snapshot for locale date with space before', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             localeDateTime: new Date('2017-06-02'),
@@ -25,7 +25,7 @@ describe('LocaleDateTime', () => {
         expect(mount(<LocaleDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for locale date with spase after', () => {
+    it('component match expected snapshot for locale date with space after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             localeDateTime: new Date('2017-06-02'),
@@ -34,7 +34,7 @@ describe('LocaleDateTime', () => {
         expect(mount(<LocaleDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for locale date with spase before and after', () => {
+    it('component match expected snapshot for locale date with space before and after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             localeDateTime: new Date('2017-06-02'),

@@ -63,7 +63,7 @@ exports[`LocaleDateTime component match expected snapshot for locale date 1`] = 
 </Connect(LocaleDateTime)>
 `;
 
-exports[`LocaleDateTime component match expected snapshot for locale date with spase after 1`] = `
+exports[`LocaleDateTime component match expected snapshot for locale date with space after 1`] = `
 <Connect(LocaleDateTime)
   localeDateTime={2017-06-02T00:00:00.000Z}
   spaceAfter={true}
@@ -128,7 +128,7 @@ exports[`LocaleDateTime component match expected snapshot for locale date with s
 </Connect(LocaleDateTime)>
 `;
 
-exports[`LocaleDateTime component match expected snapshot for locale date with spase before 1`] = `
+exports[`LocaleDateTime component match expected snapshot for locale date with space before 1`] = `
 <Connect(LocaleDateTime)
   localeDateTime={2017-06-02T00:00:00.000Z}
   spaceBefore={true}
@@ -193,7 +193,7 @@ exports[`LocaleDateTime component match expected snapshot for locale date with s
 </Connect(LocaleDateTime)>
 `;
 
-exports[`LocaleDateTime component match expected snapshot for locale date with spase before and after 1`] = `
+exports[`LocaleDateTime component match expected snapshot for locale date with space before and after 1`] = `
 <Connect(LocaleDateTime)
   localeDateTime={2017-06-02T00:00:00.000Z}
   spaceAfter={true}

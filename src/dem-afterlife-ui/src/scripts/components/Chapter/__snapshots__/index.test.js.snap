@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chapter component match expected snapshot with forumArray 1`] = `
-<withStyles(CollapsebleSectionPure)
+<withStyles(CollapsibleSectionPure)
   collapseSettings={
     Object {
       "collapsedByDefault": true,
-      "isCollapseble": true,
+      "isCollapsible": true,
     }
   }
   headerSettings={
@@ -59,15 +59,15 @@ exports[`Chapter component match expected snapshot with forumArray 1`] = `
       }
     }
   />
-</withStyles(CollapsebleSectionPure)>
+</withStyles(CollapsibleSectionPure)>
 `;
 
 exports[`Chapter component match expected snapshot without forumArray 1`] = `
-<withStyles(CollapsebleSectionPure)
+<withStyles(CollapsibleSectionPure)
   collapseSettings={
     Object {
       "collapsedByDefault": true,
-      "isCollapseble": true,
+      "isCollapsible": true,
     }
   }
   headerSettings={

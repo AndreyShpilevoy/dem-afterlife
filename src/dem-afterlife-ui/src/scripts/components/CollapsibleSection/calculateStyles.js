@@ -2,7 +2,7 @@ import {createMediaQueryMinMax} from 'utils';
 
 const getCommonPart = ({general, header, body}) => ({
     '@global': {
-        '@keyframes collapsebleSection-SlideDown': {
+        '@keyframes collapsibleSection-SlideDown': {
             from: {
                 maxHeight: '0vh'
             },
@@ -10,7 +10,7 @@ const getCommonPart = ({general, header, body}) => ({
                 maxHeight: '100vh'
             }
         },
-        '@keyframes collapsebleSection-SlideUp': {
+        '@keyframes collapsibleSection-SlideUp': {
             from: {
                 maxHeight: '100vh'
             },
@@ -63,7 +63,7 @@ const getCommonPart = ({general, header, body}) => ({
     }
 });
 
-const getSizeSpecific = (grid, collapsebleSection) =>
+const getSizeSpecific = (grid, collapsibleSection) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) => gridSize !== 'lg' && gridSize !== 'xl' ?
     {
         ...previous,
@@ -80,8 +80,8 @@ const getSizeSpecific = (grid, collapsebleSection) =>
                 },
                 headerArrow: {
                     display: 'block',
-                    width: collapsebleSection.header.iconSize,
-                    height: collapsebleSection.header.iconSize,
+                    width: collapsibleSection.header.iconSize,
+                    height: collapsibleSection.header.iconSize,
                     transform: 'rotate(-90deg)',
                     transformOrigin: 'center center',
                     transition: 'transform 0.5s ease-in',
@@ -89,17 +89,17 @@ const getSizeSpecific = (grid, collapsebleSection) =>
                         transform: 'rotate(0deg)'
                     },
                     '& > .SVGInline-svg': {
-                        width: collapsebleSection.header.iconSize,
-                        height: collapsebleSection.header.iconSize,
-                        fill: collapsebleSection.header.color
+                        width: collapsibleSection.header.iconSize,
+                        height: collapsibleSection.header.iconSize,
+                        fill: collapsibleSection.header.color
                     }
                 },
                 bodyHolder: {
                     transformOrigin: 'top',
-                    transition: collapsebleSection.body.transition,
-                    animation: 'collapsebleSection-SlideDown 500ms ease-in',
+                    transition: collapsibleSection.body.transition,
+                    animation: 'collapsibleSection-SlideDown 500ms ease-in',
                     '&.closed': {
-                        animation: 'collapsebleSection-SlideUp 500ms ease-in',
+                        animation: 'collapsibleSection-SlideUp 500ms ease-in',
                         transform: 'scaleY(0)',
                         maxHeight: 0
                     }
@@ -110,10 +110,10 @@ const getSizeSpecific = (grid, collapsebleSection) =>
     previous,
 {});
 
-const calculateStyles = ({themeName, grid, collapsebleSection}) => ({
-    ...getCommonPart(collapsebleSection),
-    ...getSizeSpecific(grid, collapsebleSection),
-    ...{options: {meta: 'CollapsebleSection', themeName} }
+const calculateStyles = ({themeName, grid, collapsibleSection}) => ({
+    ...getCommonPart(collapsibleSection),
+    ...getSizeSpecific(grid, collapsibleSection),
+    ...{options: {meta: 'CollapsibleSection', themeName} }
 });
 
 export default calculateStyles;

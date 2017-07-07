@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CollapsebleSection calculateStyles should create expected object 1`] = `
+exports[`CollapsibleSection calculateStyles should create expected object 1`] = `
 Object {
   "@global": Object {
-    "@keyframes collapsebleSection-SlideDown": Object {
+    "@keyframes collapsibleSection-SlideDown": Object {
       "from": Object {
         "maxHeight": "0vh",
       },
@@ -11,7 +11,7 @@ Object {
         "maxHeight": "100vh",
       },
     },
-    "@keyframes collapsebleSection-SlideUp": Object {
+    "@keyframes collapsibleSection-SlideUp": Object {
       "from": Object {
         "maxHeight": "100vh",
       },
@@ -23,11 +23,11 @@ Object {
   "@media (min-width: 0px) and (max-width: 575px)": Object {
     "bodyHolder": Object {
       "&.closed": Object {
-        "animation": "collapsebleSection-SlideUp 500ms ease-in",
+        "animation": "collapsibleSection-SlideUp 500ms ease-in",
         "maxHeight": 0,
         "transform": "scaleY(0)",
       },
-      "animation": "collapsebleSection-SlideDown 500ms ease-in",
+      "animation": "collapsibleSection-SlideDown 500ms ease-in",
       "transformOrigin": "top",
       "transition": "linearTransition",
     },
@@ -56,18 +56,18 @@ Object {
     },
   },
   "body": Object {
-    "backgroundColor": "colors.collapsebleSectionBodyBackgroundColor",
+    "backgroundColor": "colors.collapsibleSectionBodyBackgroundColor",
     "color": "colors.contentHolderBodyTextColor",
     "paddingBottom": NaN,
-    "paddingLeft": "sizes.horizontalPadingAndMargin",
-    "paddingRight": "sizes.horizontalPadingAndMargin",
+    "paddingLeft": "sizes.horizontalPaddingAndMargin",
+    "paddingRight": "sizes.horizontalPaddingAndMargin",
     "paddingTop": NaN,
   },
   "general": Object {
     "marginTop": "sizes.marginBetweenBlocks",
   },
   "header": Object {
-    "backgroundColor": "colors.collapsebleSectionHeaderBackgroundColor",
+    "backgroundColor": "colors.collapsibleSectionHeaderBackgroundColor",
     "color": "colors.orangeColor",
     "height": 2.5,
   },
@@ -88,7 +88,7 @@ Object {
     "width": "initial",
   },
   "options": Object {
-    "meta": "CollapsebleSection",
+    "meta": "CollapsibleSection",
     "themeName": "default",
   },
   "termedSection": Object {
@@ -97,7 +97,7 @@ Object {
   "titleClass": Object {
     "display": "block",
     "overflow": "hidden",
-    "paddingLeft": "sizes.horizontalPadingAndMargin",
+    "paddingLeft": "sizes.horizontalPaddingAndMargin",
     "textOverflow": "ellipsis",
     "whiteSpace": "nowrap",
   },

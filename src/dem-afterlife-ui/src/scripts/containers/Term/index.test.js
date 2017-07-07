@@ -34,7 +34,7 @@ describe('Term', () => {
         expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for term with spase before', () => {
+    it('component match expected snapshot for term with space before', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
@@ -43,7 +43,7 @@ describe('Term', () => {
         expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for simple term with spase after', () => {
+    it('component match expected snapshot for simple term with space after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
@@ -52,7 +52,7 @@ describe('Term', () => {
         expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for simple term with spase before and after', () => {
+    it('component match expected snapshot for simple term with space before and after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},

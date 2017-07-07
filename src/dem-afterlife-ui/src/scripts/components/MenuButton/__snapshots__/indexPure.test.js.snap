@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuButton Pure after click on button child divs should added open css class name to theyr classNames component match expected snapshot 1`] = `
+exports[`MenuButton Pure after click on button child div\'s should added open css class name to their classNames component match expected snapshot 1`] = `
 <div
   className="default-MenuButton-container"
   onClick={[Function]}

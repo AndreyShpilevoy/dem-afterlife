@@ -36,7 +36,7 @@ describe('Conference selectors', () => {
         expect(socialMediaLinkArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('sortednavigationLinkArraySelector should return expected sorted array', () => {
+    it('sortedNavigationLinkArraySelector should return expected sorted array', () => {
         const state = {
             layoutReducer: {
                 navigationLinkArray: [
@@ -54,7 +54,7 @@ describe('Conference selectors', () => {
         expect(sortedNavigationLinkSelector(state)).toEqual(expectedResult);
     });
 
-    it('sortedsocialMediaLinkArraySelector should return expected sorted array', () => {
+    it('sortedSocialMediaLinkArraySelector should return expected sorted array', () => {
         const state = {
             layoutReducer: {
                 socialMediaLinkArray: [

@@ -372,7 +372,7 @@ exports[`Term component match expected snapshot for simple term with indent befo
 </Connect(Term)>
 `;
 
-exports[`Term component match expected snapshot for simple term with spase after 1`] = `
+exports[`Term component match expected snapshot for simple term with space after 1`] = `
 <Connect(Term)
   spaceAfter={true}
   store={
@@ -449,7 +449,7 @@ exports[`Term component match expected snapshot for simple term with spase after
 </Connect(Term)>
 `;
 
-exports[`Term component match expected snapshot for simple term with spase before and after 1`] = `
+exports[`Term component match expected snapshot for simple term with space before and after 1`] = `
 <Connect(Term)
   spaceAfter={true}
   spaceBefore={true}
@@ -605,7 +605,7 @@ exports[`Term component match expected snapshot for term with indent before 1`] 
 </Connect(Term)>
 `;
 
-exports[`Term component match expected snapshot for term with spase before 1`] = `
+exports[`Term component match expected snapshot for term with space before 1`] = `
 <Connect(Term)
   spaceBefore={true}
   store={

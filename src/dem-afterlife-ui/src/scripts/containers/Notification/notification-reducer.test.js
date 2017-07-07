@@ -114,7 +114,7 @@ describe('Notification reducer', () => {
     });
 
     it('notificationReducer with action ADD_NOTIFICATION should return expected state', () => {
-        const defaulState = {
+        const defaultState = {
             notifications: []
         };
         const action = {
@@ -135,11 +135,11 @@ describe('Notification reducer', () => {
                 title: 'title',
                 uid: 1492003118322
             }] };
-        expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
+        expect(notificationReducer(defaultState, action)).toEqual(expectedResult);
     });
 
     it('notificationReducer with one tasks in store with action REMOVE_NOTIFICATION should return expected state', () => {
-        const defaulState = {
+        const defaultState = {
             notifications: [{
                 autoDismiss: 5,
                 level: 'info',
@@ -154,11 +154,11 @@ describe('Notification reducer', () => {
         const expectedResult = {
             notifications: []
         };
-        expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
+        expect(notificationReducer(defaultState, action)).toEqual(expectedResult);
     });
 
     it('notificationReducer with two tasks in store with action REMOVE_NOTIFICATION should return expected state', () => {
-        const defaulState = {
+        const defaultState = {
             notifications: [{
                 autoDismiss: 5,
                 level: 'info',
@@ -186,11 +186,11 @@ describe('Notification reducer', () => {
                 uid: 1492003118323
             }]
         };
-        expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
+        expect(notificationReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('notificationReducer with invald action should return expected state', () => {
-        const defaulState = {
+    it('notificationReducer with invalid action should return expected state', () => {
+        const defaultState = {
             notifications: [{
                 autoDismiss: 5,
                 level: 'info',
@@ -210,6 +210,6 @@ describe('Notification reducer', () => {
                 title: 'title',
                 uid: 1492003118322
             }] };
-        expect(notificationReducer(defaulState, action)).toEqual(expectedResult);
+        expect(notificationReducer(defaultState, action)).toEqual(expectedResult);
     });
 });

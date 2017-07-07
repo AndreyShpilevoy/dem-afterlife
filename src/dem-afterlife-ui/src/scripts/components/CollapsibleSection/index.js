@@ -10,7 +10,7 @@ import {css, withStyles} from 'styles';
 import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
-export class CollapsebleSectionPure extends PureComponent {
+export class CollapsibleSectionPure extends PureComponent {
     static propTypes = {
         styles: shape().isRequired,
         className: string,
@@ -23,7 +23,7 @@ export class CollapsebleSectionPure extends PureComponent {
         }),
         collapseSettings: shape({
             collapsedByDefault: bool.isRequired,
-            isCollapseble: bool.isRequired
+            isCollapsible: bool.isRequired
         })
     };
     static defaultProps = {
@@ -35,34 +35,34 @@ export class CollapsebleSectionPure extends PureComponent {
         },
         collapseSettings: {
             collapsedByDefault: false,
-            isCollapseble: true
+            isCollapsible: true
         }
     };
 
     constructor(props) {
         super(props);
-        const {collapsedByDefault, isCollapseble} = props.collapseSettings;
+        const {collapsedByDefault, isCollapsible} = props.collapseSettings;
         this.state = {
             collapsedState: collapsedByDefault,
-            isCollapseble
+            isCollapsible
         };
     }
 
     handleTitleClick = value => {
-        const {isCollapseble} = this.state;
-        if (isCollapseble) {
+        const {isCollapsible} = this.state;
+        if (isCollapsible) {
             this.setState({collapsedState: value});
         }
     }
 
     render() {
-        const {collapsedState, isCollapseble} = this.state;
+        const {collapsedState, isCollapsible} = this.state;
         const {children, headerSettings, styles} = this.props;
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
         const {bodyHolder, headerCursor, headerArrow, headerText, headerHolder, general, header, titleClass,
             termedSection, headerColumn, headerArrowHolder, body} = styles;
         const classNameForClosedClass = collapsedState ? 'closed' : defaults.emptyString;
-        const bodyHolderClass = css([bodyHolder, ...isCollapseble ? headerCursor : defaults.emptyString, classNameForClosedClass]);
+        const bodyHolderClass = css([bodyHolder, ...isCollapsible ? headerCursor : defaults.emptyString, classNameForClosedClass]);
         const headerArrowClass = css([headerArrow, classNameForClosedClass]);
         const headerTextHolder = css([headerText, headerHolder]);
         const rowOnClick = () => this.handleTitleClick(!collapsedState);
@@ -110,4 +110,4 @@ export class CollapsebleSectionPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(CollapsebleSectionPure);
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(CollapsibleSectionPure);

@@ -14,9 +14,7 @@ const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
             color: `${navigationLinks[gridSize].colorHovered} !important`
         }
     } : {},
-    ...{
-        paddingLeft: navigationLinks[gridSize].padding
-    }
+    ...{paddingLeft: navigationLinks[gridSize].padding}
 });
 
 const calculateStyles = ({themeName, grid, navigationLinks}) =>

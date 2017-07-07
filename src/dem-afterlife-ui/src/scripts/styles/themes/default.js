@@ -17,16 +17,16 @@ const colors = {
     yellowTextColorHovered: '#FFF495',
     footerBackgroundColor: '#3E3025',
     footerTextColor: '#CFB095',
-    collapsebleSectionHeaderBackgroundColor: '#564B41',
+    collapsibleSectionHeaderBackgroundColor: '#564B41',
     contentHolderBodyTextColor: '#48423D',
-    collapsebleSectionBodyBackgroundColor: '#7B736B',
-    forumSecondaryBackgroungColor: '#9C877C'
+    collapsibleSectionBodyBackgroundColor: '#7B736B',
+    forumSecondaryBackgroundColor: '#9C877C'
 
 };
 
 const sizes = {
     marginBetweenBlocks: 0.3125,
-    horizontalPadingAndMargin: 0.9375,
+    horizontalPaddingAndMargin: 0.9375,
     textBig: 1.3125,
     textSmall: 0.8
 };
@@ -50,7 +50,7 @@ const headerRightColumns = {
     marginLeft: 'auto',
     marginBottom: 'auto',
     marginTop: 'auto',
-    marginRight: sizes.horizontalPadingAndMargin
+    marginRight: sizes.horizontalPaddingAndMargin
 };
 
 const navigationLinksXsSmMd = {
@@ -84,14 +84,14 @@ const footerLgXl = {
 
 const subForum = {
     marginTop: 0.5,
-    backgroundColor: colors.forumSecondaryBackgroungColor,
+    backgroundColor: colors.forumSecondaryBackgroundColor,
     paddingLeft: 0.125,
     iconTransform: 'translateY(-0.125rem)',
     iconSize: 1.3125
 };
 
 const forumTopicSeparator = {
-    backgroundColor: colors.forumSecondaryBackgroungColor,
+    backgroundColor: colors.forumSecondaryBackgroundColor,
     height: 0.125,
     marginVertical: 0.3,
     marginHorizontal: 0
@@ -156,7 +156,7 @@ const defaultTheme = {
         lg: {...headerLgXl, backgroundImage: headerBackgroundImageLg},
         xl: {...headerLgXl, backgroundImage: headerBackgroundImageXl},
         logotypeContainer: {
-            marginLeft: sizes.horizontalPadingAndMargin,
+            marginLeft: sizes.horizontalPaddingAndMargin,
             marginTop: 'auto'
         },
         menuButtonContainer: headerRightColumns,
@@ -198,20 +198,20 @@ const defaultTheme = {
             padding: 0.125
         }
     },
-    collapsebleSection: {
+    collapsibleSection: {
         general: {
             marginTop: sizes.marginBetweenBlocks,
-            padding: sizes.horizontalPadingAndMargin
+            padding: sizes.horizontalPaddingAndMargin
         },
         header: {
-            backgroundColor: colors.collapsebleSectionHeaderBackgroundColor,
+            backgroundColor: colors.collapsibleSectionHeaderBackgroundColor,
             color: colors.orangeColor,
             height: 2.5,
             fontSize: 1.3125,
             iconSize: 1.3
         },
         body: {
-            backgroundColor: colors.collapsebleSectionBodyBackgroundColor,
+            backgroundColor: colors.collapsibleSectionBodyBackgroundColor,
             color: colors.contentHolderBodyTextColor,
             transition: linearTransition
         }

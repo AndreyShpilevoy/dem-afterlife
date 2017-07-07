@@ -16,21 +16,21 @@ export const getLocaleSuccess = locale => ({
     payload: locale
 });
 
-export const GET_NAVIGATIONLINK_ARRAY = 'GET_NAVIGATIONLINK_ARRAY';
-export const getNavigationLinkArray = () => ({type: GET_NAVIGATIONLINK_ARRAY});
+export const GET_NAVIGATION_LINK_ARRAY = 'GET_NAVIGATION_LINK_ARRAY';
+export const getNavigationLinkArray = () => ({type: GET_NAVIGATION_LINK_ARRAY});
 
-export const GET_NAVIGATIONLINK_ARRAY_SUCCESS = 'GET_NAVIGATIONLINK_ARRAY_SUCCESS';
+export const GET_NAVIGATION_LINK_ARRAY_SUCCESS = 'GET_NAVIGATION_LINK_ARRAY_SUCCESS';
 export const getNavigationLinkArraySuccess = navigationLinkArray => ({
-    type: GET_NAVIGATIONLINK_ARRAY_SUCCESS,
+    type: GET_NAVIGATION_LINK_ARRAY_SUCCESS,
     payload: {navigationLinkArray}
 });
 
-export const GET_SOCIALMEDIALINK_ARRAY = 'GET_SOCIALMEDIALINK_ARRAY';
-export const getSocialMediaLinkArray = () => ({type: GET_SOCIALMEDIALINK_ARRAY});
+export const GET_SOCIAL_MEDIA_LINK_ARRAY = 'GET_SOCIAL_MEDIA_LINK_ARRAY';
+export const getSocialMediaLinkArray = () => ({type: GET_SOCIAL_MEDIA_LINK_ARRAY});
 
-export const GET_SOCIALMEDIALINK_ARRAY_SUCCESS = 'GET_SOCIALMEDIALINK_ARRAY_SUCCESS';
+export const GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS = 'GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS';
 export const getSocialMediaLinkArraySuccess = socialMediaLinkArray => ({
-    type: GET_SOCIALMEDIALINK_ARRAY_SUCCESS,
+    type: GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS,
     payload: {socialMediaLinkArray}
 });
 
@@ -38,9 +38,9 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_LOCALE_SUCCESS:
             return {...state, locale: payload.locale};
-        case GET_NAVIGATIONLINK_ARRAY_SUCCESS:
+        case GET_NAVIGATION_LINK_ARRAY_SUCCESS:
             return {...state, navigationLinkArray: payload.navigationLinkArray};
-        case GET_SOCIALMEDIALINK_ARRAY_SUCCESS:
+        case GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS:
             return {...state, socialMediaLinkArray: payload.socialMediaLinkArray};
         default:
             break;
@@ -61,7 +61,7 @@ export function* getLocaleSaga() {
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getNavigationLinkArraySaga() {
     while (true) {
-        yield take(GET_NAVIGATIONLINK_ARRAY);
+        yield take(GET_NAVIGATION_LINK_ARRAY);
         const navigationLinkArray = yield call(getNavigationLinkArrayApi);
         yield put(getNavigationLinkArraySuccess(navigationLinkArray));
     }
@@ -70,7 +70,7 @@ export function* getNavigationLinkArraySaga() {
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSocialMediaLinkArraySaga() {
     while (true) {
-        yield take(GET_SOCIALMEDIALINK_ARRAY);
+        yield take(GET_SOCIAL_MEDIA_LINK_ARRAY);
         const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
         yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
     }

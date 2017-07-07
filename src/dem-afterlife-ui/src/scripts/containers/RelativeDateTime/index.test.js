@@ -20,7 +20,7 @@ describe('RelativeDateTime', () => {
         expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for relative date with spase before', () => {
+    it('component match expected snapshot for relative date with space before', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),
@@ -29,7 +29,7 @@ describe('RelativeDateTime', () => {
         expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for relative date with spase after', () => {
+    it('component match expected snapshot for relative date with space after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),
@@ -38,7 +38,7 @@ describe('RelativeDateTime', () => {
         expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    it('component match expected snapshot for relative date with spase before and after', () => {
+    it('component match expected snapshot for relative date with space before and after', () => {
         const props = {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),

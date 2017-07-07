@@ -15,7 +15,7 @@ describe('NavigationLinkList Pure', () => {
     });
 
     it('component with many navigationLinkItems match expected snapshot', () => {
-        const navigationLinkItems = [{id: 1, title: 'Conference', href: '/', order: 1}, {id: 2, title: 'Link 2 autogen', href: '/', order: 2}];
+        const navigationLinkItems = [{id: 1, title: 'Conference', href: '/', order: 1}, {id: 2, title: 'Link 2 generated', href: '/', order: 2}];
         expect(shallow(<NavigationLinkListPure styles={styles} navigationLinkArray={navigationLinkItems}/>)).toMatchSnapshot();
     });
 });

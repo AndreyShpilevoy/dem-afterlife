@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LastActiveTopics component match expected snapshot without forumArray 1`] = `
-<withStyles(CollapsebleSectionPure)
+<withStyles(CollapsibleSectionPure)
   collapseSettings={
     Object {
       "collapsedByDefault": false,
-      "isCollapseble": true,
+      "isCollapsible": true,
     }
   }
   headerSettings={
@@ -83,5 +83,5 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
       }
     }
   />
-</withStyles(CollapsebleSectionPure)>
+</withStyles(CollapsibleSectionPure)>
 `;

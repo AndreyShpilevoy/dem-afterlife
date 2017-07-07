@@ -2,7 +2,7 @@
 
 import calculateStyles from './calculateStyles';
 
-describe('CollapsebleSection calculateStyles', () => {
+describe('CollapsibleSection calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
         grid: {
@@ -21,20 +21,20 @@ describe('CollapsebleSection calculateStyles', () => {
                 }
             ]
         },
-        collapsebleSection: {
+        collapsibleSection: {
             general: {
                 marginTop: 'sizes.marginBetweenBlocks',
-                padding: 'sizes.horizontalPadingAndMargin'
+                padding: 'sizes.horizontalPaddingAndMargin'
             },
             header: {
-                backgroundColor: 'colors.collapsebleSectionHeaderBackgroundColor',
+                backgroundColor: 'colors.collapsibleSectionHeaderBackgroundColor',
                 color: 'colors.orangeColor',
                 height: 2.5,
                 fontSize: 1.25,
                 iconSize: 1.3
             },
             body: {
-                backgroundColor: 'colors.collapsebleSectionBodyBackgroundColor',
+                backgroundColor: 'colors.collapsibleSectionBodyBackgroundColor',
                 color: 'colors.contentHolderBodyTextColor',
                 transition: 'linearTransition'
             }

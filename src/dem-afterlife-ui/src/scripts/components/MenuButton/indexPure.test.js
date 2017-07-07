@@ -22,7 +22,7 @@ describe('MenuButton Pure', () => {
         expect(shallow(<MenuButtonPure styles={styles}/>)).toMatchSnapshot();
     });
 
-    it('after click on button child divs should added open css class name to theyr classNames component match expected snapshot', () => {
+    it('after click on button child div\'s should added open css class name to their classNames component match expected snapshot', () => {
         const wrapper = shallow(<MenuButtonPure styles={styles}/>);
         wrapper.simulate('click');
         expect(wrapper).toMatchSnapshot();
