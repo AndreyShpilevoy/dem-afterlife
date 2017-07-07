@@ -97,6 +97,20 @@ describe('Conference reducer', () => {
         ])).toEqual(expectedResult);
     });
 
+    it('conferenceReducer with invald (GET_LOCALE) action should return expected state', () => {
+        const defaulState = {
+            chapterArray: []
+        };
+        const action = {
+            type: 'GET_LOCALE',
+            payload: 'ru'
+        };
+        const expectedResult = {
+            chapterArray: []
+        };
+        expect(conferenceReducer(defaulState, action)).toEqual(expectedResult);
+    });
+
     it('conferenceReducer with action GET_CHAPTER_ARRAY_SUCCESS should return expected state', () => {
         const defaulState = {
             chapterArray: []

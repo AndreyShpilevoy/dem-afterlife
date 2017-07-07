@@ -134,7 +134,7 @@ describe('Layout reducer', () => {
             locale: 'en'
         };
         const action = {
-            type: GET_LOCALE,
+            type: 'GET_LOCALE',
             payload: 'ru'
         };
         const expectedResult = {
