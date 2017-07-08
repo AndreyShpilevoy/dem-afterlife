@@ -1,26 +1,13 @@
 import {createSelector} from 'reselect';
 import R from 'ramda';
+import {sortedForumArraySelector} from 'containers/selectors';
 
 export const chapterArraySelector = state => state.conferenceReducer.chapterArray;
-export const forumArraySelector = state => state.conferenceReducer.forumArray.reduce(
-    (previous, current) => {
-        if (current.subForumArray) {
-            const sortedSubForumArray = R.sortBy(R.prop('order'), current.subForumArray);
-            return [...previous, {...current, subForumArray: sortedSubForumArray}];
-        }
-        return [...previous, current];
-    }, []
-);
 export const lastActiveTopicArraySelector = state => state.conferenceReducer.lastActiveTopicArray;
 
 export const sortedChapterArraySelector = createSelector(
     chapterArraySelector,
     chapterArray => R.sortBy(R.prop('order'), chapterArray)
-);
-
-export const sortedForumArraySelector = createSelector(
-    forumArraySelector,
-    forumArray => R.sortBy(R.prop('order'), forumArray)
 );
 
 export const lastActiveTopicsOrderedArraySelector = createSelector(

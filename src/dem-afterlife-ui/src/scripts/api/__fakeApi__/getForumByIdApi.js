@@ -3,9 +3,8 @@
 import delay from 'api/__fakeApi__/delay';
 import forumArray from 'api/__fakeData__/forumArray';
 
-const getForumArrayByChapterIdArrayApi = chapterIdArray => {
-    const result = chapterIdArray.reduce((previous, current) =>
-        [...previous, ...forumArray.filter(x => x.chapterId === current)], []);
+const getForumByIdApi = forumId => {
+    const result = forumArray.find(x => x.id === forumId);
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(result);
@@ -13,4 +12,4 @@ const getForumArrayByChapterIdArrayApi = chapterIdArray => {
     });
 };
 
-export default getForumArrayByChapterIdArrayApi;
+export default getForumByIdApi;

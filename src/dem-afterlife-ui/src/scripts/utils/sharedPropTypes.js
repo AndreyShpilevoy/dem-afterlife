@@ -9,6 +9,7 @@ const subForum = shape({
 const forum = shape({
     id: number.isRequired,
     chapterId: number,
+    parentForumId: number,
     order: number.isRequired,
     title: string.isRequired,
     description: string.isRequired,

@@ -1,11 +1,10 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
-
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, import/first:0*/
+jest.mock('containers/selectors');
+import {sortedForumArraySelector} from 'containers/selectors';
 import {
     chapterArraySelector,
-    forumArraySelector,
     lastActiveTopicArraySelector,
     sortedChapterArraySelector,
-    sortedForumArraySelector,
     chaptersWithForumsArraySelector,
     lastActiveTopicsOrderedArraySelector
 } from './selectors';
@@ -39,38 +38,6 @@ describe('Conference selectors', () => {
         expect(lastActiveTopicArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('forumArraySelector should return expected array', () => {
-        const state = {
-            conferenceReducer: {
-                forumArray: [
-                    {id: 1, order: 1, chapterId: 1},
-                    {id: 3, order: 3, chapterId: 1},
-                    {id: 2, order: 2, chapterId: 3}
-                ]
-            }
-        };
-        const expectedResult = state.conferenceReducer.forumArray;
-        expect(forumArraySelector(state)).toEqual(expectedResult);
-    });
-
-    it('forumArraySelector with subForumArray should return expected array', () => {
-        const state = {
-            conferenceReducer: {
-                forumArray: [
-                    {id: 1, order: 1, chapterId: 1, subForumArray: [{id: 3, order: 3}, {id: 2, order: 1}, {id: 1, order: 2}] },
-                    {id: 3, order: 3, chapterId: 1, subForumArray: [{id: 3, order: 3}, {id: 2, order: 1}, {id: 1, order: 2}] },
-                    {id: 2, order: 2, chapterId: 3}
-                ]
-            }
-        };
-        const expectedResult = [
-            {id: 1, order: 1, chapterId: 1, subForumArray: [{id: 2, order: 1}, {id: 1, order: 2}, {id: 3, order: 3}] },
-            {id: 3, order: 3, chapterId: 1, subForumArray: [{id: 2, order: 1}, {id: 1, order: 2}, {id: 3, order: 3}] },
-            {id: 2, order: 2, chapterId: 3}
-        ];
-        expect(forumArraySelector(state)).toEqual(expectedResult);
-    });
-
     it('sortedChapterArraySelector should return expected sorted array', () => {
         const state = {
             conferenceReducer: {
@@ -89,33 +56,15 @@ describe('Conference selectors', () => {
         expect(sortedChapterArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('sortedForumArraySelector should return expected sorted array', () => {
-        const state = {
-            conferenceReducer: {
-                forumArray: [
-                    {id: 1, order: 1, chapterId: 1},
-                    {id: 3, order: 3, chapterId: 1},
-                    {id: 2, order: 2, chapterId: 3}
-                ]
-            }
-        };
-        const expectedResult = [
-            {id: 1, order: 1, chapterId: 1},
-            {id: 2, order: 2, chapterId: 3},
-            {id: 3, order: 3, chapterId: 1}
-        ];
-        expect(sortedForumArraySelector(state)).toEqual(expectedResult);
-    });
-
     it('chaptersWithForumsArraySelector if forumArray is empty should return chapterArray just sorted array', () => {
+        sortedForumArraySelector.mockImplementation(() => []);
         const state = {
             conferenceReducer: {
                 chapterArray: [
                     {id: 1, order: 1},
                     {id: 3, order: 3},
                     {id: 2, order: 2}
-                ],
-                forumArray: []
+                ]
             }
         };
         const expectedResult = [
@@ -127,17 +76,17 @@ describe('Conference selectors', () => {
     });
 
     it('chaptersWithForumsArraySelector should return sorted chapterArray array with mapped forumArray', () => {
+        sortedForumArraySelector.mockImplementation(() => [
+            {id: 1, order: 1, chapterId: 1},
+            {id: 2, order: 2, chapterId: 3},
+            {id: 3, order: 3, chapterId: 1}
+        ]);
         const state = {
             conferenceReducer: {
                 chapterArray: [
                     {id: 1, order: 1},
                     {id: 3, order: 3},
                     {id: 2, order: 2}
-                ],
-                forumArray: [
-                    {id: 1, order: 1, chapterId: 1},
-                    {id: 2, order: 2, chapterId: 3},
-                    {id: 3, order: 3, chapterId: 1}
                 ]
             }
         };
