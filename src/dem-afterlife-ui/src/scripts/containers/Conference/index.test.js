@@ -22,7 +22,7 @@ describe('Conference HOC', () => {
         const props = {
             store: mockStore({
                 conferenceReducer: {chapterArray: [], lastActiveTopicArray: [] },
-                containersReducer: {forumArray: [] }
+                sharedReducer: {forumArray: [] }
             })
         };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
@@ -68,7 +68,7 @@ describe('Conference HOC', () => {
                         }
                     }
                 ] },
-                containersReducer: {
+                sharedReducer: {
                     forumArray: [
                         {
                             id: 10,

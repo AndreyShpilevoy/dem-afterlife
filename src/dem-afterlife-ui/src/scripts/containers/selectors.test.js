@@ -8,7 +8,7 @@ import {
 describe('containers selectors', () => {
     it('forumArraySelector should return expected array', () => {
         const state = {
-            containersReducer: {
+            sharedReducer: {
                 forumArray: [
                     {id: 1, order: 1, chapterId: 1, parentForumId: null, subForumArray: [] },
                     {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
@@ -16,13 +16,13 @@ describe('containers selectors', () => {
                 ]
             }
         };
-        const expectedResult = state.containersReducer.forumArray;
+        const expectedResult = state.sharedReducer.forumArray;
         expect(forumArraySelector(state)).toEqual(expectedResult);
     });
 
     it('forumArraySelector with subForumArray should return expected array', () => {
         const state = {
-            containersReducer: {
+            sharedReducer: {
                 forumArray: [
                     {id: 1, order: 1, chapterId: 1, parentForumId: null},
                     {id: 3, order: 3, chapterId: 1, parentForumId: null},
@@ -53,7 +53,7 @@ describe('containers selectors', () => {
 
     it('sortedForumArraySelector should return expected sorted array', () => {
         const state = {
-            containersReducer: {
+            sharedReducer: {
                 forumArray: [
                     {id: 1, order: 1, chapterId: 1},
                     {id: 3, order: 3, chapterId: 1},

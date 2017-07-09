@@ -2,7 +2,7 @@ import {createSelector} from 'reselect';
 import R from 'ramda';
 
 export const forumArraySelector = state => {
-    const {forumArray} = state.containersReducer;
+    const {forumArray} = state.sharedReducer;
     return forumArray.map(forum => {
         const subForumArray = forumArray.filter(x => x.parentForumId === forum.id);
         const sortedSubForumArray = R.sortBy(R.prop('order'), subForumArray);

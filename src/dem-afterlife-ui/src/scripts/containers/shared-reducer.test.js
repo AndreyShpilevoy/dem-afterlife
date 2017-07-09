@@ -19,14 +19,14 @@ import {
     getForumArrayByChapterIdArraySuccess,
     getForumArrayByParentForumIdArray,
     getForumArrayByParentForumIdArraySuccess,
-    containersReducer,
+    sharedReducer,
     getForumByIdSaga,
-    containersSaga,
+    sharedSaga,
     getForumsByChapterIdArraySaga,
     getForumsByChapterIdArrayNonBlockSaga,
     getForumsByParentForumIdArraySaga,
     getForumsByParentForumIdArrayNonBlockSaga
-} from './containers-reducer';
+} from './shared-reducer';
 
 describe('Conference reducer', () => {
     it('getForumById should create expected object', () => {
@@ -90,7 +90,7 @@ describe('Conference reducer', () => {
         ])).toEqual(expectedResult);
     });
 
-    it('containersReducer with invalid (GET_LOCALE) action should return expected state', () => {
+    it('sharedReducer with invalid (GET_LOCALE) action should return expected state', () => {
         const defaultState = {
             forumArray: []
         };
@@ -101,10 +101,10 @@ describe('Conference reducer', () => {
         const expectedResult = {
             forumArray: []
         };
-        expect(containersReducer(defaultState, action)).toEqual(expectedResult);
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('containersReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should return expected state', () => {
         const defaultState = {
             forumArray: []
         };
@@ -113,10 +113,10 @@ describe('Conference reducer', () => {
             payload: {forum: {id: 1, title: 'Ex Machina', order: 1} }
         };
         const expectedResult = {forumArray: [{id: 1, title: 'Ex Machina', order: 1}] };
-        expect(containersReducer(defaultState, action)).toEqual(expectedResult);
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('containersReducer with action GET_FORUM_BY_ID_SUCCESS and not empty forumArray should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and not empty forumArray should return expected state', () => {
         const defaultState = {
             forumArray: [{id: 2, title: 'Ex Machina 2', order: 2}]
         };
@@ -128,10 +128,10 @@ describe('Conference reducer', () => {
             {id: 2, title: 'Ex Machina 2', order: 2},
             {id: 1, title: 'Ex Machina', order: 1}
         ] };
-        expect(containersReducer(defaultState, action)).toEqual(expectedResult);
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('containersReducer with action GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
             forumArray: []
         };
@@ -152,10 +152,10 @@ describe('Conference reducer', () => {
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
             ]
         };
-        expect(containersReducer(defaultState, action)).toEqual(expectedResult);
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('containersReducer with action GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
             forumArray: []
         };
@@ -176,7 +176,7 @@ describe('Conference reducer', () => {
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
             ]
         };
-        expect(containersReducer(defaultState, action)).toEqual(expectedResult);
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
     it('getForumByIdSaga first yield should return TAKE pattern "GET_FORUM_BY_ID"', () => {
@@ -308,7 +308,7 @@ describe('Conference reducer', () => {
     });
 
     it('should return 3 Sagas from default generator', () => {
-        const generator = containersSaga();
+        const generator = sharedSaga();
         expect(generator.next().value.ALL.length).toEqual(3);
     });
 });

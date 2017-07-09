@@ -46,7 +46,7 @@ export const getForumArrayByParentForumIdArraySuccess = forumArray => ({
     payload: {forumArray}
 });
 
-export const containersReducer = (state = initialState, {type, payload}) => {
+export const sharedReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_FORUM_BY_ID_SUCCESS:
             return {...state, forumArray: addObjectToArrayMatchingById(state.forumArray, payload.forum)};
@@ -100,7 +100,7 @@ export function* getForumsByParentForumIdArraySaga() {
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* containersSaga() {
+export function* sharedSaga() {
     yield all([
         getForumByIdSaga(),
         getForumsByChapterIdArraySaga(),

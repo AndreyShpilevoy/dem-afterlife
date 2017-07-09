@@ -1,10 +1,10 @@
-import {all, call, put, take, fork} from 'redux-saga/effects';
+import {all, call, put, take} from 'redux-saga/effects';
 import {
     getChapterArrayApi,
     getLastActiveTopicArrayApi
 } from 'api';
 
-import {getForumArrayByChapterIdArray} from 'containers/containers-reducer';
+import {getForumArrayByChapterIdArray} from 'containers/shared-reducer';
 
 const initialState = {
     chapterArray: [],
