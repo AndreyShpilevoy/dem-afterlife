@@ -1,4 +1,4 @@
-import {all, call, put, take} from 'redux-saga/effects';
+import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
     getChapterArrayApi,
     getLastActiveTopicArrayApi
@@ -43,13 +43,18 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
+export function* getChapterArrayNonBlockSaga() {
+    const chapterArray = yield call(getChapterArrayApi);
+    yield put(getChapterArraySuccess(chapterArray));
+    const chapterIdArray = chapterArray.reduce((previous, current) => [...previous, current.id], []);
+    yield put(getForumArrayByChapterIdArray(chapterIdArray));
+}
+
+/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getChapterArraySaga() {
     while (true) {
         yield take(GET_CHAPTER_ARRAY);
-        const chapterArray = yield call(getChapterArrayApi);
-        yield put(getChapterArraySuccess(chapterArray));
-        const chapterIdArray = chapterArray.reduce((previous, current) => [...previous, current.id], []);
-        yield put(getForumArrayByChapterIdArray(chapterIdArray));
+        yield fork(getChapterArrayNonBlockSaga);
     }
 }
 

@@ -21,7 +21,7 @@ const forumArray = [
         id: 13,
         chapterId: 1,
         parentForumId: null,
-        order: 1,
+        order: 11,
         title: 'Общие вопросы 13',
         description: 'Все вопросы касательно геймплея и мира игры Ex Machina в целом.',
         topicsCount: 26,
@@ -29,7 +29,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 1,
             topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
-            latestPostTimeCreation: new Date('2015/08/17 13:42:32'),
+            latestPostTimeCreation: new Date('2015/08/18 13:42:32'),
             latestPostAuthorId: 1,
             latestPostAuthorName: 'kto',
             latestPostAuthorGroupColor: '#ffa510'
@@ -112,14 +112,14 @@ const forumArray = [
         chapterId: null,
         parentForumId: 10,
         title: 'Самопал',
-        order: 2,
+        order: 12,
         description: 'Какое-то описание',
         topicsCount: 10,
         postsCount: 5447,
         lastTopicInfo: {
             topicId: 4,
             topicDescription: 'Exporter Ex Machina for Maya',
-            latestPostTimeCreation: new Date('2007/09/06 22:33:09'),
+            latestPostTimeCreation: new Date('2007/09/07 22:33:09'),
             latestPostAuthorId: 4,
             latestPostAuthorName: 'Buba',
             latestPostAuthorGroupColor: '#00AA00'
@@ -130,14 +130,14 @@ const forumArray = [
         chapterId: null,
         parentForumId: 10,
         title: 'Архив форумки',
-        order: 1,
+        order: 13,
         description: 'Какое-то описание',
         topicsCount: 10,
         postsCount: 5447,
         lastTopicInfo: {
             topicId: 3,
             topicDescription: 'Hard Truck Apocalypse MOD 1.7SE',
-            latestPostTimeCreation: new Date('2014/07/02 23:11:31'),
+            latestPostTimeCreation: new Date('2014/07/03 23:11:31'),
             latestPostAuthorId: 3,
             latestPostAuthorName: 'ololoid',
             latestPostAuthorGroupColor: '#99ccff'
@@ -155,7 +155,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 2,
             topicDescription: 'Проблемы с игрой',
-            latestPostTimeCreation: new Date('2016/9/22 12:53:09'),
+            latestPostTimeCreation: new Date('2016/9/23 12:53:09'),
             latestPostAuthorId: 2,
             latestPostAuthorName: 'Bykawka',
             latestPostAuthorGroupColor: '#fbeab2'
@@ -173,7 +173,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 1,
             topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
-            latestPostTimeCreation: new Date('2015/08/17 13:42:32'),
+            latestPostTimeCreation: new Date('2015/08/19 13:42:32'),
             latestPostAuthorId: 1,
             latestPostAuthorName: 'kto',
             latestPostAuthorGroupColor: '#ffa510'
@@ -191,7 +191,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 5,
             topicDescription: 'HD Textures',
-            latestPostTimeCreation: new Date('2016/07/12 14:24:11'),
+            latestPostTimeCreation: new Date('2016/07/13 14:24:11'),
             latestPostAuthorId: 5,
             latestPostAuthorName: 'Agent005',
             latestPostAuthorGroupColor: '#ff00ff'
@@ -209,7 +209,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 4,
             topicDescription: 'Exporter Ex Machina for Maya',
-            latestPostTimeCreation: new Date('2007/09/06 22:33:09'),
+            latestPostTimeCreation: new Date('2007/09/08 22:33:09'),
             latestPostAuthorId: 4,
             latestPostAuthorName: 'Buba',
             latestPostAuthorGroupColor: '#00AA00'
@@ -227,7 +227,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 3,
             topicDescription: 'Hard Truck Apocalypse MOD 1.7SE',
-            latestPostTimeCreation: new Date('2014/07/02 23:11:31'),
+            latestPostTimeCreation: new Date('2014/07/04 23:11:31'),
             latestPostAuthorId: 3,
             latestPostAuthorName: 'ololoid',
             latestPostAuthorGroupColor: '#99ccff'
@@ -245,7 +245,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 2,
             topicDescription: 'Проблемы с игрой',
-            latestPostTimeCreation: new Date('2016/9/22 12:53:09'),
+            latestPostTimeCreation: new Date('2016/9/24 12:53:09'),
             latestPostAuthorId: 2,
             latestPostAuthorName: 'Bykawka',
             latestPostAuthorGroupColor: '#fbeab2'
@@ -263,7 +263,7 @@ const forumArray = [
         lastTopicInfo: {
             topicId: 1,
             topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
-            latestPostTimeCreation: new Date('2015/08/17 13:42:32'),
+            latestPostTimeCreation: new Date('2015/08/20 13:42:32'),
             latestPostAuthorId: 1,
             latestPostAuthorName: 'kto',
             latestPostAuthorGroupColor: '#ffa510'

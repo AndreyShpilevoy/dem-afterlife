@@ -22,7 +22,7 @@ const en = [
   {id: 21, value: 'years', description: 'several years for TransformDateTime'},
   {id: 22, value: 'Views', description: 'for topics label on topicArray component'},
   {id: 23, value: 'Topics', description: 'for topics label on topicArray component'},
-  {id: 24, value: '>>', description: 'for topics body on topicArray component'}, // todo empty
+  {id: 24, value: 'Sub-Forums', description: 'for topics body on topicArray component'},
   {id: 25, value: 'Forum', description: 'for topics body on topicArray component'},
   {id: 26, value: 'Last messages', description: 'title for lastActiveTopicArray component'},
   {id: 27, value: 'DeusExMachina', description: 'web site name for title'},

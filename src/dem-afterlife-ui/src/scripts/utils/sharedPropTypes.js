@@ -50,6 +50,7 @@ const socialMediaLinkItem = shape({
 
 const topic = shape({
     id: number.isRequired,
+    forumId: number.isRequired,
     title: string.isRequired,
     postsCount: number.isRequired,
     topicViewsCount: number.isRequired,

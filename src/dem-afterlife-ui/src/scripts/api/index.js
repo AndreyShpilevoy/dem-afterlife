@@ -6,6 +6,7 @@ import getForumArrayByChapterIdArrayApi from 'api/__fakeApi__/getForumArrayByCha
 import getForumByIdApi from 'api/__fakeApi__/getForumByIdApi';
 import getForumArrayByParentForumIdArrayApi from 'api/__fakeApi__/getForumArrayByParentForumIdArrayApi';
 import getLastActiveTopicArrayApi from 'api/__fakeApi__/getLastActiveTopicArrayApi';
+import getTopicArrayByForumIdApi from 'api/__fakeApi__/getTopicArrayByForumIdApi';
 
 export {
   getLocaleApi,
@@ -15,5 +16,6 @@ export {
   getForumArrayByChapterIdArrayApi,
   getForumByIdApi,
   getForumArrayByParentForumIdArrayApi,
-  getLastActiveTopicArrayApi
+  getLastActiveTopicArrayApi,
+  getTopicArrayByForumIdApi
 };

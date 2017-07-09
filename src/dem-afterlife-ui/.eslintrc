@@ -21,6 +21,7 @@
         "react"
     ],
     "rules": {
+        "class-methods-use-this": [2, { "exceptMethods": ["render"] }],
         "arrow-parens": [2,"as-needed"],
         "camelcase": [2,{"properties":"always"}],
         "comma-dangle": [2,"never"],

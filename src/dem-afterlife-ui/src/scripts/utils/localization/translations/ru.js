@@ -22,7 +22,7 @@ const ru = [
   {id: 21, value: 'лет', description: 'several years for TransformDateTime'},
   {id: 22, value: 'Просмотров', description: 'for topics label on topicArray component'},
   {id: 23, value: 'Темы', description: 'for topics label on topicArray component'},
-  {id: 24, value: '>>', description: 'for topics body on topicArray component'}, // todo empty
+  {id: 24, value: 'Подфорумы', description: 'for topics body on topicArray component'},
   {id: 25, value: 'Форум', description: 'for topics body on topicArray component'},
   {id: 26, value: 'Последние сообщения', description: 'title for lastActiveTopicArray component'},
   {id: 27, value: 'DeusExMachina', description: 'web site name for title'},

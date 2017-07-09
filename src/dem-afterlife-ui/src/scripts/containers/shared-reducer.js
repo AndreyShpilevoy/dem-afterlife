@@ -71,9 +71,9 @@ export function* getForumByIdSaga() {
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
-    const forums = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
-    yield put(getForumArrayByChapterIdArraySuccess(forums));
-    const forumsIdArray = forums.reduce((previous, current) => [...previous, current.id], []);
+    const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
+    yield put(getForumArrayByChapterIdArraySuccess(forumArray));
+    const forumsIdArray = forumArray.reduce((previous, current) => [...previous, current.id], []);
     yield put(getForumArrayByParentForumIdArray(forumsIdArray));
 }
 
@@ -87,8 +87,8 @@ export function* getForumsByChapterIdArraySaga() {
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
-    const forums = yield call(getForumArrayByParentForumIdArrayApi, parentForumIdArray);
-    yield put(getForumArrayByParentForumIdArraySuccess(forums));
+    const forumArray = yield call(getForumArrayByParentForumIdArrayApi, parentForumIdArray);
+    yield put(getForumArrayByParentForumIdArraySuccess(forumArray));
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/

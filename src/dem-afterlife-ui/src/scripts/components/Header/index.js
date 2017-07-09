@@ -27,14 +27,22 @@ export class HeaderPure extends PureComponent {
         };
     }
 
-    handleScroll = () => {
-        root.addEventListener('scroll',
-            throttle(({target}) => {
-                target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
-                    this.setState({shrinkedHeader: true}) :
-                    this.setState({shrinkedHeader: false});
-            }, 250));
-    };
+    componentDidMount = () => {
+        root.addEventListener('scroll', this.handleScroll);
+        root.scrollTo(0, 0);
+    }
+
+    componentWillUnmount = () => {
+        root.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = throttle(
+        ({target}) => {
+            target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
+                this.setState({shrinkedHeader: true}) :
+                this.setState({shrinkedHeader: false});
+        },
+    250);
 
     handleMenuButtonClick = value => {
         this.setState({menuIsClosed: value});
@@ -68,7 +76,7 @@ export class HeaderPure extends PureComponent {
                         </Row>
                     </div>
                 </Container>
-                <div className={headerPadding} ref={this.handleScroll} />
+                <div className={headerPadding}/>
             </div>
         );
     }

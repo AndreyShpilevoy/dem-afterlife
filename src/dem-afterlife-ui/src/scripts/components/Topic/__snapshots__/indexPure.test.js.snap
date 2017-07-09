@@ -57,7 +57,7 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                     />
                     <withStyles(LinkPure)
                       className="default-Topic-parentForumTitleStyle"
-                      to="/Conference/Forum/10"
+                      to="/Forum/10"
                     >
                       Общие вопросы
                     </withStyles(LinkPure)>

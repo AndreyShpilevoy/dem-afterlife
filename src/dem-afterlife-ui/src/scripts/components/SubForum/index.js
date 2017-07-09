@@ -8,7 +8,7 @@ import calculateStyles from './calculateStyles';
 
 export const SubForumPure = ({subForum, styles}) => {
     const {id, title} = subForum;
-    const linkToSubForum = `/Conference/Forum/${id}`;
+    const linkToSubForum = `/Forum/${id}`;
     return <div className={styles.container}>
         <SvgIconsMapper className={styles.icon} iconName={'IconSubForum'}/>
         <Link className={styles.link} to={linkToSubForum}>

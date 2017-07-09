@@ -19,7 +19,7 @@ export const TopicPure = ({topic, styles}) => {
     const forumTerm = {id: 25, value: 'Forum:'};
     const postTerm = {id: 2, value: 'Posts'};
     const linkToTopic = `/Conference/Topic/${id}`;
-    const linkToParentForum = `/Conference/Forum/${parentForumId}`;
+    const linkToParentForum = `/Forum/${parentForumId}`;
     return (
         <div className={wrapper}>
             <Row>

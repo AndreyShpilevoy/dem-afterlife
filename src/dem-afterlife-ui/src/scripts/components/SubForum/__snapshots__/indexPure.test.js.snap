@@ -10,7 +10,7 @@ exports[`SubForumPure component match expected snapshot 1`] = `
   />
   <withStyles(LinkPure)
     className="default-SubForum-link"
-    to="/Conference/Forum/51"
+    to="/Forum/51"
   >
     FAQ
   </withStyles(LinkPure)>

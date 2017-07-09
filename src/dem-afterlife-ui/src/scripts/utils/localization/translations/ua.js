@@ -22,7 +22,7 @@ const ua = [
   {id: 21, value: 'років', description: 'several years for TransformDateTime'},
   {id: 22, value: 'Переглядів', description: 'for topics label on topicArray component'},
   {id: 23, value: 'Теми', description: 'for topics label on topicArray component'},
-  {id: 24, value: '>>', description: 'for topics body on topicArray component'}, // todo empty
+  {id: 24, value: 'Підфоруми', description: 'for topics body on topicArray component'},
   {id: 25, value: 'Форум', description: 'for topics body on topicArray component'},
   {id: 26, value: 'Останні повідомлення', description: 'title for lastActiveTopicArray component'},
   {id: 27, value: 'DeusExMachina', description: 'web site name for title'},
