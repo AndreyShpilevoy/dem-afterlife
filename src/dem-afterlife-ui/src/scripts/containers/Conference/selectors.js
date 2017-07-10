@@ -10,7 +10,7 @@ export const sortedChapterArraySelector = createSelector(
     chapterArray => R.sortBy(R.prop('order'), chapterArray)
 );
 
-export const lastActiveTopicsOrderedArraySelector = createSelector(
+export const sortedLastActiveTopicsArraySelector = createSelector(
     lastActiveTopicArraySelector,
     lastActiveTopicArray => R.sort((first, second) => {
         if (first && second && first.lastPostInfo && second.lastPostInfo) {

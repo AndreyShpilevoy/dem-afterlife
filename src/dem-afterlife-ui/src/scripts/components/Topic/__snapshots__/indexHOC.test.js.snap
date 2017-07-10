@@ -24,6 +24,7 @@ exports[`Topic HOC component match expected snapshot 1`] = `
   }
   topic={
     Object {
+      "forumId": 1,
       "id": 1,
       "lastPostInfo": Object {
         "authorAvatar": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",

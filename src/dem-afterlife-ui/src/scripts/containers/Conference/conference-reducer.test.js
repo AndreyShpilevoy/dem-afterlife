@@ -17,6 +17,7 @@ import {
     getLastActiveTopicArraySuccess,
     conferenceReducer,
     getChapterArraySaga,
+    getChapterArrayNonBlockSaga,
     conferenceSaga,
     getLastActiveTopicArraySaga
 } from './conference-reducer';
@@ -133,50 +134,49 @@ describe('Conference reducer', () => {
     it('getChapterArraySaga first yield should return TAKE pattern "GET_CHAPTER_ARRAY"', () => {
         const generator = getChapterArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_CHAPTER_ARRAY);
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_CHAPTER_ARRAY');
     });
 
-    it('getChapterArraySaga second yield should return CALL to function "getChapterArrayApi"', () => {
+    it('getChapterArraySaga second yield should return FORK to function "getChapterArrayNonBlockSaga"', () => {
         const generator = getChapterArraySaga();
 
         generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getChapterArrayApi);
+        expect(generator.next().value.FORK.fn).toEqual(getChapterArrayNonBlockSaga);
     });
 
-    it('getChapterArraySaga third yield should return PUT action.type "GET_CHAPTER_ARRAY_SUCCESS"', () => {
-        const generator = getChapterArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(generator.next(getChapterArrayApi()).value.PUT.action.type).toEqual(GET_CHAPTER_ARRAY_SUCCESS);
-    });
-
-    it('getChapterArraySaga third yield should return PUT action.payload.chapterArray that is a Promise', () => {
-        const generator = getChapterArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getChapterArrayApi()).value.PUT.action.payload.chapterArray)).toBeTruthy();
-    });
-
-    it('getChapterArraySaga fourth yield should return the same result as first', () => {
-        const chapterArray = [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-        ];
+    it('getChapterArraySaga third yield should return the same result as first', () => {
         const generator = getChapterArraySaga();
         const expectedResult = generator.next();
         generator.next();
-        generator.next(chapterArray);
-        generator.next(getForumArrayByChapterIdArrayApi([1, 2, 3]));
         expect(generator.next()).toEqual(expectedResult);
+    });
+
+    it('getChapterArrayNonBlockSaga first yield should return CALL to function "getChapterArrayApi"', () => {
+        const generator = getChapterArrayNonBlockSaga();
+
+        expect(generator.next().value.CALL.fn).toEqual(getChapterArrayApi);
+    });
+
+    it('getChapterArrayNonBlockSaga second yield should return PUT action.type "GET_CHAPTER_ARRAY_SUCCESS"', () => {
+        const generator = getChapterArrayNonBlockSaga();
+        const chapterArray = getChapterArrayApi();
+
+        generator.next();
+        expect(generator.next(chapterArray).value.PUT.action.type).toEqual('GET_CHAPTER_ARRAY_SUCCESS');
+    });
+
+    it('getChapterArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
+        const generator = getChapterArrayNonBlockSaga();
+        const chapterArray = getChapterArrayApi();
+
+        generator.next();
+        expect(IsPromise(generator.next(chapterArray).value.PUT.action.payload.chapterArray)).toBeTruthy();
     });
 
     it('getLastActiveTopicArraySaga first yield should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
         const generator = getLastActiveTopicArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY);
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_LAST_ACTIVE_TOPICS_ARRAY');
     });
 
     it('getLastActiveTopicArraySaga second yield should return CALL to function "getLastActiveTopicArrayApi"', () => {
@@ -191,7 +191,7 @@ describe('Conference reducer', () => {
 
         generator.next();
         generator.next();
-        expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS);
+        expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual('GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS');
     });
 
     it('getLastActiveTopicArraySaga third yield should return PUT action.payload.chapterArray that is a Promise', () => {

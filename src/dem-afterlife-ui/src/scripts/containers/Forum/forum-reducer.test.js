@@ -1,119 +1,66 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0*/
 
 import {
-    getChapterArrayApi,
-    getForumArrayByChapterIdArrayApi,
-    getLastActiveTopicArrayApi
+    getTopicArrayByForumIdApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
 import {
-    GET_CHAPTER_ARRAY,
-    GET_CHAPTER_ARRAY_SUCCESS,
-    GET_LAST_ACTIVE_TOPICS_ARRAY,
-    GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
-    getChapterArray,
-    getChapterArraySuccess,
-    getLastActiveTopicArray,
-    getLastActiveTopicArraySuccess,
-    conferenceReducer,
-    getChapterArraySaga,
-    conferenceSaga,
-    getLastActiveTopicArraySaga
-} from './conference-reducer';
+    GET_TOPIC_ARRAY_BY_FORUM_ID,
+    GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
+    getTopicArrayByForumId,
+    getTopicArrayByForumIdSuccess,
+    forumReducer,
+    forumSaga,
+    getTopicArrayForumIdSaga,
+    getTopicArrayForumIdNonBlockSaga
+} from './forum-reducer';
 
-describe('Conference reducer', () => {
-    it('getChapterArray should create expected object', () => {
-        const expectedResult = {type: GET_CHAPTER_ARRAY};
-        expect(getChapterArray()).toEqual(expectedResult);
+describe('Forum reducer', () => {
+    it('getTopicArrayByForumId should create expected object', () => {
+        const expectedResult = {type: GET_TOPIC_ARRAY_BY_FORUM_ID, payload: {forumId: 1} };
+        expect(getTopicArrayByForumId(1)).toEqual(expectedResult);
     });
 
-    it('getChapterArraySuccess should create expected object', () => {
+    it('getTopicArrayByForumIdSuccess should create expected object', () => {
         const expectedResult = {
-            type: GET_CHAPTER_ARRAY_SUCCESS,
+            type: GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
             payload: {
-                chapterArray: [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+                topicArray: [
+                    {id: 1, title: 'Ex Machina Forum', order: 1},
+                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
                 ]
             }
         };
-        expect(getChapterArraySuccess([
-            {id: 1, title: 'Ex Machina', order: 1},
-            {id: 3, title: 'Ex Machina: Arcade', order: 3},
-            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+        expect(getTopicArrayByForumIdSuccess([
+                    {id: 1, title: 'Ex Machina Forum', order: 1},
+                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
         ])).toEqual(expectedResult);
     });
 
-    it('getLastActiveTopicArray should create expected object', () => {
-        const expectedResult = {type: GET_LAST_ACTIVE_TOPICS_ARRAY};
-        expect(getLastActiveTopicArray()).toEqual(expectedResult);
-    });
-
-    it('getLastActiveTopicArraySuccess should create expected object', () => {
-        const expectedResult = {
-            type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
-            payload: {
-                lastActiveTopicArray: [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-                ]
-            }
-        };
-        expect(getLastActiveTopicArraySuccess([
-            {id: 1, title: 'Ex Machina', order: 1},
-            {id: 3, title: 'Ex Machina: Arcade', order: 3},
-            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-        ])).toEqual(expectedResult);
-    });
-
-    it('conferenceReducer with invalid (GET_LOCALE) action should return expected state', () => {
+    it('forumReducer with invalid (GET_LOCALE) action should return expected state', () => {
         const defaultState = {
-            chapterArray: []
+            topicArray: []
         };
         const action = {
             type: 'GET_LOCALE',
             payload: 'ru'
         };
         const expectedResult = {
-            chapterArray: []
+            topicArray: []
         };
-        expect(conferenceReducer(defaultState, action)).toEqual(expectedResult);
+        expect(forumReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('conferenceReducer with action GET_CHAPTER_ARRAY_SUCCESS should return expected state', () => {
+    it('forumReducer with action GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS should return expected state', () => {
         const defaultState = {
-            chapterArray: []
+            topicArray: []
         };
         const action = {
-            type: GET_CHAPTER_ARRAY_SUCCESS,
+            type: GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
             payload: {
-                chapterArray: [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-                ]
-            }
-        };
-        const expectedResult = {
-            chapterArray: [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-            ]
-        };
-        expect(conferenceReducer(defaultState, action)).toEqual(expectedResult);
-    });
-
-    it('conferenceReducer with action GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS should return expected state', () => {
-        const defaultState = {
-            lastActiveTopicArray: []
-        };
-        const action = {
-            type: GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS,
-            payload: {
-                lastActiveTopicArray: [
+                topicArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -121,89 +68,71 @@ describe('Conference reducer', () => {
             }
         };
         const expectedResult = {
-            lastActiveTopicArray: [
+            topicArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
             ]
         };
-        expect(conferenceReducer(defaultState, action)).toEqual(expectedResult);
+        expect(forumReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getChapterArraySaga first yield should return TAKE pattern "GET_CHAPTER_ARRAY"', () => {
-        const generator = getChapterArraySaga();
+    it('getTopicArrayForumIdSaga first yield should return TAKE pattern "GET_TOPIC_ARRAY_BY_FORUM_ID"', () => {
+        const generator = getTopicArrayForumIdSaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_CHAPTER_ARRAY);
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_TOPIC_ARRAY_BY_FORUM_ID');
     });
 
-    it('getChapterArraySaga second yield should return CALL to function "getChapterArrayApi"', () => {
-        const generator = getChapterArraySaga();
+    it('getTopicArrayForumIdSaga second yield should return FORK to function "getTopicArrayForumIdNonBlockSaga"', () => {
+        const generator = getTopicArrayForumIdSaga();
 
         generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getChapterArrayApi);
+        expect(generator.next({payload: {forumId: 1} }).value.FORK.fn).toEqual(getTopicArrayForumIdNonBlockSaga);
     });
 
-    it('getChapterArraySaga third yield should return PUT action.type "GET_CHAPTER_ARRAY_SUCCESS"', () => {
-        const generator = getChapterArraySaga();
-
+    it('getTopicArrayForumIdSaga third yield should return ', () => {
+        const expectedResult = {action: {payload: {parentForumIdArray: [1] }, type: 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY'}, channel: null};
+        const generator = getTopicArrayForumIdSaga();
         generator.next();
-        generator.next();
-        expect(generator.next(getChapterArrayApi()).value.PUT.action.type).toEqual(GET_CHAPTER_ARRAY_SUCCESS);
+        generator.next({payload: {forumId: 1} });
+        expect(generator.next({payload: {forumId: [1] } }).value.PUT).toEqual(expectedResult);
     });
 
-    it('getChapterArraySaga third yield should return PUT action.payload.chapterArray that is a Promise', () => {
-        const generator = getChapterArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getChapterArrayApi()).value.PUT.action.payload.chapterArray)).toBeTruthy();
-    });
-
-    it('getChapterArraySaga fourth yield should return the same result as first', () => {
-        const chapterArray = [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-        ];
-        const generator = getChapterArraySaga();
+    it('getTopicArrayForumIdSaga fourth yield should return the same result as first', () => {
+        const generator = getTopicArrayForumIdSaga();
         const expectedResult = generator.next();
-        generator.next();
-        generator.next(chapterArray);
-        generator.next(getForumArrayByChapterIdArrayApi([1, 2, 3]));
+        generator.next({payload: {forumId: 1} });
+        generator.next({payload: {forumId: [1] } });
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getLastActiveTopicArraySaga first yield should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
-        const generator = getLastActiveTopicArraySaga();
+    it('getTopicArrayForumIdNonBlockSaga first yield should return CALL to function "getTopicArrayByForumIdApi"', () => {
+        const testForumIdArray = [1];
+        const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY);
+        expect(generator.next().value.CALL.fn).toEqual(getTopicArrayByForumIdApi);
     });
 
-    it('getLastActiveTopicArraySaga second yield should return CALL to function "getLastActiveTopicArrayApi"', () => {
-        const generator = getLastActiveTopicArraySaga();
+    it('getTopicArrayForumIdNonBlockSaga second yield should return PUT action.type "GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS"', () => {
+        const testForumIdArray = [1];
+        const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
+        const forumsByChapterId = getTopicArrayByForumIdApi(testForumIdArray);
 
         generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getLastActiveTopicArrayApi);
+        expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS');
     });
 
-    it('getLastActiveTopicArraySaga third yield should return PUT action.type "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS"', () => {
-        const generator = getLastActiveTopicArraySaga();
+    it('getTopicArrayForumIdNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
+        const testForumIdArray = [1];
+        const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
+        const forumsByChapterId = getTopicArrayByForumIdApi(testForumIdArray);
 
         generator.next();
-        generator.next();
-        expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual(GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS);
+        expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.topicArray)).toBeTruthy();
     });
 
-    it('getLastActiveTopicArraySaga third yield should return PUT action.payload.chapterArray that is a Promise', () => {
-        const generator = getLastActiveTopicArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.payload.lastActiveTopicArray)).toBeTruthy();
-    });
-
-    it('should return 3 Sagas from default generator', () => {
-        const generator = conferenceSaga();
-        expect(generator.next().value.ALL.length).toEqual(2);
+    it('should return 1 Saga from default generator', () => {
+        const generator = forumSaga();
+        expect(generator.next().value.ALL.length).toEqual(1);
     });
 });

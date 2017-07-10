@@ -11,6 +11,7 @@ describe('LastActiveTopics', () => {
         const lastActiveTopicArray = [
             {
                 id: 1,
+                forumId: 1,
                 title: 'Как деактивировать бомбу',
                 postsCount: 215,
                 topicViewsCount: 1315,
@@ -26,6 +27,7 @@ describe('LastActiveTopics', () => {
             },
             {
                 id: 2,
+                forumId: 1,
                 title: 'Как активировать бомбу.',
                 postsCount: 57,
                 topicViewsCount: 847,

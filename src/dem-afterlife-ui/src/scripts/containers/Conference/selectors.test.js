@@ -1,12 +1,12 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, import/first:0*/
 jest.mock('containers/selectors');
-import {sortedForumArraySelector} from 'containers/selectors';
+import {sortedForumArrayWithSubForumsSelector} from 'containers/selectors';
 import {
     chapterArraySelector,
     lastActiveTopicArraySelector,
     sortedChapterArraySelector,
     chaptersWithForumsArraySelector,
-    lastActiveTopicsOrderedArraySelector
+    sortedLastActiveTopicsArraySelector
 } from './selectors';
 
 describe('Conference selectors', () => {
@@ -57,7 +57,7 @@ describe('Conference selectors', () => {
     });
 
     it('chaptersWithForumsArraySelector if forumArray is empty should return chapterArray just sorted array', () => {
-        sortedForumArraySelector.mockImplementation(() => []);
+        sortedForumArrayWithSubForumsSelector.mockImplementation(() => []);
         const state = {
             conferenceReducer: {
                 chapterArray: [
@@ -76,7 +76,7 @@ describe('Conference selectors', () => {
     });
 
     it('chaptersWithForumsArraySelector should return sorted chapterArray array with mapped forumArray', () => {
-        sortedForumArraySelector.mockImplementation(() => [
+        sortedForumArrayWithSubForumsSelector.mockImplementation(() => [
             {id: 1, order: 1, chapterId: 1},
             {id: 2, order: 2, chapterId: 3},
             {id: 3, order: 3, chapterId: 1}
@@ -115,7 +115,7 @@ describe('Conference selectors', () => {
         expect(chaptersWithForumsArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('lastActiveTopicsOrderedArraySelector should return expected array', () => {
+    it('sortedLastActiveTopicsArraySelector should return expected array', () => {
         const state = {
             conferenceReducer: {
                 lastActiveTopicArray: [
@@ -130,10 +130,10 @@ describe('Conference selectors', () => {
             {id: 2, lastPostInfo: {timeCreation: new Date('2016/08/17 13:42:32')} },
             {id: 1, lastPostInfo: {timeCreation: new Date('2015/08/17 13:42:32')} }
         ];
-        expect(lastActiveTopicsOrderedArraySelector(state)).toEqual(expectedResult);
+        expect(sortedLastActiveTopicsArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('lastActiveTopicsOrderedArraySelector without lastPostInfo should return expected array', () => {
+    it('sortedLastActiveTopicsArraySelector without lastPostInfo should return expected array', () => {
         const state = {
             conferenceReducer: {
                 lastActiveTopicArray: [
@@ -148,6 +148,6 @@ describe('Conference selectors', () => {
             {id: 3},
             {id: 2}
         ];
-        expect(lastActiveTopicsOrderedArraySelector(state)).toEqual(expectedResult);
+        expect(sortedLastActiveTopicsArraySelector(state)).toEqual(expectedResult);
     });
 });

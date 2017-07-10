@@ -3,71 +3,71 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import Conference from './index';
+import Forum from './index';
 
+jest.mock('react-router-dom');
+jest.mock('containers/Term');
+jest.mock('containers/RelativeDateTime');
 jest.mock('components/Chapter', () => {
     const Chapter = ({children}) => <div>{children}</div>;
     return Chapter;
 });
 
-jest.mock('components/LastActiveTopics', () => {
-    const LastActiveTopic = ({children}) => <div>{children}</div>;
-    return LastActiveTopic;
+jest.mock('components/CollapsibleSection', () => {
+    const CollapsibleSection = ({children}) => <div>{children}</div>;
+    return CollapsibleSection;
 });
 
-describe('Conference HOC', () => {
+describe('Forum HOC', () => {
     const mockStore = configureMockStore();
 
     it('component with empty chapter and forum arrays match expected snapshot', () => {
         const props = {
             store: mockStore({
-                conferenceReducer: {chapterArray: [], lastActiveTopicArray: [] },
-                sharedReducer: {forumArray: [] }
-            })
+                forumReducer: {topicArray: [] },
+                sharedReducer: {forumArray: [], subForumArray: [] }
+            }),
+            match: {params: {forumId: '10'} }
         };
-        expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Forum {...props}><div>{'Forum content'}</div></Forum>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component with filled chapter and forum arrays match expected snapshot', () => {
         const props = {
-            store: mockStore({conferenceReducer: {
-                chapterArray: [
-                    {id: 1, title: 'Ex Machina', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
-                ],
-                lastActiveTopicArray: [
-                    {
-                        id: 1,
-                        forumId: 10,
-                        parentForumTitle: 'Общие вопросы',
-                        title: 'Как деактивировать бомбу',
-                        postsCount: 215,
-                        topicViewsCount: 1315,
-                        lastPostInfo: {
-                            timeCreation: new Date('2016/09/19 13:42:32'),
-                            authorId: 4,
-                            authorName: 'Buba',
-                            authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
-                            authorGroupColor: '#00AA00'
+            store: mockStore({
+                forumReducer: {
+                    topicArray: [
+                        {
+                            id: 1,
+                            forumId: 10,
+                            parentForumTitle: 'Общие вопросы',
+                            title: 'Как деактивировать бомбу',
+                            postsCount: 215,
+                            topicViewsCount: 1315,
+                            lastPostInfo: {
+                                timeCreation: new Date('2016/09/19 13:42:32'),
+                                authorId: 4,
+                                authorName: 'Buba',
+                                authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
+                                authorGroupColor: '#00AA00'
+                            }
+                        },
+                        {
+                            id: 2,
+                            forumId: 10,
+                            parentForumTitle: 'Общие вопросы',
+                            title: 'Как активировать бомбу.',
+                            postsCount: 57,
+                            topicViewsCount: 847,
+                            lastPostInfo: {
+                                timeCreation: new Date('2017/01/22 12:53:09'),
+                                authorId: 2,
+                                authorName: 'Bykawka',
+                                authorAvatar: null,
+                                authorGroupColor: '#fbeab2'
+                            }
                         }
-                    },
-                    {
-                        id: 2,
-                        forumId: 10,
-                        parentForumTitle: 'Общие вопросы',
-                        title: 'Как активировать бомбу.',
-                        postsCount: 57,
-                        topicViewsCount: 847,
-                        lastPostInfo: {
-                            timeCreation: new Date('2017/01/22 12:53:09'),
-                            authorId: 2,
-                            authorName: 'Bykawka',
-                            authorAvatar: null,
-                            authorGroupColor: '#fbeab2'
-                        }
-                    }
-                ] },
+                    ] },
                 sharedReducer: {
                     forumArray: [
                         {
@@ -103,7 +103,9 @@ describe('Conference HOC', () => {
                                 latestPostAuthorName: 'Bykawka',
                                 latestPostAuthorGroupColor: '#fbeab2'
                             }
-                        },
+                        }
+                    ],
+                    subForumArray: [
                         {
                             id: 11,
                             chapterId: null,
@@ -141,8 +143,9 @@ describe('Conference HOC', () => {
                             }
                         }
                     ]
-                } })
+                } }),
+            match: {params: {forumId: '10'} }
         };
-        expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Forum {...props}><div>{'Forum content'}</div></Forum>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

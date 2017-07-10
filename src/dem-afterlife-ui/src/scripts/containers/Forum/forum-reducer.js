@@ -30,16 +30,16 @@ export const forumReducer = (state = initialState, {type, payload}) => {
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* getSubForumsByParentForumIdArrayNonBlockSaga(forumId) {
+export function* getTopicArrayForumIdNonBlockSaga(forumId) {
     const topicArray = yield call(getTopicArrayByForumIdApi, forumId);
     yield put(getTopicArrayByForumIdSuccess(topicArray));
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* getSubForumsByParentForumIdArraySaga() {
+export function* getTopicArrayForumIdSaga() {
     while (true) {
         const {payload} = yield take(GET_TOPIC_ARRAY_BY_FORUM_ID);
-        yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.forumId);
+        yield fork(getTopicArrayForumIdNonBlockSaga, payload.forumId);
         yield put(getSubForumArrayByParentForumIdArray([payload.forumId]));
     }
 }
@@ -47,7 +47,7 @@ export function* getSubForumsByParentForumIdArraySaga() {
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* forumSaga() {
     yield all([
-        getSubForumsByParentForumIdArraySaga()
+        getTopicArrayForumIdSaga()
     ]);
 }
 

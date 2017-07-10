@@ -22,7 +22,7 @@ describe('Conference HOC', () => {
         const props = {
             store: mockStore({
                 conferenceReducer: {chapterArray: [], lastActiveTopicArray: [] },
-                sharedReducer: {forumArray: [] }
+                sharedReducer: {forumArray: [], subForumArray: [] }
             })
         };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe('Conference HOC', () => {
                 lastActiveTopicArray: [
                     {
                         id: 1,
-                        parentForumId: 10,
+                        forumId: 10,
                         parentForumTitle: 'Общие вопросы',
                         title: 'Как деактивировать бомбу',
                         postsCount: 215,
@@ -54,7 +54,7 @@ describe('Conference HOC', () => {
                     },
                     {
                         id: 2,
-                        parentForumId: 10,
+                        forumId: 10,
                         parentForumTitle: 'Общие вопросы',
                         title: 'Как активировать бомбу.',
                         postsCount: 57,
@@ -103,7 +103,9 @@ describe('Conference HOC', () => {
                                 latestPostAuthorName: 'Bykawka',
                                 latestPostAuthorGroupColor: '#fbeab2'
                             }
-                        },
+                        }
+                    ],
+                    subForumArray: [
                         {
                             id: 11,
                             chapterId: null,
@@ -139,8 +141,7 @@ describe('Conference HOC', () => {
                                 latestPostAuthorName: 'ololoid',
                                 latestPostAuthorGroupColor: '#99ccff'
                             }
-                        }
-                    ]
+                        }]
                 } })
         };
         expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();

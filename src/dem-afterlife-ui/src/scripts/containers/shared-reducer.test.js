@@ -28,7 +28,7 @@ import {
     getSubForumsByParentForumIdArrayNonBlockSaga
 } from './shared-reducer';
 
-describe('Conference reducer', () => {
+describe('Shared reducer', () => {
     it('getForumById should create expected object', () => {
         const expectedResult = {type: GET_FORUM_BY_ID, payload: {forumId: 1} };
         expect(getForumById(1)).toEqual(expectedResult);
@@ -38,7 +38,7 @@ describe('Conference reducer', () => {
         const expectedResult = {
             type: GET_FORUM_BY_ID_SUCCESS,
             payload: {
-                forum: {id: 1, title: 'Ex Machina', order: 1}
+                selectedForum: {id: 1, title: 'Ex Machina', order: 1}
             }
         };
         expect(getForumByIdSuccess({id: 1, title: 'Ex Machina', order: 1})).toEqual(expectedResult);
@@ -76,7 +76,7 @@ describe('Conference reducer', () => {
         const expectedResult = {
             type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
             payload: {
-                forumArray: [
+                subForumArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -106,28 +106,25 @@ describe('Conference reducer', () => {
 
     it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should return expected state', () => {
         const defaultState = {
-            forumArray: []
+            selectedForum: {}
         };
         const action = {
             type: GET_FORUM_BY_ID_SUCCESS,
-            payload: {forum: {id: 1, title: 'Ex Machina', order: 1} }
+            payload: {selectedForum: {id: 1, title: 'Ex Machina', order: 1} }
         };
-        const expectedResult = {forumArray: [{id: 1, title: 'Ex Machina', order: 1}] };
+        const expectedResult = {selectedForum: {id: 1, title: 'Ex Machina', order: 1} };
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
     it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and not empty forumArray should return expected state', () => {
         const defaultState = {
-            forumArray: [{id: 2, title: 'Ex Machina 2', order: 2}]
+            selectedForum: {id: 2, title: 'Ex Machina 2', order: 2}
         };
         const action = {
             type: GET_FORUM_BY_ID_SUCCESS,
-            payload: {forum: {id: 1, title: 'Ex Machina', order: 1} }
+            payload: {selectedForum: {id: 1, title: 'Ex Machina', order: 1} }
         };
-        const expectedResult = {forumArray: [
-            {id: 2, title: 'Ex Machina 2', order: 2},
-            {id: 1, title: 'Ex Machina', order: 1}
-        ] };
+        const expectedResult = {selectedForum: {id: 1, title: 'Ex Machina', order: 1} };
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
@@ -157,12 +154,12 @@ describe('Conference reducer', () => {
 
     it('sharedReducer with action GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
-            forumArray: []
+            subForumArray: []
         };
         const action = {
             type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
             payload: {
-                forumArray: [
+                subForumArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -170,7 +167,7 @@ describe('Conference reducer', () => {
             }
         };
         const expectedResult = {
-            forumArray: [
+            subForumArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -182,7 +179,7 @@ describe('Conference reducer', () => {
     it('getForumByIdSaga first yield should return TAKE pattern "GET_FORUM_BY_ID"', () => {
         const generator = getForumByIdSaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_FORUM_BY_ID);
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_FORUM_BY_ID');
     });
 
     it('getForumByIdSaga second yield should return CALL to function "getForumByIdApi"', () => {
@@ -197,7 +194,7 @@ describe('Conference reducer', () => {
 
         generator.next();
         generator.next({payload: {forumId: 1} });
-        expect(generator.next(getForumByIdApi()).value.PUT.action.type).toEqual(GET_FORUM_BY_ID_SUCCESS);
+        expect(generator.next(getForumByIdApi()).value.PUT.action.type).toEqual('GET_FORUM_BY_ID_SUCCESS');
     });
 
     it('getForumByIdSaga third yield should return PUT action.payload.forumArray that is a Promise', () => {
@@ -205,7 +202,7 @@ describe('Conference reducer', () => {
 
         generator.next();
         generator.next({payload: {forumId: 1} });
-        expect(IsPromise(generator.next(getForumByIdApi()).value.PUT.action.payload.forum)).toBeTruthy();
+        expect(IsPromise(generator.next(getForumByIdApi()).value.PUT.action.payload.selectedForum)).toBeTruthy();
     });
 
     it('getForumByIdSaga fourth yield should return the same result as first', () => {
@@ -230,21 +227,21 @@ describe('Conference reducer', () => {
         expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getForumsByChapterIdArrayNonBlockSaga);
     });
 
-    it('getForumsByChapterIdArraySaga fourth yield should return the same result as first', () => {
+    it('getForumsByChapterIdArraySaga third yield should return the same result as first', () => {
         const generator = getForumsByChapterIdArraySaga();
         const expectedResult = generator.next();
         generator.next({payload: {chapterIdArray: [] } });
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getForumsByChapterIdArrayNonBlockSaga second yield should return CALL to function "getForumArrayByChapterIdArrayApi"', () => {
+    it('getForumsByChapterIdArrayNonBlockSaga first yield should return CALL to function "getForumArrayByChapterIdArrayApi"', () => {
         const testChapterIdArray = [1];
         const generator = getForumsByChapterIdArrayNonBlockSaga(testChapterIdArray);
 
         expect(generator.next().value.CALL.fn).toEqual(getForumArrayByChapterIdArrayApi);
     });
 
-    it('getForumsByChapterIdArrayNonBlockSaga third yield should return PUT action.type "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS"', () => {
+    it('getForumsByChapterIdArrayNonBlockSaga second yield should return PUT action.type "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS"', () => {
         const testChapterIdArray = [1];
         const generator = getForumsByChapterIdArrayNonBlockSaga(testChapterIdArray);
         const forumsByChapterId = getForumArrayByChapterIdArrayApi(testChapterIdArray);
@@ -275,21 +272,21 @@ describe('Conference reducer', () => {
         expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getSubForumsByParentForumIdArrayNonBlockSaga);
     });
 
-    it('getSubForumsByParentForumIdArraySaga fourth yield should return the same result as first', () => {
+    it('getSubForumsByParentForumIdArraySaga third yield should return the same result as first', () => {
         const generator = getSubForumsByParentForumIdArraySaga();
         const expectedResult = generator.next();
         generator.next({payload: {chapterIdArray: [] } });
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getSubForumsByParentForumIdArrayNonBlockSaga second yield should return CALL to function "getSubForumArrayByParentForumIdArrayApi"', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga first yield should return CALL to function "getSubForumArrayByParentForumIdArrayApi"', () => {
         const testForumIdArray = [1];
         const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
 
         expect(generator.next().value.CALL.fn).toEqual(getSubForumArrayByParentForumIdArrayApi);
     });
 
-    it('getSubForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.type "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS"', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga second yield should return PUT action.type "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS"', () => {
         const testForumIdArray = [1];
         const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
         const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
@@ -304,7 +301,7 @@ describe('Conference reducer', () => {
         const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
 
         generator.next();
-        expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();
+        expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.subForumArray)).toBeTruthy();
     });
 
     it('should return 3 Sagas from default generator', () => {

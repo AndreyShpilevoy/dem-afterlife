@@ -7,7 +7,7 @@ import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
 import LastActiveTopics from 'components/LastActiveTopics';
 import {getChapterArray, getLastActiveTopicArray} from './conference-reducer';
-import {chaptersWithForumsArraySelector, lastActiveTopicsOrderedArraySelector} from './selectors';
+import {chaptersWithForumsArraySelector, sortedLastActiveTopicsArraySelector} from './selectors';
 
 class Conference extends PureComponent {
     static propTypes = {
@@ -37,7 +37,7 @@ class Conference extends PureComponent {
 
 const mapStateToProps = state => ({
     chapterArray: chaptersWithForumsArraySelector(state),
-    lastActiveTopicArray: lastActiveTopicsOrderedArraySelector(state)
+    lastActiveTopicArray: sortedLastActiveTopicsArraySelector(state)
 });
 
 const mapDispatchToProps = dispatch =>

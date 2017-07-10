@@ -30,6 +30,7 @@ describe('TopicPure', () => {
     it('component match expected snapshot without parent forum information', () => {
         const topic = {
             id: 1,
+            forumId: 1,
             title: 'Как деактивировать бомбу',
             postsCount: 215,
             topicViewsCount: 1315,
@@ -47,6 +48,7 @@ describe('TopicPure', () => {
     it('component match expected snapshot with parent forum information', () => {
         const topic = {
             id: 1,
+            forumId: 1,
             title: 'Как деактивировать бомбу',
             postsCount: 215,
             topicViewsCount: 1315,

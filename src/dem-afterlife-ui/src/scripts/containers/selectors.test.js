@@ -2,10 +2,13 @@
 
 import {
     forumArraySelector,
-    sortedForumArraySelector
+    subForumArraySelector,
+    sortedSubForumArraySelector,
+    forumArrayWithSubForumsSelector,
+    sortedForumArrayWithSubForumsSelector
 } from './selectors';
 
-describe('containers selectors', () => {
+describe('Shared selectors', () => {
     it('forumArraySelector should return expected array', () => {
         const state = {
             sharedReducer: {
@@ -20,16 +23,50 @@ describe('containers selectors', () => {
         expect(forumArraySelector(state)).toEqual(expectedResult);
     });
 
-    it('forumArraySelector with subForumArray should return expected array', () => {
+    it('subForumArraySelector should return expected array', () => {
+        const state = {
+            sharedReducer: {
+                subForumArray: [
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] }
+                ]
+            }
+        };
+        const expectedResult = state.sharedReducer.subForumArray;
+        expect(subForumArraySelector(state)).toEqual(expectedResult);
+    });
+
+    it('sortedSubForumArraySelector should return expected array', () => {
+        const state = {
+            sharedReducer: {
+                subForumArray: [
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] }
+                ]
+            }
+        };
+        const expectedResult = [
+            {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] },
+            {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] },
+            {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] }
+        ];
+        expect(sortedSubForumArraySelector(state)).toEqual(expectedResult);
+    });
+    
+    it('forumArrayWithSubForumsSelector should return expected array', () => {
         const state = {
             sharedReducer: {
                 forumArray: [
-                    {id: 1, order: 1, chapterId: 1, parentForumId: null},
-                    {id: 3, order: 3, chapterId: 1, parentForumId: null},
-                    {id: 2, order: 2, chapterId: 3, parentForumId: null},
-                    {id: 4, order: 4, chapterId: null, parentForumId: 1},
-                    {id: 6, order: 6, chapterId: null, parentForumId: 1},
-                    {id: 5, order: 5, chapterId: null, parentForumId: 2}
+                    {id: 1, order: 1, chapterId: 1, parentForumId: null, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: 3, parentForumId: null, subForumArray: [] }
+                ],
+                subForumArray: [
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] }
                 ]
             }
         };
@@ -39,33 +76,58 @@ describe('containers selectors', () => {
                 chapterId: 1,
                 parentForumId: null,
                 subForumArray: [
-                    {id: 4, order: 4, chapterId: null, parentForumId: 1},
-                    {id: 6, order: 6, chapterId: null, parentForumId: 1}
-                ] },
-                    {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
-            {id: 2, order: 2, chapterId: 3, parentForumId: null, subForumArray: [{id: 5, order: 5, chapterId: null, parentForumId: 2}] },
-                    {id: 4, order: 4, chapterId: null, parentForumId: 1, subForumArray: [] },
-                    {id: 6, order: 6, chapterId: null, parentForumId: 1, subForumArray: [] },
-                    {id: 5, order: 5, chapterId: null, parentForumId: 2, subForumArray: [] }
+                {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
+                ]
+            },
+            {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
+            {id: 2,
+                order: 2,
+                chapterId: 3,
+                parentForumId: null,
+                subForumArray: [
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] }
+                ]
+            }
         ];
-        expect(forumArraySelector(state)).toEqual(expectedResult);
+        expect(forumArrayWithSubForumsSelector(state)).toEqual(expectedResult);
     });
 
-    it('sortedForumArraySelector should return expected sorted array', () => {
+    it('sortedForumArrayWithSubForumsSelector should return expected array', () => {
         const state = {
             sharedReducer: {
                 forumArray: [
-                    {id: 1, order: 1, chapterId: 1},
-                    {id: 3, order: 3, chapterId: 1},
-                    {id: 2, order: 2, chapterId: 3}
+                    {id: 1, order: 1, chapterId: 1, parentForumId: null, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: 3, parentForumId: null, subForumArray: [] }
+                ],
+                subForumArray: [
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] }
                 ]
             }
         };
         const expectedResult = [
-            {id: 1, order: 1, chapterId: 1, subForumArray: [] },
-            {id: 2, order: 2, chapterId: 3, subForumArray: [] },
-            {id: 3, order: 3, chapterId: 1, subForumArray: [] }
+            {id: 1,
+                order: 1,
+                chapterId: 1,
+                parentForumId: null,
+                subForumArray: [
+                {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
+                ]
+            },
+            {id: 2,
+                order: 2,
+                chapterId: 3,
+                parentForumId: null,
+                subForumArray: [
+                    {id: 2, order: 2, chapterId: null, parentForumId: 2, subForumArray: [] },
+                    {id: 3, order: 3, chapterId: null, parentForumId: 2, subForumArray: [] }
+                ]
+            },
+            {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] }
         ];
-        expect(sortedForumArraySelector(state)).toEqual(expectedResult);
+        expect(sortedForumArrayWithSubForumsSelector(state)).toEqual(expectedResult);
     });
 });
