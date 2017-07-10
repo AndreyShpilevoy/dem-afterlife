@@ -6,12 +6,6 @@ import Layout from 'containers/Layout';
 import Conference from 'containers/Conference';
 import Forum from 'containers/Forum';
 
-// const routeRender = () =>
-//     <Switch wrapperComponent={Layout}>
-//         <Route exact path='/' component={Conference} />
-//         <Route path='/Conference' component={Conference} />
-//         <Route path='/Forum/:forumId' component={Forum}/>
-//     </Switch>;
 const routes = [
     {
         path: '/',
