@@ -1,4 +1,4 @@
-import {arrayOf, shape, number, string, instanceOf} from 'prop-types';
+import {arrayOf, shape, number, string, instanceOf, oneOfType, node} from 'prop-types';
 
 const subForum = shape({
     id: number.isRequired,
@@ -28,7 +28,7 @@ const forum = shape({
 
 const chapter = shape({
     id: number.isRequired,
-    title: string.isRequired,
+    title: oneOfType([string, node]).isRequired,
     order: number.isRequired,
     forumArray: arrayOf(forum)
 });

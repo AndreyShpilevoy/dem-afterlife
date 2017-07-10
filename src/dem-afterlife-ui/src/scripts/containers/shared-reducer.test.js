@@ -3,7 +3,7 @@
 import {
     getForumByIdApi,
     getForumArrayByChapterIdArrayApi,
-    getForumArrayByParentForumIdArrayApi
+    getSubForumArrayByParentForumIdArrayApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
 import {
@@ -11,21 +11,21 @@ import {
     GET_FORUM_BY_ID_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS,
-    GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
-    GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
+    GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
+    GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
     getForumById,
     getForumByIdSuccess,
     getForumArrayByChapterIdArray,
     getForumArrayByChapterIdArraySuccess,
-    getForumArrayByParentForumIdArray,
-    getForumArrayByParentForumIdArraySuccess,
+    getSubForumArrayByParentForumIdArray,
+    getSubForumArrayByParentForumIdArraySuccess,
     sharedReducer,
     getForumByIdSaga,
     sharedSaga,
     getForumsByChapterIdArraySaga,
     getForumsByChapterIdArrayNonBlockSaga,
-    getForumsByParentForumIdArraySaga,
-    getForumsByParentForumIdArrayNonBlockSaga
+    getSubForumsByParentForumIdArraySaga,
+    getSubForumsByParentForumIdArrayNonBlockSaga
 } from './shared-reducer';
 
 describe('Conference reducer', () => {
@@ -67,14 +67,14 @@ describe('Conference reducer', () => {
         ])).toEqual(expectedResult);
     });
 
-    it('getForumArrayByParentForumIdArray should create expected object', () => {
-        const expectedResult = {type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY, payload: {parentForumIdArray: [1] } };
-        expect(getForumArrayByParentForumIdArray([1])).toEqual(expectedResult);
+    it('getSubForumArrayByParentForumIdArray should create expected object', () => {
+        const expectedResult = {type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY, payload: {parentForumIdArray: [1] } };
+        expect(getSubForumArrayByParentForumIdArray([1])).toEqual(expectedResult);
     });
 
-    it('getForumArrayByParentForumIdArraySuccess should create expected object', () => {
+    it('getSubForumArrayByParentForumIdArraySuccess should create expected object', () => {
         const expectedResult = {
-            type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
+            type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
             payload: {
                 forumArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
@@ -83,7 +83,7 @@ describe('Conference reducer', () => {
                 ]
             }
         };
-        expect(getForumArrayByParentForumIdArraySuccess([
+        expect(getSubForumArrayByParentForumIdArraySuccess([
                     {id: 1, title: 'Ex Machina Forum', order: 1},
                     {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
                     {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -155,12 +155,12 @@ describe('Conference reducer', () => {
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('sharedReducer with action GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
             forumArray: []
         };
         const action = {
-            type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
+            type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
             payload: {
                 forumArray: [
                     {id: 1, title: 'Ex Machina Forum', order: 1},
@@ -262,46 +262,46 @@ describe('Conference reducer', () => {
         expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();
     });
 
-    it('getForumsByParentForumIdArraySaga first yield should return TAKE pattern "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY"', () => {
-        const generator = getForumsByParentForumIdArraySaga();
+    it('getSubForumsByParentForumIdArraySaga first yield should return TAKE pattern "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY"', () => {
+        const generator = getSubForumsByParentForumIdArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY');
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY');
     });
 
-    it('getForumsByParentForumIdArraySaga second yield should return FORK to function "getForumsByParentForumIdArrayNonBlockSaga"', () => {
-        const generator = getForumsByParentForumIdArraySaga();
+    it('getSubForumsByParentForumIdArraySaga second yield should return FORK to function "getSubForumsByParentForumIdArrayNonBlockSaga"', () => {
+        const generator = getSubForumsByParentForumIdArraySaga();
 
         generator.next();
-        expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getForumsByParentForumIdArrayNonBlockSaga);
+        expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getSubForumsByParentForumIdArrayNonBlockSaga);
     });
 
-    it('getForumsByParentForumIdArraySaga fourth yield should return the same result as first', () => {
-        const generator = getForumsByParentForumIdArraySaga();
+    it('getSubForumsByParentForumIdArraySaga fourth yield should return the same result as first', () => {
+        const generator = getSubForumsByParentForumIdArraySaga();
         const expectedResult = generator.next();
         generator.next({payload: {chapterIdArray: [] } });
         expect(generator.next()).toEqual(expectedResult);
     });
 
-    it('getForumsByParentForumIdArrayNonBlockSaga second yield should return CALL to function "getForumArrayByParentForumIdArrayApi"', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga second yield should return CALL to function "getSubForumArrayByParentForumIdArrayApi"', () => {
         const testForumIdArray = [1];
-        const generator = getForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
+        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
 
-        expect(generator.next().value.CALL.fn).toEqual(getForumArrayByParentForumIdArrayApi);
+        expect(generator.next().value.CALL.fn).toEqual(getSubForumArrayByParentForumIdArrayApi);
     });
 
-    it('getForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.type "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS"', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.type "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS"', () => {
         const testForumIdArray = [1];
-        const generator = getForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
-        const forumsByChapterId = getForumArrayByParentForumIdArrayApi(testForumIdArray);
+        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
+        const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
 
         generator.next();
-        expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS');
+        expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS');
     });
 
-    it('getForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
         const testForumIdArray = [1];
-        const generator = getForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
-        const forumsByChapterId = getForumArrayByParentForumIdArrayApi(testForumIdArray);
+        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
+        const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
 
         generator.next();
         expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();

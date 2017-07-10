@@ -2,12 +2,13 @@ import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
     getForumByIdApi,
     getForumArrayByChapterIdArrayApi,
-    getForumArrayByParentForumIdArrayApi
+    getSubForumArrayByParentForumIdArrayApi
 } from 'api';
-import {addObjectToArrayMatchingById, mergeTwoArrayOfObjectsMatchingById} from 'utils';
 
 const initialState = {
-    forumArray: []
+    selectedForum: {},
+    forumArray: [],
+    subForumArray: []
 };
 
 export const GET_FORUM_BY_ID = 'GET_FORUM_BY_ID';
@@ -17,9 +18,9 @@ export const getForumById = forumId => ({
 });
 
 export const GET_FORUM_BY_ID_SUCCESS = 'GET_FORUM_BY_ID_SUCCESS';
-export const getForumByIdSuccess = forum => ({
+export const getForumByIdSuccess = selectedForum => ({
     type: GET_FORUM_BY_ID_SUCCESS,
-    payload: {forum}
+    payload: {selectedForum}
 });
 
 export const GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY = 'GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY';
@@ -34,25 +35,26 @@ export const getForumArrayByChapterIdArraySuccess = forumArray => ({
     payload: {forumArray}
 });
 
-export const GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY = 'GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY';
-export const getForumArrayByParentForumIdArray = parentForumIdArray => ({
-    type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
+export const GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY = 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY';
+export const getSubForumArrayByParentForumIdArray = parentForumIdArray => ({
+    type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
     payload: {parentForumIdArray}
 });
 
-export const GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS = 'GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS';
-export const getForumArrayByParentForumIdArraySuccess = forumArray => ({
-    type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
-    payload: {forumArray}
+export const GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS = 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS';
+export const getSubForumArrayByParentForumIdArraySuccess = subForumArray => ({
+    type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
+    payload: {subForumArray}
 });
 
 export const sharedReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_FORUM_BY_ID_SUCCESS:
-            return {...state, forumArray: addObjectToArrayMatchingById(state.forumArray, payload.forum)};
+            return {...state, selectedForum: payload.selectedForum};
         case GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS:
-        case GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS:
-            return {...state, forumArray: mergeTwoArrayOfObjectsMatchingById(state.forumArray, payload.forumArray)};
+            return {...state, forumArray: payload.forumArray};
+        case GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS:
+            return {...state, subForumArray: payload.subForumArray};
         default:
             break;
     }
@@ -64,8 +66,8 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
 export function* getForumByIdSaga() {
     while (true) {
         const {payload} = yield take(GET_FORUM_BY_ID);
-        const forum = yield call(getForumByIdApi, payload.forumId);
-        yield put(getForumByIdSuccess(forum));
+        const selectedForum = yield call(getForumByIdApi, payload.forumId);
+        yield put(getForumByIdSuccess(selectedForum));
     }
 }
 
@@ -74,7 +76,7 @@ export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
     const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
     yield put(getForumArrayByChapterIdArraySuccess(forumArray));
     const forumsIdArray = forumArray.reduce((previous, current) => [...previous, current.id], []);
-    yield put(getForumArrayByParentForumIdArray(forumsIdArray));
+    yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
@@ -86,16 +88,16 @@ export function* getForumsByChapterIdArraySaga() {
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* getForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
-    const forumArray = yield call(getForumArrayByParentForumIdArrayApi, parentForumIdArray);
-    yield put(getForumArrayByParentForumIdArraySuccess(forumArray));
+export function* getSubForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
+    const forumArray = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
+    yield put(getSubForumArrayByParentForumIdArraySuccess(forumArray));
 }
 
 /* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
-export function* getForumsByParentForumIdArraySaga() {
+export function* getSubForumsByParentForumIdArraySaga() {
     while (true) {
-        const {payload} = yield take(GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
-        yield fork(getForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
+        const {payload} = yield take(GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
+        yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
     }
 }
 
@@ -104,7 +106,7 @@ export function* sharedSaga() {
     yield all([
         getForumByIdSaga(),
         getForumsByChapterIdArraySaga(),
-        getForumsByParentForumIdArraySaga()
+        getSubForumsByParentForumIdArraySaga()
     ]);
 }
 

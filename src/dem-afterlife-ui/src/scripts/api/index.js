@@ -4,7 +4,7 @@ import getSocialMediaLinkArrayApi from 'api/__fakeApi__/getSocialMediaLinkArrayA
 import getChapterArrayApi from 'api/__fakeApi__/getChapterArrayApi';
 import getForumArrayByChapterIdArrayApi from 'api/__fakeApi__/getForumArrayByChapterIdArrayApi';
 import getForumByIdApi from 'api/__fakeApi__/getForumByIdApi';
-import getForumArrayByParentForumIdArrayApi from 'api/__fakeApi__/getForumArrayByParentForumIdArrayApi';
+import getSubForumArrayByParentForumIdArrayApi from 'api/__fakeApi__/getSubForumArrayByParentForumIdArrayApi';
 import getLastActiveTopicArrayApi from 'api/__fakeApi__/getLastActiveTopicArrayApi';
 import getTopicArrayByForumIdApi from 'api/__fakeApi__/getTopicArrayByForumIdApi';
 
@@ -15,7 +15,7 @@ export {
   getChapterArrayApi,
   getForumArrayByChapterIdArrayApi,
   getForumByIdApi,
-  getForumArrayByParentForumIdArrayApi,
+  getSubForumArrayByParentForumIdArrayApi,
   getLastActiveTopicArrayApi,
   getTopicArrayByForumIdApi
 };

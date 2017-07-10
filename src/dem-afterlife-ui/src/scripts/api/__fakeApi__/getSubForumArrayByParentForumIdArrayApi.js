@@ -3,7 +3,7 @@
 import delay from 'api/__fakeApi__/delay';
 import forumArray from 'api/__fakeData__/forumArray';
 
-const getForumArrayByParentForumIdArrayApi = forumIdArray => {
+const getSubForumArrayByParentForumIdArrayApi = forumIdArray => {
     const result = forumIdArray.reduce((previous, current) =>
         [...previous, ...forumArray.filter(x => x.parentForumId === current)], []);
     return new Promise(resolve => {
@@ -13,4 +13,4 @@ const getForumArrayByParentForumIdArrayApi = forumIdArray => {
     });
 };
 
-export default getForumArrayByParentForumIdArrayApi;
+export default getSubForumArrayByParentForumIdArrayApi;
