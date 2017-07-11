@@ -64,6 +64,12 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
   >
     <div>
       <CollapsibleSection
+        collapseSettings={
+          Object {
+            "collapsedByDefault": false,
+            "isCollapsible": false,
+          }
+        }
         headerSettings={
           Object {
             "firstColumnTerm": <Connect(Term)
@@ -300,6 +306,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
         <div />
       </Chapter>
       <CollapsibleSection
+        collapseSettings={
+          Object {
+            "collapsedByDefault": false,
+            "isCollapsible": false,
+          }
+        }
         headerSettings={
           Object {
             "firstColumnTerm": <Connect(Term)
@@ -3282,7 +3294,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                               >
                                                                 <withStyles(LinkPure)
                                                                   className="default-Topic-titleStyle"
-                                                                  to="/Conference/Topic/2"
+                                                                  to="/Topic/2"
                                                                 >
                                                                   <LinkPure
                                                                     className="default-Topic-titleStyle"
@@ -3544,13 +3556,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                         },
                                                                       }
                                                                     }
-                                                                    to="/Conference/Topic/2"
+                                                                    to="/Topic/2"
                                                                   >
                                                                     <Link
                                                                       className="default-Link-link default-Topic-titleStyle"
                                                                       replace={false}
                                                                       style={Object {}}
-                                                                      to="/Conference/Topic/2"
+                                                                      to="/Topic/2"
                                                                     />
                                                                   </LinkPure>
                                                                 </withStyles(LinkPure)>
@@ -12435,7 +12447,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                               >
                                                                 <withStyles(LinkPure)
                                                                   className="default-Topic-titleStyle"
-                                                                  to="/Conference/Topic/1"
+                                                                  to="/Topic/1"
                                                                 >
                                                                   <LinkPure
                                                                     className="default-Topic-titleStyle"
@@ -12697,13 +12709,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                         },
                                                                       }
                                                                     }
-                                                                    to="/Conference/Topic/1"
+                                                                    to="/Topic/1"
                                                                   >
                                                                     <Link
                                                                       className="default-Link-link default-Topic-titleStyle"
                                                                       replace={false}
                                                                       style={Object {}}
-                                                                      to="/Conference/Topic/1"
+                                                                      to="/Topic/1"
                                                                     />
                                                                   </LinkPure>
                                                                 </withStyles(LinkPure)>

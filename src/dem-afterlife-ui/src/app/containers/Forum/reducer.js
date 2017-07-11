@@ -1,6 +1,6 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getTopicArrayByForumIdApi} from 'api';
-import {getSubForumArrayByParentForumIdArray} from 'containers/shared-reducer';
+import {getSubForumArrayByParentForumIdArray} from 'containers/reducer';
 
 const initialState = {
     topicArray: []

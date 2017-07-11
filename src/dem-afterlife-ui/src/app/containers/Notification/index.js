@@ -5,7 +5,7 @@ import {func, arrayOf, node, string, number, bool, object, oneOfType, shape} fro
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import NotificationSystem from 'react-notification-system';
-import {removeNotification as removeNotificationAction} from './notification-reducer';
+import {removeNotification as removeNotificationAction} from './reducer';
 
 export class NotificationPure extends React.Component {
     static propTypes = {

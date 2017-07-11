@@ -4,7 +4,7 @@ import {
     getLastActiveTopicArrayApi
 } from 'api';
 
-import {getForumArrayByChapterIdArray} from 'containers/shared-reducer';
+import {getForumArrayByChapterIdArray} from 'containers/reducer';
 
 const initialState = {
     chapterArray: [],

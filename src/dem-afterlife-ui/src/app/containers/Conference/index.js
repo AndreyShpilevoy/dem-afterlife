@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
 import LastActiveTopics from 'components/LastActiveTopics';
-import {getChapterArray, getLastActiveTopicArray} from './conference-reducer';
+import {getChapterArray, getLastActiveTopicArray} from './reducer';
 import {chaptersWithForumsArraySelector, sortedLastActiveTopicsArraySelector} from './selectors';
 
 class Conference extends PureComponent {

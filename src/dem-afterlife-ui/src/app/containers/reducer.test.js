@@ -26,7 +26,7 @@ import {
     getForumsByChapterIdArrayNonBlockSaga,
     getSubForumsByParentForumIdArraySaga,
     getSubForumsByParentForumIdArrayNonBlockSaga
-} from './shared-reducer';
+} from './reducer';
 
 describe('Shared reducer', () => {
     it('getForumById should create expected object', () => {

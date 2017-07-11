@@ -20,7 +20,7 @@ import {
     getNavigationLinkArraySaga,
     getSocialMediaLinkArraySaga,
     layoutSaga
-} from './layout-reducer';
+} from './reducer';
 
 Date.now = jest.genMockFunction().mockReturnValue(1492003118322);
 

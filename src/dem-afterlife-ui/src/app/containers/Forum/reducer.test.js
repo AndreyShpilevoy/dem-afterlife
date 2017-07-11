@@ -13,7 +13,7 @@ import {
     forumSaga,
     getTopicArrayForumIdSaga,
     getTopicArrayForumIdNonBlockSaga
-} from './forum-reducer';
+} from './reducer';
 
 describe('Forum reducer', () => {
     it('getTopicArrayByForumId should create expected object', () => {

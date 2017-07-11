@@ -10,7 +10,7 @@ import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
 import Term from 'containers/Term';
 import {sortedTopicArraySelector} from './selectors';
-import {getTopicArrayByForumId} from './forum-reducer';
+import {getTopicArrayByForumId} from './reducer';
 
 const subForumsTerm = {id: 24, value: 'Sub-Forums'};
 const topicsTerm = {id: 23, value: 'Topics'};
@@ -34,8 +34,10 @@ class Forum extends PureComponent {
         this.props.getTopicArrayByForumId(Number.parseInt(this.props.match.params.forumId, 10));
     }
 
-    componentWillUpdate = () => {
-        this.props.getTopicArrayByForumId(Number.parseInt(this.props.match.params.forumId, 10));
+    componentWillReceiveProps = nextProps => {
+        if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
+            this.props.getTopicArrayByForumId(Number.parseInt(nextProps.match.params.forumId, 10));
+        }
     }
 
     mapTopics = topicArray =>
@@ -50,17 +52,22 @@ class Forum extends PureComponent {
             forumArray
         };
 
-        const topicsHeaderSettings = {
+        const headerSettings = {
             title: <Term term={topicsTerm} />,
             firstColumnTerm: <Term term={postsTerm} />,
             secondColumnTerm: <Term term={viewsTerm} />,
             thirdColumnTerm: <Term term={lastMessageTerm} />
         };
 
+        const collapseSettings = {
+            collapsedByDefault: false,
+            isCollapsible: false
+        };
+
         return (
             <div>
                 {forumArray.length > 0 ? <Chapter chapter={subForumsChapter}/> : ''}
-                <CollapsibleSection headerSettings={topicsHeaderSettings}>
+                <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
                     {this.mapTopics(topicArray)}
                 </CollapsibleSection>
             </div>

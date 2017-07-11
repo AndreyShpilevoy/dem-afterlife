@@ -10,7 +10,7 @@ import {
     removeNotification,
     ADD_NOTIFICATION,
     REMOVE_NOTIFICATION
-} from './notification-reducer';
+} from './reducer';
 
 Date.now = jest.genMockFunction().mockReturnValue(1492003118322);
 

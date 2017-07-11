@@ -2,7 +2,6 @@
 
 import {
     getChapterArrayApi,
-    getForumArrayByChapterIdArrayApi,
     getLastActiveTopicArrayApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
@@ -20,7 +19,7 @@ import {
     getChapterArrayNonBlockSaga,
     conferenceSaga,
     getLastActiveTopicArraySaga
-} from './conference-reducer';
+} from './reducer';
 
 describe('Conference reducer', () => {
     it('getChapterArray should create expected object', () => {
