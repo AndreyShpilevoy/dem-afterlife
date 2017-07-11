@@ -36,7 +36,6 @@
         "/__mocks__/",
         "/__fakeApi__/",
         "/__fakeData__/",
-        "src/scripts/styles/",
         "src/images/",
         "tools/"
     ],

@@ -7,7 +7,8 @@
     <title>Index</title>
     <% if (htmlWebpackPlugin.options.paceCss) { %>
         <link href="<%= htmlWebpackPlugin.options.paceCss %>" rel="stylesheet" type="text/css">
-        <% } %>
+        <link href="<%= htmlWebpackPlugin.options.paceOverriddenCss %>" rel="stylesheet" type="text/css">
+    <% } %>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     </div>
     <% if (htmlWebpackPlugin.options.paceJs) { %>
         <script type="text/javascript" src="<%= htmlWebpackPlugin.options.paceJs %>"></script>
-        <% } %>
+    <% } %>
 </body>
 
 </html>

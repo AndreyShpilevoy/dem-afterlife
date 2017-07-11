@@ -40,7 +40,7 @@ const entryPoints = {
         'redux-saga',
         'react-svg-inline'
     ],
-    app: ['./src/scripts/index']
+    app: ['./src/app/index']
 };
 
 const rules = [
@@ -128,7 +128,8 @@ if (debug) {
         }),
         new CopyWebpackPlugin(
             [
-                {from: './node_modules/pace-progress/themes/orange/pace-theme-flash.css', to: 'css/pace.css'},
+                {from: './node_modules/pace-progress/themes/orange/pace-theme-minimal.css', to: 'css/pace.css'},
+                {from: './src/pace.overridden.css', to: 'css/pace.overridden.css'},
                 {from: './node_modules/pace-progress/pace.min.js', to: 'js/pace.min.js'}
             ],
             {copyUnmodified: false}
@@ -140,6 +141,7 @@ if (debug) {
             path: path.join(__dirname, '../dem-afterlife/wwwroot'),
             publicPath: '/wwwroot/',
             paceCss: `/css/pace.css?${checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css')}`,
+            paceOverriddenCss: `/css/pace.overridden.css?${checksum('./src/pace.overridden.css')}`,
             paceJs: `/js/pace.min.js?${checksum('./node_modules/pace-progress/pace.min.js')}`
         })
     );
@@ -147,14 +149,14 @@ if (debug) {
 
 const resolve = {
     alias: {
-        api: path.join(__dirname, './src/scripts/api'),
-        components: path.join(__dirname, './src/scripts/components'),
-        containers: path.join(__dirname, './src/scripts/containers'),
+        api: path.join(__dirname, './src/app/api'),
+        components: path.join(__dirname, './src/app/components'),
+        containers: path.join(__dirname, './src/app/containers'),
         images: path.join(__dirname, './src/images'),
         smiles: path.join(__dirname, './src/images/smiles'),
-        styles: path.join(__dirname, './src/scripts/styles'),
-        store: path.join(__dirname, './src/scripts/store'),
-        utils: path.join(__dirname, './src/scripts/utils'),
+        styles: path.join(__dirname, './src/app/styles'),
+        store: path.join(__dirname, './src/app/store'),
+        utils: path.join(__dirname, './src/app/utils'),
         tools: path.join(__dirname, './tools')
     }
 };

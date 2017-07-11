@@ -24,7 +24,7 @@ const getSpecificStyle = gridSize => {
         lg: getLgXlStyle,
         xl: getLgXlStyle
     };
-    return specificStyles[gridSize] ? specificStyles[gridSize] : {};
+    return specificStyles[gridSize];
 };
 
 const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxString, footerStyles) =>
