@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 import Layout from 'containers/Layout';
 import Conference from 'containers/Conference';
 import Forum from 'containers/Forum';
+import Topic from 'containers/Topic';
 
 const routes = [
     {
@@ -21,6 +22,11 @@ const routes = [
         path: '/Forum/:forumId',
         exact: false,
         component: Forum
+    },
+    {
+        path: '/Topic/:topicId',
+        exact: false,
+        component: Topic
     }
 ];
 

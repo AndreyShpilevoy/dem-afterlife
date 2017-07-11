@@ -18,7 +18,7 @@ export const TopicPure = ({topic, styles}) => {
         parentForumTitleStyle, heightFull, noWrap, textSmallMd} = styles;
     const forumTerm = {id: 25, value: 'Forum:'};
     const postTerm = {id: 2, value: 'Posts'};
-    const linkToTopic = `/Conference/Topic/${id}`;
+    const linkToTopic = `/Topic/${id}`;
     const linkToParentForum = `/Forum/${parentForumId}`;
     return (
         <div className={wrapper}>

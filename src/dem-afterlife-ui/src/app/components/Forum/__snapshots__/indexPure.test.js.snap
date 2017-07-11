@@ -198,7 +198,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
             </withStyles(HiddenPure)>
             <withStyles(LinkPure)
               className="default-Forum-smallText default-Forum-displayInline"
-              to="/Conference/Topic/4"
+              to="/Topic/4"
             >
               Exporter Ex Machina for Maya
             </withStyles(LinkPure)>
@@ -352,7 +352,7 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
             </withStyles(HiddenPure)>
             <withStyles(LinkPure)
               className="default-Forum-smallText default-Forum-displayInline"
-              to="/Conference/Topic/4"
+              to="/Topic/4"
             >
               Exporter Ex Machina for Maya
             </withStyles(LinkPure)>

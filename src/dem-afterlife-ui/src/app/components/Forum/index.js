@@ -22,7 +22,7 @@ export const ForumPure = ({forum, styles}) => {
     const centerAndRow = `${center} ${topicsMessages}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Forum/${id}`;
-    const linkToLastActiveTopic = `/Conference/Topic/${lastTopicInfo.topicId}`;
+    const linkToLastActiveTopic = `/Topic/${lastTopicInfo.topicId}`;
     const topicsTerm = {id: 1, value: 'Topics'};
     const postsTerm = {id: 2, value: 'Posts'};
     const lastPostTerm = {id: 3, value: 'Last message'};

@@ -65,6 +65,45 @@ const topic = shape({
     parentForumTitle: string
 });
 
+const post = shape({
+    id: number.isRequired,
+    topicId: number.isRequired,
+    postTime: instanceOf(Date).isRequired,
+    subject: string,
+    message: string.isRequired,
+    rate: number.isRequired,
+    userId: number.isRequired,
+    editInfo: shape({
+        userId: number.isRequired,
+        editReason: string,
+        editTime: instanceOf(Date).isRequired,
+        editCount: number.isRequired
+    }).isRequired
+});
+
+const user = shape({
+    id: number.isRequired,
+    name: string.isRequired,
+    registrationDate: instanceOf(Date).isRequired,
+    birthday: instanceOf(Date).isRequired,
+    email: string.isRequired,
+    emailConfirmed: true,
+    gender: number.isRequired,
+    rank: string.isRequired,
+    avatar: string,
+    signature: string,
+    from: string,
+    steam: string,
+    skype: string,
+    icq: string,
+    vk: string,
+    fb: string,
+    website: string,
+    profession: string,
+    interests: string,
+    groupColor: string.isRequired
+});
+
 const sharedPropTypes = {
     navigationLinkItem,
     navigationLinkArray: arrayOf(navigationLinkItem).isRequired,
@@ -77,7 +116,11 @@ const sharedPropTypes = {
     chapter,
     chapterArray: arrayOf(chapter).isRequired,
     topic,
-    topicArray: arrayOf(topic).isRequired
+    topicArray: arrayOf(topic).isRequired,
+    post,
+    postArray: arrayOf(post).isRequired,
+    user,
+    userArray: arrayOf(user).isRequired
 };
 
 export default sharedPropTypes;

@@ -28,7 +28,7 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
-                    to="/Conference/Topic/1"
+                    to="/Topic/1"
                   >
                     Как деактивировать бомбу
                   </withStyles(LinkPure)>
@@ -195,7 +195,7 @@ exports[`TopicPure component match expected snapshot without parent forum inform
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
-                    to="/Conference/Topic/1"
+                    to="/Topic/1"
                   >
                     Как деактивировать бомбу
                   </withStyles(LinkPure)>
