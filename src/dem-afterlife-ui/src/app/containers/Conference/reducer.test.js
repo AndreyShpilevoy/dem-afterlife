@@ -193,7 +193,7 @@ describe('Conference reducer', () => {
         expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual('GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS');
     });
 
-    it('getLastActiveTopicArraySaga third yield should return PUT action.payload.chapterArray that is a Promise', () => {
+    it('getLastActiveTopicArraySaga third yield should return PUT action.payload.lastActiveTopicArray that is a Promise', () => {
         const generator = getLastActiveTopicArraySaga();
 
         generator.next();

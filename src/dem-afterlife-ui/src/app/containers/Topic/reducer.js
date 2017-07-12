@@ -44,15 +44,11 @@ export const topicReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
-export function* getUserArrayByUserIdArrayNonBlockSaga(userIdArray) {
-    const userArray = yield call(getUserArrayByUserIdArrayApi, userIdArray);
-    yield put(getUserArrayByUserIdArraySuccess(userArray));
-}
-
 export function* getUserArrayByUserIdArraySaga() {
     for (;;) {
         const {payload} = yield take(GET_USER_ARRAY_BY_USER_ID_ARRAY);
-        yield fork(getUserArrayByUserIdArrayNonBlockSaga, payload.userIdArray);
+        const userArray = yield call(getUserArrayByUserIdArrayApi, payload.userIdArray);
+        yield put(getUserArrayByUserIdArraySuccess(userArray));
     }
 }
 

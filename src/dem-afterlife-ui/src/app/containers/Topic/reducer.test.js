@@ -1,76 +1,159 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0*/
 
 import {
-    getPostArrayByTopicIdApi
+    getPostArrayByTopicIdApi,
+    getUserArrayByUserIdArrayApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
 import {
+    getPostArrayByTopicId,
+    getPostArrayByTopicIdSuccess,
+    getUserArrayByUserIdArray,
+    getUserArrayByUserIdArraySuccess,
+    GET_POST_ARRAY_BY_TOPIC_ID,
+    GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
+    GET_USER_ARRAY_BY_USER_ID_ARRAY,
+    GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS,
+    topicReducer,
     topicSaga,
     getPostArrayByTopicIdSaga,
-    getPostArrayByTopicIdNonBlockSaga
+    getPostArrayByTopicIdNonBlockSaga,
+    getUserArrayByUserIdArraySaga
 } from './reducer';
 
 describe('Forum reducer', () => {
-    // it('getpostArrayByForumId should create expected object', () => {
-        // const expectedResult = {type: GET_TOPIC_ARRAY_BY_FORUM_ID, payload: {forumId: 1} };
-        // expect(getpostArrayByForumId(1)).toEqual(expectedResult);
-    // });
+    it('getPostArrayByTopicId should create expected object', () => {
+        const expectedResult = {type: GET_POST_ARRAY_BY_TOPIC_ID, payload: {topicId: 1} };
+        expect(getPostArrayByTopicId(1)).toEqual(expectedResult);
+    });
 
-    // it('getpostArrayByForumIdSuccess should create expected object', () => {
-    //     const expectedResult = {
-    //         type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
-    //         payload: {
-    //             postArray: [
-    //                 {id: 1, title: 'Ex Machina Forum', order: 1},
-    //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-    //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
-    //             ]
-    //         }
-    //     };
-    //     expect(getpostArrayByForumIdSuccess([
-    //                 {id: 1, title: 'Ex Machina Forum', order: 1},
-    //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-    //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
-    //     ])).toEqual(expectedResult);
-    // });
+    it('getPostArrayByTopicIdSuccess should create expected object', () => {
+        const expectedResult = {
+            type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
+            payload: {
+                postArray: [
+                    {id: 1, message: 'Ex Machina Forum', userId: 1},
+                    {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
+                    {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
+                ]
+            }
+        };
+        expect(getPostArrayByTopicIdSuccess([
+            {id: 1, message: 'Ex Machina Forum', userId: 1},
+            {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
+            {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
+        ])).toEqual(expectedResult);
+    });
 
-    // it('forumReducer with invalid (GET_LOCALE) action should return expected state', () => {
-    //     const defaultState = {
-    //         postArray: []
-    //     };
-    //     const action = {
-    //         type: 'GET_LOCALE',
-    //         payload: 'ru'
-    //     };
-    //     const expectedResult = {
-    //         postArray: []
-    //     };
-    //     expect(forumReducer(defaultState, action)).toEqual(expectedResult);
-    // });
+    it('getUserArrayByUserIdArray should create expected object', () => {
+        const expectedResult = {type: GET_USER_ARRAY_BY_USER_ID_ARRAY, payload: {userIdArray: [1] } };
+        expect(getUserArrayByUserIdArray([1])).toEqual(expectedResult);
+    });
 
-    // it('forumReducer with action GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS should return expected state', () => {
-    //     const defaultState = {
-    //         postArray: []
-    //     };
-    //     const action = {
-    //         type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
-    //         payload: {
-    //             postArray: [
-    //                 {id: 1, title: 'Ex Machina Forum', order: 1},
-    //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-    //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
-    //             ]
-    //         }
-    //     };
-    //     const expectedResult = {
-    //         postArray: [
-    //                 {id: 1, title: 'Ex Machina Forum', order: 1},
-    //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-    //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
-    //         ]
-    //     };
-    //     expect(forumReducer(defaultState, action)).toEqual(expectedResult);
-    // });
+    it('getUserArrayByUserIdArraySuccess should create expected object', () => {
+        const expectedResult = {
+            type: GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS,
+            payload: {
+                userArray: [
+                    {id: 1, name: 'kto'},
+                    {id: 3, message: 'Buba'},
+                    {id: 2, message: 'Seel'}
+                ]
+            }
+        };
+        expect(getUserArrayByUserIdArraySuccess([
+            {id: 1, name: 'kto'},
+            {id: 3, message: 'Buba'},
+            {id: 2, message: 'Seel'}
+        ])).toEqual(expectedResult);
+    });
+
+    it('topicReducer with invalid (GET_LOCALE) action should return expected state', () => {
+        const defaultState = {
+            postArray: []
+        };
+        const action = {
+            type: 'GET_LOCALE',
+            payload: 'ru'
+        };
+        const expectedResult = {
+            postArray: []
+        };
+        expect(topicReducer(defaultState, action)).toEqual(expectedResult);
+    });
+
+    it('topicReducer with action GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS should return expected state', () => {
+        const defaultState = {
+            postArray: []
+        };
+        const action = {
+            type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
+            payload: {
+                postArray: [
+                    {id: 1, message: 'Ex Machina Forum', userId: 1},
+                    {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
+                    {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
+                ]
+            }
+        };
+        const expectedResult = {
+            postArray: [
+                    {id: 1, message: 'Ex Machina Forum', userId: 1},
+                    {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
+                    {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
+            ]
+        };
+        expect(topicReducer(defaultState, action)).toEqual(expectedResult);
+    });
+
+    it('topicReducer with action GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS and empty userArray should return expected state', () => {
+        const defaultState = {
+            userArray: []
+        };
+        const action = {
+            type: GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS,
+            payload: {
+                userArray: [
+                    {id: 1, name: 'kto'},
+                    {id: 3, message: 'Buba'},
+                    {id: 2, message: 'Seel'}
+                ]
+            }
+        };
+        const expectedResult = {
+            userArray: [
+                {id: 1, name: 'kto'},
+                {id: 3, message: 'Buba'},
+                {id: 2, message: 'Seel'}
+            ]
+        };
+        expect(topicReducer(defaultState, action)).toEqual(expectedResult);
+    });
+
+    it('topicReducer with action GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS and not empty userArray should return expected state', () => {
+        const defaultState = {
+            userArray: [{id: 3, message: 'Buba'}, {id: 4, message: 'lol'}]
+        };
+        const action = {
+            type: GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS,
+            payload: {
+                userArray: [
+                    {id: 1, name: 'kto'},
+                    {id: 2, message: 'Seel'},
+                    {id: 4, message: 'ololoid'}
+                ]
+            }
+        };
+        const expectedResult = {
+            userArray: [
+                {id: 3, message: 'Buba'},
+                {id: 1, name: 'kto'},
+                {id: 2, message: 'Seel'},
+                {id: 4, message: 'ololoid'}
+            ]
+        };
+        expect(topicReducer(defaultState, action)).toEqual(expectedResult);
+    });
 
     it('getPostArrayByTopicIdSaga first yield should return TAKE pattern "GET_POST_ARRAY_BY_TOPIC_ID"', () => {
         const generator = getPostArrayByTopicIdSaga();
@@ -134,6 +217,36 @@ describe('Forum reducer', () => {
         generator.next();
         generator.next([{userId: 1}, {userId: 22}]);
         expect(generator.next().value.PUT.action.payload.userIdArray).toEqual([1, 22]);
+    });
+
+
+    it('getUserArrayByUserIdArraySaga first yield should return TAKE pattern "GET_USER_ARRAY_BY_USER_ID_ARRAY"', () => {
+        const generator = getUserArrayByUserIdArraySaga();
+
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY');
+    });
+
+    it('getUserArrayByUserIdArraySaga second yield should return CALL to function "getUserArrayByUserIdArrayApi"', () => {
+        const generator = getUserArrayByUserIdArraySaga();
+
+        generator.next();
+        expect(generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } }).value.CALL.fn).toEqual(getUserArrayByUserIdArrayApi);
+    });
+
+    it('getUserArrayByUserIdArraySaga third yield should return PUT action.type "GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS"', () => {
+        const generator = getUserArrayByUserIdArraySaga();
+
+        generator.next();
+        generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
+        expect(generator.next(getUserArrayByUserIdArrayApi([1, 2, 3, 4, 5])).value.PUT.action.type).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS');
+    });
+
+    it('getUserArrayByUserIdArraySaga third yield should return PUT action.payload.userArray that is a Promise', () => {
+        const generator = getUserArrayByUserIdArraySaga();
+
+        generator.next();
+        generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
+        expect(IsPromise(generator.next(getUserArrayByUserIdArrayApi([1, 2, 3, 4, 5])).value.PUT.action.payload.userArray)).toBeTruthy();
     });
 
     it('should return 2 Saga from default generator', () => {
