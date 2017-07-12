@@ -1,38 +1,33 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0*/
 
-// import {
-//     getTopicArrayByForumIdApi
-// } from 'api';
-// import IsPromise from 'tools/testHelper';
-// import {
-//     GET_TOPIC_ARRAY_BY_FORUM_ID,
-//     GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
-//     getTopicArrayByForumId,
-//     getTopicArrayByForumIdSuccess,
-//     forumReducer,
-//     forumSaga,
-//     getTopicArrayForumIdSaga,
-//     getTopicArrayForumIdNonBlockSaga
-// } from './topic-reducer';
+import {
+    getPostArrayByTopicIdApi
+} from 'api';
+import IsPromise from 'tools/testHelper';
+import {
+    topicSaga,
+    getPostArrayByTopicIdSaga,
+    getPostArrayByTopicIdNonBlockSaga
+} from './reducer';
 
 describe('Forum reducer', () => {
-    it('getTopicArrayByForumId should create expected object', () => {
+    // it('getpostArrayByForumId should create expected object', () => {
         // const expectedResult = {type: GET_TOPIC_ARRAY_BY_FORUM_ID, payload: {forumId: 1} };
-        // expect(getTopicArrayByForumId(1)).toEqual(expectedResult);
-    });
+        // expect(getpostArrayByForumId(1)).toEqual(expectedResult);
+    // });
 
-    // it('getTopicArrayByForumIdSuccess should create expected object', () => {
+    // it('getpostArrayByForumIdSuccess should create expected object', () => {
     //     const expectedResult = {
-    //         type: GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
+    //         type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
     //         payload: {
-    //             topicArray: [
+    //             postArray: [
     //                 {id: 1, title: 'Ex Machina Forum', order: 1},
     //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
     //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
     //             ]
     //         }
     //     };
-    //     expect(getTopicArrayByForumIdSuccess([
+    //     expect(getpostArrayByForumIdSuccess([
     //                 {id: 1, title: 'Ex Machina Forum', order: 1},
     //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
     //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -41,26 +36,26 @@ describe('Forum reducer', () => {
 
     // it('forumReducer with invalid (GET_LOCALE) action should return expected state', () => {
     //     const defaultState = {
-    //         topicArray: []
+    //         postArray: []
     //     };
     //     const action = {
     //         type: 'GET_LOCALE',
     //         payload: 'ru'
     //     };
     //     const expectedResult = {
-    //         topicArray: []
+    //         postArray: []
     //     };
     //     expect(forumReducer(defaultState, action)).toEqual(expectedResult);
     // });
 
-    // it('forumReducer with action GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS should return expected state', () => {
+    // it('forumReducer with action GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS should return expected state', () => {
     //     const defaultState = {
-    //         topicArray: []
+    //         postArray: []
     //     };
     //     const action = {
-    //         type: GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS,
+    //         type: GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS,
     //         payload: {
-    //             topicArray: [
+    //             postArray: [
     //                 {id: 1, title: 'Ex Machina Forum', order: 1},
     //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
     //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -68,7 +63,7 @@ describe('Forum reducer', () => {
     //         }
     //     };
     //     const expectedResult = {
-    //         topicArray: [
+    //         postArray: [
     //                 {id: 1, title: 'Ex Machina Forum', order: 1},
     //                 {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
     //                 {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
@@ -77,62 +72,72 @@ describe('Forum reducer', () => {
     //     expect(forumReducer(defaultState, action)).toEqual(expectedResult);
     // });
 
-    // it('getTopicArrayForumIdSaga first yield should return TAKE pattern "GET_TOPIC_ARRAY_BY_FORUM_ID"', () => {
-    //     const generator = getTopicArrayForumIdSaga();
+    it('getPostArrayByTopicIdSaga first yield should return TAKE pattern "GET_POST_ARRAY_BY_TOPIC_ID"', () => {
+        const generator = getPostArrayByTopicIdSaga();
 
-    //     expect(generator.next().value.TAKE.pattern).toEqual('GET_TOPIC_ARRAY_BY_FORUM_ID');
-    // });
+        expect(generator.next().value.TAKE.pattern).toEqual('GET_POST_ARRAY_BY_TOPIC_ID');
+    });
 
-    // it('getTopicArrayForumIdSaga second yield should return FORK to function "getTopicArrayForumIdNonBlockSaga"', () => {
-    //     const generator = getTopicArrayForumIdSaga();
+    it('getPostArrayByTopicIdSaga second yield should return FORK to function "getPostArrayByTopicIdNonBlockSaga"', () => {
+        const generator = getPostArrayByTopicIdSaga();
 
-    //     generator.next();
-    //     expect(generator.next({payload: {forumId: 1} }).value.FORK.fn).toEqual(getTopicArrayForumIdNonBlockSaga);
-    // });
+        generator.next();
+        expect(generator.next({payload: {topicId: 1} }).value.FORK.fn).toEqual(getPostArrayByTopicIdNonBlockSaga);
+    });
 
-    // it('getTopicArrayForumIdSaga third yield should return ', () => {
-    //     const expectedResult = {action: {payload: {parentForumIdArray: [1] }, type: 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY'}, channel: null};
-    //     const generator = getTopicArrayForumIdSaga();
-    //     generator.next();
-    //     generator.next({payload: {forumId: 1} });
-    //     expect(generator.next({payload: {forumId: [1] } }).value.PUT).toEqual(expectedResult);
-    // });
+    it('getPostArrayByTopicIdSaga third yield should return the same result as first', () => {
+        const generator = getPostArrayByTopicIdSaga();
+        const expectedResult = generator.next();
+        generator.next({payload: {topicId: 1} });
+        expect(generator.next()).toEqual(expectedResult);
+    });
 
-    // it('getTopicArrayForumIdSaga fourth yield should return the same result as first', () => {
-    //     const generator = getTopicArrayForumIdSaga();
-    //     const expectedResult = generator.next();
-    //     generator.next({payload: {forumId: 1} });
-    //     generator.next({payload: {forumId: [1] } });
-    //     expect(generator.next()).toEqual(expectedResult);
-    // });
+    it('getPostArrayByTopicIdNonBlockSaga first yield should return CALL to function "getPostArrayByTopicIdApi"', () => {
+        const testTopicId = 1;
+        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
 
-    // it('getTopicArrayForumIdNonBlockSaga first yield should return CALL to function "getTopicArrayByForumIdApi"', () => {
-    //     const testForumIdArray = [1];
-    //     const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
+        expect(generator.next().value.CALL.fn).toEqual(getPostArrayByTopicIdApi);
+    });
 
-    //     expect(generator.next().value.CALL.fn).toEqual(getTopicArrayByForumIdApi);
-    // });
+    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.type "GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS"', () => {
+        const testTopicId = 1;
+        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
+        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
 
-    // it('getTopicArrayForumIdNonBlockSaga second yield should return PUT action.type "GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS"', () => {
-    //     const testForumIdArray = [1];
-    //     const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
-    //     const forumsByChapterId = getTopicArrayByForumIdApi(testForumIdArray);
+        generator.next();
+        expect(generator.next(postsByTopicId).value.PUT.action.type).toEqual('GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS');
+    });
 
-    //     generator.next();
-    //     expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS');
-    // });
+    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.payload.postArray that is a Promise', () => {
+        const testTopicId = 1;
+        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
+        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
 
-    // it('getTopicArrayForumIdNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
-    //     const testForumIdArray = [1];
-    //     const generator = getTopicArrayForumIdNonBlockSaga(testForumIdArray);
-    //     const forumsByChapterId = getTopicArrayByForumIdApi(testForumIdArray);
+        generator.next();
+        expect(IsPromise(generator.next(postsByTopicId).value.PUT.action.payload.postArray)).toBeTruthy();
+    });
 
-    //     generator.next();
-    //     expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.topicArray)).toBeTruthy();
-    // });
+    it('getPostArrayByTopicIdNonBlockSaga third yield should return PUT action.type "GET_USER_ARRAY_BY_USER_ID_ARRAY"', () => {
+        const testTopicId = 1;
+        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
+        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
 
-    // it('should return 1 Saga from default generator', () => {
-    //     const generator = forumSaga();
-    //     expect(generator.next().value.ALL.length).toEqual(1);
-    // });
+        generator.next();
+        generator.next([{userId: 1}, {userId: 22}]);
+        expect(generator.next(postsByTopicId).value.PUT.action.type).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY');
+    });
+
+    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.payload.postArray that is a Promise', () => {
+        const testTopicId = 1;
+        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
+
+        generator.next();
+        generator.next([{userId: 1}, {userId: 22}]);
+        expect(generator.next().value.PUT.action.payload.userIdArray).toEqual([1, 22]);
+    });
+
+    it('should return 2 Saga from default generator', () => {
+        const generator = topicSaga();
+        expect(generator.next().value.ALL.length).toEqual(2);
+    });
 });
