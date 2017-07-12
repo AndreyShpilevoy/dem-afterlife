@@ -7,7 +7,7 @@ import {bindActionCreators} from 'redux';
 import {sortedPostArrayWithUsersSelector} from './selectors';
 import {getPostArrayByTopicId} from './reducer';
 
-class Forum extends PureComponent {
+class Topic extends PureComponent {
     static propTypes = {
         getPostArrayByTopicId: func.isRequired,
         postArray: sharedPropTypes.postArray,
@@ -18,10 +18,20 @@ class Forum extends PureComponent {
         }).isRequired
     };
 
+    componentDidMount = () => {
+        this.props.getPostArrayByTopicId(Number.parseInt(this.props.match.params.topicId, 10));
+    }
+
+    componentWillReceiveProps = nextProps => {
+        if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
+            this.props.getPostArrayByTopicId(Number.parseInt(nextProps.match.params.topicId, 10));
+        }
+    }
+
     render() {
         return (
             <div>
-                {this.props.match.params.topicId}
+                {this.props.postArray.length}
             </div>
         );
     }
@@ -36,4 +46,4 @@ const mapDispatchToProps = dispatch =>
         getPostArrayByTopicId
     }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Forum);
+export default connect(mapStateToProps, mapDispatchToProps)(Topic);

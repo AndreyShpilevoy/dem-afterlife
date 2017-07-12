@@ -1,4 +1,4 @@
-import {arrayOf, shape, number, string, instanceOf, oneOfType, node} from 'prop-types';
+import {arrayOf, shape, number, string, instanceOf, oneOfType, node, bool} from 'prop-types';
 
 const subForum = shape({
     id: number.isRequired,
@@ -65,29 +65,13 @@ const topic = shape({
     parentForumTitle: string
 });
 
-const post = shape({
-    id: number.isRequired,
-    topicId: number.isRequired,
-    postTime: instanceOf(Date).isRequired,
-    subject: string,
-    message: string.isRequired,
-    rate: number.isRequired,
-    userId: number.isRequired,
-    editInfo: shape({
-        userId: number.isRequired,
-        editReason: string,
-        editTime: instanceOf(Date).isRequired,
-        editCount: number.isRequired
-    }).isRequired
-});
-
 const user = shape({
     id: number.isRequired,
     name: string.isRequired,
     registrationDate: instanceOf(Date).isRequired,
     birthday: instanceOf(Date).isRequired,
     email: string.isRequired,
-    emailConfirmed: true,
+    emailConfirmed: bool.isRequired,
     gender: number.isRequired,
     rank: string.isRequired,
     avatar: string,
@@ -102,6 +86,24 @@ const user = shape({
     profession: string,
     interests: string,
     groupColor: string.isRequired
+});
+
+const post = shape({
+    id: number.isRequired,
+    topicId: number.isRequired,
+    postTime: instanceOf(Date).isRequired,
+    subject: string,
+    message: string.isRequired,
+    rate: number.isRequired,
+    userId: number.isRequired,
+    user,
+    editInfo: shape({
+        userId: number.isRequired,
+        user,
+        editReason: string,
+        editTime: instanceOf(Date).isRequired,
+        editCount: number.isRequired
+    })
 });
 
 const sharedPropTypes = {

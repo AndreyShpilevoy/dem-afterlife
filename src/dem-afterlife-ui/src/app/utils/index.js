@@ -22,6 +22,14 @@ const defaults = {
     spaceString: ' '
 };
 
+const mergeTwoArraysOfObjectMatchById = (firstArray, secondArray) =>
+     secondArray.reduce((previous, current) =>
+         [...previous.filter(x => x.id !== current.id), current], firstArray);
+
+const margeHelper = {
+    mergeTwoArraysOfObjectMatchById
+};
+
 export {root};
 export {debounce};
 export {throttle};
@@ -31,3 +39,4 @@ export {createMediaQueryMinMax};
 export {defaults};
 export {sharedPropTypes};
 export {localization};
+export {margeHelper};
