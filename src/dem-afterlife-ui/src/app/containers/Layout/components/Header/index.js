@@ -7,10 +7,10 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import Logotype from 'components/Logotype';
-import MenuButton from 'components/MenuButton';
-import NavigationLinkList from 'components/NavigationLinkList';
 import {css, withStyles} from 'styles';
+import Logotype from '../Logotype';
+import MenuButton from '../MenuButton';
+import NavigationLinkList from '../NavigationLinkList';
 import calculateStyles from './calculateStyles';
 
 export class HeaderPure extends PureComponent {

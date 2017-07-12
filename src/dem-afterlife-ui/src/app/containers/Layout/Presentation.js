@@ -5,9 +5,9 @@ import Notification from 'containers/Notification';
 import Container from 'components/Container';
 import Row from 'components/Row';
 import Column from 'components/Column';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import {withStyles, ThemeProvider} from 'styles';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import globalStyles from './globalStyles';
 import calculateStyles from './calculateStyles';
 

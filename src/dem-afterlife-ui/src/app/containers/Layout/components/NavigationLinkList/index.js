@@ -1,8 +1,8 @@
 import React from 'react';
 import {string, shape} from 'prop-types';
 import {sharedPropTypes, defaults} from 'utils';
-import NavigationLinkListItem from 'components/NavigationLinkListItem';
 import {withStyles} from 'styles';
+import NavigationLinkListItem from '../NavigationLinkListItem';
 import calculateStyles from './calculateStyles';
 
 const mapNavigationLinks = (navigationLinkArray, separatorClassName) =>

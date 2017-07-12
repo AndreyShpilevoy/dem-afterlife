@@ -6,8 +6,8 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import SocialMediaLink from 'components/SocialMediaLink';
 import {withStyles} from 'styles';
+import SocialMediaLink from '../SocialMediaLink';
 import calculateStyles from './calculateStyles';
 
 const mapSocialMediaArray = (socialMediaLinkArray, className) =>
