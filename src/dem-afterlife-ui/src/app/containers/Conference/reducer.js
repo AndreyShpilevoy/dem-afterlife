@@ -42,7 +42,6 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getChapterArrayNonBlockSaga() {
     const chapterArray = yield call(getChapterArrayApi);
     yield put(getChapterArraySuccess(chapterArray));
@@ -50,24 +49,21 @@ export function* getChapterArrayNonBlockSaga() {
     yield put(getForumArrayByChapterIdArray(chapterIdArray));
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getChapterArraySaga() {
-    while (true) {
+    for (;;) {
         yield take(GET_CHAPTER_ARRAY);
         yield fork(getChapterArrayNonBlockSaga);
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getLastActiveTopicArraySaga() {
-    while (true) {
+    for (;;) {
         yield take(GET_LAST_ACTIVE_TOPICS_ARRAY);
         const lastActiveTopicArray = yield call(getLastActiveTopicArrayApi);
         yield put(getLastActiveTopicArraySuccess(lastActiveTopicArray));
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* conferenceSaga() {
     yield all([
         getChapterArraySaga(),

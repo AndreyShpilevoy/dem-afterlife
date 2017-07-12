@@ -44,21 +44,18 @@ export const topicReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getUserArrayByUserIdArrayNonBlockSaga(userIdArray) {
     const userArray = yield call(getUserArrayByUserIdArrayApi, userIdArray);
     yield put(getUserArrayByUserIdArraySuccess(userArray));
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getUserArrayByUserIdArraySaga() {
-    while (true) {
+    for (;;) {
         const {payload} = yield take(GET_USER_ARRAY_BY_USER_ID_ARRAY);
         yield fork(getUserArrayByUserIdArrayNonBlockSaga, payload.userIdArray);
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getPostArrayByTopicIdNonBlockSaga(topicId) {
     const postArray = yield call(getPostArrayByTopicIdApi, topicId);
     yield put(getPostArrayByTopicIdSuccess(postArray));
@@ -66,18 +63,17 @@ export function* getPostArrayByTopicIdNonBlockSaga(topicId) {
     yield put(getUserArrayByUserIdArray(userIdArray));
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getPostArrayByTopicIdSaga() {
-    while (true) {
+    for (;;) {
         const {payload} = yield take(GET_POST_ARRAY_BY_TOPIC_ID);
         yield fork(getPostArrayByTopicIdNonBlockSaga, payload.topicId);
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* topicSaga() {
     yield all([
         getPostArrayByTopicIdSaga(),
         getUserArrayByUserIdArraySaga()
     ]);
 }
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/

@@ -49,34 +49,30 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getLocaleSaga() {
-    while (true) {
+    for (;;) {
         yield take(GET_LOCALE);
         const locale = yield call(getLocaleApi);
         yield put(getLocaleSuccess(locale));
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getNavigationLinkArraySaga() {
-    while (true) {
+    for (;;) {
         yield take(GET_NAVIGATION_LINK_ARRAY);
         const navigationLinkArray = yield call(getNavigationLinkArrayApi);
         yield put(getNavigationLinkArraySuccess(navigationLinkArray));
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSocialMediaLinkArraySaga() {
-    while (true) {
+    for (;;) {
         yield take(GET_SOCIAL_MEDIA_LINK_ARRAY);
         const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
         yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* layoutSaga() {
     yield all([
         getLocaleSaga(),

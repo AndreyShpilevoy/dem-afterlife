@@ -62,16 +62,14 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getForumByIdSaga() {
-    while (true) {
+    for (;;) {
         const {payload} = yield take(GET_FORUM_BY_ID);
         const selectedForum = yield call(getForumByIdApi, payload.forumId);
         yield put(getForumByIdSuccess(selectedForum));
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
     const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
     yield put(getForumArrayByChapterIdArraySuccess(forumArray));
@@ -79,29 +77,25 @@ export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
     yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getForumsByChapterIdArraySaga() {
-    while (true) {
+    for (;;) {
         const {payload} = yield take(GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY);
         yield fork(getForumsByChapterIdArrayNonBlockSaga, payload.chapterIdArray);
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSubForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
     const forumArray = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
     yield put(getSubForumArrayByParentForumIdArraySuccess(forumArray));
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* getSubForumsByParentForumIdArraySaga() {
-    while (true) {
+    for (;;) {
         const {payload} = yield take(GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
         yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
     }
 }
 
-/* istanbul ignore next: ignore generator in test coverage - incorrect behaviour*/
 export function* sharedSaga() {
     yield all([
         getForumByIdSaga(),
