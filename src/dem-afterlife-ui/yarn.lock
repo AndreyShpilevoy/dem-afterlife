@@ -3332,9 +3332,9 @@ jss-vendor-prefixer@6.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-8.0.0.tgz#7b6e3153a5045d396245adc3fad5817d00c59457"
+jss@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-8.1.0.tgz#b32f15efcce22446dfda4c2be09a04f38431da0a"
   dependencies:
     is-in-browser "^1.0.2"
     warning "^3.0.0"
@@ -5332,9 +5332,9 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.1.0.tgz#ac0675e500db835f9ab2369d29ba096f51ad0731"
+webpack@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.2.0.tgz#8b0cae0e1a9fd76bfbf0eab61a8c2ada848c312f"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

@@ -64,7 +64,7 @@
         "rimraf": "2.6.1",
         "transform-jest-deps": "2.2.1",
         "url-loader": "0.5.9",
-        "webpack": "3.1.0",
+        "webpack": "3.2.0",
         "webpack-dev-middleware": "1.11.0",
         "webpack-hot-middleware": "2.18.2"
     },
@@ -72,7 +72,7 @@
         "babel-polyfill": "6.23.0",
         "classnames": "2.2.5",
         "history": "4.6.3",
-        "jss": "8.0.0",
+        "jss": "8.1.0",
         "jss-camel-case": "5.0.0",
         "jss-default-unit": "7.0.0",
         "jss-expand": "4.0.0",
