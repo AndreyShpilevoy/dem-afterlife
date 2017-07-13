@@ -91,7 +91,7 @@ const subForum = {
     iconSize: 1.3125
 };
 
-const forumTopicSeparator = {
+const sharedSeparator = {
     backgroundColor: colors.forumSecondaryBackgroundColor,
     height: 0.125,
     marginVertical: 0.3,
@@ -185,7 +185,7 @@ const defaultTheme = {
         }
     },
     forum: {
-        separator: forumTopicSeparator,
+        separator: sharedSeparator,
         text: {
             big: sizes.textBig,
             small: sizes.textSmall
@@ -195,7 +195,7 @@ const defaultTheme = {
         }
     },
     topic: {
-        separator: forumTopicSeparator,
+        separator: sharedSeparator,
         text: {
             big: sizes.textBig,
             small: sizes.textSmall
@@ -207,6 +207,9 @@ const defaultTheme = {
     avatar: {
         defaultImage: defaultAvatar,
         size: 2.5
+    },
+    post: {
+        separator: sharedSeparator
     }
 };
 

@@ -1,11 +1,10 @@
-const calculateStyles = ({post, themeName}) => ({
+const calculateStyles = ({themeName}) => ({
     inLine: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center'
     },
-    separator: post.separator,
-    options: {meta: 'Post', themeName}
+    options: {meta: 'User', themeName}
 });
 
 export default calculateStyles;
