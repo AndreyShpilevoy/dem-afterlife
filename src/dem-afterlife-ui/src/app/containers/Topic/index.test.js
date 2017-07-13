@@ -1,151 +1,115 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, react/no-multi-comp:0, react/prop-types:0*/
 
-// import React from 'react';
-// import {mount} from 'enzyme';
-// import configureMockStore from 'redux-mock-store';
-// import Forum from './index';
+import React from 'react';
+import {mount} from 'enzyme';
+import configureMockStore from 'redux-mock-store';
+import Topic from './index';
 
-// jest.mock('react-router-dom');
-// jest.mock('containers/Term');
-// jest.mock('containers/RelativeDateTime');
-// jest.mock('components/Chapter', () => {
-//     const Chapter = ({children}) => <div>{children}</div>;
-//     return Chapter;
-// });
+jest.mock('react-router-dom');
+jest.mock('containers/Term');
+jest.mock('./components/Post', () => {
+    const Post = ({children}) => <div>{children}</div>;
+    return Post;
+});
 
-// jest.mock('components/CollapsibleSection', () => {
-//     const CollapsibleSection = ({children}) => <div>{children}</div>;
-//     return CollapsibleSection;
-// });
+jest.mock('components/CollapsibleSection', () => {
+    const CollapsibleSection = ({children}) => <div>{children}</div>;
+    return CollapsibleSection;
+});
 
-describe('Forum HOC', () => {
-    // const mockStore = configureMockStore();
+describe('Topic HOC', () => {
+    const mockStore = configureMockStore();
 
-    it('component with empty chapter and forum arrays match expected snapshot', () => {
-        // const props = {
-        //     store: mockStore({
-        //         forumReducer: {topicArray: [] },
-        //         sharedReducer: {forumArray: [], subForumArray: [] }
-        //     }),
-        //     match: {params: {forumId: '10'} }
-        // };
-        // expect(mount(<Forum {...props}><div>{'Forum content'}</div></Forum>, {lifecycleExperimental: true})).toMatchSnapshot();
+    it('component with empty post and user arrays match expected snapshot', () => {
+        const props = {
+            store: mockStore({
+                topicReducer: {postArray: [], userArray: [] }
+            }),
+            match: {params: {topicId: '10'} }
+        };
+        expect(mount(<Topic {...props}><div>{'Topic content'}</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
-    // it('component with filled chapter and forum arrays match expected snapshot', () => {
-    //     const props = {
-    //         store: mockStore({
-    //             forumReducer: {
-    //                 topicArray: [
-    //                     {
-    //                         id: 1,
-    //                         forumId: 10,
-    //                         parentForumTitle: 'Общие вопросы',
-    //                         title: 'Как деактивировать бомбу',
-    //                         postsCount: 215,
-    //                         topicViewsCount: 1315,
-    //                         lastPostInfo: {
-    //                             timeCreation: new Date('2016/09/19 13:42:32'),
-    //                             authorId: 4,
-    //                             authorName: 'Buba',
-    //                             authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
-    //                             authorGroupColor: '#00AA00'
-    //                         }
-    //                     },
-    //                     {
-    //                         id: 2,
-    //                         forumId: 10,
-    //                         parentForumTitle: 'Общие вопросы',
-    //                         title: 'Как активировать бомбу.',
-    //                         postsCount: 57,
-    //                         topicViewsCount: 847,
-    //                         lastPostInfo: {
-    //                             timeCreation: new Date('2017/01/22 12:53:09'),
-    //                             authorId: 2,
-    //                             authorName: 'Bykawka',
-    //                             authorAvatar: null,
-    //                             authorGroupColor: '#fbeab2'
-    //                         }
-    //                     }
-    //                 ] },
-    //             sharedReducer: {
-    //                 forumArray: [
-    //                     {
-    //                         id: 10,
-    //                         chapterId: 1,
-    //                         order: 1,
-    //                         title: 'Общие вопросы',
-    //                         description: 'Все вопросы касательно геймплея и мира игры Ex Machina в целом.',
-    //                         topicsCount: 26,
-    //                         postsCount: 4113,
-    //                         lastTopicInfo: {
-    //                             topicId: 1,
-    //                             topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
-    //                             latestPostTimeCreation: new Date('2015/08/17 13:42:32'),
-    //                             latestPostAuthorId: 1,
-    //                             latestPostAuthorName: 'kto',
-    //                             latestPostAuthorGroupColor: '#ffa510'
-    //                         }
-    //                     },
-    //                     {
-    //                         id: 20,
-    //                         chapterId: 2,
-    //                         order: 2,
-    //                         title: 'Технические вопросы',
-    //                         description: 'Вопросы технического характера по игре Ex Machina.',
-    //                         topicsCount: 13,
-    //                         postsCount: 857,
-    //                         lastTopicInfo: {
-    //                             topicId: 2,
-    //                             topicDescription: 'Проблемы с игрой',
-    //                             latestPostTimeCreation: new Date('2016/9/22 12:53:09'),
-    //                             latestPostAuthorId: 2,
-    //                             latestPostAuthorName: 'Bykawka',
-    //                             latestPostAuthorGroupColor: '#fbeab2'
-    //                         }
-    //                     }
-    //                 ],
-    //                 subForumArray: [
-    //                     {
-    //                         id: 11,
-    //                         chapterId: null,
-    //                         forumId: 10,
-    //                         title: 'Самопал',
-    //                         order: 2,
-    //                         description: 'Какое-то описание',
-    //                         topicsCount: 10,
-    //                         postsCount: 5447,
-    //                         lastTopicInfo: {
-    //                             topicId: 4,
-    //                             topicDescription: 'Exporter Ex Machina for Maya',
-    //                             latestPostTimeCreation: new Date('2007/09/06 22:33:09'),
-    //                             latestPostAuthorId: 4,
-    //                             latestPostAuthorName: 'Buba',
-    //                             latestPostAuthorGroupColor: '#00AA00'
-    //                         }
-    //                     },
-    //                     {
-    //                         id: 12,
-    //                         chapterId: null,
-    //                         forumId: 10,
-    //                         title: 'Архив форумки',
-    //                         order: 1,
-    //                         description: 'Какое-то описание',
-    //                         topicsCount: 10,
-    //                         postsCount: 5447,
-    //                         lastTopicInfo: {
-    //                             topicId: 3,
-    //                             topicDescription: 'Hard Truck Apocalypse MOD 1.7SE',
-    //                             latestPostTimeCreation: new Date('2014/07/02 23:11:31'),
-    //                             latestPostAuthorId: 3,
-    //                             latestPostAuthorName: 'ololoid',
-    //                             latestPostAuthorGroupColor: '#99ccff'
-    //                         }
-    //                     }
-    //                 ]
-    //             } }),
-    //         match: {params: {forumId: '10'} }
-    //     };
-    //     expect(mount(<Forum {...props}><div>{'Forum content'}</div></Forum>, {lifecycleExperimental: true})).toMatchSnapshot();
-    // });
+    it('component with filled post and user arrays match expected snapshot', () => {
+        const props = {
+            store: mockStore({
+                topicReducer: {
+                    postArray: [
+                        {
+                            id: 4,
+                            topicId: 1,
+                            postTime: new Date('2015/01/04 10:10:10'),
+                            subject: 'subject 5',
+                            message: '[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]\r\n[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]',
+                            rate: 343,
+                            userId: 4,
+                            editInfo: null
+                        },
+                        {
+                            id: 5,
+                            topicId: 1,
+                            postTime: new Date('2015/01/05 10:10:10'),
+                            subject: 'subject 1',
+                            message: '[url]i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url] text [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url]\r\n[url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color="red"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]\r\ntext beetwin tags 12 [b]text in tag 23[/b] [/U][code=\'kto\']ss[b]g[/b]fsfdgdfg[/code] tar\r\n [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif\r\nhttp://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif\r\nhttp://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif\r\nhttp://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png\r\nhttp://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote="kto"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]',
+                            rate: 0,
+                            userId: 5,
+                            editInfo: {
+                                userId: 5,
+                                editReason: 'gust for lulz',
+                                editTime: new Date('2015/01/03 10:10:10'),
+                                editCount: 1
+                            }
+                        }
+                    ],
+                    userArray: [
+                        {
+                            id: 4,
+                            name: 'ololoid',
+                            registrationDate: new Date('2015/01/04 10:10:10'),
+                            birthday: new Date('2015/01/02 10:10:10'),
+                            email: 'ololoid@lol.ua',
+                            emailConfirmed: true,
+                            gender: 1,
+                            rank: 'Боец',
+                            avatar: 'http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png',
+                            signature: undefined,
+                            from: undefined,
+                            steam: undefined,
+                            skype: undefined,
+                            icq: undefined,
+                            vk: undefined,
+                            fb: undefined,
+                            website: undefined,
+                            profession: undefined,
+                            interests: undefined,
+                            groupColor: '#99ccff'
+                        },
+                        {
+                            id: 5,
+                            name: 'kto',
+                            registrationDate: new Date('2015/01/04 10:10:10'),
+                            birthday: new Date('2015/01/02 10:10:10'),
+                            email: '4252744@ukr.net',
+                            emailConfirmed: true,
+                            gender: 1,
+                            rank: 'Официально сумасшедший',
+                            avatar: 'http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif',
+                            signature: '__________!///_ _____\r\n_________( @@ )_____\r\n_______ooO-(_)-o o____\r\nПришёл, увидел, забанил. Ещё вопросы?',
+                            from: undefined,
+                            steam: undefined,
+                            skype: undefined,
+                            icq: undefined,
+                            vk: undefined,
+                            fb: undefined,
+                            website: undefined,
+                            profession: undefined,
+                            interests: undefined,
+                            groupColor: '#ffa510'
+                        }
+                    ]
+                } }),
+            match: {params: {topicId: '10'} }
+        };
+        expect(mount(<Topic {...props}><div>{'Topic content'}</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
+    });
 });

@@ -95,9 +95,13 @@ export class CollapsibleSectionPure extends PureComponent {
                                 </Column>
                             </Row>
                         </Hidden>
-                        <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
-                            <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'}/>
-                        </Hidden>
+                        {
+                            isCollapsible ?
+                            <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
+                                <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'}/>
+                            </Hidden> :
+                            defaults.emptyString
+                        }
                     </Column>
                 </Row>
                 <div className={bodyHolderClass}>

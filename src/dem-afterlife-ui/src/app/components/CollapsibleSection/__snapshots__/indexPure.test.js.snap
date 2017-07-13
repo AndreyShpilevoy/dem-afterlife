@@ -53,16 +53,6 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
           </withStyles(ColumnPure)>
         </withStyles(RowPure)>
       </withStyles(HiddenPure)>
-      <withStyles(HiddenPure)
-        className="default-CollapsibleSection-headerArrowHolder"
-        lg="up"
-        sm="down"
-      >
-        <SvgIconsMapper
-          className="default-CollapsibleSection-headerArrow closed"
-          iconName="IconSortLeft"
-        />
-      </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
   </withStyles(RowPure)>
   <div

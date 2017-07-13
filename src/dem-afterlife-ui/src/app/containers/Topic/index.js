@@ -1,11 +1,16 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
 import React, {PureComponent} from 'react';
 import {func, shape, string} from 'prop-types';
-import {sharedPropTypes} from 'utils';
+import {sharedPropTypes, defaults} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import CollapsibleSection from 'components/CollapsibleSection';
+import Term from 'containers/Term';
+import Post from './components/Post';
 import {sortedPostArrayWithUsersSelector} from './selectors';
 import {getPostArrayByTopicId} from './reducer';
+
+const titleTerm = {id: 30, value: 'Posts'};
 
 class Topic extends PureComponent {
     static propTypes = {
@@ -28,11 +33,22 @@ class Topic extends PureComponent {
         }
     }
 
+    mapPostsToComponent = postArray => postArray.map(post => <Post key={post.id} post={post}/>)
+
     render() {
+        const {postArray} = this.props;
+        const headerSettings = {
+            title: <Term term={titleTerm} />
+        };
+
+        const collapseSettings = {
+            collapsedByDefault: false,
+            isCollapsible: false
+        };
         return (
-            <div>
-                {this.props.postArray.length}
-            </div>
+            <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
+                {postArray ? this.mapPostsToComponent(postArray) : defaults.emptyString}
+            </CollapsibleSection>
         );
     }
 }
