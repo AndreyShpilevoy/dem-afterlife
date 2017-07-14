@@ -2,6 +2,7 @@
 
 exports[`Chapter component match expected snapshot without forumArray 1`] = `
 <withStyles(LinkPure)
+  className="chapterClassName"
   style={
     Object {
       "color": "#ffffff",

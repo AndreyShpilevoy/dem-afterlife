@@ -8,11 +8,11 @@ import calculateStyles from './calculateStyles';
 
 const User = ({user, styles}) => {
     const {id, avatar, name, groupColor} = user;
-    const {inLine} = styles;
+    const {inLine, userNameStyle} = styles;
     return (
         <div className={inLine}>
             <Avatar id={id} avatarUrl={avatar} size={2.5}/>
-            <UserName name={name}
+            <UserName className={userNameStyle} name={name}
                 id={id}
                 color={groupColor}/>
         </div>
