@@ -3,7 +3,10 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
+import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
 import Conference from './index';
+
+ThemedStyleSheet.default.get = () => {};
 
 jest.mock('components/Chapter', () => {
     const Chapter = ({children}) => <div>{children}</div>;

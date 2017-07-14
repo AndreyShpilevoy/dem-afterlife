@@ -3,7 +3,10 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
+import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
 import Forum from './index';
+
+ThemedStyleSheet.default.get = () => {};
 
 jest.mock('react-router-dom');
 jest.mock('containers/Term');
