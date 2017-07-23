@@ -1,0 +1,22 @@
+@import "colors.scss";
+@import "sizes.scss";
+@import "image-backgrounds.scss";
+
+
+.think{
+  padding: 0.4;
+}
+
+.thinkContent{
+  background-color: '#D4C5B6';
+  border: 0.0625 solid '#FFFFFF';
+  border-radius: 1;
+  padding: 0.4;
+}
+
+.thinkImage{
+  background-image: 'url(images/Smiles/forBbCode/think.gif);';
+  background-repeat: no-repeat;
+  background-size: 2;
+  padding-top: 2;
+}

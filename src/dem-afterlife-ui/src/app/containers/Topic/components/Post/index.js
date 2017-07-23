@@ -10,7 +10,6 @@ import calculateStyles from './calculateStyles';
 const OPEN_TAG = 'OPEN_TAG';
 const CLOSE_TAG = 'CLOSE_TAG';
 const TEXT = 'TEXT';
-const bbCodeTypes = {OPEN_TAG, CLOSE_TAG, TEXT};
 const bbCodesMapNames = [
     'b', 'i', 'u', 's', 'offtopic', 'think', 'color',
     'center', 'left', 'right', 'size', 'code', 'quote',
@@ -18,15 +17,24 @@ const bbCodesMapNames = [
     'textLine', 'spoiler', 'root'
 ];
 
-const wrapToRootNodeIfNeeded = text => text.substring(0, 6) !== '[root]' ? `[root]${text}[/root]` : text;
+const wrapToRootNodeIfNeeded = text =>
+    `${
+        text.substring(0, 6) !== '[root]' ?
+        '[root]' :
+        defaults.emptyString
+    }${text}${
+        text.substring(text.length - 7) !== '[/root]' ?
+        '[/root]' :
+        defaults.emptyString
+    }`;
 
-const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
+const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIndex = 0) => {
     const match = regex.exec(text);
     if (!match) {
         return result;
     }
     const matchedResult = {
-        type: match[1] ? bbCodeTypes.OPEN_TAG : bbCodeTypes.CLOSE_TAG,
+        type: match[1] ? OPEN_TAG : CLOSE_TAG,
         match: match[0],
         tag: match[1] ? match[1] : match[3],
         options: match[2],
@@ -43,7 +51,7 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
         if (localCodeIndex === 0 || (matchedResult.tag.toLowerCase() === 'code' || matchedResult.tag.toLowerCase() === 'br')) {
             if (result.length > 0 && result[result.length - 1].lastIndex !== matchedResult.firstIndex) {
                 const calculatedTextPart = {
-                    type: bbCodeTypes.TEXT,
+                    type: TEXT,
                     match: text.substring(result[result.length - 1].lastIndex, matchedResult.firstIndex),
                     firstIndex: result[result.length - 1].lastIndex,
                     lastIndex: matchedResult.firstIndex
@@ -52,16 +60,16 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
             }
             return [matchedResult];
         }
-        return [];
+        return defaults.emptyArray;
     };
 
     // if open tag 'code' - codeIndex++
-    if (matchedResult.type === bbCodeTypes.OPEN_TAG && matchedResult.tag.toLowerCase() === 'code') {
+    if (matchedResult.type === OPEN_TAG && matchedResult.tag.toLowerCase() === 'code') {
         const newCodeIndex = codeIndex + 1;
         return getAllTagsRecursively(text, regex, [...result, ...processTextType(newCodeIndex)], newCodeIndex);
 
     // if close tag 'code' - codeIndex--
-    } else if (matchedResult.type === bbCodeTypes.CLOSE_TAG && matchedResult.tag.toLowerCase() === 'code') {
+    } else if (matchedResult.type === CLOSE_TAG && matchedResult.tag.toLowerCase() === 'code') {
         const newCodeIndex = codeIndex - 1;
         return getAllTagsRecursively(text, regex, [...result, ...processTextType(newCodeIndex)], newCodeIndex);
     }
