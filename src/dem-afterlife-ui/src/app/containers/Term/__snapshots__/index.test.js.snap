@@ -16,9 +16,14 @@ exports[`Term component match expected snapshot for not term and untermedPostfix
   untermedPostfix=":"
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={true}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -49,9 +54,11 @@ exports[`Term component match expected snapshot for not term and untermedPostfix
         "unsubscribe": [Function],
       }
     }
+    term={null}
     untermedPostfix=":"
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -85,9 +92,14 @@ exports[`Term component match expected snapshot for simple term 1`] = `
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -127,6 +139,7 @@ exports[`Term component match expected snapshot for simple term 1`] = `
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -161,9 +174,14 @@ exports[`Term component match expected snapshot for simple term and untermedPost
   untermedPostfix=":"
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -203,6 +221,7 @@ exports[`Term component match expected snapshot for simple term and untermedPost
     untermedPostfix=":"
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -237,10 +256,14 @@ exports[`Term component match expected snapshot for simple term with indent afte
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
     indentAfter={true}
+    indentBefore={false}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -280,6 +303,7 @@ exports[`Term component match expected snapshot for simple term with indent afte
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -315,11 +339,14 @@ exports[`Term component match expected snapshot for simple term with indent befo
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
     indentAfter={true}
     indentBefore={true}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -359,6 +386,7 @@ exports[`Term component match expected snapshot for simple term with indent befo
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "0.25rem",
@@ -393,10 +421,14 @@ exports[`Term component match expected snapshot for simple term with space after
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     spaceAfter={true}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -436,6 +468,7 @@ exports[`Term component match expected snapshot for simple term with space after
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -471,8 +504,11 @@ exports[`Term component match expected snapshot for simple term with space befor
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     spaceAfter={true}
     spaceBefore={true}
@@ -515,6 +551,7 @@ exports[`Term component match expected snapshot for simple term with space befor
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -549,10 +586,14 @@ exports[`Term component match expected snapshot for term with indent before 1`] 
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
     indentBefore={true}
     locale="ru"
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -592,6 +633,7 @@ exports[`Term component match expected snapshot for term with indent before 1`] 
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "0.25rem",
@@ -626,9 +668,13 @@ exports[`Term component match expected snapshot for term with space before 1`] =
   }
 >
   <Term
+    className=""
     dispatch={[Function]}
     doNotTerm={false}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
+    spaceAfter={false}
     spaceBefore={true}
     store={
       Object {
@@ -669,6 +715,7 @@ exports[`Term component match expected snapshot for term with space before 1`] =
     untermedPostfix=""
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",

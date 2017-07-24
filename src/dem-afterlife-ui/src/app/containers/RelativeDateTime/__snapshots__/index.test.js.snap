@@ -15,9 +15,14 @@ exports[`RelativeDateTime component match expected snapshot for relative date 1`
   }
 >
   <RelativeDateTime
+    className=""
     dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={false}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -50,6 +55,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date 1`
     }
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -79,10 +85,14 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
   }
 >
   <RelativeDateTime
+    className=""
     dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     relativeDateTime={2017-06-02T00:00:00.000Z}
     spaceAfter={true}
+    spaceBefore={false}
     store={
       Object {
         "clearActions": [Function],
@@ -115,6 +125,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
     }
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -144,9 +155,13 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
   }
 >
   <RelativeDateTime
+    className=""
     dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={false}
     spaceBefore={true}
     store={
       Object {
@@ -180,6 +195,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
     }
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",
@@ -210,7 +226,10 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
   }
 >
   <RelativeDateTime
+    className=""
     dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
     locale="ru"
     relativeDateTime={2017-06-02T00:00:00.000Z}
     spaceAfter={true}
@@ -247,6 +266,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
     }
   >
     <span
+      className=""
       style={
         Object {
           "paddingLeft": "",

@@ -2,6 +2,7 @@
 
 exports[`Logotype HOC component match expected snapshot 1`] = `
 <LogotypePure
+  className=""
   styles={
     Object {
       "logotype": "default-Logotype-logotype",

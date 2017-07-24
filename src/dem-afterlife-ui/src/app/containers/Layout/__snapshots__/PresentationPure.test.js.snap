@@ -9,25 +9,47 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
   >
     <withStyles(ContainerPure)
       className="default-LayoutContainer-container"
+      onClick={[Function]}
     >
       <Connect(NotificationPure) />
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(HeaderPure)
           navigationLinkArray={Array []}
         />
       </withStyles(RowPure)>
       <withStyles(RowPure)
         className="default-LayoutContainer-content"
+        onClick={[Function]}
+        reverse={false}
       >
         <withStyles(ColumnPure)
+          className=""
+          lg=""
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <div>
             Layout Presentation content
           </div>
         </withStyles(ColumnPure)>
       </withStyles(RowPure)>
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(FooterPure)
           socialMediaLinkArray={Array []}
         />

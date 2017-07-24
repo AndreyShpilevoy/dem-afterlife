@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, import/first:0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, import/first:0 */
 import {
     postArraySelector,
     userArraySelector,

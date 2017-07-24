@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import {
     forumArraySelector,
@@ -54,7 +54,7 @@ describe('Shared selectors', () => {
         ];
         expect(sortedSubForumArraySelector(state)).toEqual(expectedResult);
     });
-    
+
     it('forumArrayWithSubForumsSelector should return expected array', () => {
         const state = {
             sharedReducer: {
@@ -76,7 +76,7 @@ describe('Shared selectors', () => {
                 chapterId: 1,
                 parentForumId: null,
                 subForumArray: [
-                {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
                 ]
             },
             {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] },
@@ -114,7 +114,7 @@ describe('Shared selectors', () => {
                 chapterId: 1,
                 parentForumId: null,
                 subForumArray: [
-                {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
+                    {id: 1, order: 1, chapterId: null, parentForumId: 1, subForumArray: [] }
                 ]
             },
             {id: 2,

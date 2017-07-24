@@ -2,6 +2,11 @@
 
 exports[`Hidden HOC component match expected snapshot 1`] = `
 <HiddenPure
+  className=""
+  lg=""
+  md=""
+  onClick={[Function]}
+  sm=""
   styles={
     Object {
       "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -21,5 +26,7 @@ exports[`Hidden HOC component match expected snapshot 1`] = `
       "hidden-up-xs": "default-Hidden-hidden-up-xs",
     }
   }
+  xl=""
+  xs=""
 />
 `;

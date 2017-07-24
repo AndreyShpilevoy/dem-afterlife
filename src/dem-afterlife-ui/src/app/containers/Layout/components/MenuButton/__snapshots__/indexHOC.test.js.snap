@@ -2,6 +2,7 @@
 
 exports[`MenuButton HOC match expected snapshot 1`] = `
 <MenuButtonPure
+  onClick={[Function]}
   styles={
     Object {
       ".default-MenuButton-firstLine.open": "default-MenuButton-firstLine.open",

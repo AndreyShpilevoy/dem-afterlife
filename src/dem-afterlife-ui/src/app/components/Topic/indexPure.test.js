@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -42,7 +42,7 @@ describe('TopicPure', () => {
                 authorGroupColor: '#00AA00'
             }
         };
-        expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic}/>)).toMatchSnapshot();
+        expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot with parent forum information', () => {
@@ -62,6 +62,6 @@ describe('TopicPure', () => {
             parentForumId: 10,
             parentForumTitle: 'Общие вопросы'
         };
-        expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic}/>)).toMatchSnapshot();
+        expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic} />)).toMatchSnapshot();
     });
 });

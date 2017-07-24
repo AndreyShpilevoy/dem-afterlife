@@ -108,21 +108,21 @@ const post = shape({
 
 const sharedPropTypes = {
     navigationLinkItem,
-    navigationLinkArray: arrayOf(navigationLinkItem).isRequired,
+    navigationLinkArray: arrayOf(navigationLinkItem),
     socialMediaLinkItem,
-    socialMediaLinkArray: arrayOf(socialMediaLinkItem).isRequired,
+    socialMediaLinkArray: arrayOf(socialMediaLinkItem),
     forum,
-    forumArray: arrayOf(forum).isRequired,
+    forumArray: arrayOf(forum),
     subForum,
-    subForumArray: arrayOf(subForum).isRequired,
+    subForumArray: arrayOf(subForum),
     chapter,
-    chapterArray: arrayOf(chapter).isRequired,
+    chapterArray: arrayOf(chapter),
     topic,
-    topicArray: arrayOf(topic).isRequired,
+    topicArray: arrayOf(topic),
     post,
-    postArray: arrayOf(post).isRequired,
+    postArray: arrayOf(post),
     user,
-    userArray: arrayOf(user).isRequired
+    userArray: arrayOf(user)
 };
 
 export default sharedPropTypes;

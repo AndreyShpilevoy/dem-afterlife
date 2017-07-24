@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -17,7 +17,7 @@ describe('RelativeDateTime', () => {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02')
         };
-        expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<RelativeDateTime {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for relative date with space before', () => {
@@ -26,7 +26,7 @@ describe('RelativeDateTime', () => {
             relativeDateTime: new Date('2017-06-02'),
             spaceBefore: true
         };
-        expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<RelativeDateTime {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for relative date with space after', () => {
@@ -35,7 +35,7 @@ describe('RelativeDateTime', () => {
             relativeDateTime: new Date('2017-06-02'),
             spaceAfter: true
         };
-        expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<RelativeDateTime {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for relative date with space before and after', () => {
@@ -45,6 +45,6 @@ describe('RelativeDateTime', () => {
             spaceBefore: true,
             spaceAfter: true
         };
-        expect(mount(<RelativeDateTime {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<RelativeDateTime {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 */
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -14,7 +14,7 @@ describe('Layout Presentation', () => {
                 themeName={'default'}
                 navigationLinkArray={[]}
                 socialMediaLinkArray={[]}>
-                 <div>
+                <div>
                     {'Layout Presentation content'}
                 </div>
             </Presentation>

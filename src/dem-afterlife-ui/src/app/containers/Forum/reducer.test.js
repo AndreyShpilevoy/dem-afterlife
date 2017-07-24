@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0 */
 
 import {
     getTopicArrayByForumIdApi
@@ -33,9 +33,9 @@ describe('Forum reducer', () => {
             }
         };
         expect(getTopicArrayByForumIdSuccess([
-                    {id: 1, title: 'Ex Machina Forum', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
+            {id: 1, title: 'Ex Machina Forum', order: 1},
+            {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+            {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
         ])).toEqual(expectedResult);
     });
 
@@ -69,9 +69,9 @@ describe('Forum reducer', () => {
         };
         const expectedResult = {
             topicArray: [
-                    {id: 1, title: 'Ex Machina Forum', order: 1},
-                    {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
-                    {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
+                {id: 1, title: 'Ex Machina Forum', order: 1},
+                {id: 3, title: 'Ex Machina: Arcade Forum', order: 3},
+                {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
             ]
         };
         expect(forumReducer(defaultState, action)).toEqual(expectedResult);

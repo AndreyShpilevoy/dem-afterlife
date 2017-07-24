@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -25,6 +25,6 @@ describe('Topic HOC', () => {
             parentForumId: 10,
             parentForumTitle: 'Общие вопросы'
         };
-        expect(shallow(<Topic topic={topic}/>)).toMatchSnapshot();
+        expect(shallow(<Topic topic={topic} />)).toMatchSnapshot();
     });
 });

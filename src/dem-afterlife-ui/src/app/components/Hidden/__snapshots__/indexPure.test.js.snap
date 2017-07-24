@@ -3,6 +3,7 @@
 exports[`Hidden Pure component match expected snapshot 1`] = `
 <span
   className=" "
+  onClick={[Function]}
 >
   <div>
     hidden content
@@ -13,6 +14,7 @@ exports[`Hidden Pure component match expected snapshot 1`] = `
 exports[`Hidden Pure component with xs="down" md="exact" xl="up" match expected snapshot 1`] = `
 <span
   className=" default-Hidden-hidden-down-xs default-Hidden-hidden-exact-md default-Hidden-hidden-up-xl "
+  onClick={[Function]}
 >
   <div>
     hidden content

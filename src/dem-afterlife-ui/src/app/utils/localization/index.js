@@ -11,7 +11,7 @@ const milliseconds = {
 const getCurrentTranslations = locale => translations.find(x => x.locale === locale);
 
 export const getTermTranslation = (term, locale) => {
-    const termIsValid = term && Number.isInteger(Number.parseInt(term.id, 10)) && term.value;
+    const termIsValid = term && term.value && Number.isInteger(Number.parseInt(term.id, 10));
     if (termIsValid && locale) {
         const currentTranslations = getCurrentTranslations(locale);
         if (currentTranslations) {

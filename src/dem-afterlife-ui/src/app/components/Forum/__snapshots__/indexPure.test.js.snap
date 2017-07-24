@@ -4,16 +4,43 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
 <div
   className="default-Forum-mainContainer"
 >
-  <withStyles(RowPure)>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
       lg={9}
+      lgOffset=""
       md={5}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(ColumnPure)
+          className=""
           lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(LinkPure)
             className="default-Forum-bigText"
@@ -22,7 +49,13 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
             Вопросы по созданию моделей
           </withStyles(LinkPure)>
           <withStyles(HiddenPure)
+            className=""
+            lg=""
             md="down"
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <div
               className="default-Forum-smallText"
@@ -31,7 +64,13 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
             </div>
           </withStyles(HiddenPure)>
           <withStyles(HiddenPure)
+            className=""
+            lg=""
             md="down"
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <div
               className="default-Forum-subForumContainer"
@@ -96,9 +135,25 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
         <withStyles(ColumnPure)
           className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
             lg="up"
+            md=""
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <Connect(Term)
               indentAfter={true}
@@ -116,9 +171,25 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
         <withStyles(ColumnPure)
           className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
             lg="up"
+            md=""
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <Connect(Term)
               indentAfter={true}
@@ -139,24 +210,56 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
     <withStyles(ColumnPure)
       className="default-Forum-centerMdUp"
       lg={3}
+      lgOffset=""
       md={7}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
       <withStyles(RowPure)
         className="default-Forum-disableRowOnSmXs"
+        onClick={[Function]}
+        reverse={false}
       >
         <withStyles(ColumnPure)
           className="default-Forum-center"
           lg={12}
+          lgOffset=""
           md={6}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
+            lg=""
+            md=""
+            onClick={[Function]}
             sm="down"
+            xl=""
+            xs=""
           >
             <withStyles(HiddenPure)
+              className=""
+              lg=""
               md="down"
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <UserName
+                className=""
                 color="#00AA00"
                 id={4}
                 name="Buba"
@@ -179,11 +282,26 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
         <withStyles(ColumnPure)
           className="default-Forum-lastTopicInfoWrapper"
           lg={12}
+          lgOffset=""
           md={6}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <div>
             <withStyles(HiddenPure)
+              className=""
               lg="up"
+              md=""
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <Connect(Term)
                 indentAfter={true}
@@ -217,16 +335,43 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
 <div
   className="default-Forum-mainContainer"
 >
-  <withStyles(RowPure)>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
       lg={9}
+      lgOffset=""
       md={5}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(ColumnPure)
+          className=""
           lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(LinkPure)
             className="default-Forum-bigText"
@@ -235,7 +380,13 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
             Вопросы по созданию моделей
           </withStyles(LinkPure)>
           <withStyles(HiddenPure)
+            className=""
+            lg=""
             md="down"
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <div
               className="default-Forum-smallText"
@@ -244,15 +395,37 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
             </div>
           </withStyles(HiddenPure)>
           <withStyles(HiddenPure)
+            className=""
+            lg=""
             md="down"
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           />
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
           className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
             lg="up"
+            md=""
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <Connect(Term)
               indentAfter={true}
@@ -270,9 +443,25 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
         <withStyles(ColumnPure)
           className="default-Forum-center default-Forum-topicsMessages"
           lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
             lg="up"
+            md=""
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <Connect(Term)
               indentAfter={true}
@@ -293,24 +482,56 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
     <withStyles(ColumnPure)
       className="default-Forum-centerMdUp"
       lg={3}
+      lgOffset=""
       md={7}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
       <withStyles(RowPure)
         className="default-Forum-disableRowOnSmXs"
+        onClick={[Function]}
+        reverse={false}
       >
         <withStyles(ColumnPure)
           className="default-Forum-center"
           lg={12}
+          lgOffset=""
           md={6}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <withStyles(HiddenPure)
+            className=""
+            lg=""
+            md=""
+            onClick={[Function]}
             sm="down"
+            xl=""
+            xs=""
           >
             <withStyles(HiddenPure)
+              className=""
+              lg=""
               md="down"
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <UserName
+                className=""
                 color="#00AA00"
                 id={4}
                 name="Buba"
@@ -333,11 +554,26 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
         <withStyles(ColumnPure)
           className="default-Forum-lastTopicInfoWrapper"
           lg={12}
+          lgOffset=""
           md={6}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
         >
           <div>
             <withStyles(HiddenPure)
+              className=""
               lg="up"
+              md=""
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <Connect(Term)
                 indentAfter={true}

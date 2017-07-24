@@ -7,11 +7,21 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
   <withStyles(RowPure)
     className="default-CollapsibleSection-header"
     onClick={[Function]}
+    reverse={false}
   >
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={11}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <span
         className="default-CollapsibleSection-titleClass"
@@ -20,16 +30,44 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={1}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-termedSection"
+        lg=""
         md="down"
+        onClick={[Function]}
+        sm=""
+        xl=""
+        xs=""
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -38,6 +76,16 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -46,6 +94,16 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={6}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -76,11 +134,21 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
   <withStyles(RowPure)
     className="default-CollapsibleSection-header"
     onClick={[Function]}
+    reverse={false}
   >
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={11}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <span
         className="default-CollapsibleSection-titleClass"
@@ -91,16 +159,44 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={1}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-termedSection"
+        lg=""
         md="down"
+        onClick={[Function]}
+        sm=""
+        xl=""
+        xs=""
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -111,6 +207,16 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -121,6 +227,16 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={6}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -133,7 +249,11 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
+        md=""
+        onClick={[Function]}
         sm="down"
+        xl=""
+        xs=""
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"
@@ -163,11 +283,21 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
   <withStyles(RowPure)
     className="default-CollapsibleSection-header"
     onClick={[Function]}
+    reverse={false}
   >
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={11}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <span
         className="default-CollapsibleSection-titleClass"
@@ -176,16 +306,44 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={1}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-termedSection"
+        lg=""
         md="down"
+        onClick={[Function]}
+        sm=""
+        xl=""
+        xs=""
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -194,6 +352,16 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -202,6 +370,16 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={6}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -212,7 +390,11 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
+        md=""
+        onClick={[Function]}
         sm="down"
+        xl=""
+        xs=""
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"
@@ -242,11 +424,21 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
   <withStyles(RowPure)
     className="default-CollapsibleSection-header"
     onClick={[Function]}
+    reverse={false}
   >
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={11}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <span
         className="default-CollapsibleSection-titleClass"
@@ -255,16 +447,44 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
     <withStyles(ColumnPure)
       className="default-CollapsibleSection-headerHolder"
       lg={6}
+      lgOffset=""
       md={1}
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
     >
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-termedSection"
+        lg=""
         md="down"
+        onClick={[Function]}
+        sm=""
+        xl=""
+        xs=""
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -273,6 +493,16 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -281,6 +511,16 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
           <withStyles(ColumnPure)
             className="default-CollapsibleSection-headerColumn"
             lg={6}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
           >
             <div
               className="default-CollapsibleSection-headerText"
@@ -291,7 +531,11 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
       <withStyles(HiddenPure)
         className="default-CollapsibleSection-headerArrowHolder"
         lg="up"
+        md=""
+        onClick={[Function]}
         sm="down"
+        xl=""
+        xs=""
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"

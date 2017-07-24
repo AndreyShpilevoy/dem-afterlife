@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -29,13 +29,13 @@ describe('Header Pure Mount', () => {
     };
 
     it('component with scrolled down document since to "scrollTop: 100" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]}/>);
+        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]} />);
         map.scroll({target: {scrollingElement: {scrollTop: 100} } });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('component with scrolled down document since to "scrollTop: 24" match expected snapshot', () => {
-        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]}/>);
+        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]} />);
         map.scroll({target: {scrollingElement: {scrollTop: 24} } });
         expect(wrapper).toMatchSnapshot();
     });

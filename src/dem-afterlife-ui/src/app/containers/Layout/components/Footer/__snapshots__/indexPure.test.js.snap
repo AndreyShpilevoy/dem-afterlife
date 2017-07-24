@@ -1,22 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer Pure component match expected snapshot 1`] = `
-<withStyles(ContainerPure)>
-  <withStyles(RowPure)>
+<withStyles(ContainerPure)
+  className=""
+  onClick={[Function]}
+>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
       <div
         className="default-Footer-footer"
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={0}
+            xsOffset=""
           />
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={12}
+            xsOffset=""
           >
             <div
               className="default-Footer-copyright"
@@ -25,11 +67,27 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             </div>
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={0}
+            xsOffset=""
           >
             <withStyles(HiddenPure)
+              className=""
+              lg=""
               md="down"
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <div
                 className="default-Footer-socialMediaLinkIconContainer"
@@ -44,22 +102,64 @@ exports[`Footer Pure component match expected snapshot 1`] = `
 `;
 
 exports[`Footer Pure component with socialMediaLinkArray match expected snapshot 1`] = `
-<withStyles(ContainerPure)>
-  <withStyles(RowPure)>
+<withStyles(ContainerPure)
+  className=""
+  onClick={[Function]}
+>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
       <div
         className="default-Footer-footer"
       >
-        <withStyles(RowPure)>
+        <withStyles(RowPure)
+          className=""
+          onClick={[Function]}
+          reverse={false}
+        >
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={0}
+            xsOffset=""
           />
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={12}
+            xsOffset=""
           >
             <div
               className="default-Footer-copyright"
@@ -68,11 +168,27 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             </div>
           </withStyles(ColumnPure)>
           <withStyles(ColumnPure)
+            className=""
             lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            onClick={[Function]}
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
             xs={0}
+            xsOffset=""
           >
             <withStyles(HiddenPure)
+              className=""
+              lg=""
               md="down"
+              onClick={[Function]}
+              sm=""
+              xl=""
+              xs=""
             >
               <div
                 className="default-Footer-socialMediaLinkIconContainer"

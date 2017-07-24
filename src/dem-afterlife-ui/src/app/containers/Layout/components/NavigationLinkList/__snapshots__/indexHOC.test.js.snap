@@ -2,6 +2,7 @@
 
 exports[`NavigationLinkList HOC match expected snapshot 1`] = `
 <NavigationLinkListPure
+  className=""
   navigationLinkArray={Array []}
   styles={
     Object {

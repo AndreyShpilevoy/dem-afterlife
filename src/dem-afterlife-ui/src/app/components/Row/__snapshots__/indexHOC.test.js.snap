@@ -2,6 +2,9 @@
 
 exports[`Row HOC match expected snapshot 1`] = `
 <RowPure
+  className=""
+  onClick={[Function]}
+  reverse={false}
   styles={
     Object {
       ".default-Row-row.reverse": "default-Row-row.reverse",

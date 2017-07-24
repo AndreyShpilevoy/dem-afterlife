@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, react/no-multi-comp:0, react/prop-types:0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, react/no-multi-comp:0, react/prop-types:0 */
 
 import React from 'react';
 import {mount} from 'enzyme';

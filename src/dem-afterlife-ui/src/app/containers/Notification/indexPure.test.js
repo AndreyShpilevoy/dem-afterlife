@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -10,11 +10,11 @@ describe('Notification Pure', () => {
         notifications: []
     };
     it('component without notifications match expected snapshot', () => {
-        expect(mount(<NotificationPure {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<NotificationPure {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component with 2 notifications match expected snapshot', () => {
-        const wrapper = mount(<NotificationPure {...props}/>, {lifecycleExperimental: true});
+        const wrapper = mount(<NotificationPure {...props} />, {lifecycleExperimental: true});
         wrapper.setProps({
             notifications: [{
                 message: 'message',

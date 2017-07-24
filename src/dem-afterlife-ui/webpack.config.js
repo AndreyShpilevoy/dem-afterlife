@@ -1,4 +1,4 @@
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 
 const webpack = require('webpack');
 const path = require('path');
@@ -40,7 +40,7 @@ const entryPoints = {
         'redux-saga',
         'react-svg-inline'
     ],
-    app: ['./src/app/index']
+    app: ['./src/app/index.jsx']
 };
 
 const rules = [
@@ -158,7 +158,8 @@ const resolve = {
         store: path.join(__dirname, './src/app/store'),
         utils: path.join(__dirname, './src/app/utils'),
         tools: path.join(__dirname, './tools')
-    }
+    },
+    extensions: ['.js', '.jsx']
 };
 
 

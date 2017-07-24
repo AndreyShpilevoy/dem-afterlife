@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements:0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements:0 */
 
 import {getLocaleApi, getNavigationLinkArrayApi, getSocialMediaLinkArrayApi} from 'api';
 import IsPromise from 'tools/testHelper';

@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -13,7 +13,7 @@ describe('Term', () => {
             store: mockStore({layoutReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'}
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for simple term and untermedPostfix', () => {
@@ -22,7 +22,7 @@ describe('Term', () => {
             term: {id: 1, value: 'Тем'},
             untermedPostfix: ':'
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for not term and untermedPostfix', () => {
@@ -31,7 +31,7 @@ describe('Term', () => {
             doNotTerm: true,
             untermedPostfix: ':'
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for term with space before', () => {
@@ -40,7 +40,7 @@ describe('Term', () => {
             term: {id: 1, value: 'Тем'},
             spaceBefore: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for simple term with space after', () => {
@@ -49,7 +49,7 @@ describe('Term', () => {
             term: {id: 1, value: 'Тем'},
             spaceAfter: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for simple term with space before and after', () => {
@@ -59,7 +59,7 @@ describe('Term', () => {
             spaceBefore: true,
             spaceAfter: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for term with indent before', () => {
@@ -68,7 +68,7 @@ describe('Term', () => {
             term: {id: 1, value: 'Тем'},
             indentBefore: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for simple term with indent after', () => {
@@ -77,7 +77,7 @@ describe('Term', () => {
             term: {id: 1, value: 'Тем'},
             indentAfter: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component match expected snapshot for simple term with indent before and after', () => {
@@ -87,6 +87,6 @@ describe('Term', () => {
             indentBefore: true,
             indentAfter: true
         };
-        expect(mount(<Term {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -13,6 +13,6 @@ describe('Notification HOC', () => {
 
     it('component match expected snapshot', () => {
         const props = {store: mockStore({notificationReducer: {notifications: [] } })};
-        expect(shallow(<Notification {...props}/>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(shallow(<Notification {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

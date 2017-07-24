@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0 */
 
 import {
     getPostArrayByTopicIdApi,
@@ -98,9 +98,9 @@ describe('Forum reducer', () => {
         };
         const expectedResult = {
             postArray: [
-                    {id: 1, message: 'Ex Machina Forum', userId: 1},
-                    {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
-                    {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
+                {id: 1, message: 'Ex Machina Forum', userId: 1},
+                {id: 3, message: 'Ex Machina: Arcade Forum', userId: 3},
+                {id: 2, message: 'Ex Machina Меридиан 113 Forum', userId: 2}
             ]
         };
         expect(topicReducer(defaultState, action)).toEqual(expectedResult);

@@ -2,6 +2,14 @@
 
 exports[`Column HOC component match expected snapshot 1`] = `
 <ColumnPure
+  className=""
+  lg=""
+  lgOffset=""
+  md=""
+  mdOffset=""
+  onClick={[Function]}
+  sm=""
+  smOffset=""
   styles={
     Object {
       "col-lg-0": "default-Column-col-lg-0",
@@ -136,5 +144,9 @@ exports[`Column HOC component match expected snapshot 1`] = `
       "col-xsOffset-9": "default-Column-col-xsOffset-9",
     }
   }
+  xl=""
+  xlOffset=""
+  xs=""
+  xsOffset=""
 />
 `;

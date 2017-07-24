@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -37,10 +37,10 @@ describe('Footer Pure', () => {
     ];
 
     it('component match expected snapshot', () => {
-        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={[]}/>)).toMatchSnapshot();
+        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={[]} />)).toMatchSnapshot();
     });
 
     it('component with socialMediaLinkArray match expected snapshot', () => {
-        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={socialMediaLinksArray}/>)).toMatchSnapshot();
+        expect(shallow(<FooterPure styles={styles} socialMediaLinkArray={socialMediaLinksArray} />)).toMatchSnapshot();
     });
 });

@@ -411,8 +411,15 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
               <div
                 className="default-Topic-wrapper"
               >
-                <withStyles(RowPure)>
+                <withStyles(RowPure)
+                  className=""
+                  onClick={[Function]}
+                  reverse={false}
+                >
                   <RowPure
+                    className=""
+                    onClick={[Function]}
+                    reverse={false}
                     styles={
                       Object {
                         ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -422,11 +429,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                   >
                     <div
                       className="default-Row-row "
+                      onClick={[Function]}
                     >
                       <withStyles(ColumnPure)
+                        className=""
+                        lg=""
+                        lgOffset=""
+                        md=""
+                        mdOffset=""
+                        onClick={[Function]}
+                        sm=""
+                        smOffset=""
+                        xl=""
+                        xlOffset=""
                         xs={12}
+                        xsOffset=""
                       >
                         <ColumnPure
+                          className=""
+                          lg=""
+                          lgOffset=""
+                          md=""
+                          mdOffset=""
+                          onClick={[Function]}
+                          sm=""
+                          smOffset=""
                           styles={
                             Object {
                               "col-lg-0": "default-Column-col-lg-0",
@@ -561,13 +588,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                               "col-xsOffset-9": "default-Column-col-xsOffset-9",
                             }
                           }
+                          xl=""
+                          xlOffset=""
                           xs={12}
+                          xsOffset=""
                         >
                           <div
                             className=" default-Column-col-xs-12 "
+                            onClick={[Function]}
                           >
-                            <withStyles(RowPure)>
+                            <withStyles(RowPure)
+                              className=""
+                              onClick={[Function]}
+                              reverse={false}
+                            >
                               <RowPure
+                                className=""
+                                onClick={[Function]}
+                                reverse={false}
                                 styles={
                                   Object {
                                     ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -577,15 +615,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                               >
                                 <div
                                   className="default-Row-row "
+                                  onClick={[Function]}
                                 >
                                   <withStyles(ColumnPure)
+                                    className=""
                                     lg={9}
+                                    lgOffset=""
                                     md={7}
+                                    mdOffset=""
+                                    onClick={[Function]}
+                                    sm=""
+                                    smOffset=""
+                                    xl=""
+                                    xlOffset=""
                                     xs={12}
+                                    xsOffset=""
                                   >
                                     <ColumnPure
+                                      className=""
                                       lg={9}
+                                      lgOffset=""
                                       md={7}
+                                      mdOffset=""
+                                      onClick={[Function]}
+                                      sm=""
+                                      smOffset=""
                                       styles={
                                         Object {
                                           "col-lg-0": "default-Column-col-lg-0",
@@ -720,16 +774,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                         }
                                       }
+                                      xl=""
+                                      xlOffset=""
                                       xs={12}
+                                      xsOffset=""
                                     >
                                       <div
                                         className=" default-Column-col-xs-12 default-Column-col-md-7 default-Column-col-lg-9 "
+                                        onClick={[Function]}
                                       >
                                         <withStyles(RowPure)
                                           className="default-Topic-centerRow"
+                                          onClick={[Function]}
+                                          reverse={false}
                                         >
                                           <RowPure
                                             className="default-Topic-centerRow"
+                                            onClick={[Function]}
+                                            reverse={false}
                                             styles={
                                               Object {
                                                 ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -739,15 +801,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           >
                                             <div
                                               className="default-Row-row default-Topic-centerRow"
+                                              onClick={[Function]}
                                             >
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-titleContainer"
                                                 lg={8}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
                                                 xs={12}
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-titleContainer"
                                                   lg={8}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -882,13 +960,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
                                                   xs={12}
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Topic-titleContainer"
+                                                    onClick={[Function]}
                                                   >
-                                                    <withStyles(RowPure)>
+                                                    <withStyles(RowPure)
+                                                      className=""
+                                                      onClick={[Function]}
+                                                      reverse={false}
+                                                    >
                                                       <RowPure
+                                                        className=""
+                                                        onClick={[Function]}
+                                                        reverse={false}
                                                         styles={
                                                           Object {
                                                             ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -898,11 +987,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       >
                                                         <div
                                                           className="default-Row-row "
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(ColumnPure)
+                                                            className=""
+                                                            lg=""
+                                                            lgOffset=""
+                                                            md=""
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
                                                             xs={12}
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
+                                                              lg=""
+                                                              lgOffset=""
+                                                              md=""
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -1037,10 +1146,14 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
                                                               xs={12}
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-xs-12 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <withStyles(LinkPure)
                                                                   className="default-Topic-titleStyle"
@@ -1074,9 +1187,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                     </withStyles(RowPure)>
                                                     <withStyles(RowPure)
                                                       className="default-Topic-textSmallMd"
+                                                      onClick={[Function]}
+                                                      reverse={false}
                                                     >
                                                       <RowPure
                                                         className="default-Topic-textSmallMd"
+                                                        onClick={[Function]}
+                                                        reverse={false}
                                                         styles={
                                                           Object {
                                                             ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -1086,15 +1203,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       >
                                                         <div
                                                           className="default-Row-row default-Topic-textSmallMd"
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(ColumnPure)
+                                                            className=""
                                                             lg={12}
+                                                            lgOffset=""
                                                             md={7}
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
                                                             xs={12}
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
                                                               lg={12}
+                                                              lgOffset=""
                                                               md={7}
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -1229,10 +1362,14 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
                                                               xs={12}
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-xs-12 default-Column-col-md-7 default-Column-col-lg-12 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <span
                                                                   className="default-Topic-parentForumWrapper"
@@ -1276,10 +1413,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             </ColumnPure>
                                                           </withStyles(ColumnPure)>
                                                           <withStyles(ColumnPure)
+                                                            className=""
+                                                            lg=""
+                                                            lgOffset=""
                                                             md={5}
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
+                                                            xs=""
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
+                                                              lg=""
+                                                              lgOffset=""
                                                               md={5}
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -1414,18 +1569,29 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
+                                                              xs=""
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-md-5 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <withStyles(HiddenPure)
                                                                   className="default-Topic-noWrap"
                                                                   lg="up"
+                                                                  md=""
+                                                                  onClick={[Function]}
                                                                   sm="down"
+                                                                  xl=""
+                                                                  xs=""
                                                                 >
                                                                   <HiddenPure
                                                                     className="default-Topic-noWrap"
                                                                     lg="up"
+                                                                    md=""
+                                                                    onClick={[Function]}
                                                                     sm="down"
                                                                     styles={
                                                                       Object {
@@ -1446,9 +1612,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                         "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                                       }
                                                                     }
+                                                                    xl=""
+                                                                    xs=""
                                                                   >
                                                                     <span
                                                                       className=" default-Hidden-hidden-down-sm default-Hidden-hidden-up-lg default-Topic-noWrap"
+                                                                      onClick={[Function]}
                                                                     >
                                                                       <Connect(Term)
                                                                         spaceAfter={true}
@@ -1476,10 +1645,26 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-centerRow"
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-centerRow"
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -1614,15 +1799,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 default-Topic-centerRow"
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
+                                                      className=""
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -1642,9 +1842,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md "
+                                                          onClick={[Function]}
                                                         >
                                                           57
                                                         </span>
@@ -1656,10 +1859,26 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-centerRow"
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-centerRow"
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -1794,15 +2013,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 default-Topic-centerRow"
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
+                                                      className=""
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -1822,9 +2056,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md "
+                                                          onClick={[Function]}
                                                         >
                                                           847
                                                         </span>
@@ -1840,13 +2077,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                     </ColumnPure>
                                   </withStyles(ColumnPure)>
                                   <withStyles(ColumnPure)
+                                    className=""
                                     lg={3}
+                                    lgOffset=""
                                     md={5}
+                                    mdOffset=""
+                                    onClick={[Function]}
+                                    sm=""
+                                    smOffset=""
+                                    xl=""
+                                    xlOffset=""
                                     xs={12}
+                                    xsOffset=""
                                   >
                                     <ColumnPure
+                                      className=""
                                       lg={3}
+                                      lgOffset=""
                                       md={5}
+                                      mdOffset=""
+                                      onClick={[Function]}
+                                      sm=""
+                                      smOffset=""
                                       styles={
                                         Object {
                                           "col-lg-0": "default-Column-col-lg-0",
@@ -1981,16 +2233,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                         }
                                       }
+                                      xl=""
+                                      xlOffset=""
                                       xs={12}
+                                      xsOffset=""
                                     >
                                       <div
                                         className=" default-Column-col-xs-12 default-Column-col-md-5 default-Column-col-lg-3 "
+                                        onClick={[Function]}
                                       >
                                         <withStyles(RowPure)
                                           className="default-Topic-heightFull"
+                                          onClick={[Function]}
+                                          reverse={false}
                                         >
                                           <RowPure
                                             className="default-Topic-heightFull"
+                                            onClick={[Function]}
+                                            reverse={false}
                                             styles={
                                               Object {
                                                 ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -2000,15 +2260,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           >
                                             <div
                                               className="default-Row-row default-Topic-heightFull"
+                                              onClick={[Function]}
                                             >
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-lastPostInfoStyle"
                                                 lg={10}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
                                                 xs={12}
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-lastPostInfoStyle"
                                                   lg={10}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -2143,17 +2419,23 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
                                                   xs={12}
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-xs-12 default-Column-col-lg-10 default-Topic-lastPostInfoStyle"
+                                                    onClick={[Function]}
                                                   >
                                                     <UserName
+                                                      className=""
                                                       color="#fbeab2"
                                                       id={2}
                                                       name="Bykawka"
                                                     >
                                                       <withStyles(LinkPure)
+                                                        className=""
                                                         style={
                                                           Object {
                                                             "color": "#fbeab2",
@@ -2162,6 +2444,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                         to="/UserProfile/2"
                                                       >
                                                         <LinkPure
+                                                          className=""
                                                           style={
                                                             Object {
                                                               "color": "#fbeab2",
@@ -2191,10 +2474,20 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       </withStyles(LinkPure)>
                                                     </UserName>
                                                     <withStyles(HiddenPure)
+                                                      className=""
                                                       lg="up"
+                                                      md=""
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
                                                         lg="up"
+                                                        md=""
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -2214,9 +2507,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-up-lg "
+                                                          onClick={[Function]}
                                                         >
                                                           <Connect(Term)
                                                             doNotTerm={true}
@@ -2236,10 +2532,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                 </ColumnPure>
                                               </withStyles(ColumnPure)>
                                               <withStyles(ColumnPure)
+                                                className=""
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
+                                                  className=""
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -2374,17 +2688,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 "
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
                                                       className="default-Topic-lastPostInfoStyle"
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
                                                         className="default-Topic-lastPostInfoStyle"
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -2404,17 +2731,22 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md default-Topic-lastPostInfoStyle"
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(AvatarPure)
                                                             avatarUrl={null}
+                                                            className=""
                                                             id={2}
                                                             size={2.5}
                                                           >
                                                             <AvatarPure
                                                               avatarUrl={null}
+                                                              className=""
                                                               id={2}
                                                               size={2.5}
                                                               styles={
@@ -2564,8 +2896,15 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
               <div
                 className="default-Topic-wrapper"
               >
-                <withStyles(RowPure)>
+                <withStyles(RowPure)
+                  className=""
+                  onClick={[Function]}
+                  reverse={false}
+                >
                   <RowPure
+                    className=""
+                    onClick={[Function]}
+                    reverse={false}
                     styles={
                       Object {
                         ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -2575,11 +2914,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                   >
                     <div
                       className="default-Row-row "
+                      onClick={[Function]}
                     >
                       <withStyles(ColumnPure)
+                        className=""
+                        lg=""
+                        lgOffset=""
+                        md=""
+                        mdOffset=""
+                        onClick={[Function]}
+                        sm=""
+                        smOffset=""
+                        xl=""
+                        xlOffset=""
                         xs={12}
+                        xsOffset=""
                       >
                         <ColumnPure
+                          className=""
+                          lg=""
+                          lgOffset=""
+                          md=""
+                          mdOffset=""
+                          onClick={[Function]}
+                          sm=""
+                          smOffset=""
                           styles={
                             Object {
                               "col-lg-0": "default-Column-col-lg-0",
@@ -2714,13 +3073,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                               "col-xsOffset-9": "default-Column-col-xsOffset-9",
                             }
                           }
+                          xl=""
+                          xlOffset=""
                           xs={12}
+                          xsOffset=""
                         >
                           <div
                             className=" default-Column-col-xs-12 "
+                            onClick={[Function]}
                           >
-                            <withStyles(RowPure)>
+                            <withStyles(RowPure)
+                              className=""
+                              onClick={[Function]}
+                              reverse={false}
+                            >
                               <RowPure
+                                className=""
+                                onClick={[Function]}
+                                reverse={false}
                                 styles={
                                   Object {
                                     ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -2730,15 +3100,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                               >
                                 <div
                                   className="default-Row-row "
+                                  onClick={[Function]}
                                 >
                                   <withStyles(ColumnPure)
+                                    className=""
                                     lg={9}
+                                    lgOffset=""
                                     md={7}
+                                    mdOffset=""
+                                    onClick={[Function]}
+                                    sm=""
+                                    smOffset=""
+                                    xl=""
+                                    xlOffset=""
                                     xs={12}
+                                    xsOffset=""
                                   >
                                     <ColumnPure
+                                      className=""
                                       lg={9}
+                                      lgOffset=""
                                       md={7}
+                                      mdOffset=""
+                                      onClick={[Function]}
+                                      sm=""
+                                      smOffset=""
                                       styles={
                                         Object {
                                           "col-lg-0": "default-Column-col-lg-0",
@@ -2873,16 +3259,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                         }
                                       }
+                                      xl=""
+                                      xlOffset=""
                                       xs={12}
+                                      xsOffset=""
                                     >
                                       <div
                                         className=" default-Column-col-xs-12 default-Column-col-md-7 default-Column-col-lg-9 "
+                                        onClick={[Function]}
                                       >
                                         <withStyles(RowPure)
                                           className="default-Topic-centerRow"
+                                          onClick={[Function]}
+                                          reverse={false}
                                         >
                                           <RowPure
                                             className="default-Topic-centerRow"
+                                            onClick={[Function]}
+                                            reverse={false}
                                             styles={
                                               Object {
                                                 ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -2892,15 +3286,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           >
                                             <div
                                               className="default-Row-row default-Topic-centerRow"
+                                              onClick={[Function]}
                                             >
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-titleContainer"
                                                 lg={8}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
                                                 xs={12}
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-titleContainer"
                                                   lg={8}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -3035,13 +3445,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
                                                   xs={12}
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Topic-titleContainer"
+                                                    onClick={[Function]}
                                                   >
-                                                    <withStyles(RowPure)>
+                                                    <withStyles(RowPure)
+                                                      className=""
+                                                      onClick={[Function]}
+                                                      reverse={false}
+                                                    >
                                                       <RowPure
+                                                        className=""
+                                                        onClick={[Function]}
+                                                        reverse={false}
                                                         styles={
                                                           Object {
                                                             ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -3051,11 +3472,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       >
                                                         <div
                                                           className="default-Row-row "
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(ColumnPure)
+                                                            className=""
+                                                            lg=""
+                                                            lgOffset=""
+                                                            md=""
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
                                                             xs={12}
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
+                                                              lg=""
+                                                              lgOffset=""
+                                                              md=""
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -3190,10 +3631,14 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
                                                               xs={12}
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-xs-12 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <withStyles(LinkPure)
                                                                   className="default-Topic-titleStyle"
@@ -3227,9 +3672,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                     </withStyles(RowPure)>
                                                     <withStyles(RowPure)
                                                       className="default-Topic-textSmallMd"
+                                                      onClick={[Function]}
+                                                      reverse={false}
                                                     >
                                                       <RowPure
                                                         className="default-Topic-textSmallMd"
+                                                        onClick={[Function]}
+                                                        reverse={false}
                                                         styles={
                                                           Object {
                                                             ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -3239,15 +3688,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       >
                                                         <div
                                                           className="default-Row-row default-Topic-textSmallMd"
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(ColumnPure)
+                                                            className=""
                                                             lg={12}
+                                                            lgOffset=""
                                                             md={7}
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
                                                             xs={12}
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
                                                               lg={12}
+                                                              lgOffset=""
                                                               md={7}
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -3382,10 +3847,14 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
                                                               xs={12}
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-xs-12 default-Column-col-md-7 default-Column-col-lg-12 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <span
                                                                   className="default-Topic-parentForumWrapper"
@@ -3429,10 +3898,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             </ColumnPure>
                                                           </withStyles(ColumnPure)>
                                                           <withStyles(ColumnPure)
+                                                            className=""
+                                                            lg=""
+                                                            lgOffset=""
                                                             md={5}
+                                                            mdOffset=""
+                                                            onClick={[Function]}
+                                                            sm=""
+                                                            smOffset=""
+                                                            xl=""
+                                                            xlOffset=""
+                                                            xs=""
+                                                            xsOffset=""
                                                           >
                                                             <ColumnPure
+                                                              className=""
+                                                              lg=""
+                                                              lgOffset=""
                                                               md={5}
+                                                              mdOffset=""
+                                                              onClick={[Function]}
+                                                              sm=""
+                                                              smOffset=""
                                                               styles={
                                                                 Object {
                                                                   "col-lg-0": "default-Column-col-lg-0",
@@ -3567,18 +4054,29 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                                 }
                                                               }
+                                                              xl=""
+                                                              xlOffset=""
+                                                              xs=""
+                                                              xsOffset=""
                                                             >
                                                               <div
                                                                 className=" default-Column-col-md-5 "
+                                                                onClick={[Function]}
                                                               >
                                                                 <withStyles(HiddenPure)
                                                                   className="default-Topic-noWrap"
                                                                   lg="up"
+                                                                  md=""
+                                                                  onClick={[Function]}
                                                                   sm="down"
+                                                                  xl=""
+                                                                  xs=""
                                                                 >
                                                                   <HiddenPure
                                                                     className="default-Topic-noWrap"
                                                                     lg="up"
+                                                                    md=""
+                                                                    onClick={[Function]}
                                                                     sm="down"
                                                                     styles={
                                                                       Object {
@@ -3599,9 +4097,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                         "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                                       }
                                                                     }
+                                                                    xl=""
+                                                                    xs=""
                                                                   >
                                                                     <span
                                                                       className=" default-Hidden-hidden-down-sm default-Hidden-hidden-up-lg default-Topic-noWrap"
+                                                                      onClick={[Function]}
                                                                     >
                                                                       <Connect(Term)
                                                                         spaceAfter={true}
@@ -3629,10 +4130,26 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-centerRow"
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-centerRow"
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -3767,15 +4284,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 default-Topic-centerRow"
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
+                                                      className=""
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -3795,9 +4327,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md "
+                                                          onClick={[Function]}
                                                         >
                                                           215
                                                         </span>
@@ -3809,10 +4344,26 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-centerRow"
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-centerRow"
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -3947,15 +4498,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 default-Topic-centerRow"
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
+                                                      className=""
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -3975,9 +4541,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md "
+                                                          onClick={[Function]}
                                                         >
                                                           1315
                                                         </span>
@@ -3993,13 +4562,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                     </ColumnPure>
                                   </withStyles(ColumnPure)>
                                   <withStyles(ColumnPure)
+                                    className=""
                                     lg={3}
+                                    lgOffset=""
                                     md={5}
+                                    mdOffset=""
+                                    onClick={[Function]}
+                                    sm=""
+                                    smOffset=""
+                                    xl=""
+                                    xlOffset=""
                                     xs={12}
+                                    xsOffset=""
                                   >
                                     <ColumnPure
+                                      className=""
                                       lg={3}
+                                      lgOffset=""
                                       md={5}
+                                      mdOffset=""
+                                      onClick={[Function]}
+                                      sm=""
+                                      smOffset=""
                                       styles={
                                         Object {
                                           "col-lg-0": "default-Column-col-lg-0",
@@ -4134,16 +4718,24 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                         }
                                       }
+                                      xl=""
+                                      xlOffset=""
                                       xs={12}
+                                      xsOffset=""
                                     >
                                       <div
                                         className=" default-Column-col-xs-12 default-Column-col-md-5 default-Column-col-lg-3 "
+                                        onClick={[Function]}
                                       >
                                         <withStyles(RowPure)
                                           className="default-Topic-heightFull"
+                                          onClick={[Function]}
+                                          reverse={false}
                                         >
                                           <RowPure
                                             className="default-Topic-heightFull"
+                                            onClick={[Function]}
+                                            reverse={false}
                                             styles={
                                               Object {
                                                 ".default-Row-row.reverse": "default-Row-row.reverse",
@@ -4153,15 +4745,31 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                           >
                                             <div
                                               className="default-Row-row default-Topic-heightFull"
+                                              onClick={[Function]}
                                             >
                                               <withStyles(ColumnPure)
                                                 className="default-Topic-lastPostInfoStyle"
                                                 lg={10}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
                                                 xs={12}
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
                                                   className="default-Topic-lastPostInfoStyle"
                                                   lg={10}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -4296,17 +4904,23 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
                                                   xs={12}
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-xs-12 default-Column-col-lg-10 default-Topic-lastPostInfoStyle"
+                                                    onClick={[Function]}
                                                   >
                                                     <UserName
+                                                      className=""
                                                       color="#00AA00"
                                                       id={4}
                                                       name="Buba"
                                                     >
                                                       <withStyles(LinkPure)
+                                                        className=""
                                                         style={
                                                           Object {
                                                             "color": "#00AA00",
@@ -4315,6 +4929,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                         to="/UserProfile/4"
                                                       >
                                                         <LinkPure
+                                                          className=""
                                                           style={
                                                             Object {
                                                               "color": "#00AA00",
@@ -4344,10 +4959,20 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       </withStyles(LinkPure)>
                                                     </UserName>
                                                     <withStyles(HiddenPure)
+                                                      className=""
                                                       lg="up"
+                                                      md=""
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
+                                                        className=""
                                                         lg="up"
+                                                        md=""
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -4367,9 +4992,12 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-up-lg "
+                                                          onClick={[Function]}
                                                         >
                                                           <Connect(Term)
                                                             doNotTerm={true}
@@ -4389,10 +5017,28 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                 </ColumnPure>
                                               </withStyles(ColumnPure)>
                                               <withStyles(ColumnPure)
+                                                className=""
                                                 lg={2}
+                                                lgOffset=""
+                                                md=""
+                                                mdOffset=""
+                                                onClick={[Function]}
+                                                sm=""
+                                                smOffset=""
+                                                xl=""
+                                                xlOffset=""
+                                                xs=""
+                                                xsOffset=""
                                               >
                                                 <ColumnPure
+                                                  className=""
                                                   lg={2}
+                                                  lgOffset=""
+                                                  md=""
+                                                  mdOffset=""
+                                                  onClick={[Function]}
+                                                  sm=""
+                                                  smOffset=""
                                                   styles={
                                                     Object {
                                                       "col-lg-0": "default-Column-col-lg-0",
@@ -4527,17 +5173,30 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                       "col-xsOffset-9": "default-Column-col-xsOffset-9",
                                                     }
                                                   }
+                                                  xl=""
+                                                  xlOffset=""
+                                                  xs=""
+                                                  xsOffset=""
                                                 >
                                                   <div
                                                     className=" default-Column-col-lg-2 "
+                                                    onClick={[Function]}
                                                   >
                                                     <withStyles(HiddenPure)
                                                       className="default-Topic-lastPostInfoStyle"
+                                                      lg=""
                                                       md="down"
+                                                      onClick={[Function]}
+                                                      sm=""
+                                                      xl=""
+                                                      xs=""
                                                     >
                                                       <HiddenPure
                                                         className="default-Topic-lastPostInfoStyle"
+                                                        lg=""
                                                         md="down"
+                                                        onClick={[Function]}
+                                                        sm=""
                                                         styles={
                                                           Object {
                                                             "hidden-down-lg": "default-Hidden-hidden-down-lg",
@@ -4557,17 +5216,22 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                             "hidden-up-xs": "default-Hidden-hidden-up-xs",
                                                           }
                                                         }
+                                                        xl=""
+                                                        xs=""
                                                       >
                                                         <span
                                                           className=" default-Hidden-hidden-down-md default-Topic-lastPostInfoStyle"
+                                                          onClick={[Function]}
                                                         >
                                                           <withStyles(AvatarPure)
                                                             avatarUrl="http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg"
+                                                            className=""
                                                             id={4}
                                                             size={2.5}
                                                           >
                                                             <AvatarPure
                                                               avatarUrl="http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg"
+                                                              className=""
                                                               id={4}
                                                               size={2.5}
                                                               styles={

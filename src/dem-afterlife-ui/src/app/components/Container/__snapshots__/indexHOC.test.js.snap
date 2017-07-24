@@ -2,6 +2,8 @@
 
 exports[`Container HOC component match expected snapshot 1`] = `
 <ContainerPure
+  className=""
+  onClick={[Function]}
   styles={
     Object {
       "container": "default-Container-container",

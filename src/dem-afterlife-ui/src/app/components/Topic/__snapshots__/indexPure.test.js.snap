@@ -4,27 +4,81 @@ exports[`TopicPure component match expected snapshot with parent forum informati
 <div
   className="default-Topic-wrapper"
 >
-  <withStyles(RowPure)>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(ColumnPure)
+          className=""
           lg={9}
+          lgOffset=""
           md={7}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(RowPure)
             className="default-Topic-centerRow"
+            onClick={[Function]}
+            reverse={false}
           >
             <withStyles(ColumnPure)
               className="default-Topic-titleContainer"
               lg={8}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
               xs={12}
+              xsOffset=""
             >
-              <withStyles(RowPure)>
+              <withStyles(RowPure)
+                className=""
+                onClick={[Function]}
+                reverse={false}
+              >
                 <withStyles(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
+                  md=""
+                  mdOffset=""
+                  onClick={[Function]}
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
                   xs={12}
+                  xsOffset=""
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
@@ -36,11 +90,22 @@ exports[`TopicPure component match expected snapshot with parent forum informati
               </withStyles(RowPure)>
               <withStyles(RowPure)
                 className="default-Topic-textSmallMd"
+                onClick={[Function]}
+                reverse={false}
               >
                 <withStyles(ColumnPure)
+                  className=""
                   lg={12}
+                  lgOffset=""
                   md={7}
+                  mdOffset=""
+                  onClick={[Function]}
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
                   xs={12}
+                  xsOffset=""
                 >
                   <span
                     className="default-Topic-parentForumWrapper"
@@ -64,12 +129,27 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                   </span>
                 </withStyles(ColumnPure)>
                 <withStyles(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
                   md={5}
+                  mdOffset=""
+                  onClick={[Function]}
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
+                  xs=""
+                  xsOffset=""
                 >
                   <withStyles(HiddenPure)
                     className="default-Topic-noWrap"
                     lg="up"
+                    md=""
+                    onClick={[Function]}
                     sm="down"
+                    xl=""
+                    xs=""
                   >
                     <Connect(Term)
                       spaceAfter={true}
@@ -89,9 +169,25 @@ exports[`TopicPure component match expected snapshot with parent forum informati
             <withStyles(ColumnPure)
               className="default-Topic-centerRow"
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
+                className=""
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 215
               </withStyles(HiddenPure)>
@@ -99,9 +195,25 @@ exports[`TopicPure component match expected snapshot with parent forum informati
             <withStyles(ColumnPure)
               className="default-Topic-centerRow"
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
+                className=""
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 1315
               </withStyles(HiddenPure)>
@@ -109,25 +221,52 @@ exports[`TopicPure component match expected snapshot with parent forum informati
           </withStyles(RowPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
+          className=""
           lg={3}
+          lgOffset=""
           md={5}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(RowPure)
             className="default-Topic-heightFull"
+            onClick={[Function]}
+            reverse={false}
           >
             <withStyles(ColumnPure)
               className="default-Topic-lastPostInfoStyle"
               lg={10}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
               xs={12}
+              xsOffset=""
             >
               <UserName
+                className=""
                 color="#00AA00"
                 id={4}
                 name="Buba"
               />
               <withStyles(HiddenPure)
+                className=""
                 lg="up"
+                md=""
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 <Connect(Term)
                   doNotTerm={true}
@@ -143,14 +282,31 @@ exports[`TopicPure component match expected snapshot with parent forum informati
               />
             </withStyles(ColumnPure)>
             <withStyles(ColumnPure)
+              className=""
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
                 className="default-Topic-lastPostInfoStyle"
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 <withStyles(AvatarPure)
                   avatarUrl="http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg"
+                  className=""
                   id={4}
                   size={2.5}
                 />
@@ -171,27 +327,81 @@ exports[`TopicPure component match expected snapshot without parent forum inform
 <div
   className="default-Topic-wrapper"
 >
-  <withStyles(RowPure)>
+  <withStyles(RowPure)
+    className=""
+    onClick={[Function]}
+    reverse={false}
+  >
     <withStyles(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      onClick={[Function]}
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
       xs={12}
+      xsOffset=""
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(ColumnPure)
+          className=""
           lg={9}
+          lgOffset=""
           md={7}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(RowPure)
             className="default-Topic-centerRow"
+            onClick={[Function]}
+            reverse={false}
           >
             <withStyles(ColumnPure)
               className="default-Topic-titleContainer"
               lg={8}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
               xs={12}
+              xsOffset=""
             >
-              <withStyles(RowPure)>
+              <withStyles(RowPure)
+                className=""
+                onClick={[Function]}
+                reverse={false}
+              >
                 <withStyles(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
+                  md=""
+                  mdOffset=""
+                  onClick={[Function]}
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
                   xs={12}
+                  xsOffset=""
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
@@ -203,14 +413,31 @@ exports[`TopicPure component match expected snapshot without parent forum inform
               </withStyles(RowPure)>
               <withStyles(RowPure)
                 className="default-Topic-textSmallMd"
+                onClick={[Function]}
+                reverse={false}
               >
                 <withStyles(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
                   md={5}
+                  mdOffset=""
+                  onClick={[Function]}
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
+                  xs=""
+                  xsOffset=""
                 >
                   <withStyles(HiddenPure)
                     className="default-Topic-noWrap"
                     lg="up"
+                    md=""
+                    onClick={[Function]}
                     sm="down"
+                    xl=""
+                    xs=""
                   >
                     <Connect(Term)
                       spaceAfter={true}
@@ -230,9 +457,25 @@ exports[`TopicPure component match expected snapshot without parent forum inform
             <withStyles(ColumnPure)
               className="default-Topic-centerRow"
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
+                className=""
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 215
               </withStyles(HiddenPure)>
@@ -240,9 +483,25 @@ exports[`TopicPure component match expected snapshot without parent forum inform
             <withStyles(ColumnPure)
               className="default-Topic-centerRow"
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
+                className=""
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 1315
               </withStyles(HiddenPure)>
@@ -250,25 +509,52 @@ exports[`TopicPure component match expected snapshot without parent forum inform
           </withStyles(RowPure)>
         </withStyles(ColumnPure)>
         <withStyles(ColumnPure)
+          className=""
           lg={3}
+          lgOffset=""
           md={5}
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(RowPure)
             className="default-Topic-heightFull"
+            onClick={[Function]}
+            reverse={false}
           >
             <withStyles(ColumnPure)
               className="default-Topic-lastPostInfoStyle"
               lg={10}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
               xs={12}
+              xsOffset=""
             >
               <UserName
+                className=""
                 color="#00AA00"
                 id={4}
                 name="Buba"
               />
               <withStyles(HiddenPure)
+                className=""
                 lg="up"
+                md=""
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 <Connect(Term)
                   doNotTerm={true}
@@ -284,14 +570,31 @@ exports[`TopicPure component match expected snapshot without parent forum inform
               />
             </withStyles(ColumnPure)>
             <withStyles(ColumnPure)
+              className=""
               lg={2}
+              lgOffset=""
+              md=""
+              mdOffset=""
+              onClick={[Function]}
+              sm=""
+              smOffset=""
+              xl=""
+              xlOffset=""
+              xs=""
+              xsOffset=""
             >
               <withStyles(HiddenPure)
                 className="default-Topic-lastPostInfoStyle"
+                lg=""
                 md="down"
+                onClick={[Function]}
+                sm=""
+                xl=""
+                xs=""
               >
                 <withStyles(AvatarPure)
                   avatarUrl="http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg"
+                  className=""
                   id={4}
                   size={2.5}
                 />

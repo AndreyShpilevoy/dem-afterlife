@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0*/
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -42,7 +42,7 @@ describe('ForumPure', () => {
                 latestPostAuthorGroupColor: '#00AA00'
             }
         };
-        expect(shallow(<ForumPure className={'forumClassName'} styles={styles} forum={forum}/>)).toMatchSnapshot();
+        expect(shallow(<ForumPure className={'forumClassName'} styles={styles} forum={forum} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot with subForumArray', () => {
@@ -71,6 +71,6 @@ describe('ForumPure', () => {
                 {id: 56, title: 'Каталог файлов', order: 56}
             ]
         };
-        expect(shallow(<ForumPure className={'forumClassName'} styles={styles} forum={forum}/>)).toMatchSnapshot();
+        expect(shallow(<ForumPure className={'forumClassName'} styles={styles} forum={forum} />)).toMatchSnapshot();
     });
 });

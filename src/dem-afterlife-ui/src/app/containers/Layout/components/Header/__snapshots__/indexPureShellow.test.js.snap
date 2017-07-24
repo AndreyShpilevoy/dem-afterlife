@@ -4,16 +4,29 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
 <div>
   <withStyles(ContainerPure)
     className="default-Header-fixedOnTheTop"
+    onClick={[Function]}
   >
     <div
       className="default-Header-header"
     >
-      <withStyles(RowPure)>
+      <withStyles(RowPure)
+        className=""
+        onClick={[Function]}
+        reverse={false}
+      >
         <withStyles(ColumnPure)
           className="default-Header-headerColumn"
+          lg=""
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
           sm={4}
+          smOffset=""
           xl={3}
+          xlOffset=""
           xs={7}
+          xsOffset=""
         >
           <withStyles(LogotypePure)
             className="default-Header-headerLogoContainer"
@@ -23,14 +36,24 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           className="default-Header-headerColumn"
           lg={0}
           lgOffset={0}
+          md=""
+          mdOffset=""
+          onClick={[Function]}
           sm={1}
           smOffset={7}
+          xl=""
+          xlOffset=""
           xs={2}
           xsOffset={3}
         >
           <withStyles(HiddenPure)
             className="default-Header-headerMenuButtonContainer"
             lg="up"
+            md=""
+            onClick={[Function]}
+            sm=""
+            xl=""
+            xs=""
           >
             <withStyles(MenuButtonPure)
               onClick={[Function]}
@@ -40,8 +63,16 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
         <withStyles(ColumnPure)
           className="default-Header-headerColumn default-Header-navigationLinksContainer closed"
           lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          onClick={[Function]}
+          sm=""
+          smOffset=""
           xl={9}
+          xlOffset=""
           xs={12}
+          xsOffset=""
         >
           <withStyles(NavigationLinkListPure)
             className="default-Header-navigationLinks"
