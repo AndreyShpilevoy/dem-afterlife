@@ -1,14 +1,15 @@
 import React from 'react';
 import {node, string} from 'prop-types';
 
-const Color = ({children, options}) =>
-      <span style = {options ? {color: options} : {}}>
+const Color = ({children, options}) => (
+    <span style={options ? {color: options} : {}}>
         {children}
-      </span>;
+    </span>
+);
 
 Color.propTypes = {
-    children: node,
-    options: string
+    children: node.isRequired,
+    options: string // eslint-disable-line react/require-default-props
 };
 
 export default Color;

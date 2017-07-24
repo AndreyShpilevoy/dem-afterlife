@@ -1,4 +1,4 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 
 import React, {PureComponent} from 'react';
 import {node, string, number, shape} from 'prop-types';
@@ -13,8 +13,8 @@ class Code extends PureComponent {
     static propTypes = {
         styles: shape().isRequired,
         id: number.isRequired,
-        children: node,
-        options: string
+        children: node.isRequired,
+        options: string // eslint-disable-line react/require-default-props
     }
 
     // state = {
@@ -25,27 +25,27 @@ class Code extends PureComponent {
     // componentDidMount() {
     //     const {buttonId, containedId} = this.state;
 
-        // SelectTextFromContainerById.init(buttonId, containedId);
+    // SelectTextFromContainerById.init(buttonId, containedId);
     // }
 
     render() {
         const {buttonId, containedId} = this.state;
-        const {children, options, styles} = this.props;
+        const {children, options, styles, id} = this.props;
         const {code, codeHeader, codeHeaderLeft, codeSelectButton, codeHeaderRight, codeContent} = styles;
         return (
-            <div className = {code}>
-                <div className = {codeHeader}>
-                    <div className = {codeHeaderLeft}>
+            <div className={code}>
+                <div className={codeHeader}>
+                    <div className={codeHeaderLeft}>
                         <Term spaceAfter term={{id: 34, value: 'Code:'}} />
-                        <span id={buttonId} className = {codeSelectButton}>
+                        <span id={buttonId} className={codeSelectButton}>
                             <Term spaceAfter term={{id: 35, value: 'Ctrl+A, Ctrl+C'}} />
                         </span>
                     </div>
-                    <div className = {codeHeaderRight}>
+                    <div className={codeHeaderRight}>
                         {options || null}
                     </div>
                 </div>
-                <span id={containedId} className = {codeContent}>
+                <span id={containedId} className={codeContent}>
                     {children}
                 </span>
             </div>

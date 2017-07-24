@@ -1,18 +1,16 @@
 import React from 'react';
 import {node, string, shape} from 'prop-types';
 
-const BaseSpan = ({children, className, styleObject}) =>
-      <span
-          className = {className}
-          style={styleObject}>
+const BaseSpan = ({children, className, styleObject}) => (
+    <span className={className} style={styleObject}>
         {children}
-      </span>
-    ;
+    </span>
+);
 
 BaseSpan.propTypes = {
-    children: node,
+    children: node.isRequired,
     className: string.isRequired,
-    styleObject: shape
+    styleObject: shape() // eslint-disable-line react/require-default-props
 };
 
 export default BaseSpan;

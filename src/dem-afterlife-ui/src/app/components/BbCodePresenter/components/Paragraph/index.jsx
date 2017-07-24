@@ -1,19 +1,14 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import {node} from 'prop-types';
 
-class BbCode_Paragraph extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  };
-
-  render() {
-    const { children } = this.props;
-    return (
-      <p
-        className = 'bbCode-paragraph'>
+const Paragraph = ({children}) => (
+    <p>
         {children}
-      </p>
-    );
-  }
-}
+    </p>
+);
 
-export default BbCode_Paragraph;
+Paragraph.propTypes = {
+    children: node.isRequired
+};
+
+export default Paragraph;

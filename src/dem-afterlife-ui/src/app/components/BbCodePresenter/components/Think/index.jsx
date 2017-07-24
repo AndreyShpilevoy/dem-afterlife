@@ -1,21 +1,20 @@
-import React, {PropTypes} from 'react';
-import styles from './index.scss';
+import React from 'react';
+import {node, shape} from 'prop-types';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-class BbCode_Think extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-  render() {
-    const { children } = this.props;
-    return (
-      <div className = {styles.think}>
-        <span className = {styles.thinkContent}>
-          {children}
+const Think = ({children, styles}) => (
+    <div className={styles.think}>
+        <span className={styles.thinkContent}>
+            {children}
         </span>
-        <div className = {styles.thinkImage}/>
-      </div>
-    );
-  }
-}
+        <div className={styles.thinkImage} />
+    </div>
+);
 
-export default BbCode_Think;
+Think.propTypes = {
+    styles: shape().isRequired,
+    children: node.isRequired
+};
+
+export default withStyles(theme => calculateStyles(theme))(Think);

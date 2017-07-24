@@ -1,4 +1,4 @@
-const calculateStyles = (themeName) => ({
+const calculateStyles = themeName => ({
     code: {
         backgroundColor: '#59534D',
         border: '0.0625rem solid #9C9085',

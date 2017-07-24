@@ -1,25 +1,14 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import {node} from 'prop-types';
 
-class BbCode_UnorderedList extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    attributes: PropTypes.shape({
-      className: PropTypes.string,
-      style: PropTypes.object,
-    })
-  }
-
-  render() {
-    const { children } = this.props;
-    const { className, style } = this.props.attributes;
-    return (
-      <ul
-        className = {className ? `bbCode-unordered-list ${className}` : 'bbCode-unordered-list'}
-        style = {style ? style : null}>
+const UnorderedList = ({children}) => (
+    <ul>
         {children}
-      </ul>
-    );
-  }
-}
+    </ul>
+);
 
-export default BbCode_UnorderedList;
+UnorderedList.propTypes = {
+    children: node.isRequired
+};
+
+export default UnorderedList;

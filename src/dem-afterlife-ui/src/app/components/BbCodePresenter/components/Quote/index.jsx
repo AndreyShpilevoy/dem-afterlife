@@ -1,38 +1,41 @@
-import React, {PropTypes} from 'react';
-import TermItem from 'containers/TermItem';
-import styles from './index.scss';
+import React from 'react';
+import {node, string, shape} from 'prop-types';
+import Term from 'containers/Term';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-class BbCode_Quote extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.node,
-    options: PropTypes.string
-  }
+const wroteTerm = {id: 32, value: 'wrote:'};
+const quoteTerm = {id: 33, value: 'Quote:'};
 
-  getAuthorNameFromOption = () => {
-    return this.props.options ?
-      <div>
-        <span className = {styles.quoteAuthor}>
-          {this.props.options}
-        </span>
-        <TermItem spaceBefore term={{id: 32, value: 'wrote:'}} />
-      </div> :
-      <div>
-        <span className = {styles.quoteAuthor}>
-          <TermItem term={{id: 33, value: 'Quote:'}} />
-        </span>
-      </div>;
-  }
+const getAuthorNameFromOption = (options, quoteAuthorStyle) => options ?
+    (
+        <div>
+            <span className={quoteAuthorStyle}>
+                {options}
+            </span>
+            <Term spaceBefore term={wroteTerm} />
+        </div>
+    ) :
+    (
+        <div>
+            <span className={quoteAuthorStyle}>
+                <Term term={quoteTerm} />
+            </span>
+        </div>
+    );
 
-  render() {
-    const { children } = this.props;
-    return (
-      <blockquote
-        className = {styles.quote}>
-        {this.getAuthorNameFromOption()}
+const Quote = ({children, options, styles}) => (
+    <blockquote
+        className={styles.quote}>
+        {getAuthorNameFromOption(options, styles.quoteAuthor)}
         {children}
-      </blockquote>
-  );
-  }
-}
+    </blockquote>
+);
 
-export default BbCode_Quote;
+Quote.propTypes = {
+    styles: shape().isRequired,
+    children: node.isRequired,
+    options: string // eslint-disable-line react/require-default-props
+};
+
+export default withStyles(theme => calculateStyles(theme))(Quote);

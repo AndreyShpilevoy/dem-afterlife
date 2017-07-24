@@ -1,18 +1,14 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import {node} from 'prop-types';
 
-class BbCode_ListItem extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-  render() {
-    const { children } = this.props;
-    return (
-      <li
-        className = 'bbCode-list-item'>
+const ListItem = ({children}) => (
+    <li>
         {children}
-      </li>
-    );
-  }
-}
+    </li>
+);
 
-export default BbCode_ListItem;
+ListItem.propTypes = {
+    children: node.isRequired
+};
+
+export default ListItem;

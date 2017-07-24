@@ -1,20 +1,18 @@
-import React, {PropTypes} from 'react';
-import styles from './index.scss';
+import React from 'react';
+import {node, shape} from 'prop-types';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-class BbCode_TextLine extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-
-  render() {
-    const { children } = this.props;
-    return (
-      <span
-        className = {styles.text}>
+const TextLine = ({children, styles}) => (
+    <span
+        className={styles.text}>
         {children}
-      </span>
-    );
-  }
-}
+    </span>
+);
 
-export default BbCode_TextLine;
+TextLine.propTypes = {
+    styles: shape().isRequired,
+    children: node.isRequired
+};
+
+export default withStyles(theme => calculateStyles(theme))(TextLine);

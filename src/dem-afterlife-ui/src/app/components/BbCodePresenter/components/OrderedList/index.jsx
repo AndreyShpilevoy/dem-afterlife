@@ -1,19 +1,14 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import {node} from 'prop-types';
 
-class BbCode_OrderedList extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-
-  render() {
-    const { children } = this.props;
-    return (
-      <ol
-        className = 'bbCode-ordered-list'>
+const OrderedList = ({children}) => (
+    <ol>
         {children}
-      </ol>
-    );
-  }
-}
+    </ol>
+);
 
-export default BbCode_OrderedList;
+OrderedList.propTypes = {
+    children: node.isRequired
+};
+
+export default OrderedList;

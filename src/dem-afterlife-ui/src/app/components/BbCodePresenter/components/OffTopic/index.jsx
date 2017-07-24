@@ -1,24 +1,25 @@
-import React, {PropTypes} from 'react';
-import TermItem from 'containers/TermItem';
-import styles from './index.scss';
+import React from 'react';
+import {node, shape} from 'prop-types';
+import Term from 'containers/Term';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-class BbCode_OffTopic extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-  render() {
-    const { children } = this.props;
-    return (
-      <div>
-        <div className = {styles.offtopicHeader}>
-          <TermItem term={{id: 31, value: 'Offtopic:'}} />
-        </div>
-        <div className = {styles.offtopicContent}>
-          {children}
-        </div>
-      </div>
-    );
-  }
-}
+const offTopicTerm = {id: 31, value: 'Offtopic:'};
 
-export default BbCode_OffTopic;
+const OffTopic = ({children, styles}) => (
+    <div>
+        <div className={styles.offtopicHeader}>
+            <Term term={offTopicTerm} />
+        </div>
+        <div className={styles.offtopicContent}>
+            {children}
+        </div>
+    </div>
+);
+
+OffTopic.propTypes = {
+    children: node.isRequired,
+    styles: shape.isRequired
+};
+
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(OffTopic);

@@ -1,9 +1,5 @@
 import React from 'react';
 
-class BbCode_NewLine extends React.Component {
-  render() {
-    return <br/>;
-  }
-}
+const NewLine = () => <br />;
 
-export default BbCode_NewLine;
+export default NewLine;

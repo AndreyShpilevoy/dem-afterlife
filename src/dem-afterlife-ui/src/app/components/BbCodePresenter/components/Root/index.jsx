@@ -1,20 +1,18 @@
-import React, {PropTypes} from 'react';
-import styles from './index.scss';
+import React from 'react';
+import {node, shape} from 'prop-types';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-class BbCode_Root extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
-  render() {
-    const { children } = this.props;
-
-    return (
-      <span
-        className = {styles.root}>
+const Root = ({children, styles}) => (
+    <span
+        className={styles.root}>
         {children}
-      </span>
-    );
-  }
-}
+    </span>
+);
 
-export default BbCode_Root;
+Root.propTypes = {
+    styles: shape().isRequired,
+    children: node.isRequired
+};
+
+export default withStyles(theme => calculateStyles(theme))(Root);
