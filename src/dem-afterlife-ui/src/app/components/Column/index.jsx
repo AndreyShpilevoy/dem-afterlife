@@ -26,19 +26,24 @@ export const ColumnPure = (
         {name: 'xlOffset', count: xlOffset}],
     styles);
 
-    const localeClassName = `${classes} ${className || defaults.emptyString}`;
-    return (
-        <div className={localeClassName} onClick={onClick}>
-            {children}
-        </div>
-    );
+    const localClassName = `${classes} ${className || defaults.emptyString}`;
+    return onClick ?
+        (
+            <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+                {children}
+            </div>
+        ) : (
+            <div className={localClassName}>
+                {children}
+            </div>
+        );
 };
 
 ColumnPure.propTypes = {
     className: string,
     styles: shape().isRequired,
     children: node,
-    onClick: func,
+    onClick: func, // eslint-disable-line react/require-default-props
     xs: oneOfType([number, string]),
     sm: oneOfType([number, string]),
     md: oneOfType([number, string]),
@@ -63,8 +68,7 @@ ColumnPure.defaultProps = {
     mdOffset: defaults.emptyString,
     lgOffset: defaults.emptyString,
     xlOffset: defaults.emptyString,
-    onClick: defaults.emptyFunction,
-    children: ''
+    children: defaults.emptyString
 };
 
 export default withStyles(theme => calculateStyles(theme))(ColumnPure);

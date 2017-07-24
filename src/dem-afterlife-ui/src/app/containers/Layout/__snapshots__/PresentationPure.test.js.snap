@@ -9,12 +9,10 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
   >
     <withStyles(ContainerPure)
       className="default-LayoutContainer-container"
-      onClick={[Function]}
     >
       <Connect(NotificationPure) />
       <withStyles(RowPure)
         className=""
-        onClick={[Function]}
         reverse={false}
       >
         <withStyles(HeaderPure)
@@ -23,7 +21,6 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
       </withStyles(RowPure)>
       <withStyles(RowPure)
         className="default-LayoutContainer-content"
-        onClick={[Function]}
         reverse={false}
       >
         <withStyles(ColumnPure)
@@ -32,7 +29,6 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
           lgOffset=""
           md=""
           mdOffset=""
-          onClick={[Function]}
           sm=""
           smOffset=""
           xl=""
@@ -47,7 +43,6 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
       </withStyles(RowPure)>
       <withStyles(RowPure)
         className=""
-        onClick={[Function]}
         reverse={false}
       >
         <withStyles(FooterPure)

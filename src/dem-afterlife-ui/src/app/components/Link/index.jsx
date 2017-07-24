@@ -17,8 +17,8 @@ const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((p
 );
 
 export const LinkPure = props => {
-    const localeClassName = `${props.styles.link} ${props.className || defaults.emptyString}`;
-    return <NativeLink className={localeClassName} {...mapPropsNativeProps(props)} />;
+    const localClassName = `${props.styles.link} ${props.className || defaults.emptyString}`;
+    return <NativeLink className={localClassName} {...mapPropsNativeProps(props)} />;
 };
 
 

@@ -19,6 +19,7 @@ exports[`AvatarPure component match expected snapshot with className 1`] = `
     to="/111"
   >
     <img
+      alt="Avatar"
       src="urlToImg.png"
     />
   </withStyles(LinkPure)>
@@ -44,6 +45,7 @@ exports[`AvatarPure component match expected snapshot without className 1`] = `
     to="/111"
   >
     <img
+      alt="Avatar"
       src="urlToImg.png"
     />
   </withStyles(LinkPure)>

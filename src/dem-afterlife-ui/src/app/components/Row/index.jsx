@@ -8,12 +8,17 @@ const constructClassNameString = (reverse, styles) =>
     css([styles.row, reverse ? 'reverse' : defaults.emptyString]);
 
 export const RowPure = ({reverse, children, styles, className, onClick}) => {
-    const localeClassName = `${constructClassNameString(reverse, styles)} ${className || defaults.emptyString}`;
-    return (
-        <div className={localeClassName} onClick={onClick}>
-            {children}
-        </div>
-    );
+    const localClassName = `${constructClassNameString(reverse, styles)} ${className || defaults.emptyString}`;
+    return onClick ?
+        (
+            <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+                {children}
+            </div>
+        ) : (
+            <div className={localClassName}>
+                {children}
+            </div>
+        );
 };
 
 RowPure.propTypes = {
@@ -21,12 +26,11 @@ RowPure.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
     reverse: bool,
-    onClick: func
+    onClick: func // eslint-disable-line react/require-default-props
 };
 
 RowPure.defaultProps = {
     className: defaults.emptyString,
-    onClick: defaults.emptyFunction,
     reverse: false
 };
 

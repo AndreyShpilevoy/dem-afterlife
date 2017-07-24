@@ -4,14 +4,12 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
 <div>
   <withStyles(ContainerPure)
     className="default-Header-fixedOnTheTop"
-    onClick={[Function]}
   >
     <div
       className="default-Header-header"
     >
       <withStyles(RowPure)
         className=""
-        onClick={[Function]}
         reverse={false}
       >
         <withStyles(ColumnPure)
@@ -20,7 +18,6 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           lgOffset=""
           md=""
           mdOffset=""
-          onClick={[Function]}
           sm={4}
           smOffset=""
           xl={3}
@@ -38,7 +35,6 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           lgOffset={0}
           md=""
           mdOffset=""
-          onClick={[Function]}
           sm={1}
           smOffset={7}
           xl=""
@@ -50,7 +46,6 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
             className="default-Header-headerMenuButtonContainer"
             lg="up"
             md=""
-            onClick={[Function]}
             sm=""
             xl=""
             xs=""
@@ -66,7 +61,6 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
           lgOffset=""
           md=""
           mdOffset=""
-          onClick={[Function]}
           sm=""
           smOffset=""
           xl={9}

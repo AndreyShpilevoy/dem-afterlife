@@ -14,9 +14,9 @@ const mapNavigationLinks = (navigationLinkArray, separatorClassName) =>
 
 export const NavigationLinkListPure = ({styles, className, navigationLinkArray}) => {
     const {list, separator} = styles;
-    const localeClassName = `${list} ${className || defaults.emptyString}`;
+    const localClassName = `${list} ${className || defaults.emptyString}`;
     return (
-        <ul className={localeClassName}>
+        <ul className={localClassName}>
             {mapNavigationLinks(navigationLinkArray || defaults.emptyArray, separator)}
         </ul>
     );

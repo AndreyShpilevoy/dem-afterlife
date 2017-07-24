@@ -3,11 +3,9 @@
 exports[`Footer Pure component match expected snapshot 1`] = `
 <withStyles(ContainerPure)
   className=""
-  onClick={[Function]}
 >
   <withStyles(RowPure)
     className=""
-    onClick={[Function]}
     reverse={false}
   >
     <withStyles(ColumnPure)
@@ -16,7 +14,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
       lgOffset=""
       md=""
       mdOffset=""
-      onClick={[Function]}
       sm=""
       smOffset=""
       xl=""
@@ -29,7 +26,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
       >
         <withStyles(RowPure)
           className=""
-          onClick={[Function]}
           reverse={false}
         >
           <withStyles(ColumnPure)
@@ -38,7 +34,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -52,7 +47,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -72,7 +66,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -84,7 +77,6 @@ exports[`Footer Pure component match expected snapshot 1`] = `
               className=""
               lg=""
               md="down"
-              onClick={[Function]}
               sm=""
               xl=""
               xs=""
@@ -104,11 +96,9 @@ exports[`Footer Pure component match expected snapshot 1`] = `
 exports[`Footer Pure component with socialMediaLinkArray match expected snapshot 1`] = `
 <withStyles(ContainerPure)
   className=""
-  onClick={[Function]}
 >
   <withStyles(RowPure)
     className=""
-    onClick={[Function]}
     reverse={false}
   >
     <withStyles(ColumnPure)
@@ -117,7 +107,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
       lgOffset=""
       md=""
       mdOffset=""
-      onClick={[Function]}
       sm=""
       smOffset=""
       xl=""
@@ -130,7 +119,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
       >
         <withStyles(RowPure)
           className=""
-          onClick={[Function]}
           reverse={false}
         >
           <withStyles(ColumnPure)
@@ -139,7 +127,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -153,7 +140,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -173,7 +159,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
             lgOffset=""
             md=""
             mdOffset=""
-            onClick={[Function]}
             sm=""
             smOffset=""
             xl=""
@@ -185,7 +170,6 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
               className=""
               lg=""
               md="down"
-              onClick={[Function]}
               sm=""
               xl=""
               xs=""

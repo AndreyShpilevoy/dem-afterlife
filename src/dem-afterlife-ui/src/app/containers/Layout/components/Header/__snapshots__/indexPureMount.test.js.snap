@@ -22,11 +22,9 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
   <div>
     <withStyles(ContainerPure)
       className="default-Header-fixedOnTheTop"
-      onClick={[Function]}
     >
       <ContainerPure
         className="default-Header-fixedOnTheTop"
-        onClick={[Function]}
         styles={
           Object {
             "container": "default-Container-container",
@@ -35,19 +33,16 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
       >
         <div
           className="default-Container-container default-Header-fixedOnTheTop"
-          onClick={[Function]}
         >
           <div
             className="default-Header-header"
           >
             <withStyles(RowPure)
               className=""
-              onClick={[Function]}
               reverse={false}
             >
               <RowPure
                 className=""
-                onClick={[Function]}
                 reverse={false}
                 styles={
                   Object {
@@ -58,7 +53,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
               >
                 <div
                   className="default-Row-row "
-                  onClick={[Function]}
                 >
                   <withStyles(ColumnPure)
                     className="default-Header-headerColumn"
@@ -66,7 +60,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset=""
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm={4}
                     smOffset=""
                     xl={3}
@@ -80,7 +73,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset=""
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm={4}
                       smOffset=""
                       styles={
@@ -224,7 +216,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-7 default-Column-col-sm-4 default-Column-col-xl-3 default-Header-headerColumn"
-                        onClick={[Function]}
                       >
                         <withStyles(LogotypePure)
                           className="default-Header-headerLogoContainer"
@@ -273,7 +264,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset={0}
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm={1}
                     smOffset={7}
                     xl=""
@@ -287,7 +277,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset={0}
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm={1}
                       smOffset={7}
                       styles={
@@ -431,13 +420,11 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-2 default-Column-col-sm-1 default-Column-col-lg-0 default-Column-col-xsOffset-3 default-Column-col-smOffset-7 default-Column-col-lgOffset-0 default-Header-headerColumn"
-                        onClick={[Function]}
                       >
                         <withStyles(HiddenPure)
                           className="default-Header-headerMenuButtonContainer"
                           lg="up"
                           md=""
-                          onClick={[Function]}
                           sm=""
                           xl=""
                           xs=""
@@ -446,7 +433,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="default-Header-headerMenuButtonContainer"
                             lg="up"
                             md=""
-                            onClick={[Function]}
                             sm=""
                             styles={
                               Object {
@@ -472,7 +458,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                           >
                             <span
                               className=" default-Hidden-hidden-up-lg default-Header-headerMenuButtonContainer"
-                              onClick={[Function]}
                             >
                               <withStyles(MenuButtonPure)
                                 onClick={[Function]}
@@ -497,6 +482,8 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   <div
                                     className="default-MenuButton-container"
                                     onClick={[Function]}
+                                    role="button"
+                                    tabIndex={0}
                                   >
                                     <div
                                       className="default-MenuButton-firstLine default-MenuButton-allLines"
@@ -525,7 +512,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset=""
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm=""
                     smOffset=""
                     xl={9}
@@ -539,7 +525,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset=""
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm=""
                       smOffset=""
                       styles={
@@ -683,7 +668,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Column-col-xl-9 default-Header-headerColumn default-Header-navigationLinksContainer closed"
-                        onClick={[Function]}
                       >
                         <withStyles(NavigationLinkListPure)
                           className="default-Header-navigationLinks"
@@ -743,11 +727,9 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
   <div>
     <withStyles(ContainerPure)
       className="default-Header-fixedOnTheTop"
-      onClick={[Function]}
     >
       <ContainerPure
         className="default-Header-fixedOnTheTop"
-        onClick={[Function]}
         styles={
           Object {
             "container": "default-Container-container",
@@ -756,19 +738,16 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
       >
         <div
           className="default-Container-container default-Header-fixedOnTheTop"
-          onClick={[Function]}
         >
           <div
             className="default-Header-header shrinkedHeader"
           >
             <withStyles(RowPure)
               className=""
-              onClick={[Function]}
               reverse={false}
             >
               <RowPure
                 className=""
-                onClick={[Function]}
                 reverse={false}
                 styles={
                   Object {
@@ -779,7 +758,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
               >
                 <div
                   className="default-Row-row "
-                  onClick={[Function]}
                 >
                   <withStyles(ColumnPure)
                     className="default-Header-headerColumn"
@@ -787,7 +765,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset=""
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm={4}
                     smOffset=""
                     xl={3}
@@ -801,7 +778,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset=""
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm={4}
                       smOffset=""
                       styles={
@@ -945,7 +921,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-7 default-Column-col-sm-4 default-Column-col-xl-3 default-Header-headerColumn"
-                        onClick={[Function]}
                       >
                         <withStyles(LogotypePure)
                           className="default-Header-headerLogoContainer shrinkedHeader"
@@ -994,7 +969,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset={0}
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm={1}
                     smOffset={7}
                     xl=""
@@ -1008,7 +982,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset={0}
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm={1}
                       smOffset={7}
                       styles={
@@ -1152,13 +1125,11 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-2 default-Column-col-sm-1 default-Column-col-lg-0 default-Column-col-xsOffset-3 default-Column-col-smOffset-7 default-Column-col-lgOffset-0 default-Header-headerColumn"
-                        onClick={[Function]}
                       >
                         <withStyles(HiddenPure)
                           className="default-Header-headerMenuButtonContainer"
                           lg="up"
                           md=""
-                          onClick={[Function]}
                           sm=""
                           xl=""
                           xs=""
@@ -1167,7 +1138,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="default-Header-headerMenuButtonContainer"
                             lg="up"
                             md=""
-                            onClick={[Function]}
                             sm=""
                             styles={
                               Object {
@@ -1193,7 +1163,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                           >
                             <span
                               className=" default-Hidden-hidden-up-lg default-Header-headerMenuButtonContainer"
-                              onClick={[Function]}
                             >
                               <withStyles(MenuButtonPure)
                                 onClick={[Function]}
@@ -1218,6 +1187,8 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   <div
                                     className="default-MenuButton-container"
                                     onClick={[Function]}
+                                    role="button"
+                                    tabIndex={0}
                                   >
                                     <div
                                       className="default-MenuButton-firstLine default-MenuButton-allLines"
@@ -1246,7 +1217,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     lgOffset=""
                     md=""
                     mdOffset=""
-                    onClick={[Function]}
                     sm=""
                     smOffset=""
                     xl={9}
@@ -1260,7 +1230,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                       lgOffset=""
                       md=""
                       mdOffset=""
-                      onClick={[Function]}
                       sm=""
                       smOffset=""
                       styles={
@@ -1404,7 +1373,6 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                     >
                       <div
                         className=" default-Column-col-xs-12 default-Column-col-lg-8 default-Column-col-xl-9 default-Header-headerColumn default-Header-navigationLinksContainer closed"
-                        onClick={[Function]}
                       >
                         <withStyles(NavigationLinkListPure)
                           className="default-Header-navigationLinks"

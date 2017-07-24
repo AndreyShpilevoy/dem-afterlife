@@ -3,7 +3,6 @@
 exports[`Container Pure component match expected snapshot 1`] = `
 <div
   className="default-Container-container "
-  onClick={[Function]}
 >
   <div>
     Container content

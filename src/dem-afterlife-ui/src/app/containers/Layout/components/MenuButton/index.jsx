@@ -37,7 +37,7 @@ export class MenuButtonPure extends PureComponent {
         const fourthLineStyle = css([fourthLine, allLines, openedClassName]);
         const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
-            <div className={container} onClick={menuButtonOnClick}>
+            <div className={container} onClick={menuButtonOnClick} role={'button'} tabIndex={0}>
                 <div className={firstLineStyle} />
                 <div className={secondLineStyle} />
                 <div className={thirdLineStyle} />

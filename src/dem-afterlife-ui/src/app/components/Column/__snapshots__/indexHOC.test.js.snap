@@ -7,7 +7,6 @@ exports[`Column HOC component match expected snapshot 1`] = `
   lgOffset=""
   md=""
   mdOffset=""
-  onClick={[Function]}
   sm=""
   smOffset=""
   styles={

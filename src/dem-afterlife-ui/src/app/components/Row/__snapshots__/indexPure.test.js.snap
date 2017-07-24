@@ -3,7 +3,6 @@
 exports[`Row Pure component match expected snapshot 1`] = `
 <div
   className="default-Row-row "
-  onClick={[Function]}
 >
   <div>
     row content
@@ -14,7 +13,6 @@ exports[`Row Pure component match expected snapshot 1`] = `
 exports[`Row Pure component match expected snapshot with reverse prop 1`] = `
 <div
   className="default-Row-row reverse "
-  onClick={[Function]}
 >
   <div>
     row content
