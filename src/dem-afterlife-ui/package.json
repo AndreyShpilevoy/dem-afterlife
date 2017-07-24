@@ -100,7 +100,7 @@
         "react-svg-inline": "2.0.0",
         "react-with-styles": "1.4.0",
         "redux": "3.7.2",
-        "redux-saga": "0.15.5",
+        "redux-saga": "0.15.6",
         "reselect": "3.0.1"
     }
 }
