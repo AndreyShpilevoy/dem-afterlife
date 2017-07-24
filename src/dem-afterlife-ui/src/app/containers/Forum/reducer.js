@@ -28,7 +28,7 @@ export const forumReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
 export function* getTopicArrayForumIdNonBlockSaga(forumId) {
     const topicArray = yield call(getTopicArrayByForumIdApi, forumId);
     yield put(getTopicArrayByForumIdSuccess(topicArray));
@@ -48,4 +48,4 @@ export function* forumSaga() {
     ]);
 }
 
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

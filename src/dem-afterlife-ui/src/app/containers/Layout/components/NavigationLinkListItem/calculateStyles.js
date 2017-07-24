@@ -2,18 +2,18 @@ import {createMediaQueryMinMax} from 'utils';
 
 const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
     ...gridSize !== 'lg' && gridSize !== 'xl' ?
-    {
-        display: 'block',
-        fontSize: navigationLinks[gridSize].fontSize,
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        padding: navigationLinks[gridSize].padding,
-        color: `${navigationLinks[gridSize].color} !important`,
-        '&:hover': {
-            color: `${navigationLinks[gridSize].colorHovered} !important`
-        }
-    } : {},
+        {
+            display: 'block',
+            fontSize: navigationLinks[gridSize].fontSize,
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            padding: navigationLinks[gridSize].padding,
+            color: `${navigationLinks[gridSize].color} !important`,
+            '&:hover': {
+                color: `${navigationLinks[gridSize].colorHovered} !important`
+            }
+        } : {},
     ...{paddingLeft: navigationLinks[gridSize].padding}
 });
 

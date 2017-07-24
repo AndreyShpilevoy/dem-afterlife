@@ -12,9 +12,9 @@ export const SubForumPure = ({subForum, styles}) => {
     return <div className={styles.container}>
         <SvgIconsMapper className={styles.icon} iconName={'IconSubForum'}/>
         <Link className={styles.link} to={linkToSubForum}>
-          {title}
+            {title}
         </Link>
-      </div>;
+    </div>;
 };
 
 SubForumPure.propTypes = {

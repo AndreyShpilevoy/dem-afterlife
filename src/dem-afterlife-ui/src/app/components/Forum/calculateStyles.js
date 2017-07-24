@@ -15,39 +15,39 @@ const textBase = {
 };
 
 const getDisplayInline = mediaMaxString =>
-createMediaQueryMax(mediaMaxString, {display: 'inline'});
+    createMediaQueryMax(mediaMaxString, {display: 'inline'});
 
 const getDisableRow = mediaMaxString =>
-createMediaQueryMax(mediaMaxString, {
-    flex: 'initial',
-    width: 'initial',
-    display: 'initial',
-    flexWrap: 'initial',
-    boxSizing: 'initial',
-    flexDirection: 'initial'
-});
+    createMediaQueryMax(mediaMaxString, {
+        flex: 'initial',
+        width: 'initial',
+        display: 'initial',
+        flexWrap: 'initial',
+        boxSizing: 'initial',
+        flexDirection: 'initial'
+    });
 
 const getDisableCenter = mediaMaxString =>
-createMediaQueryMax(mediaMaxString, {
-    display: 'initial',
-    alignItems: 'initial',
-    flexDirection: 'initial',
-    justifyContent: 'initial'
-});
+    createMediaQueryMax(mediaMaxString, {
+        display: 'initial',
+        alignItems: 'initial',
+        flexDirection: 'initial',
+        justifyContent: 'initial'
+    });
 
 const getSmLastTopicInfoContainer = mediaMaxString =>
-createMediaQueryMax(mediaMaxString, {
-    textAlign: 'initial',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap'
-});
+    createMediaQueryMax(mediaMaxString, {
+        textAlign: 'initial',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+    });
 
 const getSmSmallText = (mediaMaxString, size) =>
-createMediaQueryMax(mediaMaxString, {fontSize: size});
+    createMediaQueryMax(mediaMaxString, {fontSize: size});
 
 const getTopicsMessagesContainer = (mediaMaxString, size) =>
-createMediaQueryMax(mediaMaxString, {fontSize: size, flexDirection: 'row'});
+    createMediaQueryMax(mediaMaxString, {fontSize: size, flexDirection: 'row'});
 
 const calculateStyles = ({themeName, grid, forum}) => {
     const {separator, text, subForumContainer} = forum;

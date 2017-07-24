@@ -11,15 +11,15 @@ import getPostArrayByTopicIdApi from 'api/__fakeApi__/getPostArrayByTopicIdApi';
 import getUserArrayByUserIdArrayApi from 'api/__fakeApi__/getUserArrayByUserIdArrayApi';
 
 export {
-  getLocaleApi,
-  getNavigationLinkArrayApi,
-  getSocialMediaLinkArrayApi,
-  getChapterArrayApi,
-  getForumArrayByChapterIdArrayApi,
-  getForumByIdApi,
-  getSubForumArrayByParentForumIdArrayApi,
-  getLastActiveTopicArrayApi,
-  getTopicArrayByForumIdApi,
-  getPostArrayByTopicIdApi,
-  getUserArrayByUserIdArrayApi
+    getLocaleApi,
+    getNavigationLinkArrayApi,
+    getSocialMediaLinkArrayApi,
+    getChapterArrayApi,
+    getForumArrayByChapterIdArrayApi,
+    getForumByIdApi,
+    getSubForumArrayByParentForumIdArrayApi,
+    getLastActiveTopicArrayApi,
+    getTopicArrayByForumIdApi,
+    getPostArrayByTopicIdApi,
+    getUserArrayByUserIdArrayApi
 };

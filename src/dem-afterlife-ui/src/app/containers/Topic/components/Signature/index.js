@@ -5,9 +5,9 @@ import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const Signature = ({signature, styles}) =>
-        <div>
-            {signature}
-        </div>;
+    <div>
+        {signature}
+    </div>;
 
 Signature.propTypes = {
     signature: string.isRequired,

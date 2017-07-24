@@ -35,31 +35,31 @@ const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxStr
 const calculateStyles = ({themeName, grid, footer, socialMediaLinkIcons}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         ({...previous, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, footer)}),
-        {
-            copyright: {
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            },
-            socialMediaLinkIconContainer: {
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                marginRight: socialMediaLinkIcons.svg.padding * 7.5
-            },
-            socialMediaLinkIcon: {
-                '& > .SVGInline-svg': {
-                    display: 'block',
-                    padding: socialMediaLinkIcons.svg.padding,
-                    opacity: socialMediaLinkIcons.svg.opacity,
-                    width: socialMediaLinkIcons.svg.width,
-                    height: socialMediaLinkIcons.svg.height
-                }
-            },
-            options: {meta: 'Footer', themeName}
-        }
+    {
+        copyright: {
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
+        socialMediaLinkIconContainer: {
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            marginRight: socialMediaLinkIcons.svg.padding * 7.5
+        },
+        socialMediaLinkIcon: {
+            '& > .SVGInline-svg': {
+                display: 'block',
+                padding: socialMediaLinkIcons.svg.padding,
+                opacity: socialMediaLinkIcons.svg.opacity,
+                width: socialMediaLinkIcons.svg.width,
+                height: socialMediaLinkIcons.svg.height
+            }
+        },
+        options: {meta: 'Footer', themeName}
+    }
     );
 
 export default calculateStyles;

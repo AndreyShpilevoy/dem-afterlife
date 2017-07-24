@@ -1,4 +1,4 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 
 import React, {PureComponent} from 'react';
 import {node, bool, string, shape, oneOfType} from 'prop-types';
@@ -97,10 +97,10 @@ export class CollapsibleSectionPure extends PureComponent {
                         </Hidden>
                         {
                             isCollapsible ?
-                            <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
-                                <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'}/>
-                            </Hidden> :
-                            defaults.emptyString
+                                <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
+                                    <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'}/>
+                                </Hidden> :
+                                defaults.emptyString
                         }
                     </Column>
                 </Row>

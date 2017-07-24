@@ -11,8 +11,8 @@ const constructClassNames = (sizesArray, styles) =>
             styles[current] ? `${previous} ${styles[current]}` : defaults.emptyString, defaults.emptyString);
 
 export const ColumnPure = (
-        {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
-    ) => {
+    {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
+) => {
     const classes = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
@@ -24,7 +24,7 @@ export const ColumnPure = (
         {name: 'mdOffset', count: mdOffset},
         {name: 'lgOffset', count: lgOffset},
         {name: 'xlOffset', count: xlOffset}],
-        styles);
+    styles);
 
     const localeClassName = `${classes} ${className || defaults.emptyString}`;
     return (

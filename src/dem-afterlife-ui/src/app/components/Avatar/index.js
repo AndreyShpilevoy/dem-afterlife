@@ -13,11 +13,11 @@ export const AvatarPure = ({avatarUrl, size, styles, className, id}) => {
     const localeClassName = className ? `${className} ${styles.container}` : styles.container;
     const linkToProfile = `/${id}`;
     return (
-    <div className={localeClassName} style={getContainerStyles(size)}>
-        <Link className={styles.avatar} to={linkToProfile} style={getImageStyles(size)}>
-            {avatarUrl ? <img src={avatarUrl} /> : <div className={styles.avatarDefault}/>}
-        </Link>
-    </div>
+        <div className={localeClassName} style={getContainerStyles(size)}>
+            <Link className={styles.avatar} to={linkToProfile} style={getImageStyles(size)}>
+                {avatarUrl ? <img src={avatarUrl} /> : <div className={styles.avatarDefault}/>}
+            </Link>
+        </div>
     );
 };
 

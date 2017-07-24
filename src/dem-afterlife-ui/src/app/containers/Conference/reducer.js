@@ -41,7 +41,7 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
 export function* getChapterArrayNonBlockSaga() {
     const chapterArray = yield call(getChapterArrayApi);
     yield put(getChapterArraySuccess(chapterArray));
@@ -71,4 +71,4 @@ export function* conferenceSaga() {
     ]);
 }
 
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

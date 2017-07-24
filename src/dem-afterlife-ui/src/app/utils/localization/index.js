@@ -70,7 +70,7 @@ export const transformRelativeYear = (msDeltaTime, locale, dateTimeDeclension) =
     return dateTimeDeclension(number, firstForm, secondForm, thirdForm, firstForm);
 };
 
-/* eslint "complexity": [1, 6]*/
+/* eslint "complexity": [1, 6] */
 export const getTransformForPeriod = msDeltaTime => {
     if (msDeltaTime < milliseconds.perMinute) {
         return transformRelativeLessThanMinute;

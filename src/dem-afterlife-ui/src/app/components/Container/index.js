@@ -7,9 +7,9 @@ import calculateStyles from './calculateStyles';
 export const ContainerPure = ({children, styles, className, onClick}) => {
     const localeClassName = `${styles.container} ${className || defaults.emptyString}`;
     return (
-    <div className={localeClassName} onClick={onClick}>
-        {children}
-    </div>
+        <div className={localeClassName} onClick={onClick}>
+            {children}
+        </div>
     );
 };
 

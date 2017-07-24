@@ -48,7 +48,7 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
 export function* getLocaleSaga() {
     for (;;) {
         yield take(GET_LOCALE);
@@ -81,4 +81,4 @@ export function* layoutSaga() {
     ]);
 }
 
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

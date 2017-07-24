@@ -10,10 +10,10 @@ const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((p
     props[current] ?
         {...{[current]: props[current]}, ...previous} :
         previous,
-    {
-        children: props.children || defaults.emptyString,
-        style: props.style || defaults.emptyObject
-    });
+{
+    children: props.children || defaults.emptyString,
+    style: props.style || defaults.emptyObject
+});
 
 export const LinkPure = props => {
     const localeClassName = `${props.styles.link} ${props.className || defaults.emptyString}`;

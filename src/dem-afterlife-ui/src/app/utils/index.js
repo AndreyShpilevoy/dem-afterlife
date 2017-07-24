@@ -23,8 +23,8 @@ const defaults = {
 };
 
 const mergeTwoArraysOfObjectMatchById = (firstArray, secondArray) =>
-     secondArray.reduce((previous, current) =>
-         [...previous.filter(x => x.id !== current.id), current], firstArray);
+    secondArray.reduce((previous, current) =>
+        [...previous.filter(x => x.id !== current.id), current], firstArray);
 
 const margeHelper = {
     mergeTwoArraysOfObjectMatchById

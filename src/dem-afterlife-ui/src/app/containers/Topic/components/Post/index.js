@@ -20,12 +20,12 @@ const bbCodesMapNames = [
 const wrapToRootNodeIfNeeded = text =>
     `${
         text.substring(0, 6) !== '[root]' ?
-        '[root]' :
-        defaults.emptyString
+            '[root]' :
+            defaults.emptyString
     }${text}${
         text.substring(text.length - 7) !== '[/root]' ?
-        '[/root]' :
-        defaults.emptyString
+            '[/root]' :
+            defaults.emptyString
     }`;
 
 const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIndex = 0) => {

@@ -61,7 +61,7 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
 export function* getForumByIdSaga() {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BY_ID);
@@ -104,4 +104,4 @@ export function* sharedSaga() {
     ]);
 }
 
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

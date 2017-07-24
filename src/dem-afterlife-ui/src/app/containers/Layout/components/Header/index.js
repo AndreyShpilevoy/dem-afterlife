@@ -1,4 +1,4 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0*/
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 
 import React, {PureComponent} from 'react';
 import {shape} from 'prop-types';
@@ -39,10 +39,10 @@ export class HeaderPure extends PureComponent {
     handleScroll = throttle(
         ({target}) => {
             target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
-                this.setState({shrinkedHeader: true}) :
+            this.setState({shrinkedHeader: true}) :
                 this.setState({shrinkedHeader: false});
         },
-    250);
+        250);
 
     handleMenuButtonClick = value => {
         this.setState({menuIsClosed: value});
@@ -67,7 +67,7 @@ export class HeaderPure extends PureComponent {
                             </Column>
                             <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={headerColumn}>
                                 <Hidden lg={'up'} className={headerMenuButtonContainer}>
-                                        <MenuButton onClick={menuButtonOnClick}/>
+                                    <MenuButton onClick={menuButtonOnClick}/>
                                 </Hidden>
                             </Column>
                             <Column xs={12} lg={8} xl={9} className={navigationLinksContainerClassName}>

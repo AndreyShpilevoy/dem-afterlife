@@ -25,12 +25,12 @@ const getLgXlStyle = (gridSize, headerStyles) => ({
 
 const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
-    {
-        '&.shrinkedHeader': {
-            transition: headerStyles[`${gridSize}`].transition,
-            width: headerStyles[gridSize].logoContainerWidth / 2
-        }
-    } : {},
+        {
+            '&.shrinkedHeader': {
+                transition: headerStyles[`${gridSize}`].transition,
+                width: headerStyles[gridSize].logoContainerWidth / 2
+            }
+        } : {},
     ...{
         marginLeft: headerStyles.logotypeContainer.marginLeft,
         marginRight: headerStyles.logotypeContainer.marginRight,
@@ -40,26 +40,26 @@ const getHeaderLogoContainerStyle = (gridSize, headerStyles) => ({
 
 const getNavigationLinksStyle = (gridSize, {navigationLinks}) => ({
     ...gridSize === 'lg' || gridSize === 'xl' ?
-    {
-        flexDirection: 'row',
-        marginLeft: navigationLinks.marginLeft,
-        marginRight: navigationLinks.marginRight,
-        marginTop: navigationLinks.marginTop,
-        marginBottom: navigationLinks.marginBottom
-    } : {flexDirection: 'column'},
+        {
+            flexDirection: 'row',
+            marginLeft: navigationLinks.marginLeft,
+            marginRight: navigationLinks.marginRight,
+            marginTop: navigationLinks.marginTop,
+            marginBottom: navigationLinks.marginBottom
+        } : {flexDirection: 'column'},
     ...{display: 'flex', listStyleType: 'none'}
 });
 
 const getNavigationLinksContainerStyle = (gridSize, {navigationLinks}) =>
     gridSize !== 'lg' && gridSize !== 'xl' ?
-    {
-        transformOrigin: 'top',
-        transition: navigationLinks.transition,
-        '&.closed': {
-            transform: 'scaleY(0)'
-        }
-    } :
-    {};
+        {
+            transformOrigin: 'top',
+            transition: navigationLinks.transition,
+            '&.closed': {
+                transform: 'scaleY(0)'
+            }
+        } :
+        {};
 
 const getHeaderMenuButtonContainerStyle = headerStyles => ({
     marginLeft: headerStyles.menuButtonContainer.marginLeft,
@@ -90,20 +90,20 @@ const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxStr
 const calculateStyles = ({themeName, grid, header}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         ({...previous, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header)}),
-        {
-            fixedOnTheTop: {
-                position: 'fixed',
-                top: 0,
-                zIndex: 1030
-            },
-            headerColumn: {
-                minHeight: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-            },
-            options: {meta: 'Header', themeName}
-        }
+    {
+        fixedOnTheTop: {
+            position: 'fixed',
+            top: 0,
+            zIndex: 1030
+        },
+        headerColumn: {
+            minHeight: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+        },
+        options: {meta: 'Header', themeName}
+    }
     );
 
 export default calculateStyles;

@@ -43,7 +43,7 @@ export const topicReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
 export function* getUserArrayByUserIdArraySaga() {
     for (;;) {
         const {payload} = yield take(GET_USER_ARRAY_BY_USER_ID_ARRAY);
@@ -72,4 +72,4 @@ export function* topicSaga() {
         getUserArrayByUserIdArraySaga()
     ]);
 }
-/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression*/
+/* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

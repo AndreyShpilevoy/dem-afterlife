@@ -16,7 +16,7 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
     return <ThemeProvider name={themeName}>
         <div className={contentWrapper}>
             <Container className={container}>
-                {/* title*/}
+                {/* title */}
                 <Notification />
                 <Row>
                     <Header navigationLinkArray={navigationLinkArray}/>

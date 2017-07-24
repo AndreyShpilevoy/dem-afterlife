@@ -65,50 +65,50 @@ const getCommonPart = ({general, header, body}) => ({
 
 const getSizeSpecific = (grid, collapsibleSection) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) => gridSize !== 'lg' && gridSize !== 'xl' ?
-    {
-        ...previous,
-        ...createMediaQueryMinMax(
+        {
+            ...previous,
+            ...createMediaQueryMinMax(
                 mediaMinString,
                 mediaMaxString,
-            {
-                headerCursor: {
-                    cursor: 'pointer'
-                },
-                headerArrowHolder: {
-                    marginLeft: 'auto',
-                    marginRight: 1
-                },
-                headerArrow: {
-                    display: 'block',
-                    width: collapsibleSection.header.iconSize,
-                    height: collapsibleSection.header.iconSize,
-                    transform: 'rotate(-90deg)',
-                    transformOrigin: 'center center',
-                    transition: 'transform 0.5s ease-in',
-                    '&.closed': {
-                        transform: 'rotate(0deg)'
+                {
+                    headerCursor: {
+                        cursor: 'pointer'
                     },
-                    '& > .SVGInline-svg': {
+                    headerArrowHolder: {
+                        marginLeft: 'auto',
+                        marginRight: 1
+                    },
+                    headerArrow: {
+                        display: 'block',
                         width: collapsibleSection.header.iconSize,
                         height: collapsibleSection.header.iconSize,
-                        fill: collapsibleSection.header.color
-                    }
-                },
-                bodyHolder: {
-                    transformOrigin: 'top',
-                    transition: collapsibleSection.body.transition,
-                    animation: 'collapsibleSection-SlideDown 500ms ease-in',
-                    '&.closed': {
-                        animation: 'collapsibleSection-SlideUp 500ms ease-in',
-                        transform: 'scaleY(0)',
-                        maxHeight: 0
+                        transform: 'rotate(-90deg)',
+                        transformOrigin: 'center center',
+                        transition: 'transform 0.5s ease-in',
+                        '&.closed': {
+                            transform: 'rotate(0deg)'
+                        },
+                        '& > .SVGInline-svg': {
+                            width: collapsibleSection.header.iconSize,
+                            height: collapsibleSection.header.iconSize,
+                            fill: collapsibleSection.header.color
+                        }
+                    },
+                    bodyHolder: {
+                        transformOrigin: 'top',
+                        transition: collapsibleSection.body.transition,
+                        animation: 'collapsibleSection-SlideDown 500ms ease-in',
+                        '&.closed': {
+                            animation: 'collapsibleSection-SlideUp 500ms ease-in',
+                            transform: 'scaleY(0)',
+                            maxHeight: 0
+                        }
                     }
                 }
-            }
             )
-    } :
-    previous,
-{});
+        } :
+        previous,
+    {});
 
 const calculateStyles = ({themeName, grid, collapsibleSection}) => ({
     ...getCommonPart(collapsibleSection),
