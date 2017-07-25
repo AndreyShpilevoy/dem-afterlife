@@ -65,6 +65,13 @@ const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIn
     return getAllTagsRecursively(text, regex, [...result, ...processTextType(codeIndex)], codeIndex);
 };
 
+const buildTagsTreeRecursively = (tagsArray, result = defaults.emptyObject, codeIndex = 0) => {
+    const currentTag = tagsArray[codeIndex];
+    return {};
+};
+
+const buildTags = tagsArray => buildTagsTreeRecursively(tagsArray) || defaults.emptyObject;
+
 const getParsedTree = text => {
     const allTags = getAllTagsRecursively(wrapToRootNodeIfNeeded(text).replace(/\r\n|\n|\r/g, '[br][/br]'), /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi);
     debugger; //eslint-disable-line
