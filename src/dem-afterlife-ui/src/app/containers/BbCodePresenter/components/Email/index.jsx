@@ -1,16 +1,20 @@
 import React from 'react';
-import {bool, string} from 'prop-types';
+import {bool, string, shape} from 'prop-types';
+import {defaults} from 'utils';
+import {withStyles} from 'styles';
+import calculateStyles from './calculateStyles';
 
-const Email = ({email, addBreak}) => (
+const Email = ({email, addBreak, styles}) => (
     <span>
-        <a href={`mailto:${email}`} rel='nofollow'>
+        <a className={styles.email} href={`mailto:${email}`} rel='nofollow'>
             {email}
         </a>
-        {addBreak ? <br /> : ''}
+        {addBreak ? <br /> : defaults.emptyString}
     </span>
 );
 
 Email.propTypes = {
+    styles: shape().isRequired,
     email: string.isRequired,
     addBreak: bool
 };
@@ -19,4 +23,4 @@ Email.defaultProps = {
     addBreak: false
 };
 
-export default Email;
+export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(Email);

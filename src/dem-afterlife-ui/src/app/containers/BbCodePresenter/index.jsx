@@ -3,7 +3,7 @@ fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/
 
 import React, {PureComponent} from 'react';
 import {string, shape} from 'prop-types';
-import {defaults} from 'utils';
+import {defaults, stringIsEmail, stringIsLink} from 'utils';
 import {css, withStyles} from 'styles';
 import parseTextToNodeTree from './parser';
 import calculateStyles from './calculateStyles';
@@ -70,50 +70,45 @@ const bbCodesMap = {
     quote: (children, options) =>
         <Quote key={Math.random()} options={options.option}>{children}</Quote>,
 
-    // email: children => {
-    //     const result = [];
-    //     const addBreak = children.length > 1;
-    //     for (const child of children) {
-    //         if (typeof child.props.children === 'string' && StringHelper.stringIsEmail(child.props.children)) {
-    //             const email = child.props.children;
-    //             result.push(<Email key={Math.random()} email={email} addBreak={addBreak}>{email}</Email>);
-    //         } else {
-    //             continue;
-    //         }
-    //     }
-    //     return result;
-    // },
+    email: children => {
+        const result = [];
+        const addBreak = children.length > 1;
+        for (const child of children) {
+            if (typeof child.props.children === 'string' && stringIsEmail(child.props.children)) {
+                const email = child.props.children;
+                result.push(<Email key={Math.random()} email={email} addBreak={addBreak}>{email}</Email>);
+            }
+        }
+        return result;
+    },
+
     // url: (children, options) => {
     //     const result = [];
-    //     if (typeof options === 'string' && StringHelper.stringIsLink(options)) {
+    //     if (typeof options === 'string' && stringIsLink(options)) {
     //         const url = options;
     //         result.push(<Link key={Math.random()} url={url}>{children}</Link>);
     //     } else {
     //         const addBreak = children.length > 1;
     //         for (const child of children) {
-    //             if (typeof child.props.children === 'string' && StringHelper.stringIsLink(child.props.children)) {
+    //             if (child.props && typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
     //                 const url = child.props.children;
     //                 result.push(<Link key={Math.random()} url={url} addBreak={addBreak}>{url}</Link>);
-    //             } else {
-    //                 continue;
     //             }
     //         }
     //     }
     //     return result;
     // },
-    // img: children => {
-    //     const result = [];
-    //     const addBreak = children.length > 1;
-    //     for (const child of children) {
-    //         if (typeof child.props.children === 'string' && StringHelper.stringIsLink(child.props.children)) {
-    //             const url = child.props.children;
-    //             result.push(<Image key={Math.random()} url={url} addBreak={addBreak} />);
-    //         } else {
-    //             continue;
-    //         }
-    //     }
-    //     return result;
-    // },
+    img: children => {
+        const result = [];
+        const addBreak = children.length > 1;
+        for (const child of children) {
+            if (typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
+                const url = child.props.children;
+                result.push(<Image key={Math.random()} url={url} addBreak={addBreak} />);
+            }
+        }
+        return result;
+    },
     ol: children =>
         <OrderedList key={Math.random()}>{children}</OrderedList>,
     ul: children =>

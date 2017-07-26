@@ -1,15 +1,15 @@
 import {createSelector} from 'reselect';
-import R from 'ramda';
+import {sortObjectArrayByOrderProperty} from 'utils';
 
 export const navigationLinkArraySelector = state => state.layoutReducer.navigationLinkArray;
 export const socialMediaLinkArraySelector = state => state.layoutReducer.socialMediaLinkArray;
 
 export const sortedNavigationLinkSelector = createSelector(
     navigationLinkArraySelector,
-    navigationLinkArray => R.sortBy(R.prop('order'), navigationLinkArray)
+    navigationLinkArray => sortObjectArrayByOrderProperty(navigationLinkArray)
 );
 
 export const sortedSocialMediaLinkSelector = createSelector(
     socialMediaLinkArraySelector,
-    socialMediaLinkArray => R.sortBy(R.prop('order'), socialMediaLinkArray)
+    socialMediaLinkArray => sortObjectArrayByOrderProperty(socialMediaLinkArray)
 );

@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import R from 'ramda';
+import {sortObjectArrayByOrderProperty} from 'utils';
 
 export const subForumArraySelector = state => state.sharedReducer.subForumArray;
 export const forumArraySelector = state => state.sharedReducer.forumArray;
@@ -7,7 +7,7 @@ export const forumArraySelector = state => state.sharedReducer.forumArray;
 
 export const sortedSubForumArraySelector = createSelector(
     subForumArraySelector,
-    subForumArray => R.sortBy(R.prop('order'), subForumArray)
+    subForumArray => sortObjectArrayByOrderProperty(subForumArray)
 );
 
 export const forumArrayWithSubForumsSelector = createSelector(
@@ -22,5 +22,5 @@ export const forumArrayWithSubForumsSelector = createSelector(
 
 export const sortedForumArrayWithSubForumsSelector = createSelector(
     forumArrayWithSubForumsSelector,
-    forumArray => R.sortBy(R.prop('order'), forumArray)
+    forumArray => sortObjectArrayByOrderProperty(forumArray)
 );

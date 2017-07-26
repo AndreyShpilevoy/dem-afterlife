@@ -1,5 +1,6 @@
 import {createSelector} from 'reselect';
 import R from 'ramda';
+import {sortObjectArrayByOrderProperty} from 'utils';
 import {sortedForumArrayWithSubForumsSelector} from 'containers/selectors';
 
 export const chapterArraySelector = state => state.conferenceReducer.chapterArray;
@@ -7,7 +8,7 @@ export const lastActiveTopicArraySelector = state => state.conferenceReducer.las
 
 export const sortedChapterArraySelector = createSelector(
     chapterArraySelector,
-    chapterArray => R.sortBy(R.prop('order'), chapterArray)
+    chapterArray => sortObjectArrayByOrderProperty(chapterArray)
 );
 
 export const sortedLastActiveTopicsArraySelector = createSelector(
