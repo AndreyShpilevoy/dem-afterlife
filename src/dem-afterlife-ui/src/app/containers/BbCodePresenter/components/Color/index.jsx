@@ -9,7 +9,7 @@ const Color = ({children, options}) => (
 
 Color.propTypes = {
     children: node.isRequired,
-    options: string // eslint-disable-line react/require-default-props
+    options: string.isRequired // eslint-disable-line react/require-default-props
 };
 
 export default Color;

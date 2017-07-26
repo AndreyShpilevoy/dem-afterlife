@@ -19,7 +19,7 @@ const OffTopic = ({children, styles}) => (
 
 OffTopic.propTypes = {
     children: node.isRequired,
-    styles: shape.isRequired
+    styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(OffTopic);
+export default withStyles(theme => calculateStyles(theme))(OffTopic);

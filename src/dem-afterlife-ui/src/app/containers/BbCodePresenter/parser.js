@@ -65,24 +65,39 @@ const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIn
     return getAllTagsRecursively(text, regex, [...result, ...processTextType(codeIndex)], codeIndex);
 };
 
-const buildTagsTreeRecursively = (tagsArray, result = defaults.emptyObject, codeIndex = 0) => {
-    const currentTag = tagsArray[codeIndex];
-    return {};
+const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = defaults.emptyObject, parentNode = defaults.emptyObject) => {
+    const currentTag = tagsArray[tagIndex];
+    if (currentTag) {
+        const node = {
+            type: currentTag.tag,
+            options: currentTag.options,
+            content: '',
+            children: [],
+            parentNode
+        };
+        if (currentTag.type === OPEN_TAG) {
+            const nextTagIndex = tagIndex + 1;
+            if (parentNode !== defaults.emptyObject) {
+                parentNode.children.push(node); // eslint-disable-line fp/no-mutating-methods, fp/no-unused-expression
+                return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, node);
+            }
+            return buildNodeTreeRecursively(tagsArray, nextTagIndex, node, node);
+        } else if (currentTag.type === TEXT) {
+            const nextTagIndex = tagIndex + 1;
+            const textNode = {...node, content: currentTag.match, type: 'textline'};
+            parentNode.children.push(textNode); // eslint-disable-line fp/no-mutating-methods, fp/no-unused-expression
+            return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, parentNode);
+        } else if (currentTag.type === CLOSE_TAG && currentTag.tag === parentNode.type) {
+            const nextTagIndex = tagIndex + 1;
+            return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, parentNode.parentNode);
+        }
+    }
+    return result;
 };
 
-const buildTags = tagsArray => buildTagsTreeRecursively(tagsArray) || defaults.emptyObject;
-
-const getParsedTree = text => {
+const parseTextToNodeTree = text => {
     const allTags = getAllTagsRecursively(wrapToRootNodeIfNeeded(text).replace(/\r\n|\n|\r/g, '[br][/br]'), /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi);
-    debugger; //eslint-disable-line
-    // return this.buildTree(allTags);
-    return [];
+    return buildNodeTreeRecursively(allTags);
 };
 
-
-const parsedTextToTree = text => {
-    const a = getParsedTree(text);
-    return 'rolf';
-};
-
-export default parsedTextToTree;
+export default parseTextToNodeTree;

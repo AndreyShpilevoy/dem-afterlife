@@ -1,3 +1,5 @@
+import thinkImage from 'images/Smiles/forBbCode/think.gif';
+
 const calculateStyles = ({themeName}) => ({
     think: {
         padding: 0.4
@@ -9,7 +11,7 @@ const calculateStyles = ({themeName}) => ({
         padding: 0.4
     },
     thinkImage: {
-        backgroundImage: 'url(images/Smiles/forBbCode/think.gif);',
+        backgroundImage: `url(${thinkImage});`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 2,
         paddingTop: 2
