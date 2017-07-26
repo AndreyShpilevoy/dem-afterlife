@@ -1,6 +1,6 @@
 import React from 'react';
 import {shape} from 'prop-types';
-import BbCodePresenter from 'components/BbCodePresenter';
+import BbCodePresenter from 'containers/BbCodePresenter';
 import LocaleDateTime from 'containers/LocaleDateTime';
 import {sharedPropTypes, defaults} from 'utils';
 import {withStyles} from 'styles';
