@@ -9,7 +9,7 @@ const BaseSpan = ({children, className, styleObject}) => (
 
 BaseSpan.propTypes = {
     children: node.isRequired,
-    className: string.isRequired,
+    className: string, // eslint-disable-line react/require-default-props
     styleObject: shape() // eslint-disable-line react/require-default-props
 };
 

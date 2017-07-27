@@ -12,7 +12,7 @@ import Code from './components/Code';
 import Color from './components/Color';
 import Email from './components/Email';
 import Image from './components/Image';
-import Link from './components/Link';
+import Url from './components/Url';
 import ListItem from './components/ListItem';
 import NewLine from './components/NewLine';
 import OffTopic from './components/OffTopic';
@@ -38,7 +38,7 @@ const bbCodesMap = {
     think: children =>
         <Think key={Math.random()}>{children}</Think>,
     color: (children, options) =>
-        <Color key={Math.random()} options={options.option}>{children}</Color>,
+        <Color key={Math.random()} options={options.value}>{children}</Color>,
     center: (children, options) =>
         <BaseSpan key={Math.random()} className={css([options.styles.position, options.styles.center])}>{children}</BaseSpan>,
     left: (children, options) =>
@@ -63,12 +63,12 @@ const bbCodesMap = {
 
     // code: (children, options) => {
     //     const key = Math.random();
-    //     return <Code key={key} id={key} options={options.option}>{children}</Code>;
+    //     return <Code key={key} id={key} options={options.value}>{children}</Code>;
     // },
 
     // spoiler
     quote: (children, options) =>
-        <Quote key={Math.random()} options={options.option}>{children}</Quote>,
+        <Quote key={Math.random()} options={options.value}>{children}</Quote>,
 
     email: children => {
         const result = [];
@@ -82,22 +82,44 @@ const bbCodesMap = {
         return result;
     },
 
-    // url: (children, options) => {
-    //     const result = [];
-    //     if (typeof options === 'string' && stringIsLink(options)) {
-    //         const url = options;
-    //         result.push(<Link key={Math.random()} url={url}>{children}</Link>);
-    //     } else {
-    //         const addBreak = children.length > 1;
-    //         for (const child of children) {
-    //             if (child.props && typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
-    //                 const url = child.props.children;
-    //                 result.push(<Link key={Math.random()} url={url} addBreak={addBreak}>{url}</Link>);
-    //             }
-    //         }
-    //     }
-    //     return result;
-    // },
+    url: (children, options) => {
+        const result = [];
+
+        const mapChildToUrl = url => <Url key={Math.random()} url={url}>{url}</Url>;
+
+        if (typeof options.value === 'string' && stringIsLink(options.value)) {
+            const url = options.value;
+            result.push(<Url key={Math.random()} url={url}>{children}</Url>);
+        } else if (Array.isArray(children) && children.length === 1 && children[0].props && typeof children[0].props.children === 'string' && stringIsLink(children[0].props.children)) {
+            result.push(mapChildToUrl(children[0].props.children));
+        } else if (Array.isArray(children) && children.length > 1) {
+            children.forEach(item => {
+                const {props} = item;
+                if (props && typeof props.children === 'string' && stringIsLink(props.children)) {
+                    result.push(mapChildToUrl(item.props.children));
+                } else {
+                    result.push(item);
+                }
+            });
+        } else {
+            result.push(children);
+        }
+
+        // if (Array.isArray(children) && children.length > 0) {
+        //     for (const child of children) {
+        //         if (child.props && typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
+        //             const url = child.props.children;
+        //             result.push(<Url key={Math.random()} url={url}>{url}</Url>);
+        //         } else if (typeof options.value === 'string' && stringIsLink(options.value)) {
+        //             const url = options.value;
+        //             result.push(<Url key={Math.random()} url={url}>{child}</Url>);
+        //         } else {
+        //             result.push(child);
+        //         }
+        //     }
+        // }
+        return result;
+    },
     img: children => {
         const result = [];
         const addBreak = children.length > 1;
@@ -153,7 +175,7 @@ class BbCodePresenter extends PureComponent {
 
     mapNodeToComponent = node => {
         const {styles} = this.props;
-        node.options = {option: node.options, styles};
+        node.options = {value: node.options, styles};
         const Component = this.getComponentByTagName(node.type);
         let result;
         if (Component) {
