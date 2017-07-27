@@ -55,7 +55,7 @@ export function* getUserArrayByUserIdArraySaga() {
 export function* getPostArrayByTopicIdNonBlockSaga(topicId) {
     const postArray = yield call(getPostArrayByTopicIdApi, topicId);
     yield put(getPostArrayByTopicIdSuccess(postArray));
-    const userIdArray = postArray.reduce((previous, current) => [...previous, current.userId], []);
+    const userIdArray = postArray.map(x => x.userId);
     yield put(getUserArrayByUserIdArray(userIdArray));
 }
 

@@ -1,7 +1,7 @@
 const calculateStyles = ({themeName}) => ({
     code: {
         backgroundColor: '#59534D',
-        border: '0.0625rem solid #9C9085',
+        border: '0.0625rem solid #44423f',
         padding: 0.4
     },
     codeHeader: {

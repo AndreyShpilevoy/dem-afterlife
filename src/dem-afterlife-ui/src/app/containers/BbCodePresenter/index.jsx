@@ -19,6 +19,7 @@ import OffTopic from './components/OffTopic';
 import OrderedList from './components/OrderedList';
 import Paragraph from './components/Paragraph';
 import Quote from './components/Quote';
+import Spoiler from './components/Spoiler';
 import Root from './components/Root';
 import TextLine from './components/TextLine';
 import Think from './components/Think';
@@ -64,11 +65,10 @@ const bbCodesMap = {
         const key = Math.random();
         return <Code key={key} id={key} options={options.value}>{children}</Code>;
     },
-
-    // spoiler
+    spoiler: (children, options) =>
+        <Spoiler key={Math.random()} options={options.value}>{children}</Spoiler>,
     quote: (children, options) =>
         <Quote key={Math.random()} options={options.value}>{children}</Quote>,
-
     email: children => {
         const result = [];
         const addBreak = children.length > 1;

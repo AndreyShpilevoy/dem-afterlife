@@ -1,4 +1,4 @@
-// vacant id's: 27,28,29,35,36
+// vacant id's: 27,28,29,36
 const en = [
     {id: 1, value: 'Topics', description: 'for topics count in %ForumName% on forum component'},
     {id: 2, value: 'Posts', description: 'for posts count in %ForumName% on forum component'},
@@ -34,7 +34,7 @@ const en = [
     {id: 32, value: 'wrote', description: 'header for Quote bbCode'},
     {id: 33, value: 'Quote', description: 'header for Quote bbCode'},
     {id: 34, value: 'Code', description: 'header for Code bbCode'},
-    {id: 35, value: 'Ctrl+A, Ctrl+C', description: 'header for Code bbCode'},
+    {id: 35, value: 'Spoiler', description: 'header for Spoiler bbCode'},
     {id: 36, value: 'Last modified', description: 'Post edit text label'}
 ];
 

@@ -73,7 +73,7 @@ export function* getForumByIdSaga() {
 export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
     const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
     yield put(getForumArrayByChapterIdArraySuccess(forumArray));
-    const forumsIdArray = forumArray.reduce((previous, current) => [...previous, current.id], []);
+    const forumsIdArray = forumArray.map(x => x.id);
     yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
 }
 

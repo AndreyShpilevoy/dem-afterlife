@@ -13,13 +13,13 @@ const getAuthorNameFromOption = (options, quoteAuthorStyle) => options ?
             <span className={quoteAuthorStyle}>
                 {options}
             </span>
-            <Term spaceBefore term={wroteTerm} />
+            <Term spaceBefore term={wroteTerm} untermedPostfix={':'} />
         </div>
     ) :
     (
         <div>
             <span className={quoteAuthorStyle}>
-                <Term term={quoteTerm} />
+                <Term term={quoteTerm} untermedPostfix={':'} />
             </span>
         </div>
     );

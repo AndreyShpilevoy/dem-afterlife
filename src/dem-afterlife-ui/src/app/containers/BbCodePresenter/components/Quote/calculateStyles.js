@@ -4,7 +4,7 @@ const calculateStyles = ({themeName}) => ({
     },
     quote: {
         backgroundColor: '#9A8D7F',
-        border: '0.0625rem solid #D4C5B6',
+        border: '0.0625rem solid #5f554b',
         margin: '0.3125rem 1.25rem',
         padding: 0.4
     },

@@ -45,7 +45,7 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
 export function* getChapterArrayNonBlockSaga() {
     const chapterArray = yield call(getChapterArrayApi);
     yield put(getChapterArraySuccess(chapterArray));
-    const chapterIdArray = chapterArray.reduce((previous, current) => [...previous, current.id], []);
+    const chapterIdArray = chapterArray.map(x => x.id);
     yield put(getForumArrayByChapterIdArray(chapterIdArray));
 }
 
