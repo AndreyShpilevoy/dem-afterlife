@@ -60,11 +60,10 @@ const bbCodesMap = {
             </BaseSpan>
         );
     },
-
-    // code: (children, options) => {
-    //     const key = Math.random();
-    //     return <Code key={key} id={key} options={options.value}>{children}</Code>;
-    // },
+    code: (children, options) => {
+        const key = Math.random();
+        return <Code key={key} id={key} options={options.value}>{children}</Code>;
+    },
 
     // spoiler
     quote: (children, options) =>
@@ -81,10 +80,8 @@ const bbCodesMap = {
         }
         return result;
     },
-
     url: (children, options) => {
         const result = [];
-
         const mapChildToUrl = url => <Url key={Math.random()} url={url}>{url}</Url>;
 
         if (typeof options.value === 'string' && stringIsLink(options.value)) {
@@ -104,20 +101,6 @@ const bbCodesMap = {
         } else {
             result.push(children);
         }
-
-        // if (Array.isArray(children) && children.length > 0) {
-        //     for (const child of children) {
-        //         if (child.props && typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
-        //             const url = child.props.children;
-        //             result.push(<Url key={Math.random()} url={url}>{url}</Url>);
-        //         } else if (typeof options.value === 'string' && stringIsLink(options.value)) {
-        //             const url = options.value;
-        //             result.push(<Url key={Math.random()} url={url}>{child}</Url>);
-        //         } else {
-        //             result.push(child);
-        //         }
-        //     }
-        // }
         return result;
     },
     img: children => {

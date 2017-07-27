@@ -1,4 +1,4 @@
-const calculateStyles = themeName => ({
+const calculateStyles = ({themeName}) => ({
     code: {
         backgroundColor: '#59534D',
         border: '0.0625rem solid #9C9085',
@@ -18,13 +18,6 @@ const calculateStyles = themeName => ({
         color: '#FFA100',
         fontFamily: 'monospace',
         whiteSpace: 'pre-wrap'
-    },
-    codeSelectButton: {
-        color: '#CBC065',
-        cursor: 'pointer',
-        '&:hover': {
-            color: '#FFF495'
-        }
     },
     options: {meta: 'Code', themeName}
 });

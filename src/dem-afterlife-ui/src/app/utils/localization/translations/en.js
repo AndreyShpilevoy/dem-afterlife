@@ -1,3 +1,4 @@
+// vacant id's: 27,28,29,35,36
 const en = [
     {id: 1, value: 'Topics', description: 'for topics count in %ForumName% on forum component'},
     {id: 2, value: 'Posts', description: 'for posts count in %ForumName% on forum component'},
