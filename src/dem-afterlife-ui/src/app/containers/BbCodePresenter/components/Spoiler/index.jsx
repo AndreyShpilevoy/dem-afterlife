@@ -13,7 +13,7 @@ class Spoiler extends PureComponent {
     static propTypes = {
         styles: shape().isRequired,
         children: node.isRequired,
-        options: string // eslint-disable-line react/require-default-props
+        options: string
     };
 
     constructor(props) {

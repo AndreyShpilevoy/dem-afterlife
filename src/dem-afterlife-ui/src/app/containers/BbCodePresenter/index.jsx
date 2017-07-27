@@ -1,9 +1,10 @@
-/* eslint react/display-name: 0, no-unused-vars: 0, max-statements: 0, 
-fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0, fp/no-let: 0, no-restricted-syntax: 0, fp/no-loops: 0, fp/no-mutating-methods: 0, no-param-reassign:0 */
+/* eslint react/display-name: 1, no-unused-vars: 1, max-statements: 1, fp/no-class: 1, fp/no-nil: 1,
+fp/no-unused-expression: 1, fp/no-mutation: 1, fp/no-this: 1, fp/no-let: 1, no-restricted-syntax: 1,
+fp/no-loops: 1, fp/no-mutating-methods: 1, no-param-reassign:1 */
 
 import React, {PureComponent} from 'react';
 import {string, shape} from 'prop-types';
-import {defaults, stringIsEmail, stringIsLink} from 'utils';
+import {stringIsEmail, stringIsLink} from 'utils';
 import {css, withStyles} from 'styles';
 import parseTextToNodeTree from './parser';
 import calculateStyles from './calculateStyles';

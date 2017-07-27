@@ -35,7 +35,7 @@ const Quote = ({children, options, styles}) => (
 Quote.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
-    options: string // eslint-disable-line react/require-default-props
+    options: string
 };
 
 export default withStyles(theme => calculateStyles(theme))(Quote);

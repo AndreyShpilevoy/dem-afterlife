@@ -29,7 +29,7 @@ const Code = ({children, options, styles}) => {
 Code.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
-    options: string // eslint-disable-line react/require-default-props
+    options: string
 };
 
 export default withStyles(theme => calculateStyles(theme))(Code);
