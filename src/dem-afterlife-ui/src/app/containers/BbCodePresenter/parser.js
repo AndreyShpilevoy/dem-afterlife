@@ -1,3 +1,4 @@
+/* eslint-disable max-statements */
 import {defaults} from 'utils';
 import {bbCodesMapNames} from './index';
 

@@ -1,10 +1,10 @@
-/* eslint react/display-name: 1, no-unused-vars: 1, max-statements: 1, fp/no-class: 1, fp/no-nil: 1,
+/* eslint react/display-name: 0, fp/no-class: 0, no-unused-vars: 1, max-statements: 1, fp/no-nil: 1,
 fp/no-unused-expression: 1, fp/no-mutation: 1, fp/no-this: 1, fp/no-let: 1, no-restricted-syntax: 1,
 fp/no-loops: 1, fp/no-mutating-methods: 1, no-param-reassign:1 */
 
 import React, {PureComponent} from 'react';
 import {string, shape} from 'prop-types';
-import {stringIsEmail, stringIsLink} from 'utils';
+import {stringIsEmail, stringIsLink, defaults} from 'utils';
 import {css, withStyles} from 'styles';
 import parseTextToNodeTree from './parser';
 import calculateStyles from './calculateStyles';
@@ -49,15 +49,10 @@ const bbCodesMap = {
         <BaseSpan key={Math.random()} className={css([options.styles.position, options.styles.right])}>{children}</BaseSpan>,
     size: (children, options) => {
         const fontSizeByDefault = 16;
-        if (options <= 150 && options > 0) {
-            return (
-                <BaseSpan key={Math.random()} className='' styleObject={{fontSize: `${options / fontSizeByDefault}rem`}}>
-                    {children}
-                </BaseSpan>
-            );
-        }
+        const value = options.value;
+        const style = value <= 150 && value > 0 ? {fontSize: `${value / fontSizeByDefault}rem`} : {fontSize: '1rem'};
         return (
-            <BaseSpan key={Math.random()} className='' styleObject={{fontSize: '1rem'}}>
+            <BaseSpan key={Math.random()} styleObject={style}>
                 {children}
             </BaseSpan>
         );
@@ -134,52 +129,37 @@ const bbCodesMap = {
 };
 
 const bbCodesMapNames = Object.getOwnPropertyNames(bbCodesMap);
+const getComponentByTagName = tagName => bbCodesMap[tagName.toLowerCase()];
 
-class BbCodePresenter extends PureComponent {
-    static propTypes = {
-        styles: shape().isRequired,
-        text: string.isRequired
-    };
+// todo: think about tail recursion
+const mapNodeToComponent = (node, styles) => {
+    const {content, type, options, children} = {...node, options: {value: node.options, styles} };
+    const Component = getComponentByTagName(type);
 
-    constructor(props) {
-        super(props);
-        this.state = {parsedTree: parseTextToNodeTree(this.props.text)};
-    }
-
-    getComponentByTagName = tagName => bbCodesMap[tagName.toLowerCase()]
-
-    mapTreeToComponent = () => {
-        const parsedTree = this.state.parsedTree;
-        let mappedTree;
-        if (parsedTree.type === 'root' && parsedTree.children.length > 0) {
-            mappedTree = this.mapNodeToComponent(parsedTree);
+    if (Component) {
+        if (children.length > 0) {
+            const childrenMappedToComponent = children.map(x => mapNodeToComponent(x, styles));
+            return Component(childrenMappedToComponent, options);
         }
-        return mappedTree;
+        return Component(content, options);
     }
+    return defaults.emptyString;
+};
 
-    mapNodeToComponent = node => {
-        const {styles} = this.props;
-        node.options = {value: node.options, styles};
-        const Component = this.getComponentByTagName(node.type);
-        let result;
-        if (Component) {
-            if (node.children.length > 0) {
-                const children = [];
-                for (const child of node.children) {
-                    children.push(this.mapNodeToComponent(child));
-                }
-                result = Component(children, node.options);
-            } else {
-                result = Component(node.content, node.options);
-            }
-        }
-        return result;
+const mapTextToComponentsTree = (text, styles) => {
+    const parsedTree = parseTextToNodeTree(text);
+    if (parsedTree.type === 'root' && parsedTree.children.length > 0) {
+        return mapNodeToComponent(parsedTree, styles);
     }
+    return defaults.emptyString;
+};
 
-    render() {
-        return this.mapTreeToComponent();
-    }
-}
+const BbCodePresenter = ({text, styles}) => mapTextToComponentsTree(text, styles);
+
+BbCodePresenter.propTypes = {
+    styles: shape().isRequired,
+    text: string.isRequired
+};
 
 export {bbCodesMapNames};
 export default withStyles(theme => calculateStyles(theme))(BbCodePresenter);
