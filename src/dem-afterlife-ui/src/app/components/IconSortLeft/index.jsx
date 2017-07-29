@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import {defaults} from 'utils';
 import sortLeft from 'images/svg/sort-left.svg';
 
 
@@ -15,7 +14,7 @@ IconSortLeft.propTypes = {
 };
 
 IconSortLeft.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default IconSortLeft;

@@ -4,7 +4,6 @@ import React, {PureComponent} from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const spoilerTerm = {id: 35, value: 'Spoiler'};
@@ -48,7 +47,7 @@ class Spoiler extends PureComponent {
                         <div className={styles.spoilerContent}>
                             {children}
                         </div> :
-                        defaults.emptyString
+                        ''
                 }
             </div>
         );

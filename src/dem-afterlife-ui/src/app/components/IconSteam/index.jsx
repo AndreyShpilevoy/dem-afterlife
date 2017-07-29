@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import {defaults} from 'utils';
 import steamSquare from 'images/svg/steam-square.svg';
 
 
@@ -15,7 +14,7 @@ IconSteam.propTypes = {
 };
 
 IconSteam.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default IconSteam;

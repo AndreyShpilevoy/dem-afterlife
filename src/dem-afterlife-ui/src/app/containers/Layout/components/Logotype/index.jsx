@@ -2,12 +2,11 @@ import React from 'react';
 import {string, shape} from 'prop-types';
 import Link from 'components/Link';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 
 export const LogotypePure = ({styles, className}) => {
-    const linkClassName = `${styles.logotypeContainer} ${className || defaults.emptyString}`;
+    const linkClassName = `${styles.logotypeContainer} ${className || ''}`;
     return (
         <Link className={linkClassName} to='/'>
             <div className={styles.logotype} />
@@ -21,7 +20,7 @@ LogotypePure.propTypes = {
 };
 
 LogotypePure.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(LogotypePure);

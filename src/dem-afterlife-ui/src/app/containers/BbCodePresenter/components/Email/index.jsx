@@ -1,6 +1,5 @@
 import React from 'react';
 import {bool, string, shape} from 'prop-types';
-import {defaults} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -9,7 +8,7 @@ const Email = ({email, addBreak, styles}) => (
         <a className={styles.email} href={`mailto:${email}`} rel='nofollow'>
             {email}
         </a>
-        {addBreak ? <br /> : defaults.emptyString}
+        {addBreak ? <br /> : ''}
     </span>
 );
 

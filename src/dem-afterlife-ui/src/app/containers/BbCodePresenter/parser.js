@@ -1,5 +1,4 @@
 /* eslint-disable max-statements */
-import {defaults} from 'utils';
 import {bbCodesMapNames} from './index';
 
 const OPEN_TAG = 'OPEN_TAG';
@@ -8,16 +7,12 @@ const TEXT = 'TEXT';
 
 const wrapToRootNodeIfNeeded = text =>
     `${
-        text.substring(0, 6) !== '[root]' ?
-            '[root]' :
-            defaults.emptyString
+        text.substring(0, 6) !== '[root]' ? '[root]' : ''
     }${text}${
-        text.substring(text.length - 7) !== '[/root]' ?
-            '[/root]' :
-            defaults.emptyString
+        text.substring(text.length - 7) !== '[/root]' ? '[/root]' : ''
     }`;
 
-const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIndex = 0) => {
+const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
     const match = regex.exec(text);
     if (!match) {
         return result;
@@ -49,7 +44,7 @@ const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIn
             }
             return [matchedResult];
         }
-        return defaults.emptyArray;
+        return [];
     };
 
     // if open tag 'code' - codeIndex++
@@ -66,7 +61,7 @@ const getAllTagsRecursively = (text, regex, result = defaults.emptyArray, codeIn
     return getAllTagsRecursively(text, regex, [...result, ...processTextType(codeIndex)], codeIndex);
 };
 
-const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = defaults.emptyObject, parentNode = defaults.emptyObject) => {
+const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNode = {}) => {
     const currentTag = tagsArray[tagIndex];
     if (currentTag) {
         const node = {
@@ -78,7 +73,7 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = defaults.emp
         };
         if (currentTag.type === OPEN_TAG) {
             const nextTagIndex = tagIndex + 1;
-            if (parentNode !== defaults.emptyObject) {
+            if (Object.keys(parentNode).length !== 0) {
                 parentNode.children.push(node); // eslint-disable-line fp/no-mutating-methods, fp/no-unused-expression
                 return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, node);
             }

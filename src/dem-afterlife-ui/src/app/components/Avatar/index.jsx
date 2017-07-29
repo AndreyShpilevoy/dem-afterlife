@@ -2,7 +2,6 @@ import React from 'react';
 import {string, number, shape} from 'prop-types';
 import Link from 'components/Link';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 
@@ -30,8 +29,8 @@ AvatarPure.propTypes = {
 };
 
 AvatarPure.defaultProps = {
-    className: defaults.emptyString,
-    avatarUrl: defaults.emptyString,
+    className: '',
+    avatarUrl: '',
     size: 2.5
 };
 

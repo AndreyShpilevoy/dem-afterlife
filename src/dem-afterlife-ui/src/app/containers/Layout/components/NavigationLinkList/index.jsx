@@ -1,11 +1,11 @@
 import React from 'react';
 import {string, shape} from 'prop-types';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import NavigationLinkListItem from '../NavigationLinkListItem';
 import calculateStyles from './calculateStyles';
 
-const mapNavigationLinks = (navigationLinkArray, separatorClassName) =>
+const mapNavigationLinks = (navigationLinkArray = [], separatorClassName) =>
     navigationLinkArray.map(item =>
         (<div key={item.id}>
             <NavigationLinkListItem navigationLinkItem={item} />
@@ -14,10 +14,10 @@ const mapNavigationLinks = (navigationLinkArray, separatorClassName) =>
 
 export const NavigationLinkListPure = ({styles, className, navigationLinkArray}) => {
     const {list, separator} = styles;
-    const localClassName = `${list} ${className || defaults.emptyString}`;
+    const localClassName = `${list} ${className || ''}`;
     return (
         <ul className={localClassName}>
-            {mapNavigationLinks(navigationLinkArray || defaults.emptyArray, separator)}
+            {mapNavigationLinks(navigationLinkArray, separator)}
         </ul>
     );
 };
@@ -29,7 +29,7 @@ NavigationLinkListPure.propTypes = {
 };
 
 NavigationLinkListPure.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(NavigationLinkListPure);

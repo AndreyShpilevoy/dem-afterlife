@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {string, shape} from 'prop-types';
-import {stringIsEmail, stringIsLink, defaults} from 'utils';
+import {stringIsEmail, stringIsLink} from 'utils';
 import {css, withStyles} from 'styles';
 import parseTextToNodeTree from './parser';
 import calculateStyles from './calculateStyles';
@@ -133,7 +133,7 @@ const mapNodeToComponent = (node, styles) => {
         }
         return Component(content, options);
     }
-    return defaults.emptyString;
+    return '';
 };
 
 const mapTextToComponentsTree = (text, styles) => {
@@ -141,7 +141,7 @@ const mapTextToComponentsTree = (text, styles) => {
     if (parsedTree.type === 'root' && parsedTree.children.length > 0) {
         return mapNodeToComponent(parsedTree, styles);
     }
-    return defaults.emptyString;
+    return '';
 };
 
 const BbCodePresenter = ({text, styles}) => mapTextToComponentsTree(text, styles);

@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import {defaults} from 'utils';
 import vk from 'images/svg/vk.svg';
 
 
@@ -15,7 +14,7 @@ IconVk.propTypes = {
 };
 
 IconVk.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default IconVk;

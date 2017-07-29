@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import {defaults} from 'utils';
 import iconSubForum from 'images/svg/sub-forum.svg';
 
 
@@ -15,7 +14,7 @@ IconSubForum.propTypes = {
 };
 
 IconSubForum.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default IconSubForum;

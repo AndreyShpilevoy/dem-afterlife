@@ -1,6 +1,5 @@
 import React from 'react';
 import {string, number} from 'prop-types';
-import {defaults} from 'utils';
 import Link from 'components/Link';
 
 const getStyles = color => ({
@@ -22,8 +21,8 @@ UserName.propTypes = {
 };
 
 UserName.defaultProps = {
-    className: defaults.emptyString,
-    color: defaults.emptyString
+    className: '',
+    color: ''
 };
 
 export default UserName;

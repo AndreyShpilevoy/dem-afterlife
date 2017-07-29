@@ -1,6 +1,5 @@
 import React from 'react';
 import {string, shape, number} from 'prop-types';
-import {defaults} from 'utils';
 import SvgIconsMapper from 'components/SvgIconsMapper';
 
 
@@ -21,7 +20,7 @@ SocialMediaLink.propTypes = {
 };
 
 SocialMediaLink.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default SocialMediaLink;

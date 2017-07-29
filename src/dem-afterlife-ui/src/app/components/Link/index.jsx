@@ -3,7 +3,6 @@ import React from 'react';
 import {shape, string} from 'prop-types';
 import {Link as NativeLink} from 'react-router-dom';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((previous, current) =>
@@ -11,13 +10,13 @@ const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((p
         {...{[current]: props[current]}, ...previous} :
         previous,
 {
-    children: props.children || defaults.emptyString,
-    style: props.style || defaults.emptyObject
+    children: props.children || '',
+    style: props.style || {}
 }
 );
 
 export const LinkPure = props => {
-    const localClassName = `${props.styles.link} ${props.className || defaults.emptyString}`;
+    const localClassName = `${props.styles.link} ${props.className || ''}`;
     return <NativeLink className={localClassName} {...mapPropsNativeProps(props)} />;
 };
 
@@ -28,7 +27,7 @@ LinkPure.propTypes = {
 };
 
 LinkPure.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(LinkPure);

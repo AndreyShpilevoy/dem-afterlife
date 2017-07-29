@@ -1,7 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import {defaults} from 'utils';
 import link from 'images/svg/link.svg';
 
 
@@ -15,7 +14,7 @@ IconLink.propTypes = {
 };
 
 IconLink.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default IconLink;
