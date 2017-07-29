@@ -16,6 +16,10 @@ class Spoiler extends PureComponent {
         options: string
     };
 
+    static defaultProps = {
+        options: ''
+    }
+
     constructor(props) {
         super(props);
         this.state = {isOpen: false};
@@ -30,7 +34,7 @@ class Spoiler extends PureComponent {
         const {isOpen} = this.state;
         return (
             <div className={styles.spoiler}>
-                <div onClick={this.toggle}>
+                <div onClick={this.toggle} role={'button'} tabIndex={0}>
                     {options ?
                         <span className={styles.spoilerAuthor}>
                             {options}

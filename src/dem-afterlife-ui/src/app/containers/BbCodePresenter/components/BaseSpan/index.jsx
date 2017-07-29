@@ -13,4 +13,9 @@ BaseSpan.propTypes = {
     styleObject: shape()
 };
 
+BaseSpan.defaultProps = {
+    className: '',
+    styleObject: {}
+};
+
 export default BaseSpan;

@@ -1,8 +1,6 @@
-/* eslint react/display-name: 0, fp/no-class: 0, no-unused-vars: 1, max-statements: 1, fp/no-nil: 1,
-fp/no-unused-expression: 1, fp/no-mutation: 1, fp/no-this: 1, fp/no-let: 1, no-restricted-syntax: 1,
-fp/no-loops: 1, fp/no-mutating-methods: 1, no-param-reassign:1 */
+/* eslint react/display-name: 0 */
 
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {string, shape} from 'prop-types';
 import {stringIsEmail, stringIsLink, defaults} from 'utils';
 import {css, withStyles} from 'styles';
@@ -66,49 +64,42 @@ const bbCodesMap = {
     quote: (children, options) =>
         <Quote key={Math.random()} options={options.value}>{children}</Quote>,
     email: children => {
-        const result = [];
         const addBreak = children.length > 1;
-        for (const child of children) {
-            if (typeof child.props.children === 'string' && stringIsEmail(child.props.children)) {
-                const email = child.props.children;
-                result.push(<Email key={Math.random()} email={email} addBreak={addBreak}>{email}</Email>);
+        return children.reduce((previous, current) => {
+            if (typeof current.props.children === 'string' && stringIsEmail(current.props.children)) {
+                const email = current.props.children;
+                return [...previous, <Email key={Math.random()} email={email} addBreak={addBreak}>{email}</Email>];
             }
-        }
-        return result;
+            return previous;
+        }, []);
     },
     url: (children, options) => {
-        const result = [];
-        const mapChildToUrl = url => <Url key={Math.random()} url={url}>{url}</Url>;
+        const mapChildToUrl = (url, addBreak = false) => <Url key={Math.random()} url={url} addBreak={addBreak}>{url}</Url>;
 
         if (typeof options.value === 'string' && stringIsLink(options.value)) {
             const url = options.value;
-            result.push(<Url key={Math.random()} url={url}>{children}</Url>);
+            return <Url key={Math.random()} url={url}>{children}</Url>;
         } else if (Array.isArray(children) && children.length === 1 && children[0].props && typeof children[0].props.children === 'string' && stringIsLink(children[0].props.children)) {
-            result.push(mapChildToUrl(children[0].props.children));
+            return mapChildToUrl(children[0].props.children);
         } else if (Array.isArray(children) && children.length > 1) {
-            children.forEach(item => {
-                const {props} = item;
-                if (props && typeof props.children === 'string' && stringIsLink(props.children)) {
-                    result.push(mapChildToUrl(item.props.children));
-                } else {
-                    result.push(item);
+            return children.reduce((previous, current) => {
+                if (current.props && typeof current.props.children === 'string' && stringIsLink(current.props.children)) {
+                    return [...previous, mapChildToUrl(current.props.children, true)];
                 }
-            });
-        } else {
-            result.push(children);
+                return previous;
+            }, []);
         }
-        return result;
+        return children;
     },
     img: children => {
-        const result = [];
         const addBreak = children.length > 1;
-        for (const child of children) {
-            if (typeof child.props.children === 'string' && stringIsLink(child.props.children)) {
-                const url = child.props.children;
-                result.push(<Image key={Math.random()} url={url} addBreak={addBreak} />);
+        return children.reduce((previous, current) => {
+            if (typeof current.props.children === 'string' && stringIsLink(current.props.children)) {
+                const url = current.props.children;
+                return [...previous, <Image key={Math.random()} url={url} addBreak={addBreak} />];
             }
-        }
-        return result;
+            return previous;
+        }, []);
     },
     ol: children =>
         <OrderedList key={Math.random()}>{children}</OrderedList>,
@@ -131,7 +122,6 @@ const bbCodesMap = {
 const bbCodesMapNames = Object.getOwnPropertyNames(bbCodesMap);
 const getComponentByTagName = tagName => bbCodesMap[tagName.toLowerCase()];
 
-// todo: think about tail recursion
 const mapNodeToComponent = (node, styles) => {
     const {content, type, options, children} = {...node, options: {value: node.options, styles} };
     const Component = getComponentByTagName(type);

@@ -2,7 +2,6 @@ import React from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const codeTerm = {id: 34, value: 'Code'};
@@ -16,7 +15,7 @@ const Code = ({children, options, styles}) => {
                     <Term spaceAfter term={codeTerm} untermedPostfix={':'} />
                 </div>
                 <div className={codeHeaderRight}>
-                    {options || defaults.emptyString}
+                    {options}
                 </div>
             </div>
             <span className={codeContent}>
@@ -30,6 +29,10 @@ Code.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
     options: string
+};
+
+Code.defaultProps = {
+    options: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(Code);

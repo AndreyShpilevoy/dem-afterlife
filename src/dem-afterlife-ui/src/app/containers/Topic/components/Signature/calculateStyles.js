@@ -1,4 +1,5 @@
 const calculateStyles = ({themeName}) => ({
+    a: {},
     options: {meta: 'Signature', themeName}
 });
 
