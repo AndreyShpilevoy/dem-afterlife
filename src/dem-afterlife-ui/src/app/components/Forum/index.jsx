@@ -8,7 +8,7 @@ import UserName from 'components/UserName';
 import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import SubForum from 'components/SubForum';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -46,7 +46,7 @@ export const ForumPure = ({forum, styles}) => {
                                         <div className={subForumContainer}>
                                             {mapSubForumArray(subForumArray)}
                                         </div> :
-                                        defaults.emptyString
+                                        ''
                                 }
                             </Hidden>
                         </Column>

@@ -1,7 +1,6 @@
 /* eslint global-require:0 */
 import React from 'react';
 import {string} from 'prop-types';
-import {defaults} from 'utils';
 import IconLink from 'components/IconLink';
 
 const SvgIconsMapper = ({className, iconName}) => {
@@ -21,7 +20,7 @@ SvgIconsMapper.propTypes = {
 };
 
 SvgIconsMapper.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default SvgIconsMapper;
