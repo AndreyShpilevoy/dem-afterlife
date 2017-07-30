@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {shape, number, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
-import {localization, defaults} from 'utils';
+import {localization} from 'utils';
 
 class Term extends PureComponent {
     static propTypes = {
@@ -23,9 +23,9 @@ class Term extends PureComponent {
 
     static defaultProps = {
         term: null,
-        untermedPostfix: defaults.emptyString,
+        untermedPostfix: '',
         doNotTerm: false,
-        className: defaults.emptyString,
+        className: '',
         spaceBefore: false,
         spaceAfter: false,
         indentBefore: false,
@@ -34,13 +34,13 @@ class Term extends PureComponent {
 
     render() {
         const {term, locale, className, spaceBefore, spaceAfter, indentBefore, indentAfter, untermedPostfix, doNotTerm} = this.props;
-        const spaceBeforeString = spaceBefore ? defaults.spaceString : defaults.emptyString;
-        const spaceAfterString = spaceAfter ? defaults.spaceString : defaults.emptyString;
-        const termedString = doNotTerm ? defaults.emptyString : localization.getTermTranslation(term, locale);
+        const spaceBeforeString = spaceBefore ? ' ' : '';
+        const spaceAfterString = spaceAfter ? ' ' : '';
+        const termedString = doNotTerm ? '' : localization.getTermTranslation(term, locale);
         const content = `${spaceBeforeString}${termedString}${untermedPostfix}${spaceAfterString}`;
         const style = {
-            paddingLeft: indentBefore ? defaults.spaceWidth : defaults.emptyString,
-            paddingRight: indentAfter ? defaults.spaceWidth : defaults.emptyString
+            paddingLeft: indentBefore ? '0.25rem' : '',
+            paddingRight: indentAfter ? '0.25rem' : ''
         };
         return (
             <span className={className} style={style}>

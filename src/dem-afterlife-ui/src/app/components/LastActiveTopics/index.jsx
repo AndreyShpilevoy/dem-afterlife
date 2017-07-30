@@ -1,5 +1,5 @@
 import React from 'react';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
 import Term from 'containers/Term';
@@ -25,7 +25,7 @@ const mapTopics = lastActiveTopicArray => lastActiveTopicArray.map(x => <Topic k
 
 const LastActiveTopics = ({lastActiveTopicArray}) =>
     (<CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-        {lastActiveTopicArray ? mapTopics(lastActiveTopicArray) : defaults.emptyString}
+        {lastActiveTopicArray ? mapTopics(lastActiveTopicArray) : ''}
     </CollapsibleSection>);
 
 

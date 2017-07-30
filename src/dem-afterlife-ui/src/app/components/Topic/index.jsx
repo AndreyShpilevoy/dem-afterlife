@@ -8,7 +8,7 @@ import UserName from 'components/UserName';
 import Avatar from 'components/Avatar';
 import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -44,7 +44,7 @@ export const TopicPure = ({topic, styles}) => {
                                                         </Link>
                                                     </span>
                                                 </Column> :
-                                                defaults.emptyString
+                                                ''
                                         }
                                         <Column md={5}>
                                             <Hidden lg={'up'} sm={'down'} className={noWrap}>

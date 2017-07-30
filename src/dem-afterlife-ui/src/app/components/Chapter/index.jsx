@@ -1,5 +1,5 @@
 import React from 'react';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Forum from 'components/Forum';
 import Term from 'containers/Term';
@@ -24,7 +24,7 @@ const mapForums = forumArray => forumArray.map(x => <Forum key={x.id} forum={x} 
 
 const Chapter = ({chapter}) =>
     (<CollapsibleSection headerSettings={headerSettings(chapter.title)} collapseSettings={collapseSettings}>
-        {chapter.forumArray ? mapForums(chapter.forumArray) : defaults.emptyString}
+        {chapter.forumArray ? mapForums(chapter.forumArray) : ''}
     </CollapsibleSection>);
 
 

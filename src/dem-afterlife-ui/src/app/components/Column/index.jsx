@@ -1,14 +1,13 @@
 import React from 'react';
 import {func, node, number, string, oneOfType, shape} from 'prop-types';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, styles) =>
     sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previous, current) =>
-            styles[current] ? `${previous} ${styles[current]}` : defaults.emptyString, defaults.emptyString);
+            styles[current] ? `${previous} ${styles[current]}` : '', '');
 
 export const ColumnPure = (
     {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
@@ -26,7 +25,7 @@ export const ColumnPure = (
         {name: 'xlOffset', count: xlOffset}],
     styles);
 
-    const localClassName = `${classes} ${className || defaults.emptyString}`;
+    const localClassName = `${classes} ${className || ''}`;
     return onClick ?
         (
             <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -57,18 +56,18 @@ ColumnPure.propTypes = {
 };
 
 ColumnPure.defaultProps = {
-    className: defaults.emptyString,
-    xs: defaults.emptyString,
-    sm: defaults.emptyString,
-    md: defaults.emptyString,
-    lg: defaults.emptyString,
-    xl: defaults.emptyString,
-    xsOffset: defaults.emptyString,
-    smOffset: defaults.emptyString,
-    mdOffset: defaults.emptyString,
-    lgOffset: defaults.emptyString,
-    xlOffset: defaults.emptyString,
-    children: defaults.emptyString
+    className: '',
+    xs: '',
+    sm: '',
+    md: '',
+    lg: '',
+    xl: '',
+    xsOffset: '',
+    smOffset: '',
+    mdOffset: '',
+    lgOffset: '',
+    xlOffset: '',
+    children: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(ColumnPure);

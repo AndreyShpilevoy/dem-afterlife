@@ -7,7 +7,6 @@ import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import SvgIconsMapper from 'components/SvgIconsMapper';
 import {css, withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 export class CollapsibleSectionPure extends PureComponent {
@@ -60,8 +59,8 @@ export class CollapsibleSectionPure extends PureComponent {
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
         const {bodyHolder, headerCursor, headerArrow, headerText, headerHolder, general, header, titleClass,
             termedSection, headerColumn, headerArrowHolder, body} = styles;
-        const classNameForClosedClass = collapsedState ? 'closed' : defaults.emptyString;
-        const bodyHolderClass = css([bodyHolder, ...isCollapsible ? headerCursor : defaults.emptyString, classNameForClosedClass]);
+        const classNameForClosedClass = collapsedState ? 'closed' : '';
+        const bodyHolderClass = css([bodyHolder, ...isCollapsible ? headerCursor : '', classNameForClosedClass]);
         const headerArrowClass = css([headerArrow, classNameForClosedClass]);
         const headerTextHolder = css([headerText, headerHolder]);
         const rowOnClick = () => this.handleTitleClick(!collapsedState);
@@ -99,7 +98,7 @@ export class CollapsibleSectionPure extends PureComponent {
                                 <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
                                     <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'} />
                                 </Hidden> :
-                                defaults.emptyString
+                                ''
                         }
                     </Column>
                 </Row>

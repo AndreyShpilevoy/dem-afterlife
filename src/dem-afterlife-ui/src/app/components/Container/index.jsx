@@ -1,11 +1,10 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
 import {withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 export const ContainerPure = ({children, styles, className, onClick}) => {
-    const localClassName = `${styles.container} ${className || defaults.emptyString}`;
+    const localClassName = `${styles.container} ${className}`;
     return onClick ?
         (
             <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -26,7 +25,7 @@ ContainerPure.propTypes = {
 };
 
 ContainerPure.defaultProps = {
-    className: defaults.emptyString
+    className: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(ContainerPure);

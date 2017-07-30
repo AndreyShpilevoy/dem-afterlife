@@ -2,7 +2,7 @@ import React from 'react';
 import {shape} from 'prop-types';
 import BbCodePresenter from 'containers/BbCodePresenter';
 import LocaleDateTime from 'containers/LocaleDateTime';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import User from '../User';
 import Signature from '../Signature';
@@ -17,12 +17,12 @@ const Post = ({post, styles}) => {
     return (
         <div>
             <div className={inLine}>
-                {user ? <User user={user} /> : defaults.emptyString}
+                {user ? <User user={user} /> : ''}
                 <LocaleDateTime localeDateTime={postTime} spaceBefore indentBefore spaceAfter indentAfter />
                 <div className={textEllipsis}>{subject}</div>
             </div>
             <BbCodePresenter text={message} />
-            {user && user.signature ? <Signature signature={user.signature} /> : defaults.emptyString}
+            {user && user.signature ? <Signature signature={user.signature} /> : ''}
             <div className={styles.separator} />
         </div>
     );

@@ -1,14 +1,13 @@
 import React from 'react';
 import {bool, node, string, func, shape} from 'prop-types';
 import {css, withStyles} from 'styles';
-import {defaults} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, styles) =>
-    css([styles.row, reverse ? 'reverse' : defaults.emptyString]);
+    css([styles.row, reverse ? 'reverse' : '']);
 
 export const RowPure = ({reverse, children, styles, className, onClick}) => {
-    const localClassName = `${constructClassNameString(reverse, styles)} ${className || defaults.emptyString}`;
+    const localClassName = `${constructClassNameString(reverse, styles)} ${className}`;
     return onClick ?
         (
             <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -30,7 +29,7 @@ RowPure.propTypes = {
 };
 
 RowPure.defaultProps = {
-    className: defaults.emptyString,
+    className: '',
     reverse: false
 };
 

@@ -51,13 +51,3 @@ export {margeHelper};
 export {sortObjectArrayByOrderProperty};
 export {stringIsLink};
 export {stringIsEmail};
-
-
-const defaults = {
-    emptyObject: {},
-    emptyArray: [],
-    emptyString: '',
-    spaceWidth: '0.25rem',
-    spaceString: ' '
-};
-export {defaults};

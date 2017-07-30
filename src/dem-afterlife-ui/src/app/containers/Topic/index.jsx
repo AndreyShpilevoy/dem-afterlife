@@ -1,7 +1,7 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 import React, {PureComponent} from 'react';
 import {func, shape, string} from 'prop-types';
-import {sharedPropTypes, defaults} from 'utils';
+import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CollapsibleSection from 'components/CollapsibleSection';
@@ -47,7 +47,7 @@ class Topic extends PureComponent {
         };
         return (
             <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-                {postArray ? this.mapPostsToComponent(postArray) : defaults.emptyString}
+                {postArray ? this.mapPostsToComponent(postArray) : ''}
             </CollapsibleSection>
         );
     }
