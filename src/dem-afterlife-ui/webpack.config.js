@@ -38,8 +38,7 @@ const entryPoints = {
         'react-with-styles',
         'redux',
         'redux-saga',
-        'react-svg-inline',
-        'scrolling-element'
+        'react-svg-inline'
     ],
     app: ['./src/app/index.jsx']
 };
