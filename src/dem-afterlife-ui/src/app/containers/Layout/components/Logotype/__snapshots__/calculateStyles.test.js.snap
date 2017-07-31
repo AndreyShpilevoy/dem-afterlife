@@ -9,6 +9,9 @@ Object {
     "height": "100%",
   },
   "logotypeContainer": Object {
+    "&:focus": Object {
+      "outlineColor": "#ffffff",
+    },
     "height": "81.5%",
   },
   "options": Object {

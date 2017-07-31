@@ -4,6 +4,10 @@ import calculateStyles from './calculateStyles';
 describe('Logotype calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
+        focus: {
+            colorLight: '#ffffff',
+            colorDark: '#000000'
+        },
         logotype: {
             backgroundImage: 'logotype.png',
             backgroundSize: 'contain',

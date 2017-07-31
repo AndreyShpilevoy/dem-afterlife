@@ -5,6 +5,10 @@ import calculateStyles from './calculateStyles';
 describe('Column calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
+        focus: {
+            colorLight: '#ffffff',
+            colorDark: '#000000'
+        },
         link: {
             color: 'red',
             textDecoration: 'none',

@@ -224,6 +224,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="default-Header-headerLogoContainer"
                             styles={
                               Object {
+                                ".default-Logotype-logotypeContainer:focus": "default-Logotype-logotypeContainer:focus",
                                 "logotype": "default-Logotype-logotype",
                                 "logotypeContainer": "default-Logotype-logotypeContainer",
                               }
@@ -237,6 +238,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                 className="default-Logotype-logotypeContainer default-Header-headerLogoContainer"
                                 styles={
                                   Object {
+                                    ".default-Link-link:focus": "default-Link-link:focus",
                                     ".default-Link-link:hover": "default-Link-link:hover",
                                     ".default-Link-link:visited": "default-Link-link:visited",
                                     ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -466,6 +468,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   onClick={[Function]}
                                   styles={
                                     Object {
+                                      ".default-MenuButton-container:focus": "default-MenuButton-container:focus",
                                       ".default-MenuButton-firstLine.open": "default-MenuButton-firstLine.open",
                                       ".default-MenuButton-fourthLine.open": "default-MenuButton-fourthLine.open",
                                       ".default-MenuButton-secondLine.open": "default-MenuButton-secondLine.open",
@@ -929,6 +932,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                             className="default-Header-headerLogoContainer shrinkedHeader"
                             styles={
                               Object {
+                                ".default-Logotype-logotypeContainer:focus": "default-Logotype-logotypeContainer:focus",
                                 "logotype": "default-Logotype-logotype",
                                 "logotypeContainer": "default-Logotype-logotypeContainer",
                               }
@@ -942,6 +946,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                 className="default-Logotype-logotypeContainer default-Header-headerLogoContainer shrinkedHeader"
                                 styles={
                                   Object {
+                                    ".default-Link-link:focus": "default-Link-link:focus",
                                     ".default-Link-link:hover": "default-Link-link:hover",
                                     ".default-Link-link:visited": "default-Link-link:visited",
                                     ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -1171,6 +1176,7 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                                   onClick={[Function]}
                                   styles={
                                     Object {
+                                      ".default-MenuButton-container:focus": "default-MenuButton-container:focus",
                                       ".default-MenuButton-firstLine.open": "default-MenuButton-firstLine.open",
                                       ".default-MenuButton-fourthLine.open": "default-MenuButton-fourthLine.open",
                                       ".default-MenuButton-secondLine.open": "default-MenuButton-secondLine.open",

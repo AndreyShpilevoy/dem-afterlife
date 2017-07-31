@@ -4,6 +4,10 @@ import calculateStyles from './calculateStyles';
 describe('MenuButton calculateStyles', () => {
     const defaultThemeObject = {
         themeName: 'default',
+        focus: {
+            colorLight: '#ffffff',
+            colorDark: '#000000'
+        },
         menuButton: {
             line: {
                 color: '#AC6B37',

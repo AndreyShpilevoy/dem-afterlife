@@ -5,6 +5,7 @@ exports[`MenuButton HOC match expected snapshot 1`] = `
   onClick={[Function]}
   styles={
     Object {
+      ".default-MenuButton-container:focus": "default-MenuButton-container:focus",
       ".default-MenuButton-firstLine.open": "default-MenuButton-firstLine.open",
       ".default-MenuButton-fourthLine.open": "default-MenuButton-fourthLine.open",
       ".default-MenuButton-secondLine.open": "default-MenuButton-secondLine.open",

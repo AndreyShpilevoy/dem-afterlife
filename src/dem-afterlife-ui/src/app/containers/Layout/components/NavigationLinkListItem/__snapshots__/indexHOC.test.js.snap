@@ -12,6 +12,7 @@ exports[`NavigationLinkListItem HOC match expected snapshot 1`] = `
   }
   styles={
     Object {
+      ".default-NavigationLinkListItem-link:focus": "default-NavigationLinkListItem-link:focus",
       ".default-NavigationLinkListItem-link:hover": "default-NavigationLinkListItem-link:hover",
       "link": "default-NavigationLinkListItem-link",
     }

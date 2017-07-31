@@ -3,6 +3,9 @@
 exports[`Column calculateStyles should create expected object 1`] = `
 Object {
   "link": Object {
+    "&:focus": Object {
+      "outlineColor": "#000000",
+    },
     "&:hover": Object {
       "color": "green",
       "textDecoration": "underline",

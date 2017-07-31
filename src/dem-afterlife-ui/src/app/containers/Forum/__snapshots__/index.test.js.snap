@@ -1139,6 +1139,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                     className="default-Topic-titleStyle"
                                                                     styles={
                                                                       Object {
+                                                                        ".default-Link-link:focus": "default-Link-link:focus",
                                                                         ".default-Link-link:hover": "default-Link-link:hover",
                                                                         ".default-Link-link:visited": "default-Link-link:visited",
                                                                         ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -1362,6 +1363,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                       className="default-Topic-parentForumTitleStyle"
                                                                       styles={
                                                                         Object {
+                                                                          ".default-Link-link:focus": "default-Link-link:focus",
                                                                           ".default-Link-link:hover": "default-Link-link:hover",
                                                                           ".default-Link-link:visited": "default-Link-link:visited",
                                                                           ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -2395,6 +2397,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                           }
                                                           styles={
                                                             Object {
+                                                              ".default-Link-link:focus": "default-Link-link:focus",
                                                               ".default-Link-link:hover": "default-Link-link:hover",
                                                               ".default-Link-link:visited": "default-Link-link:visited",
                                                               ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -2719,6 +2722,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                     }
                                                                     styles={
                                                                       Object {
+                                                                        ".default-Link-link:focus": "default-Link-link:focus",
                                                                         ".default-Link-link:hover": "default-Link-link:hover",
                                                                         ".default-Link-link:visited": "default-Link-link:visited",
                                                                         ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -3558,6 +3562,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                     className="default-Topic-titleStyle"
                                                                     styles={
                                                                       Object {
+                                                                        ".default-Link-link:focus": "default-Link-link:focus",
                                                                         ".default-Link-link:hover": "default-Link-link:hover",
                                                                         ".default-Link-link:visited": "default-Link-link:visited",
                                                                         ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -3781,6 +3786,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                       className="default-Topic-parentForumTitleStyle"
                                                                       styles={
                                                                         Object {
+                                                                          ".default-Link-link:focus": "default-Link-link:focus",
                                                                           ".default-Link-link:hover": "default-Link-link:hover",
                                                                           ".default-Link-link:visited": "default-Link-link:visited",
                                                                           ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -4814,6 +4820,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                           }
                                                           styles={
                                                             Object {
+                                                              ".default-Link-link:focus": "default-Link-link:focus",
                                                               ".default-Link-link:hover": "default-Link-link:hover",
                                                               ".default-Link-link:visited": "default-Link-link:visited",
                                                               ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
@@ -5138,6 +5145,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                     }
                                                                     styles={
                                                                       Object {
+                                                                        ".default-Link-link:focus": "default-Link-link:focus",
                                                                         ".default-Link-link:hover": "default-Link-link:hover",
                                                                         ".default-Link-link:visited": "default-Link-link:visited",
                                                                         ".default-Link-link:visited:hover": "default-Link-link:visited:hover",

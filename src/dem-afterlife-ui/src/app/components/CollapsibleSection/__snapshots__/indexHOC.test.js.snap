@@ -19,6 +19,7 @@ exports[`CollapsibleSection HOC component match expected snapshot 1`] = `
   styles={
     Object {
       ".default-CollapsibleSection-bodyHolder.closed": "default-CollapsibleSection-bodyHolder.closed",
+      ".default-CollapsibleSection-header:focus": "default-CollapsibleSection-header:focus",
       ".default-CollapsibleSection-headerArrow > .SVGInline-svg": "default-CollapsibleSection-headerArrow > .SVGInline-svg",
       ".default-CollapsibleSection-headerArrow.closed": "default-CollapsibleSection-headerArrow.closed",
       "body": "default-CollapsibleSection-body",

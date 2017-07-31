@@ -5,6 +5,7 @@ exports[`Logotype HOC component match expected snapshot 1`] = `
   className=""
   styles={
     Object {
+      ".default-Logotype-logotypeContainer:focus": "default-Logotype-logotypeContainer:focus",
       "logotype": "default-Logotype-logotype",
       "logotypeContainer": "default-Logotype-logotypeContainer",
     }

@@ -67,6 +67,9 @@ Object {
     "marginTop": "sizes.marginBetweenBlocks",
   },
   "header": Object {
+    "&:focus": Object {
+      "outlineColor": "#ffffff",
+    },
     "backgroundColor": "colors.collapsibleSectionHeaderBackgroundColor",
     "color": "colors.orangeColor",
     "height": 2.5,
