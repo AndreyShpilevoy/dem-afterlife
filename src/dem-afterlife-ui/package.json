@@ -108,6 +108,7 @@
         "react-with-styles": "1.4.0",
         "redux": "3.7.2",
         "redux-saga": "0.15.6",
-        "reselect": "3.0.1"
+        "reselect": "3.0.1",
+        "scrolling-element": "1.0.2"
     }
 }

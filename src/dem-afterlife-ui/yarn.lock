@@ -5112,6 +5112,10 @@ sax@^1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
+scrolling-element@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/scrolling-element/-/scrolling-element-1.0.2.tgz#1d958d591eb89ea8c09413d9acac21f50f349003"
+
 "semver@2 || 3 || 4 || 5", semver@^5.3.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
