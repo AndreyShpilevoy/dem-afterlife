@@ -1,6 +1,6 @@
 import {createMediaQueryMinMax} from 'utils';
 
-const getCommonPart = ({general, header, body}) => ({
+const getCommonPart = ({general, header, body}, focus) => ({
     '@global': {
         '@keyframes collapsibleSection-SlideDown': {
             from: {
@@ -25,7 +25,10 @@ const getCommonPart = ({general, header, body}) => ({
     header: {
         backgroundColor: header.backgroundColor,
         color: header.color,
-        height: header.height
+        height: header.height,
+        '&:focus': {
+            outlineColor: focus.colorLight
+        }
     },
     titleClass: {
         paddingLeft: general.padding,
@@ -110,8 +113,8 @@ const getSizeSpecific = (grid, collapsibleSection) =>
         previous,
     {});
 
-const calculateStyles = ({themeName, grid, collapsibleSection}) => ({
-    ...getCommonPart(collapsibleSection),
+const calculateStyles = ({themeName, grid, collapsibleSection, focus}) => ({
+    ...getCommonPart(collapsibleSection, focus),
     ...getSizeSpecific(grid, collapsibleSection),
     ...{options: {meta: 'CollapsibleSection', themeName} }
 });

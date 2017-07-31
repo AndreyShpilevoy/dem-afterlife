@@ -5,10 +5,10 @@ import calculateStyles from './calculateStyles';
 
 const Think = ({children, styles}) => (
     <div className={styles.think}>
-        <span className={styles.thinkContent}>
+        <span className={styles.content}>
             {children}
         </span>
-        <div className={styles.thinkImage} />
+        <div className={styles.image} />
     </div>
 );
 

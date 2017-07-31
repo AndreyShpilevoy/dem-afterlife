@@ -8,10 +8,10 @@ const offTopicTerm = {id: 31, value: 'Offtopic:'};
 
 const OffTopic = ({children, styles}) => (
     <div>
-        <div className={styles.offtopicHeader}>
+        <div className={styles.header}>
             <Term term={offTopicTerm} />
         </div>
-        <div className={styles.offtopicContent}>
+        <div className={styles.content}>
             {children}
         </div>
     </div>

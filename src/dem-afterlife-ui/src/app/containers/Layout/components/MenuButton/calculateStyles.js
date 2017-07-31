@@ -1,9 +1,12 @@
-const calculateStyles = ({themeName, menuButton}) => ({
+const calculateStyles = ({themeName, menuButton, focus}) => ({
     container: {
         cursor: menuButton.cursor,
         height: menuButton.widthAndHeight,
         transform: 'rotate(0deg)',
-        width: menuButton.widthAndHeight
+        width: menuButton.widthAndHeight,
+        '&:focus': {
+            outlineColor: focus.colorLight
+        }
     },
     allLines: {
         borderRadius: '3.333%',

@@ -1,21 +1,31 @@
-const calculateStyles = ({themeName}) => ({
-    spoilerAuthor: {
-        fontWeight: 'bold'
-    },
-    spoiler: {
-        color: '#D4D4D4',
-        backgroundColor: '#67605a',
-        border: '0.0625rem solid #44423f',
-        marginLeft: 1.25,
-        marginRight: 1.25,
-        marginTop: 0.3125,
-        marginBottom: 0.3125,
-        padding: 0.4
-    },
-    spoilerContent: {
-        marginTop: 0.3125
-    },
-    options: {meta: 'Spoiler', themeName}
-});
+const calculateStyles = ({bbCodes, focus, themeName}) => {
+    const {common, spoiler} = bbCodes;
+    return {
+        title: {
+            fontWeight: 'bold'
+        },
+        spoiler: {
+            color: spoiler.color,
+            backgroundColor: spoiler.backgroundColor,
+            borderColor: spoiler.borderColor,
+            borderStyle: 'solid',
+            borderWidth: common.borderWidth,
+            padding: common.padding,
+            marginLeft: common.marginHorizontal,
+            marginRight: common.marginHorizontal,
+            marginTop: common.marginVertical,
+            marginBottom: common.marginVertical
+        },
+        content: {
+            marginTop: spoiler.contentMarginTop
+        },
+        focus: {
+            '&:focus': {
+                outlineColor: focus.colorDark
+            }
+        },
+        options: {meta: 'Spoiler', themeName}
+    };
+};
 
 export default calculateStyles;

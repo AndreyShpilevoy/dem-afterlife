@@ -17,12 +17,17 @@ const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
     ...{paddingLeft: navigationLinks[gridSize].padding}
 });
 
-const calculateStyles = ({themeName, grid, navigationLinks}) =>
+const calculateStyles = ({themeName, grid, navigationLinks, focus}) =>
     grid.containers.reduce(
         (previous, {gridSize, mediaMinString, mediaMaxString}) => ({
             ...previous,
             ...createMediaQueryMinMax(mediaMinString, mediaMaxString, {
-                link: getNavigationLinkStyle(gridSize, navigationLinks)
+                link: {
+                    ...getNavigationLinkStyle(gridSize, navigationLinks),
+                    '&:focus': {
+                        outlineColor: focus.colorLight
+                    }
+                }
             })
         }), {options: {meta: 'NavigationLinkListItem', themeName} });
 

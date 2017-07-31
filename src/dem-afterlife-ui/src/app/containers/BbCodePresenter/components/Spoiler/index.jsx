@@ -33,18 +33,18 @@ class Spoiler extends PureComponent {
         const {isOpen} = this.state;
         return (
             <div className={styles.spoiler}>
-                <div onClick={this.toggle} role={'button'} tabIndex={0}>
+                <div className={styles.focus} onClick={this.toggle} role={'button'} tabIndex={0}>
                     {options ?
-                        <span className={styles.spoilerAuthor}>
+                        <span className={styles.title}>
                             {options}
                         </span> :
-                        <span className={styles.spoilerAuthor}>
+                        <span className={styles.title}>
                             <Term term={spoilerTerm} />
                         </span>}
                 </div>
                 {
                     isOpen ?
-                        <div className={styles.spoilerContent}>
+                        <div className={styles.content}>
                             {children}
                         </div> :
                         ''

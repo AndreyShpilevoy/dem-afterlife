@@ -7,18 +7,18 @@ import calculateStyles from './calculateStyles';
 const codeTerm = {id: 34, value: 'Code'};
 
 const Code = ({children, options, styles}) => {
-    const {code, codeHeader, codeHeaderLeft, codeHeaderRight, codeContent} = styles;
+    const {main, header, headerLeft, headerRight, content} = styles;
     return (
-        <div className={code}>
-            <div className={codeHeader}>
-                <div className={codeHeaderLeft}>
+        <div className={main}>
+            <div className={header}>
+                <div className={headerLeft}>
                     <Term spaceAfter term={codeTerm} untermedPostfix={':'} />
                 </div>
-                <div className={codeHeaderRight}>
+                <div className={headerRight}>
                     {options}
                 </div>
             </div>
-            <span className={codeContent}>
+            <span className={content}>
                 {children}
             </span>
         </div>

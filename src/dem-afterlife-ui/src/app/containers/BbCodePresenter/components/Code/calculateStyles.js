@@ -1,27 +1,34 @@
-const calculateStyles = ({themeName}) => ({
-    code: {
-        backgroundColor: '#59534D',
-        border: '0.0625rem solid #44423f',
-        padding: 0.4,
-        marginLeft: 1.25,
-        marginRight: 1.25
-    },
-    codeHeader: {
-        color: '#D4D4D4',
-        display: 'flex'
-    },
-    codeHeaderLeft: {
-        marginRight: 'auto'
-    },
-    codeHeaderRight: {
-        marginLeft: 'auto'
-    },
-    codeContent: {
-        color: '#FFA100',
-        fontFamily: 'monospace',
-        whiteSpace: 'pre-wrap'
-    },
-    options: {meta: 'Code', themeName}
-});
+const calculateStyles = ({bbCodes, themeName}) => {
+    const {code, common} = bbCodes;
+    return {
+        main: {
+            backgroundColor: code.backgroundColor,
+            borderColor: code.borderColor,
+            borderStyle: 'solid',
+            borderWidth: common.borderWidth,
+            padding: common.padding,
+            marginLeft: common.marginHorizontal,
+            marginRight: common.marginHorizontal,
+            marginTop: common.marginVertical,
+            marginBottom: common.marginVertical
+        },
+        header: {
+            color: code.headerColor,
+            display: 'flex'
+        },
+        headerLeft: {
+            marginRight: 'auto'
+        },
+        headerRight: {
+            marginLeft: 'auto'
+        },
+        content: {
+            color: code.contentColor,
+            fontFamily: 'monospace',
+            whiteSpace: 'pre-wrap'
+        },
+        options: {meta: 'Code', themeName}
+    };
+};
 
 export default calculateStyles;

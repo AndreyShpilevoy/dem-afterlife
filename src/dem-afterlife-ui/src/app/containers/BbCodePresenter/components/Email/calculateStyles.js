@@ -8,12 +8,15 @@ const getEmailLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({themeName, link}) => ({
+const calculateStyles = ({themeName, bbCodes, focus}) => ({
     email: {
-        ...getEmailLinkStyle(link),
-        '&:visited': getEmailLinkStyle(link),
-        '&:hover': getEmailLinkHoverStyle(link),
-        '&:visited:hover': getEmailLinkHoverStyle(link)
+        ...getEmailLinkStyle(bbCodes.email),
+        '&:visited': getEmailLinkStyle(bbCodes.email),
+        '&:hover': getEmailLinkHoverStyle(bbCodes.email),
+        '&:visited:hover': getEmailLinkHoverStyle(bbCodes.email),
+        '&:focus': {
+            outlineColor: focus.colorDark
+        }
     },
     options: {meta: 'Email', themeName}
 });

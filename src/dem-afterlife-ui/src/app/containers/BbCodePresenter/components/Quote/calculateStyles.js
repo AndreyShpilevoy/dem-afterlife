@@ -1,14 +1,22 @@
-const calculateStyles = ({themeName}) => ({
-    quoteAuthor: {
-        fontWeight: 'bold'
-    },
-    quote: {
-        backgroundColor: '#9A8D7F',
-        border: '0.0625rem solid #5f554b',
-        margin: '0.3125rem 1.25rem',
-        padding: 0.4
-    },
-    options: {meta: 'Quote', themeName}
-});
+const calculateStyles = ({bbCodes, themeName}) => {
+    const {common, quote} = bbCodes;
+    return {
+        author: {
+            fontWeight: 'bold'
+        },
+        quote: {
+            backgroundColor: quote.backgroundColor,
+            borderColor: quote.borderColor,
+            borderStyle: 'solid',
+            borderWidth: common.borderWidth,
+            padding: common.padding,
+            marginLeft: common.marginHorizontal,
+            marginRight: common.marginHorizontal,
+            marginTop: common.marginVertical,
+            marginBottom: common.marginVertical
+        },
+        options: {meta: 'Quote', themeName}
+    };
+};
 
 export default calculateStyles;

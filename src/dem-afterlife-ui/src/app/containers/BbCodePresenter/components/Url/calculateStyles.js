@@ -8,13 +8,16 @@ const getUrlLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({themeName, link}) => ({
+const calculateStyles = ({themeName, bbCodes, focus}) => ({
     url: {
         wordBreak: 'break-all',
-        ...getUrlLinkStyle(link),
-        '&:visited': getUrlLinkStyle(link),
-        '&:hover': getUrlLinkHoverStyle(link),
-        '&:visited:hover': getUrlLinkHoverStyle(link)
+        ...getUrlLinkStyle(bbCodes.url),
+        '&:visited': getUrlLinkStyle(bbCodes.url),
+        '&:hover': getUrlLinkHoverStyle(bbCodes.url),
+        '&:visited:hover': getUrlLinkHoverStyle(bbCodes.url),
+        '&:focus': {
+            outlineColor: focus.colorDark
+        }
     },
     options: {meta: 'Url', themeName}
 });

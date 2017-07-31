@@ -5,6 +5,7 @@ import headerLogotypeImage from 'images/DEM/header/Dem_Logo.png';
 import footerBackgroundImageLg from 'images/DEM/footer/Dem_Footer_bg_lg.png';
 import footerBackgroundImageXl from 'images/DEM/footer/Dem_Footer_bg_xl.png';
 import defaultAvatar from 'images/DEM/default_avatar.png';
+import thinkImage from 'images/Smiles/forBbCode/think.gif';
 import grid from './grid';
 
 const colors = {
@@ -21,8 +22,21 @@ const colors = {
     collapsibleSectionHeaderBackgroundColor: '#564B41',
     contentHolderBodyTextColor: '#48423D',
     collapsibleSectionBodyBackgroundColor: '#7B736B',
-    forumSecondaryBackgroundColor: '#9C877C'
-
+    forumSecondaryBackgroundColor: '#9C877C',
+    bbCodeCodeContentColor: '#FFA100',
+    bbCodeCodeHeaderContentColor: '#D4D4D4',
+    bbCodeCodeBackgroundColor: '#59534D',
+    bbCodeCodeBorderColor: '#44423f',
+    bbCodeQuoteBackgroundColor: '#9A8D7F',
+    bbCodeQuoteBorderColor: '#5f554b',
+    bbCodeSpoilerBackgroundColor: '#67605a',
+    bbCodeSpoilerBorderColor: '#44423f',
+    bbCodeSpoilerColor: '#D4D4D4',
+    bbCodeOffTopicColor: '#67605A',
+    bbCodeThinkBackgroundColor: '#D4C5B6',
+    bbCodeThinkBorderColor: '#ffffff',
+    focusColorLight: '#D4D4D4',
+    focusColorDark: '#44423f'
 };
 
 const sizes = {
@@ -98,6 +112,13 @@ const sharedSeparator = {
     marginHorizontal: 0
 };
 
+const link = {
+    color: colors.yellowTextColor,
+    textDecoration: 'none',
+    hoveredColor: colors.yellowTextColorHovered,
+    hoveredTextDecoration: 'underline'
+};
+
 const defaultTheme = {
     themeName: 'default',
     grid,
@@ -107,12 +128,7 @@ const defaultTheme = {
         fontFamily: 'Arial,sans-serif',
         lineHeight: '1.5'
     },
-    link: {
-        color: colors.yellowTextColor,
-        textDecoration: 'none',
-        hoveredColor: colors.yellowTextColorHovered,
-        hoveredTextDecoration: 'underline'
-    },
+    link,
     header: {
         xs: headerXsSm,
         sm: headerXsSm,
@@ -210,6 +226,49 @@ const defaultTheme = {
     },
     post: {
         separator: sharedSeparator
+    },
+    bbCodes: {
+        common: {
+            borderWidth: 0.0625,
+            padding: 0.4,
+            marginHorizontal: 1.25,
+            marginVertical: 0.3125
+        },
+        code: {
+            contentColor: colors.bbCodeCodeContentColor,
+            headerColor: colors.bbCodeCodeHeaderContentColor,
+            backgroundColor: colors.bbCodeCodeBackgroundColor,
+            borderColor: colors.bbCodeCodeBorderColor
+        },
+        quote: {
+            backgroundColor: colors.bbCodeQuoteBackgroundColor,
+            borderColor: colors.bbCodeQuoteBorderColor
+        },
+        spoiler: {
+            backgroundColor: colors.bbCodeSpoilerBackgroundColor,
+            borderColor: colors.bbCodeSpoilerBorderColor,
+            color: colors.bbCodeSpoilerColor,
+            contentMarginTop: 0.3125
+        },
+        offtopic: {
+            color: colors.bbCodeOffTopicColor
+        },
+        think: {
+            image: thinkImage,
+            backgroundSize: 2,
+            paddingTop: 2,
+            backgroundColor: colors.bbCodeThinkBackgroundColor,
+            borderColor: colors.bbCodeThinkColor,
+            borderWidth: 0.0625,
+            borderRadius: 1,
+            paddingContent: 0.4
+        },
+        email: link,
+        url: link
+    },
+    focus: {
+        colorLight: colors.focusColorLight,
+        colorDark: colors.focusColorDark
     }
 };
 

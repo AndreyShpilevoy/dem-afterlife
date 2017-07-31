@@ -1,22 +1,26 @@
-import thinkImage from 'images/Smiles/forBbCode/think.gif';
-
-const calculateStyles = ({themeName}) => ({
-    think: {
-        padding: 0.4
-    },
-    thinkContent: {
-        backgroundColor: '#D4C5B6',
-        border: '0.0625 solid #FFFFFF',
-        borderRadius: 1,
-        padding: 0.4
-    },
-    thinkImage: {
-        backgroundImage: `url(${thinkImage});`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 2,
-        paddingTop: 2
-    },
-    options: {meta: 'Think', themeName}
-});
+const calculateStyles = ({bbCodes, themeName}) => {
+    const {think} = bbCodes;
+    return {
+        think: {
+            width: 'fit-content',
+            display: 'inline-block'
+        },
+        content: {
+            backgroundColor: think.backgroundColor,
+            borderColor: think.borderColor,
+            borderStyle: 'solid',
+            borderWidth: think.borderWidth,
+            borderRadius: think.borderRadius,
+            padding: think.paddingContent
+        },
+        image: {
+            backgroundImage: `url(${think.image});`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: think.backgroundSize,
+            paddingTop: think.paddingTop
+        },
+        options: {meta: 'Think', themeName}
+    };
+};
 
 export default calculateStyles;

@@ -7,10 +7,10 @@ import calculateStyles from './calculateStyles';
 const wroteTerm = {id: 32, value: 'wrote:'};
 const quoteTerm = {id: 33, value: 'Quote:'};
 
-const getAuthorNameFromOption = (options, quoteAuthorStyle) => options ?
+const getAuthorNameFromOption = (options, authorStyle) => options ?
     (
         <div>
-            <span className={quoteAuthorStyle}>
+            <span className={authorStyle}>
                 {options}
             </span>
             <Term spaceBefore term={wroteTerm} untermedPostfix={':'} />
@@ -18,7 +18,7 @@ const getAuthorNameFromOption = (options, quoteAuthorStyle) => options ?
     ) :
     (
         <div>
-            <span className={quoteAuthorStyle}>
+            <span className={authorStyle}>
                 <Term term={quoteTerm} untermedPostfix={':'} />
             </span>
         </div>
@@ -27,7 +27,7 @@ const getAuthorNameFromOption = (options, quoteAuthorStyle) => options ?
 const Quote = ({children, options, styles}) => (
     <blockquote
         className={styles.quote}>
-        {getAuthorNameFromOption(options, styles.quoteAuthor)}
+        {getAuthorNameFromOption(options, styles.author)}
         {children}
     </blockquote>
 );

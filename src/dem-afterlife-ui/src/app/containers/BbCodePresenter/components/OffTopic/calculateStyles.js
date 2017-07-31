@@ -1,8 +1,8 @@
-const calculateStyles = ({themeName}) => ({
-    offtopicContent: {
-        color: '#67605A'
+const calculateStyles = ({themeName, bbCodes}) => ({
+    content: {
+        color: bbCodes.offtopic.color
     },
-    offtopicHeader: {
+    header: {
         fontWeight: 'bold'
     },
     options: {meta: 'OffTopic', themeName}
