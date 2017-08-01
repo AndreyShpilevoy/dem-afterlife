@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const checksum = require('checksum');
 
 const debug = process.env.BABEL_ENV !== 'production';
@@ -81,14 +82,14 @@ const eslint = {
 };
 
 const output = {
-    filename: 'js/app.js?[hash]'
+    filename: `js/app${debug ? '' : '.[hash:8]'}.js`
 };
 
 const plugins = [
     new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         minChunks: Infinity,
-        filename: 'js/vendor.js?[hash]'
+        filename: `js/vendor${debug ? '' : '.[hash:8]'}.js`
     }),
     new webpack.DefinePlugin({
         'process.env': {
@@ -118,9 +119,28 @@ if (debug) {
     output.publicPath = '/';
     plugins.push(new webpack.HotModuleReplacementPlugin());
 } else {
-    output.path = path.join(__dirname, '../dem-afterlife/wwwroot');
-    output.publicPath = '/';
+    const paceCss = `css/pace.${checksum('./node_modules/pace-progress/themes/orange/pace-theme-minimal.css').substring(0, 8)}.css`;
+    const paceOverriddenCss = `css/pace.overridden.${checksum('./src/pace.overridden.css').substring(0, 8)}.css`;
+    const paceJs = `js/pace.min.${checksum('./node_modules/pace-progress/pace.min.js').substring(0, 8)}.js`;
     plugins.push(
+        new CopyWebpackPlugin(
+            [
+                {from: './node_modules/pace-progress/themes/orange/pace-theme-minimal.css', to: paceCss},
+                {from: './src/pace.overridden.css', to: paceOverriddenCss},
+                {from: './node_modules/pace-progress/pace.min.js', to: paceJs}
+            ],
+            {copyUnmodified: false}
+        ),
+        new HtmlWebpackPlugin({
+            hash: false,
+            filename: 'index.html',
+            template: path.join(__dirname, './src/index.html'),
+            path: path.join(__dirname, '../dem-afterlife/wwwroot'),
+            publicPath: '/wwwroot/',
+            paceCss: `/${paceCss}`,
+            paceOverriddenCss: `/${paceOverriddenCss}`,
+            paceJs: `/${paceJs}`
+        }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -128,25 +148,16 @@ if (debug) {
             output: {comments: false},
             sourceMap: true
         }),
-        new CopyWebpackPlugin(
-            [
-                {from: './node_modules/pace-progress/themes/orange/pace-theme-minimal.css', to: 'css/pace.css'},
-                {from: './src/pace.overridden.css', to: 'css/pace.overridden.css'},
-                {from: './node_modules/pace-progress/pace.min.js', to: 'js/pace.min.js'}
-            ],
-            {copyUnmodified: false}
-        ),
-        new HtmlWebpackPlugin({
-            hash: !debug,
-            filename: 'index.html',
-            template: path.join(__dirname, './src/index.html'),
-            path: path.join(__dirname, '../dem-afterlife/wwwroot'),
-            publicPath: '/wwwroot/',
-            paceCss: `/css/pace.css?${checksum('./node_modules/pace-progress/themes/orange/pace-theme-flash.css')}`,
-            paceOverriddenCss: `/css/pace.overridden.css?${checksum('./src/pace.overridden.css')}`,
-            paceJs: `/js/pace.min.js?${checksum('./node_modules/pace-progress/pace.min.js')}`
+        new CompressionPlugin({
+            asset: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js|\.css/,
+            threshold: 10240,
+            minRatio: 0.8
         })
     );
+    output.path = path.join(__dirname, '../dem-afterlife/wwwroot');
+    output.publicPath = '/';
 }
 
 const resolve = {
