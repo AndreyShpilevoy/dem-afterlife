@@ -130,46 +130,37 @@ describe('Conference reducer', () => {
         expect(conferenceReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getChapterArraySaga first yield should return TAKE pattern "GET_CHAPTER_ARRAY"', () => {
+    it('getChapterArraySaga should be in cycle and return expected values', () => {
         const generator = getChapterArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_CHAPTER_ARRAY');
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getChapterArraySaga second yield should return FORK to function "getChapterArrayNonBlockSaga"', () => {
-        const generator = getChapterArraySaga();
-
-        generator.next();
-        expect(generator.next().value.FORK.fn).toEqual(getChapterArrayNonBlockSaga);
-    });
-
-    it('getChapterArraySaga third yield should return the same result as first', () => {
-        const generator = getChapterArraySaga();
-        const expectedResult = generator.next();
-        generator.next();
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getChapterArrayNonBlockSaga first yield should return CALL to function "getChapterArrayApi"', () => {
+    it('getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
         const generator = getChapterArrayNonBlockSaga();
+        const chapterArray = [
+            {id: 1, title: 'Ex Machina', order: 1},
+            {id: 3, title: 'Ex Machina: Arcade', order: 3},
+            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+        ];
 
-        expect(generator.next().value.CALL.fn).toEqual(getChapterArrayApi);
-    });
+        const firstYield = generator.next();
+        const secondYield = generator.next(chapterArray);
+        const thirdYield = generator.next(chapterArray);
+        const fourthYield = generator.next();
 
-    it('getChapterArrayNonBlockSaga second yield should return PUT action.type "GET_CHAPTER_ARRAY_SUCCESS"', () => {
-        const generator = getChapterArrayNonBlockSaga();
-        const chapterArray = getChapterArrayApi();
-
-        generator.next();
-        expect(generator.next(chapterArray).value.PUT.action.type).toEqual('GET_CHAPTER_ARRAY_SUCCESS');
-    });
-
-    it('getChapterArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
-        const generator = getChapterArrayNonBlockSaga();
-        const chapterArray = getChapterArrayApi();
-
-        generator.next();
-        expect(IsPromise(generator.next(chapterArray).value.PUT.action.payload.chapterArray)).toBeTruthy();
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
     it('getLastActiveTopicArraySaga first yield should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {

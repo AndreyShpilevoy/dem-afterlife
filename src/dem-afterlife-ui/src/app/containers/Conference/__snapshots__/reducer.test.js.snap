@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 2`] = `"getChapterArrayApi"`;
+
+exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "chapterArray": Array [
+            Object {
+              "id": 1,
+              "order": 1,
+              "title": "Ex Machina",
+            },
+            Object {
+              "id": 3,
+              "order": 3,
+              "title": "Ex Machina: Arcade",
+            },
+            Object {
+              "id": 2,
+              "order": 2,
+              "title": "Ex Machina Меридиан 113",
+            },
+          ],
+        },
+        "type": "GET_CHAPTER_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "chapterIdArray": Array [
+            1,
+            3,
+            2,
+          ],
+        },
+        "type": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 5`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Conference reducer getChapterArraySaga should be in cycle and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_CHAPTER_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getChapterArraySaga should be in cycle and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getChapterArraySaga should be in cycle and return expected values 3`] = `"getChapterArrayNonBlockSaga"`;
+
+exports[`Conference reducer getChapterArraySaga should be in cycle and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_CHAPTER_ARRAY",
+    },
+  },
+}
+`;
