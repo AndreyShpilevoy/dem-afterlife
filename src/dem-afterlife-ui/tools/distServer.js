@@ -7,8 +7,6 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackConfig = require('../webpack.config');
 
-// const fs = require('fs');
-
 const runExpressServer = () =>
     new Promise(
         (resolve, reject) => {

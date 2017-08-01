@@ -5,7 +5,7 @@ const {resolve} = require('./webpackAliasResolver');
 const originalLoad = Module._load;
 
 
-Module._load = function () {
+Module._load = function loadModule() {
     arguments[0] = resolve(arguments[0]);
     return originalLoad.apply(this, arguments);
 };
