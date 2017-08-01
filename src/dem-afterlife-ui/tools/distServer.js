@@ -5,13 +5,15 @@ const express = require('express');
 const open = require('open');
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpackConfig = require('../webpack.config');
+
+const port = 60784;
 
 const runExpressServer = () =>
     new Promise(
         (resolve, reject) => {
             const app = express();
-            const port = 60784;
 
             app.use(express.static('../dem-afterlife/wwwroot'));
             app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../../dem-afterlife/wwwroot/index.html')));
@@ -28,7 +30,9 @@ const runExpressServer = () =>
 
 console.log('Generating minified bundle for production via Webpack. This will take a moment...'.green);
 
-webpack(webpackConfig).run((error, stats) => {
+const compiler = webpack(webpackConfig);
+compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1}));
+compiler.run((error, stats) => {
     if (error) { // so a fatal error occurred. Stop here.
         console.log(error.bold.red);
         return 1;

@@ -8,6 +8,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpackConfig = require('../webpack.config');
 
 
@@ -15,6 +16,7 @@ const port = 60782;
 const host = 'localhost';
 const app = express();
 const compiler = webpack(webpackConfig);
+compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1}));
 const middleware = webpackDevMiddleware(compiler, {
     contentBase: `http://${host}:${port}`,
     quiet: false,
