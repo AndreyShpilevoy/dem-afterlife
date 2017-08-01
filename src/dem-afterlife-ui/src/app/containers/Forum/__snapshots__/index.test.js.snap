@@ -1357,7 +1357,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   />
                                                                   <withStyles(LinkPure)
                                                                     className="default-Topic-parentForumTitleStyle"
-                                                                    to="/Forum/undefined"
+                                                                    to="/Forum/10"
                                                                   >
                                                                     <LinkPure
                                                                       className="default-Topic-parentForumTitleStyle"
@@ -1370,13 +1370,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                           "link": "default-Link-link",
                                                                         }
                                                                       }
-                                                                      to="/Forum/undefined"
+                                                                      to="/Forum/10"
                                                                     >
                                                                       <Link
                                                                         className="default-Link-link default-Topic-parentForumTitleStyle"
                                                                         replace={false}
                                                                         style={Object {}}
-                                                                        to="/Forum/undefined"
+                                                                        to="/Forum/10"
                                                                       />
                                                                     </LinkPure>
                                                                   </withStyles(LinkPure)>
@@ -3780,7 +3780,7 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                   />
                                                                   <withStyles(LinkPure)
                                                                     className="default-Topic-parentForumTitleStyle"
-                                                                    to="/Forum/undefined"
+                                                                    to="/Forum/10"
                                                                   >
                                                                     <LinkPure
                                                                       className="default-Topic-parentForumTitleStyle"
@@ -3793,13 +3793,13 @@ exports[`Forum HOC component with filled chapter and forum arrays match expected
                                                                           "link": "default-Link-link",
                                                                         }
                                                                       }
-                                                                      to="/Forum/undefined"
+                                                                      to="/Forum/10"
                                                                     >
                                                                       <Link
                                                                         className="default-Link-link default-Topic-parentForumTitleStyle"
                                                                         replace={false}
                                                                         style={Object {}}
-                                                                        to="/Forum/undefined"
+                                                                        to="/Forum/10"
                                                                       />
                                                                     </LinkPure>
                                                                   </withStyles(LinkPure)>

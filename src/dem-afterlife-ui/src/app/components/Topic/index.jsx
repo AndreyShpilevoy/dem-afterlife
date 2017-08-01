@@ -13,13 +13,13 @@ import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 export const TopicPure = ({topic, styles}) => {
-    const {id, title, postsCount, topicViewsCount, lastPostInfo, parentForumId, parentForumTitle} = topic;
+    const {id, title, postsCount, topicViewsCount, lastPostInfo, forumId, parentForumTitle} = topic;
     const {separator, wrapper, centerRow, titleContainer, titleStyle, parentForumWrapper, lastPostInfoStyle,
         parentForumTitleStyle, heightFull, noWrap, textSmallMd} = styles;
     const forumTerm = {id: 25, value: 'Forum:'};
     const postTerm = {id: 2, value: 'Posts'};
     const linkToTopic = `/Topic/${id}`;
-    const linkToParentForum = `/Forum/${parentForumId}`;
+    const linkToParentForum = `/Forum/${forumId}`;
     return (
         <div className={wrapper}>
             <Row>
@@ -35,7 +35,7 @@ export const TopicPure = ({topic, styles}) => {
                                     </Row>
                                     <Row className={textSmallMd}>
                                         {
-                                            parentForumId || parentForumTitle ?
+                                            parentForumTitle && forumId ?
                                                 <Column xs={12} md={7} lg={12}>
                                                     <span className={parentForumWrapper}>
                                                         <Term term={forumTerm} untermedPostfix={':'} spaceAfter />
