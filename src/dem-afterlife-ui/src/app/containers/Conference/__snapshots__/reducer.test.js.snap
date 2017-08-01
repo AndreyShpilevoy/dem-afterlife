@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Conference reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done/ 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Conference reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done/ 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
 exports[`Conference reducer getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
 Object {
   "done": false,
@@ -114,6 +138,83 @@ Object {
     "@@redux-saga/IO": true,
     "TAKE": Object {
       "pattern": "GET_CHAPTER_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getLastActiveTopicArraySaga should be in cycle and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LAST_ACTIVE_TOPICS_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getLastActiveTopicArraySaga should be in cycle and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getLastActiveTopicArraySaga should be in cycle and return expected values 3`] = `"LastActiveTopicArrayApi"`;
+
+exports[`Conference reducer getLastActiveTopicArraySaga should be in cycle and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "lastActiveTopicArray": Array [
+            Object {
+              "id": 1,
+              "parentForumId": 10,
+              "parentForumTitle": "one",
+              "title": "first",
+            },
+            Object {
+              "id": 3,
+              "parentForumId": 11,
+              "parentForumTitle": "two",
+              "title": "second",
+            },
+            Object {
+              "id": 2,
+              "parentForumId": 12,
+              "parentForumTitle": "three",
+              "title": "third",
+            },
+          ],
+        },
+        "type": "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Conference reducer getLastActiveTopicArraySaga should be in cycle and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LAST_ACTIVE_TOPICS_ARRAY",
     },
   },
 }

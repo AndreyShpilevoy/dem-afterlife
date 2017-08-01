@@ -1,7 +1,6 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0 */
+/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, max-statements, no-underscore-dangle  */
 
 import {
-    getChapterArrayApi,
     getLastActiveTopicArrayApi
 } from 'api';
 import IsPromise from 'tools/testHelper';
@@ -163,37 +162,29 @@ describe('Conference reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getLastActiveTopicArraySaga first yield should return TAKE pattern "GET_LAST_ACTIVE_TOPICS_ARRAY"', () => {
+    it('getLastActiveTopicArraySaga should be in cycle and return expected values', () => {
         const generator = getLastActiveTopicArraySaga();
+        const lastActiveTopicArray = [
+            {id: 1, title: 'first', parentForumId: 10, parentForumTitle: 'one'},
+            {id: 3, title: 'second', parentForumId: 11, parentForumTitle: 'two'},
+            {id: 2, title: 'third', parentForumId: 12, parentForumTitle: 'three'}
+        ];
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_LAST_ACTIVE_TOPICS_ARRAY');
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next(lastActiveTopicArray);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getLastActiveTopicArraySaga second yield should return CALL to function "getLastActiveTopicArrayApi"', () => {
-        const generator = getLastActiveTopicArraySaga();
-
-        generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getLastActiveTopicArrayApi);
-    });
-
-    it('getLastActiveTopicArraySaga third yield should return PUT action.type "GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS"', () => {
-        const generator = getLastActiveTopicArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.type).toEqual('GET_LAST_ACTIVE_TOPICS_ARRAY_SUCCESS');
-    });
-
-    it('getLastActiveTopicArraySaga third yield should return PUT action.payload.lastActiveTopicArray that is a Promise', () => {
-        const generator = getLastActiveTopicArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getLastActiveTopicArrayApi()).value.PUT.action.payload.lastActiveTopicArray)).toBeTruthy();
-    });
-
-    it('should return 3 Sagas from default generator', () => {
+    it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done/', () => {
         const generator = conferenceSaga();
-        expect(generator.next().value.ALL.length).toEqual(2);
+        expect(generator.next()).toMatchSnapshot();
+        expect(generator.next()).toMatchSnapshot();
     });
 });
