@@ -16,7 +16,7 @@ const port = 60782;
 const host = 'localhost';
 const app = express();
 const compiler = webpack(webpackConfig);
-compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1}));
+compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1, openAnalyzer: false}));
 const middleware = webpackDevMiddleware(compiler, {
     contentBase: `http://${host}:${port}`,
     quiet: false,

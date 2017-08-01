@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies */
+/* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies, no-param-reassign */
 
 const colors = require('colors'); // eslint-disable-line no-unused-vars
 const express = require('express');
@@ -31,7 +31,7 @@ const runExpressServer = () =>
 console.log('Generating minified bundle for production via Webpack. This will take a moment...'.green);
 
 const compiler = webpack(webpackConfig);
-compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1}));
+compiler.apply(new BundleAnalyzerPlugin({analyzerPort: port + 1, openAnalyzer: false}));
 compiler.run((error, stats) => {
     if (error) { // so a fatal error occurred. Stop here.
         console.log(error.bold.red);
