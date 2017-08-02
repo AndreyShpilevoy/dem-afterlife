@@ -1,9 +1,5 @@
-/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, max-statements, no-underscore-dangle  */
+/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, max-statements, no-underscore-dangle */
 
-import {
-    getLastActiveTopicArrayApi
-} from 'api';
-import IsPromise from 'tools/testHelper';
 import {
     GET_CHAPTER_ARRAY,
     GET_CHAPTER_ARRAY_SUCCESS,
@@ -129,7 +125,7 @@ describe('Conference reducer', () => {
         expect(conferenceReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getChapterArraySaga should be in cycle and return expected values', () => {
+    it('getChapterArraySaga should be in loop and return expected values', () => {
         const generator = getChapterArraySaga();
 
         const firstYield = generator.next();
@@ -162,7 +158,7 @@ describe('Conference reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getLastActiveTopicArraySaga should be in cycle and return expected values', () => {
+    it('getLastActiveTopicArraySaga should be in loop and return expected values', () => {
         const generator = getLastActiveTopicArraySaga();
         const lastActiveTopicArray = [
             {id: 1, title: 'first', parentForumId: 10, parentForumTitle: 'one'},
@@ -182,7 +178,7 @@ describe('Conference reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done/', () => {
+    it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {
         const generator = conferenceSaga();
         expect(generator.next()).toMatchSnapshot();
         expect(generator.next()).toMatchSnapshot();
