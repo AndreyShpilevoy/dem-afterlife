@@ -48,7 +48,7 @@ describe('TopicPure', () => {
     it('component match expected snapshot with parent forum information', () => {
         const topic = {
             id: 1,
-            forumId: 1,
+            forumId: 10,
             title: 'Как деактивировать бомбу',
             postsCount: 215,
             topicViewsCount: 1315,
@@ -59,7 +59,6 @@ describe('TopicPure', () => {
                 authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                 authorGroupColor: '#00AA00'
             },
-            parentForumId: 10,
             parentForumTitle: 'Общие вопросы'
         };
         expect(shallow(<TopicPure className={'topicClassName'} styles={styles} topic={topic} />)).toMatchSnapshot();

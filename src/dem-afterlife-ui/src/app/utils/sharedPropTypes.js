@@ -61,7 +61,6 @@ const topic = shape({
         authorAvatar: string,
         authorGroupColor: string.isRequired
     }).isRequired,
-    parentForumId: number,
     parentForumTitle: string
 });
 
