@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout reducer default saga should return 3 yield with 3 sagas. 2 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Layout reducer default saga should return 3 yield with 3 sagas. 2 yield should be in state Done 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Layout reducer getLocaleSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getLocaleSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getLocaleSaga should be in loop and return expected values 3`] = `"getLocaleApi"`;
+
+exports[`Layout reducer getLocaleSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": "en",
+        "type": "GET_LOCALE_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getLocaleSaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getNavigationLinkArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_NAVIGATION_LINK_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getNavigationLinkArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getNavigationLinkArraySaga should be in loop and return expected values 3`] = `"getNavigationLinkArrayApi"`;
+
+exports[`Layout reducer getNavigationLinkArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "navigationLinkArray": Array [
+            Object {
+              "id": 1,
+            },
+            Object {
+              "id": 2,
+            },
+          ],
+        },
+        "type": "GET_NAVIGATION_LINK_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getNavigationLinkArraySaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_NAVIGATION_LINK_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getSocialMediaLinkArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SOCIAL_MEDIA_LINK_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getSocialMediaLinkArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getSocialMediaLinkArraySaga should be in loop and return expected values 3`] = `"getSocialMediaLinkArrayApi"`;
+
+exports[`Layout reducer getSocialMediaLinkArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "socialMediaLinkArray": Array [
+            Object {
+              "id": 1,
+              "title": "first",
+            },
+            Object {
+              "id": 3,
+              "title": "second",
+            },
+            Object {
+              "id": 2,
+              "title": "third",
+            },
+          ],
+        },
+        "type": "GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Layout reducer getSocialMediaLinkArraySaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SOCIAL_MEDIA_LINK_ARRAY",
+    },
+  },
+}
+`;

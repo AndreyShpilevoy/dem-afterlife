@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forum reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Forum reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 2`] = `"getPostArrayByTopicIdApi"`;
+
+exports[`Forum reducer getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "postArray": Array [
+            Object {
+              "userId": 1,
+            },
+            Object {
+              "userId": 22,
+            },
+          ],
+        },
+        "type": "GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "userIdArray": Array [
+            1,
+            22,
+          ],
+        },
+        "type": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 5`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_POST_ARRAY_BY_TOPIC_ID",
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getPostArrayByTopicIdSaga should be in loop and return expected values 3`] = `"getPostArrayByTopicIdNonBlockSaga"`;
+
+exports[`Forum reducer getPostArrayByTopicIdSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_POST_ARRAY_BY_TOPIC_ID",
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 3`] = `"getUserArrayByUserIdArrayApi"`;
+
+exports[`Forum reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "userArray": Array [
+            Object {
+              "id": 1,
+              "name": "first",
+            },
+            Object {
+              "id": 3,
+              "name": "second",
+            },
+            Object {
+              "id": 2,
+              "name": "third",
+            },
+          ],
+        },
+        "type": "GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+    },
+  },
+}
+`;

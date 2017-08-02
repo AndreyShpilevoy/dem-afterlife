@@ -1,12 +1,6 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0 */
 
 import {
-    getForumByIdApi,
-    getForumArrayByChapterIdArrayApi,
-    getSubForumArrayByParentForumIdArrayApi
-} from 'api';
-import IsPromise from 'tools/testHelper';
-import {
     GET_FORUM_BY_ID,
     GET_FORUM_BY_ID_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
@@ -176,136 +170,89 @@ describe('Shared reducer', () => {
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getForumByIdSaga first yield should return TAKE pattern "GET_FORUM_BY_ID"', () => {
+    it('getForumByIdSaga should be in loop and return expected values', () => {
         const generator = getForumByIdSaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_FORUM_BY_ID');
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {forumId: 1} });
+        const thirdYield = generator.next({id: 1, title: 'Ex Machina', order: 1});
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getForumByIdSaga second yield should return CALL to function "getForumByIdApi"', () => {
-        const generator = getForumByIdSaga();
-
-        generator.next();
-        expect(generator.next({payload: {forumId: 1} }).value.CALL.fn).toEqual(getForumByIdApi);
-    });
-
-    it('getForumByIdSaga third yield should return PUT action.type "GET_FORUM_BY_ID_SUCCESS"', () => {
-        const generator = getForumByIdSaga();
-
-        generator.next();
-        generator.next({payload: {forumId: 1} });
-        expect(generator.next(getForumByIdApi()).value.PUT.action.type).toEqual('GET_FORUM_BY_ID_SUCCESS');
-    });
-
-    it('getForumByIdSaga third yield should return PUT action.payload.forumArray that is a Promise', () => {
-        const generator = getForumByIdSaga();
-
-        generator.next();
-        generator.next({payload: {forumId: 1} });
-        expect(IsPromise(generator.next(getForumByIdApi()).value.PUT.action.payload.selectedForum)).toBeTruthy();
-    });
-
-    it('getForumByIdSaga fourth yield should return the same result as first', () => {
-        const forum = {id: 1, title: 'Ex Machina', order: 1};
-        const generator = getForumByIdSaga();
-        const expectedResult = generator.next();
-        generator.next({payload: {forumId: 1} });
-        generator.next(forum);
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getForumsByChapterIdArraySaga first yield should return TAKE pattern "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY"', () => {
+    it('getForumsByChapterIdArraySaga should be in loop and return expected values', () => {
         const generator = getForumsByChapterIdArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY');
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {chapterIdArray: [1, 2, 3] } });
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getForumsByChapterIdArraySaga second yield should return FORK to function "getForumsByChapterIdArrayNonBlockSaga"', () => {
-        const generator = getForumsByChapterIdArraySaga();
+    it('getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
+        const generator = getForumsByChapterIdArrayNonBlockSaga([4, 5]);
+        const forumArray = [
+            {id: 1, title: 'Ex Machina', order: 1},
+            {id: 3, title: 'Ex Machina: Arcade', order: 3},
+            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+        ];
 
-        generator.next();
-        expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getForumsByChapterIdArrayNonBlockSaga);
+        const firstYield = generator.next();
+        const secondYield = generator.next(forumArray);
+        const thirdYield = generator.next([1, 2, 3]);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getForumsByChapterIdArraySaga third yield should return the same result as first', () => {
-        const generator = getForumsByChapterIdArraySaga();
-        const expectedResult = generator.next();
-        generator.next({payload: {chapterIdArray: [] } });
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getForumsByChapterIdArrayNonBlockSaga first yield should return CALL to function "getForumArrayByChapterIdArrayApi"', () => {
-        const testChapterIdArray = [1];
-        const generator = getForumsByChapterIdArrayNonBlockSaga(testChapterIdArray);
-
-        expect(generator.next().value.CALL.fn).toEqual(getForumArrayByChapterIdArrayApi);
-    });
-
-    it('getForumsByChapterIdArrayNonBlockSaga second yield should return PUT action.type "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS"', () => {
-        const testChapterIdArray = [1];
-        const generator = getForumsByChapterIdArrayNonBlockSaga(testChapterIdArray);
-        const forumsByChapterId = getForumArrayByChapterIdArrayApi(testChapterIdArray);
-
-        generator.next();
-        expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS');
-    });
-
-    it('getForumsByChapterIdArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
-        const testChapterIdArray = [1];
-        const generator = getForumsByChapterIdArrayNonBlockSaga(testChapterIdArray);
-        const forumsByChapterId = getForumArrayByChapterIdArrayApi(testChapterIdArray);
-
-        generator.next();
-        expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.forumArray)).toBeTruthy();
-    });
-
-    it('getSubForumsByParentForumIdArraySaga first yield should return TAKE pattern "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY"', () => {
+    it('getSubForumsByParentForumIdArraySaga should be in loop and return expected values', () => {
         const generator = getSubForumsByParentForumIdArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY');
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {parentForumIdArray: [1, 2, 3] } });
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getSubForumsByParentForumIdArraySaga second yield should return FORK to function "getSubForumsByParentForumIdArrayNonBlockSaga"', () => {
-        const generator = getSubForumsByParentForumIdArraySaga();
+    it('getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done', () => {
+        const forumIdArray = [1, 2, 3];
+        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(forumIdArray);
+        const forumsByParentForumId = [
+            {id: 10, title: 'first', parentForumId: 1, parentForumTitle: 'one'},
+            {id: 30, title: 'second', parentForumId: 2, parentForumTitle: 'two'},
+            {id: 20, title: 'third', parentForumId: 3, parentForumTitle: 'three'}
+        ];
 
-        generator.next();
-        expect(generator.next({payload: {chapterIdArray: [] } }).value.FORK.fn).toEqual(getSubForumsByParentForumIdArrayNonBlockSaga);
+        const firstYield = generator.next(forumIdArray);
+        const secondYield = generator.next(forumsByParentForumId);
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getSubForumsByParentForumIdArraySaga third yield should return the same result as first', () => {
-        const generator = getSubForumsByParentForumIdArraySaga();
-        const expectedResult = generator.next();
-        generator.next({payload: {chapterIdArray: [] } });
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getSubForumsByParentForumIdArrayNonBlockSaga first yield should return CALL to function "getSubForumArrayByParentForumIdArrayApi"', () => {
-        const testForumIdArray = [1];
-        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
-
-        expect(generator.next().value.CALL.fn).toEqual(getSubForumArrayByParentForumIdArrayApi);
-    });
-
-    it('getSubForumsByParentForumIdArrayNonBlockSaga second yield should return PUT action.type "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS"', () => {
-        const testForumIdArray = [1];
-        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
-        const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
-
-        generator.next();
-        expect(generator.next(forumsByChapterId).value.PUT.action.type).toEqual('GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS');
-    });
-
-    it('getSubForumsByParentForumIdArrayNonBlockSaga third yield should return PUT action.forums that is a Promise', () => {
-        const testForumIdArray = [1];
-        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(testForumIdArray);
-        const forumsByChapterId = getSubForumArrayByParentForumIdArrayApi(testForumIdArray);
-
-        generator.next();
-        expect(IsPromise(generator.next(forumsByChapterId).value.PUT.action.payload.subForumArray)).toBeTruthy();
-    });
-
-    it('should return 3 Sagas from default generator', () => {
+    it('default saga should return 1 yield with 3 sagas. 2 yield should be in state Done', () => {
         const generator = sharedSaga();
-        expect(generator.next().value.ALL.length).toEqual(3);
+        expect(generator.next()).toMatchSnapshot();
+        expect(generator.next()).toMatchSnapshot();
     });
 });

@@ -1,7 +1,5 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements:0 */
 
-import {getLocaleApi, getNavigationLinkArrayApi, getSocialMediaLinkArrayApi} from 'api';
-import IsPromise from 'tools/testHelper';
 import {
     getLocale,
     getLocaleSuccess,
@@ -143,119 +141,59 @@ describe('Layout reducer', () => {
         expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getLocaleSaga first yield should return TAKE pattern "GET_LOCALE"', () => {
+    it('getLocaleSaga should be in loop and return expected values', () => {
         const generator = getLocaleSaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_LOCALE);
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next('en');
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getLocaleSaga second yield should return CALL to function "getLocaleApi"', () => {
-        const generator = getLocaleSaga();
-
-        generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getLocaleApi);
-    });
-
-    it('getLocaleSaga third yield should return PUT action.type "GET_LOCALE_SUCCESS"', () => {
-        const generator = getLocaleSaga();
-
-        generator.next();
-        generator.next();
-        expect(generator.next(getLocaleApi()).value.PUT.action.type).toEqual(GET_LOCALE_SUCCESS);
-    });
-
-    it('getLocaleSaga third yield should return PUT action.payload.locale that is a Promise', () => {
-        const generator = getLocaleSaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getLocaleApi()).value.PUT.action.payload)).toBeTruthy();
-    });
-
-    it('getLocaleSaga fourth yield should return the same result as first', () => {
-        const generator = getLocaleSaga();
-        const expectedResult = generator.next();
-        generator.next();
-        generator.next(getLocaleApi());
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getNavigationLinkArraySaga first yield should return TAKE pattern "GET_NAVIGATION_LINK_ARRAY"', () => {
+    it('getNavigationLinkArraySaga should be in loop and return expected values', () => {
         const generator = getNavigationLinkArraySaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_NAVIGATION_LINK_ARRAY);
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next([{id: 1}, {id: 2}]);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getNavigationLinkArraySaga second yield should return CALL to function "getNavigationLinkArrayApi"', () => {
-        const generator = getNavigationLinkArraySaga();
-
-        generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getNavigationLinkArrayApi);
-    });
-
-    it('getNavigationLinkArraySaga third yield should return PUT action.type "GET_NAVIGATION_LINK_ARRAY_SUCCESS"', () => {
-        const generator = getNavigationLinkArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(generator.next(getNavigationLinkArrayApi()).value.PUT.action.type).toEqual(GET_NAVIGATION_LINK_ARRAY_SUCCESS);
-    });
-
-    it('getNavigationLinkArraySaga third yield should return PUT action..payload.navigationLinkArray that is a Promise', () => {
-        const generator = getNavigationLinkArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getNavigationLinkArrayApi()).value.PUT.action.payload.navigationLinkArray)).toBeTruthy();
-    });
-
-    it('getNavigationLinkArraySaga fourth yield should return the same result as first', () => {
-        const generator = getNavigationLinkArraySaga();
-        const expectedResult = generator.next();
-        generator.next();
-        generator.next(getNavigationLinkArrayApi());
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getSocialMediaLinkArraySaga first yield should return TAKE pattern "GET_SOCIAL_MEDIA_LINK_ARRAY"', () => {
+    it('getSocialMediaLinkArraySaga should be in loop and return expected values', () => {
         const generator = getSocialMediaLinkArraySaga();
+        const socialMediaLinkArray = [
+            {id: 1, title: 'first'},
+            {id: 3, title: 'second'},
+            {id: 2, title: 'third'}
+        ];
 
-        expect(generator.next().value.TAKE.pattern).toEqual(GET_SOCIAL_MEDIA_LINK_ARRAY);
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next(socialMediaLinkArray);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getSocialMediaLinkArraySaga second yield should return CALL to function "getSocialMediaLinkArrayApi"', () => {
-        const generator = getSocialMediaLinkArraySaga();
-
-        generator.next();
-        expect(generator.next().value.CALL.fn).toEqual(getSocialMediaLinkArrayApi);
-    });
-
-    it('getSocialMediaLinkArraySaga third yield should return PUT action.type "GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS"', () => {
-        const generator = getSocialMediaLinkArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(generator.next(getSocialMediaLinkArrayApi()).value.PUT.action.type).toEqual(GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS);
-    });
-
-    it('getSocialMediaLinkArraySaga third yield should return PUT action..payload.socialMediaLinkArray that is a Promise', () => {
-        const generator = getSocialMediaLinkArraySaga();
-
-        generator.next();
-        generator.next();
-        expect(IsPromise(generator.next(getSocialMediaLinkArrayApi()).value.PUT.action.payload.socialMediaLinkArray)).toBeTruthy();
-    });
-
-    it('getSocialMediaLinkArraySaga fourth yield should return the same result as first', () => {
-        const generator = getSocialMediaLinkArraySaga();
-        const expectedResult = generator.next();
-        generator.next();
-        generator.next(getSocialMediaLinkArrayApi());
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('should return 3 Sagas from default generator', () => {
+    it('default saga should return 3 yield with 3 sagas. 2 yield should be in state Done', () => {
         const generator = layoutSaga();
-        expect(generator.next().value.ALL.length).toEqual(3);
+        expect(generator.next()).toMatchSnapshot();
+        expect(generator.next()).toMatchSnapshot();
     });
 });

@@ -1,0 +1,334 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shared reducer default saga should return 1 yield with 3 sagas. 2 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Shared reducer default saga should return 1 yield with 3 sagas. 2 yield should be in state Done 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BY_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 3`] = `"getForumByIdApi"`;
+
+exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "selectedForum": Object {
+            "id": 1,
+            "order": 1,
+            "title": "Ex Machina",
+          },
+        },
+        "type": "GET_FORUM_BY_ID_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BY_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 2`] = `"getForumArrayByChapterIdArrayApi"`;
+
+exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "forumArray": Array [
+            Object {
+              "id": 1,
+              "order": 1,
+              "title": "Ex Machina",
+            },
+            Object {
+              "id": 3,
+              "order": 3,
+              "title": "Ex Machina: Arcade",
+            },
+            Object {
+              "id": 2,
+              "order": 2,
+              "title": "Ex Machina Меридиан 113",
+            },
+          ],
+        },
+        "type": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "parentForumIdArray": Array [
+            1,
+            3,
+            2,
+          ],
+        },
+        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 5`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 3`] = `"getForumsByChapterIdArrayNonBlockSaga"`;
+
+exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 2`] = `"getSubForumArrayByParentForumIdArrayApi"`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "subForumArray": Array [
+            Object {
+              "id": 10,
+              "parentForumId": 1,
+              "parentForumTitle": "one",
+              "title": "first",
+            },
+            Object {
+              "id": 30,
+              "parentForumId": 2,
+              "parentForumTitle": "two",
+              "title": "second",
+            },
+            Object {
+              "id": 20,
+              "parentForumId": 3,
+              "parentForumTitle": "three",
+              "title": "third",
+            },
+          ],
+        },
+        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 3`] = `"getSubForumsByParentForumIdArrayNonBlockSaga"`;
+
+exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+    },
+  },
+}
+`;

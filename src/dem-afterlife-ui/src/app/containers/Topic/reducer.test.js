@@ -1,10 +1,4 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements: 0 */
-
-import {
-    getPostArrayByTopicIdApi,
-    getUserArrayByUserIdArrayApi
-} from 'api';
-import IsPromise from 'tools/testHelper';
 import {
     getPostArrayByTopicId,
     getPostArrayByTopicIdSuccess,
@@ -155,102 +149,57 @@ describe('Forum reducer', () => {
         expect(topicReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('getPostArrayByTopicIdSaga first yield should return TAKE pattern "GET_POST_ARRAY_BY_TOPIC_ID"', () => {
+    it('getPostArrayByTopicIdSaga should be in loop and return expected values', () => {
         const generator = getPostArrayByTopicIdSaga();
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_POST_ARRAY_BY_TOPIC_ID');
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {topicId: 1} });
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getPostArrayByTopicIdSaga second yield should return FORK to function "getPostArrayByTopicIdNonBlockSaga"', () => {
-        const generator = getPostArrayByTopicIdSaga();
+    it('getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
+        const generator = getPostArrayByTopicIdNonBlockSaga(1);
 
-        generator.next();
-        expect(generator.next({payload: {topicId: 1} }).value.FORK.fn).toEqual(getPostArrayByTopicIdNonBlockSaga);
+        const firstYield = generator.next();
+        const secondYield = generator.next([{userId: 1}, {userId: 22}]);
+        const thirdYield = generator.next();
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getPostArrayByTopicIdSaga third yield should return the same result as first', () => {
-        const generator = getPostArrayByTopicIdSaga();
-        const expectedResult = generator.next();
-        generator.next({payload: {topicId: 1} });
-        expect(generator.next()).toEqual(expectedResult);
-    });
-
-    it('getPostArrayByTopicIdNonBlockSaga first yield should return CALL to function "getPostArrayByTopicIdApi"', () => {
-        const testTopicId = 1;
-        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
-
-        expect(generator.next().value.CALL.fn).toEqual(getPostArrayByTopicIdApi);
-    });
-
-    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.type "GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS"', () => {
-        const testTopicId = 1;
-        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
-        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
-
-        generator.next();
-        expect(generator.next(postsByTopicId).value.PUT.action.type).toEqual('GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS');
-    });
-
-    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.payload.postArray that is a Promise', () => {
-        const testTopicId = 1;
-        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
-        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
-
-        generator.next();
-        expect(IsPromise(generator.next(postsByTopicId).value.PUT.action.payload.postArray)).toBeTruthy();
-    });
-
-    it('getPostArrayByTopicIdNonBlockSaga third yield should return PUT action.type "GET_USER_ARRAY_BY_USER_ID_ARRAY"', () => {
-        const testTopicId = 1;
-        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
-        const postsByTopicId = getPostArrayByTopicIdApi(testTopicId);
-
-        generator.next();
-        generator.next([{userId: 1}, {userId: 22}]);
-        expect(generator.next(postsByTopicId).value.PUT.action.type).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY');
-    });
-
-    it('getPostArrayByTopicIdNonBlockSaga second yield should return PUT action.payload.postArray that is a Promise', () => {
-        const testTopicId = 1;
-        const generator = getPostArrayByTopicIdNonBlockSaga(testTopicId);
-
-        generator.next();
-        generator.next([{userId: 1}, {userId: 22}]);
-        expect(generator.next().value.PUT.action.payload.userIdArray).toEqual([1, 22]);
-    });
-
-
-    it('getUserArrayByUserIdArraySaga first yield should return TAKE pattern "GET_USER_ARRAY_BY_USER_ID_ARRAY"', () => {
+    it('getUserArrayByUserIdArraySaga should be in loop and return expected values', () => {
         const generator = getUserArrayByUserIdArraySaga();
+        const userArray = [
+            {id: 1, name: 'first'},
+            {id: 3, name: 'second'},
+            {id: 2, name: 'third'}
+        ];
 
-        expect(generator.next().value.TAKE.pattern).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY');
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
+        const thirdYield = generator.next(userArray);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getUserArrayByUserIdArraySaga second yield should return CALL to function "getUserArrayByUserIdArrayApi"', () => {
-        const generator = getUserArrayByUserIdArraySaga();
-
-        generator.next();
-        expect(generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } }).value.CALL.fn).toEqual(getUserArrayByUserIdArrayApi);
-    });
-
-    it('getUserArrayByUserIdArraySaga third yield should return PUT action.type "GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS"', () => {
-        const generator = getUserArrayByUserIdArraySaga();
-
-        generator.next();
-        generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
-        expect(generator.next(getUserArrayByUserIdArrayApi([1, 2, 3, 4, 5])).value.PUT.action.type).toEqual('GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS');
-    });
-
-    it('getUserArrayByUserIdArraySaga third yield should return PUT action.payload.userArray that is a Promise', () => {
-        const generator = getUserArrayByUserIdArraySaga();
-
-        generator.next();
-        generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
-        expect(IsPromise(generator.next(getUserArrayByUserIdArrayApi([1, 2, 3, 4, 5])).value.PUT.action.payload.userArray)).toBeTruthy();
-    });
-
-    it('should return 2 Saga from default generator', () => {
+    it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {
         const generator = topicSaga();
-        expect(generator.next().value.ALL.length).toEqual(2);
+        expect(generator.next()).toMatchSnapshot();
+        expect(generator.next()).toMatchSnapshot();
     });
 });
