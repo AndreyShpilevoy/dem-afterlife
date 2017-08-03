@@ -5,12 +5,12 @@ import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-const SocialMediaLink = ({className, socialMediaLinkItem, styles}) =>
+export const SocialMediaLinkPure = ({className, socialMediaLinkItem, styles}) =>
     (<a className={styles.focus} href={socialMediaLinkItem.href} title={socialMediaLinkItem.title} target='_blank' rel='noopener noreferrer'>
         <SvgIconsMapper className={className} iconName={socialMediaLinkItem.svgImageName} />
     </a>);
 
-SocialMediaLink.propTypes = {
+SocialMediaLinkPure.propTypes = {
     className: string,
     styles: shape().isRequired,
     socialMediaLinkItem: shape({
@@ -22,8 +22,8 @@ SocialMediaLink.propTypes = {
     }).isRequired
 };
 
-SocialMediaLink.defaultProps = {
+SocialMediaLinkPure.defaultProps = {
     className: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(SocialMediaLink);
+export default withStyles(theme => calculateStyles(theme))(SocialMediaLinkPure);

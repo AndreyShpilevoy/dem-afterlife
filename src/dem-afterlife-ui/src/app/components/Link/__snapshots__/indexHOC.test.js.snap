@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link HOC match expected snapshot 1`] = `
+<LinkPure
+  className=""
+  style={Object {}}
+  styles={
+    Object {
+      ".default-Link-link:focus": "default-Link-link:focus",
+      ".default-Link-link:hover": "default-Link-link:hover",
+      ".default-Link-link:visited": "default-Link-link:visited",
+      ".default-Link-link:visited:hover": "default-Link-link:visited:hover",
+      "link": "default-Link-link",
+    }
+  }
+/>
+`;

@@ -74,6 +74,7 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
+                    style={Object {}}
                     to="/Topic/1"
                   >
                     Как деактивировать бомбу
@@ -112,6 +113,7 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                     />
                     <withStyles(LinkPure)
                       className="default-Topic-parentForumTitleStyle"
+                      style={Object {}}
                       to="/Forum/10"
                     >
                       Общие вопросы
@@ -375,6 +377,7 @@ exports[`TopicPure component match expected snapshot without parent forum inform
                 >
                   <withStyles(LinkPure)
                     className="default-Topic-titleStyle"
+                    style={Object {}}
                     to="/Topic/1"
                   >
                     Как деактивировать бомбу

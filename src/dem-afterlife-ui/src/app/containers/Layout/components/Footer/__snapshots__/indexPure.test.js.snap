@@ -177,7 +177,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
               <div
                 className="default-Footer-socialMediaLinkIconContainer"
               >
-                <withStyles(SocialMediaLink)
+                <withStyles(SocialMediaLinkPure)
                   className="default-Footer-socialMediaLinkIcon"
                   socialMediaLinkItem={
                     Object {
@@ -189,7 +189,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
                     }
                   }
                 />
-                <withStyles(SocialMediaLink)
+                <withStyles(SocialMediaLinkPure)
                   className="default-Footer-socialMediaLinkIcon"
                   socialMediaLinkItem={
                     Object {

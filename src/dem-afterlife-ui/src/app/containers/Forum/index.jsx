@@ -18,7 +18,7 @@ const postsTerm = {id: 2, value: 'Posts'};
 const viewsTerm = {id: 22, value: 'Views'};
 const lastMessageTerm = {id: 3, value: 'Last message in'};
 
-class Forum extends PureComponent {
+export class ForumPure extends PureComponent {
     static propTypes = {
         getTopicArrayByForumId: func.isRequired,
         topicArray: sharedPropTypes.topicArray.isRequired,
@@ -85,4 +85,4 @@ const mapDispatchToProps = dispatch =>
         getTopicArrayByForumId
     }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Forum);
+export default connect(mapStateToProps, mapDispatchToProps)(ForumPure);

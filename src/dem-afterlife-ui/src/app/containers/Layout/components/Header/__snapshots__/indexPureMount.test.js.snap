@@ -232,10 +232,12 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                           >
                             <withStyles(LinkPure)
                               className="default-Logotype-logotypeContainer default-Header-headerLogoContainer"
+                              style={Object {}}
                               to="/"
                             >
                               <LinkPure
                                 className="default-Logotype-logotypeContainer default-Header-headerLogoContainer"
+                                style={Object {}}
                                 styles={
                                   Object {
                                     ".default-Link-link:focus": "default-Link-link:focus",
@@ -940,10 +942,12 @@ exports[`Header Pure Mount component with scrolled down document since to "scrol
                           >
                             <withStyles(LinkPure)
                               className="default-Logotype-logotypeContainer default-Header-headerLogoContainer shrinkedHeader"
+                              style={Object {}}
                               to="/"
                             >
                               <LinkPure
                                 className="default-Logotype-logotypeContainer default-Header-headerLogoContainer shrinkedHeader"
+                                style={Object {}}
                                 styles={
                                   Object {
                                     ".default-Link-link:focus": "default-Link-link:focus",

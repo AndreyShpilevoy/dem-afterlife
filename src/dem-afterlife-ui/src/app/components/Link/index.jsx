@@ -10,13 +10,13 @@ const mapPropsNativeProps = props => Object.keys(NativeLink.propTypes).reduce((p
         {...{[current]: props[current]}, ...previous} :
         previous,
 {
-    children: props.children || '',
-    style: props.style || {}
+    children: props.children,
+    style: props.style
 }
 );
 
 export const LinkPure = props => {
-    const localClassName = `${props.styles.link} ${props.className || ''}`;
+    const localClassName = props.className ? `${props.styles.link} ${props.className}` : props.styles.link;
     return <NativeLink className={localClassName} {...mapPropsNativeProps(props)} />;
 };
 
@@ -27,7 +27,9 @@ LinkPure.propTypes = {
 };
 
 LinkPure.defaultProps = {
-    className: ''
+    className: '',
+    style: {},
+    children: ''
 };
 
 export default withStyles(theme => calculateStyles(theme))(LinkPure);

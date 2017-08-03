@@ -1,8 +1,13 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
+/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, react/jsx-filename-extension, react/prop-types, jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
 import {shallow} from 'enzyme';
 import {HeaderPure} from './index';
+
+jest.mock('../MenuButton', () => {
+    const MenuButton = ({onClick}) => <div onClick={onClick} />;
+    return MenuButton;
+});
 
 describe('Header Pure Shallow', () => {
     const styles = {
@@ -21,5 +26,12 @@ describe('Header Pure Shallow', () => {
 
     it('component match expected snapshot', () => {
         expect(shallow(<HeaderPure styles={styles} navigationLinkArray={[]} />)).toMatchSnapshot();
+    });
+
+    it('component handleMenuButtonClick function should change state', () => {
+        const wrapper = shallow(<HeaderPure styles={styles} navigationLinkArray={[]} />);
+        expect(wrapper.state().menuIsClosed).toBeTruthy();
+        wrapper.find('MenuButton').simulate('click');
+        expect(wrapper.state().menuIsClosed).toBeFalsy();
     });
 });

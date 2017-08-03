@@ -10,6 +10,7 @@ exports[`SubForumPure component match expected snapshot 1`] = `
   />
   <withStyles(LinkPure)
     className="default-SubForum-link"
+    style={Object {}}
     to="/Forum/51"
   >
     FAQ

@@ -50,7 +50,7 @@ exports[`Header Pure Shallow component match expected snapshot 1`] = `
             xl=""
             xs=""
           >
-            <withStyles(MenuButtonPure)
+            <MenuButton
               onClick={[Function]}
             />
           </withStyles(HiddenPure)>

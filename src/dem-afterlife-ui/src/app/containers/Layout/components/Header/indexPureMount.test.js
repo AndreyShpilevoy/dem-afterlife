@@ -3,10 +3,12 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
+import {root} from 'utils';
 import {HeaderPure} from './index';
 
 jest.mock('react-router-dom/Link');
 ThemedStyleSheet.default.get = () => {};
+root.removeEventListener = jest.fn();
 
 describe('Header Pure Mount', () => {
     const map = {};
@@ -38,5 +40,11 @@ describe('Header Pure Mount', () => {
         const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]} />);
         map.scroll({target: {scrollingElement: {scrollTop: 24} } });
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('component should removeEventListener on unmount', () => {
+        const wrapper = mount(<HeaderPure styles={styles} navigationLinkArray={[]} />);
+        wrapper.unmount();
+        expect(root.removeEventListener.mock.calls.length).toBe(1);
     });
 });

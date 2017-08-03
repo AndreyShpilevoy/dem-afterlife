@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import SocialMediaLink from './index';
+import SocialMediaLink, {SocialMediaLinkPure} from './index';
 
 describe('SocialMediaLink', () => {
     const socialMediaLinkItem = {
@@ -12,7 +12,13 @@ describe('SocialMediaLink', () => {
         href: 'http://steamcommunity.com/groups/Ex_Machina',
         order: 1
     };
+
+    const styles = {
+        '.default-SocialMediaLink-focus:focus': 'default-SocialMediaLink-focus:focus',
+        focus: 'default-SocialMediaLink-focus'
+    };
+
     it('component match expected snapshot', () => {
-        expect(shallow(<SocialMediaLink className={'linkIconClassName'} socialMediaLinkItem={socialMediaLinkItem} />)).toMatchSnapshot();
+        expect(shallow(<SocialMediaLinkPure className={'linkIconClassName'} styles={styles} socialMediaLinkItem={socialMediaLinkItem} />)).toMatchSnapshot();
     });
 });

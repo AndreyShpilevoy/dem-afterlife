@@ -1,6 +1,6 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getPostArrayByTopicIdApi, getUserArrayByUserIdArrayApi} from 'api';
-import {margeHelper} from 'utils';
+import {mergeTwoArraysOfObjectMatchById} from 'utils';
 
 const initialState = {
     postArray: [],
@@ -36,7 +36,7 @@ export const topicReducer = (state = initialState, {type, payload}) => {
         case GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS:
             return {...state, postArray: payload.postArray};
         case GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS:
-            return {...state, userArray: margeHelper.mergeTwoArraysOfObjectMatchById(state.userArray, payload.userArray)};
+            return {...state, userArray: mergeTwoArraysOfObjectMatchById(state.userArray, payload.userArray)};
         default:
             break;
     }
