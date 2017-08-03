@@ -1,15 +1,14 @@
 /* eslint-disable max-statements */
-import {bbCodesMapNames} from './index';
+import constants from './constants';
+import {bbCodesMapNames} from './bbCodesMap';
 
-const OPEN_TAG = 'OPEN_TAG';
-const CLOSE_TAG = 'CLOSE_TAG';
-const TEXT = 'TEXT';
+const {rootTag, codeTag, textlineTag, brTag, OPEN_TAG, CLOSE_TAG, TEXT} = constants;
 
 const wrapToRootNodeIfNeeded = text =>
     `${
-        text.substring(0, 6) !== '[root]' ? '[root]' : ''
+        text.substring(0, 6) !== `[${rootTag}]` ? `[${rootTag}]` : ''
     }${text}${
-        text.substring(text.length - 7) !== '[/root]' ? '[/root]' : ''
+        text.substring(text.length - 7) !== `[/${rootTag}]` ? `[/${rootTag}]` : ''
     }`;
 
 const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
@@ -32,7 +31,7 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
     }
 
     const processTextType = localCodeIndex => {
-        if (localCodeIndex === 0 || (matchedResult.tag.toLowerCase() === 'code' || matchedResult.tag.toLowerCase() === 'br')) {
+        if (localCodeIndex === 0 || (matchedResult.tag.toLowerCase() === codeTag || matchedResult.tag.toLowerCase() === brTag)) {
             if (result.length > 0 && result[result.length - 1].lastIndex !== matchedResult.firstIndex) {
                 const calculatedTextPart = {
                     type: TEXT,
@@ -48,12 +47,12 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
     };
 
     // if open tag 'code' - codeIndex++
-    if (matchedResult.type === OPEN_TAG && matchedResult.tag.toLowerCase() === 'code') {
+    if (matchedResult.type === OPEN_TAG && matchedResult.tag.toLowerCase() === codeTag) {
         const newCodeIndex = codeIndex + 1;
         return getAllTagsRecursively(text, regex, [...result, ...processTextType(newCodeIndex)], newCodeIndex);
 
     // if close tag 'code' - codeIndex--
-    } else if (matchedResult.type === CLOSE_TAG && matchedResult.tag.toLowerCase() === 'code') {
+    } else if (matchedResult.type === CLOSE_TAG && matchedResult.tag.toLowerCase() === codeTag) {
         const newCodeIndex = codeIndex - 1;
         return getAllTagsRecursively(text, regex, [...result, ...processTextType(newCodeIndex)], newCodeIndex);
     }
@@ -71,6 +70,7 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNo
             children: [],
             parentNode
         };
+
         if (currentTag.type === OPEN_TAG) {
             const nextTagIndex = tagIndex + 1;
             if (Object.keys(parentNode).length !== 0) {
@@ -78,14 +78,14 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNo
                 return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, node);
             }
             return buildNodeTreeRecursively(tagsArray, nextTagIndex, node, node);
-        } else if (currentTag.type === TEXT) {
-            const nextTagIndex = tagIndex + 1;
-            const textNode = {...node, content: currentTag.match, type: 'textline'};
-            parentNode.children.push(textNode); // eslint-disable-line fp/no-mutating-methods, fp/no-unused-expression
-            return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, parentNode);
         } else if (currentTag.type === CLOSE_TAG && currentTag.tag === parentNode.type) {
             const nextTagIndex = tagIndex + 1;
             return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, parentNode.parentNode);
+        } else if (currentTag.match !== `[/${rootTag}]`) {
+            const nextTagIndex = tagIndex + 1;
+            const textNode = {...node, content: currentTag.match, type: textlineTag};
+            parentNode.children.push(textNode); // eslint-disable-line fp/no-mutating-methods, fp/no-unused-expression
+            return buildNodeTreeRecursively(tagsArray, nextTagIndex, result, parentNode);
         }
     }
     return result;
