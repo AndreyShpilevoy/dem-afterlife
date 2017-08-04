@@ -1,688 +1,178 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`bbCodesMap bbCodesMap.b should match expected snapshot 1`] = `
-<span
-  className="bold style"
-  style={Object {}}
->
-  some text
-</span>
+Object {
+  "children": "some text",
+  "className": "bold style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.br should match expected snapshot 1`] = `Object {}`;
+
+exports[`bbCodesMap bbCodesMap.center should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "center style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.code with should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "id": 0,
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.color should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "red",
+}
 `;
 
 exports[`bbCodesMap bbCodesMap.i should match expected snapshot 1`] = `
-<span
-  className="italic style"
-  style={Object {}}
->
-  some text
-</span>
+Object {
+  "children": "some text",
+  "className": "italic style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.left should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "left style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.li should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
 `;
 
 exports[`bbCodesMap bbCodesMap.offtopic should match expected snapshot 1`] = `
-<OffTopic
-  styles={
-    Object {
-      "content": "default-OffTopic-content",
-      "header": "default-OffTopic-header",
-    }
-  }
-  theme={
-    Object {
-      "avatar": Object {
-        "defaultImage": "test-file-stub",
-        "size": 2.5,
-      },
-      "bbCodes": Object {
-        "code": Object {
-          "backgroundColor": "#59534D",
-          "borderColor": "#44423f",
-          "contentColor": "#FFA100",
-          "headerColor": "#D4D4D4",
-        },
-        "common": Object {
-          "borderWidth": 0.0625,
-          "marginHorizontal": 1.25,
-          "marginVertical": 0.3125,
-          "padding": 0.4,
-        },
-        "email": Object {
-          "color": "#CBC065",
-          "hoveredColor": "#FFF495",
-          "hoveredTextDecoration": "underline",
-          "textDecoration": "none",
-        },
-        "offtopic": Object {
-          "color": "#67605A",
-        },
-        "quote": Object {
-          "backgroundColor": "#9A8D7F",
-          "borderColor": "#5f554b",
-        },
-        "spoiler": Object {
-          "backgroundColor": "#67605a",
-          "borderColor": "#44423f",
-          "color": "#D4D4D4",
-          "contentMarginTop": 0.3125,
-        },
-        "think": Object {
-          "backgroundColor": "#D4C5B6",
-          "backgroundSize": 2,
-          "borderColor": undefined,
-          "borderRadius": 1,
-          "borderWidth": 0.0625,
-          "image": "test-file-stub",
-          "paddingContent": 0.4,
-          "paddingTop": 2,
-        },
-        "url": Object {
-          "color": "#CBC065",
-          "hoveredColor": "#FFF495",
-          "hoveredTextDecoration": "underline",
-          "textDecoration": "none",
-        },
-      },
-      "collapsibleSection": Object {
-        "body": Object {
-          "backgroundColor": "#7B736B",
-          "color": "#48423D",
-          "transition": "all 400ms linear",
-        },
-        "general": Object {
-          "marginTop": 0.3125,
-          "padding": 0.9375,
-        },
-        "header": Object {
-          "backgroundColor": "#564B41",
-          "color": "#AC6B37",
-          "fontSize": 1.3125,
-          "height": 2.5,
-          "iconSize": 1.3,
-        },
-      },
-      "focus": Object {
-        "colorDark": "#44423f",
-        "colorLight": "#D4D4D4",
-      },
-      "footer": Object {
-        "lg": Object {
-          "backgroundImage": "test-file-stub",
-          "color": "#CFB095",
-          "height": 2.5,
-          "marginTop": 0.3125,
-        },
-        "md": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-        "sm": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-        "xl": Object {
-          "backgroundImage": "test-file-stub",
-          "color": "#CFB095",
-          "height": 2.5,
-          "marginTop": 0.3125,
-        },
-        "xs": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-      },
-      "forum": Object {
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-        "subForumContainer": Object {
-          "marginTop": 0.5,
-        },
-        "text": Object {
-          "big": 1.3125,
-          "small": 0.8,
-        },
-      },
-      "grid": Object {
-        "containers": Array [
-          Object {
-            "gridSize": "xs",
-            "mediaMaxString": "max-width: 575px",
-            "mediaMinString": "min-width: 0px",
-            "width": "100%",
-          },
-          Object {
-            "gridSize": "sm",
-            "mediaMaxString": "max-width: 767px",
-            "mediaMinString": "min-width: 576px",
-            "width": "540px",
-          },
-          Object {
-            "gridSize": "md",
-            "mediaMaxString": "max-width: 991px",
-            "mediaMinString": "min-width: 768px",
-            "width": "720px",
-          },
-          Object {
-            "gridSize": "lg",
-            "mediaMaxString": "max-width: 1199px",
-            "mediaMinString": "min-width: 992px",
-            "width": "960px",
-          },
-          Object {
-            "gridSize": "xl",
-            "mediaMaxString": "max-width: 100vw",
-            "mediaMinString": "min-width: 1200px",
-            "width": "1140px",
-          },
-        ],
-      },
-      "header": Object {
-        "lg": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 5,
-          "logoContainerWidth": 16,
-          "transition": "all 400ms linear",
-        },
-        "logotypeContainer": Object {
-          "marginLeft": 0.9375,
-          "marginTop": "auto",
-        },
-        "md": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 3.75,
-          "logoContainerWidth": 12.1875,
-        },
-        "menuButtonContainer": Object {
-          "marginBottom": "auto",
-          "marginLeft": "auto",
-          "marginRight": 0.9375,
-          "marginTop": "auto",
-        },
-        "navigationLinks": Object {
-          "marginBottom": "auto",
-          "marginLeft": "auto",
-          "marginRight": 0.9375,
-          "marginTop": "auto",
-          "transition": "all 350ms ease-in-out",
-        },
-        "sm": Object {
-          "backgroundColor": "#322C27",
-          "height": 3.4375,
-          "logoContainerWidth": 11.25,
-        },
-        "xl": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 5,
-          "logoContainerWidth": 16,
-          "transition": "all 400ms linear",
-        },
-        "xs": Object {
-          "backgroundColor": "#322C27",
-          "height": 3.4375,
-          "logoContainerWidth": 11.25,
-        },
-      },
-      "link": Object {
-        "color": "#CBC065",
-        "hoveredColor": "#FFF495",
-        "hoveredTextDecoration": "underline",
-        "textDecoration": "none",
-      },
-      "logotype": Object {
-        "backgroundImage": "test-file-stub",
-        "backgroundRepeat": "no-repeat",
-        "backgroundSize": "contain",
-        "height": "81.5%",
-      },
-      "mainWrapper": Object {
-        "backgroundColor": "#171717",
-        "fontFamily": "Arial,sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.5",
-      },
-      "menuButton": Object {
-        "cursor": "pointer",
-        "line": Object {
-          "color": "#AC6B37",
-          "transition": "all 350ms ease-in-out",
-        },
-        "widthAndHeight": 2,
-      },
-      "navigationLinks": Object {
-        "lg": Object {
-          "padding": 0.5,
-        },
-        "md": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-        "sm": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-        "xl": Object {
-          "padding": 0.5,
-        },
-        "xs": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-      },
-      "post": Object {
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-      },
-      "socialMediaLinkIcons": Object {
-        "svg": Object {
-          "height": 2,
-          "opacity": 0.6,
-          "padding": 0.125,
-          "width": 2,
-        },
-      },
-      "subForum": Object {
-        "backgroundColor": "#9C877C",
-        "iconSize": 1.3125,
-        "iconTransform": "translateY(-0.125rem)",
-        "marginTop": 0.5,
-        "paddingLeft": 0.125,
-      },
-      "themeName": "default",
-      "topic": Object {
-        "parentForumColor": "#c57b3f",
-        "parentForumColorHover": "#EF9853",
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-        "text": Object {
-          "big": 1.3125,
-          "small": 0.8,
-        },
-      },
-    }
-  }
->
-  some text
-</OffTopic>
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.ol should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.p should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.quote with should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.right should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "right style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.root should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
 `;
 
 exports[`bbCodesMap bbCodesMap.s should match expected snapshot 1`] = `
-<span
-  className="lineThrough style"
-  style={Object {}}
->
-  some text
-</span>
+Object {
+  "children": "some text",
+  "className": "lineThrough style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.size with size equal 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.size with size less then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "0.625rem",
+  },
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.size with size more then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1.25rem",
+  },
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.size without size should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.spoiler with should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.textline should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
 `;
 
 exports[`bbCodesMap bbCodesMap.think should match expected snapshot 1`] = `
-<Think
-  styles={
-    Object {
-      "content": "default-Think-content",
-      "image": "default-Think-image",
-      "think": "default-Think-think",
-    }
-  }
-  theme={
-    Object {
-      "avatar": Object {
-        "defaultImage": "test-file-stub",
-        "size": 2.5,
-      },
-      "bbCodes": Object {
-        "code": Object {
-          "backgroundColor": "#59534D",
-          "borderColor": "#44423f",
-          "contentColor": "#FFA100",
-          "headerColor": "#D4D4D4",
-        },
-        "common": Object {
-          "borderWidth": 0.0625,
-          "marginHorizontal": 1.25,
-          "marginVertical": 0.3125,
-          "padding": 0.4,
-        },
-        "email": Object {
-          "color": "#CBC065",
-          "hoveredColor": "#FFF495",
-          "hoveredTextDecoration": "underline",
-          "textDecoration": "none",
-        },
-        "offtopic": Object {
-          "color": "#67605A",
-        },
-        "quote": Object {
-          "backgroundColor": "#9A8D7F",
-          "borderColor": "#5f554b",
-        },
-        "spoiler": Object {
-          "backgroundColor": "#67605a",
-          "borderColor": "#44423f",
-          "color": "#D4D4D4",
-          "contentMarginTop": 0.3125,
-        },
-        "think": Object {
-          "backgroundColor": "#D4C5B6",
-          "backgroundSize": 2,
-          "borderColor": undefined,
-          "borderRadius": 1,
-          "borderWidth": 0.0625,
-          "image": "test-file-stub",
-          "paddingContent": 0.4,
-          "paddingTop": 2,
-        },
-        "url": Object {
-          "color": "#CBC065",
-          "hoveredColor": "#FFF495",
-          "hoveredTextDecoration": "underline",
-          "textDecoration": "none",
-        },
-      },
-      "collapsibleSection": Object {
-        "body": Object {
-          "backgroundColor": "#7B736B",
-          "color": "#48423D",
-          "transition": "all 400ms linear",
-        },
-        "general": Object {
-          "marginTop": 0.3125,
-          "padding": 0.9375,
-        },
-        "header": Object {
-          "backgroundColor": "#564B41",
-          "color": "#AC6B37",
-          "fontSize": 1.3125,
-          "height": 2.5,
-          "iconSize": 1.3,
-        },
-      },
-      "focus": Object {
-        "colorDark": "#44423f",
-        "colorLight": "#D4D4D4",
-      },
-      "footer": Object {
-        "lg": Object {
-          "backgroundImage": "test-file-stub",
-          "color": "#CFB095",
-          "height": 2.5,
-          "marginTop": 0.3125,
-        },
-        "md": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-        "sm": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-        "xl": Object {
-          "backgroundImage": "test-file-stub",
-          "color": "#CFB095",
-          "height": 2.5,
-          "marginTop": 0.3125,
-        },
-        "xs": Object {
-          "backgroundColor": "#3E3025",
-          "color": "#CFB095",
-          "height": 1.875,
-          "marginTop": 0.3125,
-        },
-      },
-      "forum": Object {
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-        "subForumContainer": Object {
-          "marginTop": 0.5,
-        },
-        "text": Object {
-          "big": 1.3125,
-          "small": 0.8,
-        },
-      },
-      "grid": Object {
-        "containers": Array [
-          Object {
-            "gridSize": "xs",
-            "mediaMaxString": "max-width: 575px",
-            "mediaMinString": "min-width: 0px",
-            "width": "100%",
-          },
-          Object {
-            "gridSize": "sm",
-            "mediaMaxString": "max-width: 767px",
-            "mediaMinString": "min-width: 576px",
-            "width": "540px",
-          },
-          Object {
-            "gridSize": "md",
-            "mediaMaxString": "max-width: 991px",
-            "mediaMinString": "min-width: 768px",
-            "width": "720px",
-          },
-          Object {
-            "gridSize": "lg",
-            "mediaMaxString": "max-width: 1199px",
-            "mediaMinString": "min-width: 992px",
-            "width": "960px",
-          },
-          Object {
-            "gridSize": "xl",
-            "mediaMaxString": "max-width: 100vw",
-            "mediaMinString": "min-width: 1200px",
-            "width": "1140px",
-          },
-        ],
-      },
-      "header": Object {
-        "lg": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 5,
-          "logoContainerWidth": 16,
-          "transition": "all 400ms linear",
-        },
-        "logotypeContainer": Object {
-          "marginLeft": 0.9375,
-          "marginTop": "auto",
-        },
-        "md": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 3.75,
-          "logoContainerWidth": 12.1875,
-        },
-        "menuButtonContainer": Object {
-          "marginBottom": "auto",
-          "marginLeft": "auto",
-          "marginRight": 0.9375,
-          "marginTop": "auto",
-        },
-        "navigationLinks": Object {
-          "marginBottom": "auto",
-          "marginLeft": "auto",
-          "marginRight": 0.9375,
-          "marginTop": "auto",
-          "transition": "all 350ms ease-in-out",
-        },
-        "sm": Object {
-          "backgroundColor": "#322C27",
-          "height": 3.4375,
-          "logoContainerWidth": 11.25,
-        },
-        "xl": Object {
-          "backgroundImage": "test-file-stub",
-          "height": 5,
-          "logoContainerWidth": 16,
-          "transition": "all 400ms linear",
-        },
-        "xs": Object {
-          "backgroundColor": "#322C27",
-          "height": 3.4375,
-          "logoContainerWidth": 11.25,
-        },
-      },
-      "link": Object {
-        "color": "#CBC065",
-        "hoveredColor": "#FFF495",
-        "hoveredTextDecoration": "underline",
-        "textDecoration": "none",
-      },
-      "logotype": Object {
-        "backgroundImage": "test-file-stub",
-        "backgroundRepeat": "no-repeat",
-        "backgroundSize": "contain",
-        "height": "81.5%",
-      },
-      "mainWrapper": Object {
-        "backgroundColor": "#171717",
-        "fontFamily": "Arial,sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.5",
-      },
-      "menuButton": Object {
-        "cursor": "pointer",
-        "line": Object {
-          "color": "#AC6B37",
-          "transition": "all 350ms ease-in-out",
-        },
-        "widthAndHeight": 2,
-      },
-      "navigationLinks": Object {
-        "lg": Object {
-          "padding": 0.5,
-        },
-        "md": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-        "sm": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-        "xl": Object {
-          "padding": 0.5,
-        },
-        "xs": Object {
-          "backgroundColor": "#252525",
-          "color": "#AC6B37",
-          "colorHovered": "#EF9853",
-          "fontSize": 1.3125,
-          "padding": 0.5,
-          "separator": Object {
-            "backgroundColor": "#AC6B37",
-            "height": 0.1875,
-          },
-        },
-      },
-      "post": Object {
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-      },
-      "socialMediaLinkIcons": Object {
-        "svg": Object {
-          "height": 2,
-          "opacity": 0.6,
-          "padding": 0.125,
-          "width": 2,
-        },
-      },
-      "subForum": Object {
-        "backgroundColor": "#9C877C",
-        "iconSize": 1.3125,
-        "iconTransform": "translateY(-0.125rem)",
-        "marginTop": 0.5,
-        "paddingLeft": 0.125,
-      },
-      "themeName": "default",
-      "topic": Object {
-        "parentForumColor": "#c57b3f",
-        "parentForumColorHover": "#EF9853",
-        "separator": Object {
-          "backgroundColor": "#9C877C",
-          "height": 0.125,
-          "marginHorizontal": 0,
-          "marginVertical": 0.3,
-        },
-        "text": Object {
-          "big": 1.3125,
-          "small": 0.8,
-        },
-      },
-    }
-  }
->
-  some text
-</Think>
+Object {
+  "children": "some text",
+}
 `;
 
 exports[`bbCodesMap bbCodesMap.u should match expected snapshot 1`] = `
-<span
-  className="underline style"
-  style={Object {}}
->
-  some text
-</span>
+Object {
+  "children": "some text",
+  "className": "underline style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap bbCodesMap.ul should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
 `;
 
 exports[`bbCodesMap bbCodesMapNames array should match expected snapshot 1`] = `

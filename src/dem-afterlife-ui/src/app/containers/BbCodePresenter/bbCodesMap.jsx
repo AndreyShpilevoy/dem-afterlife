@@ -20,9 +20,7 @@ import Root from './components/Root';
 import TextLine from './components/TextLine';
 import Think from './components/Think';
 import UnorderedList from './components/UnorderedList';
-import constants from './constants';
-
-const {rootTag, codeTag, textlineTag, brTag} = constants;
+import {rootTag, codeTag, textlineTag, brTag} from './constants';
 
 const bbCodesMap = {
     b: (children, key, options) =>

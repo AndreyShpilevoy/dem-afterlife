@@ -1,8 +1,6 @@
 /* eslint-disable max-statements */
-import constants from './constants';
+import {rootTag, codeTag, textlineTag, brTag, OPEN_TAG, CLOSE_TAG, TEXT} from './constants';
 import {bbCodesMapNames} from './bbCodesMap';
-
-const {rootTag, codeTag, textlineTag, brTag, OPEN_TAG, CLOSE_TAG, TEXT} = constants;
 
 const wrapToRootNodeIfNeeded = text =>
     `${

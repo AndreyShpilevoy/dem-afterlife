@@ -2,7 +2,7 @@ import {string, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import parseTextToNodeTree from './parser';
 import bbCodesMap from './bbCodesMap';
-import constants from './constants';
+import {rootTag} from './constants';
 import calculateStyles from './calculateStyles';
 
 
@@ -24,7 +24,7 @@ const mapNodeToComponent = (node, styles) => {
 
 const mapTextToComponentsTree = (text, styles) => {
     const parsedTree = parseTextToNodeTree(text);
-    if (parsedTree.type === constants.rootTag && parsedTree.children.length > 0) {
+    if (parsedTree.type === rootTag && parsedTree.children.length > 0) {
         return mapNodeToComponent(parsedTree, styles);
     }
     return '';
