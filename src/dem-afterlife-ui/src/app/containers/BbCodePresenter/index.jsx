@@ -9,15 +9,15 @@ import calculateStyles from './calculateStyles';
 const getComponentByTagName = tagName => bbCodesMap[tagName.toLowerCase()];
 
 const mapNodeToComponent = (node, styles) => {
-    const {content, type, options, children} = {...node, options: {value: node.options, styles} };
+    const {content, key, type, options, children} = {...node, options: {value: node.options, styles} };
     const Component = getComponentByTagName(type);
 
     if (Component) {
         if (children.length > 0) {
             const childrenMappedToComponent = children.map(x => mapNodeToComponent(x, styles));
-            return Component(childrenMappedToComponent, options);
+            return Component(childrenMappedToComponent, key, options);
         }
-        return Component(content, options);
+        return Component(content, key, options);
     }
     return '';
 };

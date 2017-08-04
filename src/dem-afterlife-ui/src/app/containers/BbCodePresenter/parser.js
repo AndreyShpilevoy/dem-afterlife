@@ -64,6 +64,7 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNo
     if (currentTag) {
         const node = {
             type: currentTag.tag,
+            key: tagIndex,
             options: currentTag.options,
             content: '',
             children: [],
@@ -91,7 +92,8 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNo
 };
 
 const parseTextToNodeTree = text => {
-    const allTags = getAllTagsRecursively(wrapToRootNodeIfNeeded(text).replace(/\r\n|\n|\r/g, '[br][/br]'), /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi);
+    const message = wrapToRootNodeIfNeeded(text).replace(/\r\n|\n|\r/g, '[br][/br]');
+    const allTags = getAllTagsRecursively(message, /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi);
     return buildNodeTreeRecursively(allTags);
 };
 
