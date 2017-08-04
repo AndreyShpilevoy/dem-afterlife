@@ -25,11 +25,6 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
         lastIndex: regex.lastIndex
     };
 
-    // if tag is not exist in available maps - skip step
-    if (!bbCodesMapNames.includes(matchedResult.tag.toLowerCase())) {
-        return getAllTagsRecursively(text, regex, [...result], codeIndex);
-    }
-
     const processTextType = localCodeIndex => {
         if (localCodeIndex === 0 || (matchedResult.tag.toLowerCase() === codeTag || matchedResult.tag.toLowerCase() === brTag)) {
             if (result.length > 0 && result[result.length - 1].lastIndex !== matchedResult.firstIndex) {
@@ -46,8 +41,12 @@ const getAllTagsRecursively = (text, regex, result = [], codeIndex = 0) => {
         return [];
     };
 
+    // if tag is not exist in available maps - skip step
+    if (!bbCodesMapNames.includes(matchedResult.tag.toLowerCase())) {
+        return getAllTagsRecursively(text, regex, result, codeIndex);
+
     // if open tag 'code' - codeIndex++
-    if (matchedResult.type === OPEN_TAG && matchedResult.tag.toLowerCase() === codeTag) {
+    } else if (matchedResult.type === OPEN_TAG && matchedResult.tag.toLowerCase() === codeTag) {
         const newCodeIndex = codeIndex + 1;
         return getAllTagsRecursively(text, regex, [...result, ...processTextType(newCodeIndex)], newCodeIndex);
 
