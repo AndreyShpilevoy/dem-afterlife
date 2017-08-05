@@ -61,15 +61,15 @@ describe('bbCodesMap', () => {
         expect(bbCodesMap.p('some text', 0).props).toMatchSnapshot();
     });
 
-    it(`bbCodesMap.${brTag} should match expected snapshot`, () => {
+    it(`${brTag} should match expected snapshot`, () => {
         expect(bbCodesMap[brTag]('some text', 0).props).toMatchSnapshot();
     });
 
-    it(`bbCodesMap.${textlineTag} should match expected snapshot`, () => {
+    it(`${textlineTag} should match expected snapshot`, () => {
         expect(bbCodesMap[textlineTag]('some text', 0).props).toMatchSnapshot();
     });
 
-    it(`bbCodesMap.${rootTag} should match expected snapshot`, () => {
+    it(`${rootTag} should match expected snapshot`, () => {
         expect(bbCodesMap[rootTag]('some text', 0).props).toMatchSnapshot();
     });
 
@@ -128,24 +128,105 @@ describe('bbCodesMap', () => {
         expect(bbCodesMap.size(children, key, option).props).toMatchSnapshot();
     });
 
-    it(`bbCodesMap.${codeTag} with should match expected snapshot`, () => {
+    it(`${codeTag} should match expected snapshot`, () => {
         const children = 'some text';
         const key = 0;
         const option = {value: 'some options'};
         expect(bbCodesMap[codeTag](children, key, option).props).toMatchSnapshot();
     });
 
-    it('spoiler with should match expected snapshot', () => {
+    it('spoiler should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
         const option = {value: 'some options'};
         expect(bbCodesMap.spoiler(children, key, option).props).toMatchSnapshot();
     });
 
-    it('quote with should match expected snapshot', () => {
+    it('quote should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
         const option = {value: 'some options'};
         expect(bbCodesMap.quote(children, key, option).props).toMatchSnapshot();
+    });
+
+    it('img with wrong link should return array with string', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }];
+        const result = bbCodesMap.img(children);
+        expect(result.length).toBe(1);
+        expect(result[0]).toMatchSnapshot();
+    });
+
+    it('img with right link should match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'https://github.com/AndreyShpilevoy/'} }];
+        const result = bbCodesMap.img(children);
+        expect(result.length).toBe(1);
+        expect(result[0].props).toMatchSnapshot();
+    });
+
+    it('img with wrong and right links should return array with 2 items and match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }, {key: 1, props: {children: 'https://github.com/AndreyShpilevoy/'} }];
+        const result = bbCodesMap.img(children);
+        expect(bbCodesMap.img(children).length).toBe(2);
+        expect(result[0]).toMatchSnapshot();
+        expect(result[1].props).toMatchSnapshot();
+    });
+
+    it('email with wrong Email should return array with string', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }];
+        const result = bbCodesMap.email(children);
+        expect(result.length).toBe(1);
+        expect(result[0]).toMatchSnapshot();
+    });
+
+    it('email with right Email should match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'goodLink@gmail.com'} }];
+        const result = bbCodesMap.email(children);
+        expect(result.length).toBe(1);
+        expect(result[0].props).toMatchSnapshot();
+    });
+
+    it('email with wrong and right Emails should return array with 2 items and match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }, {key: 1, props: {children: 'goodLink@gmail.com'} }];
+        const result = bbCodesMap.email(children);
+        expect(result.length).toBe(2);
+        expect(result[0]).toMatchSnapshot();
+        expect(result[1].props).toMatchSnapshot();
+    });
+
+    it('url with wrong link in options and single child should match expected snapshot', () => {
+        const options = {value: 'fakeLink.com'};
+        const key = 0;
+        const children = 'anything';
+        const result = bbCodesMap.url(children, key, options);
+        expect(result).toMatchSnapshot();
+    });
+
+    it('url with right link in options and single child should match expected snapshot', () => {
+        const options = {value: 'https://github.com/AndreyShpilevoy/'};
+        const key = 0;
+        const children = 'anything';
+        const result = bbCodesMap.url(children, key, options);
+        expect(result).toMatchSnapshot();
+    });
+
+    it('url with single wrong link as child should match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }];
+        const result = bbCodesMap.url(children, 1, {});
+        expect(result.length).toBe(1);
+        expect(result[0]).toMatchSnapshot();
+    });
+
+    it('url with single right link as child should match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'https://github.com/AndreyShpilevoy/'} }];
+        const result = bbCodesMap.url(children, 1, {});
+        expect(result).toMatchSnapshot();
+    });
+
+    it('url with wrong and right links should return array with 2 items and match expected snapshot', () => {
+        const children = [{key: 0, props: {children: 'fakeLink.com'} }, {key: 1, props: {children: 'https://github.com/AndreyShpilevoy/'} }];
+        const result = bbCodesMap.url(children);
+        expect(result.length).toBe(2);
+        expect(result[0]).toMatchSnapshot();
+        expect(result[1].props).toMatchSnapshot();
     });
 });

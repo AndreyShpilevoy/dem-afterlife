@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`bbCodesMap bbCodesMap.b should match expected snapshot 1`] = `
+exports[`bbCodesMap b should match expected snapshot 1`] = `
 Object {
   "children": "some text",
   "className": "bold style",
@@ -8,9 +8,9 @@ Object {
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.br should match expected snapshot 1`] = `Object {}`;
+exports[`bbCodesMap br should match expected snapshot 1`] = `Object {}`;
 
-exports[`bbCodesMap bbCodesMap.center should match expected snapshot 1`] = `
+exports[`bbCodesMap center should match expected snapshot 1`] = `
 Object {
   "children": "some text",
   "className": "center style",
@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.code with should match expected snapshot 1`] = `
+exports[`bbCodesMap code should match expected snapshot 1`] = `
 Object {
   "children": "some text",
   "id": 0,
@@ -26,156 +26,34 @@ Object {
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.color should match expected snapshot 1`] = `
+exports[`bbCodesMap color should match expected snapshot 1`] = `
 Object {
   "children": "some text",
   "options": "red",
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.i should match expected snapshot 1`] = `
+exports[`bbCodesMap email with right Email should match expected snapshot 1`] = `
 Object {
-  "children": "some text",
-  "className": "italic style",
-  "styleObject": Object {},
+  "addBreak": false,
+  "children": "goodLink@gmail.com",
+  "email": "goodLink@gmail.com",
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.left should match expected snapshot 1`] = `
+exports[`bbCodesMap email with wrong Email should return array with string 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap email with wrong and right Emails should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap email with wrong and right Emails should return array with 2 items and match expected snapshot 2`] = `
 Object {
-  "children": "some text",
-  "className": "left style",
-  "styleObject": Object {},
+  "addBreak": true,
+  "children": "goodLink@gmail.com",
+  "email": "goodLink@gmail.com",
 }
 `;
 
-exports[`bbCodesMap bbCodesMap.li should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.offtopic should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.ol should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.p should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.quote with should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "options": "some options",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.right should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "right style",
-  "styleObject": Object {},
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.root should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.s should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "lineThrough style",
-  "styleObject": Object {},
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.size with size equal 16 px should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "",
-  "styleObject": Object {
-    "fontSize": "1rem",
-  },
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.size with size less then 16 px should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "",
-  "styleObject": Object {
-    "fontSize": "0.625rem",
-  },
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.size with size more then 16 px should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "",
-  "styleObject": Object {
-    "fontSize": "1.25rem",
-  },
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.size without size should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "",
-  "styleObject": Object {
-    "fontSize": "1rem",
-  },
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.spoiler with should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "options": "some options",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.textline should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.think should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.u should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-  "className": "underline style",
-  "styleObject": Object {},
-}
-`;
-
-exports[`bbCodesMap bbCodesMap.ul should match expected snapshot 1`] = `
-Object {
-  "children": "some text",
-}
-`;
-
-exports[`bbCodesMap bbCodesMapNames array should match expected snapshot 1`] = `
+exports[`bbCodesMap function bbCodesMapNames array should match expected snapshot 1`] = `
 Array [
   "b",
   "i",
@@ -203,3 +81,197 @@ Array [
   "root",
 ]
 `;
+
+exports[`bbCodesMap i should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "italic style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap img with right link should match expected snapshot 1`] = `
+Object {
+  "addBreak": false,
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap img with wrong and right links should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap img with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
+Object {
+  "addBreak": true,
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap img with wrong link should return array with string 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap left should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "left style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap li should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap offtopic should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap ol should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap p should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap quote should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap right should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "right style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap root should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap s should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "lineThrough style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap size with size equal 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size with size less then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "0.625rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size with size more then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1.25rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size without size should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "styleObject": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap spoiler should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap textline should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap think should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap u should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "underline style",
+  "styleObject": Object {},
+}
+`;
+
+exports[`bbCodesMap ul should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap url with right link in options and single child should match expected snapshot 1`] = `
+<withStyles(Url)
+  addBreak={false}
+  url="https://github.com/AndreyShpilevoy/"
+>
+  anything
+</withStyles(Url)>
+`;
+
+exports[`bbCodesMap url with single right link as child should match expected snapshot 1`] = `
+Array [
+  <withStyles(Url)
+    addBreak={false}
+    url="https://github.com/AndreyShpilevoy/"
+>
+    https://github.com/AndreyShpilevoy/
+</withStyles(Url)>,
+]
+`;
+
+exports[`bbCodesMap url with single wrong link as child should match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap url with wrong and right links should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap url with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
+Object {
+  "addBreak": true,
+  "children": "https://github.com/AndreyShpilevoy/",
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap url with wrong link in options and single child should match expected snapshot 1`] = `"anything"`;

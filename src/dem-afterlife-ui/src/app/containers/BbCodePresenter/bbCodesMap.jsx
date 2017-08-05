@@ -62,27 +62,24 @@ const bbCodesMap = {
     email: children => {
         const addBreak = children.length > 1;
         return children.reduce((previous, current) => {
-            if (typeof current.props.children === 'string' && stringIsEmail(current.props.children)) {
-                const email = current.props.children;
+            const email = current.props.children;
+            if (stringIsEmail(email)) {
                 return [...previous, <Email key={current.key} email={email} addBreak={addBreak}>{email}</Email>];
             }
-            return previous;
+            return [...previous, email];
         }, []);
     },
     url: (children, key, options) => {
-        const mapChildToUrl = (url, childKey, addBreak = false) => <Url key={childKey} url={url} addBreak={addBreak}>{url}</Url>;
-
-        if (typeof options.value === 'string' && stringIsLink(options.value)) {
+        if (options && stringIsLink(options.value)) {
             const url = options.value;
             return <Url key={key} url={url}>{children}</Url>;
-        } else if (Array.isArray(children) && children.length === 1 && children[0].props && typeof children[0].props.children === 'string' && stringIsLink(children[0].props.children)) {
-            return mapChildToUrl(children[0].props.children, children[0].key);
-        } else if (Array.isArray(children) && children.length > 1) {
+        } else if (Array.isArray(children) && children.length > 0) {
             return children.reduce((previous, current) => {
-                if (current.props && typeof current.props.children === 'string' && stringIsLink(current.props.children)) {
-                    return [...previous, mapChildToUrl(current.props.children, current.key, true)];
+                const url = current.props.children;
+                if (stringIsLink(url)) {
+                    return [...previous, <Url key={current.key} url={url} addBreak={children.length > 1}>{url}</Url>];
                 }
-                return previous;
+                return [...previous, url];
             }, []);
         }
         return children;
@@ -90,11 +87,11 @@ const bbCodesMap = {
     img: children => {
         const addBreak = children.length > 1;
         return children.reduce((previous, current) => {
-            if (typeof current.props.children === 'string' && stringIsLink(current.props.children)) {
-                const url = current.props.children;
+            const url = current.props.children;
+            if (stringIsLink(url)) {
                 return [...previous, <Image key={current.key} url={url} addBreak={addBreak} />];
             }
-            return previous;
+            return [...previous, url];
         }, []);
     },
     ol: (children, key) =>
