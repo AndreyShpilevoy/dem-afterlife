@@ -1,20 +1,12 @@
 import React from 'react';
-import {bool, string} from 'prop-types';
+import {string} from 'prop-types';
 
-const Image = ({url, addBreak}) => (
-    <span>
-        <img alt={url} src={url} />
-        {addBreak ? <br /> : ''}
-    </span>
-);
+const Image = ({url}) =>
+    <img alt={url} src={url} />
+;
 
 Image.propTypes = {
-    url: string.isRequired,
-    addBreak: bool
-};
-
-Image.defaultProps = {
-    addBreak: false
+    url: string.isRequired
 };
 
 export default Image;

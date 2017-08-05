@@ -35,7 +35,6 @@ Object {
 
 exports[`bbCodesMap email with right Email should match expected snapshot 1`] = `
 Object {
-  "addBreak": false,
   "children": "goodLink@gmail.com",
   "email": "goodLink@gmail.com",
 }
@@ -47,7 +46,6 @@ exports[`bbCodesMap email with wrong and right Emails should return array with 2
 
 exports[`bbCodesMap email with wrong and right Emails should return array with 2 items and match expected snapshot 2`] = `
 Object {
-  "addBreak": true,
   "children": "goodLink@gmail.com",
   "email": "goodLink@gmail.com",
 }
@@ -92,7 +90,6 @@ Object {
 
 exports[`bbCodesMap img with right link should match expected snapshot 1`] = `
 Object {
-  "addBreak": false,
   "url": "https://github.com/AndreyShpilevoy/",
 }
 `;
@@ -101,7 +98,6 @@ exports[`bbCodesMap img with wrong and right links should return array with 2 it
 
 exports[`bbCodesMap img with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
 Object {
-  "addBreak": true,
   "url": "https://github.com/AndreyShpilevoy/",
 }
 `;
@@ -244,7 +240,6 @@ Object {
 
 exports[`bbCodesMap url with right link in options and single child should match expected snapshot 1`] = `
 <withStyles(Url)
-  addBreak={false}
   url="https://github.com/AndreyShpilevoy/"
 >
   anything
@@ -254,7 +249,6 @@ exports[`bbCodesMap url with right link in options and single child should match
 exports[`bbCodesMap url with single right link as child should match expected snapshot 1`] = `
 Array [
   <withStyles(Url)
-    addBreak={false}
     url="https://github.com/AndreyShpilevoy/"
 >
     https://github.com/AndreyShpilevoy/
@@ -268,7 +262,6 @@ exports[`bbCodesMap url with wrong and right links should return array with 2 it
 
 exports[`bbCodesMap url with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
 Object {
-  "addBreak": true,
   "children": "https://github.com/AndreyShpilevoy/",
   "url": "https://github.com/AndreyShpilevoy/",
 }

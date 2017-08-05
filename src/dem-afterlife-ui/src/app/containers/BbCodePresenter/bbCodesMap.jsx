@@ -59,16 +59,13 @@ const bbCodesMap = {
         <Spoiler key={key} options={options.value}>{children}</Spoiler>,
     quote: (children, key, options) =>
         <Quote key={key} options={options.value}>{children}</Quote>,
-    email: children => {
-        const addBreak = children.length > 1;
-        return children.reduce((previous, current) => {
-            const email = current.props.children;
-            if (stringIsEmail(email)) {
-                return [...previous, <Email key={current.key} email={email} addBreak={addBreak}>{email}</Email>];
-            }
-            return [...previous, email];
-        }, []);
-    },
+    email: children => children.reduce((previous, current) => {
+        const email = current.props.children;
+        if (stringIsEmail(email)) {
+            return [...previous, <Email key={current.key} email={email}>{email}</Email>];
+        }
+        return [...previous, email || current];
+    }, []),
     url: (children, key, options) => {
         if (options && stringIsLink(options.value)) {
             const url = options.value;
@@ -77,23 +74,20 @@ const bbCodesMap = {
             return children.reduce((previous, current) => {
                 const url = current.props.children;
                 if (stringIsLink(url)) {
-                    return [...previous, <Url key={current.key} url={url} addBreak={children.length > 1}>{url}</Url>];
+                    return [...previous, <Url key={current.key} url={url}>{url}</Url>];
                 }
-                return [...previous, url];
+                return [...previous, url || current];
             }, []);
         }
         return children;
     },
-    img: children => {
-        const addBreak = children.length > 1;
-        return children.reduce((previous, current) => {
-            const url = current.props.children;
-            if (stringIsLink(url)) {
-                return [...previous, <Image key={current.key} url={url} addBreak={addBreak} />];
-            }
-            return [...previous, url];
-        }, []);
-    },
+    img: children => children.reduce((previous, current) => {
+        const url = current.props.children;
+        if (stringIsLink(url)) {
+            return [...previous, <Image key={current.key} url={url} />];
+        }
+        return [...previous, url || current];
+    }, []),
     ol: (children, key) =>
         <OrderedList key={key}>{children}</OrderedList>,
     ul: (children, key) =>
