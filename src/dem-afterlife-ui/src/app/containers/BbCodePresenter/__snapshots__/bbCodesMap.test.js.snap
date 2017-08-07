@@ -239,20 +239,20 @@ Object {
 `;
 
 exports[`bbCodesMap url with right link in options and single child should match expected snapshot 1`] = `
-<withStyles(Url)
+<withStyles(UrlPure)
   url="https://github.com/AndreyShpilevoy/"
 >
   anything
-</withStyles(Url)>
+</withStyles(UrlPure)>
 `;
 
 exports[`bbCodesMap url with single right link as child should match expected snapshot 1`] = `
 Array [
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="https://github.com/AndreyShpilevoy/"
 >
     https://github.com/AndreyShpilevoy/
-</withStyles(Url)>,
+</withStyles(UrlPure)>,
 ]
 `;
 

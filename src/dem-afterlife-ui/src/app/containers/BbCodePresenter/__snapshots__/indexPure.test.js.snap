@@ -3,111 +3,111 @@
 exports[`BbCodePresenterPure component with correct message should match expected snapshot 1`] = `
 <withStyles(Root)>
   wrong/url.png
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       Link
-    </withStyles(TextLine)>
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+    </withStyles(TextLinePure)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
     <Image
       url="https://path.to/some/image.png"
     />
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
     style={Object {}}
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Color
       options="red"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         red text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </Color>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag 21
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in u tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
     <NewLine />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </BaseSpan>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <withStyles(Code)
     id={47}
     options="kto"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Code)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <NewLine />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <Image
     url="http://fastpic.ru/big/e.gif"
   />
@@ -123,212 +123,212 @@ exports[`BbCodePresenterPure component with correct message should match expecte
   <Image
     url="http://fastpic.ru/big/3.gif"
   />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        quote 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <withStyles(Quote)
       options="kto"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          and subQuote 
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           with 
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
           style={Object {}}
         >
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             some
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
         </BaseSpan>
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           tags
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          param
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         some
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           other
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        with tags
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Quote)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/10/0.png"
   >
     <Image
       url="http://fastpic.ru/e.gif"
     />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        Link with 2 images as link 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Image
       url="http://fastpic.ru/big/7b40.gif"
     />
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
 </withStyles(Root)>
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [/b] tag)  match expected snapshot and does not include last root tag as text 1`] = `
 <withStyles(Root)>
   wrong/url.png
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       Link
-    </withStyles(TextLine)>
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+    </withStyles(TextLinePure)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
     <Image
       url="https://path.to/some/image.png"
     />
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
     style={Object {}}
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Color
       options="red"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         red text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </Color>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag 21
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in u tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
     <NewLine />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </BaseSpan>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      this text contains 
-  </withStyles(TextLine)>
-  <withStyles(TextLine)>
+  </withStyles(TextLinePure)>
+  <withStyles(TextLinePure)>
     [/b]
-  </withStyles(TextLine)>
-  <withStyles(TextLine)>
+  </withStyles(TextLinePure)>
+  <withStyles(TextLinePure)>
      that is a wrong tags 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <withStyles(Code)
     id={49}
     options="kto"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Code)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <NewLine />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <Image
     url="http://fastpic.ru/big/e.gif"
   />
@@ -344,213 +344,213 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
   <Image
     url="http://fastpic.ru/big/3.gif"
   />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        quote 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <withStyles(Quote)
       options="kto"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          and subQuote 
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           with 
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
           style={Object {}}
         >
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             some
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
         </BaseSpan>
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           tags
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          param
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         some
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           other
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        with tags
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Quote)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/10/0.png"
   >
     <Image
       url="http://fastpic.ru/e.gif"
     />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        Link with 2 images as link 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Image
       url="http://fastpic.ru/big/7b40.gif"
     />
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
 </withStyles(Root)>
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [b] tag) should  match expected snapshot and does not include last root tag as text 1`] = `
 <withStyles(Root)>
   wrong/url.png
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       Link
-    </withStyles(TextLine)>
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+    </withStyles(TextLinePure)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
     <Image
       url="https://path.to/some/image.png"
     />
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
     style={Object {}}
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Color
       options="red"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         red text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </Color>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag 21
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in u tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
     <NewLine />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </BaseSpan>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      this text contains 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-bold"
     style={Object {}}
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        that is a wrong tags 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <withStyles(Code)
       id={49}
       options="kto"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         some text[b]with other bbCodes[/b] in code tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </withStyles(Code)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        text
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <NewLine />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Image
       url="http://fastpic.ru/big/e.gif"
     />
@@ -566,95 +566,95 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
     <Image
       url="http://fastpic.ru/big/3.gif"
     />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
-    <withStyles(Url)
+    </withStyles(TextLinePure)>
+    <withStyles(UrlPure)
       url="http://fastpic.ru/2015/0.png"
     >
       http://fastpic.ru/2015/0.png
-    </withStyles(Url)>
+    </withStyles(UrlPure)>
     <NewLine />
-    <withStyles(Url)
+    <withStyles(UrlPure)
       url="http://fastpic.ru/2015/0.gif "
     >
       http://fastpic.ru/2015/0.gif 
-    </withStyles(Url)>
+    </withStyles(UrlPure)>
     <withStyles(Quote)>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          quote 
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <withStyles(Quote)
         options="kto"
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
            and subQuote 
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-italic"
           style={Object {}}
         >
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             with 
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
           <BaseSpan
             className="default-BbCodePresenter-underline"
             style={Object {}}
           >
-            <withStyles(TextLine)>
+            <withStyles(TextLinePure)>
               some
-            </withStyles(TextLine)>
+            </withStyles(TextLinePure)>
           </BaseSpan>
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             tags
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
         </BaseSpan>
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
            param
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </withStyles(Quote)>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-bold"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           some
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-italic"
           style={Object {}}
         >
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             other
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
         </BaseSpan>
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           text
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          with tags
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
-    <withStyles(Url)
+    </withStyles(TextLinePure)>
+    <withStyles(UrlPure)
       url="http://fastpic.ru/10/0.png"
     >
       <Image
         url="http://fastpic.ru/e.gif"
       />
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          Link with 2 images as link 
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <Image
         url="http://fastpic.ru/big/7b40.gif"
       />
-    </withStyles(Url)>
+    </withStyles(UrlPure)>
   </BaseSpan>
 </withStyles(Root)>
 `;
@@ -662,111 +662,111 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
 exports[`BbCodePresenterPure component with wrong message that contained wrong tags should  match expected snapshot 1`] = `
 <withStyles(Root)>
   wrong/url.png
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       Link
-    </withStyles(TextLine)>
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+    </withStyles(TextLinePure)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://path.to/some/image.png"
   >
     <Image
       url="https://path.to/some/image.png"
     />
-  </withStyles(Url)>
-  <withStyles(TextLine)>
+  </withStyles(UrlPure)>
+  <withStyles(TextLinePure)>
      text 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
     style={Object {}}
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Color
       options="red"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         red text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </Color>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag 21
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in u tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
     <NewLine />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       text in u tag 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text in b tag
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </BaseSpan>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      this here is wrong [tag] in code tag 
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <withStyles(Code)
     id={47}
     options="kto"
   >
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Code)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      text
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <NewLine />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
+  </withStyles(TextLinePure)>
   <Image
     url="http://fastpic.ru/big/e.gif"
   />
@@ -782,94 +782,94 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
   <Image
     url="http://fastpic.ru/big/3.gif"
   />
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <NewLine />
-  <withStyles(Url)
+  <withStyles(UrlPure)
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
   <withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        quote 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <withStyles(Quote)
       options="kto"
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          and subQuote 
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           with 
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
           style={Object {}}
         >
-          <withStyles(TextLine)>
+          <withStyles(TextLinePure)>
             some
-          </withStyles(TextLine)>
+          </withStyles(TextLinePure)>
         </BaseSpan>
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           tags
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
          param
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </withStyles(Quote)>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
       style={Object {}}
     >
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         some
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
         style={Object {}}
       >
-        <withStyles(TextLine)>
+        <withStyles(TextLinePure)>
           other
-        </withStyles(TextLine)>
+        </withStyles(TextLinePure)>
       </BaseSpan>
-      <withStyles(TextLine)>
+      <withStyles(TextLinePure)>
         text
-      </withStyles(TextLine)>
+      </withStyles(TextLinePure)>
     </BaseSpan>
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        with tags
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
   </withStyles(Quote)>
-  <withStyles(TextLine)>
+  <withStyles(TextLinePure)>
      
-  </withStyles(TextLine)>
-  <withStyles(Url)
+  </withStyles(TextLinePure)>
+  <withStyles(UrlPure)
     url="http://fastpic.ru/10/0.png"
   >
     <Image
       url="http://fastpic.ru/e.gif"
     />
-    <withStyles(TextLine)>
+    <withStyles(TextLinePure)>
        Link with 2 images as link 
-    </withStyles(TextLine)>
+    </withStyles(TextLinePure)>
     <Image
       url="http://fastpic.ru/big/7b40.gif"
     />
-  </withStyles(Url)>
+  </withStyles(UrlPure)>
 </withStyles(Root)>
 `;
