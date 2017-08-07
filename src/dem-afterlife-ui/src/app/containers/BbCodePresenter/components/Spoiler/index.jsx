@@ -8,7 +8,7 @@ import calculateStyles from './calculateStyles';
 
 const spoilerTerm = {id: 35, value: 'Spoiler'};
 
-class Spoiler extends PureComponent {
+export class SpoilerPure extends PureComponent {
     static propTypes = {
         styles: shape().isRequired,
         children: node.isRequired,
@@ -34,13 +34,9 @@ class Spoiler extends PureComponent {
         return (
             <div className={styles.spoiler}>
                 <div className={styles.focus} onClick={this.toggle} role={'button'} tabIndex={0}>
-                    {options ?
-                        <span className={styles.title}>
-                            {options}
-                        </span> :
-                        <span className={styles.title}>
-                            <Term term={spoilerTerm} />
-                        </span>}
+                    <span className={styles.title}>
+                        {options || <Term term={spoilerTerm} />}
+                    </span>
                 </div>
                 {
                     isOpen ?
@@ -53,4 +49,4 @@ class Spoiler extends PureComponent {
         );
     }
 }
-export default withStyles(theme => calculateStyles(theme))(Spoiler);
+export default withStyles(theme => calculateStyles(theme))(SpoilerPure);

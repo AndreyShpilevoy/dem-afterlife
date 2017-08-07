@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpoilerPure named component with correct message should match expected snapshot 1`] = `
+<div
+  className="default-Spoiler-spoiler"
+>
+  <div
+    className="default-Spoiler-focus"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <span
+      className="default-Spoiler-title"
+    >
+      name
+    </span>
+  </div>
+</div>
+`;
+
+exports[`SpoilerPure unnamed component with correct message should match expected snapshot 1`] = `
+<div
+  className="default-Spoiler-spoiler"
+>
+  <div
+    className="default-Spoiler-focus"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <span
+      className="default-Spoiler-title"
+    >
+      <Connect(Term)
+        term={
+          Object {
+            "id": 35,
+            "value": "Spoiler",
+          }
+        }
+      />
+    </span>
+  </div>
+</div>
+`;

@@ -30,11 +30,11 @@ const mapTextToComponentsTree = (text, styles) => {
     return '';
 };
 
-const BbCodePresenter = ({text, styles}) => mapTextToComponentsTree(text, styles);
+export const BbCodePresenterPure = ({text, styles}) => mapTextToComponentsTree(text, styles);
 
-BbCodePresenter.propTypes = {
+BbCodePresenterPure.propTypes = {
     styles: shape().isRequired,
     text: string.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(BbCodePresenter);
+export default withStyles(theme => calculateStyles(theme))(BbCodePresenterPure);

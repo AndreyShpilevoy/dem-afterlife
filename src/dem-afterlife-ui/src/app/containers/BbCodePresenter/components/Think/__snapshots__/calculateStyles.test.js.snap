@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Think calculateStyles should create expected object 1`] = `
+Object {
+  "content": Object {
+    "backgroundColor": "red",
+    "borderColor": "blue",
+    "borderRadius": 1,
+    "borderStyle": "solid",
+    "borderWidth": 0.0625,
+    "padding": 0.4,
+  },
+  "image": Object {
+    "backgroundImage": "url(thinkImage);",
+    "backgroundRepeat": "no-repeat",
+    "backgroundSize": 2,
+    "paddingTop": 2,
+  },
+  "options": Object {
+    "meta": "Think",
+    "themeName": "default",
+  },
+  "think": Object {
+    "display": "inline-block",
+    "width": "fit-content",
+  },
+}
+`;

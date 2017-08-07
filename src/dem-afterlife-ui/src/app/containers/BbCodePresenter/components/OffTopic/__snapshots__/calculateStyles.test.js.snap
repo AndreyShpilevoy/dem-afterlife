@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OffTopic calculateStyles should create expected object 1`] = `
+Object {
+  "content": Object {
+    "color": "red",
+  },
+  "header": Object {
+    "fontWeight": "bold",
+  },
+  "options": Object {
+    "meta": "OffTopic",
+    "themeName": "default",
+  },
+}
+`;

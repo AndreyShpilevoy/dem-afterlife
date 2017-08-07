@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email calculateStyles should create expected object 1`] = `
+Object {
+  "email": Object {
+    "&:focus": Object {
+      "outlineColor": "black",
+    },
+    "&:hover": Object {
+      "color": "red",
+      "textDecoration": "underline",
+    },
+    "&:visited": Object {
+      "color": "yellow",
+      "textDecoration": "none",
+    },
+    "&:visited:hover": Object {
+      "color": "red",
+      "textDecoration": "underline",
+    },
+    "color": "yellow",
+    "textDecoration": "none",
+  },
+  "options": Object {
+    "meta": "Email",
+    "themeName": "default",
+  },
+}
+`;

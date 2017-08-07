@@ -3,7 +3,7 @@ import {node, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const Think = ({children, styles}) => (
+export const ThinkPure = ({children, styles}) => (
     <div className={styles.think}>
         <span className={styles.content}>
             {children}
@@ -12,9 +12,9 @@ const Think = ({children, styles}) => (
     </div>
 );
 
-Think.propTypes = {
+ThinkPure.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(Think);
+export default withStyles(theme => calculateStyles(theme))(ThinkPure);

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote HOC component with correct message should match expected snapshot 1`] = `
+<Quote
+  styles={
+    Object {
+      "author": "default-Quote-author",
+      "quote": "default-Quote-quote",
+    }
+  }
+>
+  test
+</Quote>
+`;

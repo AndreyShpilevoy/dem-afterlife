@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Think HOC component with correct message should match expected snapshot 1`] = `
+<ThinkPure
+  styles={
+    Object {
+      "content": "default-Think-content",
+      "image": "default-Think-image",
+      "think": "default-Think-think",
+    }
+  }
+>
+  test
+</ThinkPure>
+`;

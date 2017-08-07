@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Url calculateStyles should create expected object 1`] = `
+Object {
+  "options": Object {
+    "meta": "Url",
+    "themeName": "default",
+  },
+  "url": Object {
+    "&:focus": Object {
+      "outlineColor": "black",
+    },
+    "&:hover": Object {
+      "color": "red",
+      "textDecoration": "underline",
+    },
+    "&:visited": Object {
+      "color": "yellow",
+      "textDecoration": "none",
+    },
+    "&:visited:hover": Object {
+      "color": "red",
+      "textDecoration": "underline",
+    },
+    "color": "yellow",
+    "textDecoration": "none",
+    "wordBreak": "break-all",
+  },
+}
+`;

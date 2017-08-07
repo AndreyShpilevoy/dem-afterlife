@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextLine calculateStyles should create expected object 1`] = `
+Object {
+  "options": Object {
+    "meta": "TextLine",
+    "themeName": "default",
+  },
+  "text": Object {
+    "whiteSpace": "pre-wrap",
+  },
+}
+`;

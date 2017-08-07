@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextLine HOC component with correct message should match expected snapshot 1`] = `
+<TextLinePure
+  styles={
+    Object {
+      "text": "default-TextLine-text",
+    }
+  }
+>
+  test
+</TextLinePure>
+`;

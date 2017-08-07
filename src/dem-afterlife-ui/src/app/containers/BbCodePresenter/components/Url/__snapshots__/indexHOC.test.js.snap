@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Url HOC component with correct message should match expected snapshot 1`] = `
+<UrlPure
+  styles={
+    Object {
+      ".default-Url-url:focus": "default-Url-url:focus",
+      ".default-Url-url:hover": "default-Url-url:hover",
+      ".default-Url-url:visited": "default-Url-url:visited",
+      ".default-Url-url:visited:hover": "default-Url-url:visited:hover",
+      "url": "default-Url-url",
+    }
+  }
+  url="test"
+>
+  content
+</UrlPure>
+`;

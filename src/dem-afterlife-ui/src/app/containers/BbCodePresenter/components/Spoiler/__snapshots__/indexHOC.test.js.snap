@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spoiler HOC component with correct message should match expected snapshot 1`] = `
+<SpoilerPure
+  options=""
+  styles={
+    Object {
+      ".default-Spoiler-focus:focus": "default-Spoiler-focus:focus",
+      "content": "default-Spoiler-content",
+      "focus": "default-Spoiler-focus",
+      "spoiler": "default-Spoiler-spoiler",
+      "title": "default-Spoiler-title",
+    }
+  }
+>
+  test
+</SpoilerPure>
+`;

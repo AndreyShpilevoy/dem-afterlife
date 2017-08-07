@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code HOC component with correct message should match expected snapshot 1`] = `
+<Code
+  options=""
+  styles={
+    Object {
+      "content": "default-Code-content",
+      "header": "default-Code-header",
+      "headerLeft": "default-Code-headerLeft",
+      "headerRight": "default-Code-headerRight",
+      "main": "default-Code-main",
+    }
+  }
+>
+  test
+</Code>
+`;

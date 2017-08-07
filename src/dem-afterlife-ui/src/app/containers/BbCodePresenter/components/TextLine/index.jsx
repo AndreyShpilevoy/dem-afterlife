@@ -3,16 +3,16 @@ import {node, shape} from 'prop-types';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const TextLine = ({children, styles}) => (
+export const TextLinePure = ({children, styles}) => (
     <span
         className={styles.text}>
         {children}
     </span>
 );
 
-TextLine.propTypes = {
+TextLinePure.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(TextLine);
+export default withStyles(theme => calculateStyles(theme))(TextLinePure);

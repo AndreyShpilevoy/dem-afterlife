@@ -5,11 +5,11 @@ import {shallow} from 'enzyme';
 import BaseSpan from './index';
 
 describe('BaseSpan', () => {
-    it('component match expected snapshot', () => {
+    it('component without options match expected snapshot', () => {
         expect(shallow(<BaseSpan>{'Test content'}</BaseSpan>)).toMatchSnapshot();
     });
 
-    it('component match expected snapshot', () => {
+    it('component with options match expected snapshot', () => {
         expect(shallow(<BaseSpan className={'testClassName'} style={{color: 'red'}}>{'Test content'}</BaseSpan>)).toMatchSnapshot();
     });
 });

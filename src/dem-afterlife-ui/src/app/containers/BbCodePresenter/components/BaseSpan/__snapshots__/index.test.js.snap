@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseSpan component match expected snapshot 1`] = `
-<span
-  className=""
-  style={Object {}}
->
-  Test content
-</span>
-`;
-
-exports[`BaseSpan component match expected snapshot 2`] = `
+exports[`BaseSpan component with options match expected snapshot 1`] = `
 <span
   className="testClassName"
   style={
@@ -17,6 +8,15 @@ exports[`BaseSpan component match expected snapshot 2`] = `
       "color": "red",
     }
   }
+>
+  Test content
+</span>
+`;
+
+exports[`BaseSpan component without options match expected snapshot 1`] = `
+<span
+  className=""
+  style={Object {}}
 >
   Test content
 </span>

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spoiler calculateStyles should create expected object 1`] = `
+Object {
+  "content": Object {
+    "marginTop": 0.3125,
+  },
+  "focus": Object {
+    "&:focus": Object {
+      "outlineColor": "black",
+    },
+  },
+  "options": Object {
+    "meta": "Spoiler",
+    "themeName": "default",
+  },
+  "spoiler": Object {
+    "backgroundColor": "green",
+    "borderColor": "red",
+    "borderStyle": "solid",
+    "borderWidth": 0.0625,
+    "color": "yellow",
+    "marginBottom": 0.3125,
+    "marginLeft": 1.25,
+    "marginRight": 1.25,
+    "marginTop": 0.3125,
+    "padding": 0.4,
+  },
+  "title": Object {
+    "fontWeight": "bold",
+  },
+}
+`;
