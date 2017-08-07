@@ -1,8 +1,8 @@
 import React from 'react';
 import {node, string, shape} from 'prop-types';
 
-const BaseSpan = ({children, className, styleObject}) => (
-    <span className={className} style={styleObject}>
+const BaseSpan = ({children, className, style}) => (
+    <span className={className} style={style}>
         {children}
     </span>
 );
@@ -10,12 +10,12 @@ const BaseSpan = ({children, className, styleObject}) => (
 BaseSpan.propTypes = {
     children: node.isRequired,
     className: string,
-    styleObject: shape()
+    style: shape()
 };
 
 BaseSpan.defaultProps = {
     className: '',
-    styleObject: {}
+    style: {}
 };
 
 export default BaseSpan;

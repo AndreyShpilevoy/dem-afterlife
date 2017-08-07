@@ -48,7 +48,7 @@ const bbCodesMap = {
         const value = options.value;
         const style = value <= 150 && value > 0 ? {fontSize: `${value / fontSizeByDefault}rem`} : {fontSize: '1rem'};
         return (
-            <BaseSpan key={key} styleObject={style}>
+            <BaseSpan key={key} style={style}>
                 {children}
             </BaseSpan>
         );
