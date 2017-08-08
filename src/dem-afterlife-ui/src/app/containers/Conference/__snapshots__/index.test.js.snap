@@ -32,6 +32,7 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -221,6 +222,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },

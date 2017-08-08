@@ -37,6 +37,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date 1`
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -107,6 +108,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -177,6 +179,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -248,6 +251,7 @@ exports[`RelativeDateTime component match expected snapshot for relative date wi
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },

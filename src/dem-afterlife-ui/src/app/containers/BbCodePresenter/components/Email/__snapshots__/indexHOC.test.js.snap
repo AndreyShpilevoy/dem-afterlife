@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Email HOC component with correct message should match expected snapshot 1`] = `
-<Email
+<EmailPure
   email="test"
   styles={
     Object {

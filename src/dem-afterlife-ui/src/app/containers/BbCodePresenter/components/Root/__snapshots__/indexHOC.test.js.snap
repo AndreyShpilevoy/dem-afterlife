@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Root HOC component with correct message should match expected snapshot 1`] = `
-<Root
+<RootPure
   styles={
     Object {
       "root": "default-Root-root",
@@ -9,5 +9,5 @@ exports[`Root HOC component with correct message should match expected snapshot 
   }
 >
   test
-</Root>
+</RootPure>
 `;

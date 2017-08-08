@@ -6,7 +6,7 @@ import calculateStyles from './calculateStyles';
 
 const codeTerm = {id: 34, value: 'Code'};
 
-const Code = ({children, options, styles}) => {
+export const CodePure = ({children, options, styles}) => {
     const {main, header, headerLeft, headerRight, content} = styles;
     return (
         <div className={main}>
@@ -25,14 +25,14 @@ const Code = ({children, options, styles}) => {
     );
 };
 
-Code.propTypes = {
+CodePure.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
     options: string
 };
 
-Code.defaultProps = {
+CodePure.defaultProps = {
     options: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(Code);
+export default withStyles(theme => calculateStyles(theme))(CodePure);

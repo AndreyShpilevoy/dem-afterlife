@@ -7,35 +7,27 @@ import calculateStyles from './calculateStyles';
 const wroteTerm = {id: 32, value: 'wrote:'};
 const quoteTerm = {id: 33, value: 'Quote:'};
 
-const getAuthorNameFromOption = (options, authorStyle) => options ?
-    (
-        <div>
-            <span className={authorStyle}>
-                {options}
-            </span>
-            <Term spaceBefore term={wroteTerm} untermedPostfix={':'} />
-        </div>
-    ) :
-    (
-        <div>
-            <span className={authorStyle}>
-                <Term term={quoteTerm} untermedPostfix={':'} />
-            </span>
-        </div>
-    );
-
-const Quote = ({children, options, styles}) => (
+export const QuotePure = ({children, options, styles}) => (
     <blockquote
         className={styles.quote}>
-        {getAuthorNameFromOption(options, styles.author)}
+        {<div>
+            <span className={styles.author}>
+                {options || <Term term={quoteTerm} untermedPostfix={':'} />}
+            </span>
+            {options ? <Term spaceBefore term={wroteTerm} untermedPostfix={':'} /> : ''}
+        </div>}
         {children}
     </blockquote>
 );
 
-Quote.propTypes = {
+QuotePure.propTypes = {
     styles: shape().isRequired,
     children: node.isRequired,
     options: string
 };
 
-export default withStyles(theme => calculateStyles(theme))(Quote);
+QuotePure.defaultProps = {
+    options: ''
+};
+
+export default withStyles(theme => calculateStyles(theme))(QuotePure);

@@ -38,6 +38,7 @@ exports[`Term component match expected snapshot for not term and untermedPostfix
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -114,6 +115,7 @@ exports[`Term component match expected snapshot for simple term 1`] = `
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -196,6 +198,7 @@ exports[`Term component match expected snapshot for simple term and untermedPost
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -278,6 +281,7 @@ exports[`Term component match expected snapshot for simple term with indent afte
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -361,6 +365,7 @@ exports[`Term component match expected snapshot for simple term with indent befo
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -443,6 +448,7 @@ exports[`Term component match expected snapshot for simple term with space after
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -526,6 +532,7 @@ exports[`Term component match expected snapshot for simple term with space befor
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -608,6 +615,7 @@ exports[`Term component match expected snapshot for term with indent before 1`] 
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -690,6 +698,7 @@ exports[`Term component match expected snapshot for term with space before 1`] =
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },

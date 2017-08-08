@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OffTopic HOC component with correct message should match expected snapshot 1`] = `
-<OffTopic
+<OffTopicPure
   styles={
     Object {
       "content": "default-OffTopic-content",
@@ -10,5 +10,5 @@ exports[`OffTopic HOC component with correct message should match expected snaps
   }
 >
   test
-</OffTopic>
+</OffTopicPure>
 `;

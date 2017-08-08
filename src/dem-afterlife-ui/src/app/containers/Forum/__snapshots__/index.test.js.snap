@@ -44,6 +44,7 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },

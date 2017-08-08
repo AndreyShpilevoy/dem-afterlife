@@ -6,7 +6,7 @@ import calculateStyles from './calculateStyles';
 
 const offTopicTerm = {id: 31, value: 'Offtopic:'};
 
-const OffTopic = ({children, styles}) => (
+export const OffTopicPure = ({children, styles}) => (
     <div>
         <div className={styles.header}>
             <Term term={offTopicTerm} />
@@ -17,9 +17,9 @@ const OffTopic = ({children, styles}) => (
     </div>
 );
 
-OffTopic.propTypes = {
+OffTopicPure.propTypes = {
     children: node.isRequired,
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(OffTopic);
+export default withStyles(theme => calculateStyles(theme))(OffTopicPure);

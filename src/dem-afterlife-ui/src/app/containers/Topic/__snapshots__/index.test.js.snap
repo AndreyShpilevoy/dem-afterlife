@@ -44,6 +44,7 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },
@@ -239,6 +240,7 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
       Subscription {
         "listeners": Object {
           "clear": [Function],
+          "get": [Function],
           "notify": [Function],
           "subscribe": [Function],
         },

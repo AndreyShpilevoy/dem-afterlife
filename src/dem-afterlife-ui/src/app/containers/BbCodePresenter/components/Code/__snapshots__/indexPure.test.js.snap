@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodePure component with options should match expected snapshot 1`] = `
+<div
+  className="default-Code-main"
+>
+  <div
+    className="default-Code-header"
+  >
+    <div
+      className="default-Code-headerLeft"
+    >
+      <Connect(Term)
+        spaceAfter={true}
+        term={
+          Object {
+            "id": 34,
+            "value": "Code",
+          }
+        }
+        untermedPostfix=":"
+      />
+    </div>
+    <div
+      className="default-Code-headerRight"
+    >
+      test
+    </div>
+  </div>
+  <span
+    className="default-Code-content"
+  >
+    content
+  </span>
+</div>
+`;
+
+exports[`CodePure component without options should match expected snapshot 1`] = `
+<div
+  className="default-Code-main"
+>
+  <div
+    className="default-Code-header"
+  >
+    <div
+      className="default-Code-headerLeft"
+    >
+      <Connect(Term)
+        spaceAfter={true}
+        term={
+          Object {
+            "id": 34,
+            "value": "Code",
+          }
+        }
+        untermedPostfix=":"
+      />
+    </div>
+    <div
+      className="default-Code-headerRight"
+    />
+  </div>
+  <span
+    className="default-Code-content"
+  >
+    content
+  </span>
+</div>
+`;

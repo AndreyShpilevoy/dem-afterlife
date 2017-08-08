@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OffTopicPure component should match expected snapshot 1`] = `
+<div>
+  <div
+    className="default-OffTopic-header"
+  >
+    <Connect(Term)
+      term={
+        Object {
+          "id": 31,
+          "value": "Offtopic:",
+        }
+      }
+    />
+  </div>
+  <div
+    className="default-OffTopic-content"
+  >
+    content
+  </div>
+</div>
+`;

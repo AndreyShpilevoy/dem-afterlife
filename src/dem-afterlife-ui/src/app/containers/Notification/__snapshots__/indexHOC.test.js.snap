@@ -18,6 +18,7 @@ exports[`Notification HOC component match expected snapshot 1`] = `
     Subscription {
       "listeners": Object {
         "clear": [Function],
+        "get": [Function],
         "notify": [Function],
         "subscribe": [Function],
       },

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BbCodePresenterPure component with correct message should match expected snapshot 1`] = `
-<withStyles(Root)>
+<withStyles(RootPure)>
   wrong/url.png
   <withStyles(TextLinePure)>
      text 
@@ -93,14 +93,14 @@ exports[`BbCodePresenterPure component with correct message should match expecte
   <withStyles(TextLinePure)>
      text 
   </withStyles(TextLinePure)>
-  <withStyles(Code)
+  <withStyles(CodePure)
     id={47}
     options="kto"
   >
     <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
     </withStyles(TextLinePure)>
-  </withStyles(Code)>
+  </withStyles(CodePure)>
   <withStyles(TextLinePure)>
      text
   </withStyles(TextLinePure)>
@@ -137,11 +137,13 @@ exports[`BbCodePresenterPure component with correct message should match expecte
   >
     http://fastpic.ru/2015/0.gif 
   </withStyles(UrlPure)>
-  <withStyles(Quote)>
+  <withStyles(QuotePure)
+    options=""
+  >
     <withStyles(TextLinePure)>
        quote 
     </withStyles(TextLinePure)>
-    <withStyles(Quote)
+    <withStyles(QuotePure)
       options="kto"
     >
       <withStyles(TextLinePure)>
@@ -169,7 +171,7 @@ exports[`BbCodePresenterPure component with correct message should match expecte
       <withStyles(TextLinePure)>
          param
       </withStyles(TextLinePure)>
-    </withStyles(Quote)>
+    </withStyles(QuotePure)>
     <withStyles(TextLinePure)>
        
     </withStyles(TextLinePure)>
@@ -195,7 +197,7 @@ exports[`BbCodePresenterPure component with correct message should match expecte
     <withStyles(TextLinePure)>
        with tags
     </withStyles(TextLinePure)>
-  </withStyles(Quote)>
+  </withStyles(QuotePure)>
   <withStyles(TextLinePure)>
      
   </withStyles(TextLinePure)>
@@ -212,11 +214,11 @@ exports[`BbCodePresenterPure component with correct message should match expecte
       url="http://fastpic.ru/big/7b40.gif"
     />
   </withStyles(UrlPure)>
-</withStyles(Root)>
+</withStyles(RootPure)>
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [/b] tag)  match expected snapshot and does not include last root tag as text 1`] = `
-<withStyles(Root)>
+<withStyles(RootPure)>
   wrong/url.png
   <withStyles(TextLinePure)>
      text 
@@ -314,14 +316,14 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
   <withStyles(TextLinePure)>
      that is a wrong tags 
   </withStyles(TextLinePure)>
-  <withStyles(Code)
+  <withStyles(CodePure)
     id={49}
     options="kto"
   >
     <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
     </withStyles(TextLinePure)>
-  </withStyles(Code)>
+  </withStyles(CodePure)>
   <withStyles(TextLinePure)>
      text
   </withStyles(TextLinePure)>
@@ -358,11 +360,13 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
   >
     http://fastpic.ru/2015/0.gif 
   </withStyles(UrlPure)>
-  <withStyles(Quote)>
+  <withStyles(QuotePure)
+    options=""
+  >
     <withStyles(TextLinePure)>
        quote 
     </withStyles(TextLinePure)>
-    <withStyles(Quote)
+    <withStyles(QuotePure)
       options="kto"
     >
       <withStyles(TextLinePure)>
@@ -390,7 +394,7 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
       <withStyles(TextLinePure)>
          param
       </withStyles(TextLinePure)>
-    </withStyles(Quote)>
+    </withStyles(QuotePure)>
     <withStyles(TextLinePure)>
        
     </withStyles(TextLinePure)>
@@ -416,7 +420,7 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
     <withStyles(TextLinePure)>
        with tags
     </withStyles(TextLinePure)>
-  </withStyles(Quote)>
+  </withStyles(QuotePure)>
   <withStyles(TextLinePure)>
      
   </withStyles(TextLinePure)>
@@ -433,11 +437,11 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
       url="http://fastpic.ru/big/7b40.gif"
     />
   </withStyles(UrlPure)>
-</withStyles(Root)>
+</withStyles(RootPure)>
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [b] tag) should  match expected snapshot and does not include last root tag as text 1`] = `
-<withStyles(Root)>
+<withStyles(RootPure)>
   wrong/url.png
   <withStyles(TextLinePure)>
      text 
@@ -536,14 +540,14 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
     <withStyles(TextLinePure)>
        that is a wrong tags 
     </withStyles(TextLinePure)>
-    <withStyles(Code)
+    <withStyles(CodePure)
       id={49}
       options="kto"
     >
       <withStyles(TextLinePure)>
         some text[b]with other bbCodes[/b] in code tag
       </withStyles(TextLinePure)>
-    </withStyles(Code)>
+    </withStyles(CodePure)>
     <withStyles(TextLinePure)>
        text
     </withStyles(TextLinePure)>
@@ -580,11 +584,13 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
     >
       http://fastpic.ru/2015/0.gif 
     </withStyles(UrlPure)>
-    <withStyles(Quote)>
+    <withStyles(QuotePure)
+      options=""
+    >
       <withStyles(TextLinePure)>
          quote 
       </withStyles(TextLinePure)>
-      <withStyles(Quote)
+      <withStyles(QuotePure)
         options="kto"
       >
         <withStyles(TextLinePure)>
@@ -612,7 +618,7 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
         <withStyles(TextLinePure)>
            param
         </withStyles(TextLinePure)>
-      </withStyles(Quote)>
+      </withStyles(QuotePure)>
       <withStyles(TextLinePure)>
          
       </withStyles(TextLinePure)>
@@ -638,7 +644,7 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
       <withStyles(TextLinePure)>
          with tags
       </withStyles(TextLinePure)>
-    </withStyles(Quote)>
+    </withStyles(QuotePure)>
     <withStyles(TextLinePure)>
        
     </withStyles(TextLinePure)>
@@ -656,11 +662,11 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
       />
     </withStyles(UrlPure)>
   </BaseSpan>
-</withStyles(Root)>
+</withStyles(RootPure)>
 `;
 
 exports[`BbCodePresenterPure component with wrong message that contained wrong tags should  match expected snapshot 1`] = `
-<withStyles(Root)>
+<withStyles(RootPure)>
   wrong/url.png
   <withStyles(TextLinePure)>
      text 
@@ -752,14 +758,14 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
   <withStyles(TextLinePure)>
      this here is wrong [tag] in code tag 
   </withStyles(TextLinePure)>
-  <withStyles(Code)
+  <withStyles(CodePure)
     id={47}
     options="kto"
   >
     <withStyles(TextLinePure)>
       some text[b]with other bbCodes[/b] in code tag
     </withStyles(TextLinePure)>
-  </withStyles(Code)>
+  </withStyles(CodePure)>
   <withStyles(TextLinePure)>
      text
   </withStyles(TextLinePure)>
@@ -796,11 +802,13 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
   >
     http://fastpic.ru/2015/0.gif 
   </withStyles(UrlPure)>
-  <withStyles(Quote)>
+  <withStyles(QuotePure)
+    options=""
+  >
     <withStyles(TextLinePure)>
        quote 
     </withStyles(TextLinePure)>
-    <withStyles(Quote)
+    <withStyles(QuotePure)
       options="kto"
     >
       <withStyles(TextLinePure)>
@@ -828,7 +836,7 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
       <withStyles(TextLinePure)>
          param
       </withStyles(TextLinePure)>
-    </withStyles(Quote)>
+    </withStyles(QuotePure)>
     <withStyles(TextLinePure)>
        
     </withStyles(TextLinePure)>
@@ -854,7 +862,7 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
     <withStyles(TextLinePure)>
        with tags
     </withStyles(TextLinePure)>
-  </withStyles(Quote)>
+  </withStyles(QuotePure)>
   <withStyles(TextLinePure)>
      
   </withStyles(TextLinePure)>
@@ -871,5 +879,5 @@ exports[`BbCodePresenterPure component with wrong message that contained wrong t
       url="http://fastpic.ru/big/7b40.gif"
     />
   </withStyles(UrlPure)>
-</withStyles(Root)>
+</withStyles(RootPure)>
 `;

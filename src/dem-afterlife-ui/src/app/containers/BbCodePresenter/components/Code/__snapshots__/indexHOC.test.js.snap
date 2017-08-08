@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Code HOC component with correct message should match expected snapshot 1`] = `
-<Code
+<CodePure
   options=""
   styles={
     Object {
@@ -14,5 +14,5 @@ exports[`Code HOC component with correct message should match expected snapshot 
   }
 >
   test
-</Code>
+</CodePure>
 `;
