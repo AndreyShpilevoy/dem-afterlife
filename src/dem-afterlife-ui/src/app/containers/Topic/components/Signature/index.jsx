@@ -1,13 +1,12 @@
 import React from 'react';
 import {shape, string} from 'prop-types';
 import BbCodePresenter from 'containers/BbCodePresenter';
-
-// import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const Signature = ({signature, styles}) =>
-    (<div className={styles.a}>
+    (<div className={styles.container}>
+        <div className={styles.separator} />
         <BbCodePresenter text={signature} />
     </div>);
 
