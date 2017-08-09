@@ -6,7 +6,7 @@ import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const User = ({user, styles}) => {
+export const UserPure = ({user, styles}) => {
     const {id, avatar, name, groupColor} = user;
     const {inLine, userNameStyle} = styles;
     return (
@@ -21,9 +21,9 @@ const User = ({user, styles}) => {
     );
 };
 
-User.propTypes = {
+UserPure.propTypes = {
     user: sharedPropTypes.user.isRequired,
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(User);
+export default withStyles(theme => calculateStyles(theme))(UserPure);

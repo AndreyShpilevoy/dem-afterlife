@@ -4,15 +4,15 @@ import BbCodePresenter from 'containers/BbCodePresenter';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const Signature = ({signature, styles}) =>
+export const SignaturePure = ({signature, styles}) =>
     (<div className={styles.container}>
         <div className={styles.separator} />
         <BbCodePresenter text={signature} />
     </div>);
 
-Signature.propTypes = {
+SignaturePure.propTypes = {
     signature: string.isRequired,
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(Signature);
+export default withStyles(theme => calculateStyles(theme))(SignaturePure);

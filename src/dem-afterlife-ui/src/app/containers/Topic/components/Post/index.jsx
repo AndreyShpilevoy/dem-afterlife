@@ -9,10 +9,8 @@ import Signature from '../Signature';
 import calculateStyles from './calculateStyles';
 
 
-const Post = ({post, styles}) => {
+export const PostPure = ({post, styles}) => {
     const {message, postTime, user, subject} = post;
-
-    // const o = getParsedTree(message);
     const {inLine, textEllipsis} = styles;
     return (
         <div>
@@ -28,9 +26,9 @@ const Post = ({post, styles}) => {
     );
 };
 
-Post.propTypes = {
+PostPure.propTypes = {
     post: sharedPropTypes.post.isRequired,
     styles: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(Post);
+export default withStyles(theme => calculateStyles(theme))(PostPure);
