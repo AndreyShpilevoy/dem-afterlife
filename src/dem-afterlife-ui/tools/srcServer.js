@@ -1,15 +1,15 @@
 /* eslint-disable no-undef, no-console , import/no-extraneous-dependencies */
 
-const colors = require('colors'); // eslint-disable-line no-unused-vars
-const express = require('express');
-const fs = require('fs');
-const open = require('open');
-const path = require('path');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const webpackConfig = require('../webpack.config');
+import colors from 'colors'; // eslint-disable-line no-unused-vars
+import express from 'express';
+import fs from 'fs';
+import open from 'open';
+import path from 'path';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer/lib/BundleAnalyzerPlugin';
+import webpackConfig from '../webpack.config';
 
 
 const port = 60782;
