@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, react/no-multi-comp:0, react/prop-types:0 */
+/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, react/no-multi-comp, react/prop-types, react/jsx-filename-extension */
 
 import React from 'react';
 import {mount} from 'enzyme';
@@ -13,7 +13,7 @@ jest.mock('components/Chapter', () => {
     return Chapter;
 });
 
-jest.mock('components/LastActiveTopics', () => {
+jest.mock('./components/LastActiveTopics', () => {
     const LastActiveTopic = ({children}) => <div>{children}</div>;
     return LastActiveTopic;
 });

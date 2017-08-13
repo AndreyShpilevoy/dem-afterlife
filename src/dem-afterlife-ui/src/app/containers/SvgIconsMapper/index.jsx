@@ -1,16 +1,16 @@
 /* eslint global-require:0 */
 import React from 'react';
 import {string} from 'prop-types';
-import IconLink from 'components/IconLink';
+import Link from './components/Link';
 
 const SvgIconsMapper = ({className, iconName}) => {
     const availableIcons = {
-        IconSteam: require('components/IconSteam').default,
-        IconVk: require('components/IconVk').default,
-        IconSortLeft: require('components/IconSortLeft').default,
-        IconSubForum: require('components/IconSubForum').default
+        Steam: require('./components/Steam').default,
+        Vk: require('./components/Vk').default,
+        SortLeft: require('./components/SortLeft').default,
+        SubForum: require('./components/SubForum').default
     };
-    const SelectedIcon = availableIcons[iconName] ? availableIcons[iconName] : IconLink;
+    const SelectedIcon = availableIcons[iconName] ? availableIcons[iconName] : Link;
     return <SelectedIcon className={className} />;
 };
 

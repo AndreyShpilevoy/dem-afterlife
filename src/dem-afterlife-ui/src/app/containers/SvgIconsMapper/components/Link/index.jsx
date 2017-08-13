@@ -1,20 +1,20 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import vk from 'images/svg/vk.svg';
+import link from 'images/svg/link.svg';
 
 
-const IconVk = ({className}) =>
+const Link = ({className}) =>
     (<SVGInline
         className={className}
-        svg={vk} />);
+        svg={link} />);
 
-IconVk.propTypes = {
+Link.propTypes = {
     className: string
 };
 
-IconVk.defaultProps = {
+Link.defaultProps = {
     className: ''
 };
 
-export default IconVk;
+export default Link;

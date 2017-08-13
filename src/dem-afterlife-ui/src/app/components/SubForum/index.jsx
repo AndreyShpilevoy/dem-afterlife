@@ -1,7 +1,7 @@
 import React from 'react';
 import {shape} from 'prop-types';
 import Link from 'components/Link';
-import SvgIconsMapper from 'components/SvgIconsMapper';
+import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {sharedPropTypes} from 'utils';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
@@ -10,7 +10,7 @@ export const SubForumPure = ({subForum, styles}) => {
     const {id, title} = subForum;
     const linkToSubForum = `/Forum/${id}`;
     return (<div className={styles.container}>
-        <SvgIconsMapper className={styles.icon} iconName={'IconSubForum'} />
+        <SvgIconsMapper className={styles.icon} iconName={'SubForum'} />
         <Link className={styles.link} to={linkToSubForum}>
             {title}
         </Link>

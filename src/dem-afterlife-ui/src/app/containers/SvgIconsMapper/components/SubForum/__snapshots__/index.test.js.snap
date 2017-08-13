@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconSteam component match expected snapshot 1`] = `
+exports[`SubForum component match expected snapshot 1`] = `
 <SVGInline
   className="steamIconClassName"
   classSuffix="-svg"

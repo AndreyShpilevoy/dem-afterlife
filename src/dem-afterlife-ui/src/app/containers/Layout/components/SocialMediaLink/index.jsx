@@ -1,6 +1,6 @@
 import React from 'react';
 import {string, shape, number} from 'prop-types';
-import SvgIconsMapper from 'components/SvgIconsMapper';
+import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 

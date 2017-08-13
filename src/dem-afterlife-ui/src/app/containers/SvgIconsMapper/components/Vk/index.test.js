@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import IconSortLeft from './index';
+import IconVk from './index';
 
-describe('IconSortLeft', () => {
+describe('Vk', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<IconSortLeft className={'sortLeftIconClassName'} />)).toMatchSnapshot();
+        expect(shallow(<IconVk className={'vkIconClassName'} />)).toMatchSnapshot();
     });
 });

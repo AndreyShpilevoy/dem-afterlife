@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import IconLink from './index';
+import SortLeft from './index';
 
-describe('IconLink', () => {
+describe('SortLeft', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<IconLink className={'linkIconClassName'} />)).toMatchSnapshot();
+        expect(shallow(<SortLeft className={'sortLeftIconClassName'} />)).toMatchSnapshot();
     });
 });

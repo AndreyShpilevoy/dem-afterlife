@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import IconVk from './index';
+import IconSubForum from './index';
 
-describe('IconVk', () => {
+describe('SubForum', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<IconVk className={'vkIconClassName'} />)).toMatchSnapshot();
+        expect(shallow(<IconSubForum className={'steamIconClassName'} />)).toMatchSnapshot();
     });
 });

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {shallow} from 'enzyme';
-import IconSubForum from './index';
+import Steam from './index';
 
-describe('IconSubForum', () => {
+describe('Steam', () => {
     it('component match expected snapshot', () => {
-        expect(shallow(<IconSubForum className={'steamIconClassName'} />)).toMatchSnapshot();
+        expect(shallow(<Steam className={'steamIconClassName'} />)).toMatchSnapshot();
     });
 });

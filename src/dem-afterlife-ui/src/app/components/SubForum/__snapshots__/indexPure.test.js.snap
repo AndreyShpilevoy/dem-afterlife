@@ -6,7 +6,7 @@ exports[`SubForumPure component match expected snapshot 1`] = `
 >
   <SvgIconsMapper
     className="default-SubForum-icon"
-    iconName="IconSubForum"
+    iconName="SubForum"
   />
   <withStyles(LinkPure)
     className="default-SubForum-link"

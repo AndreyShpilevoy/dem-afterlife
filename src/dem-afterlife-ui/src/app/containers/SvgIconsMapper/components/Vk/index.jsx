@@ -1,20 +1,20 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import steamSquare from 'images/svg/steam-square.svg';
+import vk from 'images/svg/vk.svg';
 
 
-const IconSteam = ({className}) =>
+const Vk = ({className}) =>
     (<SVGInline
         className={className}
-        svg={steamSquare} />);
+        svg={vk} />);
 
-IconSteam.propTypes = {
+Vk.propTypes = {
     className: string
 };
 
-IconSteam.defaultProps = {
+Vk.defaultProps = {
     className: ''
 };
 
-export default IconSteam;
+export default Vk;

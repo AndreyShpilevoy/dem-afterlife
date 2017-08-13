@@ -5,7 +5,7 @@ import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
-import LastActiveTopics from 'components/LastActiveTopics';
+import LastActiveTopics from './components/LastActiveTopics';
 import {getChapterArray, getLastActiveTopicArray} from './reducer';
 import {chaptersWithForumsArraySelector, sortedLastActiveTopicsArraySelector} from './selectors';
 

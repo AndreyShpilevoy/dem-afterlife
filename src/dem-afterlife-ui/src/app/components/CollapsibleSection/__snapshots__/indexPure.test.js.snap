@@ -242,7 +242,7 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"
-          iconName="IconSortLeft"
+          iconName="SortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
@@ -375,7 +375,7 @@ exports[`CollapsibleSection Pure without headerSettings 1`] = `
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"
-          iconName="IconSortLeft"
+          iconName="SortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>
@@ -508,7 +508,7 @@ exports[`CollapsibleSection Pure without headerSettings 2`] = `
       >
         <SvgIconsMapper
           className="default-CollapsibleSection-headerArrow"
-          iconName="IconSortLeft"
+          iconName="SortLeft"
         />
       </withStyles(HiddenPure)>
     </withStyles(ColumnPure)>

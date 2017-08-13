@@ -1,20 +1,20 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import link from 'images/svg/link.svg';
+import subForum from 'images/svg/sub-forum.svg';
 
 
-const IconLink = ({className}) =>
+const SubForum = ({className}) =>
     (<SVGInline
         className={className}
-        svg={link} />);
+        svg={subForum} />);
 
-IconLink.propTypes = {
+SubForum.propTypes = {
     className: string
 };
 
-IconLink.defaultProps = {
+SubForum.defaultProps = {
     className: ''
 };
 
-export default IconLink;
+export default SubForum;

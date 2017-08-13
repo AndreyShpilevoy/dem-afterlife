@@ -1,20 +1,20 @@
 import React from 'react';
 import {string} from 'prop-types';
 import SVGInline from 'react-svg-inline';
-import sortLeft from 'images/svg/sort-left.svg';
+import steamSquare from 'images/svg/steam-square.svg';
 
 
-const IconSortLeft = ({className}) =>
+const Steam = ({className}) =>
     (<SVGInline
         className={className}
-        svg={sortLeft} />);
+        svg={steamSquare} />);
 
-IconSortLeft.propTypes = {
+Steam.propTypes = {
     className: string
 };
 
-IconSortLeft.defaultProps = {
+Steam.defaultProps = {
     className: ''
 };
 
-export default IconSortLeft;
+export default Steam;

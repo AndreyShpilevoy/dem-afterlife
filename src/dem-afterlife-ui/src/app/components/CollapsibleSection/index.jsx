@@ -5,7 +5,7 @@ import {node, bool, string, shape, oneOfType} from 'prop-types';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import SvgIconsMapper from 'components/SvgIconsMapper';
+import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {css, withStyles} from 'styles';
 import calculateStyles from './calculateStyles';
 
@@ -96,7 +96,7 @@ export class CollapsibleSectionPure extends PureComponent {
                         {
                             isCollapsible ?
                                 <Hidden sm={'down'} lg={'up'} className={headerArrowHolder}>
-                                    <SvgIconsMapper className={headerArrowClass} iconName={'IconSortLeft'} />
+                                    <SvgIconsMapper className={headerArrowClass} iconName={'SortLeft'} />
                                 </Hidden> :
                                 ''
                         }
