@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPure component with options should match expected snapshot 1`] = `
+<div
+  className="default-User-inLine"
+>
+  <withStyles(AvatarPure)
+    avatarUrl="http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg"
+    className=""
+    id={4}
+    size={2.5}
+  />
+  <UserName
+    className="default-User-userNameStyle"
+    color="#00AA00"
+    id={4}
+    name="Buba"
+  />
+</div>
+`;

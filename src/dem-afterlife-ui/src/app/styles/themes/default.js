@@ -225,7 +225,8 @@ const defaultTheme = {
         size: 2.5
     },
     post: {
-        separator: sharedSeparator
+        separator: sharedSeparator,
+        usernamePaddingLeft: 0.3125
     },
     bbCodes: {
         common: {

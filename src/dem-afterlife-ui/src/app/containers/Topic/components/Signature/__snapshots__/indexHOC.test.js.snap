@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signature HOC component with correct message should match expected snapshot 1`] = `
+<SignaturePure
+  signature="test"
+  styles={
+    Object {
+      ".default-Signature-container img": "default-Signature-container img",
+      "container": "default-Signature-container",
+      "separator": "default-Signature-separator",
+    }
+  }
+/>
+`;

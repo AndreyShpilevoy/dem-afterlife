@@ -1,11 +1,11 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = ({post, themeName}) => ({
     inLine: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center'
     },
     userNameStyle: {
-        paddingLeft: 0.3125
+        paddingLeft: post.usernamePaddingLeft
     },
     options: {meta: 'User', themeName}
 });

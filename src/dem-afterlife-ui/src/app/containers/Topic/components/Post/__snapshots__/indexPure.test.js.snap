@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostPure component with options should match expected snapshot 1`] = `
+<div>
+  <div
+    className="default-Post-inLine"
+  >
+    <withStyles(UserPure)
+      user={
+        Object {
+          "avatar": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+          "birthday": 2015-01-02T08:10:10.000Z,
+          "email": "Buba@lol.ua",
+          "emailConfirmed": true,
+          "gender": 1,
+          "groupColor": "#00AA00",
+          "id": 4,
+          "name": "Buba",
+          "rank": "Скаут",
+          "registrationDate": 2015-01-02T08:10:10.000Z,
+          "signature": "test",
+        }
+      }
+    />
+    <Connect(LocaleDateTime)
+      indentAfter={true}
+      indentBefore={true}
+      localeDateTime={2015-01-04T08:10:10.000Z}
+      spaceAfter={true}
+      spaceBefore={true}
+    />
+    <div
+      className="default-Post-textEllipsis"
+    >
+      subject 5
+    </div>
+  </div>
+  <withStyles(BbCodePresenterPure)
+    text="text"
+  />
+  <withStyles(SignaturePure)
+    signature="test"
+  />
+  <div
+    className="default-Post-separator"
+  />
+</div>
+`;
