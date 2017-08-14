@@ -105,6 +105,12 @@ const post = shape({
     })
 });
 
+const breadcrumb = shape({
+    path: string.isRequired,
+    title: string.isRequired,
+    order: number.isRequired
+});
+
 const sharedPropTypes = {
     navigationLinkItem,
     navigationLinkArray: arrayOf(navigationLinkItem),
@@ -121,7 +127,9 @@ const sharedPropTypes = {
     post,
     postArray: arrayOf(post),
     user,
-    userArray: arrayOf(user)
+    userArray: arrayOf(user),
+    breadcrumb,
+    breadcrumbArray: arrayOf(breadcrumb)
 };
 
 export default sharedPropTypes;
