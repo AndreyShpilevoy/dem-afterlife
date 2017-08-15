@@ -13,7 +13,7 @@ import globalStyles from './globalStyles';
 import calculateStyles from './calculateStyles';
 
 export const PresentationPure = ({children, themeName, navigationLinkArray, socialMediaLinkArray, breadcrumbArray, styles}) => {
-    const {contentWrapper, container, content, breadcrumbs} = styles;
+    const {contentWrapper, container, content} = styles;
     return (<ThemeProvider name={themeName}>
         <div className={contentWrapper}>
             <Container className={container}>
@@ -22,18 +22,10 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
                 <Row>
                     <Header navigationLinkArray={navigationLinkArray} />
                 </Row>
-                <Row className={breadcrumbs}>
-                    <Column xs={12}>
-                        <BreadcrumbList breadcrumbArray={breadcrumbArray} />
-                    </Column>
-                </Row>
                 <Row className={content}>
                     <Column xs={12}>
+                        <BreadcrumbList breadcrumbArray={breadcrumbArray} />
                         {children}
-                    </Column>
-                </Row>
-                <Row className={breadcrumbs}>
-                    <Column xs={12}>
                         <BreadcrumbList breadcrumbArray={breadcrumbArray} />
                     </Column>
                 </Row>

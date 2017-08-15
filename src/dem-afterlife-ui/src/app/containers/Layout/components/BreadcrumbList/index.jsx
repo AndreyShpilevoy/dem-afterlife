@@ -1,11 +1,17 @@
 import React from 'react';
 import {sharedPropTypes} from 'utils';
+import {withStyles} from 'styles';
+import BreadcrumbListItem from '../BreadcrumbListItem';
+import calculateStyles from './calculateStyles';
 
-const Breadcrumbs = ({breadcrumbArray}) => <div>{breadcrumbArray.length}</div>;
+export const BreadcrumbListPure = ({breadcrumbArray}) =>
+    (<div>
+        {breadcrumbArray.map(item => <BreadcrumbListItem breadcrumb={item} key={item.path} />)}
+    </div>);
 
-Breadcrumbs.propTypes = {
+BreadcrumbListPure.propTypes = {
     breadcrumbArray: sharedPropTypes.breadcrumbArray.isRequired
 };
 
-export default Breadcrumbs;
+export default withStyles(theme => calculateStyles(theme))(BreadcrumbListPure);
 

@@ -13,7 +13,6 @@ const calculateStyles = ({themeName, mainWrapper}) => ({
     content: {
         flex: '1 !important'
     },
-    breadcrumbs: {},
     options: {meta: 'LayoutContainer', themeName}
 });
 
