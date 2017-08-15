@@ -9,6 +9,8 @@ import getLastActiveTopicArrayApi from 'api/__fakeApi__/getLastActiveTopicArrayA
 import getTopicArrayByForumIdApi from 'api/__fakeApi__/getTopicArrayByForumIdApi';
 import getPostArrayByTopicIdApi from 'api/__fakeApi__/getPostArrayByTopicIdApi';
 import getUserArrayByUserIdArrayApi from 'api/__fakeApi__/getUserArrayByUserIdArrayApi';
+import getForumBreadcrumbsArrayByForumIdApi from 'api/__fakeApi__/getForumBreadcrumbsArrayByForumIdApi';
+import getTopicBreadcrumbsArrayByTopicIdApi from 'api/__fakeApi__/getTopicBreadcrumbsArrayByTopicIdApi';
 
 export {
     getLocaleApi,
@@ -21,5 +23,7 @@ export {
     getLastActiveTopicArrayApi,
     getTopicArrayByForumIdApi,
     getPostArrayByTopicIdApi,
-    getUserArrayByUserIdArrayApi
+    getUserArrayByUserIdArrayApi,
+    getForumBreadcrumbsArrayByForumIdApi,
+    getTopicBreadcrumbsArrayByTopicIdApi
 };

@@ -2,13 +2,16 @@ import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
     getForumByIdApi,
     getForumArrayByChapterIdArrayApi,
-    getSubForumArrayByParentForumIdArrayApi
+    getSubForumArrayByParentForumIdArrayApi,
+    getForumBreadcrumbsArrayByForumIdApi,
+    getTopicBreadcrumbsArrayByTopicIdApi
 } from 'api';
 
 const initialState = {
     selectedForum: {},
     forumArray: [],
-    subForumArray: []
+    subForumArray: [],
+    breadcrumbArray: []
 };
 
 export const GET_FORUM_BY_ID = 'GET_FORUM_BY_ID';
@@ -47,6 +50,33 @@ export const getSubForumArrayByParentForumIdArraySuccess = subForumArray => ({
     payload: {subForumArray}
 });
 
+export const GET_BREADCRUMB_ARRAY_SUCCESS = 'GET_BREADCRUMB_ARRAY_SUCCESS';
+export const getBreadcrumbArraySuccess = breadcrumbArray => {
+    const conferenceBreadcrumb = {
+        path: '/Conference',
+        title: 'Conference',
+        order: 1
+    };
+    return {
+        type: GET_BREADCRUMB_ARRAY_SUCCESS,
+        payload: {breadcrumbArray: [conferenceBreadcrumb, ...breadcrumbArray] }
+    };
+};
+
+export const getConferenceBreadcrumbs = () => getBreadcrumbArraySuccess([]);
+
+export const GET_FORUM_BREADCRUMB_ARRAY = 'GET_FORUM_BREADCRUMBS_SUCCESS';
+export const getForumBreadcrumbArray = forumId => ({
+    type: GET_FORUM_BREADCRUMB_ARRAY,
+    payload: {forumId}
+});
+
+export const GET_TOPIC_BREADCRUMB_ARRAY = 'GET_TOPIC_BREADCRUMB_ARRAY';
+export const getTopicBreadcrumbArray = topicId => ({
+    type: GET_TOPIC_BREADCRUMB_ARRAY,
+    payload: {topicId}
+});
+
 export const sharedReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case GET_FORUM_BY_ID_SUCCESS:
@@ -55,6 +85,8 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
             return {...state, forumArray: payload.forumArray};
         case GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS:
             return {...state, subForumArray: payload.subForumArray};
+        case GET_BREADCRUMB_ARRAY_SUCCESS:
+            return {...state, breadcrumbArray: payload.breadcrumbArray};
         default:
             break;
     }
@@ -96,11 +128,29 @@ export function* getSubForumsByParentForumIdArraySaga() {
     }
 }
 
+export function* getForumBreadcrumbArraySaga() {
+    for (;;) {
+        const {payload} = yield take(GET_FORUM_BREADCRUMB_ARRAY);
+        const breadcrumbArray = yield call(getForumBreadcrumbsArrayByForumIdApi, payload.forumId);
+        yield put(getBreadcrumbArraySuccess(breadcrumbArray));
+    }
+}
+
+export function* getTopicBreadcrumbArraySaga() {
+    for (;;) {
+        const {payload} = yield take(GET_TOPIC_BREADCRUMB_ARRAY);
+        const breadcrumbArray = yield call(getTopicBreadcrumbsArrayByTopicIdApi, payload.topicId);
+        yield put(getBreadcrumbArraySuccess(breadcrumbArray));
+    }
+}
+
 export function* sharedSaga() {
     yield all([
         getForumByIdSaga(),
         getForumsByChapterIdArraySaga(),
-        getSubForumsByParentForumIdArraySaga()
+        getSubForumsByParentForumIdArraySaga(),
+        getForumBreadcrumbArraySaga(),
+        getTopicBreadcrumbArraySaga()
     ]);
 }
 

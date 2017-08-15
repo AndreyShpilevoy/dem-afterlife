@@ -3,6 +3,7 @@ import {sortObjectArrayByOrderProperty} from 'utils';
 
 export const subForumArraySelector = state => state.sharedReducer.subForumArray;
 export const forumArraySelector = state => state.sharedReducer.forumArray;
+export const breadcrumbArraySelector = state => state.sharedReducer.breadcrumbArray;
 
 
 export const sortedSubForumArraySelector = createSelector(
@@ -23,4 +24,9 @@ export const forumArrayWithSubForumsSelector = createSelector(
 export const sortedForumArrayWithSubForumsSelector = createSelector(
     forumArrayWithSubForumsSelector,
     forumArray => sortObjectArrayByOrderProperty(forumArray)
+);
+
+export const sortedBreadcrumbArraySelector = createSelector(
+    breadcrumbArraySelector,
+    breadcrumbArray => sortObjectArrayByOrderProperty(breadcrumbArray)
 );

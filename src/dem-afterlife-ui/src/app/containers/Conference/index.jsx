@@ -5,8 +5,7 @@ import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Chapter from 'components/Chapter';
-import {setBreadcrumbs} from 'containers/Breadcrumbs/reducer';
-import {breadcrumbConferenceArray} from 'containers/Breadcrumbs/selectors';
+import {getConferenceBreadcrumbs} from 'containers/reducer';
 import LastActiveTopics from './components/LastActiveTopics';
 import {getChapterArray, getLastActiveTopicArray} from './reducer';
 import {chaptersWithForumsArraySelector, sortedLastActiveTopicsArraySelector} from './selectors';
@@ -15,16 +14,15 @@ class Conference extends PureComponent {
     static propTypes = {
         getChapterArray: func.isRequired,
         getLastActiveTopicArray: func.isRequired,
-        setBreadcrumbs: func.isRequired,
+        getConferenceBreadcrumbs: func.isRequired,
         chapterArray: sharedPropTypes.chapterArray.isRequired,
-        lastActiveTopicArray: sharedPropTypes.topicArray.isRequired,
-        breadcrumbArray: sharedPropTypes.breadcrumbArray.isRequired
+        lastActiveTopicArray: sharedPropTypes.topicArray.isRequired
     };
 
     componentDidMount() {
         this.props.getChapterArray();
         this.props.getLastActiveTopicArray();
-        this.props.setBreadcrumbs(this.props.breadcrumbArray);
+        this.props.getConferenceBreadcrumbs();
     }
 
     mapChapterArrayToComponent = chapterArray =>
@@ -42,15 +40,14 @@ class Conference extends PureComponent {
 
 const mapStateToProps = state => ({
     chapterArray: chaptersWithForumsArraySelector(state),
-    lastActiveTopicArray: sortedLastActiveTopicsArraySelector(state),
-    breadcrumbArray: breadcrumbConferenceArray(state)
+    lastActiveTopicArray: sortedLastActiveTopicsArraySelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
         getChapterArray,
         getLastActiveTopicArray,
-        setBreadcrumbs
+        getConferenceBreadcrumbs
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Conference);

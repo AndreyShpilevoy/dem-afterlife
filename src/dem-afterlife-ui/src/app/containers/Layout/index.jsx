@@ -5,7 +5,7 @@ import {node, func} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {sortedBreadcrumbArraySelector} from 'containers/Breadcrumbs/selectors';
+import {sortedBreadcrumbArraySelector} from 'containers/selectors';
 import {getLocale, getNavigationLinkArray, getSocialMediaLinkArray} from './reducer';
 import Presentation from './Presentation';
 import {sortedNavigationLinkSelector, sortedSocialMediaLinkSelector} from './selectors';

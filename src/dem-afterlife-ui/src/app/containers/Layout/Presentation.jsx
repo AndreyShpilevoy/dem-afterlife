@@ -2,11 +2,11 @@ import React from 'react';
 import {string, node, shape} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import Notification from 'containers/Notification';
-import Breadcrumbs from 'containers/Breadcrumbs';
 import Container from 'components/Container';
 import Row from 'components/Row';
 import Column from 'components/Column';
 import {withStyles, ThemeProvider} from 'styles';
+import BreadcrumbList from './components/BreadcrumbList';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import globalStyles from './globalStyles';
@@ -24,7 +24,7 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
                 </Row>
                 <Row className={breadcrumbs}>
                     <Column xs={12}>
-                        <Breadcrumbs breadcrumbArray={breadcrumbArray} />
+                        <BreadcrumbList breadcrumbArray={breadcrumbArray} />
                     </Column>
                 </Row>
                 <Row className={content}>
@@ -34,7 +34,7 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
                 </Row>
                 <Row className={breadcrumbs}>
                     <Column xs={12}>
-                        <Breadcrumbs breadcrumbArray={breadcrumbArray} />
+                        <BreadcrumbList breadcrumbArray={breadcrumbArray} />
                     </Column>
                 </Row>
                 <Row>

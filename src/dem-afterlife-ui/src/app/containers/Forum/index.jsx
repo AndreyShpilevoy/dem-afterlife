@@ -9,8 +9,7 @@ import Chapter from 'components/Chapter';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
 import Term from 'containers/Term';
-import {setBreadcrumbs} from 'containers/Breadcrumbs/reducer';
-import {breadcrumbConferenceArray} from 'containers/Breadcrumbs/selectors';
+import {getForumBreadcrumbArray} from 'containers/reducer';
 import {sortedTopicArraySelector} from './selectors';
 import {getTopicArrayByForumId} from './reducer';
 
@@ -23,10 +22,9 @@ const lastMessageTerm = {id: 3, value: 'Last message in'};
 export class ForumPure extends PureComponent {
     static propTypes = {
         getTopicArrayByForumId: func.isRequired,
-        setBreadcrumbs: func.isRequired,
+        getForumBreadcrumbArray: func.isRequired,
         topicArray: sharedPropTypes.topicArray.isRequired,
         forumArray: sharedPropTypes.forumArray.isRequired,
-        breadcrumbArray: sharedPropTypes.breadcrumbArray.isRequired,
         match: shape({
             params: shape({
                 forumId: string.isRequired
@@ -35,14 +33,16 @@ export class ForumPure extends PureComponent {
     };
 
     componentDidMount = () => {
-        this.props.setBreadcrumbs(this.props.breadcrumbArray);
-        this.props.getTopicArrayByForumId(Number.parseInt(this.props.match.params.forumId, 10));
+        const forumId = Number.parseInt(this.props.match.params.forumId, 10);
+        this.props.getForumBreadcrumbArray(forumId);
+        this.props.getTopicArrayByForumId(forumId);
     }
 
     componentWillReceiveProps = nextProps => {
         if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
-            this.props.setBreadcrumbs(nextProps.breadcrumbArray);
-            this.props.getTopicArrayByForumId(Number.parseInt(nextProps.match.params.forumId, 10));
+            const forumId = Number.parseInt(nextProps.match.params.forumId, 10);
+            this.props.getForumBreadcrumbArray(forumId);
+            this.props.getTopicArrayByForumId(forumId);
         }
     }
 
@@ -83,14 +83,13 @@ export class ForumPure extends PureComponent {
 
 const mapStateToProps = state => ({
     topicArray: sortedTopicArraySelector(state),
-    forumArray: sortedSubForumArraySelector(state),
-    breadcrumbArray: breadcrumbConferenceArray(state)
+    forumArray: sortedSubForumArraySelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
         getTopicArrayByForumId,
-        setBreadcrumbs
+        getForumBreadcrumbArray
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ForumPure);

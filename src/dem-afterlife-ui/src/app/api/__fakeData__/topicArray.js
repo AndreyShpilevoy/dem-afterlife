@@ -15,7 +15,7 @@ const topicArray = [
     },
     {
         id: 2,
-        forumId: 10,
+        forumId: 11,
         title: 'Как активировать бомбу.',
         postsCount: 57,
         topicViewsCount: 847,

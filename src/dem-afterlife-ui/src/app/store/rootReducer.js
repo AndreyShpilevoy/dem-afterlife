@@ -5,7 +5,6 @@ import {notificationReducer} from 'containers/Notification/reducer';
 import {conferenceReducer} from 'containers/Conference/reducer';
 import {forumReducer} from 'containers/Forum/reducer';
 import {topicReducer} from 'containers/Topic/reducer';
-import {breadcrumbReducer} from 'containers/Breadcrumbs/reducer';
 import {sharedReducer} from 'containers/reducer';
 
 const rootReducer = combineReducers({
@@ -15,7 +14,6 @@ const rootReducer = combineReducers({
     topicReducer,
     sharedReducer,
     notificationReducer,
-    breadcrumbReducer,
     routing: routerReducer
 });
 

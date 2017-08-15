@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Term from 'containers/Term';
+import {getTopicBreadcrumbArray} from 'containers/reducer';
 import Post from './components/Post';
 import {sortedPostArrayWithUsersSelector} from './selectors';
 import {getPostArrayByTopicId} from './reducer';
@@ -15,6 +16,7 @@ const titleTerm = {id: 30, value: 'Posts'};
 class Topic extends PureComponent {
     static propTypes = {
         getPostArrayByTopicId: func.isRequired,
+        getTopicBreadcrumbArray: func.isRequired,
         postArray: sharedPropTypes.postArray.isRequired,
         match: shape({
             params: shape({
@@ -24,12 +26,16 @@ class Topic extends PureComponent {
     };
 
     componentDidMount = () => {
-        this.props.getPostArrayByTopicId(Number.parseInt(this.props.match.params.topicId, 10));
+        const topicId = Number.parseInt(this.props.match.params.topicId, 10);
+        this.props.getTopicBreadcrumbArray(topicId);
+        this.props.getPostArrayByTopicId(topicId);
     }
 
     componentWillReceiveProps = nextProps => {
         if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
-            this.props.getPostArrayByTopicId(Number.parseInt(nextProps.match.params.topicId, 10));
+            const topicId = Number.parseInt(nextProps.match.params.topicId, 10);
+            this.props.getTopicBreadcrumbArray(topicId);
+            this.props.getPostArrayByTopicId(topicId);
         }
     }
 
@@ -59,7 +65,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
-        getPostArrayByTopicId
+        getPostArrayByTopicId,
+        getTopicBreadcrumbArray
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Topic);

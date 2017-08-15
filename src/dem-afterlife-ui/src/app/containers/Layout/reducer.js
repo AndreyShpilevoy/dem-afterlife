@@ -1,5 +1,9 @@
 import {all, call, put, take} from 'redux-saga/effects';
-import {getLocaleApi, getNavigationLinkArrayApi, getSocialMediaLinkArrayApi} from 'api';
+import {
+    getLocaleApi,
+    getNavigationLinkArrayApi,
+    getSocialMediaLinkArrayApi
+} from 'api';
 
 const initialState = {
     locale: 'en',
