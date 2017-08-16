@@ -29,7 +29,7 @@ const topicArray = [
     },
     {
         id: 3,
-        forumId: 10,
+        forumId: 59,
         title: 'Почему админы дебилы [закрыто намертво]',
         postsCount: 218,
         topicViewsCount: 82847,

@@ -268,6 +268,24 @@ const forumArray = [
             latestPostAuthorName: 'kto',
             latestPostAuthorGroupColor: '#ffa510'
         }
+    },
+    {
+        id: 59,
+        chapterId: null,
+        parentForumId: 56,
+        title: 'Deep node',
+        order: 56,
+        description: 'Deep node',
+        topicsCount: 10,
+        postsCount: 5447,
+        lastTopicInfo: {
+            topicId: 1,
+            topicDescription: 'Идеи к Ex Machina -2 часть четвертая',
+            latestPostTimeCreation: new Date('2015/08/20 13:42:32'),
+            latestPostAuthorId: 1,
+            latestPostAuthorName: 'kto',
+            latestPostAuthorGroupColor: '#ffa510'
+        }
     }
 ];
 

@@ -38,16 +38,16 @@ export const getForumArrayByChapterIdArraySuccess = forumArray => ({
     payload: {forumArray}
 });
 
-export const GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY = 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY';
-export const getSubForumArrayByParentForumIdArray = parentForumIdArray => ({
-    type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
+export const GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY = 'GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY';
+export const getForumArrayByParentForumIdArray = parentForumIdArray => ({
+    type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
     payload: {parentForumIdArray}
 });
 
-export const GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS = 'GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS';
-export const getSubForumArrayByParentForumIdArraySuccess = subForumArray => ({
-    type: GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
-    payload: {subForumArray}
+export const GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS = 'GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS';
+export const getForumArrayByParentForumIdArraySuccess = forumArray => ({
+    type: GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
+    payload: {forumArray}
 });
 
 export const GET_BREADCRUMB_ARRAY_SUCCESS = 'GET_BREADCRUMB_ARRAY_SUCCESS';
@@ -83,8 +83,8 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
             return {...state, selectedForum: payload.selectedForum};
         case GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS:
             return {...state, forumArray: payload.forumArray};
-        case GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS:
-            return {...state, subForumArray: payload.subForumArray};
+        case GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS:
+            return {...state, subForumArray: payload.forumArray};
         case GET_BREADCRUMB_ARRAY_SUCCESS:
             return {...state, breadcrumbArray: payload.breadcrumbArray};
         default:
@@ -106,7 +106,7 @@ export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
     const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
     yield put(getForumArrayByChapterIdArraySuccess(forumArray));
     const forumsIdArray = forumArray.map(x => x.id);
-    yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
+    yield put(getForumArrayByParentForumIdArray(forumsIdArray));
 }
 
 export function* getForumsByChapterIdArraySaga() {
@@ -116,15 +116,15 @@ export function* getForumsByChapterIdArraySaga() {
     }
 }
 
-export function* getSubForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
+export function* getForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
     const forumArray = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
-    yield put(getSubForumArrayByParentForumIdArraySuccess(forumArray));
+    yield put(getForumArrayByParentForumIdArraySuccess(forumArray));
 }
 
-export function* getSubForumsByParentForumIdArraySaga() {
+export function* getForumsByParentForumIdArraySaga() {
     for (;;) {
-        const {payload} = yield take(GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
-        yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
+        const {payload} = yield take(GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
+        yield fork(getForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
     }
 }
 
@@ -148,7 +148,7 @@ export function* sharedSaga() {
     yield all([
         getForumByIdSaga(),
         getForumsByChapterIdArraySaga(),
-        getSubForumsByParentForumIdArraySaga(),
+        getForumsByParentForumIdArraySaga(),
         getForumBreadcrumbArraySaga(),
         getTopicBreadcrumbArraySaga()
     ]);
