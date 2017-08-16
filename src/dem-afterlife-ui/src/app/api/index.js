@@ -3,6 +3,7 @@ import getNavigationLinkArrayApi from 'api/__fakeApi__/getNavigationLinkArrayApi
 import getSocialMediaLinkArrayApi from 'api/__fakeApi__/getSocialMediaLinkArrayApi';
 import getChapterArrayApi from 'api/__fakeApi__/getChapterArrayApi';
 import getForumArrayByChapterIdArrayApi from 'api/__fakeApi__/getForumArrayByChapterIdArrayApi';
+import getForumArrayByParentForumIdApi from 'api/__fakeApi__/getForumArrayByParentForumIdApi';
 import getForumByIdApi from 'api/__fakeApi__/getForumByIdApi';
 import getSubForumArrayByParentForumIdArrayApi from 'api/__fakeApi__/getSubForumArrayByParentForumIdArrayApi';
 import getLastActiveTopicArrayApi from 'api/__fakeApi__/getLastActiveTopicArrayApi';
@@ -18,6 +19,7 @@ export {
     getSocialMediaLinkArrayApi,
     getChapterArrayApi,
     getForumArrayByChapterIdArrayApi,
+    getForumArrayByParentForumIdApi,
     getForumByIdApi,
     getSubForumArrayByParentForumIdArrayApi,
     getLastActiveTopicArrayApi,

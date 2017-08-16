@@ -4,7 +4,7 @@ import {func, shape, string} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {sortedSubForumArraySelector} from 'containers/selectors';
+import {sortedForumArrayWithSubForumsSelector} from 'containers/selectors';
 import Chapter from 'components/Chapter';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
@@ -83,7 +83,7 @@ export class ForumPure extends PureComponent {
 
 const mapStateToProps = state => ({
     topicArray: sortedTopicArraySelector(state),
-    forumArray: sortedSubForumArraySelector(state)
+    forumArray: sortedForumArrayWithSubForumsSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>

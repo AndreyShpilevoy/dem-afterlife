@@ -1,6 +1,6 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getTopicArrayByForumIdApi} from 'api';
-import {getForumArrayByParentForumIdArray} from 'containers/reducer';
+import {getForumArrayByParentForumId} from 'containers/reducer';
 
 const initialState = {
     topicArray: []
@@ -38,7 +38,7 @@ export function* getTopicArrayForumIdSaga() {
     for (;;) {
         const {payload} = yield take(GET_TOPIC_ARRAY_BY_FORUM_ID);
         yield fork(getTopicArrayForumIdNonBlockSaga, payload.forumId);
-        yield put(getForumArrayByParentForumIdArray([payload.forumId]));
+        yield put(getForumArrayByParentForumId(payload.forumId));
     }
 }
 
