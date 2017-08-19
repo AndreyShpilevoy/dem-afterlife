@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Presentation Pure component match expected snapshot 1`] = `
+<div
+  className="default-LayoutContainer-contentWrapper"
+>
+  <Jss(ContainerPure)
+    className="default-LayoutContainer-container"
+  >
+    <Connect(NotificationPure) />
+    <Jss(RowPure)
+      className=""
+      reverse={false}
+    >
+      <Jss(HeaderPure)
+        navigationLinkArray={Array []}
+      />
+    </Jss(RowPure)>
+    <Jss(RowPure)
+      className="default-LayoutContainer-content"
+      reverse={false}
+    >
+      <Jss(ColumnPure)
+        className=""
+        lg=""
+        lgOffset=""
+        md=""
+        mdOffset=""
+        sm=""
+        smOffset=""
+        xl=""
+        xlOffset=""
+        xs={12}
+        xsOffset=""
+      >
+        <Jss(BreadcrumbListPure)
+          breadcrumbArray={Array []}
+        />
+        <div>
+          Layout Presentation content
+        </div>
+        <Jss(BreadcrumbListPure)
+          breadcrumbArray={Array []}
+        />
+      </Jss(ColumnPure)>
+    </Jss(RowPure)>
+    <Jss(RowPure)
+      className=""
+      reverse={false}
+    >
+      <Jss(FooterPure)
+        socialMediaLinkArray={Array []}
+      />
+    </Jss(RowPure)>
+  </Jss(ContainerPure)>
+</div>
+`;

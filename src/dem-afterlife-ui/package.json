@@ -16,7 +16,7 @@
         "test": "cross-env BABEL_ENV=test jest --config jest.config.json --no-cache",
         "prebuild": "yarn run clean-wwwroot && yarn run test-cached",
         "build": "cross-env BABEL_ENV=production babel-node --presets es2015 tools/distServer.js",
-        "prestart1": "yarn run test-cached",
+        "prestart": "yarn run test-cached",
         "start": "cross-env BABEL_ENV=development babel-node --presets es2015 tools/srcServer.js"
     },
     "quokka": {
@@ -107,7 +107,6 @@
         "react-router-dom": "4.1.2",
         "react-router-redux": "5.0.0-alpha.6",
         "react-svg-inline": "2.0.0",
-        "react-with-styles": "1.4.0",
         "redux": "3.7.2",
         "redux-immutable-state-invariant": "2.0.0",
         "redux-saga": "0.15.6",

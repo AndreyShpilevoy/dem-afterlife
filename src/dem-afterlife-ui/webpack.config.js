@@ -37,7 +37,6 @@ const entryPoints = {
         'react-redux',
         'react-router-dom',
         'react-router-redux',
-        'react-with-styles',
         'redux',
         'redux-saga',
         'react-svg-inline',

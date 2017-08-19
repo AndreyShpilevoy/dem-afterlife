@@ -22,6 +22,7 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
 >
   <ForumPure
     forumArray={Array []}
+    getForumBreadcrumbArray={[Function]}
     getTopicArrayByForumId={[Function]}
     match={
       Object {
@@ -213,7 +214,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
       }
     }
   >
-    <withStyles(TopicPure)
+    <Jss(TopicPure)
       topic={
         Object {
           "forumId": 10,
@@ -232,7 +233,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
         }
       }
     />
-    <withStyles(TopicPure)
+    <Jss(TopicPure)
       topic={
         Object {
           "forumId": 10,

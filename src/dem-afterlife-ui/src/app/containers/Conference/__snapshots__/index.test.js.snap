@@ -16,6 +16,7 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
   <Conference
     chapterArray={Array []}
     getChapterArray={[Function]}
+    getConferenceBreadcrumbs={[Function]}
     getLastActiveTopicArray={[Function]}
     lastActiveTopicArray={Array []}
     store={
@@ -173,6 +174,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
       ]
     }
     getChapterArray={[Function]}
+    getConferenceBreadcrumbs={[Function]}
     getLastActiveTopicArray={[Function]}
     lastActiveTopicArray={
       Array [

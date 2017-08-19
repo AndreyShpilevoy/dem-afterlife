@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Shared reducer default saga should return 1 yield with 3 sagas. 2 yield should be in state Done 1`] = `
+exports[`Shared reducer default saga should return 1 yield with 6 sagas. 2 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -15,12 +15,21 @@ Object {
       GeneratorFunctionPrototype {
         "_invoke": [Function],
       },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
     ],
   },
 }
 `;
 
-exports[`Shared reducer default saga should return 1 yield with 3 sagas. 2 yield should be in state Done 2`] = `
+exports[`Shared reducer default saga should return 1 yield with 6 sagas. 2 yield should be in state Done 2`] = `
 Object {
   "done": true,
   "value": undefined,

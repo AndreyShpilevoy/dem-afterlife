@@ -11,28 +11,28 @@ describe('bbCodesMap', () => {
     it('b should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {bold: 'bold style'} };
+        const option = {classes: {bold: 'bold style'} };
         expect(bbCodesMap.b(children, key, option).props).toMatchSnapshot();
     });
 
     it('i should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {italic: 'italic style'} };
+        const option = {classes: {italic: 'italic style'} };
         expect(bbCodesMap.i(children, key, option).props).toMatchSnapshot();
     });
 
     it('u should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {underline: 'underline style'} };
+        const option = {classes: {underline: 'underline style'} };
         expect(bbCodesMap.u(children, key, option).props).toMatchSnapshot();
     });
 
     it('s should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {lineThrough: 'lineThrough style'} };
+        const option = {classes: {lineThrough: 'lineThrough style'} };
         expect(bbCodesMap.s(children, key, option).props).toMatchSnapshot();
     });
 
@@ -82,21 +82,21 @@ describe('bbCodesMap', () => {
     it('center should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {center: 'center style'} };
+        const option = {classes: {center: 'center style'} };
         expect(bbCodesMap.center(children, key, option).props).toMatchSnapshot();
     });
 
     it('left should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {left: 'left style'} };
+        const option = {classes: {left: 'left style'} };
         expect(bbCodesMap.left(children, key, option).props).toMatchSnapshot();
     });
 
     it('right should match expected snapshot', () => {
         const children = 'some text';
         const key = 0;
-        const option = {styles: {right: 'right style'} };
+        const option = {classes: {right: 'right style'} };
         expect(bbCodesMap.right(children, key, option).props).toMatchSnapshot();
     });
 

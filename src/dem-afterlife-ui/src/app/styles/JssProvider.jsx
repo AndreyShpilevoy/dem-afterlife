@@ -11,8 +11,6 @@ import jssVendorPrefixer from 'jss-vendor-prefixer';
 import jssPropsSort from 'jss-props-sort';
 import jssIsolate from 'jss-isolate';
 import {JssProvider as JssProviderBase} from 'react-jss';
-
-// import classNames from 'classnames';
 import defaultUnits from './defaultUnits';
 
 const createGenerateClassName = () => (rule, sheet) => `${sheet.options.componentName}-${rule.key}${sheet.options.index}`;

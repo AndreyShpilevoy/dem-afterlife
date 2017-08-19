@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkListItem Pure component match expected snapshot 1`] = `
+<li>
+  <Jss(LinkPure)
+    className="default-NavigationLinkListItem-link"
+    style={Object {}}
+    to="/"
+  >
+    Conference
+  </Jss(LinkPure)>
+</li>
+`;

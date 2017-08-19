@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chapter component match expected snapshot without forumArray 1`] = `
-<withStyles(LinkPure)
+<Jss(LinkPure)
   className="chapterClassName"
   style={
     Object {
@@ -11,5 +11,5 @@ exports[`Chapter component match expected snapshot without forumArray 1`] = `
   to="/UserProfile/256"
 >
   kto
-</withStyles(LinkPure)>
+</Jss(LinkPure)>
 `;
