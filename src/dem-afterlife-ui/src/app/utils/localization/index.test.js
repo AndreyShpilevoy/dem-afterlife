@@ -1,4 +1,4 @@
-/* eslint no-undefined: 0, no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0 max-statements: 0*/
+/* eslint no-undefined: 0, no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0 max-statements: 0 */
 import dateTimeDeclension from './translations/dateTimeDeclensions/ruUa';
 import {
     getTermTranslation,
@@ -95,7 +95,7 @@ describe('EN dateTimeDeclension', () => {
     });
 
     it('getRelativeDateTime should return expected string for wrong locale', () => {
-        expect(getRelativeDateTime('Tue May 30 2017 12:32:49 GMT+0300 (FLE Daylight Time)', 'ururur')).toEqual('5/30/2017 12:32');
+        expect(getRelativeDateTime('Tue May 30 2017 12:32:49', 'ururur')).toEqual('5/30/2017 12:32');
     });
 
     it('getRelativeDateTime should return expected string for right params', () => {
@@ -110,7 +110,7 @@ describe('EN dateTimeDeclension', () => {
             hour: '2-digit',
             minute: '2-digit'
         };
-        expect(getLocaleDateTime('Tue May 30 2017 12:32:49 GMT+0300 (FLE Daylight Time)', 'en', options)).toEqual('May 30, 2017, 12:32 PM');
+        expect(getLocaleDateTime('Tue May 30 2017 12:32:49', 'en', options)).toEqual('May 30, 2017, 12:32 PM');
     });
 
     it('getLocaleDateTime should return expected string for wrong date', () => {
