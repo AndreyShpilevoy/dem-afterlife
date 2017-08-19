@@ -2,13 +2,13 @@
 
 import React, {PureComponent} from 'react';
 import {func, shape} from 'prop-types';
-import {css, withStyles} from 'styles';
+import {concatStyleNames, injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
 export class MenuButtonPure extends PureComponent {
     static propTypes = {
-        styles: shape().isRequired,
+        classes: shape().isRequired,
         onClick: func.isRequired
     };
 
@@ -26,14 +26,14 @@ export class MenuButtonPure extends PureComponent {
     }
 
     render() {
-        const {styles} = this.props;
-        const {container, firstLine, secondLine, thirdLine, fourthLine, allLines} = styles;
+        const {classes} = this.props;
+        const {container, firstLine, secondLine, thirdLine, fourthLine, allLines} = classes;
         const {opened} = this.state;
         const openedClassName = opened ? 'open' : '';
-        const firstLineStyle = css([firstLine, allLines, openedClassName]);
-        const secondLineStyle = css([secondLine, allLines, openedClassName]);
-        const thirdLineStyle = css([thirdLine, allLines, openedClassName]);
-        const fourthLineStyle = css([fourthLine, allLines, openedClassName]);
+        const firstLineStyle = concatStyleNames([firstLine, allLines, openedClassName]);
+        const secondLineStyle = concatStyleNames([secondLine, allLines, openedClassName]);
+        const thirdLineStyle = concatStyleNames([thirdLine, allLines, openedClassName]);
+        const fourthLineStyle = concatStyleNames([fourthLine, allLines, openedClassName]);
         const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
             <div className={container} onClick={menuButtonOnClick} role={'button'} tabIndex={0}>
@@ -46,4 +46,4 @@ export class MenuButtonPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(MenuButtonPure);
+export default injectSheet(calculateStyles, {componentName: 'MenuButton'})(MenuButtonPure);

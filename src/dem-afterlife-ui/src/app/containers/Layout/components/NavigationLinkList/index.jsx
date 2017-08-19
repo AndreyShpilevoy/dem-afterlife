@@ -1,7 +1,7 @@
 import React from 'react';
 import {string, shape} from 'prop-types';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import NavigationLinkListItem from '../NavigationLinkListItem';
 import calculateStyles from './calculateStyles';
 
@@ -12,8 +12,8 @@ const mapNavigationLinks = (navigationLinkArray = [], separatorClassName) =>
             <div className={separatorClassName} />
         </div>));
 
-export const NavigationLinkListPure = ({styles, className, navigationLinkArray}) => {
-    const {list, separator} = styles;
+export const NavigationLinkListPure = ({classes, className, navigationLinkArray}) => {
+    const {list, separator} = classes;
     const localClassName = `${list} ${className || ''}`;
     return (
         <ul className={localClassName}>
@@ -23,7 +23,7 @@ export const NavigationLinkListPure = ({styles, className, navigationLinkArray})
 };
 
 NavigationLinkListPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     className: string,
     navigationLinkArray: sharedPropTypes.navigationLinkArray.isRequired
 };
@@ -32,4 +32,4 @@ NavigationLinkListPure.defaultProps = {
     className: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(NavigationLinkListPure);
+export default injectSheet(calculateStyles, {componentName: 'NavigationLinkList'})(NavigationLinkListPure);

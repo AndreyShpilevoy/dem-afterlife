@@ -1,20 +1,20 @@
 import React from 'react';
 import {string, number, shape} from 'prop-types';
 import Link from 'components/Link';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
 const getContainerStyles = size => ({width: `${size}rem`});
 const getImageStyles = size => ({height: `${size}rem`});
 
-export const AvatarPure = ({avatarUrl, size, styles, className, id}) => {
-    const localClassName = className ? `${className} ${styles.container}` : styles.container;
+export const AvatarPure = ({avatarUrl, size, classes, className, id}) => {
+    const localClassName = className ? `${className} ${classes.container}` : classes.container;
     const linkToProfile = `/${id}`;
     return (
         <div className={localClassName} style={getContainerStyles(size)}>
-            <Link className={styles.avatar} to={linkToProfile} style={getImageStyles(size)}>
-                {avatarUrl ? <img src={avatarUrl} alt={'Avatar'} /> : <div className={styles.avatarDefault} />}
+            <Link className={classes.avatar} to={linkToProfile} style={getImageStyles(size)}>
+                {avatarUrl ? <img src={avatarUrl} alt={'Avatar'} /> : <div className={classes.avatarDefault} />}
             </Link>
         </div>
     );
@@ -25,7 +25,7 @@ AvatarPure.propTypes = {
     avatarUrl: string,
     className: string,
     size: number,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
 AvatarPure.defaultProps = {
@@ -34,4 +34,4 @@ AvatarPure.defaultProps = {
     size: 2.5
 };
 
-export default withStyles(theme => calculateStyles(theme))(AvatarPure);
+export default injectSheet(calculateStyles, {componentName: 'Avatar'})(AvatarPure);

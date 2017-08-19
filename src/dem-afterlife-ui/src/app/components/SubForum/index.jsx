@@ -3,15 +3,15 @@ import {shape} from 'prop-types';
 import Link from 'components/Link';
 import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const SubForumPure = ({subForum, styles}) => {
+export const SubForumPure = ({subForum, classes}) => {
     const {id, title} = subForum;
     const linkToSubForum = `/Forum/${id}`;
-    return (<div className={styles.container}>
-        <SvgIconsMapper className={styles.icon} iconName={'SubForum'} />
-        <Link className={styles.link} to={linkToSubForum}>
+    return (<div className={classes.container}>
+        <SvgIconsMapper className={classes.icon} iconName={'SubForum'} />
+        <Link className={classes.link} to={linkToSubForum}>
             {title}
         </Link>
     </div>);
@@ -19,7 +19,7 @@ export const SubForumPure = ({subForum, styles}) => {
 
 SubForumPure.propTypes = {
     subForum: sharedPropTypes.subForum.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(SubForumPure);
+export default injectSheet(calculateStyles, {componentName: 'SubForum'})(SubForumPure);

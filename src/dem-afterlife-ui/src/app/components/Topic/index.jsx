@@ -9,13 +9,13 @@ import Avatar from 'components/Avatar';
 import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const TopicPure = ({topic, styles}) => {
+export const TopicPure = ({topic, classes}) => {
     const {id, title, postsCount, topicViewsCount, lastPostInfo, forumId, parentForumTitle} = topic;
     const {separator, wrapper, centerRow, titleContainer, titleStyle, parentForumWrapper, lastPostInfoStyle,
-        parentForumTitleStyle, heightFull, noWrap, textSmallMd} = styles;
+        parentForumTitleStyle, heightFull, noWrap, textSmallMd} = classes;
     const forumTerm = {id: 25, value: 'Forum:'};
     const postTerm = {id: 2, value: 'Posts'};
     const linkToTopic = `/Topic/${id}`;
@@ -95,7 +95,7 @@ export const TopicPure = ({topic, styles}) => {
 
 TopicPure.propTypes = {
     topic: sharedPropTypes.topic.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(TopicPure);
+export default injectSheet(calculateStyles, {componentName: 'Topic'})(TopicPure);

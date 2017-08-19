@@ -2,22 +2,22 @@ import React from 'react';
 import {bool, shape} from 'prop-types';
 import Link from 'components/Link';
 import {sharedPropTypes} from 'utils';
-import {css, withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, setActive, styles}) =>
-    (<div className={styles.item}>
+export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, setActive, classes}) =>
+    (<div className={classes.item}>
         {
             ellipsis ?
-                <div className={styles.arrow}>{'...'}</div> :
-                <Link className={styles.arrow} to={breadcrumb.path}>
+                <div className={classes.arrow}>{'...'}</div> :
+                <Link className={classes.arrow} to={breadcrumb.path}>
                     <div>{breadcrumb.title}</div>
                 </Link>
         }
     </div>);
 
 BreadcrumbListItemPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     breadcrumb: sharedPropTypes.breadcrumb.isRequired,
     setActive: bool,
     ellipsis: bool
@@ -28,5 +28,5 @@ BreadcrumbListItemPure.defaultProps = {
     ellipsis: false
 };
 
-export default withStyles(theme => calculateStyles(theme))(BreadcrumbListItemPure);
+export default injectSheet(calculateStyles, {componentName: 'BreadcrumbListIte'})(BreadcrumbListItemPure);
 

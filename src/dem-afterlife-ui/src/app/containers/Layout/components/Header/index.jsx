@@ -7,7 +7,7 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import {css, withStyles} from 'styles';
+import {concatStyleNames, injectSheet} from 'styles';
 import Logotype from '../Logotype';
 import MenuButton from '../MenuButton';
 import NavigationLinkList from '../NavigationLinkList';
@@ -15,7 +15,7 @@ import calculateStyles from './calculateStyles';
 
 export class HeaderPure extends PureComponent {
     static propTypes = {
-        styles: shape().isRequired,
+        classes: shape().isRequired,
         navigationLinkArray: sharedPropTypes.navigationLinkArray.isRequired
     };
 
@@ -49,13 +49,13 @@ export class HeaderPure extends PureComponent {
     }
 
     render() {
-        const {styles, navigationLinkArray} = this.props;
+        const {classes, navigationLinkArray} = this.props;
         const {shrinkedHeader, menuIsClosed} = this.state;
         const {header, headerLogoContainer, headerColumn, navigationLinksContainer, fixedOnTheTop,
-            headerMenuButtonContainer, navigationLinks, headerPadding} = styles;
-        const headerClassName = css([header, shrinkedHeader ? 'shrinkedHeader' : '']);
-        const headerLogoContainerClassName = css([headerLogoContainer, shrinkedHeader ? 'shrinkedHeader' : '']);
-        const navigationLinksContainerClassName = css([headerColumn, navigationLinksContainer, menuIsClosed ? 'closed' : '']);
+            headerMenuButtonContainer, navigationLinks, headerPadding} = classes;
+        const headerClassName = concatStyleNames([header, shrinkedHeader ? 'shrinkedHeader' : '']);
+        const headerLogoContainerClassName = concatStyleNames([headerLogoContainer, shrinkedHeader ? 'shrinkedHeader' : '']);
+        const navigationLinksContainerClassName = concatStyleNames([headerColumn, navigationLinksContainer, menuIsClosed ? 'closed' : '']);
         const menuButtonOnClick = () => this.handleMenuButtonClick(!menuIsClosed);
         return (
             <div>
@@ -82,4 +82,4 @@ export class HeaderPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(HeaderPure);
+export default injectSheet(calculateStyles, {componentName: 'Header'})(HeaderPure);

@@ -1,13 +1,13 @@
 import React from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const codeTerm = {id: 34, value: 'Code'};
 
-export const CodePure = ({children, options, styles}) => {
-    const {main, header, headerLeft, headerRight, content} = styles;
+export const CodePure = ({children, options, classes}) => {
+    const {main, header, headerLeft, headerRight, content} = classes;
     return (
         <div className={main}>
             <div className={header}>
@@ -26,7 +26,7 @@ export const CodePure = ({children, options, styles}) => {
 };
 
 CodePure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired,
     options: string
 };
@@ -35,4 +35,4 @@ CodePure.defaultProps = {
     options: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(CodePure);
+export default injectSheet(calculateStyles, {componentName: 'Code'})(CodePure);

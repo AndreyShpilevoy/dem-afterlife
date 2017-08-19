@@ -32,6 +32,7 @@ const entryPoints = {
         'raven-js',
         'react',
         'react-dom',
+        'react-jss',
         'react-notification-system',
         'react-redux',
         'react-router-dom',

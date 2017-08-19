@@ -1,18 +1,18 @@
 import React from 'react';
 import {func, node, number, string, oneOfType, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const constructClassNames = (sizesArray, styles) =>
+const constructClassNames = (sizesArray, classes) =>
     sizesArray.filter(size => size.count || size.count === 0)
         .map(size => `col-${size.name}-${size.count}`)
         .reduce((previous, current) =>
-            styles[current] ? `${previous} ${styles[current]}` : '', '');
+            classes[current] ? `${previous} ${classes[current]}` : '', '');
 
 export const ColumnPure = (
-    {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, styles, className, onClick}
+    {xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset, children, classes, className, onClick}
 ) => {
-    const classes = constructClassNames([
+    const classesNames = constructClassNames([
         {name: 'xs', count: xs},
         {name: 'sm', count: sm},
         {name: 'md', count: md},
@@ -23,9 +23,9 @@ export const ColumnPure = (
         {name: 'mdOffset', count: mdOffset},
         {name: 'lgOffset', count: lgOffset},
         {name: 'xlOffset', count: xlOffset}],
-    styles);
+    classes);
 
-    const localClassName = `${classes} ${className || ''}`;
+    const localClassName = `${classesNames} ${className || ''}`;
     return onClick ?
         (
             <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -40,7 +40,7 @@ export const ColumnPure = (
 
 ColumnPure.propTypes = {
     className: string,
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node,
     onClick: func, // eslint-disable-line react/require-default-props
     xs: oneOfType([number, string]),
@@ -70,4 +70,4 @@ ColumnPure.defaultProps = {
     children: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(ColumnPure);
+export default injectSheet(calculateStyles, {componentName: 'Column'})(ColumnPure);

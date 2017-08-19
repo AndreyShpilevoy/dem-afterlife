@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import SocialMediaLink from '../SocialMediaLink';
 import calculateStyles from './calculateStyles';
 
@@ -14,22 +14,22 @@ const mapSocialMediaArray = (socialMediaLinkArray, className) =>
     socialMediaLinkArray.map(item =>
         <SocialMediaLink key={item.id} className={className} socialMediaLinkItem={item} />);
 
-export const FooterPure = ({styles, socialMediaLinkArray}) =>
+export const FooterPure = ({classes, socialMediaLinkArray}) =>
     (<Container>
         <Row>
             <Column xs={12}>
-                <div className={styles.footer}>
+                <div className={classes.footer}>
                     <Row>
                         <Column xs={0} lg={4} />
                         <Column xs={12} lg={4}>
-                            <div className={styles.copyright}>
+                            <div className={classes.copyright}>
                                 {'DEM Team - 04.03.2007'}
                             </div>
                         </Column>
                         <Column xs={0} lg={4}>
                             <Hidden md={'down'}>
-                                <div className={styles.socialMediaLinkIconContainer}>
-                                    {mapSocialMediaArray(socialMediaLinkArray, styles.socialMediaLinkIcon)}
+                                <div className={classes.socialMediaLinkIconContainer}>
+                                    {mapSocialMediaArray(socialMediaLinkArray, classes.socialMediaLinkIcon)}
                                 </div>
                             </Hidden>
                         </Column>
@@ -41,7 +41,7 @@ export const FooterPure = ({styles, socialMediaLinkArray}) =>
 ;
 
 FooterPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     socialMediaLinkArray: arrayOf(
         shape({
             id: number.isRequired,
@@ -53,4 +53,4 @@ FooterPure.propTypes = {
     ).isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(FooterPure);
+export default injectSheet(calculateStyles, {componentName: 'Footer'})(FooterPure);

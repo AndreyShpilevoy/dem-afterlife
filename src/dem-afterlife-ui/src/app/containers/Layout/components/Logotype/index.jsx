@@ -1,21 +1,21 @@
 import React from 'react';
 import {string, shape} from 'prop-types';
 import Link from 'components/Link';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const LogotypePure = ({styles, className}) => {
-    const linkClassName = `${styles.logotypeContainer} ${className || ''}`;
+export const LogotypePure = ({classes, className}) => {
+    const linkClassName = `${classes.logotypeContainer} ${className || ''}`;
     return (
         <Link className={linkClassName} to='/'>
-            <div className={styles.logotype} />
+            <div className={classes.logotype} />
         </Link>
     );
 };
 
 LogotypePure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     className: string
 };
 
@@ -23,4 +23,4 @@ LogotypePure.defaultProps = {
     className: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(LogotypePure);
+export default injectSheet(calculateStyles, {componentName: 'Logotype'})(LogotypePure);

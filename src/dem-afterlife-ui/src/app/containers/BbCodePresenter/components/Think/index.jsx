@@ -1,20 +1,20 @@
 import React from 'react';
 import {node, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const ThinkPure = ({children, styles}) => (
-    <div className={styles.think}>
-        <span className={styles.content}>
+export const ThinkPure = ({children, classes}) => (
+    <div className={classes.think}>
+        <span className={classes.content}>
             {children}
         </span>
-        <div className={styles.image} />
+        <div className={classes.image} />
     </div>
 );
 
 ThinkPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(ThinkPure);
+export default injectSheet(calculateStyles, {componentName: 'Think'})(ThinkPure);

@@ -9,16 +9,16 @@ import Term from 'containers/Term';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import SubForum from 'components/SubForum';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const mapSubForumArray = subForumArray =>
     subForumArray.map(item => <SubForum key={item.id} subForum={item} />);
 
-export const ForumPure = ({forum, styles}) => {
+export const ForumPure = ({forum, classes}) => {
     const {id, title, description, topicsCount, postsCount, lastTopicInfo, subForumArray} = forum;
     const {bigText, smallText, center, centerMdUp, lastTopicInfoWrapper, topicsMessages,
-        displayInline, subForumContainer, disableRowOnSmXs} = styles;
+        displayInline, subForumContainer, disableRowOnSmXs} = classes;
     const centerAndRow = `${center} ${topicsMessages}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
     const linkToForum = `/Forum/${id}`;
@@ -27,7 +27,7 @@ export const ForumPure = ({forum, styles}) => {
     const postsTerm = {id: 2, value: 'Posts'};
     const lastPostTerm = {id: 3, value: 'Last message'};
     return (
-        <div className={styles.mainContainer}>
+        <div className={classes.mainContainer}>
             <Row>
                 <Column xs={12} md={5} lg={9}>
                     <Row>
@@ -91,14 +91,14 @@ export const ForumPure = ({forum, styles}) => {
                     </Row>
                 </Column>
             </Row>
-            <div className={styles.separator} />
+            <div className={classes.separator} />
         </div>
     );
 };
 
 ForumPure.propTypes = {
     forum: sharedPropTypes.forum.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(ForumPure);
+export default injectSheet(calculateStyles, {componentName: 'Forum'})(ForumPure);

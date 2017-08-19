@@ -1,18 +1,18 @@
 import React from 'react';
 import {shape, string} from 'prop-types';
 import BbCodePresenter from 'containers/BbCodePresenter';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const SignaturePure = ({signature, styles}) =>
-    (<div className={styles.container}>
-        <div className={styles.separator} />
+export const SignaturePure = ({signature, classes}) =>
+    (<div className={classes.container}>
+        <div className={classes.separator} />
         <BbCodePresenter text={signature} />
     </div>);
 
 SignaturePure.propTypes = {
     signature: string.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(SignaturePure);
+export default injectSheet(calculateStyles, {componentName: 'Signature'})(SignaturePure);

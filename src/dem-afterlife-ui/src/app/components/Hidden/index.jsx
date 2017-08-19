@@ -1,16 +1,16 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const constructClassNames = (sizesArray, styles) =>
+const constructClassNames = (sizesArray, classes) =>
     sizesArray.filter(size => size.direction === 'up' || size.direction === 'down' || size.direction === 'exact')
         .map(size => `hidden-${size.direction}-${size.name}`)
         .reduce((previous, current) =>
-            styles[current] ? `${previous} ${styles[current]}` : '', '');
+            classes[current] ? `${previous} ${classes[current]}` : '', '');
 
-export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onClick}) => {
-    const classes = constructClassNames(
+export const HiddenPure = ({xs, sm, md, lg, xl, children, classes, className, onClick}) => {
+    const classesNames = constructClassNames(
         [
             {name: 'xs', direction: xs},
             {name: 'sm', direction: sm},
@@ -18,10 +18,10 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onC
             {name: 'lg', direction: lg},
             {name: 'xl', direction: xl}
         ],
-        styles
+        classes
     );
 
-    const localClassName = `${classes} ${className}`;
+    const localClassName = `${classesNames} ${className}`;
     return onClick ?
         (
             <span className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -37,7 +37,7 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, styles, className, onC
 HiddenPure.propTypes = {
     onClick: func, // eslint-disable-line react/require-default-props
     className: string,
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired,
     xs: string,
     sm: string,
@@ -55,4 +55,4 @@ HiddenPure.defaultProps = {
     xl: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(HiddenPure);
+export default injectSheet(calculateStyles, {componentName: 'Hidden'})(HiddenPure);

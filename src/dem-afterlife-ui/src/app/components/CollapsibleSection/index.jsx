@@ -6,12 +6,12 @@ import Column from 'components/Column';
 import Hidden from 'components/Hidden';
 import Row from 'components/Row';
 import SvgIconsMapper from 'containers/SvgIconsMapper';
-import {css, withStyles} from 'styles';
+import {concatStyleNames, injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 export class CollapsibleSectionPure extends PureComponent {
     static propTypes = {
-        styles: shape().isRequired,
+        classes: shape().isRequired,
         children: node.isRequired,
         headerSettings: shape({
             title: oneOfType([string, node]),
@@ -55,14 +55,14 @@ export class CollapsibleSectionPure extends PureComponent {
 
     render() {
         const {collapsedState, isCollapsible} = this.state;
-        const {children, headerSettings, styles} = this.props;
+        const {children, headerSettings, classes} = this.props;
         const {title, firstColumnTerm, secondColumnTerm, thirdColumnTerm} = headerSettings;
         const {bodyHolder, headerCursor, headerArrow, headerText, headerHolder, general, header, titleClass,
-            termedSection, headerColumn, headerArrowHolder, body} = styles;
+            termedSection, headerColumn, headerArrowHolder, body} = classes;
         const classNameForClosedClass = collapsedState ? 'closed' : '';
-        const bodyHolderClass = css([bodyHolder, ...isCollapsible ? headerCursor : '', classNameForClosedClass]);
-        const headerArrowClass = css([headerArrow, classNameForClosedClass]);
-        const headerTextHolder = css([headerText, headerHolder]);
+        const bodyHolderClass = concatStyleNames([bodyHolder, ...isCollapsible ? headerCursor : '', classNameForClosedClass]);
+        const headerArrowClass = concatStyleNames([headerArrow, classNameForClosedClass]);
+        const headerTextHolder = concatStyleNames([headerText, headerHolder]);
         const rowOnClick = () => this.handleTitleClick(!collapsedState);
 
         return (
@@ -112,4 +112,4 @@ export class CollapsibleSectionPure extends PureComponent {
     }
 }
 
-export default withStyles(theme => calculateStyles(theme), {pureComponent: true})(CollapsibleSectionPure);
+export default injectSheet(calculateStyles, {componentName: 'CollapsibleSection'})(CollapsibleSectionPure);
