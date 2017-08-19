@@ -1,0 +1,883 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BbCodePresenterPure component with correct message should match expected snapshot 1`] = `
+<Jss(RootPure)>
+  wrong/url.png
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://correct.url/content.png"
+  >
+    http://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="https://correct.url/content.png"
+  >
+    https://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Jss(TextLinePure)>
+      Link
+    </Jss(TextLinePure)>
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Image
+      url="https://path.to/some/image.png"
+    />
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <BaseSpan
+    className="default-BbCodePresenter-underline"
+    style={Object {}}
+  >
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <Color
+      options="red"
+    >
+      <Jss(TextLinePure)>
+        red text
+      </Jss(TextLinePure)>
+    </Color>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag 21
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-underline"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in u tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <NewLine />
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+  </BaseSpan>
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <Jss(CodePure)
+    id={47}
+    options="kto"
+  >
+    <Jss(TextLinePure)>
+      some text[b]with other bbCodes[/b] in code tag
+    </Jss(TextLinePure)>
+  </Jss(CodePure)>
+  <Jss(TextLinePure)>
+     text
+  </Jss(TextLinePure)>
+  <NewLine />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Image
+    url="http://fastpic.ru/big/e.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/7.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/c.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/3.gif"
+  />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.png"
+  >
+    http://fastpic.ru/2015/0.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.gif "
+  >
+    http://fastpic.ru/2015/0.gif 
+  </Jss(UrlPure)>
+  <Jss(QuotePure)
+    options=""
+  >
+    <Jss(TextLinePure)>
+       quote 
+    </Jss(TextLinePure)>
+    <Jss(QuotePure)
+      options="kto"
+    >
+      <Jss(TextLinePure)>
+         and subQuote 
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          with 
+        </Jss(TextLinePure)>
+        <BaseSpan
+          className="default-BbCodePresenter-underline"
+          style={Object {}}
+        >
+          <Jss(TextLinePure)>
+            some
+          </Jss(TextLinePure)>
+        </BaseSpan>
+        <Jss(TextLinePure)>
+          tags
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+         param
+      </Jss(TextLinePure)>
+    </Jss(QuotePure)>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        some
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          other
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+        text
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       with tags
+    </Jss(TextLinePure)>
+  </Jss(QuotePure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/10/0.png"
+  >
+    <Image
+      url="http://fastpic.ru/e.gif"
+    />
+    <Jss(TextLinePure)>
+       Link with 2 images as link 
+    </Jss(TextLinePure)>
+    <Image
+      url="http://fastpic.ru/big/7b40.gif"
+    />
+  </Jss(UrlPure)>
+</Jss(RootPure)>
+`;
+
+exports[`BbCodePresenterPure component with incorrect message (one redundant [/b] tag)  match expected snapshot and does not include last root tag as text 1`] = `
+<Jss(RootPure)>
+  wrong/url.png
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://correct.url/content.png"
+  >
+    http://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="https://correct.url/content.png"
+  >
+    https://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Jss(TextLinePure)>
+      Link
+    </Jss(TextLinePure)>
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Image
+      url="https://path.to/some/image.png"
+    />
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <BaseSpan
+    className="default-BbCodePresenter-underline"
+    style={Object {}}
+  >
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <Color
+      options="red"
+    >
+      <Jss(TextLinePure)>
+        red text
+      </Jss(TextLinePure)>
+    </Color>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag 21
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-underline"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in u tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <NewLine />
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+  </BaseSpan>
+  <Jss(TextLinePure)>
+     this text contains 
+  </Jss(TextLinePure)>
+  <Jss(TextLinePure)>
+    [/b]
+  </Jss(TextLinePure)>
+  <Jss(TextLinePure)>
+     that is a wrong tags 
+  </Jss(TextLinePure)>
+  <Jss(CodePure)
+    id={49}
+    options="kto"
+  >
+    <Jss(TextLinePure)>
+      some text[b]with other bbCodes[/b] in code tag
+    </Jss(TextLinePure)>
+  </Jss(CodePure)>
+  <Jss(TextLinePure)>
+     text
+  </Jss(TextLinePure)>
+  <NewLine />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Image
+    url="http://fastpic.ru/big/e.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/7.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/c.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/3.gif"
+  />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.png"
+  >
+    http://fastpic.ru/2015/0.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.gif "
+  >
+    http://fastpic.ru/2015/0.gif 
+  </Jss(UrlPure)>
+  <Jss(QuotePure)
+    options=""
+  >
+    <Jss(TextLinePure)>
+       quote 
+    </Jss(TextLinePure)>
+    <Jss(QuotePure)
+      options="kto"
+    >
+      <Jss(TextLinePure)>
+         and subQuote 
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          with 
+        </Jss(TextLinePure)>
+        <BaseSpan
+          className="default-BbCodePresenter-underline"
+          style={Object {}}
+        >
+          <Jss(TextLinePure)>
+            some
+          </Jss(TextLinePure)>
+        </BaseSpan>
+        <Jss(TextLinePure)>
+          tags
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+         param
+      </Jss(TextLinePure)>
+    </Jss(QuotePure)>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        some
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          other
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+        text
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       with tags
+    </Jss(TextLinePure)>
+  </Jss(QuotePure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/10/0.png"
+  >
+    <Image
+      url="http://fastpic.ru/e.gif"
+    />
+    <Jss(TextLinePure)>
+       Link with 2 images as link 
+    </Jss(TextLinePure)>
+    <Image
+      url="http://fastpic.ru/big/7b40.gif"
+    />
+  </Jss(UrlPure)>
+</Jss(RootPure)>
+`;
+
+exports[`BbCodePresenterPure component with incorrect message (one redundant [b] tag) should  match expected snapshot and does not include last root tag as text 1`] = `
+<Jss(RootPure)>
+  wrong/url.png
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://correct.url/content.png"
+  >
+    http://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="https://correct.url/content.png"
+  >
+    https://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Jss(TextLinePure)>
+      Link
+    </Jss(TextLinePure)>
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Image
+      url="https://path.to/some/image.png"
+    />
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <BaseSpan
+    className="default-BbCodePresenter-underline"
+    style={Object {}}
+  >
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <Color
+      options="red"
+    >
+      <Jss(TextLinePure)>
+        red text
+      </Jss(TextLinePure)>
+    </Color>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag 21
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-underline"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in u tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <NewLine />
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+  </BaseSpan>
+  <Jss(TextLinePure)>
+     this text contains 
+  </Jss(TextLinePure)>
+  <BaseSpan
+    className="default-BbCodePresenter-bold"
+    style={Object {}}
+  >
+    <Jss(TextLinePure)>
+       that is a wrong tags 
+    </Jss(TextLinePure)>
+    <Jss(CodePure)
+      id={49}
+      options="kto"
+    >
+      <Jss(TextLinePure)>
+        some text[b]with other bbCodes[/b] in code tag
+      </Jss(TextLinePure)>
+    </Jss(CodePure)>
+    <Jss(TextLinePure)>
+       text
+    </Jss(TextLinePure)>
+    <NewLine />
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <Image
+      url="http://fastpic.ru/big/e.gif"
+    />
+    <NewLine />
+    <Image
+      url="http://fastpic.ru/big/7.gif"
+    />
+    <NewLine />
+    <Image
+      url="http://fastpic.ru/big/c.gif"
+    />
+    <NewLine />
+    <Image
+      url="http://fastpic.ru/big/3.gif"
+    />
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <Jss(UrlPure)
+      url="http://fastpic.ru/2015/0.png"
+    >
+      http://fastpic.ru/2015/0.png
+    </Jss(UrlPure)>
+    <NewLine />
+    <Jss(UrlPure)
+      url="http://fastpic.ru/2015/0.gif "
+    >
+      http://fastpic.ru/2015/0.gif 
+    </Jss(UrlPure)>
+    <Jss(QuotePure)
+      options=""
+    >
+      <Jss(TextLinePure)>
+         quote 
+      </Jss(TextLinePure)>
+      <Jss(QuotePure)
+        options="kto"
+      >
+        <Jss(TextLinePure)>
+           and subQuote 
+        </Jss(TextLinePure)>
+        <BaseSpan
+          className="default-BbCodePresenter-italic"
+          style={Object {}}
+        >
+          <Jss(TextLinePure)>
+            with 
+          </Jss(TextLinePure)>
+          <BaseSpan
+            className="default-BbCodePresenter-underline"
+            style={Object {}}
+          >
+            <Jss(TextLinePure)>
+              some
+            </Jss(TextLinePure)>
+          </BaseSpan>
+          <Jss(TextLinePure)>
+            tags
+          </Jss(TextLinePure)>
+        </BaseSpan>
+        <Jss(TextLinePure)>
+           param
+        </Jss(TextLinePure)>
+      </Jss(QuotePure)>
+      <Jss(TextLinePure)>
+         
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-bold"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          some
+        </Jss(TextLinePure)>
+        <BaseSpan
+          className="default-BbCodePresenter-italic"
+          style={Object {}}
+        >
+          <Jss(TextLinePure)>
+            other
+          </Jss(TextLinePure)>
+        </BaseSpan>
+        <Jss(TextLinePure)>
+          text
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+         with tags
+      </Jss(TextLinePure)>
+    </Jss(QuotePure)>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <Jss(UrlPure)
+      url="http://fastpic.ru/10/0.png"
+    >
+      <Image
+        url="http://fastpic.ru/e.gif"
+      />
+      <Jss(TextLinePure)>
+         Link with 2 images as link 
+      </Jss(TextLinePure)>
+      <Image
+        url="http://fastpic.ru/big/7b40.gif"
+      />
+    </Jss(UrlPure)>
+  </BaseSpan>
+</Jss(RootPure)>
+`;
+
+exports[`BbCodePresenterPure component with wrong message that contained wrong tags should  match expected snapshot 1`] = `
+<Jss(RootPure)>
+  wrong/url.png
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://correct.url/content.png"
+  >
+    http://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="https://correct.url/content.png"
+  >
+    https://correct.url/content.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Jss(TextLinePure)>
+      Link
+    </Jss(TextLinePure)>
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://path.to/some/image.png"
+  >
+    <Image
+      url="https://path.to/some/image.png"
+    />
+  </Jss(UrlPure)>
+  <Jss(TextLinePure)>
+     text 
+  </Jss(TextLinePure)>
+  <BaseSpan
+    className="default-BbCodePresenter-underline"
+    style={Object {}}
+  >
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <Color
+      options="red"
+    >
+      <Jss(TextLinePure)>
+        red text
+      </Jss(TextLinePure)>
+    </Color>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag 21
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-underline"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in u tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <NewLine />
+    <Jss(TextLinePure)>
+      text in u tag 
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        text in b tag
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+  </BaseSpan>
+  <Jss(TextLinePure)>
+     this here is wrong [tag] in code tag 
+  </Jss(TextLinePure)>
+  <Jss(CodePure)
+    id={47}
+    options="kto"
+  >
+    <Jss(TextLinePure)>
+      some text[b]with other bbCodes[/b] in code tag
+    </Jss(TextLinePure)>
+  </Jss(CodePure)>
+  <Jss(TextLinePure)>
+     text
+  </Jss(TextLinePure)>
+  <NewLine />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Image
+    url="http://fastpic.ru/big/e.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/7.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/c.gif"
+  />
+  <NewLine />
+  <Image
+    url="http://fastpic.ru/big/3.gif"
+  />
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.png"
+  >
+    http://fastpic.ru/2015/0.png
+  </Jss(UrlPure)>
+  <NewLine />
+  <Jss(UrlPure)
+    url="http://fastpic.ru/2015/0.gif "
+  >
+    http://fastpic.ru/2015/0.gif 
+  </Jss(UrlPure)>
+  <Jss(QuotePure)
+    options=""
+  >
+    <Jss(TextLinePure)>
+       quote 
+    </Jss(TextLinePure)>
+    <Jss(QuotePure)
+      options="kto"
+    >
+      <Jss(TextLinePure)>
+         and subQuote 
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          with 
+        </Jss(TextLinePure)>
+        <BaseSpan
+          className="default-BbCodePresenter-underline"
+          style={Object {}}
+        >
+          <Jss(TextLinePure)>
+            some
+          </Jss(TextLinePure)>
+        </BaseSpan>
+        <Jss(TextLinePure)>
+          tags
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+         param
+      </Jss(TextLinePure)>
+    </Jss(QuotePure)>
+    <Jss(TextLinePure)>
+       
+    </Jss(TextLinePure)>
+    <BaseSpan
+      className="default-BbCodePresenter-bold"
+      style={Object {}}
+    >
+      <Jss(TextLinePure)>
+        some
+      </Jss(TextLinePure)>
+      <BaseSpan
+        className="default-BbCodePresenter-italic"
+        style={Object {}}
+      >
+        <Jss(TextLinePure)>
+          other
+        </Jss(TextLinePure)>
+      </BaseSpan>
+      <Jss(TextLinePure)>
+        text
+      </Jss(TextLinePure)>
+    </BaseSpan>
+    <Jss(TextLinePure)>
+       with tags
+    </Jss(TextLinePure)>
+  </Jss(QuotePure)>
+  <Jss(TextLinePure)>
+     
+  </Jss(TextLinePure)>
+  <Jss(UrlPure)
+    url="http://fastpic.ru/10/0.png"
+  >
+    <Image
+      url="http://fastpic.ru/e.gif"
+    />
+    <Jss(TextLinePure)>
+       Link with 2 images as link 
+    </Jss(TextLinePure)>
+    <Image
+      url="http://fastpic.ru/big/7b40.gif"
+    />
+  </Jss(UrlPure)>
+</Jss(RootPure)>
+`;

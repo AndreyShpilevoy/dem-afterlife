@@ -1,19 +1,19 @@
 import React from 'react';
 import {string, shape, number} from 'prop-types';
 import Link from 'components/Link';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const NavigationLinkListItemPure = ({styles, navigationLinkItem}) =>
+export const NavigationLinkListItemPure = ({classes, navigationLinkItem}) =>
     (<li>
-        <Link className={styles.link} to={navigationLinkItem.href}>
+        <Link className={classes.link} to={navigationLinkItem.href}>
             {navigationLinkItem.title}
         </Link>
     </li>);
 
 NavigationLinkListItemPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     navigationLinkItem: shape({
         id: number.isRequired,
         title: string.isRequired,
@@ -22,4 +22,4 @@ NavigationLinkListItemPure.propTypes = {
     }).isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(NavigationLinkListItemPure);
+export default injectSheet(calculateStyles, {componentName: 'NavigationLinkListItem'})(NavigationLinkListItemPure);

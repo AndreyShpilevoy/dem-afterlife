@@ -1,17 +1,17 @@
 import React from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const wroteTerm = {id: 32, value: 'wrote:'};
 const quoteTerm = {id: 33, value: 'Quote:'};
 
-export const QuotePure = ({children, options, styles}) => (
+export const QuotePure = ({children, options, classes}) => (
     <blockquote
-        className={styles.quote}>
+        className={classes.quote}>
         {<div>
-            <span className={styles.author}>
+            <span className={classes.author}>
                 {options || <Term term={quoteTerm} untermedPostfix={':'} />}
             </span>
             {options ? <Term spaceBefore term={wroteTerm} untermedPostfix={':'} /> : ''}
@@ -21,7 +21,7 @@ export const QuotePure = ({children, options, styles}) => (
 );
 
 QuotePure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired,
     options: string
 };
@@ -30,4 +30,4 @@ QuotePure.defaultProps = {
     options: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(QuotePure);
+export default injectSheet(calculateStyles, {componentName: 'Quote'})(QuotePure);

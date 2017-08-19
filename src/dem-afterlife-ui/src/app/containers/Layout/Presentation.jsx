@@ -1,20 +1,19 @@
 import React from 'react';
-import {string, node, shape} from 'prop-types';
+import {node, shape} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
 import Row from 'components/Row';
 import Column from 'components/Column';
-import {withStyles, ThemeProvider} from 'styles';
+import {injectSheet} from 'styles';
 import BreadcrumbList from './components/BreadcrumbList';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import globalStyles from './globalStyles';
 import calculateStyles from './calculateStyles';
 
-export const PresentationPure = ({children, themeName, navigationLinkArray, socialMediaLinkArray, breadcrumbArray, styles}) => {
-    const {contentWrapper, container, content} = styles;
-    return (<ThemeProvider name={themeName}>
+export const PresentationPure = ({children, navigationLinkArray, socialMediaLinkArray, breadcrumbArray, classes}) => {
+    const {contentWrapper, container, content} = classes;
+    return (
         <div className={contentWrapper}>
             <Container className={container}>
                 {/* title */}
@@ -33,21 +32,15 @@ export const PresentationPure = ({children, themeName, navigationLinkArray, soci
                     <Footer socialMediaLinkArray={socialMediaLinkArray} />
                 </Row>
             </Container>
-        </div>
-    </ThemeProvider>);
+        </div>);
 };
 
 PresentationPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired,
-    themeName: string,
     navigationLinkArray: sharedPropTypes.navigationLinkArray.isRequired,
     socialMediaLinkArray: sharedPropTypes.socialMediaLinkArray.isRequired,
     breadcrumbArray: sharedPropTypes.breadcrumbArray.isRequired
 };
 
-PresentationPure.defaultProps = {
-    themeName: 'default'
-};
-
-export default withStyles(theme => ({...globalStyles(), ...calculateStyles(theme)}))(PresentationPure);
+export default injectSheet(calculateStyles, {componentName: 'LayoutPresentation'})(PresentationPure);

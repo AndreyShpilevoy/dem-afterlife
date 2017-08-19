@@ -3,10 +3,10 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import * as ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
+
 import Forum, {ForumPure} from './index';
 
-ThemedStyleSheet.default.get = () => {};
+
 
 jest.mock('react-router-dom');
 jest.mock('containers/Term');
@@ -37,8 +37,10 @@ describe('Forum', () => {
 
     it('Pure component with filled chapter and forum arrays match expected snapshot', () => {
         const getTopicArrayByForumId = jest.fn();
+        const getForumBreadcrumbArray = jest.fn();
         const props = {
             getTopicArrayByForumId,
+            getForumBreadcrumbArray,
             topicArray: [
                 {
                     id: 1,
@@ -114,7 +116,8 @@ describe('Forum', () => {
 
     it('Pure component should call mocked action twice', () => {
         const getTopicArrayByForumId = jest.fn();
-        const props = {getTopicArrayByForumId, topicArray: [], forumArray: [], match: {params: {forumId: '10'} } };
+        const getForumBreadcrumbArray = jest.fn();
+        const props = {getTopicArrayByForumId, getForumBreadcrumbArray, topicArray: [], forumArray: [], match: {params: {forumId: '10'} } };
         const topicArray = [
             {
                 id: 1,

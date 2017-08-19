@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {stringIsEmail, stringIsLink} from 'utils';
-import {css} from 'styles';
+import {concatStyleNames} from 'styles';
 import BaseSpan from './components/BaseSpan';
 import Code from './components/Code';
 import Color from './components/Color';
@@ -24,13 +24,13 @@ import {rootTag, codeTag, textlineTag, brTag} from './constants';
 
 const bbCodesMap = {
     b: (children, key, options) =>
-        <BaseSpan key={key} className={options.styles.bold}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={options.classes.bold}>{children}</BaseSpan>,
     i: (children, key, options) =>
-        <BaseSpan key={key} className={options.styles.italic}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={options.classes.italic}>{children}</BaseSpan>,
     u: (children, key, options) =>
-        <BaseSpan key={key} className={options.styles.underline}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={options.classes.underline}>{children}</BaseSpan>,
     s: (children, key, options) =>
-        <BaseSpan key={key} className={options.styles.lineThrough}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={options.classes.lineThrough}>{children}</BaseSpan>,
     offtopic: (children, key) =>
         <OffTopic key={key}>{children}</OffTopic>,
     think: (children, key) =>
@@ -38,11 +38,11 @@ const bbCodesMap = {
     color: (children, key, options) =>
         <Color key={key} options={options.value}>{children}</Color>,
     center: (children, key, options) =>
-        <BaseSpan key={key} className={css([options.styles.position, options.styles.center])}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={concatStyleNames([options.classes.position, options.classes.center])}>{children}</BaseSpan>,
     left: (children, key, options) =>
-        <BaseSpan key={key} className={css([options.styles.position, options.styles.left])}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={concatStyleNames([options.classes.position, options.classes.left])}>{children}</BaseSpan>,
     right: (children, key, options) =>
-        <BaseSpan key={key} className={css([options.styles.position, options.styles.right])}>{children}</BaseSpan>,
+        <BaseSpan key={key} className={concatStyleNames([options.classes.position, options.classes.right])}>{children}</BaseSpan>,
     size: (children, key, options) => {
         const fontSizeByDefault = 16;
         const value = options.value;

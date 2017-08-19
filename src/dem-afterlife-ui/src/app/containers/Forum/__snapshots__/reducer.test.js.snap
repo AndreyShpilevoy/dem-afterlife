@@ -127,11 +127,9 @@ Object {
     "PUT": Object {
       "action": Object {
         "payload": Object {
-          "parentForumIdArray": Array [
-            1,
-          ],
+          "parentForumId": 1,
         },
-        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+        "type": "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID",
       },
       "channel": null,
     },

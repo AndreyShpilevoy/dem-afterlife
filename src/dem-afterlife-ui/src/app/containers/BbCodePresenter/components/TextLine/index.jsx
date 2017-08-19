@@ -1,18 +1,18 @@
 import React from 'react';
 import {node, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const TextLinePure = ({children, styles}) => (
+export const TextLinePure = ({children, classes}) => (
     <span
-        className={styles.text}>
+        className={classes.text}>
         {children}
     </span>
 );
 
 TextLinePure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(TextLinePure);
+export default injectSheet(calculateStyles, {componentName: 'TextLine'})(TextLinePure);

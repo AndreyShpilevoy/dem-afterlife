@@ -250,7 +250,7 @@ describe('Shared reducer', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('default saga should return 1 yield with 3 sagas. 2 yield should be in state Done', () => {
+    it('default saga should return 1 yield with 6 sagas. 2 yield should be in state Done', () => {
         const generator = sharedSaga();
         expect(generator.next()).toMatchSnapshot();
         expect(generator.next()).toMatchSnapshot();

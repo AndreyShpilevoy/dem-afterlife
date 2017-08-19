@@ -2,6 +2,12 @@
 
 exports[`Layout calculateStyles should create expected object 1`] = `
 Object {
+  "@global": Object {
+    "body": Object {
+      "margin": "initial",
+      "minWidth": "initial",
+    },
+  },
   "container": Object {
     "display": "flex",
     "flexDirection": "column",

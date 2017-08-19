@@ -1,17 +1,17 @@
 import React from 'react';
 import {string, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const EmailPure = ({email, styles}) => (
-    <a className={styles.email} href={`mailto:${email}`} rel='nofollow'>
+export const EmailPure = ({email, classes}) => (
+    <a className={classes.email} href={`mailto:${email}`} rel='nofollow'>
         {email}
     </a>
 );
 
 EmailPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     email: string.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(EmailPure);
+export default injectSheet(calculateStyles, {componentName: 'Email'})(EmailPure);

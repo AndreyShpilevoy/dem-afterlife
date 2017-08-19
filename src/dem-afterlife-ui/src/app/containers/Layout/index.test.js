@@ -5,6 +5,8 @@ import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Layout from './index';
 
+jest.mock('styles/themes/default', () => ({}));
+
 jest.mock('./Presentation', () => {
     const Presentation = ({children}) => <div>{children}</div>; // eslint-disable-line react/prop-types
     return Presentation;
@@ -14,7 +16,7 @@ describe('Layout HOC', () => {
     const mockStore = configureMockStore();
 
     it('component match expected snapshot', () => {
-        const props = {store: mockStore({layoutReducer: {locale: 'ru', navigationLinkArray: [], socialMediaLinkArray: [] } })};
+        const props = {store: mockStore({layoutReducer: {locale: 'ru', navigationLinkArray: [], socialMediaLinkArray: [] }, sharedReducer: {breadcrumbArray: [] } })};
         expect(mount(<Layout {...props}><div>{'Layout content'}</div></Layout>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

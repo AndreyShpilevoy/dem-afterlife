@@ -1,4 +1,10 @@
 const calculateStyles = ({themeName, mainWrapper}) => ({
+    '@global': {
+        body: {
+            margin: 'initial',
+            minWidth: 'initial'
+        }
+    },
     contentWrapper: {
         fontSize: mainWrapper.fontSize,
         backgroundColor: mainWrapper.backgroundColor,

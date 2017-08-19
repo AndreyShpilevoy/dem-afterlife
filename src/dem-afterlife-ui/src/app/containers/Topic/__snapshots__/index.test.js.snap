@@ -22,6 +22,7 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
 >
   <Topic
     getPostArrayByTopicId={[Function]}
+    getTopicBreadcrumbArray={[Function]}
     match={
       Object {
         "params": Object {
@@ -110,6 +111,7 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
 >
   <Topic
     getPostArrayByTopicId={[Function]}
+    getTopicBreadcrumbArray={[Function]}
     match={
       Object {
         "params": Object {

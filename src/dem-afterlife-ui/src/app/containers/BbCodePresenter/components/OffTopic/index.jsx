@@ -1,17 +1,17 @@
 import React from 'react';
 import {node, shape} from 'prop-types';
 import Term from 'containers/Term';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const offTopicTerm = {id: 31, value: 'Offtopic:'};
 
-export const OffTopicPure = ({children, styles}) => (
+export const OffTopicPure = ({children, classes}) => (
     <div>
-        <div className={styles.header}>
+        <div className={classes.header}>
             <Term term={offTopicTerm} />
         </div>
-        <div className={styles.content}>
+        <div className={classes.content}>
             {children}
         </div>
     </div>
@@ -19,7 +19,7 @@ export const OffTopicPure = ({children, styles}) => (
 
 OffTopicPure.propTypes = {
     children: node.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(OffTopicPure);
+export default injectSheet(calculateStyles, {componentName: 'OffTopic'})(OffTopicPure);

@@ -1,18 +1,18 @@
 import React from 'react';
 import {node, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const RootPure = ({children, styles}) => (
+export const RootPure = ({children, classes}) => (
     <span
-        className={styles.root}>
+        className={classes.root}>
         {children}
     </span>
 );
 
 RootPure.propTypes = {
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(RootPure);
+export default injectSheet(calculateStyles, {componentName: 'Root'})(RootPure);

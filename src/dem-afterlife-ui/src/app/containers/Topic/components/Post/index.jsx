@@ -3,15 +3,15 @@ import {shape} from 'prop-types';
 import BbCodePresenter from 'containers/BbCodePresenter';
 import LocaleDateTime from 'containers/LocaleDateTime';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import User from '../User';
 import Signature from '../Signature';
 import calculateStyles from './calculateStyles';
 
 
-export const PostPure = ({post, styles}) => {
+export const PostPure = ({post, classes}) => {
     const {message, postTime, user, subject} = post;
-    const {inLine, textEllipsis} = styles;
+    const {inLine, textEllipsis} = classes;
     return (
         <div>
             <div className={inLine}>
@@ -21,14 +21,14 @@ export const PostPure = ({post, styles}) => {
             </div>
             <BbCodePresenter text={message} />
             {user && user.signature ? <Signature signature={user.signature} /> : ''}
-            <div className={styles.separator} />
+            <div className={classes.separator} />
         </div>
     );
 };
 
 PostPure.propTypes = {
     post: sharedPropTypes.post.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(PostPure);
+export default injectSheet(calculateStyles, {componentName: 'Post'})(PostPure);

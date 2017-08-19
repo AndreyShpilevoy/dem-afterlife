@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Pure Shallow component match expected snapshot 1`] = `
+<div>
+  <Jss(ContainerPure)
+    className="default-Header-fixedOnTheTop"
+  >
+    <div
+      className="default-Header-header"
+    >
+      <Jss(RowPure)
+        className=""
+        reverse={false}
+      >
+        <Jss(ColumnPure)
+          className="default-Header-headerColumn"
+          lg=""
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm={4}
+          smOffset=""
+          xl={3}
+          xlOffset=""
+          xs={7}
+          xsOffset=""
+        >
+          <Jss(LogotypePure)
+            className="default-Header-headerLogoContainer"
+          />
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Header-headerColumn"
+          lg={0}
+          lgOffset={0}
+          md=""
+          mdOffset=""
+          sm={1}
+          smOffset={7}
+          xl=""
+          xlOffset=""
+          xs={2}
+          xsOffset={3}
+        >
+          <Jss(HiddenPure)
+            className="default-Header-headerMenuButtonContainer"
+            lg="up"
+            md=""
+            sm=""
+            xl=""
+            xs=""
+          >
+            <MenuButton
+              onClick={[Function]}
+            />
+          </Jss(HiddenPure)>
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Header-headerColumn default-Header-navigationLinksContainer closed"
+          lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl={9}
+          xlOffset=""
+          xs={12}
+          xsOffset=""
+        >
+          <Jss(NavigationLinkListPure)
+            className="default-Header-navigationLinks"
+            navigationLinkArray={Array []}
+          />
+        </Jss(ColumnPure)>
+      </Jss(RowPure)>
+    </div>
+  </Jss(ContainerPure)>
+  <div
+    className="default-Header-headerPadding"
+  />
+</div>
+`;

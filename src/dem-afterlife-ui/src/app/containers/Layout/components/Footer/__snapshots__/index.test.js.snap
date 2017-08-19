@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Pure component match expected snapshot 1`] = `
+<Jss(ContainerPure)
+  className=""
+>
+  <Jss(RowPure)
+    className=""
+    reverse={false}
+  >
+    <Jss(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <div
+        className="default-Footer-footer"
+      >
+        <Jss(RowPure)
+          className=""
+          reverse={false}
+        >
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={0}
+            xsOffset=""
+          />
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={12}
+            xsOffset=""
+          >
+            <div
+              className="default-Footer-copyright"
+            >
+              DEM Team - 04.03.2007
+            </div>
+          </Jss(ColumnPure)>
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={0}
+            xsOffset=""
+          >
+            <Jss(HiddenPure)
+              className=""
+              lg=""
+              md="down"
+              sm=""
+              xl=""
+              xs=""
+            >
+              <div
+                className="default-Footer-socialMediaLinkIconContainer"
+              />
+            </Jss(HiddenPure)>
+          </Jss(ColumnPure)>
+        </Jss(RowPure)>
+      </div>
+    </Jss(ColumnPure)>
+  </Jss(RowPure)>
+</Jss(ContainerPure)>
+`;
+
+exports[`Footer Pure component with socialMediaLinkArray match expected snapshot 1`] = `
+<Jss(ContainerPure)
+  className=""
+>
+  <Jss(RowPure)
+    className=""
+    reverse={false}
+  >
+    <Jss(ColumnPure)
+      className=""
+      lg=""
+      lgOffset=""
+      md=""
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <div
+        className="default-Footer-footer"
+      >
+        <Jss(RowPure)
+          className=""
+          reverse={false}
+        >
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={0}
+            xsOffset=""
+          />
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={12}
+            xsOffset=""
+          >
+            <div
+              className="default-Footer-copyright"
+            >
+              DEM Team - 04.03.2007
+            </div>
+          </Jss(ColumnPure)>
+          <Jss(ColumnPure)
+            className=""
+            lg={4}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs={0}
+            xsOffset=""
+          >
+            <Jss(HiddenPure)
+              className=""
+              lg=""
+              md="down"
+              sm=""
+              xl=""
+              xs=""
+            >
+              <div
+                className="default-Footer-socialMediaLinkIconContainer"
+              >
+                <Jss(SocialMediaLinkPure)
+                  className="default-Footer-socialMediaLinkIcon"
+                  socialMediaLinkItem={
+                    Object {
+                      "href": "https://vk.com/exmachina2",
+                      "id": 2,
+                      "order": 2,
+                      "svgImageName": "Vk",
+                      "title": "VK - Ex Machina group",
+                    }
+                  }
+                />
+                <Jss(SocialMediaLinkPure)
+                  className="default-Footer-socialMediaLinkIcon"
+                  socialMediaLinkItem={
+                    Object {
+                      "href": "http://steamcommunity.com/groups/Ex_Machina",
+                      "id": 1,
+                      "order": 1,
+                      "svgImageName": "Steam",
+                      "title": "Steam - Ex Machina Community",
+                    }
+                  }
+                />
+              </div>
+            </Jss(HiddenPure)>
+          </Jss(ColumnPure)>
+        </Jss(RowPure)>
+      </div>
+    </Jss(ColumnPure)>
+  </Jss(RowPure)>
+</Jss(ContainerPure)>
+`;

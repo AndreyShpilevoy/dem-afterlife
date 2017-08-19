@@ -1,10 +1,10 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const ContainerPure = ({children, styles, className, onClick}) => {
-    const localClassName = `${styles.container} ${className}`;
+export const ContainerPure = ({children, classes, className, onClick}) => {
+    const localClassName = `${classes.container} ${className}`;
     return onClick ?
         (
             <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
@@ -19,7 +19,7 @@ export const ContainerPure = ({children, styles, className, onClick}) => {
 
 ContainerPure.propTypes = {
     className: string,
-    styles: shape().isRequired,
+    classes: shape().isRequired,
     children: node.isRequired,
     onClick: func // eslint-disable-line react/require-default-props
 };
@@ -28,4 +28,4 @@ ContainerPure.defaultProps = {
     className: ''
 };
 
-export default withStyles(theme => calculateStyles(theme))(ContainerPure);
+export default injectSheet(calculateStyles, {componentName: 'Container'})(ContainerPure);

@@ -1,10 +1,10 @@
 import React from 'react';
 import {node, string, shape} from 'prop-types';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const UrlPure = ({children, styles, url}) => (
-    <a className={styles.url} href={url} target='_blank' rel='noopener noreferrer'>
+export const UrlPure = ({children, classes, url}) => (
+    <a className={classes.url} href={url} target='_blank' rel='noopener noreferrer'>
         {children}
     </a>
 );
@@ -12,8 +12,8 @@ export const UrlPure = ({children, styles, url}) => (
 UrlPure.propTypes = {
     url: string.isRequired,
     children: node.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
 
-export default withStyles(theme => calculateStyles(theme))(UrlPure);
+export default injectSheet(calculateStyles, {componentName: 'Url'})(UrlPure);

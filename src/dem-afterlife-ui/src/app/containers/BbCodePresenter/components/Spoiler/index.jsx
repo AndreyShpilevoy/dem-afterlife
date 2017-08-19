@@ -3,14 +3,14 @@
 import React, {PureComponent} from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 const spoilerTerm = {id: 35, value: 'Spoiler'};
 
 export class SpoilerPure extends PureComponent {
     static propTypes = {
-        styles: shape().isRequired,
+        classes: shape().isRequired,
         children: node.isRequired,
         options: string
     };
@@ -29,18 +29,18 @@ export class SpoilerPure extends PureComponent {
     }
 
     render() {
-        const {children, options, styles} = this.props;
+        const {children, options, classes} = this.props;
         const {isOpen} = this.state;
         return (
-            <div className={styles.spoiler}>
-                <div className={styles.focus} onClick={this.toggle} role={'button'} tabIndex={0}>
-                    <span className={styles.title}>
+            <div className={classes.spoiler}>
+                <div className={classes.focus} onClick={this.toggle} role={'button'} tabIndex={0}>
+                    <span className={classes.title}>
                         {options || <Term term={spoilerTerm} />}
                     </span>
                 </div>
                 {
                     isOpen ?
-                        <div className={styles.content}>
+                        <div className={classes.content}>
                             {children}
                         </div> :
                         ''
@@ -49,4 +49,4 @@ export class SpoilerPure extends PureComponent {
         );
     }
 }
-export default withStyles(theme => calculateStyles(theme))(SpoilerPure);
+export default injectSheet(calculateStyles, {componentName: 'Spoiler'})(SpoilerPure);

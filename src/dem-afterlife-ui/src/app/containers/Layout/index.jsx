@@ -6,6 +6,7 @@ import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {sortedBreadcrumbArraySelector} from 'containers/selectors';
+import {ThemeProvider} from 'styles';
 import {getLocale, getNavigationLinkArray, getSocialMediaLinkArray} from './reducer';
 import Presentation from './Presentation';
 import {sortedNavigationLinkSelector, sortedSocialMediaLinkSelector} from './selectors';
@@ -30,13 +31,14 @@ class Layout extends PureComponent {
     render() {
         const {navigationLinkArray, socialMediaLinkArray, breadcrumbArray} = this.props;
         return (
-            <Presentation
-                themeName={'default'}
-                navigationLinkArray={navigationLinkArray}
-                socialMediaLinkArray={socialMediaLinkArray}
-                breadcrumbArray={breadcrumbArray}>
-                {this.props.children}
-            </Presentation>
+            <ThemeProvider themeName={'default'}>
+                <Presentation
+                    navigationLinkArray={navigationLinkArray}
+                    socialMediaLinkArray={socialMediaLinkArray}
+                    breadcrumbArray={breadcrumbArray}>
+                    {this.props.children}
+                </Presentation>
+            </ThemeProvider>
         );
     }
 }

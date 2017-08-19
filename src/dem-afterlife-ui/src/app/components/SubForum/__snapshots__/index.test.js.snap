@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubForumPure component match expected snapshot 1`] = `
+<div
+  className="default-SubForum-container"
+>
+  <SvgIconsMapper
+    className="default-SubForum-icon"
+    iconName="SubForum"
+  />
+  <Jss(LinkPure)
+    className="default-SubForum-link"
+    style={Object {}}
+    to="/Forum/51"
+  >
+    FAQ
+  </Jss(LinkPure)>
+</div>
+`;

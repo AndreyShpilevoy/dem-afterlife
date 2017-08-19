@@ -3,12 +3,12 @@ import {shape} from 'prop-types';
 import Avatar from 'components/Avatar';
 import UserName from 'components/UserName';
 import {sharedPropTypes} from 'utils';
-import {withStyles} from 'styles';
+import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const UserPure = ({user, styles}) => {
+export const UserPure = ({user, classes}) => {
     const {id, avatar, name, groupColor} = user;
-    const {inLine, userNameStyle} = styles;
+    const {inLine, userNameStyle} = classes;
     return (
         <div className={inLine}>
             <Avatar id={id} avatarUrl={avatar} size={2.5} />
@@ -23,7 +23,7 @@ export const UserPure = ({user, styles}) => {
 
 UserPure.propTypes = {
     user: sharedPropTypes.user.isRequired,
-    styles: shape().isRequired
+    classes: shape().isRequired
 };
 
-export default withStyles(theme => calculateStyles(theme))(UserPure);
+export default injectSheet(calculateStyles, {componentName: 'User'})(UserPure);

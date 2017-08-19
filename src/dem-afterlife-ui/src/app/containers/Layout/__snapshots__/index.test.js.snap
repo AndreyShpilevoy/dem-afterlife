@@ -14,6 +14,7 @@ exports[`Layout HOC component match expected snapshot 1`] = `
   }
 >
   <Layout
+    breadcrumbArray={Array []}
     getLocale={[Function]}
     getNavigationLinkArray={[Function]}
     getSocialMediaLinkArray={[Function]}
@@ -51,17 +52,25 @@ exports[`Layout HOC component match expected snapshot 1`] = `
       }
     }
   >
-    <Presentation
-      navigationLinkArray={Array []}
-      socialMediaLinkArray={Array []}
+    <ThemeProvider
       themeName="default"
     >
-      <div>
-        <div>
-          Layout content
-        </div>
-      </div>
-    </Presentation>
+      <ThemeProvider
+        theme={Object {}}
+      >
+        <Presentation
+          breadcrumbArray={Array []}
+          navigationLinkArray={Array []}
+          socialMediaLinkArray={Array []}
+        >
+          <div>
+            <div>
+              Layout content
+            </div>
+          </div>
+        </Presentation>
+      </ThemeProvider>
+    </ThemeProvider>
   </Layout>
 </Connect(Layout)>
 `;
