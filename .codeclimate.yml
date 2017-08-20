@@ -1,8 +1,4 @@
 engines:
-  eslint:
-    enabled: true
-    config:
-      config: src/dem-afterlife-ui/.eslintrc
   duplication:
     enabled: true
     config:
