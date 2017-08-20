@@ -1,6 +1,17 @@
 language: node_js
 node_js:
   - "6"
-script: cd src/dem-afterlife-ui && yarn && yarn test-cached
+before_script:
+  - cd src/dem-afterlife-ui
+  - yarn
+script: 
+  - yarn test-cached 
+  - yarn build
 before_install:
 - export TZ=Europe/Kiev
+after_script:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < **/*lcov.info
+addons:
+  code_climate:
+    repo_token: 53db050b1f96c52dc1bd7442e4f341841a24f425633d0bde6deea882941fc1f8

@@ -1,0 +1,19 @@
+engines:
+  eslint:
+    enabled: true
+    config:
+      config: src/dem-afterlife-ui/.eslintrc
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
+ratings:
+  paths:
+  - src/dem-afterlife-ui/**/*.js
+  - src/dem-afterlife-ui/**/*.jsx
+exclude_paths:
+- src/dem-afterlife-ui/node_modules/**
+- src/dem-afterlife-ui/**/*.test.js
+- src/dem-afterlife-ui/api/__fakeApi__/**
+- src/dem-afterlife-ui/api/__fakeData__/**

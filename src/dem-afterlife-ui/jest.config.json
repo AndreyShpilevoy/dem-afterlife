@@ -8,6 +8,7 @@
             "lines": 80
         }
     },
+    "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "testRegex": "src/.*/.*test.js",
     "transform": {
