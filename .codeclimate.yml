@@ -5,9 +5,9 @@ engines:
       config: src/dem-afterlife-ui/.eslintrc
   duplication:
     enabled: true
-    config:
-      languages:
-      - javascript:
+    checks:
+      Similar code:
+        enabled: false
 ratings:
   paths:
   - src/dem-afterlife-ui/**/*.js

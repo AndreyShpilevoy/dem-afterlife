@@ -13,12 +13,12 @@ const history = createHistory();
 const store = configureStore()(history);
 
 render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <JssProvider>
+    <JssProvider>
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
                 {routes}
-            </JssProvider>
-        </ConnectedRouter>
-    </Provider>,
+            </ConnectedRouter>
+        </Provider>
+    </JssProvider>,
     root.document.getElementById('app')
 );
