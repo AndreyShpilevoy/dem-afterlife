@@ -5,6 +5,10 @@ engines:
       config: src/dem-afterlife-ui/.eslintrc
   duplication:
     enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 65
     checks:
       Similar code:
         enabled: false
