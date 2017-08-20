@@ -6,7 +6,7 @@ before_script:
   - yarn
 script: 
   - yarn test-cached 
-  - yarn build
+  - yarn buildOnly
 before_install:
 - export TZ=Europe/Kiev
 after_script:
