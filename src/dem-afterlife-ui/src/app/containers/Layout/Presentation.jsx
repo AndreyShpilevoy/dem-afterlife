@@ -1,6 +1,6 @@
 import React from 'react';
-import {node, shape} from 'prop-types';
-import {sharedPropTypes} from 'utils';
+import {node, shape, string} from 'prop-types';
+import {sharedPropTypes, root} from 'utils';
 import Notification from 'containers/Notification';
 import Container from 'components/Container';
 import Row from 'components/Row';
@@ -11,7 +11,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import calculateStyles from './calculateStyles';
 
-export const PresentationPure = ({children, navigationLinkArray, socialMediaLinkArray, breadcrumbArray, classes}) => {
+export const PresentationPure = ({children, navigationLinkArray, socialMediaLinkArray, breadcrumbArray, title, classes}) => {
+    root.document.title = title; // eslint-disable-line fp/no-mutation
     const {contentWrapper, container, content} = classes;
     return (
         <div className={contentWrapper}>
@@ -36,6 +37,7 @@ export const PresentationPure = ({children, navigationLinkArray, socialMediaLink
 };
 
 PresentationPure.propTypes = {
+    title: string.isRequired,
     classes: shape().isRequired,
     children: node.isRequired,
     navigationLinkArray: sharedPropTypes.navigationLinkArray.isRequired,

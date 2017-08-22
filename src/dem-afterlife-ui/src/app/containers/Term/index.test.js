@@ -10,7 +10,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'}
         };
         expect(mount(<Term {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
@@ -18,7 +18,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term and untermedPostfix', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             untermedPostfix: ':'
         };
@@ -27,7 +27,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for not term and untermedPostfix', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             doNotTerm: true,
             untermedPostfix: ':'
         };
@@ -36,7 +36,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for term with space before', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             spaceBefore: true
         };
@@ -45,7 +45,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term with space after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             spaceAfter: true
         };
@@ -54,7 +54,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term with space before and after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             spaceBefore: true,
             spaceAfter: true
@@ -64,7 +64,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for term with indent before', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             indentBefore: true
         };
@@ -73,7 +73,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term with indent after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             indentAfter: true
         };
@@ -82,7 +82,7 @@ describe('Term', () => {
 
     it('component match expected snapshot for simple term with indent before and after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             term: {id: 1, value: 'Тем'},
             indentBefore: true,
             indentAfter: true

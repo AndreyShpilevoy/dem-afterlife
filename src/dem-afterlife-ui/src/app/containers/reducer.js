@@ -1,5 +1,6 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
+    getLocaleApi,
     getForumByIdApi,
     getForumArrayByChapterIdArrayApi,
     getForumArrayByParentForumIdApi,
@@ -9,11 +10,21 @@ import {
 } from 'api';
 
 const initialState = {
+    locale: 'en',
     selectedForum: {},
     forumArray: [],
     subForumArray: [],
     breadcrumbArray: []
 };
+
+export const GET_LOCALE = 'GET_LOCALE';
+export const getLocale = () => ({type: GET_LOCALE});
+
+export const GET_LOCALE_SUCCESS = 'GET_LOCALE_SUCCESS';
+export const getLocaleSuccess = locale => ({
+    type: GET_LOCALE_SUCCESS,
+    payload: locale
+});
 
 export const GET_FORUM_BY_ID = 'GET_FORUM_BY_ID';
 export const getForumById = forumId => ({
@@ -92,6 +103,8 @@ export const getTopicBreadcrumbArray = topicId => ({
 
 export const sharedReducer = (state = initialState, {type, payload}) => {
     switch (type) {
+        case GET_LOCALE_SUCCESS:
+            return {...state, locale: payload.locale};
         case GET_FORUM_BY_ID_SUCCESS:
             return {...state, selectedForum: payload.selectedForum};
         case GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS:
@@ -108,6 +121,14 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
+export function* getLocaleSaga() {
+    for (;;) {
+        yield take(GET_LOCALE);
+        const locale = yield call(getLocaleApi);
+        yield put(getLocaleSuccess(locale));
+    }
+}
+
 export function* getForumByIdSaga() {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BY_ID);
@@ -174,6 +195,7 @@ export function* getTopicBreadcrumbArraySaga() {
 
 export function* sharedSaga() {
     yield all([
+        getLocaleSaga(),
         getForumByIdSaga(),
         getForumsByChapterIdArraySaga(),
         getForumsByParentForumIdSaga(),

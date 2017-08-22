@@ -4,6 +4,7 @@ import {sortObjectArrayByOrderProperty} from 'utils';
 export const subForumArraySelector = state => state.sharedReducer.subForumArray;
 export const forumArraySelector = state => state.sharedReducer.forumArray;
 export const breadcrumbArraySelector = state => state.sharedReducer.breadcrumbArray;
+export const localeSelector = state => state.sharedReducer.locale;
 
 
 export const sortedSubForumArraySelector = createSelector(

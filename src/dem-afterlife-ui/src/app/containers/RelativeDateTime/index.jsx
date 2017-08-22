@@ -4,6 +4,7 @@ import React, {PureComponent} from 'react';
 import {instanceOf, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
 import {localization} from 'utils';
+import {localeSelector} from 'containers/selectors';
 
 class RelativeDateTime extends PureComponent {
     static propTypes = {
@@ -41,8 +42,8 @@ class RelativeDateTime extends PureComponent {
     }
 }
 
-const mapStateToProps = ({layoutReducer}) => ({
-    locale: layoutReducer.locale
+const mapStateToProps = state => ({
+    locale: localeSelector(state)
 });
 
 export default connect(mapStateToProps)(RelativeDateTime);

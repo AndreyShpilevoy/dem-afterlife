@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Shared reducer default saga should return 1 yield with 6 sagas. 2 yield should be in state Done 1`] = `
+exports[`Shared reducer default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -24,12 +24,15 @@ Object {
       GeneratorFunctionPrototype {
         "_invoke": [Function],
       },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
     ],
   },
 }
 `;
 
-exports[`Shared reducer default saga should return 1 yield with 6 sagas. 2 yield should be in state Done 2`] = `
+exports[`Shared reducer default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 2`] = `
 Object {
   "done": true,
   "value": undefined,
@@ -225,6 +228,62 @@ Object {
     "@@redux-saga/IO": true,
     "TAKE": Object {
       "pattern": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getLocaleSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getLocaleSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getLocaleSaga should be in loop and return expected values 3`] = `"getLocaleApi"`;
+
+exports[`Shared reducer getLocaleSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": "en",
+        "type": "GET_LOCALE_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared reducer getLocaleSaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
     },
   },
 }

@@ -14,7 +14,7 @@ describe('RelativeDateTime', () => {
 
     it('component match expected snapshot for relative date', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02')
         };
         expect(mount(<RelativeDateTime {...props} />, {lifecycleExperimental: true})).toMatchSnapshot();
@@ -22,7 +22,7 @@ describe('RelativeDateTime', () => {
 
     it('component match expected snapshot for relative date with space before', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),
             spaceBefore: true
         };
@@ -31,7 +31,7 @@ describe('RelativeDateTime', () => {
 
     it('component match expected snapshot for relative date with space after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),
             spaceAfter: true
         };
@@ -40,7 +40,7 @@ describe('RelativeDateTime', () => {
 
     it('component match expected snapshot for relative date with space before and after', () => {
         const props = {
-            store: mockStore({layoutReducer: {locale: 'ru'} }),
+            store: mockStore({sharedReducer: {locale: 'ru'} }),
             relativeDateTime: new Date('2017-06-02'),
             spaceBefore: true,
             spaceAfter: true

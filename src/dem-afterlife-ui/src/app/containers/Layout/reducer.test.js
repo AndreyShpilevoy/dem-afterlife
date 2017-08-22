@@ -1,12 +1,7 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, max-statements:0 */
 
 import {
-    getLocale,
-    getLocaleSuccess,
-    getLocaleSaga,
     layoutReducer,
-    GET_LOCALE,
-    GET_LOCALE_SUCCESS,
     getNavigationLinkArray,
     getNavigationLinkArraySuccess,
     getSocialMediaLinkArray,
@@ -23,19 +18,6 @@ import {
 Date.now = jest.genMockFunction().mockReturnValue(1492003118322);
 
 describe('Layout reducer', () => {
-    it('getLocale should create expected object', () => {
-        const expectedResult = {type: GET_LOCALE};
-        expect(getLocale()).toEqual(expectedResult);
-    });
-
-    it('getLocaleSuccess should create expected object', () => {
-        const expectedResult = {
-            type: GET_LOCALE_SUCCESS,
-            payload: 'ru'
-        };
-        expect(getLocaleSuccess('ru')).toEqual(expectedResult);
-    });
-
     it('getNavigationLinkArray should create expected object', () => {
         const expectedResult = {type: GET_NAVIGATION_LINK_ARRAY};
         expect(getNavigationLinkArray()).toEqual(expectedResult);
@@ -62,23 +44,11 @@ describe('Layout reducer', () => {
         expect(getSocialMediaLinkArraySuccess([{id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1}])).toEqual(expectedResult);
     });
 
-    it('layoutReducer with action GET_LOCALE_SUCCESS should return expected state', () => {
-        const defaultState = {
-            locale: 'en'
-        };
-        const action = {
-            type: GET_LOCALE_SUCCESS,
-            payload: {locale: 'ru'}
-        };
-        const expectedResult = {
-            locale: 'ru'
-        };
-        expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
-    });
 
-    it('layoutReducer with action GET_NAVIGATION_LINK_ARRAY_SUCCESS should return expected state', () => {
+
+    it('sharedReducer with action GET_NAVIGATION_LINK_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
-            locale: 'en',
+            socialMediaLinkArray: ['test'],
             navigationLinkArray: []
         };
         const action = {
@@ -93,7 +63,7 @@ describe('Layout reducer', () => {
                 ] }
         };
         const expectedResult = {
-            locale: 'en',
+            socialMediaLinkArray: ['test'],
             navigationLinkArray: [
                 {id: 1, title: 'Conference', href: '/', order: 1},
                 {id: 2, title: 'Link 2 generated', href: '/', order: 2},
@@ -105,9 +75,9 @@ describe('Layout reducer', () => {
         expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('layoutReducer with action GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
-            locale: 'en'
+            navigationLinkArray: ['test']
         };
         const action = {
             type: GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS,
@@ -118,7 +88,7 @@ describe('Layout reducer', () => {
                 ] }
         };
         const expectedResult = {
-            locale: 'en',
+            navigationLinkArray: ['test'],
             socialMediaLinkArray: [
                 {id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1},
                 {id: 2, title: 'VK - Ex Machina group', svgImageName: 'Vk', href: 'https://vk.com/exmachina2', order: 2}
@@ -126,36 +96,6 @@ describe('Layout reducer', () => {
         };
         expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
     });
-
-    it('layoutReducer with invalid (GET_LOCALE) action should return expected state', () => {
-        const defaultState = {
-            locale: 'en'
-        };
-        const action = {
-            type: 'GET_LOCALE',
-            payload: 'ru'
-        };
-        const expectedResult = {
-            locale: 'en'
-        };
-        expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
-    });
-
-    it('getLocaleSaga should be in loop and return expected values', () => {
-        const generator = getLocaleSaga();
-
-        const firstYield = generator.next();
-        const secondYield = generator.next();
-        const thirdYield = generator.next('en');
-        const fourthYield = generator.next();
-
-        expect(firstYield).toMatchSnapshot();
-        expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
-        expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
-    });
-
     it('getNavigationLinkArraySaga should be in loop and return expected values', () => {
         const generator = getNavigationLinkArraySaga();
 
@@ -191,7 +131,7 @@ describe('Layout reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('default saga should return 3 yield with 3 sagas. 2 yield should be in state Done', () => {
+    it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {
         const generator = layoutSaga();
         expect(generator.next()).toMatchSnapshot();
         expect(generator.next()).toMatchSnapshot();
