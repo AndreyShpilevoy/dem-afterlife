@@ -22,6 +22,7 @@ describe('Layout Presentation Pure', () => {
                 navigationLinkArray={[]}
                 socialMediaLinkArray={[]}
                 breadcrumbArray={[]}
+                title='PageTitle'
                 classes={classes}>
                 <div>
                     {'Layout Presentation content'}
