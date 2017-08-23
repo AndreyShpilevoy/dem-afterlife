@@ -12,12 +12,13 @@
         "setDevEnv": "npm config set production false && npm config set dev true",
         "setProdEnv": "npm config set production true && npm config set dev false",
         "clean-wwwroot": "rimraf ../dem-afterlife/wwwroot && mkdirp ../dem-afterlife/wwwroot",
-        "test-cached": "cross-env BABEL_ENV=test jest --config jest.config.json",
-        "test": "cross-env BABEL_ENV=test jest --config jest.config.json --no-cache",
+        "test": "cross-env BABEL_ENV=test jest --config jest.config.json",
+        "test-no-cache": "cross-env BABEL_ENV=test jest --config jest.config.json --no-cache",
+        "test-runInBand": "cross-env BABEL_ENV=test jest --config jest.config.json --runInBand ",
         "buildOnly": "cross-env BABEL_ENV=production webpack --progress --colors",
-        "prebuild": "yarn run clean-wwwroot && yarn run test-cached",
+        "prebuild": "yarn run clean-wwwroot && yarn run test",
         "build": "cross-env BABEL_ENV=production babel-node --presets es2015 tools/distServer.js",
-        "prestart": "yarn run test-cached",
+        "prestart": "yarn run test",
         "start": "cross-env BABEL_ENV=development babel-node --presets es2015 tools/srcServer.js"
     },
     "quokka": {
