@@ -1,6 +1,5 @@
 import React from 'react';
 import {bool, node, string, func, shape} from 'prop-types';
-import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {concatStyleNames, injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
