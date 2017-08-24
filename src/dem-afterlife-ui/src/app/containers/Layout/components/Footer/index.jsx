@@ -37,8 +37,7 @@ export const FooterPure = ({classes, socialMediaLinkArray}) =>
                 </div>
             </Column>
         </Row>
-    </Container>)
-;
+    </Container>);
 
 FooterPure.propTypes = {
     classes: shape().isRequired,
