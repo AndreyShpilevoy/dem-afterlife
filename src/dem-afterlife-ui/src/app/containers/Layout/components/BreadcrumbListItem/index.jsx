@@ -29,4 +29,3 @@ BreadcrumbListItemPure.defaultProps = {
 };
 
 export default injectSheet(calculateStyles, {componentName: 'BreadcrumbListIte'})(BreadcrumbListItemPure);
-
