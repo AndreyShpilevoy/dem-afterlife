@@ -65,6 +65,14 @@ const calculateStyles = ({themeName}) => ({
             }
         }
     },
+    active: {
+        color: '#CBC065',
+        textDecoration: 'none',
+        backgroundColor: '#564B41',
+        '&:after': {
+            borderLeftColor: '#564B41'
+        }
+    },
     options: {meta: 'BreadcrumbListItem', themeName}
 });
 

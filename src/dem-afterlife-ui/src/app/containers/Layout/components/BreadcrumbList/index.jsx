@@ -7,7 +7,10 @@ import calculateStyles from './calculateStyles';
 
 export const BreadcrumbListPure = ({breadcrumbArray, classes}) =>
     (<div className={classes.list}>
-        {breadcrumbArray.map(item => <BreadcrumbListItem breadcrumb={item} key={item.path} />)}
+        {
+            breadcrumbArray.map((item, index) =>
+                <BreadcrumbListItem breadcrumb={item} key={item.path} isActive={index + 1 === breadcrumbArray.length} />)
+        }
     </div>);
 
 BreadcrumbListPure.propTypes = {

@@ -2,29 +2,35 @@ import React from 'react';
 import {bool, shape} from 'prop-types';
 import Link from 'components/Link';
 import {sharedPropTypes} from 'utils';
-import {injectSheet} from 'styles';
+import {injectSheet, concatStyleNames} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, setActive, classes}) =>
+const getEllipsis = classes => <div className={classes.arrow}>{'...'}</div>;
+const getButton = (breadcrumb, classes, isActive) => {
+    const activeClasses = concatStyleNames([classes.arrow, classes.active]);
+    return isActive ?
+        <span className={activeClasses}>
+            <div>{breadcrumb.title}</div>
+        </span> :
+        <Link className={classes.arrow} to={breadcrumb.path}>
+            <div>{breadcrumb.title}</div>
+        </Link>;
+};
+
+export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, isActive, classes}) =>
     (<div className={classes.item}>
-        {
-            ellipsis ?
-                <div className={classes.arrow}>{'...'}</div> :
-                <Link className={classes.arrow} to={breadcrumb.path}>
-                    <div>{breadcrumb.title}</div>
-                </Link>
-        }
+        { ellipsis ? getEllipsis(classes) : getButton(breadcrumb, classes, isActive) }
     </div>);
 
 BreadcrumbListItemPure.propTypes = {
     classes: shape().isRequired,
     breadcrumb: sharedPropTypes.breadcrumb.isRequired,
-    setActive: bool,
+    isActive: bool,
     ellipsis: bool
 };
 
 BreadcrumbListItemPure.defaultProps = {
-    setActive: false,
+    isActive: false,
     ellipsis: false
 };
 
