@@ -1,70 +1,74 @@
-const size1 = 1.25;
-const size2 = 0.9;
-const size3 = 1.4;
-const size4 = 0.1875;
-const size5 = 0.625;
-const size6 = 0.9375;
-
-const arrowAfterBeforeCommon = {
+const arrowAfterBeforeCommon = height => ({
     borderBottomColor: 'transparent',
     borderBottomStyle: 'solid',
-    borderBottomWidth: size5,
+    borderBottomWidth: height / 2,
     borderTopColor: 'transparent',
     borderTopStyle: 'solid',
-    borderTopWidth: size5,
+    borderTopWidth: height / 2,
     content: '""',
     position: 'absolute',
     top: 0
-};
+});
 
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = ({themeName, breadcrumbs}) => ({
     arrow: {
-        backgroundColor: '#5D5956',
-        height: size1,
+        backgroundColor: breadcrumbs.bgColor,
+        height: breadcrumbs.height,
         display: 'block',
-        paddingLeft: size6,
-        paddingRight: size4,
-        marginRight: size4,
+        paddingLeft: breadcrumbs.paddingLeft,
+        paddingRight: breadcrumbs.marginAndPaddingRight,
+        marginRight: breadcrumbs.marginAndPaddingRight,
         fontWeight: 'bold',
-        fontSize: size2,
-        lineHeight: size3,
+        fontSize: breadcrumbs.fontSize,
+        lineHeight: breadcrumbs.lineHeight,
         textAlign: 'center',
         textDecoration: 'none',
         position: 'relative',
+        '&>div': {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%'
+        },
         '&:hover': {
-            backgroundColor: '#564B41',
+            backgroundColor: breadcrumbs.hoveredBgColor,
             '&:after': {
-                borderLeftColor: '#564B41'
+                borderLeftColor: breadcrumbs.hoveredBgColor
             }
         },
         '&:after': {
-            ...arrowAfterBeforeCommon,
-            borderLeftColor: '#5D5956',
+            ...arrowAfterBeforeCommon(breadcrumbs.height),
+            borderLeftColor: breadcrumbs.bgColor,
             borderLeftStyle: 'solid',
-            borderLeftWidth: size5,
-            right: - size5,
+            borderLeftWidth: breadcrumbs.height / 2,
+            right: - breadcrumbs.height / 2,
             zIndex: 1
         },
         '&:before': {
-            ...arrowAfterBeforeCommon,
-            borderLeftColor: '#171717',
+            ...arrowAfterBeforeCommon(breadcrumbs.height),
+            borderLeftColor: breadcrumbs.mainBg,
             borderLeftStyle: 'solid',
-            borderLeftWidth: size5,
+            borderLeftWidth: breadcrumbs.height / 2,
             left: 0
         }
     },
     ellipsis: {
         '&:hover': {
-            backgroundColor: '#5D5956',
+            backgroundColor: breadcrumbs.bgColor,
             '&:after': {
-                borderLeftColor: '#5D5956'
+                borderLeftColor: breadcrumbs.bgColor
             }
         }
     },
     item: {
+        maxWidth: '24%',
+        minWidth: '4%',
         '&:first-child': {
             '&>$arrow': {
-                paddingLeft: size5,
+                paddingLeft: breadcrumbs.height / 2,
                 '&:before': {
                     display: 'none'
                 }
@@ -72,7 +76,7 @@ const calculateStyles = ({themeName}) => ({
         },
         '&:last-child': {
             '&>$arrow': {
-                paddingRight: size5,
+                paddingRight: breadcrumbs.height / 2,
                 '&:after': {
                     content: 'none'
                 }
@@ -80,9 +84,9 @@ const calculateStyles = ({themeName}) => ({
         }
     },
     active: {
-        color: '#CBC065',
+        color: breadcrumbs.textColor,
         textDecoration: 'none',
-        backgroundColor: '#564B41'
+        backgroundColor: breadcrumbs.hoveredBgColor
     },
     options: {meta: 'BreadcrumbListItem', themeName}
 });

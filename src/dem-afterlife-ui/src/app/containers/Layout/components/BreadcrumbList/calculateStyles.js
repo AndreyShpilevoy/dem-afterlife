@@ -1,8 +1,8 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = ({themeName, breadcrumbs}) => ({
     list: {
         display: 'flex',
         flexFlow: 'row wrap',
-        marginTop: 0.3125
+        marginTop: breadcrumbs.listMarginTop
     },
     options: {meta: 'BreadcrumbList', themeName}
 });
