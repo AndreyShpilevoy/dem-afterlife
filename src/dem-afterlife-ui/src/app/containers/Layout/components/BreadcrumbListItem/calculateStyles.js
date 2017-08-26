@@ -31,6 +31,12 @@ const calculateStyles = ({themeName}) => ({
         textAlign: 'center',
         textDecoration: 'none',
         position: 'relative',
+        '&:hover': {
+            backgroundColor: '#564B41',
+            '&:after': {
+                borderLeftColor: '#564B41'
+            }
+        },
         '&:after': {
             ...arrowAfterBeforeCommon,
             borderLeftColor: '#5D5956',
@@ -45,6 +51,14 @@ const calculateStyles = ({themeName}) => ({
             borderLeftStyle: 'solid',
             borderLeftWidth: size5,
             left: 0
+        }
+    },
+    ellipsis: {
+        '&:hover': {
+            backgroundColor: '#5D5956',
+            '&:after': {
+                borderLeftColor: '#5D5956'
+            }
         }
     },
     item: {
@@ -68,10 +82,7 @@ const calculateStyles = ({themeName}) => ({
     active: {
         color: '#CBC065',
         textDecoration: 'none',
-        backgroundColor: '#564B41',
-        '&:after': {
-            borderLeftColor: '#564B41'
-        }
+        backgroundColor: '#564B41'
     },
     options: {meta: 'BreadcrumbListItem', themeName}
 });

@@ -5,7 +5,10 @@ import {sharedPropTypes} from 'utils';
 import {injectSheet, concatStyleNames} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const getEllipsis = classes => <div className={classes.arrow}>{'...'}</div>;
+const getEllipsis = classes => {
+    const ellipsisClasses = concatStyleNames([classes.arrow, classes.ellipsis]);
+    return <div className={ellipsisClasses}>{'...'}</div>;
+};
 const getButton = (breadcrumb, classes, isActive) => {
     const activeClasses = concatStyleNames([classes.arrow, classes.active]);
     return isActive ?
