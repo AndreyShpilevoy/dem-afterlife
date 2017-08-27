@@ -2,15 +2,10 @@ engines:
   git-legal:
     enabled: true
   duplication:
-    exclude_paths:
-      - src/dem-afterlife-ui/node_modules/**
-      - src/dem-afterlife-ui/**/*.test.js
-      - src/dem-afterlife-ui/src/app/api/__fakeApi__/**
-      - src/dem-afterlife-ui/src/app/api/__fakeData__/**
     enabled: true
     config:
       languages:
-        javascript:
+        - javascript
   fixme:
     enabled: true
     config:
