@@ -9,7 +9,6 @@ engines:
       - src/dem-afterlife-ui/src/app/api/__fakeData__/**
     enabled: true
     config:
-      dump_ast: true
       languages:
         javascript:
           patterns:
