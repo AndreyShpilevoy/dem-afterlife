@@ -1,4 +1,9 @@
 engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
   git-legal:
     enabled: true
   fixme:
