@@ -1,19 +1,35 @@
 engines:
+  git-legal:
+    enabled: true
   duplication:
+    exclude_paths:
+      - src/dem-afterlife-ui/node_modules/**
+      - src/dem-afterlife-ui/**/*.test.js
+      - src/dem-afterlife-ui/src/app/api/__fakeApi__/**
+      - src/dem-afterlife-ui/src/app/api/__fakeData__/**
     enabled: true
     config:
+      dump_ast: true
       languages:
         javascript:
-          mass_threshold: 65
-    checks:
-      Similar code:
-        enabled: false
+          patterns:
+            - src/dem-afterlife-ui/**/*.js
+            - src/dem-afterlife-ui/**/*.jsx
+  fixme:
+    enabled: true
+    config:
+      strings:
+      - FIXME
+      - BUG
+      - TODO
 ratings:
   paths:
-  - src/dem-afterlife-ui/**/*.js
-  - src/dem-afterlife-ui/**/*.jsx
+    - package.json
+    - yarn.lock
+    - src/dem-afterlife-ui/**/*.js
+    - src/dem-afterlife-ui/**/*.jsx
 exclude_paths:
-- src/dem-afterlife-ui/node_modules/**
-- src/dem-afterlife-ui/**/*.test.js
-- src/dem-afterlife-ui/src/app/api/__fakeApi__/**
-- src/dem-afterlife-ui/src/app/api/__fakeData__/**
+  - src/dem-afterlife-ui/node_modules/**
+  - src/dem-afterlife-ui/**/*.test.js
+  - src/dem-afterlife-ui/src/app/api/__fakeApi__/**
+  - src/dem-afterlife-ui/src/app/api/__fakeData__/**
