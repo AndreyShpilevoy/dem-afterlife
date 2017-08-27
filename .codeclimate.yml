@@ -11,9 +11,6 @@ engines:
     config:
       languages:
         javascript:
-          patterns:
-            - src/dem-afterlife-ui/**/*.js
-            - src/dem-afterlife-ui/**/*.jsx
   fixme:
     enabled: true
     config:
