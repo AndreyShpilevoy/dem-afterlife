@@ -190,5 +190,6 @@ describe('Forum', () => {
         const wrapper = shallow(<ForumPure {...props}><div>{'Forum content'}</div></ForumPure>, {lifecycleExperimental: true});
         wrapper.setProps({topicArray, forumArray, match: {params: {forumId: '11'} } });
         expect(getTopicArrayByForumId.mock.calls.length).toEqual(2);
+        expect(getForumBreadcrumbArray.mock.calls.length).toEqual(2);
     });
 });

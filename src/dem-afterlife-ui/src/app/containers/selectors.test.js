@@ -5,7 +5,10 @@ import {
     subForumArraySelector,
     sortedSubForumArraySelector,
     forumArrayWithSubForumsSelector,
-    sortedForumArrayWithSubForumsSelector
+    sortedForumArrayWithSubForumsSelector,
+    localeSelector,
+    breadcrumbArraySelector,
+    sortedBreadcrumbArraySelector
 } from './selectors';
 
 describe('Shared selectors', () => {
@@ -129,5 +132,47 @@ describe('Shared selectors', () => {
             {id: 3, order: 3, chapterId: 1, parentForumId: null, subForumArray: [] }
         ];
         expect(sortedForumArrayWithSubForumsSelector(state)).toEqual(expectedResult);
+    });
+
+    it('localeSelector should return expected string', () => {
+        const state = {
+            sharedReducer: {
+                locale: 'EN'
+            }
+        };
+        const expectedResult = state.sharedReducer.locale;
+        expect(localeSelector(state)).toEqual(expectedResult);
+    });
+
+    it('breadcrumbArraySelector should return expected array', () => {
+        const state = {
+            sharedReducer: {
+                breadcrumbArray: [
+                    {order: 1, title: '11', path: '/11'},
+                    {order: 3, title: '33', path: '/33'},
+                    {order: 2, title: '22', path: '/22'}
+                ]
+            }
+        };
+        const expectedResult = state.sharedReducer.breadcrumbArray;
+        expect(breadcrumbArraySelector(state)).toEqual(expectedResult);
+    });
+
+    it('sortedBreadcrumbArraySelector should return expected array', () => {
+        const state = {
+            sharedReducer: {
+                breadcrumbArray: [
+                    {order: 1, title: '11', path: '/11'},
+                    {order: 3, title: '33', path: '/33'},
+                    {order: 2, title: '22', path: '/22'}
+                ]
+            }
+        };
+        const expectedResult = [
+            {order: 1, title: '11', path: '/11'},
+            {order: 2, title: '22', path: '/22'},
+            {order: 3, title: '33', path: '/33'}
+        ];
+        expect(sortedBreadcrumbArraySelector(state)).toEqual(expectedResult);
     });
 });
