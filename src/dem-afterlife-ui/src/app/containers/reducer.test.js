@@ -3,31 +3,40 @@
 import {
     GET_LOCALE,
     GET_LOCALE_SUCCESS,
+    getLocale,
+    getLocaleSuccess,
+    getLocaleSaga,
     GET_FORUM_BY_ID,
     GET_FORUM_BY_ID_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS,
     GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY,
     GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS,
-    getLocale,
-    getLocaleSuccess,
-    getLocaleSaga,
     getForumById,
     getForumByIdSuccess,
     getForumArrayByChapterIdArray,
     getForumArrayByChapterIdArraySuccess,
     getSubForumArrayByParentForumIdArray,
     getSubForumArrayByParentForumIdArraySuccess,
-    sharedReducer,
     getForumByIdSaga,
-    sharedSaga,
     getForumsByChapterIdArraySaga,
     getForumsByChapterIdArrayNonBlockSaga,
     getSubForumsByParentForumIdArraySaga,
-    getSubForumsByParentForumIdArrayNonBlockSaga
+    getSubForumsByParentForumIdArrayNonBlockSaga,
+    GET_BREADCRUMB_ARRAY_SUCCESS,
+    GET_FORUM_BREADCRUMB_ARRAY,
+    GET_TOPIC_BREADCRUMB_ARRAY,
+    getBreadcrumbArraySuccess,
+    getConferenceBreadcrumbs,
+    getForumBreadcrumbArray,
+    getTopicBreadcrumbArray,
+    getForumBreadcrumbArraySaga,
+    getTopicBreadcrumbArraySaga,
+    sharedReducer,
+    sharedSaga
 } from './reducer';
 
-describe('Shared reducer', () => {
+describe('Shared Locale Actions', () => {
     it('getLocale should create expected object', () => {
         const expectedResult = {type: GET_LOCALE};
         expect(getLocale()).toEqual(expectedResult);
@@ -40,7 +49,40 @@ describe('Shared reducer', () => {
         };
         expect(getLocaleSuccess('ru')).toEqual(expectedResult);
     });
+});
+describe('Shared Locale Reducers', () => {
+    it('sharedReducer with action GET_LOCALE_SUCCESS should return expected state', () => {
+        const defaultState = {
+            locale: 'en'
+        };
+        const action = {
+            type: GET_LOCALE_SUCCESS,
+            payload: {locale: 'ru'}
+        };
+        const expectedResult = {
+            locale: 'ru'
+        };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
+    });
+});
+describe('Shared Locale Sagas', () => {
+    it('getLocaleSaga should be in loop and return expected values', () => {
+        const generator = getLocaleSaga();
 
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next('en');
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
+    });
+});
+
+describe('Shared Forums Actions', () => {
     it('getForumById should create expected object', () => {
         const expectedResult = {type: GET_FORUM_BY_ID, payload: {forumId: 1} };
         expect(getForumById(1)).toEqual(expectedResult);
@@ -101,64 +143,8 @@ describe('Shared reducer', () => {
             {id: 2, title: 'Ex Machina Меридиан 113 Forum', order: 2}
         ])).toEqual(expectedResult);
     });
-
-    it('sharedReducer with action GET_LOCALE_SUCCESS should return expected state', () => {
-        const defaultState = {
-            locale: 'en'
-        };
-        const action = {
-            type: GET_LOCALE_SUCCESS,
-            payload: {locale: 'ru'}
-        };
-        const expectedResult = {
-            locale: 'ru'
-        };
-        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
-    });
-
-    it('sharedReducer with invalid (GET_LOCALE) action should return expected state', () => {
-        const defaultState = {
-            locale: 'en'
-        };
-        const action = {
-            type: 'GET_LOCALE',
-            payload: 'ru'
-        };
-        const expectedResult = {
-            locale: 'en'
-        };
-        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
-    });
-
-    it('getLocaleSaga should be in loop and return expected values', () => {
-        const generator = getLocaleSaga();
-
-        const firstYield = generator.next();
-        const secondYield = generator.next();
-        const thirdYield = generator.next('en');
-        const fourthYield = generator.next();
-
-        expect(firstYield).toMatchSnapshot();
-        expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
-        expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
-    });
-
-    it('sharedReducer with invalid (GET_SMTH) action should return expected state', () => {
-        const defaultState = {
-            forumArray: []
-        };
-        const action = {
-            type: 'GET_SMTH',
-            payload: 'lol'
-        };
-        const expectedResult = {
-            forumArray: []
-        };
-        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
-    });
-
+});
+describe('Shared Forums Reducers', () => {
     it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should return expected state', () => {
         const defaultState = {
             selectedForum: {}
@@ -230,7 +216,8 @@ describe('Shared reducer', () => {
         };
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
-
+});
+describe('Shared Forums Sagas', () => {
     it('getForumByIdSaga should be in loop and return expected values', () => {
         const generator = getForumByIdSaga();
 
@@ -309,6 +296,116 @@ describe('Shared reducer', () => {
         expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
+    });
+});
+
+describe('Shared Breadcrumb Actions', () => {
+    it('getBreadcrumbArraySuccess should create expected object', () => {
+        const expectedResult = {
+            type: GET_BREADCRUMB_ARRAY_SUCCESS,
+            payload: {breadcrumbArray: [
+                {path: '/Conference', title: 'Conference', order: 1},
+                {path: '/Conference 2', title: 'Conference 2', order: 2}
+            ] }
+        };
+        expect(getBreadcrumbArraySuccess([{path: '/Conference 2', title: 'Conference 2', order: 2}])).toEqual(expectedResult);
+    });
+
+    it('getConferenceBreadcrumbs should create expected object', () => {
+        const expectedResult = {
+            type: GET_BREADCRUMB_ARRAY_SUCCESS,
+            payload: {breadcrumbArray: [
+                {path: '/Conference', title: 'Conference', order: 1}
+            ] }
+        };
+        expect(getConferenceBreadcrumbs()).toEqual(expectedResult);
+    });
+
+    it('getForumBreadcrumbArray should create expected object', () => {
+        const expectedResult = {
+            type: GET_FORUM_BREADCRUMB_ARRAY,
+            payload: {forumId: 1}
+        };
+        expect(getForumBreadcrumbArray(1)).toEqual(expectedResult);
+    });
+
+    it('getTopicBreadcrumbArray should create expected object', () => {
+        const expectedResult = {
+            type: GET_TOPIC_BREADCRUMB_ARRAY,
+            payload: {topicId: 1}
+        };
+        expect(getTopicBreadcrumbArray(1)).toEqual(expectedResult);
+    });
+});
+describe('Shared Breadcrumb Reducers', () => {
+    it('sharedReducer with action GET_BREADCRUMB_ARRAY_SUCCESS should return expected state', () => {
+        const defaultState = {
+            breadcrumbArray: [
+                {path: '/Conference', title: 'Conference', order: 1},
+                {path: '/Conference 2', title: 'Conference 2', order: 2}
+            ]
+        };
+        const action = {
+            type: GET_BREADCRUMB_ARRAY_SUCCESS,
+            payload: {breadcrumbArray: [
+                {path: '/Conference', title: 'Conference', order: 1},
+                {path: '/Conference 3', title: 'Conference 3', order: 3}
+            ] }
+        };
+        const expectedResult = {
+            breadcrumbArray: [
+                {path: '/Conference', title: 'Conference', order: 1},
+                {path: '/Conference 3', title: 'Conference 3', order: 3}
+            ]
+        };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
+    });
+});
+describe('Shared Breadcrumb Sagas', () => {
+    it('getForumBreadcrumbArraySaga should be in loop and return expected values', () => {
+        const generator = getForumBreadcrumbArraySaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {forumId: 1} });
+        const thirdYield = generator.next([{path: '/Forum_1', title: 'Forum 1', order: 1}]);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getTopicBreadcrumbArraySaga should be in loop and return expected values', () => {
+        const generator = getTopicBreadcrumbArraySaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {topicId: 1} });
+        const thirdYield = generator.next([{path: '/Topic_1', title: 'Topic 1', order: 1}]);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
+    });
+});
+
+describe('Shared Default Reducer and Saga', () => {
+    it('sharedReducer with invalid (GET_SMTH) action should return expected state', () => {
+        const defaultState = {
+            forumArray: []
+        };
+        const action = {
+            type: 'GET_SMTH',
+            payload: 'lol'
+        };
+        const expectedResult = {
+            forumArray: []
+        };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
     it('default saga should return 1 yield with 7 sagas. 2 yield should be in state Done', () => {

@@ -89,7 +89,7 @@ export const getBreadcrumbArraySuccess = breadcrumbArray => {
 
 export const getConferenceBreadcrumbs = () => getBreadcrumbArraySuccess([]);
 
-export const GET_FORUM_BREADCRUMB_ARRAY = 'GET_FORUM_BREADCRUMBS_SUCCESS';
+export const GET_FORUM_BREADCRUMB_ARRAY = 'GET_FORUM_BREADCRUMB_ARRAY';
 export const getForumBreadcrumbArray = forumId => ({
     type: GET_FORUM_BREADCRUMB_ARRAY,
     payload: {forumId}
