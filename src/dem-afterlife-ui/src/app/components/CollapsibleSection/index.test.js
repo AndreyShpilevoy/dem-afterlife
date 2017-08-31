@@ -64,4 +64,22 @@ describe('CollapsibleSection Pure', () => {
             </CollapsibleSectionPure>
         )).toMatchSnapshot();
     });
+
+    it('after click on header state should be changed', () => {
+        const collapseSettings = {
+            collapsedByDefault: true,
+            isCollapsible: true
+        };
+        const wrapper = shallow(
+            <CollapsibleSectionPure classes={classes} collapseSettings={collapseSettings}>
+                <div>
+                    {'Column content'}
+                </div>
+            </CollapsibleSectionPure>
+        );
+        expect(wrapper.state().collapsedState).toBeTruthy();
+        wrapper.find('Jss(RowPure)').first().simulate('click');
+        expect(wrapper.state().collapsedState).toBeFalsy();
+        expect(wrapper).toMatchSnapshot();
+    });
 });

@@ -1,6 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Shared reducer default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 1`] = `
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 3`] = `"getForumBreadcrumbsArrayByForumIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "breadcrumbArray": Array [
+            Object {
+              "order": 1,
+              "path": "/Conference",
+              "title": "Conference",
+            },
+            Object {
+              "order": 1,
+              "path": "/Forum_1",
+              "title": "Forum 1",
+            },
+          ],
+        },
+        "type": "GET_BREADCRUMB_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_TOPIC_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 3`] = `"getTopicBreadcrumbsArrayByTopicIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "breadcrumbArray": Array [
+            Object {
+              "order": 1,
+              "path": "/Conference",
+              "title": "Conference",
+            },
+            Object {
+              "order": 1,
+              "path": "/Topic_1",
+              "title": "Topic 1",
+            },
+          ],
+        },
+        "type": "GET_BREADCRUMB_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_TOPIC_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Default Reducer and Saga default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -32,14 +174,14 @@ Object {
 }
 `;
 
-exports[`Shared reducer default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 2`] = `
+exports[`Shared Default Reducer and Saga default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 2`] = `
 Object {
   "done": true,
   "value": undefined,
 }
 `;
 
-exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 1`] = `
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -51,7 +193,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 2`] = `
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 2`] = `
 Object {
   "done": false,
   "value": Object {
@@ -67,9 +209,9 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 3`] = `"getForumByIdApi"`;
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 3`] = `"getForumByIdApi"`;
 
-exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 4`] = `
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 4`] = `
 Object {
   "done": false,
   "value": Object {
@@ -91,7 +233,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumByIdSaga should be in loop and return expected values 5`] = `
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 5`] = `
 Object {
   "done": false,
   "value": Object {
@@ -103,7 +245,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -122,9 +264,9 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 2`] = `"getForumArrayByChapterIdArrayApi"`;
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 2`] = `"getForumArrayByChapterIdArrayApi"`;
 
-exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 3`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 3`] = `
 Object {
   "done": false,
   "value": Object {
@@ -158,7 +300,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 4`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 4`] = `
 Object {
   "done": false,
   "value": Object {
@@ -180,14 +322,14 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 5`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done 5`] = `
 Object {
   "done": true,
   "value": undefined,
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 1`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -199,7 +341,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 2`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 2`] = `
 Object {
   "done": false,
   "value": Object {
@@ -219,9 +361,9 @@ Object {
 }
 `;
 
-exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 3`] = `"getForumsByChapterIdArrayNonBlockSaga"`;
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 3`] = `"getForumsByChapterIdArrayNonBlockSaga"`;
 
-exports[`Shared reducer getForumsByChapterIdArraySaga should be in loop and return expected values 4`] = `
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 4`] = `
 Object {
   "done": false,
   "value": Object {
@@ -233,63 +375,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getLocaleSaga should be in loop and return expected values 1`] = `
-Object {
-  "done": false,
-  "value": Object {
-    "@@redux-saga/IO": true,
-    "TAKE": Object {
-      "pattern": "GET_LOCALE",
-    },
-  },
-}
-`;
-
-exports[`Shared reducer getLocaleSaga should be in loop and return expected values 2`] = `
-Object {
-  "done": false,
-  "value": Object {
-    "@@redux-saga/IO": true,
-    "CALL": Object {
-      "args": Array [],
-      "context": null,
-      "fn": [Function],
-    },
-  },
-}
-`;
-
-exports[`Shared reducer getLocaleSaga should be in loop and return expected values 3`] = `"getLocaleApi"`;
-
-exports[`Shared reducer getLocaleSaga should be in loop and return expected values 4`] = `
-Object {
-  "done": false,
-  "value": Object {
-    "@@redux-saga/IO": true,
-    "PUT": Object {
-      "action": Object {
-        "payload": "en",
-        "type": "GET_LOCALE_SUCCESS",
-      },
-      "channel": null,
-    },
-  },
-}
-`;
-
-exports[`Shared reducer getLocaleSaga should be in loop and return expected values 5`] = `
-Object {
-  "done": false,
-  "value": Object {
-    "@@redux-saga/IO": true,
-    "TAKE": Object {
-      "pattern": "GET_LOCALE",
-    },
-  },
-}
-`;
-
-exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 1`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -309,9 +395,9 @@ Object {
 }
 `;
 
-exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 2`] = `"getSubForumArrayByParentForumIdArrayApi"`;
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 2`] = `"getSubForumArrayByParentForumIdArrayApi"`;
 
-exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 3`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 3`] = `
 Object {
   "done": false,
   "value": Object {
@@ -348,14 +434,14 @@ Object {
 }
 `;
 
-exports[`Shared reducer getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 4`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 4`] = `
 Object {
   "done": true,
   "value": undefined,
 }
 `;
 
-exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 1`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -367,7 +453,7 @@ Object {
 }
 `;
 
-exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 2`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 2`] = `
 Object {
   "done": false,
   "value": Object {
@@ -387,15 +473,71 @@ Object {
 }
 `;
 
-exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 3`] = `"getSubForumsByParentForumIdArrayNonBlockSaga"`;
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 3`] = `"getSubForumsByParentForumIdArrayNonBlockSaga"`;
 
-exports[`Shared reducer getSubForumsByParentForumIdArraySaga should be in loop and return expected values 4`] = `
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 4`] = `
 Object {
   "done": false,
   "value": Object {
     "@@redux-saga/IO": true,
     "TAKE": Object {
       "pattern": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 3`] = `"getLocaleApi"`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": "en",
+        "type": "GET_LOCALE_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
     },
   },
 }

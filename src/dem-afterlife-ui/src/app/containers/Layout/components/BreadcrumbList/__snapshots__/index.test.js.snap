@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbList Pure component should mach snapshot for 1 breadcrumb 1`] = `
+<div
+  className="list"
+>
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 1,
+        "path": "/",
+        "title": "Conference",
+      }
+    }
+    ellipsis={false}
+    isActive={true}
+  />
+</div>
+`;
+
+exports[`BreadcrumbList Pure component should mach snapshot for 4 breadcrumbs 1`] = `
+<div
+  className="list"
+>
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 1,
+        "path": "/1",
+        "title": "Conference 1",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 2,
+        "path": "/2",
+        "title": "Conference 2",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 3,
+        "path": "/3",
+        "title": "Conference 3",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 4,
+        "path": "/4",
+        "title": "Conference 4",
+      }
+    }
+    ellipsis={false}
+    isActive={true}
+  />
+</div>
+`;
+
+exports[`BreadcrumbList Pure component should mach snapshot for 6 breadcrumbs 1`] = `
+<div
+  className="list"
+>
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 1,
+        "path": "/1",
+        "title": "Conference 1",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 2,
+        "path": "/2",
+        "title": "Conference 2",
+      }
+    }
+    ellipsis={true}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 4,
+        "path": "/4",
+        "title": "Conference 4",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 5,
+        "path": "/5",
+        "title": "Conference 5",
+      }
+    }
+    ellipsis={false}
+    isActive={false}
+  />
+  <Jss(BreadcrumbListItemPure)
+    breadcrumb={
+      Object {
+        "order": 6,
+        "path": "/6",
+        "title": "Conference 6",
+      }
+    }
+    ellipsis={false}
+    isActive={true}
+  />
+</div>
+`;

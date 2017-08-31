@@ -36,7 +36,9 @@ const colors = {
     bbCodeThinkBackgroundColor: '#D4C5B6',
     bbCodeThinkBorderColor: '#ffffff',
     focusColorLight: '#D4D4D4',
-    focusColorDark: '#44423f'
+    focusColorDark: '#44423f',
+    breadcrumbBackgroundColor: '#5D5956',
+    breadcrumbHoveredBackgroundColor: '#564B41'
 };
 
 const sizes = {
@@ -266,6 +268,18 @@ const defaultTheme = {
         },
         email: link,
         url: link
+    },
+    breadcrumbs: {
+        listMarginTop: sizes.marginBetweenBlocks,
+        bgColor: colors.breadcrumbBackgroundColor,
+        hoveredBgColor: colors.breadcrumbHoveredBackgroundColor,
+        mainBg: colors.backgroundColor,
+        textColor: colors.yellowTextColor,
+        height: 1.25,
+        fontSize: 0.9,
+        lineHeight: 1.4,
+        marginAndPaddingRight: 0.1875,
+        paddingLeft: 0.9375
     },
     focus: {
         colorLight: colors.focusColorLight,

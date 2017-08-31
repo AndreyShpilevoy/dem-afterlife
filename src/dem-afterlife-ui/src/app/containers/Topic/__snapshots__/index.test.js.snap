@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Topic HOC component with empty post and user arrays match expected snapshot 1`] = `
-<Connect(Topic)
+<Connect(TopicPure)
   match={
     Object {
       "params": Object {
@@ -20,7 +20,7 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
     }
   }
 >
-  <Topic
+  <TopicPure
     getPostArrayByTopicId={[Function]}
     getTopicBreadcrumbArray={[Function]}
     match={
@@ -85,12 +85,12 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
     >
       <div />
     </CollapsibleSection>
-  </Topic>
-</Connect(Topic)>
+  </TopicPure>
+</Connect(TopicPure)>
 `;
 
 exports[`Topic HOC component with filled post and user arrays match expected snapshot 1`] = `
-<Connect(Topic)
+<Connect(TopicPure)
   match={
     Object {
       "params": Object {
@@ -109,7 +109,7 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
     }
   }
 >
-  <Topic
+  <TopicPure
     getPostArrayByTopicId={[Function]}
     getTopicBreadcrumbArray={[Function]}
     match={
@@ -400,6 +400,6 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
         </Post>
       </div>
     </CollapsibleSection>
-  </Topic>
-</Connect(Topic)>
+  </TopicPure>
+</Connect(TopicPure)>
 `;

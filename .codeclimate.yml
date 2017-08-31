@@ -1,19 +1,10 @@
 engines:
-  duplication:
+  git-legal:
+    enabled: true
+  fixme:
     enabled: true
     config:
-      languages:
-        javascript:
-          mass_threshold: 65
-    checks:
-      Similar code:
-        enabled: false
-ratings:
-  paths:
-  - src/dem-afterlife-ui/**/*.js
-  - src/dem-afterlife-ui/**/*.jsx
-exclude_paths:
-- src/dem-afterlife-ui/node_modules/**
-- src/dem-afterlife-ui/**/*.test.js
-- src/dem-afterlife-ui/src/app/api/__fakeApi__/**
-- src/dem-afterlife-ui/src/app/api/__fakeData__/**
+      strings:
+      - FIXME
+      - BUG
+      - TODO

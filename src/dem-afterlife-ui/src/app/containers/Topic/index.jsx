@@ -13,7 +13,7 @@ import {getPostArrayByTopicId} from './reducer';
 
 const titleTerm = {id: 30, value: 'Posts'};
 
-class Topic extends PureComponent {
+export class TopicPure extends PureComponent {
     static propTypes = {
         getPostArrayByTopicId: func.isRequired,
         getTopicBreadcrumbArray: func.isRequired,
@@ -32,7 +32,7 @@ class Topic extends PureComponent {
     }
 
     componentWillReceiveProps = nextProps => {
-        if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
+        if (nextProps.match.params.topicId !== this.props.match.params.topicId) {
             const topicId = Number.parseInt(nextProps.match.params.topicId, 10);
             this.props.getTopicBreadcrumbArray(topicId);
             this.props.getPostArrayByTopicId(topicId);
@@ -53,7 +53,7 @@ class Topic extends PureComponent {
         };
         return (
             <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-                {postArray ? this.mapPostsToComponent(postArray) : ''}
+                {this.mapPostsToComponent(postArray)}
             </CollapsibleSection>
         );
     }
@@ -69,4 +69,4 @@ const mapDispatchToProps = dispatch =>
         getTopicBreadcrumbArray
     }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Topic);
+export default connect(mapStateToProps, mapDispatchToProps)(TopicPure);
