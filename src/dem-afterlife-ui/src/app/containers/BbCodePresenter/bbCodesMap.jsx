@@ -9,6 +9,7 @@ import Color from './components/Color';
 import Email from './components/Email';
 import Image from './components/Image';
 import Url from './components/Url';
+import Media from './components/Media';
 import ListItem from './components/ListItem';
 import NewLine from './components/NewLine';
 import OffTopic from './components/OffTopic';
@@ -94,8 +95,8 @@ const bbCodesMap = {
         <UnorderedList key={key}>{children}</UnorderedList>,
     li: (children, key) =>
         <ListItem key={key}>{children}</ListItem>,
-
-    // media
+    media: (children, key) =>
+        <Media key={key}>{children}</Media>,
     p: (children, key) =>
         <Paragraph key={key}>{children}</Paragraph>,
     [brTag]: (children, key) =>
