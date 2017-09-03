@@ -12,6 +12,7 @@ engines:
           mass_threshold: 70
           filters:
           - "(ImportDeclaration _ (ImportDefaultSpecifier _ (Identifier _)) _ (StringLiteral _))"
+          - "(JSXOpeningElement (attributes (JSXAttribute name (JSXIdentifier className) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier onClick) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier role) value (JSXExpressionContainer expression (StringLiteral _))) (JSXAttribute name (JSXIdentifier tabIndex) value (JSXExpressionContainer expression (NumericLiteral)))) name (JSXIdentifier _))"
           patterns:
           - "**/*.js"
           - "**/*.jsx"
