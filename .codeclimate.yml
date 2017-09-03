@@ -9,6 +9,8 @@ engines:
     config:
       languages:
         javascript:
+        filters:
+          - "(ImportDeclaration _ (ImportDefaultSpecifier _ (Identifier _)) _ (StringLiteral _))"
           patterns:
           - "**/*.js"
           - "**/*.jsx"
