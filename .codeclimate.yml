@@ -9,7 +9,7 @@ engines:
     config:
       languages:
         javascript:
-          mass_threshold: 65
+          mass_threshold: 70
           filters:
           - "(ImportDeclaration _ (ImportDefaultSpecifier _ (Identifier _)) _ (StringLiteral _))"
           patterns:
