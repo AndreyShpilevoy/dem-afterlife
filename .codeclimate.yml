@@ -7,8 +7,6 @@ engines:
     - "src/dem-afterlife-ui/node_modules/**"
     enabled: true
     config:
-      dump_ast: true
-      debug: true
       languages:
         javascript:
           patterns:
