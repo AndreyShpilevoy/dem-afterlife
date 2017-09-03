@@ -6,11 +6,11 @@ engines:
     - "src/dem-afterlife-ui/src/app/api/__fakeData__/**"
     - "src/dem-afterlife-ui/node_modules/**"
     enabled: true
-    count_threshold: 3
     config:
       languages:
         javascript:
           mass_threshold: 70
+          count_threshold: 3
           filters:
           - "(ImportDeclaration _ (ImportDefaultSpecifier _ (Identifier _)) _ (StringLiteral _))"
           - "(JSXOpeningElement (attributes (JSXAttribute name (JSXIdentifier className) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier onClick) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier role) value (JSXExpressionContainer expression (StringLiteral _))) (JSXAttribute name (JSXIdentifier tabIndex) value (JSXExpressionContainer expression (NumericLiteral)))) name (JSXIdentifier _))"
