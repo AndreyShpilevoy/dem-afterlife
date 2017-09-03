@@ -1,4 +1,24 @@
 engines:
+  duplication:
+    exclude_paths:
+    - "src/dem-afterlife-ui/**/*.test.js"
+    - "src/dem-afterlife-ui/src/app/api/__fakeApi__/**"
+    - "src/dem-afterlife-ui/src/app/api/__fakeData__/**"
+    - "src/dem-afterlife-ui/node_modules/**"
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 70
+          count_threshold: 3
+          filters:
+          - "(ImportDeclaration _ (ImportDefaultSpecifier _ (Identifier _)) _ (StringLiteral _))"
+          - "(JSXOpeningElement (attributes (JSXAttribute name (JSXIdentifier className) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier onClick) value (JSXExpressionContainer expression (Identifier _))) (JSXAttribute name (JSXIdentifier role) value (JSXExpressionContainer expression (StringLiteral _))) (JSXAttribute name (JSXIdentifier tabIndex) value (JSXExpressionContainer expression (NumericLiteral)))) name (JSXIdentifier _))"
+          - "(VariableDeclaration _ (VariableDeclarator _ (Identifier number) _ (CallExpression _ (MemberExpression _ (Identifier Math) _ (Identifier round)) _ (BinaryExpression _ (Identifier msDeltaTime) _ _ (MemberExpression _ (Identifier milliseconds) _ (Identifier _))))) const)"
+          - "(FunctionDeclaration id (Identifier _) true params (Identifier _) (body BlockStatement (body (VariableDeclaration declarations (VariableDeclarator id (Identifier _) init (YieldExpression argument (CallExpression callee (Identifier call) (arguments (Identifier _) (Identifier _))))) const) (ExpressionStatement expression (YieldExpression argument (CallExpression callee (Identifier put) arguments (CallExpression callee (Identifier _) arguments (Identifier _))))) (VariableDeclaration declarations (VariableDeclarator id (Identifier _) init (CallExpression callee (MemberExpression object (Identifier _) property (Identifier map)) arguments (ArrowFunctionExpression true params (Identifier _) body (MemberExpression object (Identifier _) property (Identifier _))))) const) (ExpressionStatement expression (YieldExpression argument (CallExpression callee (Identifier put) arguments (CallExpression callee (Identifier _) arguments (Identifier _))))))))"
+          patterns:
+          - "**/*.js"
+          - "**/*.jsx"
   git-legal:
     enabled: true
   fixme:
