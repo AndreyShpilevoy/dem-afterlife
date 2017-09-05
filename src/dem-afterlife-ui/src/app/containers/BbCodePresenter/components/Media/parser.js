@@ -1,146 +1,168 @@
-private processLink(sourceLink: string, self: BbCodeService): string {
-    var frameWidth = 640;
-    var frameHeight = 360;
-    var audioPlaylistFrameHeight = 640;
-    var parsedSourceLink: RegExpMatchArray;
-    var resultLink: string;
-    sourceLink = $.trim(sourceLink);
+import TextLine from '../TextLine';
 
-    //youtube playlist
-    if ((parsedSourceLink = sourceLink.match(/(?:www\.)?youtube(?:-nocookie)?\.com\/(?:playlist\?(?:.*&)?list=|embed\/videoseries\?(?:.*&)?list=|p\/|view_play_list\?(?:.*&)?p=)([-_\w\d]+)/i))) {
-        return this.createFrame(`https://www.youtube.com/embed/videoseries?list=${parsedSourceLink[1]}`, frameWidth, frameHeight);
+export const youtubePlaylistParser = text => {
+    const parsedLink = text.match(/youtube(?:-nocookie)?\.com\/(?:playlist\?list=|embed\/videoseries\?list=)([-_\w\d]+)/i);
+    if (parsedLink) {
+        return {
+            success: true,
+            url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`
+        };
     }
+    return {success: false};
+};
 
-    //youtube video
-    if ((parsedSourceLink = sourceLink.match(/(?:www\.)?(?:youtu\.be\/|(?:m\.)?youtube(?:-nocookie)?\.com\/(?:(?:watch|movie)\?(?:.*&)?v=|embed\/|v\/|attribution_link.*watch%3Fv%3D))([-_\w\d]+)(?:.*(?:[&?]start|[?&#]t)=(?:(\d+)h)?(?:(\d+)m)?(\d+)?)?/i))) {
-        var startVideoFromSecond = parsedSourceLink[2] ? parsedSourceLink[2] : 0 * 3600 + parsedSourceLink[3] ? parsedSourceLink[3] : 0 * 60 + parsedSourceLink[4] ? parsedSourceLink[4] : 0;
-        return this.createFrame(`https://www.youtube.com/embed/${parsedSourceLink[1]}${startVideoFromSecond ? `?start=${startVideoFromSecond}` : ""}`, frameWidth, frameHeight);
+export const youtubeVideoParser = text => {
+    const parsedLink = text.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?v=|(?:embed\/(?!videoseries))|v\/))([-_\w\d]+)(?:.*(?:start)=(\d+))?/i);
+    if (parsedLink) {
+        return {
+            success: true,
+            url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`
+        };
     }
+    return {success: false};
+};
 
-    //vimeo video
-    if ((parsedSourceLink = sourceLink.match(/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/(\d+)/i))) {
-        return this.createFrame(`https://player.vimeo.com/video/${parsedSourceLink[1]}`, frameWidth, frameHeight);
-    }
-
-    //vk video
-    if ((parsedSourceLink = sourceLink.match(/(?:vk\.com|vkontakte\.ru)\/video_ext\.php\?oid=([-_\w\d]+)&id=([-_\w\d]+)&hash=([-_\w\d]+)(&sd|&hd=1|&hd=2|)/i))) {
-        return this.createFrame(`https://vk.com/video_ext.php?oid=${parsedSourceLink[1]}&id=${parsedSourceLink[2]}&hash=${parsedSourceLink[3]}${parsedSourceLink[4]}`, frameWidth, frameHeight);
-    }
-
-    //facebook video
-    if ((parsedSourceLink = sourceLink.match(/(?:[-.\w\d]+?\.)?facebook\.com\/(?:(?:video\/video|video|photo)\.php\?(?:.*&)?v=|video\/embed\?(?:.*&)?video_id=|v\/|[-_.\w\d]+\/videos\/)([-_\w\d]+)/i))) {
-        return this.createFrame(`https://www.facebook.com/video/embed?video_id=${parsedSourceLink[1]}`, frameWidth, frameHeight);
-    }
-
-    //twitch video
-    if ((parsedSourceLink = sourceLink.match(/(player\.twitch\.tv\/\?channel=([^\"]+))/i))) {
-        return this.createFrame(`https://${parsedSourceLink[1]}`, frameWidth, frameHeight);
-    }
-
-    //coub video
-    if ((parsedSourceLink = sourceLink.match(/(?:www\.)?coub\.com\/(?:view|embed)\/([-_\w\d]+)/i))) {
-        return this.createFrame(`https://coub.com/embed/${parsedSourceLink[1]}`, frameWidth, frameHeight);
-    }
-
-    //soundcloud music
-    if ((parsedSourceLink = sourceLink.match(/(api\.soundcloud\.com(?:\/|%2F)(?:tracks|playlists)(?:\/|%2F).*(?=\"))/i))) {
-        var itsPlayList = !!parsedSourceLink[0].match(/(\/|%2F)(playlists)(\/|%2F)/i);
-        return this.createFrame(`https://w.soundcloud.com/player/?url=https%3A//${parsedSourceLink[0]}`, frameWidth, itsPlayList ? audioPlaylistFrameHeight : 100);
-    }
-
-    //yandex music
-    if ((parsedSourceLink = sourceLink.match(/(music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:#album|#track)\/(?:\d+\/\d+|\d+))/i))) {
-        var itsAlbum = !!parsedSourceLink[0].match(/(#album)/i);
-        return this.createFrame(`https://${parsedSourceLink[0]}`, frameWidth, itsAlbum ? audioPlaylistFrameHeight : 100);
-    }
-
-    //google maps
-    if ((parsedSourceLink = sourceLink.match(/(?:www\.)?google(?:\.com)?\.\w+\/maps\/(?:place\/[^\/]+\/)?@(-?\d+\.\d+),(-?\d+\.\d+),(\d+|\d+.\d+)([zm])/i))) {
-        resultLink = `https://maps.google.com/maps?ll=${parsedSourceLink[1]},${parsedSourceLink[2]}`;
-        if (parsedSourceLink[4] === "z") {
-            resultLink += `&t=m&z=${parseInt(parsedSourceLink[3])}`;
-        } else {
-            var counter = 377;
-            var zoomLevel = 18;
-            var initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-            for (var i = 17; i >= 3; i--) {
-                counter *= 2;
-                var processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-                if (processedDifference < initialDifference) {
-                    initialDifference = processedDifference;
-                    zoomLevel = i;
-                }
-            }
-            resultLink += `&t=h&z=${zoomLevel}`;
-        }
-        return this.createFrame(`${resultLink}&output=embed`, frameWidth, frameHeight);
-    }
-
-    return self.createHtml5TagFromTheSource(sourceLink, frameWidth, frameHeight);
-}
-
-private createFrame(urlLink: string, width: number, height: number) {
-    return `<iframe style="vertical-align: bottom; width: ${width}px; height: ${height}px;" width="${width}" height="${height}" src="${urlLink}" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>`;
-}
-
-private createHtml5TagFromTheSource(sourceLink: string, frameWidth: number, frameHeight: number): string {
-    var parsedSourceLink: RegExpMatchArray;
-    var sourceLinkMatchAudioFormats = sourceLink.match(/\.(ogg|oga|opus|webma|mp3|aac|m4a|wav)(?:\s*;|$)/i);
-    var sourceLinkMatchVideoFormats = sourceLink.match(/\.(ogv|webm|webmv|mp4|m4v)(?:\s*;|$)/i);
-    var audioOrVideoFormats = new Dictionary<string, string>();
-    if ((sourceLinkMatchAudioFormats || sourceLinkMatchVideoFormats) && !(sourceLinkMatchAudioFormats && sourceLinkMatchVideoFormats)) {
-        var resourceType: string;
-        if (sourceLinkMatchAudioFormats) {
-            resourceType = "audio";
-            audioOrVideoFormats.add("aac", "aac");
-            audioOrVideoFormats.add("m4a", "mp4");
-            audioOrVideoFormats.add("mp3", "mpeg");
-            audioOrVideoFormats.add("mp4", "mp4");
-            audioOrVideoFormats.add("oga", "ogg");
-            audioOrVideoFormats.add("ogg", "ogg");
-            audioOrVideoFormats.add("opus", "opus");
-            audioOrVideoFormats.add("wav", "wav");
-            audioOrVideoFormats.add("webm", "webm");
-            audioOrVideoFormats.add("webma", "webm");
-
-        } else if (sourceLinkMatchVideoFormats) {
-            resourceType = "video";
-            audioOrVideoFormats.add("m4v", "mp4");
-            audioOrVideoFormats.add("mp4", "mp4");
-            audioOrVideoFormats.add("ogg", "ogg");
-            audioOrVideoFormats.add("ogv", "ogg");
-            audioOrVideoFormats.add("webm", "webm");
-            audioOrVideoFormats.add("webmv", "webm");
-        } else {
-            return undefined;
+const parseTextLineComponentToEmbedLink = textLineComponent => {
+    if (textLineComponent.type.displayName === TextLine.displayName) {
+        const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
+        if (youtubePlaylist.success) {
+            return youtubePlaylist.url;
         }
 
-        var sourceLinkCollection = sourceLink.split(/\s*;\s*/);
-        var sourceTag = "";
-        var aTag = "";
-        var posterLink = "";
-        $.each(sourceLinkCollection, (index, link) => {
-            if ((parsedSourceLink = link.match(/^(?:https?:\/\/)?[^:"']*\.(ogg|oga|ogv|opus|webm|webma|webmv|mp3|aac|mp4|m4a|m4v|wav)$/i))) {
-                var fileFormat = parsedSourceLink[1];
-                if (!audioOrVideoFormats.getValueByKey(fileFormat)) {
-                    sourceTag = "";
-                    return false;
-                }
-                var type = resourceType + "/" + audioOrVideoFormats.getValueByKey(fileFormat);
-                sourceTag += `<source src="${link}" type="${type}">`;
-                aTag += `${aTag ? ", " : ""}<a href="${link}">${parsedSourceLink[1].toUpperCase()}</a>`;
-            } else {
-                if (sourceLinkMatchVideoFormats && !posterLink && link.match(/^(?:https?:\/\/)?[^:"']*\.(png|jpg|gif|webp)$/i)) {
-                    posterLink = link;
-                } else {
-                    sourceTag = "";
-                    return false;
-                }
-            }
-        });
-        if (sourceTag) {
-            return (sourceLinkMatchAudioFormats ? "<audio controls>" : `<video width="${frameWidth}" height="${frameHeight}" controls${posterLink ? ` poster="${posterLink}">` : ">"}`) + sourceTag + aTag + (sourceLinkMatchAudioFormats ? "</audio>" : "</video>");
+        const youtubeVideo = youtubeVideoParser(textLineComponent.props.children);
+        if (youtubeVideo.success) {
+            return youtubeVideo.url;
         }
     }
-    return undefined;
-}
+    return '';
+};
+
+export default parseTextLineComponentToEmbedLink;
+
+//     //vimeo video
+//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/(\d+)/i))) {
+//         return this.createFrame(`https://player.vimeo.com/video/${parsedSourceLink[1]}`, frameWidth, frameHeight);
+//     }
+
+//     //vk video
+//     if ((parsedSourceLink = sourceLink.match(/(?:vk\.com|vkontakte\.ru)\/video_ext\.php\?oid=([-_\w\d]+)&id=([-_\w\d]+)&hash=([-_\w\d]+)(&sd|&hd=1|&hd=2|)/i))) {
+//         return this.createFrame(`https://vk.com/video_ext.php?oid=${parsedSourceLink[1]}&id=${parsedSourceLink[2]}&hash=${parsedSourceLink[3]}${parsedSourceLink[4]}`, frameWidth, frameHeight);
+//     }
+
+//     //facebook video
+//     if ((parsedSourceLink = sourceLink.match(/(?:[-.\w\d]+?\.)?facebook\.com\/(?:(?:video\/video|video|photo)\.php\?(?:.*&)?v=|video\/embed\?(?:.*&)?video_id=|v\/|[-_.\w\d]+\/videos\/)([-_\w\d]+)/i))) {
+//         return this.createFrame(`https://www.facebook.com/video/embed?video_id=${parsedSourceLink[1]}`, frameWidth, frameHeight);
+//     }
+
+//     //twitch video
+//     if ((parsedSourceLink = sourceLink.match(/(player\.twitch\.tv\/\?channel=([^\"]+))/i))) {
+//         return this.createFrame(`https://${parsedSourceLink[1]}`, frameWidth, frameHeight);
+//     }
+
+//     //coub video
+//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?coub\.com\/(?:view|embed)\/([-_\w\d]+)/i))) {
+//         return this.createFrame(`https://coub.com/embed/${parsedSourceLink[1]}`, frameWidth, frameHeight);
+//     }
+
+//     //soundcloud music
+//     if ((parsedSourceLink = sourceLink.match(/(api\.soundcloud\.com(?:\/|%2F)(?:tracks|playlists)(?:\/|%2F).*(?=\"))/i))) {
+//         var itsPlayList = !!parsedSourceLink[0].match(/(\/|%2F)(playlists)(\/|%2F)/i);
+//         return this.createFrame(`https://w.soundcloud.com/player/?url=https%3A//${parsedSourceLink[0]}`, frameWidth, itsPlayList ? audioPlaylistFrameHeight : 100);
+//     }
+
+//     //yandex music
+//     if ((parsedSourceLink = sourceLink.match(/(music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:#album|#track)\/(?:\d+\/\d+|\d+))/i))) {
+//         var itsAlbum = !!parsedSourceLink[0].match(/(#album)/i);
+//         return this.createFrame(`https://${parsedSourceLink[0]}`, frameWidth, itsAlbum ? audioPlaylistFrameHeight : 100);
+//     }
+
+//     //google maps
+//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?google(?:\.com)?\.\w+\/maps\/(?:place\/[^\/]+\/)?@(-?\d+\.\d+),(-?\d+\.\d+),(\d+|\d+.\d+)([zm])/i))) {
+//         resultLink = `https://maps.google.com/maps?ll=${parsedSourceLink[1]},${parsedSourceLink[2]}`;
+//         if (parsedSourceLink[4] === "z") {
+//             resultLink += `&t=m&z=${parseInt(parsedSourceLink[3])}`;
+//         } else {
+//             var counter = 377;
+//             var zoomLevel = 18;
+//             var initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+//             for (var i = 17; i >= 3; i--) {
+//                 counter *= 2;
+//                 var processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+//                 if (processedDifference < initialDifference) {
+//                     initialDifference = processedDifference;
+//                     zoomLevel = i;
+//                 }
+//             }
+//             resultLink += `&t=h&z=${zoomLevel}`;
+//         }
+//         return this.createFrame(`${resultLink}&output=embed`, frameWidth, frameHeight);
+//     }
+
+//     return self.createHtml5TagFromTheSource(sourceLink, frameWidth, frameHeight);
+// }
+
+// private createFrame(urlLink: string, width: number, height: number) {
+//     return `<iframe style="vertical-align: bottom; width: ${width}px; height: ${height}px;" width="${width}" height="${height}" src="${urlLink}" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>`;
+// }
+
+// private createHtml5TagFromTheSource(sourceLink: string, frameWidth: number, frameHeight: number): string {
+//     var parsedSourceLink: RegExpMatchArray;
+//     var sourceLinkMatchAudioFormats = sourceLink.match(/\.(ogg|oga|opus|webma|mp3|aac|m4a|wav)(?:\s*;|$)/i);
+//     var sourceLinkMatchVideoFormats = sourceLink.match(/\.(ogv|webm|webmv|mp4|m4v)(?:\s*;|$)/i);
+//     var audioOrVideoFormats = new Dictionary<string, string>();
+//     if ((sourceLinkMatchAudioFormats || sourceLinkMatchVideoFormats) && !(sourceLinkMatchAudioFormats && sourceLinkMatchVideoFormats)) {
+//         var resourceType: string;
+//         if (sourceLinkMatchAudioFormats) {
+//             resourceType = "audio";
+//             audioOrVideoFormats.add("aac", "aac");
+//             audioOrVideoFormats.add("m4a", "mp4");
+//             audioOrVideoFormats.add("mp3", "mpeg");
+//             audioOrVideoFormats.add("mp4", "mp4");
+//             audioOrVideoFormats.add("oga", "ogg");
+//             audioOrVideoFormats.add("ogg", "ogg");
+//             audioOrVideoFormats.add("opus", "opus");
+//             audioOrVideoFormats.add("wav", "wav");
+//             audioOrVideoFormats.add("webm", "webm");
+//             audioOrVideoFormats.add("webma", "webm");
+
+//         } else if (sourceLinkMatchVideoFormats) {
+//             resourceType = "video";
+//             audioOrVideoFormats.add("m4v", "mp4");
+//             audioOrVideoFormats.add("mp4", "mp4");
+//             audioOrVideoFormats.add("ogg", "ogg");
+//             audioOrVideoFormats.add("ogv", "ogg");
+//             audioOrVideoFormats.add("webm", "webm");
+//             audioOrVideoFormats.add("webmv", "webm");
+//         } else {
+//             return undefined;
+//         }
+
+//         var sourceLinkCollection = sourceLink.split(/\s*;\s*/);
+//         var sourceTag = "";
+//         var aTag = "";
+//         var posterLink = "";
+//         $.each(sourceLinkCollection, (index, link) => {
+//             if ((parsedSourceLink = link.match(/^(?:https?:\/\/)?[^:"']*\.(ogg|oga|ogv|opus|webm|webma|webmv|mp3|aac|mp4|m4a|m4v|wav)$/i))) {
+//                 var fileFormat = parsedSourceLink[1];
+//                 if (!audioOrVideoFormats.getValueByKey(fileFormat)) {
+//                     sourceTag = "";
+//                     return false;
+//                 }
+//                 var type = resourceType + "/" + audioOrVideoFormats.getValueByKey(fileFormat);
+//                 sourceTag += `<source src="${link}" type="${type}">`;
+//                 aTag += `${aTag ? ", " : ""}<a href="${link}">${parsedSourceLink[1].toUpperCase()}</a>`;
+//             } else {
+//                 if (sourceLinkMatchVideoFormats && !posterLink && link.match(/^(?:https?:\/\/)?[^:"']*\.(png|jpg|gif|webp)$/i)) {
+//                     posterLink = link;
+//                 } else {
+//                     sourceTag = "";
+//                     return false;
+//                 }
+//             }
+//         });
+//         if (sourceTag) {
+//             return (sourceLinkMatchAudioFormats ? "<audio controls>" : `<video width="${frameWidth}" height="${frameHeight}" controls${posterLink ? ` poster="${posterLink}">` : ">"}`) + sourceTag + aTag + (sourceLinkMatchAudioFormats ? "</audio>" : "</video>");
+//         }
+//     }
+//     return undefined;
+// }

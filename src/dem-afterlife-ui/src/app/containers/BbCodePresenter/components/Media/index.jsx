@@ -2,10 +2,11 @@ import React from 'react';
 import {node, shape} from 'prop-types';
 import {injectSheet} from 'styles';
 import Term from 'containers/Term';
+import parseFirstTextLineComponentToEmbedLink from './parser';
 import calculateStyles from './calculateStyles';
 
 const createIframe = ({height, width, src}) => // eslint-disable-line react/prop-types
-    <iframe title='This is a unique title' width={width} height={height} src={src} webkitallowfullscreen mozallowfullscreen allowFullScreen frameBorder='0' />;
+    <iframe title='This is a unique title' width={width} height={height} src={src} allowFullScreen frameBorder='0' />;
 
 const createVideo = ({height, width, src, type}) => { // eslint-disable-line react/prop-types
     const videoTerm = {id: 29, value: 'Video'};
@@ -20,9 +21,7 @@ const createAudio = ({src, type}) => { // eslint-disable-line react/prop-types
 export const MediaPure = ({children, classes}) => (
     <span
         className={classes.media}>
-        {createAudio({height: 360, width: 640, src: 'http://www.w3schools.com/tags/horse.mp3'})}
-        {createIframe({height: 360, width: 640, src: 'https://player.vimeo.com/video/231557692'})}
-        {createVideo({height: 360, width: 640, src: 'http://www.w3schools.com/html/mov_bbb.mp4'})}
+        {createIframe({height: 360, width: 640, src: parseFirstTextLineComponentToEmbedLink(children[0])})}
     </span>
 );
 

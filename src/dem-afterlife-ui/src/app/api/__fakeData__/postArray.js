@@ -39,7 +39,7 @@ const postArray = [
         topicId: 1,
         postTime: new Date('2015/01/04 10:10:10'),
         subject: 'subject 5',
-        message: '[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]\r\n[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler][spoiler=\'lol\'][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]',
+        message: '[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]\r\n[spoiler][media]https://www.youtube.com/embed/-P7S4gmMU4g?start=180[/media][media]https://youtu.be/WHBbt-Qk6mk[/media][media]https://youtube.com/playlist?list=PL7y5d3VOW3rg6nn0bXii79-92jmLYechP[/media][/spoiler][spoiler=\'lol\'][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]',
         rate: 343,
         userId: 4,
         editInfo: null
