@@ -36,6 +36,30 @@ export const vimeoVideoParser = text => {
     return {success: false};
 };
 
+export const vkVideoParser = text => {
+    const parsedLink = text.match(/(?:vk\.com|vkontakte\.ru)\/video_ext\.php\?oid=([-_\w\d]+)(?:&|&amp;)id=([-_\w\d]+)(?:&|&amp;)hash=([-_\w\d]+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`
+        };
+    }
+    return {success: false};
+};
+
+export const facebookVideoParser = text => {
+    const parsedLink = text.match(/facebook\.com(?:\/|%2F)(?:v=|video(?:\/|%2F)embed\?(?:.*&)?video_id=|v(?:\/|%2F)|[-_.\w\d]+(?:\/|%2F)videos(?:\/|%2F))([-_\w\d]+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`
+        };
+    }
+    return {success: false};
+};
+
 const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
@@ -52,6 +76,16 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         if (vimeoVideo.success) {
             return vimeoVideo;
         }
+
+        const vkVideo = vkVideoParser(textLineComponent.props.children);
+        if (vkVideo.success) {
+            return vkVideo;
+        }
+
+        const facebookVideo = facebookVideoParser(textLineComponent.props.children);
+        if (facebookVideo.success) {
+            return facebookVideo;
+        }
     }
     return {
         type: 'none',
@@ -61,11 +95,6 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-//     //vk video
-//     if ((parsedSourceLink = sourceLink.match(/(?:vk\.com|vkontakte\.ru)\/video_ext\.php\?oid=([-_\w\d]+)&id=([-_\w\d]+)&hash=([-_\w\d]+)(&sd|&hd=1|&hd=2|)/i))) {
-//         return this.createFrame(`https://vk.com/video_ext.php?oid=${parsedSourceLink[1]}&id=${parsedSourceLink[2]}&hash=${parsedSourceLink[3]}${parsedSourceLink[4]}`, frameWidth, frameHeight);
-//     }
 
 //     //facebook video
 //     if ((parsedSourceLink = sourceLink.match(/(?:[-.\w\d]+?\.)?facebook\.com\/(?:(?:video\/video|video|photo)\.php\?(?:.*&)?v=|video\/embed\?(?:.*&)?video_id=|v\/|[-_.\w\d]+\/videos\/)([-_\w\d]+)/i))) {
