@@ -76,36 +76,36 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
           Object {
             "firstColumnTerm": <Connect(Term)
               term={
-                  Object {
-                      "id": 2,
-                      "value": "Posts",
-                    }
+                Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
               }
-          />,
+            />,
             "secondColumnTerm": <Connect(Term)
               term={
-                  Object {
-                      "id": 22,
-                      "value": "Views",
-                    }
+                Object {
+                  "id": 22,
+                  "value": "Views",
+                }
               }
-          />,
+            />,
             "thirdColumnTerm": <Connect(Term)
               term={
-                  Object {
-                      "id": 3,
-                      "value": "Last message in",
-                    }
+                Object {
+                  "id": 3,
+                  "value": "Last message in",
+                }
               }
-          />,
+            />,
             "title": <Connect(Term)
               term={
-                  Object {
-                      "id": 23,
-                      "value": "Topics",
-                    }
+                Object {
+                  "id": 23,
+                  "value": "Topics",
+                }
               }
-          />,
+            />,
           }
         }
       >
@@ -161,12 +161,12 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
         "order": 0,
         "title": <Connect(Term)
           term={
-              Object {
-                  "id": 24,
-                  "value": "Sub-Forums",
-                }
+            Object {
+              "id": 24,
+              "value": "Sub-Forums",
+            }
           }
-      />,
+        />,
       }
     }
   />
@@ -181,36 +181,36 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
       Object {
         "firstColumnTerm": <Connect(Term)
           term={
-              Object {
-                  "id": 2,
-                  "value": "Posts",
-                }
+            Object {
+              "id": 2,
+              "value": "Posts",
+            }
           }
-      />,
+        />,
         "secondColumnTerm": <Connect(Term)
           term={
-              Object {
-                  "id": 22,
-                  "value": "Views",
-                }
+            Object {
+              "id": 22,
+              "value": "Views",
+            }
           }
-      />,
+        />,
         "thirdColumnTerm": <Connect(Term)
           term={
-              Object {
-                  "id": 3,
-                  "value": "Last message in",
-                }
+            Object {
+              "id": 3,
+              "value": "Last message in",
+            }
           }
-      />,
+        />,
         "title": <Connect(Term)
           term={
-              Object {
-                  "id": 23,
-                  "value": "Topics",
-                }
+            Object {
+              "id": 23,
+              "value": "Topics",
+            }
           }
-      />,
+        />,
       }
     }
   >

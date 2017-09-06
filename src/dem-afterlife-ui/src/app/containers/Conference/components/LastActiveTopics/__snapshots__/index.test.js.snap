@@ -12,36 +12,36 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
     Object {
       "firstColumnTerm": <Connect(Term)
         term={
-            Object {
-                "id": 2,
-                "value": "Posts",
-              }
+          Object {
+            "id": 2,
+            "value": "Posts",
+          }
         }
-    />,
+      />,
       "secondColumnTerm": <Connect(Term)
         term={
-            Object {
-                "id": 22,
-                "value": "Views",
-              }
+          Object {
+            "id": 22,
+            "value": "Views",
+          }
         }
-    />,
+      />,
       "thirdColumnTerm": <Connect(Term)
         term={
-            Object {
-                "id": 3,
-                "value": "Last message in",
-              }
+          Object {
+            "id": 3,
+            "value": "Last message in",
+          }
         }
-    />,
+      />,
       "title": <Connect(Term)
         term={
-            Object {
-                "id": 26,
-                "value": "Last messages",
-              }
+          Object {
+            "id": 26,
+            "value": "Last messages",
+          }
         }
-    />,
+      />,
     }
   }
 >
