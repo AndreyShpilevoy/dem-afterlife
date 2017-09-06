@@ -18,12 +18,20 @@ const createAudio = ({src, type}) => { // eslint-disable-line react/prop-types
     return <audio controls><source src={src} type={type} /><a href={src}><Term term={audioTerm} /></a></audio>; // eslint-disable-line jsx-a11y/media-has-caption
 };
 
-export const MediaPure = ({children, classes}) => (
-    <span
+const objectTypeToPresenterMapping = {
+    iframe: createIframe,
+    video: createVideo,
+    audio: createAudio
+};
+
+export const MediaPure = ({children, classes}) => {
+    const result = parseFirstTextLineComponentToEmbedLink(children[0]);
+    const object = {height: 360, width: 640, src: result.url};
+    return (<span
         className={classes.media}>
-        {createIframe({height: 360, width: 640, src: parseFirstTextLineComponentToEmbedLink(children[0])})}
-    </span>
-);
+        {result.success ? objectTypeToPresenterMapping[result.type](object) : 'Error'}
+    </span>);
+};
 
 MediaPure.propTypes = {
     classes: shape().isRequired,

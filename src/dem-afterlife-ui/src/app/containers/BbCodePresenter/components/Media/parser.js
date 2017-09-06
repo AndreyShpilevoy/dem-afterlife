@@ -4,6 +4,7 @@ export const youtubePlaylistParser = text => {
     const parsedLink = text.match(/youtube(?:-nocookie)?\.com\/(?:playlist\?list=|embed\/videoseries\?list=)([-_\w\d]+)/i);
     if (parsedLink) {
         return {
+            type: 'iframe',
             success: true,
             url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`
         };
@@ -15,6 +16,7 @@ export const youtubeVideoParser = text => {
     const parsedLink = text.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?v=|(?:embed\/(?!videoseries))|v\/))([-_\w\d]+)(?:.*(?:start)=(\d+))?/i);
     if (parsedLink) {
         return {
+            type: 'iframe',
             success: true,
             url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`
         };
@@ -22,27 +24,43 @@ export const youtubeVideoParser = text => {
     return {success: false};
 };
 
-const parseTextLineComponentToEmbedLink = textLineComponent => {
+export const vimeoVideoParser = text => {
+    const parsedLink = text.match(/(?:vimeo\.com|player\.vimeo\.com\/video)\/(\d+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://player.vimeo.com/video/${parsedLink[1]}`
+        };
+    }
+    return {success: false};
+};
+
+const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
         if (youtubePlaylist.success) {
-            return youtubePlaylist.url;
+            return youtubePlaylist;
         }
 
         const youtubeVideo = youtubeVideoParser(textLineComponent.props.children);
         if (youtubeVideo.success) {
-            return youtubeVideo.url;
+            return youtubeVideo;
+        }
+
+        const vimeoVideo = vimeoVideoParser(textLineComponent.props.children);
+        if (vimeoVideo.success) {
+            return vimeoVideo;
         }
     }
-    return '';
+    return {
+        type: 'none',
+        success: false,
+        url: ''
+    };
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-//     //vimeo video
-//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?(?:vimeo\.com|player\.vimeo\.com\/video)\/(\d+)/i))) {
-//         return this.createFrame(`https://player.vimeo.com/video/${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
 
 //     //vk video
 //     if ((parsedSourceLink = sourceLink.match(/(?:vk\.com|vkontakte\.ru)\/video_ext\.php\?oid=([-_\w\d]+)&id=([-_\w\d]+)&hash=([-_\w\d]+)(&sd|&hd=1|&hd=2|)/i))) {
