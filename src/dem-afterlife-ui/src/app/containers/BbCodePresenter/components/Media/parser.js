@@ -118,35 +118,32 @@ export const yandexMusicAudioParser = text => {
 };
 
 export const googleMapsParser = text => { // eslint-disable-line max-statements
-    const parsedLink = text.match(/google(?:\.com)?\.\w+\/maps\/@(\d+\.\d+),(\d+\.\d+),(\d+|\d+.\d+)([zm])/i);
+    const parsedLink = text.match(/google(?:\.com)?\.\w+\/maps\/(?:@(\d+\.\d+),(\d+\.\d+),(\d+|\d+.\d+)([zm]))|(embed\?[!=.-_\w\d]+)/i);
     if (parsedLink) {
         if (parsedLink[4] === 'z') {
             return {
                 type: 'iframe',
                 success: true,
-                url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=m&z=${Number.parseInt(parsedLink[3], 10)}`,
-                shortHeight: !parsedLink[1]
+                url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=m&z=${Number.parseInt(parsedLink[3], 10)}&output=embed`,
+                shortHeight: false
+            };
+        } else if (parsedLink[4] === 'm') {
+            const calculateRoadMapZoomLevel = (value, result = 2) => value >= 2 ? calculateRoadMapZoomLevel(value / 2, result + 1) : result;
+            const getSatelliteZoomLevel = satelliteZoom => calculateRoadMapZoomLevel(45875200 / satelliteZoom);
+            return {
+                type: 'iframe',
+                success: true,
+                url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=h&z=${getSatelliteZoomLevel(parsedLink[3])}&output=embed`,
+                shortHeight: false
+            };
+        } else if (parsedLink[5]) {
+            return {
+                type: 'iframe',
+                success: true,
+                url: `https://www.google.com/maps/${parsedLink[5]}`,
+                shortHeight: false
             };
         }
-
-        // let counter = 377;
-        // let zoomLevel = 18;
-        // let initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-        // for (let i = 17; i >= 3; i--) {
-        //     counter *= 2;
-        //     const processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-        //     if (processedDifference < initialDifference) {
-        //         initialDifference = processedDifference;
-        //         zoomLevel = i;
-        //     }
-        // }
-        return {
-            type: 'iframe',
-            success: true,
-
-            // url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=h&z=${zoomLevel}`,
-            shortHeight: !parsedLink[1]
-        };
     }
     return {success: false};
 };
@@ -196,6 +193,11 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         const yandexMusicAudio = yandexMusicAudioParser(textLineComponent.props.children);
         if (yandexMusicAudio.success) {
             return yandexMusicAudio;
+        }
+
+        const googleMaps = googleMapsParser(textLineComponent.props.children);
+        if (googleMaps.success) {
+            return googleMaps;
         }
     }
     return {
