@@ -91,6 +91,66 @@ export const coubVideoParser = text => {
     return {success: false};
 };
 
+export const soundCloudAudioParser = text => {
+    const parsedLink = text.match(/api\.soundcloud\.com(?:\/|%2F)(?:tracks|(playlists))(?:\/|%2F).*(?=(?:"|&quot;))/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://w.soundcloud.com/player/?url=https%3A//${parsedLink[0]}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
+export const yandexMusicAudioParser = text => {
+    const parsedLink = text.match(/music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:(#album)\/\d+|#track\/\d+\/\d+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://${parsedLink[0]}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
+export const googleMapsParser = text => { // eslint-disable-line max-statements
+    const parsedLink = text.match(/google(?:\.com)?\.\w+\/maps\/@(\d+\.\d+),(\d+\.\d+),(\d+|\d+.\d+)([zm])/i);
+    if (parsedLink) {
+        if (parsedLink[4] === 'z') {
+            return {
+                type: 'iframe',
+                success: true,
+                url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=m&z=${Number.parseInt(parsedLink[3], 10)}`,
+                shortHeight: !parsedLink[1]
+            };
+        }
+
+        // let counter = 377;
+        // let zoomLevel = 18;
+        // let initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+        // for (let i = 17; i >= 3; i--) {
+        //     counter *= 2;
+        //     const processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+        //     if (processedDifference < initialDifference) {
+        //         initialDifference = processedDifference;
+        //         zoomLevel = i;
+        //     }
+        // }
+        return {
+            type: 'iframe',
+            success: true,
+
+            // url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=h&z=${zoomLevel}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
 const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements, complexity
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
@@ -127,6 +187,16 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         if (coubVideo.success) {
             return coubVideo;
         }
+
+        const soundCloudAudio = soundCloudAudioParser(textLineComponent.props.children);
+        if (soundCloudAudio.success) {
+            return soundCloudAudio;
+        }
+
+        const yandexMusicAudio = yandexMusicAudioParser(textLineComponent.props.children);
+        if (yandexMusicAudio.success) {
+            return yandexMusicAudio;
+        }
     }
     return {
         type: 'none',
@@ -136,43 +206,6 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-//     //soundcloud music
-//     if ((parsedSourceLink = sourceLink.match(/(api\.soundcloud\.com(?:\/|%2F)(?:tracks|playlists)(?:\/|%2F).*(?=\"))/i))) {
-//         var itsPlayList = !!parsedSourceLink[0].match(/(\/|%2F)(playlists)(\/|%2F)/i);
-//         return this.createFrame(`https://w.soundcloud.com/player/?url=https%3A//${parsedSourceLink[0]}`, frameWidth, itsPlayList ? audioPlaylistFrameHeight : 100);
-//     }
-
-//     //yandex music
-//     if ((parsedSourceLink = sourceLink.match(/(music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:#album|#track)\/(?:\d+\/\d+|\d+))/i))) {
-//         var itsAlbum = !!parsedSourceLink[0].match(/(#album)/i);
-//         return this.createFrame(`https://${parsedSourceLink[0]}`, frameWidth, itsAlbum ? audioPlaylistFrameHeight : 100);
-//     }
-
-//     //google maps
-//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?google(?:\.com)?\.\w+\/maps\/(?:place\/[^\/]+\/)?@(-?\d+\.\d+),(-?\d+\.\d+),(\d+|\d+.\d+)([zm])/i))) {
-//         resultLink = `https://maps.google.com/maps?ll=${parsedSourceLink[1]},${parsedSourceLink[2]}`;
-//         if (parsedSourceLink[4] === "z") {
-//             resultLink += `&t=m&z=${parseInt(parsedSourceLink[3])}`;
-//         } else {
-//             var counter = 377;
-//             var zoomLevel = 18;
-//             var initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-//             for (var i = 17; i >= 3; i--) {
-//                 counter *= 2;
-//                 var processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-//                 if (processedDifference < initialDifference) {
-//                     initialDifference = processedDifference;
-//                     zoomLevel = i;
-//                 }
-//             }
-//             resultLink += `&t=h&z=${zoomLevel}`;
-//         }
-//         return this.createFrame(`${resultLink}&output=embed`, frameWidth, frameHeight);
-//     }
-
-//     return self.createHtml5TagFromTheSource(sourceLink, frameWidth, frameHeight);
-// }
 
 // private createFrame(urlLink: string, width: number, height: number) {
 //     return `<iframe style="vertical-align: bottom; width: ${width}px; height: ${height}px;" width="${width}" height="${height}" src="${urlLink}" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>`;
