@@ -5,8 +5,8 @@ import Term from 'containers/Term';
 import parseFirstTextLineComponentToEmbedLink from './parser';
 import calculateStyles from './calculateStyles';
 
-const createIframe = ({height, width, src}) => // eslint-disable-line react/prop-types
-    <iframe title='This is a unique title' width={width} height={height} src={src} allowFullScreen frameBorder='0' />;
+const createIframe = ({height, width, src, shortHeight}) => // eslint-disable-line react/prop-types
+    <iframe title='This is a unique title' width={width} height={shortHeight ? 100 : height} src={src} allowFullScreen frameBorder='0' />;
 
 const createVideo = ({height, width, src, type}) => { // eslint-disable-line react/prop-types
     const videoTerm = {id: 29, value: 'Video'};
@@ -26,7 +26,7 @@ const objectTypeToPresenterMapping = {
 
 export const MediaPure = ({children, classes}) => {
     const result = parseFirstTextLineComponentToEmbedLink(children[0]);
-    const object = {height: 360, width: 640, src: result.url};
+    const object = {height: 360, width: 640, src: result.url, shortHeight: result.shortHeight};
     return (<span
         className={classes.media}>
         {result.success ? objectTypeToPresenterMapping[result.type](object) : 'Error'}

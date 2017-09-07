@@ -6,7 +6,8 @@ export const youtubePlaylistParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`
+            url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -18,7 +19,8 @@ export const youtubeVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`
+            url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -30,7 +32,8 @@ export const vimeoVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://player.vimeo.com/video/${parsedLink[1]}`
+            url: `https://player.vimeo.com/video/${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -42,7 +45,8 @@ export const vkVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`
+            url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -54,13 +58,100 @@ export const facebookVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`
+            url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
 };
 
-const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements
+export const twitchVideoParser = text => {
+    const parsedLink = text.match(/(player\.twitch\.tv\/\?(?:channel=([-_\w\d]+)|stream=([\d]+)&channelId=([\d]+)))/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://${parsedLink[1]}`,
+            shortHeight: false
+        };
+    }
+    return {success: false};
+};
+
+export const coubVideoParser = text => {
+    const parsedLink = text.match(/coub\.com\/(?:view|embed)\/([-_\w\d]+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://coub.com/embed/${parsedLink[1]}`,
+            shortHeight: false
+        };
+    }
+    return {success: false};
+};
+
+export const soundCloudAudioParser = text => {
+    const parsedLink = text.match(/api\.soundcloud\.com(?:\/|%2F)(?:tracks|(playlists))(?:\/|%2F).*(?=(?:"|&quot;))/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://w.soundcloud.com/player/?url=https%3A//${parsedLink[0]}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
+export const yandexMusicAudioParser = text => {
+    const parsedLink = text.match(/music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:(#album)\/\d+|#track\/\d+\/\d+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://${parsedLink[0]}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
+export const googleMapsParser = text => { // eslint-disable-line max-statements
+    const parsedLink = text.match(/google(?:\.com)?\.\w+\/maps\/@(\d+\.\d+),(\d+\.\d+),(\d+|\d+.\d+)([zm])/i);
+    if (parsedLink) {
+        if (parsedLink[4] === 'z') {
+            return {
+                type: 'iframe',
+                success: true,
+                url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=m&z=${Number.parseInt(parsedLink[3], 10)}`,
+                shortHeight: !parsedLink[1]
+            };
+        }
+
+        // let counter = 377;
+        // let zoomLevel = 18;
+        // let initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+        // for (let i = 17; i >= 3; i--) {
+        //     counter *= 2;
+        //     const processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
+        //     if (processedDifference < initialDifference) {
+        //         initialDifference = processedDifference;
+        //         zoomLevel = i;
+        //     }
+        // }
+        return {
+            type: 'iframe',
+            success: true,
+
+            // url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=h&z=${zoomLevel}`,
+            shortHeight: !parsedLink[1]
+        };
+    }
+    return {success: false};
+};
+
+const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements, complexity
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
         if (youtubePlaylist.success) {
@@ -86,6 +177,26 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         if (facebookVideo.success) {
             return facebookVideo;
         }
+
+        const twitchVideo = twitchVideoParser(textLineComponent.props.children);
+        if (twitchVideo.success) {
+            return twitchVideo;
+        }
+
+        const coubVideo = coubVideoParser(textLineComponent.props.children);
+        if (coubVideo.success) {
+            return coubVideo;
+        }
+
+        const soundCloudAudio = soundCloudAudioParser(textLineComponent.props.children);
+        if (soundCloudAudio.success) {
+            return soundCloudAudio;
+        }
+
+        const yandexMusicAudio = yandexMusicAudioParser(textLineComponent.props.children);
+        if (yandexMusicAudio.success) {
+            return yandexMusicAudio;
+        }
     }
     return {
         type: 'none',
@@ -95,58 +206,6 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-//     //facebook video
-//     if ((parsedSourceLink = sourceLink.match(/(?:[-.\w\d]+?\.)?facebook\.com\/(?:(?:video\/video|video|photo)\.php\?(?:.*&)?v=|video\/embed\?(?:.*&)?video_id=|v\/|[-_.\w\d]+\/videos\/)([-_\w\d]+)/i))) {
-//         return this.createFrame(`https://www.facebook.com/video/embed?video_id=${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
-
-//     //twitch video
-//     if ((parsedSourceLink = sourceLink.match(/(player\.twitch\.tv\/\?channel=([^\"]+))/i))) {
-//         return this.createFrame(`https://${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
-
-//     //coub video
-//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?coub\.com\/(?:view|embed)\/([-_\w\d]+)/i))) {
-//         return this.createFrame(`https://coub.com/embed/${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
-
-//     //soundcloud music
-//     if ((parsedSourceLink = sourceLink.match(/(api\.soundcloud\.com(?:\/|%2F)(?:tracks|playlists)(?:\/|%2F).*(?=\"))/i))) {
-//         var itsPlayList = !!parsedSourceLink[0].match(/(\/|%2F)(playlists)(\/|%2F)/i);
-//         return this.createFrame(`https://w.soundcloud.com/player/?url=https%3A//${parsedSourceLink[0]}`, frameWidth, itsPlayList ? audioPlaylistFrameHeight : 100);
-//     }
-
-//     //yandex music
-//     if ((parsedSourceLink = sourceLink.match(/(music\.yandex\.(?:ru|by|ua|kz)\/iframe\/(?:#album|#track)\/(?:\d+\/\d+|\d+))/i))) {
-//         var itsAlbum = !!parsedSourceLink[0].match(/(#album)/i);
-//         return this.createFrame(`https://${parsedSourceLink[0]}`, frameWidth, itsAlbum ? audioPlaylistFrameHeight : 100);
-//     }
-
-//     //google maps
-//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?google(?:\.com)?\.\w+\/maps\/(?:place\/[^\/]+\/)?@(-?\d+\.\d+),(-?\d+\.\d+),(\d+|\d+.\d+)([zm])/i))) {
-//         resultLink = `https://maps.google.com/maps?ll=${parsedSourceLink[1]},${parsedSourceLink[2]}`;
-//         if (parsedSourceLink[4] === "z") {
-//             resultLink += `&t=m&z=${parseInt(parsedSourceLink[3])}`;
-//         } else {
-//             var counter = 377;
-//             var zoomLevel = 18;
-//             var initialDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-//             for (var i = 17; i >= 3; i--) {
-//                 counter *= 2;
-//                 var processedDifference = Math.abs(counter - parseInt(parsedSourceLink[3]));
-//                 if (processedDifference < initialDifference) {
-//                     initialDifference = processedDifference;
-//                     zoomLevel = i;
-//                 }
-//             }
-//             resultLink += `&t=h&z=${zoomLevel}`;
-//         }
-//         return this.createFrame(`${resultLink}&output=embed`, frameWidth, frameHeight);
-//     }
-
-//     return self.createHtml5TagFromTheSource(sourceLink, frameWidth, frameHeight);
-// }
 
 // private createFrame(urlLink: string, width: number, height: number) {
 //     return `<iframe style="vertical-align: bottom; width: ${width}px; height: ${height}px;" width="${width}" height="${height}" src="${urlLink}" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>`;
