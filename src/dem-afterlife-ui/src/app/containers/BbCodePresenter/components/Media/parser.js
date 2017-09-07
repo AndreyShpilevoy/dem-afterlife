@@ -6,7 +6,8 @@ export const youtubePlaylistParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`
+            url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -18,7 +19,8 @@ export const youtubeVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`
+            url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -30,7 +32,8 @@ export const vimeoVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://player.vimeo.com/video/${parsedLink[1]}`
+            url: `https://player.vimeo.com/video/${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -42,7 +45,8 @@ export const vkVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`
+            url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`,
+            shortHeight: false
         };
     }
     return {success: false};
@@ -54,13 +58,40 @@ export const facebookVideoParser = text => {
         return {
             type: 'iframe',
             success: true,
-            url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`
+            url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`,
+            shortHeight: false
         };
     }
     return {success: false};
 };
 
-const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements
+export const twitchVideoParser = text => {
+    const parsedLink = text.match(/(player\.twitch\.tv\/\?(?:channel=([-_\w\d]+)|stream=([\d]+)&channelId=([\d]+)))/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://${parsedLink[1]}`,
+            shortHeight: false
+        };
+    }
+    return {success: false};
+};
+
+export const coubVideoParser = text => {
+    const parsedLink = text.match(/coub\.com\/(?:view|embed)\/([-_\w\d]+)/i);
+    if (parsedLink) {
+        return {
+            type: 'iframe',
+            success: true,
+            url: `https://coub.com/embed/${parsedLink[1]}`,
+            shortHeight: false
+        };
+    }
+    return {success: false};
+};
+
+const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements, complexity
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
         if (youtubePlaylist.success) {
@@ -86,6 +117,16 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         if (facebookVideo.success) {
             return facebookVideo;
         }
+
+        const twitchVideo = twitchVideoParser(textLineComponent.props.children);
+        if (twitchVideo.success) {
+            return twitchVideo;
+        }
+
+        const coubVideo = coubVideoParser(textLineComponent.props.children);
+        if (coubVideo.success) {
+            return coubVideo;
+        }
     }
     return {
         type: 'none',
@@ -95,21 +136,6 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-//     //facebook video
-//     if ((parsedSourceLink = sourceLink.match(/(?:[-.\w\d]+?\.)?facebook\.com\/(?:(?:video\/video|video|photo)\.php\?(?:.*&)?v=|video\/embed\?(?:.*&)?video_id=|v\/|[-_.\w\d]+\/videos\/)([-_\w\d]+)/i))) {
-//         return this.createFrame(`https://www.facebook.com/video/embed?video_id=${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
-
-//     //twitch video
-//     if ((parsedSourceLink = sourceLink.match(/(player\.twitch\.tv\/\?channel=([^\"]+))/i))) {
-//         return this.createFrame(`https://${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
-
-//     //coub video
-//     if ((parsedSourceLink = sourceLink.match(/(?:www\.)?coub\.com\/(?:view|embed)\/([-_\w\d]+)/i))) {
-//         return this.createFrame(`https://coub.com/embed/${parsedSourceLink[1]}`, frameWidth, frameHeight);
-//     }
 
 //     //soundcloud music
 //     if ((parsedSourceLink = sourceLink.match(/(api\.soundcloud\.com(?:\/|%2F)(?:tracks|playlists)(?:\/|%2F).*(?=\"))/i))) {
