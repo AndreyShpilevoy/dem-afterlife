@@ -3,8 +3,8 @@ engines:
     exclude_paths:
     - "src/dem-afterlife-ui/**/*.test.js"
     - "src/dem-afterlife-ui/src/app/api/__fakeApi__/**"
-    - "src/dem-afterlife-ui/src/app/utils/localization/translations/*.js"
     - "src/dem-afterlife-ui/src/app/api/__fakeData__/**"
+    - "src/dem-afterlife-ui/src/app/utils/localization/translations/**/*.js"
     - "src/dem-afterlife-ui/node_modules/**"
     enabled: true
     config:
