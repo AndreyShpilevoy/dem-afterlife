@@ -148,6 +148,41 @@ export const googleMapsParser = text => { // eslint-disable-line max-statements
     return {success: false};
 };
 
+export const HTML5TagParser = text => {
+    const parsedLink = text.match(/(?:https?:\/\/)?[^:"']*\.(?:(aac|m4a|mp3|oga|ogg|opus|wav|webma)|(mp4|m4v|ogv|webm|webmv))/i);
+    if (parsedLink[1]) {
+        const audioFormatTypeMatch = {
+            aac: 'aac',
+            m4a: 'mp4',
+            mp3: 'mpeg',
+            oga: 'ogg',
+            ogg: 'ogg',
+            opus: 'opus',
+            wav: 'wav',
+            webma: 'webm'
+        };
+        return {
+            type: `audio/${audioFormatTypeMatch[parsedLink[1]]}`,
+            success: true,
+            url: parsedLink[0]
+        };
+    } else if (parsedLink[2]) {
+        const videoFormatTypeMatch = {
+            m4v: 'mp4',
+            mp4: 'mp4',
+            ogv: 'ogg',
+            webm: 'webm',
+            webmv: 'webm'
+        };
+        return {
+            type: `video/${videoFormatTypeMatch[parsedLink[2]]}`,
+            success: true,
+            url: parsedLink[0]
+        };
+    }
+    return {success: false};
+};
+
 const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disable-line max-statements, complexity
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const youtubePlaylist = youtubePlaylistParser(textLineComponent.props.children);
@@ -199,6 +234,11 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
         if (googleMaps.success) {
             return googleMaps;
         }
+
+        const HTML5Tag = HTML5TagParser(textLineComponent.props.children);
+        if (HTML5Tag.success) {
+            return HTML5Tag;
+        }
     }
     return {
         type: 'none',
@@ -208,69 +248,3 @@ const parseTextLineComponentToEmbedLink = textLineComponent => { // eslint-disab
 };
 
 export default parseTextLineComponentToEmbedLink;
-
-// private createFrame(urlLink: string, width: number, height: number) {
-//     return `<iframe style="vertical-align: bottom; width: ${width}px; height: ${height}px;" width="${width}" height="${height}" src="${urlLink}" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>`;
-// }
-
-// private createHtml5TagFromTheSource(sourceLink: string, frameWidth: number, frameHeight: number): string {
-//     var parsedSourceLink: RegExpMatchArray;
-//     var sourceLinkMatchAudioFormats = sourceLink.match(/\.(ogg|oga|opus|webma|mp3|aac|m4a|wav)(?:\s*;|$)/i);
-//     var sourceLinkMatchVideoFormats = sourceLink.match(/\.(ogv|webm|webmv|mp4|m4v)(?:\s*;|$)/i);
-//     var audioOrVideoFormats = new Dictionary<string, string>();
-//     if ((sourceLinkMatchAudioFormats || sourceLinkMatchVideoFormats) && !(sourceLinkMatchAudioFormats && sourceLinkMatchVideoFormats)) {
-//         var resourceType: string;
-//         if (sourceLinkMatchAudioFormats) {
-//             resourceType = "audio";
-//             audioOrVideoFormats.add("aac", "aac");
-//             audioOrVideoFormats.add("m4a", "mp4");
-//             audioOrVideoFormats.add("mp3", "mpeg");
-//             audioOrVideoFormats.add("mp4", "mp4");
-//             audioOrVideoFormats.add("oga", "ogg");
-//             audioOrVideoFormats.add("ogg", "ogg");
-//             audioOrVideoFormats.add("opus", "opus");
-//             audioOrVideoFormats.add("wav", "wav");
-//             audioOrVideoFormats.add("webm", "webm");
-//             audioOrVideoFormats.add("webma", "webm");
-
-//         } else if (sourceLinkMatchVideoFormats) {
-//             resourceType = "video";
-//             audioOrVideoFormats.add("m4v", "mp4");
-//             audioOrVideoFormats.add("mp4", "mp4");
-//             audioOrVideoFormats.add("ogg", "ogg");
-//             audioOrVideoFormats.add("ogv", "ogg");
-//             audioOrVideoFormats.add("webm", "webm");
-//             audioOrVideoFormats.add("webmv", "webm");
-//         } else {
-//             return undefined;
-//         }
-
-//         var sourceLinkCollection = sourceLink.split(/\s*;\s*/);
-//         var sourceTag = "";
-//         var aTag = "";
-//         var posterLink = "";
-//         $.each(sourceLinkCollection, (index, link) => {
-//             if ((parsedSourceLink = link.match(/^(?:https?:\/\/)?[^:"']*\.(ogg|oga|ogv|opus|webm|webma|webmv|mp3|aac|mp4|m4a|m4v|wav)$/i))) {
-//                 var fileFormat = parsedSourceLink[1];
-//                 if (!audioOrVideoFormats.getValueByKey(fileFormat)) {
-//                     sourceTag = "";
-//                     return false;
-//                 }
-//                 var type = resourceType + "/" + audioOrVideoFormats.getValueByKey(fileFormat);
-//                 sourceTag += `<source src="${link}" type="${type}">`;
-//                 aTag += `${aTag ? ", " : ""}<a href="${link}">${parsedSourceLink[1].toUpperCase()}</a>`;
-//             } else {
-//                 if (sourceLinkMatchVideoFormats && !posterLink && link.match(/^(?:https?:\/\/)?[^:"']*\.(png|jpg|gif|webp)$/i)) {
-//                     posterLink = link;
-//                 } else {
-//                     sourceTag = "";
-//                     return false;
-//                 }
-//             }
-//         });
-//         if (sourceTag) {
-//             return (sourceLinkMatchAudioFormats ? "<audio controls>" : `<video width="${frameWidth}" height="${frameHeight}" controls${posterLink ? ` poster="${posterLink}">` : ">"}`) + sourceTag + aTag + (sourceLinkMatchAudioFormats ? "</audio>" : "</video>");
-//         }
-//     }
-//     return undefined;
-// }
