@@ -4,7 +4,7 @@ const getLastPostInfoStyleMdMax = size => createMediaQueryMax(size, {flexDirecti
 const getLastPostInfoStyleSmMax = (mediaSize, fontSize) => createMediaQueryMax(mediaSize, {justifyContent: 'left', fontSize});
 const getTextSizeMax = (mediaSize, fontSize) => createMediaQueryMax(mediaSize, {fontSize});
 
-const calculateStyles = ({themeName, grid, topic}) => {
+const calculateStyles = ({grid, topic}) => {
     const mdSize = grid.containers.find(x => x.gridSize === 'md').mediaMaxString;
     const smSize = grid.containers.find(x => x.gridSize === 'sm').mediaMaxString;
     return {
@@ -77,8 +77,7 @@ const calculateStyles = ({themeName, grid, topic}) => {
                     display: 'none'
                 }
             }
-        },
-        options: {meta: 'Topic', themeName}
+        }
     };
 };
 

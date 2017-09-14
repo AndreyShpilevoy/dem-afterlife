@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Column calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         focus: {
             colorLight: '#ffffff',
             colorDark: '#000000'

@@ -1,4 +1,4 @@
-const calculateStyles = ({bbCodes, themeName}) => {
+const calculateStyles = ({bbCodes}) => {
     const {common, quote} = bbCodes;
     return {
         author: {
@@ -14,8 +14,7 @@ const calculateStyles = ({bbCodes, themeName}) => {
             marginRight: common.marginHorizontal,
             marginTop: common.marginVertical,
             marginBottom: common.marginVertical
-        },
-        options: {meta: 'Quote', themeName}
+        }
     };
 };
 

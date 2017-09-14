@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Url calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         bbCodes: {
             url: {
                 color: 'yellow',

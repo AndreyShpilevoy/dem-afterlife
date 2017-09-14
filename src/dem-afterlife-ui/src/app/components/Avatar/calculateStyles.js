@@ -9,7 +9,7 @@ const commonImagePart = {
     objectFit: 'scale-down'
 };
 
-const calculateStyles = ({themeName, avatar}) => ({
+const calculateStyles = ({avatar}) => ({
     container: {
         alignItems: 'center',
         display: 'flex',
@@ -34,8 +34,7 @@ const calculateStyles = ({themeName, avatar}) => ({
         minHeight: '100%',
         minWidth: '100%',
         '&>img': {...commonImagePart}
-    },
-    options: {meta: 'UserAvatar', themeName}
+    }
 });
 
 export default calculateStyles;

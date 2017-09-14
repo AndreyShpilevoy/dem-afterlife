@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('BreadcrumbListItem calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         breadcrumbs: {
             listMarginTop: 2,
             bgColor: 'red',

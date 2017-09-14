@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Think calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         bbCodes: {
             think: {
                 image: 'thinkImage',

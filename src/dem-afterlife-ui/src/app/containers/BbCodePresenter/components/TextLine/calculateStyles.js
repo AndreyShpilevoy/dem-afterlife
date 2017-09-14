@@ -1,8 +1,7 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = () => ({
     text: {
         whiteSpace: 'pre-wrap'
-    },
-    options: {meta: 'TextLine', themeName}
+    }
 });
 
 export default calculateStyles;

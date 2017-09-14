@@ -17,7 +17,7 @@ const getNavigationLinkStyle = (gridSize, navigationLinks) => ({
     ...{paddingLeft: navigationLinks[gridSize].padding}
 });
 
-const calculateStyles = ({themeName, grid, navigationLinks, focus}) =>
+const calculateStyles = ({grid, navigationLinks, focus}) =>
     grid.containers.reduce(
         (previous, {gridSize, mediaMinString, mediaMaxString}) => ({
             ...previous,
@@ -29,7 +29,7 @@ const calculateStyles = ({themeName, grid, navigationLinks, focus}) =>
                     }
                 }
             })
-        }), {options: {meta: 'NavigationLinkListItem', themeName} });
+        }), {});
 
 export default calculateStyles;
 

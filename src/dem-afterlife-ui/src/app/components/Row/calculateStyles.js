@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = () => ({
     row: {
         width: '100%',
         boxSizing: 'border-box',
@@ -9,8 +9,7 @@ const calculateStyles = ({themeName}) => ({
         '&.reverse': {
             flexDirection: 'row-reverse'
         }
-    },
-    options: {meta: 'Row', themeName}
+    }
 });
 
 export default calculateStyles;

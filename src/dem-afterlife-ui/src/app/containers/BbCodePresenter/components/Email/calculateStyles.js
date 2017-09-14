@@ -8,7 +8,7 @@ const getEmailLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({themeName, bbCodes, focus}) => ({
+const calculateStyles = ({bbCodes, focus}) => ({
     email: {
         ...getEmailLinkStyle(bbCodes.email),
         '&:visited': getEmailLinkStyle(bbCodes.email),
@@ -17,8 +17,7 @@ const calculateStyles = ({themeName, bbCodes, focus}) => ({
         '&:focus': {
             outlineColor: focus.colorDark
         }
-    },
-    options: {meta: 'Email', themeName}
+    }
 });
 
 export default calculateStyles;

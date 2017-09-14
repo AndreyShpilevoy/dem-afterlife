@@ -122,7 +122,6 @@ const link = {
 };
 
 const defaultTheme = {
-    themeName: 'default',
     grid,
     mainWrapper: {
         fontSize: '16px',

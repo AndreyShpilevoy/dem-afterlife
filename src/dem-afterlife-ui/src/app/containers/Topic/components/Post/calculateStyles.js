@@ -1,4 +1,4 @@
-const calculateStyles = ({post, themeName}) => ({
+const calculateStyles = ({post}) => ({
     inLine: {
         display: 'flex',
         flexDirection: 'row',
@@ -18,8 +18,7 @@ const calculateStyles = ({post, themeName}) => ({
         marginBottom: post.separator.marginVertical,
         marginLeft: post.separator.marginHorizontal,
         marginRight: post.separator.marginHorizontal
-    },
-    options: {meta: 'Post', themeName}
+    }
 });
 
 export default calculateStyles;

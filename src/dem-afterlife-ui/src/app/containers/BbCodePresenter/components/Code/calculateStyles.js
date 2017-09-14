@@ -1,4 +1,4 @@
-const calculateStyles = ({bbCodes, themeName}) => {
+const calculateStyles = ({bbCodes}) => {
     const {code, common} = bbCodes;
     return {
         main: {
@@ -26,8 +26,7 @@ const calculateStyles = ({bbCodes, themeName}) => {
             color: code.contentColor,
             fontFamily: 'monospace',
             whiteSpace: 'pre-wrap'
-        },
-        options: {meta: 'Code', themeName}
+        }
     };
 };
 

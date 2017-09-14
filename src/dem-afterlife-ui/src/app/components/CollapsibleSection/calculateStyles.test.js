@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('CollapsibleSection calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         focus: {
             colorLight: '#ffffff',
             colorDark: '#000000'

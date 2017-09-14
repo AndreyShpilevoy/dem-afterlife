@@ -8,7 +8,7 @@ const getLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({themeName, link, focus}) => ({
+const calculateStyles = ({link, focus}) => ({
     link: {
         ...getLinkStyle(link),
         '&:visited': getLinkStyle(link),
@@ -17,8 +17,7 @@ const calculateStyles = ({themeName, link, focus}) => ({
         '&:focus': {
             outlineColor: focus.colorDark
         }
-    },
-    options: {meta: 'Link', themeName}
+    }
 });
 
 export default calculateStyles;

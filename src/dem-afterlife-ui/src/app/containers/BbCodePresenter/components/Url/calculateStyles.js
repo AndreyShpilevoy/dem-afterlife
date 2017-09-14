@@ -8,7 +8,7 @@ const getUrlLinkHoverStyle = ({hoveredColor, hoveredTextDecoration}) => ({
     textDecoration: hoveredTextDecoration
 });
 
-const calculateStyles = ({themeName, bbCodes, focus}) => ({
+const calculateStyles = ({bbCodes, focus}) => ({
     url: {
         wordBreak: 'break-all',
         ...getUrlLinkStyle(bbCodes.url),
@@ -18,8 +18,7 @@ const calculateStyles = ({themeName, bbCodes, focus}) => ({
         '&:focus': {
             outlineColor: focus.colorDark
         }
-    },
-    options: {meta: 'Url', themeName}
+    }
 });
 
 export default calculateStyles;
