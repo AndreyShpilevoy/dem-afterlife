@@ -41,9 +41,5 @@ Object {
     "justifyContent": "center",
     "width": 2.5,
   },
-  "options": Object {
-    "meta": "UserAvatar",
-    "themeName": "default",
-  },
 }
 `;

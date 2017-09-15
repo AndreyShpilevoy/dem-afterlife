@@ -7,9 +7,5 @@ Object {
       "outlineColor": "red",
     },
   },
-  "options": Object {
-    "meta": "SocialMediaLink",
-    "themeName": "default",
-  },
 }
 `;

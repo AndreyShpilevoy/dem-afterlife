@@ -22,9 +22,5 @@ Object {
     "fontSize": "16px",
     "lineHeight": "1.5",
   },
-  "options": Object {
-    "meta": "LayoutContainer",
-    "themeName": "default",
-  },
 }
 `;

@@ -30,10 +30,6 @@ Object {
   "noWrap": Object {
     "whiteSpace": "nowrap",
   },
-  "options": Object {
-    "meta": "Topic",
-    "themeName": "default",
-  },
   "parentForumTitleStyle": Object {
     "&:hover": Object {
       "color": "blue",

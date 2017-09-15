@@ -28,9 +28,5 @@ Object {
     "marginTop": 0.3125,
     "padding": 0.4,
   },
-  "options": Object {
-    "meta": "Code",
-    "themeName": "default",
-  },
 }
 `;

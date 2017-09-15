@@ -16,9 +16,5 @@ Object {
       "width": "540px",
     },
   },
-  "options": Object {
-    "meta": "Container",
-    "themeName": "default",
-  },
 }
 `;

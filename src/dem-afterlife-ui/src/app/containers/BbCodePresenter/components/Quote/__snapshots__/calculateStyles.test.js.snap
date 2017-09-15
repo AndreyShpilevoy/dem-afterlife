@@ -5,10 +5,6 @@ Object {
   "author": Object {
     "fontWeight": "bold",
   },
-  "options": Object {
-    "meta": "Quote",
-    "themeName": "default",
-  },
   "quote": Object {
     "backgroundColor": "red",
     "borderColor": "green",

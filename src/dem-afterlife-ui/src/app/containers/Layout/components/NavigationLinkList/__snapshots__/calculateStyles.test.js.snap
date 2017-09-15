@@ -17,9 +17,5 @@ Object {
     "list": Object {},
     "separator": Object {},
   },
-  "options": Object {
-    "meta": "NavigationLinkList",
-    "themeName": "default",
-  },
 }
 `;

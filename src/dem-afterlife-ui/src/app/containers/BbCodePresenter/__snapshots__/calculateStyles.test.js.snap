@@ -22,10 +22,6 @@ Object {
   "lineThrough": Object {
     "textDecoration": "lineThrough",
   },
-  "options": Object {
-    "meta": "BbCodePresenter",
-    "themeName": "default",
-  },
   "position": Object {
     "display": "inline-flex",
     "width": "100%",

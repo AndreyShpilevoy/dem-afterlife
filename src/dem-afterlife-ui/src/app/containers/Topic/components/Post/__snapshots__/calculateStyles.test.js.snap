@@ -8,10 +8,6 @@ Object {
     "flexDirection": "row",
     "whiteSpace": "nowrap",
   },
-  "options": Object {
-    "meta": "Post",
-    "themeName": "default",
-  },
   "separator": Object {
     "backgroundColor": "red",
     "height": 0.125,

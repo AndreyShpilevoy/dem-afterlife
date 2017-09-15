@@ -28,9 +28,5 @@ Object {
       "paddingLeft": 0.5,
     },
   },
-  "options": Object {
-    "meta": "NavigationLinkListItem",
-    "themeName": "default",
-  },
 }
 `;

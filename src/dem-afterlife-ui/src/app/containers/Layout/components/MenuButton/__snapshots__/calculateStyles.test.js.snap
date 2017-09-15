@@ -38,10 +38,6 @@ Object {
     },
     "top": "70%",
   },
-  "options": Object {
-    "meta": "MenuButton",
-    "themeName": "default",
-  },
   "secondLine": Object {
     "&.open": Object {
       "transform": "rotate(45deg)",

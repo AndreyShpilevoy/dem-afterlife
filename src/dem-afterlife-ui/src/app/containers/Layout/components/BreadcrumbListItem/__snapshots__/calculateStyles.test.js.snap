@@ -95,9 +95,5 @@ Object {
     "maxWidth": "24%",
     "minWidth": "4%",
   },
-  "options": Object {
-    "meta": "BreadcrumbListItem",
-    "themeName": "default",
-  },
 }
 `;

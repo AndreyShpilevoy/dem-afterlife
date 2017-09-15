@@ -84,9 +84,5 @@ Object {
     "justifyContent": "center",
     "minHeight": "100%",
   },
-  "options": Object {
-    "meta": "Header",
-    "themeName": "default",
-  },
 }
 `;
