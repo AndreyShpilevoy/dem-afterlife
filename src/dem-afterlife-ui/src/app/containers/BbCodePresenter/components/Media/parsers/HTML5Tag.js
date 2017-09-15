@@ -19,13 +19,13 @@ const videoFormatTypeMatch = {
 
 const HTML5Tag = sourceLink => {
     const parsedLink = sourceLink.match(/(?:https?:\/\/)?[^:"']*\.(?:(aac|m4a|mp3|oga|ogg|opus|wav|webma)|(mp4|m4v|ogv|webm|webmv))/i);
-    if (parsedLink[1]) {
+    if (parsedLink && parsedLink[1]) {
         return {
             type: `audio/${audioFormatTypeMatch[parsedLink[1]]}`,
             success: true,
             url: parsedLink[0]
         };
-    } else if (parsedLink[2]) {
+    } else if (parsedLink && parsedLink[2]) {
         return {
             type: `video/${videoFormatTypeMatch[parsedLink[2]]}`,
             success: true,

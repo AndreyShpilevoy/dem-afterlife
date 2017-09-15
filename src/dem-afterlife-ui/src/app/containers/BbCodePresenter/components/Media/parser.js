@@ -26,9 +26,14 @@ const listOfParsers = [
 ];
 
 const parseTextLineComponentToEmbedLink = textLineComponent => {
+    const defaultResult = {
+        type: 'none',
+        success: false,
+        url: ''
+    };
     if (textLineComponent.type.displayName === TextLine.displayName) {
         const text = textLineComponent.props.children;
-        const result = listOfParsers.reduce((previous, current)=>{
+        const result = listOfParsers.reduce((previous, current) => {
             if (previous.success) {
                 return previous;
             }
@@ -37,13 +42,10 @@ const parseTextLineComponentToEmbedLink = textLineComponent => {
                 return parserResult;
             }
             return previous;
-        }, {
-            type: 'none',
-            success: false,
-            url: ''
-        });
+        }, defaultResult);
+        return result;
     }
-    return result;
+    return defaultResult;
 };
 
 export default parseTextLineComponentToEmbedLink;
