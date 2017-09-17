@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 
 import React from 'react';
-import {node, shape, number, bool, string} from 'prop-types';
-import {injectSheet} from 'styles';
+import {node, shape, number, bool, arrayOf, string} from 'prop-types';
 import Term from 'containers/Term';
-import parseFirstTextLineComponentToEmbedLink from './parser';
-import calculateStyles from './calculateStyles';
+import parseFirstTextLineComponentToEmbedLink, {defaultListOfParsers} from './parser';
 
 const iframePresenter = ({height, width, src, shortHeight}) =>
     <iframe title='This is a unique title' width={width} height={shortHeight ? 100 : height} src={src} allowFullScreen frameBorder='0' />;
@@ -63,19 +61,21 @@ const matchResourceTypeToPresenter = typeString => {
     return objectTypeToPresenterMapping[parsedType[0]];
 };
 
-export const MediaPure = ({children, classes}) => {
-    const result = parseFirstTextLineComponentToEmbedLink(children[0]);
+export const Media = ({children, listOfParsers}) => {
+    const result = parseFirstTextLineComponentToEmbedLink(children[0], listOfParsers);
     const object = {height: 360, width: 640, src: result.url, shortHeight: result.shortHeight, type: result.type};
     return (
-        <span className={classes.media}>
-            {result.success ? matchResourceTypeToPresenter(result.type)(object) : 'Error'}
-        </span>
+        result.success ? matchResourceTypeToPresenter(result.type)(object) : 'Error'
     );
 };
 
-MediaPure.propTypes = {
-    classes: shape().isRequired,
-    children: node.isRequired
+Media.propTypes = {
+    children: node.isRequired,
+    listOfParsers: arrayOf(shape())
 };
 
-export default injectSheet(calculateStyles, {componentName: 'Media'})(MediaPure);
+Media.defaultProps = {
+    listOfParsers: defaultListOfParsers
+};
+
+export default Media;

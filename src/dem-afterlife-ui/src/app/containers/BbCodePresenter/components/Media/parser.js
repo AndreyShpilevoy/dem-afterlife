@@ -11,7 +11,7 @@ import yandexMusicAudio from './parsers/yandexMusicAudio';
 import youtubePlaylist from './parsers/youtubePlaylist';
 import youtubeVideo from './parsers/youtubeVideo';
 
-const listOfParsers = [
+export const defaultListOfParsers = [
     coubVideo,
     facebookVideo,
     googleMaps,
@@ -25,13 +25,13 @@ const listOfParsers = [
     youtubeVideo
 ];
 
-const parseTextLineComponentToEmbedLink = textLineComponent => {
+const parseTextLineComponentToEmbedLink = (textLineComponent, listOfParsers) => {
     const defaultResult = {
         type: 'none',
         success: false,
         url: ''
     };
-    if (textLineComponent.type.displayName === TextLine.displayName) {
+    if (textLineComponent.type && textLineComponent.type.displayName === TextLine.displayName) {
         const text = textLineComponent.props.children;
         const result = listOfParsers.reduce((previous, current) => {
             if (previous.success) {
