@@ -61,7 +61,7 @@ const matchResourceTypeToPresenter = typeString => {
     return objectTypeToPresenterMapping[parsedType[0]];
 };
 
-export const Media = ({children, listOfParsers}) => {
+const Media = ({children, listOfParsers}) => {
     const result = parseFirstTextLineComponentToEmbedLink(children[0], listOfParsers);
     const object = {height: 360, width: 640, src: result.url, shortHeight: result.shortHeight, type: result.type};
     return (
