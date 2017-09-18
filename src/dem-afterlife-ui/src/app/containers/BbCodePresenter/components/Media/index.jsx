@@ -3,7 +3,7 @@
 import React from 'react';
 import {node, shape, number, bool, arrayOf, string} from 'prop-types';
 import Term from 'containers/Term';
-import parseFirstTextLineComponentToEmbedLink, {defaultListOfParsers} from './parser';
+import processTextLineContantViaParsers, {defaultListOfParsers} from './processor';
 
 const iframePresenter = ({height, width, src, shortHeight}) =>
     <iframe title='This is a unique title' width={width} height={shortHeight ? 100 : height} src={src} allowFullScreen frameBorder='0' />;
@@ -62,7 +62,7 @@ const matchResourceTypeToPresenter = typeString => {
 };
 
 const Media = ({children, listOfParsers}) => {
-    const result = parseFirstTextLineComponentToEmbedLink(children[0], listOfParsers);
+    const result = processTextLineContantViaParsers(children[0], listOfParsers);
     const object = {height: 360, width: 640, src: result.url, shortHeight: result.shortHeight, type: result.type};
     return (
         result.success ? matchResourceTypeToPresenter(result.type)(object) : 'Error'

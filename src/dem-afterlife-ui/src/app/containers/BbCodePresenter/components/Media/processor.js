@@ -25,7 +25,7 @@ export const defaultListOfParsers = [
     youtubeVideo
 ];
 
-const parseTextLineComponentToEmbedLink = (textLineComponent, listOfParsers) => {
+const processTextLineContantViaParsers = (textLineComponent, listOfParsers) => {
     const defaultResult = {
         type: 'none',
         success: false,
@@ -48,4 +48,4 @@ const parseTextLineComponentToEmbedLink = (textLineComponent, listOfParsers) => 
     return defaultResult;
 };
 
-export default parseTextLineComponentToEmbedLink;
+export default processTextLineContantViaParsers;

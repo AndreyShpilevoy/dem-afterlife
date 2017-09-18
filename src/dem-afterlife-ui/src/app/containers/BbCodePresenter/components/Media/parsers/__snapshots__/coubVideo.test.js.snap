@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoubVideo should return unsuccess result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`CoubVideo should return valid result if pass iframe html code 1`] = `
+Object {
+  "shortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://coub.com/embed/9fu9z",
+}
+`;
+
+exports[`CoubVideo should return valid result if pass link 1`] = `
+Object {
+  "shortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://coub.com/embed/9fu9z",
+}
+`;

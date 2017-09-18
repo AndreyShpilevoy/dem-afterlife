@@ -2,7 +2,7 @@
 
 import React from 'react';
 import TextLine from '../TextLine';
-import parseTextLineComponentToEmbedLink from './parser';
+import processTextLineContantViaParsers from './processor';
 
 const firstParser = jest.fn(string => string === 'valid' ?
     {
@@ -16,21 +16,21 @@ const firstParser = jest.fn(string => string === 'valid' ?
 const secondParser = jest.fn(() => ({success: false}));
 const thirdParser = jest.fn(() => ({success: false}));
 
-describe('Media parseTextLineComponentToEmbedLink', () => {
+describe('Media processTextLineContantViaParsers', () => {
     it('should return default result if sent wrong first argument', () => {
-        expect(parseTextLineComponentToEmbedLink('TextLine', [firstParser])).toMatchSnapshot();
+        expect(processTextLineContantViaParsers('TextLine', [firstParser])).toMatchSnapshot();
     });
 
     it('should return default result if sent empty array as second argument', () => {
-        expect(parseTextLineComponentToEmbedLink(<TextLine>{'valid'}</TextLine>, [])).toMatchSnapshot();
+        expect(processTextLineContantViaParsers(<TextLine>{'valid'}</TextLine>, [])).toMatchSnapshot();
     });
 
     it('should return default result if sent correct arguments, but with wrong data', () => {
-        expect(parseTextLineComponentToEmbedLink(<TextLine>{'some wrong content'}</TextLine>, [firstParser])).toMatchSnapshot();
+        expect(processTextLineContantViaParsers(<TextLine>{'some wrong content'}</TextLine>, [firstParser])).toMatchSnapshot();
     });
 
     it('should return handled result if data was correct', () => {
-        expect(parseTextLineComponentToEmbedLink(<TextLine>{'valid'}</TextLine>,
+        expect(processTextLineContantViaParsers(<TextLine>{'valid'}</TextLine>,
             [secondParser, firstParser, thirdParser])).toMatchSnapshot();
     });
 });
