@@ -51,6 +51,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
             "wrapper": [Function],
           }
         }
+        key="tr"
         noAnimation={false}
         notifications={
           Array [
@@ -123,6 +124,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
                 "wrapper": [Function],
               }
             }
+            key="1"
             noAnimation={false}
             notification={
               Object {
@@ -248,6 +250,7 @@ exports[`Notification Pure component with 2 notifications match expected snapsho
                 "wrapper": [Function],
               }
             }
+            key="2"
             noAnimation={false}
             notification={
               Object {

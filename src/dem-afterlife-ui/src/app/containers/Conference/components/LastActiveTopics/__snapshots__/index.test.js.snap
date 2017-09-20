@@ -46,6 +46,7 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
   }
 >
   <Jss(TopicPure)
+    key="1"
     topic={
       Object {
         "forumId": 1,
@@ -66,6 +67,7 @@ exports[`LastActiveTopics component match expected snapshot without forumArray 1
     }
   />
   <Jss(TopicPure)
+    key="2"
     topic={
       Object {
         "forumId": 1,

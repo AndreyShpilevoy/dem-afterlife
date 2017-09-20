@@ -215,6 +215,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
     }
   >
     <Jss(TopicPure)
+      key="1"
       topic={
         Object {
           "forumId": 10,
@@ -234,6 +235,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
       }
     />
     <Jss(TopicPure)
+      key="2"
       topic={
         Object {
           "forumId": 10,

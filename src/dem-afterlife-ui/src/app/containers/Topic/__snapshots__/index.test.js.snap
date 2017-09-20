@@ -282,6 +282,7 @@ _______ooO-(_)-o o____
     >
       <div>
         <Post
+          key="4"
           post={
             Object {
               "editInfo": null,
@@ -321,6 +322,7 @@ _______ooO-(_)-o o____
           <div />
         </Post>
         <Post
+          key="5"
           post={
             Object {
               "editInfo": Object {

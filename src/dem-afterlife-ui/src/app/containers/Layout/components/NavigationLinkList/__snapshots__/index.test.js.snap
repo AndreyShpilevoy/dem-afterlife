@@ -10,7 +10,9 @@ exports[`NavigationLinkList Pure component with many navigationLinkItems match e
 <ul
   className="default-NavigationLinkList-list "
 >
-  <div>
+  <div
+    key="1"
+  >
     <Jss(NavigationLinkListItemPure)
       navigationLinkItem={
         Object {
@@ -25,7 +27,9 @@ exports[`NavigationLinkList Pure component with many navigationLinkItems match e
       className="default-NavigationLinkList-separator"
     />
   </div>
-  <div>
+  <div
+    key="2"
+  >
     <Jss(NavigationLinkListItemPure)
       navigationLinkItem={
         Object {

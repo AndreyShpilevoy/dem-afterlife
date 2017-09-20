@@ -58,6 +58,7 @@ exports[`Chapter component match expected snapshot with forumArray 1`] = `
         "topicsCount": 4,
       }
     }
+    key="40"
   />
 </Jss(CollapsibleSectionPure)>
 `;
