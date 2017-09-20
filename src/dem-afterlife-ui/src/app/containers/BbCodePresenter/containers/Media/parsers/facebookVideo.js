@@ -5,7 +5,7 @@ const facebookVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F${parsedLink[1]}`,
-            shortHeight: false
+            isShortHeight: false
         } :
         {success: false};
 };

@@ -5,7 +5,7 @@ const vkVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://vk.com/video_ext.php?oid=${parsedLink[1]}&id=${parsedLink[2]}&hash=${parsedLink[3]}`,
-            shortHeight: false
+            isShortHeight: false
         };
     }
     return {success: false};

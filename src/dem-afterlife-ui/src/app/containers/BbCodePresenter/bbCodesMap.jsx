@@ -9,7 +9,6 @@ import Color from './components/Color';
 import Email from './components/Email';
 import Image from './components/Image';
 import Url from './components/Url';
-import Media from './components/Media';
 import ListItem from './components/ListItem';
 import NewLine from './components/NewLine';
 import OffTopic from './components/OffTopic';
@@ -21,6 +20,7 @@ import Root from './components/Root';
 import TextLine from './components/TextLine';
 import Think from './components/Think';
 import UnorderedList from './components/UnorderedList';
+import Media from './containers/Media';
 import {rootTag, codeTag, textlineTag, brTag} from './constants';
 
 const bbCodesMap = {

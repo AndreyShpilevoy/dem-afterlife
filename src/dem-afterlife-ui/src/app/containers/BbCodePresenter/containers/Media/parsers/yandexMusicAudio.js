@@ -5,7 +5,7 @@ const yandexMusicAudio = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://${parsedLink[0]}`,
-            shortHeight: !parsedLink[1]
+            isShortHeight: !parsedLink[1]
         };
     }
     return {success: false};

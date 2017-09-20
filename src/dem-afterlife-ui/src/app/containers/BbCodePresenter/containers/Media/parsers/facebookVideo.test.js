@@ -11,7 +11,7 @@ describe('facebookVideo', () => {
         expect(facebookVideo('<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F10155479830046729%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>')).toMatchSnapshot();
     });
 
-    it('should return unsuccess result if pass wrong string', () => {
+    it('should return unsuccessful result if pass wrong string', () => {
         expect(facebookVideo('fake')).toMatchSnapshot();
     });
 });

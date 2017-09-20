@@ -5,7 +5,7 @@ const twitchVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://${parsedLink[1]}`,
-            shortHeight: false
+            isShortHeight: false
         } :
         {success: false};
 };

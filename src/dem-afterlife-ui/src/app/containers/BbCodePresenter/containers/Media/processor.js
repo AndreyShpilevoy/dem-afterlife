@@ -1,4 +1,4 @@
-import TextLine from '../TextLine';
+import TextLine from '../../components/TextLine';
 import coubVideo from './parsers/coubVideo';
 import facebookVideo from './parsers/facebookVideo';
 import googleMaps from './parsers/googleMaps';
@@ -25,7 +25,7 @@ export const defaultListOfParsers = [
     youtubeVideo
 ];
 
-const processTextLineContantViaParsers = (textLineComponent, listOfParsers) => {
+const processTextLineContentViaParsers = (textLineComponent, listOfParsers) => {
     const defaultResult = {
         type: 'none',
         success: false,
@@ -48,4 +48,4 @@ const processTextLineContantViaParsers = (textLineComponent, listOfParsers) => {
     return defaultResult;
 };
 
-export default processTextLineContantViaParsers;
+export default processTextLineContentViaParsers;

@@ -5,7 +5,7 @@ const vimeoVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://player.vimeo.com/video/${parsedLink[1]}`,
-            shortHeight: false
+            isShortHeight: false
         } :
         {success: false};
 };

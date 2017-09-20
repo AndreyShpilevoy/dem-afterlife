@@ -5,7 +5,7 @@ const youtubePlaylist = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://www.youtube.com/embed/videoseries?list=${parsedLink[1]}`,
-            shortHeight: false
+            isShortHeight: false
         };
     }
     return {success: false};

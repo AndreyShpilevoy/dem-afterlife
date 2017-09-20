@@ -9,21 +9,21 @@ const googleMaps = sourceLink => {
                 type: 'iframe',
                 success: true,
                 url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=m&z=${Number.parseInt(parsedLink[3], 10)}&output=embed`,
-                shortHeight: false
+                isShortHeight: false
             };
         } else if (parsedLink[4] === 'm') {
             return {
                 type: 'iframe',
                 success: true,
                 url: `https://maps.google.com/maps?ll=${parsedLink[1]},${parsedLink[2]}&t=h&z=${getSatelliteZoomLevel(parsedLink[3])}&output=embed`,
-                shortHeight: false
+                isShortHeight: false
             };
         } else if (parsedLink[5]) {
             return {
                 type: 'iframe',
                 success: true,
                 url: `https://www.google.com/maps/${parsedLink[5]}`,
-                shortHeight: false
+                isShortHeight: false
             };
         }
     }

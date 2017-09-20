@@ -5,7 +5,7 @@ const coubVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://coub.com/embed/${parsedLink[1]}`,
-            shortHeight: false
+            isShortHeight: false
         } :
         {success: false};
 };

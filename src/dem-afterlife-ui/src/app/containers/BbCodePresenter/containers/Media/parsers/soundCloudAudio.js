@@ -5,7 +5,7 @@ const soundCloudAudio = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://w.soundcloud.com/player/?url=https%3A//${parsedLink[0]}`,
-            shortHeight: !parsedLink[1]
+            isShortHeight: !parsedLink[1]
         } :
         {success: false};
 };

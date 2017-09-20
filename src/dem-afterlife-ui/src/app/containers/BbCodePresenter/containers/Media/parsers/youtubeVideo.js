@@ -5,7 +5,7 @@ const youtubeVideo = sourceLink => {
             type: 'iframe',
             success: true,
             url: `https://www.youtube.com/embed/${parsedLink[1]}?start=${parsedLink[2] || 0}`,
-            shortHeight: false
+            isShortHeight: false
         };
     }
     return {success: false};
