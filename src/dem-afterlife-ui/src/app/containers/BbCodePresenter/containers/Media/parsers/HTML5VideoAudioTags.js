@@ -17,7 +17,7 @@ const videoFormatTypeMatch = {
     webmv: 'webm'
 };
 
-const HTML5Tag = sourceLink => {
+const HTML5VideoAudioTags = sourceLink => {
     const parsedLink = sourceLink.match(/(?:https?:\/\/)?[^:"']*\.(?:(aac|m4a|mp3|oga|ogg|opus|wav|webma)|(mp4|m4v|ogv|webm|webmv))/i);
     if (parsedLink && parsedLink[1]) {
         return {
@@ -35,4 +35,4 @@ const HTML5Tag = sourceLink => {
     return {success: false};
 };
 
-export default HTML5Tag;
+export default HTML5VideoAudioTags;

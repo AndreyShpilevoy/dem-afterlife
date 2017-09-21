@@ -2,7 +2,7 @@ import TextLine from '../../components/TextLine';
 import coubVideo from './parsers/coubVideo';
 import facebookVideo from './parsers/facebookVideo';
 import googleMaps from './parsers/googleMaps';
-import HTML5Tag from './parsers/HTML5Tag';
+import HTML5VideoAudioTags from './parsers/HTML5VideoAudioTags';
 import soundCloudAudio from './parsers/soundCloudAudio';
 import twitchVideo from './parsers/twitchVideo';
 import vimeoVideo from './parsers/vimeoVideo';
@@ -15,7 +15,7 @@ export const defaultListOfParsers = [
     coubVideo,
     facebookVideo,
     googleMaps,
-    HTML5Tag,
+    HTML5VideoAudioTags,
     soundCloudAudio,
     twitchVideo,
     vimeoVideo,
