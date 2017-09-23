@@ -1,5 +1,6 @@
 import React from 'react';
-import {node, shape, arrayOf, number} from 'prop-types';
+import {node, arrayOf, number, func} from 'prop-types';
+import Error from 'components/Error';
 import Audio from '../../components/Audio';
 import Video from '../../components/Video';
 import Iframe from '../../components/Iframe';
@@ -27,13 +28,13 @@ const Media = ({children, listOfParsers, shortHeight, fullHeight, width}) => {
     return (
         result.success ?
             matchResourceTypeToPresenter(result.type)(props) :
-            'Error'
+            <Error />
     );
 };
 
 Media.propTypes = {
     children: node.isRequired,
-    listOfParsers: arrayOf(shape()),
+    listOfParsers: arrayOf(func),
     shortHeight: number,
     fullHeight: number,
     width: number
