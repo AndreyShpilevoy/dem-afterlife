@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error calculateStyles should create expected object 1`] = `
+Object {
+  "container": Object {
+    "borderColor": "orange",
+    "borderStyle": "solid",
+    "borderWidth": 0.125,
+    "padding": 0.25,
+    "textAlign": "center",
+    "width": "fit-content",
+  },
+  "image": Object {
+    "& > .SVGInline-svg": Object {
+      "fill": "orange",
+      "height": 3,
+      "width": 3,
+    },
+    "height": 3,
+    "width": 3,
+  },
+}
+`;
