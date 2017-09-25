@@ -1,6 +1,7 @@
 import React from 'react';
 import {node, arrayOf, number, func} from 'prop-types';
 import Error from 'components/Error';
+import Term from 'containers/Term';
 import Audio from '../../components/Audio';
 import Video from '../../components/Video';
 import Iframe from '../../components/Iframe';
@@ -11,6 +12,8 @@ const objectTypeToPresenterMapping = {
     video: Video,
     audio: Audio
 };
+
+const errorTerm = {id: 37, value: 'Unsupported resource or invalid link'};
 
 const matchResourceTypeToPresenter = typeString => {
     const parsedType = typeString.match(/(iframe|audio|video)/i);
@@ -28,7 +31,7 @@ const Media = ({children, listOfParsers, shortHeight, fullHeight, width}) => {
     return (
         result.success ?
             matchResourceTypeToPresenter(result.type)(props) :
-            <Error />
+            <Error><Term term={errorTerm} /></Error>
     );
 };
 

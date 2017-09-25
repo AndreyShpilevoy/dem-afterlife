@@ -1,18 +1,19 @@
-const calculateStyles = () => ({
+const calculateStyles = ({error}) => ({
     container: {
-        width: 6.25,
+        width: 'fit-content',
         textAlign: 'center',
-        borderColor: '#fb7c20',
+        borderColor: error.color,
         borderStyle: 'solid',
-        borderWidth: 0.125
+        borderWidth: error.borderWidth,
+        padding: error.padding
     },
     image: {
-        width: 3,
-        height: 3,
+        width: error.widthAndheight,
+        height: error.widthAndheight,
         '& > .SVGInline-svg': {
-            width: 3,
-            height: 3,
-            fill: '#fb7c20'
+            width: error.widthAndheight,
+            height: error.widthAndheight,
+            fill: error.color
         }
     }
 });

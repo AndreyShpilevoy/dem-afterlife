@@ -1,25 +1,28 @@
 import React from 'react';
-import {shape, string} from 'prop-types';
+import {shape, node} from 'prop-types';
 import SvgIconsMapper from 'containers/SvgIconsMapper';
+import Term from 'containers/Term';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const ErrorPure = ({classes, message}) => (
+const errorTerm = {id: 36, value: 'Error'};
+
+export const ErrorPure = ({classes, children}) => (
     <div className={classes.container}>
         <SvgIconsMapper className={classes.image} iconName={'Error'} />
         <div>
-            {message}
+            {children}
         </div>
     </div>
 );
 
 ErrorPure.propTypes = {
     classes: shape().isRequired,
-    message: string
+    children: node
 };
 
 ErrorPure.defaultProps = {
-    message: 'Error'
+    children: <Term term={errorTerm} />
 };
 
 

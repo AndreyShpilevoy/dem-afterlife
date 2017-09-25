@@ -34,7 +34,8 @@ const ua = [
     {id: 33, value: 'Цитата', description: 'header for Quote bbCode'},
     {id: 34, value: 'Код', description: 'header for Code bbCode'},
     {id: 35, value: 'Спойлер', description: 'header for Spoiler bbCode'},
-    {id: 36, value: 'Останній раз змінено', description: 'Post edit text label'}
+    {id: 36, value: 'Помилка', description: 'Error text label'},
+    {id: 37, value: 'Непідтримуваний ресурс або невірне посилання', description: 'Error text for Media error'}
 ];
 
 export default ua;

@@ -38,7 +38,8 @@ const colors = {
     focusColorLight: '#D4D4D4',
     focusColorDark: '#44423f',
     breadcrumbBackgroundColor: '#5D5956',
-    breadcrumbHoveredBackgroundColor: '#564B41'
+    breadcrumbHoveredBackgroundColor: '#564B41',
+    errorColor: '#de762a'
 };
 
 const sizes = {
@@ -283,6 +284,12 @@ const defaultTheme = {
     focus: {
         colorLight: colors.focusColorLight,
         colorDark: colors.focusColorDark
+    },
+    error: {
+        color: colors.errorColor,
+        borderWidth: 0.125,
+        padding: 0.25,
+        widthAndheight: 3
     }
 };
 
