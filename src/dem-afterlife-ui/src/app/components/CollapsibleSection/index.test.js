@@ -1,8 +1,11 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import {CollapsibleSectionPure} from './index';
+
+configure({adapter: new Adapter()});
 
 describe('CollapsibleSection Pure', () => {
     const classes = {
@@ -29,9 +32,9 @@ describe('CollapsibleSection Pure', () => {
         expect(shallow(<CollapsibleSectionPure classes={classes}><div>{'Column content'}</div></CollapsibleSectionPure>)).toMatchSnapshot();
     });
 
-    it('without headerSettings', () => {
+    it('should change style to collapsed', () => {
         const wrapper = shallow(<CollapsibleSectionPure classes={classes}><div>{'Column content'}</div></CollapsibleSectionPure>);
-        wrapper.find('Aesthetic-RowPure').first().simulate('click');
+        wrapper.find('Jss(RowPure)').first().simulate('click');
         expect(wrapper).toMatchSnapshot();
     });
 

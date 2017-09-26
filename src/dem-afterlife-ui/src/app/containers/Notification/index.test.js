@@ -1,8 +1,11 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import {NotificationPure} from './index';
+
+configure({adapter: new Adapter()});
 
 describe('Notification Pure', () => {
     const props = {

@@ -1,12 +1,12 @@
 /* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, react/no-multi-comp, react/prop-types, react/jsx-filename-extension */
 
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import configureMockStore from 'redux-mock-store';
-
 import Conference from './index';
 
-
+configure({adapter: new Adapter()});
 
 jest.mock('components/Chapter', () => {
     const Chapter = ({children}) => <div>{children}</div>;
