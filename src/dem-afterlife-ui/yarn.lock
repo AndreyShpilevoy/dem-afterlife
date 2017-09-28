@@ -1718,10 +1718,6 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
 
-css-initials@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/css-initials/-/css-initials-0.1.1.tgz#cc6dcdb70dc6038c6cf494dd4980f001b824a4ab"
-
 css-select@^1.1.0, css-select@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -3962,11 +3958,9 @@ jss-global@2.0.0, jss-global@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/jss-global/-/jss-global-2.0.0.tgz#a162f822f17e5d760151d908bdb41d7f2824c28f"
 
-jss-isolate@5.0.0-pre.2:
-  version "5.0.0-pre.2"
-  resolved "https://registry.yarnpkg.com/jss-isolate/-/jss-isolate-5.0.0-pre.2.tgz#c12ea9c0a75f567158f12f35228d13b2e5a293ff"
-  dependencies:
-    css-initials "^0.1.0"
+jss-isolate@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/jss-isolate/-/jss-isolate-4.0.1.tgz#a9fd2ca251a7405a83a6cdc3daab3a496e5ed8bd"
 
 jss-nested@5.0.0, jss-nested@^5.0.0:
   version "5.0.0"
