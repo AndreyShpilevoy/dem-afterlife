@@ -119,6 +119,28 @@ Object {
 }
 `;
 
+exports[`bbCodesMap media should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "fullHeight": 360,
+  "listOfParsers": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "shortHeight": 100,
+  "width": 640,
+}
+`;
+
 exports[`bbCodesMap offtopic should match expected snapshot 1`] = `
 Object {
   "children": "some text",
