@@ -7,10 +7,6 @@ Object {
       "verticalAlign": "sub",
     },
   },
-  "options": Object {
-    "meta": "Signature",
-    "themeName": "default",
-  },
   "separator": Object {
     "backgroundColor": "red",
     "height": 0.0625,

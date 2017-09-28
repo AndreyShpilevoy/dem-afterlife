@@ -2,10 +2,12 @@
 react/no-multi-comp:0, react/prop-types:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount, shallow} from 'enzyme';
+import {mount, shallow, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import configureMockStore from 'redux-mock-store';
 import Topic, {TopicPure} from './index';
 
+configure({adapter: new Adapter()});
 
 jest.mock('react-router-dom');
 jest.mock('containers/Term');

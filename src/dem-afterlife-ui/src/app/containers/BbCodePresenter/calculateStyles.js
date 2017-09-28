@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName}) => ({
+const calculateStyles = () => ({
     bold: {
         fontWeight: 'bold'
     },
@@ -34,10 +34,6 @@ const calculateStyles = ({themeName}) => ({
         '&:last-child': {
             marginRight: 'auto'
         }
-    },
-    options: {
-        meta: 'BbCodePresenter',
-        themeName
     }
 });
 

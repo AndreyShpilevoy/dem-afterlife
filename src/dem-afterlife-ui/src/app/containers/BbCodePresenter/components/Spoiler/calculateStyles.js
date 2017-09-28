@@ -1,4 +1,4 @@
-const calculateStyles = ({bbCodes, focus, themeName}) => {
+const calculateStyles = ({bbCodes, focus}) => {
     const {common, spoiler} = bbCodes;
     return {
         title: {
@@ -23,8 +23,7 @@ const calculateStyles = ({bbCodes, focus, themeName}) => {
             '&:focus': {
                 outlineColor: focus.colorDark
             }
-        },
-        options: {meta: 'Spoiler', themeName}
+        }
     };
 };
 

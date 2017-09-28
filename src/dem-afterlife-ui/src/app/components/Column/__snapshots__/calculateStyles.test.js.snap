@@ -188,9 +188,5 @@ Object {
       "marginLeft": "75%",
     },
   },
-  "options": Object {
-    "meta": "Column",
-    "themeName": "default",
-  },
 }
 `;

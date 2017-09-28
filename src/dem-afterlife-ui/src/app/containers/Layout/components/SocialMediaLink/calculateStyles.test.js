@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('SocialMediaLink calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         focus: {colorLight: 'red'}
     };
 

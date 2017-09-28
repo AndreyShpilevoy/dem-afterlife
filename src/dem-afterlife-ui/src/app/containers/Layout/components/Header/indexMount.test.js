@@ -1,9 +1,12 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import {root} from 'utils';
 import {HeaderPure} from './index';
+
+configure({adapter: new Adapter()});
 
 jest.mock('react-router-dom/Link');
 jest.mock('components/Container');
@@ -13,9 +16,6 @@ jest.mock('components/Row');
 jest.mock('../Logotype');
 jest.mock('../MenuButton');
 jest.mock('../NavigationLinkList');
-
-
-root.removeEventListener = jest.fn();
 
 describe('Header Pure Mount', () => {
     const map = {};
@@ -50,8 +50,9 @@ describe('Header Pure Mount', () => {
     });
 
     it('component should removeEventListener on unmount', () => {
+        root.removeEventListener = jest.fn();
         const wrapper = mount(<HeaderPure classes={classes} navigationLinkArray={[]} />);
         wrapper.unmount();
-        expect(root.removeEventListener.mock.calls.length).toBe(1);
+        expect(root.removeEventListener.mock.calls.length).toBeGreaterThan(0);
     });
 });

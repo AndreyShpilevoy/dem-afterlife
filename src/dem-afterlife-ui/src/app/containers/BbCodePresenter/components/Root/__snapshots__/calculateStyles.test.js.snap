@@ -2,10 +2,6 @@
 
 exports[`Root calculateStyles should create expected object 1`] = `
 Object {
-  "options": Object {
-    "meta": "Root",
-    "themeName": "default",
-  },
   "root": Object {
     "width": "100%",
     "wordBreak": "break-word",

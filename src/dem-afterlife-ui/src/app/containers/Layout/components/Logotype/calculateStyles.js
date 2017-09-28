@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName, logotype, focus}) => ({
+const calculateStyles = ({logotype, focus}) => ({
     logotype: {
         backgroundImage: `url(${logotype.backgroundImage})`,
         backgroundRepeat: logotype.backgroundRepeat,
@@ -10,8 +10,7 @@ const calculateStyles = ({themeName, logotype, focus}) => ({
         '&:focus': {
             outlineColor: focus.colorLight
         }
-    },
-    options: {meta: 'Logotype', themeName}
+    }
 });
 
 export default calculateStyles;

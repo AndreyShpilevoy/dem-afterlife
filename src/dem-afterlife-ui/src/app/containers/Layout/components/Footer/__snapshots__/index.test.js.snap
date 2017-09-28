@@ -179,6 +179,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
               >
                 <Jss(SocialMediaLinkPure)
                   className="default-Footer-socialMediaLinkIcon"
+                  key="2"
                   socialMediaLinkItem={
                     Object {
                       "href": "https://vk.com/exmachina2",
@@ -191,6 +192,7 @@ exports[`Footer Pure component with socialMediaLinkArray match expected snapshot
                 />
                 <Jss(SocialMediaLinkPure)
                   className="default-Footer-socialMediaLinkIcon"
+                  key="1"
                   socialMediaLinkItem={
                     Object {
                       "href": "http://steamcommunity.com/groups/Ex_Machina",

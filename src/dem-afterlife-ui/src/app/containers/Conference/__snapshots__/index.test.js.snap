@@ -346,6 +346,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
             "title": "Ex Machina",
           }
         }
+        key="1"
       >
         <div />
       </Chapter>
@@ -377,6 +378,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
             "title": "Ex Machina Меридиан 113",
           }
         }
+        key="2"
       >
         <div />
       </Chapter>
@@ -389,6 +391,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
             "title": "Ex Machina: Arcade",
           }
         }
+        key="3"
       >
         <div />
       </Chapter>

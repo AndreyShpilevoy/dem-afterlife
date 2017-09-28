@@ -91,7 +91,7 @@ const buildNodeTreeRecursively = (tagsArray, tagIndex = 0, result = {}, parentNo
 
 const parseTextToNodeTree = text => {
     const message = wrapToRootNodeIfNeeded(text).replace(/\r\n|\n|\r/g, '[br][/br]');
-    const allTags = getAllTagsRecursively(message, /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi);
+    const allTags = getAllTagsRecursively(message, /(?:\[([a-z0-9*]{1,16})(?:=(?:"|'|)([^\x00-\x1F"'()<>[\]]{1,256}))?(?:"|'|)\])|(?:\[\/([a-z0-9*]{1,16})\])/gi); // eslint-disable-line no-control-regex
     return buildNodeTreeRecursively(allTags);
 };
 

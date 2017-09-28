@@ -68,10 +68,6 @@ Object {
       },
     },
   },
-  "options": Object {
-    "meta": "Forum",
-    "themeName": "default",
-  },
   "separator": Object {
     "backgroundColor": "red",
     "height": 0.125,

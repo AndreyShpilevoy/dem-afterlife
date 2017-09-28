@@ -37,4 +37,4 @@ BreadcrumbListItemPure.defaultProps = {
     ellipsis: false
 };
 
-export default injectSheet(calculateStyles, {componentName: 'BreadcrumbListIte'})(BreadcrumbListItemPure);
+export default injectSheet(calculateStyles, {componentName: 'BreadcrumbListItem'})(BreadcrumbListItemPure);

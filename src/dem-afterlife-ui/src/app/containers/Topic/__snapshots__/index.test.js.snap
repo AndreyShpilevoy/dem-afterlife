@@ -74,12 +74,12 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
         Object {
           "title": <Connect(Term)
             term={
-                Object {
-                    "id": 30,
-                    "value": "Posts",
-                  }
+              Object {
+                "id": 30,
+                "value": "Posts",
+              }
             }
-        />,
+          />,
         }
       }
     >
@@ -125,7 +125,7 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
           "editInfo": null,
           "id": 4,
           "message": "[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]
-      [spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
+[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
           "postTime": 2015-01-04T08:10:10.000Z,
           "rate": 343,
           "subject": "subject 5",
@@ -176,9 +176,9 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
               "rank": "Официально сумасшедший",
               "registrationDate": 2015-01-04T08:10:10.000Z,
               "signature": "__________!///_ _____
-      _________( @@ )_____
-      _______ooO-(_)-o o____
-      Пришёл, увидел, забанил. Ещё вопросы?",
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
               "skype": undefined,
               "steam": undefined,
               "vk": undefined,
@@ -188,13 +188,13 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
           },
           "id": 5,
           "message": "[url]i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url] text [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url]
-      [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
-      text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
-       [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-      http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-      http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-      http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
-      http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
+[url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
+text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
+ [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
           "postTime": 2015-01-05T08:10:10.000Z,
           "rate": 0,
           "subject": "subject 1",
@@ -216,9 +216,9 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
             "rank": "Официально сумасшедший",
             "registrationDate": 2015-01-04T08:10:10.000Z,
             "signature": "__________!///_ _____
-      _________( @@ )_____
-      _______ooO-(_)-o o____
-      Пришёл, увидел, забанил. Ещё вопросы?",
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
             "skype": undefined,
             "steam": undefined,
             "vk": undefined,
@@ -271,23 +271,24 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
         Object {
           "title": <Connect(Term)
             term={
-                Object {
-                    "id": 30,
-                    "value": "Posts",
-                  }
+              Object {
+                "id": 30,
+                "value": "Posts",
+              }
             }
-        />,
+          />,
         }
       }
     >
       <div>
         <Post
+          key="4"
           post={
             Object {
               "editInfo": null,
               "id": 4,
               "message": "[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]
-            [spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
+[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
               "postTime": 2015-01-04T08:10:10.000Z,
               "rate": 343,
               "subject": "subject 5",
@@ -321,6 +322,7 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
           <div />
         </Post>
         <Post
+          key="5"
           post={
             Object {
               "editInfo": Object {
@@ -344,9 +346,9 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
                   "rank": "Официально сумасшедший",
                   "registrationDate": 2015-01-04T08:10:10.000Z,
                   "signature": "__________!///_ _____
-            _________( @@ )_____
-            _______ooO-(_)-o o____
-            Пришёл, увидел, забанил. Ещё вопросы?",
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
                   "skype": undefined,
                   "steam": undefined,
                   "vk": undefined,
@@ -356,13 +358,13 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
               },
               "id": 5,
               "message": "[url]i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url] text [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url]
-            [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
-            text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
-             [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-            http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-            http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
-            http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
-            http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
+[url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
+text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
+ [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
               "postTime": 2015-01-05T08:10:10.000Z,
               "rate": 0,
               "subject": "subject 1",
@@ -384,9 +386,9 @@ exports[`Topic HOC component with filled post and user arrays match expected sna
                 "rank": "Официально сумасшедший",
                 "registrationDate": 2015-01-04T08:10:10.000Z,
                 "signature": "__________!///_ _____
-            _________( @@ )_____
-            _______ooO-(_)-o o____
-            Пришёл, увидел, забанил. Ещё вопросы?",
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
                 "skype": undefined,
                 "steam": undefined,
                 "vk": undefined,

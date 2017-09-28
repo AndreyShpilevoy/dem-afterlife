@@ -49,7 +49,7 @@ const getSmSmallText = (mediaMaxString, size) =>
 const getTopicsMessagesContainer = (mediaMaxString, size) =>
     createMediaQueryMax(mediaMaxString, {fontSize: size, flexDirection: 'row'});
 
-const calculateStyles = ({themeName, grid, forum}) => {
+const calculateStyles = ({grid, forum}) => {
     const {separator, text, subForumContainer} = forum;
     const {mediaMaxString: mdMediaMaxString} = grid.containers.find(x => x.gridSize === 'md');
     const {mediaMaxString: smMediaMaxString} = grid.containers.find(x => x.gridSize === 'sm');
@@ -96,8 +96,7 @@ const calculateStyles = ({themeName, grid, forum}) => {
         },
         topicsMessages: getTopicsMessagesContainer(mdMediaMaxString, text.small),
         displayInline: getDisplayInline(smMediaMaxString),
-        disableRowOnSmXs: getDisableRow(smMediaMaxString),
-        options: {meta: 'Forum', themeName}
+        disableRowOnSmXs: getDisableRow(smMediaMaxString)
     };
 };
 

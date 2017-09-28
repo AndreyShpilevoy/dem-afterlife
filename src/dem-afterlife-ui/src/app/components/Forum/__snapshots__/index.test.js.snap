@@ -71,6 +71,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
               className="default-Forum-subForumContainer"
             >
               <Jss(SubForumPure)
+                key="51"
                 subForum={
                   Object {
                     "id": 51,
@@ -80,6 +81,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 }
               />
               <Jss(SubForumPure)
+                key="52"
                 subForum={
                   Object {
                     "id": 52,
@@ -89,6 +91,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 }
               />
               <Jss(SubForumPure)
+                key="53"
                 subForum={
                   Object {
                     "id": 53,
@@ -98,6 +101,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 }
               />
               <Jss(SubForumPure)
+                key="54"
                 subForum={
                   Object {
                     "id": 54,
@@ -107,6 +111,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 }
               />
               <Jss(SubForumPure)
+                key="55"
                 subForum={
                   Object {
                     "id": 55,
@@ -116,6 +121,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
                 }
               />
               <Jss(SubForumPure)
+                key="56"
                 subForum={
                   Object {
                     "id": 56,

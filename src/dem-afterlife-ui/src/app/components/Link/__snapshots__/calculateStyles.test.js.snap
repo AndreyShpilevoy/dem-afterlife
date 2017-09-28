@@ -21,9 +21,5 @@ Object {
     "color": "red",
     "textDecoration": "none",
   },
-  "options": Object {
-    "meta": "Link",
-    "themeName": "default",
-  },
 }
 `;

@@ -1,4 +1,4 @@
-const calculateStyles = ({bbCodes, themeName}) => {
+const calculateStyles = ({bbCodes}) => {
     const {think} = bbCodes;
     return {
         think: {
@@ -18,8 +18,7 @@ const calculateStyles = ({bbCodes, themeName}) => {
             backgroundRepeat: 'no-repeat',
             backgroundSize: think.backgroundSize,
             paddingTop: think.paddingTop
-        },
-        options: {meta: 'Think', themeName}
+        }
     };
 };
 

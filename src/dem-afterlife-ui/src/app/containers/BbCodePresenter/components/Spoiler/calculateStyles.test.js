@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Spoiler calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         bbCodes: {
             common: {
                 borderWidth: 0.0625,

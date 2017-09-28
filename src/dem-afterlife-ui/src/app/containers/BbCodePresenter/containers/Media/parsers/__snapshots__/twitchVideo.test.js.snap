@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`twitchVideo should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`twitchVideo should return valid result if pass iframe html code 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://player.twitch.tv/?channel=horror_gameluver42",
+}
+`;

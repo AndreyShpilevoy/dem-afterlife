@@ -6,8 +6,6 @@ import Term from 'containers/Term';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-const spoilerTerm = {id: 35, value: 'Spoiler'};
-
 export class SpoilerPure extends PureComponent {
     static propTypes = {
         classes: shape().isRequired,
@@ -29,6 +27,7 @@ export class SpoilerPure extends PureComponent {
     }
 
     render() {
+        const spoilerTerm = {id: 35, value: 'Spoiler'};
         const {children, options, classes} = this.props;
         const {isOpen} = this.state;
         return (

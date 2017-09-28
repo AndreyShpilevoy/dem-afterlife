@@ -90,10 +90,6 @@ Object {
     "whiteSpace": "nowrap",
     "width": "initial",
   },
-  "options": Object {
-    "meta": "CollapsibleSection",
-    "themeName": "default",
-  },
   "termedSection": Object {
     "width": "100%",
   },

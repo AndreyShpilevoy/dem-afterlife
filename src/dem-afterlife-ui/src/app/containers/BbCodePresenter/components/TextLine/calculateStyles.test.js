@@ -3,11 +3,7 @@
 import calculateStyles from './calculateStyles';
 
 describe('TextLine calculateStyles', () => {
-    const defaultThemeObject = {
-        themeName: 'default'
-    };
-
     it('should create expected object', () => {
-        expect(calculateStyles(defaultThemeObject)).toMatchSnapshot();
+        expect(calculateStyles()).toMatchSnapshot();
     });
 });

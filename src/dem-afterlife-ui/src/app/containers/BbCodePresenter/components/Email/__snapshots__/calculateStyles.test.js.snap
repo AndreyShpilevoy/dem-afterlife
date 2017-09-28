@@ -21,9 +21,5 @@ Object {
     "color": "yellow",
     "textDecoration": "none",
   },
-  "options": Object {
-    "meta": "Email",
-    "themeName": "default",
-  },
 }
 `;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HTML5VideoAudioTags should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`HTML5VideoAudioTags should return valid result if pass Audio link 1`] = `
+Object {
+  "success": true,
+  "type": "audio/mpeg",
+  "url": "http://www.w3schools.com/tags/horse.mp3",
+}
+`;
+
+exports[`HTML5VideoAudioTags should return valid result if pass Video link 1`] = `
+Object {
+  "success": true,
+  "type": "video/mp4",
+  "url": "http://www.w3schools.com/html/mov_bbb.mp4",
+}
+`;

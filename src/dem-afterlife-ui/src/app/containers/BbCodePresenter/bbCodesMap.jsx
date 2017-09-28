@@ -20,6 +20,7 @@ import Root from './components/Root';
 import TextLine from './components/TextLine';
 import Think from './components/Think';
 import UnorderedList from './components/UnorderedList';
+import Media from './containers/Media';
 import {rootTag, codeTag, textlineTag, brTag} from './constants';
 
 const bbCodesMap = {
@@ -94,8 +95,8 @@ const bbCodesMap = {
         <UnorderedList key={key}>{children}</UnorderedList>,
     li: (children, key) =>
         <ListItem key={key}>{children}</ListItem>,
-
-    // media
+    media: (children, key) =>
+        <Media key={key}>{children}</Media>,
     p: (children, key) =>
         <Paragraph key={key}>{children}</Paragraph>,
     [brTag]: (children, key) =>

@@ -10,7 +10,7 @@ const arrowAfterBeforeCommon = height => ({
     top: 0
 });
 
-const calculateStyles = ({themeName, breadcrumbs}) => ({
+const calculateStyles = ({breadcrumbs}) => ({
     arrow: {
         backgroundColor: breadcrumbs.bgColor,
         height: breadcrumbs.height,
@@ -87,8 +87,7 @@ const calculateStyles = ({themeName, breadcrumbs}) => ({
         color: breadcrumbs.textColor,
         textDecoration: 'none',
         backgroundColor: breadcrumbs.hoveredBgColor
-    },
-    options: {meta: 'BreadcrumbListItem', themeName}
+    }
 });
 
 export default calculateStyles;

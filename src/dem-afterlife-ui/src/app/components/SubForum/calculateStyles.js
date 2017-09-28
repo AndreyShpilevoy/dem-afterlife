@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName, subForum}) => ({
+const calculateStyles = ({subForum}) => ({
     link: {
         paddingLeft: subForum.paddingLeft
     },
@@ -12,8 +12,7 @@ const calculateStyles = ({themeName, subForum}) => ({
     },
     container: {
         marginTop: - subForum.marginTop
-    },
-    options: {meta: 'SubForum', themeName}
+    }
 });
 
 export default calculateStyles;

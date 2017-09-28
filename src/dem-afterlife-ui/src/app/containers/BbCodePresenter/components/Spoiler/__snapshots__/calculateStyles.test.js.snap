@@ -10,10 +10,6 @@ Object {
       "outlineColor": "black",
     },
   },
-  "options": Object {
-    "meta": "Spoiler",
-    "themeName": "default",
-  },
   "spoiler": Object {
     "backgroundColor": "green",
     "borderColor": "red",

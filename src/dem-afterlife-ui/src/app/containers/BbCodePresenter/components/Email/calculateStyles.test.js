@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Email calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         bbCodes: {
             email: {
                 color: 'yellow',

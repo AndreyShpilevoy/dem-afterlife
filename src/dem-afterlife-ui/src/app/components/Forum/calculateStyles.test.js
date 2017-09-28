@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Forum calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         grid: {
             containers: [
                 {

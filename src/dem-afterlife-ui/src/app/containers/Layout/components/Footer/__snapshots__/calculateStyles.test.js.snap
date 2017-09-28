@@ -28,10 +28,6 @@ Object {
     "height": "100%",
     "justifyContent": "center",
   },
-  "options": Object {
-    "meta": "Footer",
-    "themeName": "default",
-  },
   "socialMediaLinkIcon": Object {
     "& > .SVGInline-svg": Object {
       "display": "block",

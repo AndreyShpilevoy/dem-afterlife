@@ -8,9 +8,5 @@ Object {
   "header": Object {
     "fontWeight": "bold",
   },
-  "options": Object {
-    "meta": "OffTopic",
-    "themeName": "default",
-  },
 }
 `;

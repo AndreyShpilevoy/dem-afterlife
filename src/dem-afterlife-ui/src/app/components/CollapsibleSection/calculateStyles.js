@@ -113,10 +113,9 @@ const getSizeSpecific = (grid, collapsibleSection) =>
         previous,
     {});
 
-const calculateStyles = ({themeName, grid, collapsibleSection, focus}) => ({
+const calculateStyles = ({grid, collapsibleSection, focus}) => ({
     ...getCommonPart(collapsibleSection, focus),
-    ...getSizeSpecific(grid, collapsibleSection),
-    ...{options: {meta: 'CollapsibleSection', themeName} }
+    ...getSizeSpecific(grid, collapsibleSection)
 });
 
 export default calculateStyles;

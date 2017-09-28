@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('OffTopic calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         bbCodes: {
             offtopic: {
                 color: 'red'

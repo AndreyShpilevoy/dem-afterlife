@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName, post}) => ({
+const calculateStyles = ({post}) => ({
 
     separator: {
         backgroundColor: post.separator.backgroundColor,
@@ -13,8 +13,7 @@ const calculateStyles = ({themeName, post}) => ({
         '& img': {
             verticalAlign: 'sub'
         }
-    },
-    options: {meta: 'Signature', themeName}
+    }
 });
 
 export default calculateStyles;

@@ -7,9 +7,5 @@ Object {
     "flexFlow": "row wrap",
     "marginTop": 2,
   },
-  "options": Object {
-    "meta": "BreadcrumbList",
-    "themeName": "default",
-  },
 }
 `;

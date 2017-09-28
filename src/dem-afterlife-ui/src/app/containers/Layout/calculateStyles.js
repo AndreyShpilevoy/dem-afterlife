@@ -1,4 +1,4 @@
-const calculateStyles = ({themeName, mainWrapper}) => ({
+const calculateStyles = ({mainWrapper}) => ({
     '@global': {
         body: {
             margin: 'initial',
@@ -18,8 +18,7 @@ const calculateStyles = ({themeName, mainWrapper}) => ({
     },
     content: {
         flex: '1 !important'
-    },
-    options: {meta: 'LayoutContainer', themeName}
+    }
 });
 
 export default calculateStyles;

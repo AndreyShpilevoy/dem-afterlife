@@ -26,15 +26,16 @@ const ua = [
     {id: 25, value: 'Форум', description: 'for topics body on topicArray component'},
     {id: 26, value: 'Останні повідомлення', description: 'title for lastActiveTopicArray component'},
     {id: 27, value: 'DeusExMachina', description: 'web site name for title'},
-    {id: 28, value: 'Перегляд форума', description: 'action name for title'},
-    {id: 29, value: 'Перегляд теми', description: 'action name for title'},
+    {id: 28, value: 'Audio', description: 'title for audio link in Media bbCode component'},
+    {id: 29, value: 'Video', description: 'title for audio link in Media bbCode component'},
     {id: 30, value: 'Повідомлення', description: 'action name for title'},
     {id: 31, value: 'Оффтоп', description: 'header for Offtopic bbCode'},
     {id: 32, value: 'писав(ла)', description: 'header for Quote bbCode'},
     {id: 33, value: 'Цитата', description: 'header for Quote bbCode'},
     {id: 34, value: 'Код', description: 'header for Code bbCode'},
     {id: 35, value: 'Спойлер', description: 'header for Spoiler bbCode'},
-    {id: 36, value: 'Останній раз змінено', description: 'Post edit text label'}
+    {id: 36, value: 'Помилка', description: 'Error text label'},
+    {id: 37, value: 'Непідтримуваний ресурс або невірне посилання', description: 'Error text for Media error'}
 ];
 
 export default ua;

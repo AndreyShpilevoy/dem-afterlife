@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Post calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         post: {
             separator: {
                 backgroundColor: 'red',

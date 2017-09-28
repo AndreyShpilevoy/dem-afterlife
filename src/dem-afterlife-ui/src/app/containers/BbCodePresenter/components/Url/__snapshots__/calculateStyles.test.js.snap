@@ -2,10 +2,6 @@
 
 exports[`Url calculateStyles should create expected object 1`] = `
 Object {
-  "options": Object {
-    "meta": "Url",
-    "themeName": "default",
-  },
   "url": Object {
     "&:focus": Object {
       "outlineColor": "black",

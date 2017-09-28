@@ -1,9 +1,12 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import configureMockStore from 'redux-mock-store';
 import LocaleDateTime from './index';
+
+configure({adapter: new Adapter()});
 
 describe('LocaleDateTime', () => {
     const mockStore = configureMockStore();

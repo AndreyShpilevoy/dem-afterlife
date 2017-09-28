@@ -87,7 +87,7 @@ const constructMediaModelForCurrentSize = (gridSize, mediaMinString, mediaMaxStr
         headerMenuButtonContainer: getHeaderMenuButtonContainerStyle(headerStyles)
     });
 
-const calculateStyles = ({themeName, grid, header}) =>
+const calculateStyles = ({grid, header}) =>
     grid.containers.reduce((previous, {gridSize, mediaMinString, mediaMaxString}) =>
         ({...previous, ...constructMediaModelForCurrentSize(gridSize, mediaMinString, mediaMaxString, header)}),
     {
@@ -101,8 +101,7 @@ const calculateStyles = ({themeName, grid, header}) =>
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center'
-        },
-        options: {meta: 'Header', themeName}
+        }
     }
     );
 

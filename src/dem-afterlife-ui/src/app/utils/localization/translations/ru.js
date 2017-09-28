@@ -26,15 +26,16 @@ const ru = [
     {id: 25, value: 'Форум', description: 'for topics body on topicArray component'},
     {id: 26, value: 'Последние сообщения', description: 'title for lastActiveTopicArray component'},
     {id: 27, value: 'DeusExMachina', description: 'web site name for title'},
-    {id: 28, value: 'Просмотр форума', description: 'action name for title'},
-    {id: 29, value: 'Просмотр темы', description: 'action name for title'},
+    {id: 28, value: 'Audio', description: 'title for audio link in Media bbCode component'},
+    {id: 29, value: 'Video', description: 'title for audio link in Media bbCode component'},
     {id: 30, value: 'Сообщения', description: 'action name for title'},
     {id: 31, value: 'Оффтоп', description: 'header for Offtopic bbCode'},
     {id: 32, value: 'писал(а)', description: 'header for Quote bbCode'},
     {id: 33, value: 'Цитата', description: 'header for Quote bbCode'},
     {id: 34, value: 'Код', description: 'header for Code bbCode'},
     {id: 35, value: 'Спойлер', description: 'header for Spoiler bbCode'},
-    {id: 36, value: 'Последний раз отредактировано', description: 'Post edit text label'}
+    {id: 36, value: 'Ошибка', description: 'Error text label'},
+    {id: 37, value: 'Неподдерживаемый ресурс или неверная ссылка', description: 'Error text for Media error'}
 ];
 
 export default ru;

@@ -16,9 +16,5 @@ Object {
   "link": Object {
     "paddingLeft": 0.125,
   },
-  "options": Object {
-    "meta": "SubForum",
-    "themeName": "default",
-  },
 }
 `;

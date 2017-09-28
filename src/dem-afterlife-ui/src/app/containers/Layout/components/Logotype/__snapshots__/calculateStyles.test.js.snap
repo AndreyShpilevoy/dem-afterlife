@@ -14,9 +14,5 @@ Object {
     },
     "height": "81.5%",
   },
-  "options": Object {
-    "meta": "Logotype",
-    "themeName": "default",
-  },
 }
 `;

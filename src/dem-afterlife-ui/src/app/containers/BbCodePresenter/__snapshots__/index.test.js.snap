@@ -1,216 +1,322 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BbCodePresenterPure component with correct message should match expected snapshot 1`] = `
-<Jss(RootPure)>
+<Jss(RootPure)
+  key="0"
+>
   wrong/url.png
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="4"
+  >
      text 
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="6"
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="8"
+  />
   <Jss(UrlPure)
+    key="11"
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="13"
+  />
   <Jss(UrlPure)
+    key="15"
     url="http://path.to/some/image.png"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="16"
+    >
       Link
     </Jss(TextLinePure)>
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="18"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="19"
     url="http://path.to/some/image.png"
   >
     <Image
+      key="21"
       url="https://path.to/some/image.png"
     />
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="24"
+  >
      text 
   </Jss(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
+    key="25"
     style={Object {}}
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="26"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <Color
+      key="27"
       options="red"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="28"
+      >
         red text
       </Jss(TextLinePure)>
     </Color>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="30"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="31"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="32"
+      >
         text in b tag 21
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="34"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
+      key="35"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="36"
+      >
         text in u tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <NewLine />
-    <Jss(TextLinePure)>
+    <NewLine
+      key="38"
+    />
+    <Jss(TextLinePure)
+      key="40"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="41"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="42"
+      >
         text in b tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="44"
+    >
        
     </Jss(TextLinePure)>
   </BaseSpan>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="46"
+  >
      text 
   </Jss(TextLinePure)>
   <Jss(CodePure)
     id={47}
+    key="47"
     options="kto"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="48"
+    >
       some text[b]with other bbCodes[/b] in code tag
     </Jss(TextLinePure)>
   </Jss(CodePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="50"
+  >
      text
   </Jss(TextLinePure)>
-  <NewLine />
-  <Jss(TextLinePure)>
+  <NewLine
+    key="51"
+  />
+  <Jss(TextLinePure)
+    key="53"
+  >
      
   </Jss(TextLinePure)>
   <Image
+    key="55"
     url="http://fastpic.ru/big/e.gif"
   />
-  <NewLine />
+  <NewLine
+    key="56"
+  />
   <Image
+    key="58"
     url="http://fastpic.ru/big/7.gif"
   />
-  <NewLine />
+  <NewLine
+    key="59"
+  />
   <Image
+    key="61"
     url="http://fastpic.ru/big/c.gif"
   />
-  <NewLine />
+  <NewLine
+    key="62"
+  />
   <Image
+    key="64"
     url="http://fastpic.ru/big/3.gif"
   />
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="66"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="68"
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="69"
+  />
   <Jss(UrlPure)
+    key="71"
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
   </Jss(UrlPure)>
   <Jss(QuotePure)
+    key="73"
     options=""
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="74"
+    >
        quote 
     </Jss(TextLinePure)>
     <Jss(QuotePure)
+      key="75"
       options="kto"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="76"
+      >
          and subQuote 
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="77"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="78"
+        >
           with 
         </Jss(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
+          key="79"
           style={Object {}}
         >
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="80"
+          >
             some
           </Jss(TextLinePure)>
         </BaseSpan>
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="82"
+        >
           tags
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="84"
+      >
          param
       </Jss(TextLinePure)>
     </Jss(QuotePure)>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="86"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="87"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="88"
+      >
         some
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="89"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="90"
+        >
           other
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="92"
+      >
         text
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="94"
+    >
        with tags
     </Jss(TextLinePure)>
   </Jss(QuotePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="96"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="97"
     url="http://fastpic.ru/10/0.png"
   >
     <Image
+      key="99"
       url="http://fastpic.ru/e.gif"
     />
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="101"
+    >
        Link with 2 images as link 
     </Jss(TextLinePure)>
     <Image
+      key="103"
       url="http://fastpic.ru/big/7b40.gif"
     />
   </Jss(UrlPure)>
@@ -218,222 +324,332 @@ exports[`BbCodePresenterPure component with correct message should match expecte
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [/b] tag)  match expected snapshot and does not include last root tag as text 1`] = `
-<Jss(RootPure)>
+<Jss(RootPure)
+  key="0"
+>
   wrong/url.png
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="4"
+  >
      text 
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="6"
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="8"
+  />
   <Jss(UrlPure)
+    key="11"
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="13"
+  />
   <Jss(UrlPure)
+    key="15"
     url="http://path.to/some/image.png"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="16"
+    >
       Link
     </Jss(TextLinePure)>
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="18"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="19"
     url="http://path.to/some/image.png"
   >
     <Image
+      key="21"
       url="https://path.to/some/image.png"
     />
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="24"
+  >
      text 
   </Jss(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
+    key="25"
     style={Object {}}
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="26"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <Color
+      key="27"
       options="red"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="28"
+      >
         red text
       </Jss(TextLinePure)>
     </Color>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="30"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="31"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="32"
+      >
         text in b tag 21
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="34"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
+      key="35"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="36"
+      >
         text in u tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <NewLine />
-    <Jss(TextLinePure)>
+    <NewLine
+      key="38"
+    />
+    <Jss(TextLinePure)
+      key="40"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="41"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="42"
+      >
         text in b tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="44"
+    >
        
     </Jss(TextLinePure)>
   </BaseSpan>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="46"
+  >
      this text contains 
   </Jss(TextLinePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="47"
+  >
     [/b]
   </Jss(TextLinePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="48"
+  >
      that is a wrong tags 
   </Jss(TextLinePure)>
   <Jss(CodePure)
     id={49}
+    key="49"
     options="kto"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="50"
+    >
       some text[b]with other bbCodes[/b] in code tag
     </Jss(TextLinePure)>
   </Jss(CodePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="52"
+  >
      text
   </Jss(TextLinePure)>
-  <NewLine />
-  <Jss(TextLinePure)>
+  <NewLine
+    key="53"
+  />
+  <Jss(TextLinePure)
+    key="55"
+  >
      
   </Jss(TextLinePure)>
   <Image
+    key="57"
     url="http://fastpic.ru/big/e.gif"
   />
-  <NewLine />
+  <NewLine
+    key="58"
+  />
   <Image
+    key="60"
     url="http://fastpic.ru/big/7.gif"
   />
-  <NewLine />
+  <NewLine
+    key="61"
+  />
   <Image
+    key="63"
     url="http://fastpic.ru/big/c.gif"
   />
-  <NewLine />
+  <NewLine
+    key="64"
+  />
   <Image
+    key="66"
     url="http://fastpic.ru/big/3.gif"
   />
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="68"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="70"
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="71"
+  />
   <Jss(UrlPure)
+    key="73"
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
   </Jss(UrlPure)>
   <Jss(QuotePure)
+    key="75"
     options=""
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="76"
+    >
        quote 
     </Jss(TextLinePure)>
     <Jss(QuotePure)
+      key="77"
       options="kto"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="78"
+      >
          and subQuote 
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="79"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="80"
+        >
           with 
         </Jss(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
+          key="81"
           style={Object {}}
         >
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="82"
+          >
             some
           </Jss(TextLinePure)>
         </BaseSpan>
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="84"
+        >
           tags
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="86"
+      >
          param
       </Jss(TextLinePure)>
     </Jss(QuotePure)>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="88"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="89"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="90"
+      >
         some
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="91"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="92"
+        >
           other
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="94"
+      >
         text
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="96"
+    >
        with tags
     </Jss(TextLinePure)>
   </Jss(QuotePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="98"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="99"
     url="http://fastpic.ru/10/0.png"
   >
     <Image
+      key="101"
       url="http://fastpic.ru/e.gif"
     />
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="103"
+    >
        Link with 2 images as link 
     </Jss(TextLinePure)>
     <Image
+      key="105"
       url="http://fastpic.ru/big/7b40.gif"
     />
   </Jss(UrlPure)>
@@ -441,223 +657,332 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [/b
 `;
 
 exports[`BbCodePresenterPure component with incorrect message (one redundant [b] tag) should  match expected snapshot and does not include last root tag as text 1`] = `
-<Jss(RootPure)>
+<Jss(RootPure)
+  key="0"
+>
   wrong/url.png
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="4"
+  >
      text 
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="6"
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="8"
+  />
   <Jss(UrlPure)
+    key="11"
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="13"
+  />
   <Jss(UrlPure)
+    key="15"
     url="http://path.to/some/image.png"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="16"
+    >
       Link
     </Jss(TextLinePure)>
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="18"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="19"
     url="http://path.to/some/image.png"
   >
     <Image
+      key="21"
       url="https://path.to/some/image.png"
     />
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="24"
+  >
      text 
   </Jss(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
+    key="25"
     style={Object {}}
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="26"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <Color
+      key="27"
       options="red"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="28"
+      >
         red text
       </Jss(TextLinePure)>
     </Color>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="30"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="31"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="32"
+      >
         text in b tag 21
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="34"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
+      key="35"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="36"
+      >
         text in u tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <NewLine />
-    <Jss(TextLinePure)>
+    <NewLine
+      key="38"
+    />
+    <Jss(TextLinePure)
+      key="40"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="41"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="42"
+      >
         text in b tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="44"
+    >
        
     </Jss(TextLinePure)>
   </BaseSpan>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="46"
+  >
      this text contains 
   </Jss(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-bold"
+    key="47"
     style={Object {}}
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="48"
+    >
        that is a wrong tags 
     </Jss(TextLinePure)>
     <Jss(CodePure)
       id={49}
+      key="49"
       options="kto"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="50"
+      >
         some text[b]with other bbCodes[/b] in code tag
       </Jss(TextLinePure)>
     </Jss(CodePure)>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="52"
+    >
        text
     </Jss(TextLinePure)>
-    <NewLine />
-    <Jss(TextLinePure)>
+    <NewLine
+      key="53"
+    />
+    <Jss(TextLinePure)
+      key="55"
+    >
        
     </Jss(TextLinePure)>
     <Image
+      key="57"
       url="http://fastpic.ru/big/e.gif"
     />
-    <NewLine />
+    <NewLine
+      key="58"
+    />
     <Image
+      key="60"
       url="http://fastpic.ru/big/7.gif"
     />
-    <NewLine />
+    <NewLine
+      key="61"
+    />
     <Image
+      key="63"
       url="http://fastpic.ru/big/c.gif"
     />
-    <NewLine />
+    <NewLine
+      key="64"
+    />
     <Image
+      key="66"
       url="http://fastpic.ru/big/3.gif"
     />
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="68"
+    >
        
     </Jss(TextLinePure)>
     <Jss(UrlPure)
+      key="70"
       url="http://fastpic.ru/2015/0.png"
     >
       http://fastpic.ru/2015/0.png
     </Jss(UrlPure)>
-    <NewLine />
+    <NewLine
+      key="71"
+    />
     <Jss(UrlPure)
+      key="73"
       url="http://fastpic.ru/2015/0.gif "
     >
       http://fastpic.ru/2015/0.gif 
     </Jss(UrlPure)>
     <Jss(QuotePure)
+      key="75"
       options=""
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="76"
+      >
          quote 
       </Jss(TextLinePure)>
       <Jss(QuotePure)
+        key="77"
         options="kto"
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="78"
+        >
            and subQuote 
         </Jss(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-italic"
+          key="79"
           style={Object {}}
         >
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="80"
+          >
             with 
           </Jss(TextLinePure)>
           <BaseSpan
             className="default-BbCodePresenter-underline"
+            key="81"
             style={Object {}}
           >
-            <Jss(TextLinePure)>
+            <Jss(TextLinePure)
+              key="82"
+            >
               some
             </Jss(TextLinePure)>
           </BaseSpan>
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="84"
+          >
             tags
           </Jss(TextLinePure)>
         </BaseSpan>
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="86"
+        >
            param
         </Jss(TextLinePure)>
       </Jss(QuotePure)>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="88"
+      >
          
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-bold"
+        key="89"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="90"
+        >
           some
         </Jss(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-italic"
+          key="91"
           style={Object {}}
         >
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="92"
+          >
             other
           </Jss(TextLinePure)>
         </BaseSpan>
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="94"
+        >
           text
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="96"
+      >
          with tags
       </Jss(TextLinePure)>
     </Jss(QuotePure)>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="98"
+    >
        
     </Jss(TextLinePure)>
     <Jss(UrlPure)
+      key="99"
       url="http://fastpic.ru/10/0.png"
     >
       <Image
+        key="101"
         url="http://fastpic.ru/e.gif"
       />
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="103"
+      >
          Link with 2 images as link 
       </Jss(TextLinePure)>
       <Image
+        key="105"
         url="http://fastpic.ru/big/7b40.gif"
       />
     </Jss(UrlPure)>
@@ -666,216 +991,322 @@ exports[`BbCodePresenterPure component with incorrect message (one redundant [b]
 `;
 
 exports[`BbCodePresenterPure component with wrong message that contained wrong tags should  match expected snapshot 1`] = `
-<Jss(RootPure)>
+<Jss(RootPure)
+  key="0"
+>
   wrong/url.png
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="4"
+  >
      text 
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="6"
     url="http://correct.url/content.png"
   >
     http://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="8"
+  />
   <Jss(UrlPure)
+    key="11"
     url="https://correct.url/content.png"
   >
     https://correct.url/content.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="13"
+  />
   <Jss(UrlPure)
+    key="15"
     url="http://path.to/some/image.png"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="16"
+    >
       Link
     </Jss(TextLinePure)>
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="18"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="19"
     url="http://path.to/some/image.png"
   >
     <Image
+      key="21"
       url="https://path.to/some/image.png"
     />
   </Jss(UrlPure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="24"
+  >
      text 
   </Jss(TextLinePure)>
   <BaseSpan
     className="default-BbCodePresenter-underline"
+    key="25"
     style={Object {}}
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="26"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <Color
+      key="27"
       options="red"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="28"
+      >
         red text
       </Jss(TextLinePure)>
     </Color>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="30"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="31"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="32"
+      >
         text in b tag 21
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="34"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-underline"
+      key="35"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="36"
+      >
         text in u tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <NewLine />
-    <Jss(TextLinePure)>
+    <NewLine
+      key="38"
+    />
+    <Jss(TextLinePure)
+      key="40"
+    >
       text in u tag 
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="41"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="42"
+      >
         text in b tag
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="44"
+    >
        
     </Jss(TextLinePure)>
   </BaseSpan>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="46"
+  >
      this here is wrong [tag] in code tag 
   </Jss(TextLinePure)>
   <Jss(CodePure)
     id={47}
+    key="47"
     options="kto"
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="48"
+    >
       some text[b]with other bbCodes[/b] in code tag
     </Jss(TextLinePure)>
   </Jss(CodePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="50"
+  >
      text
   </Jss(TextLinePure)>
-  <NewLine />
-  <Jss(TextLinePure)>
+  <NewLine
+    key="51"
+  />
+  <Jss(TextLinePure)
+    key="53"
+  >
      
   </Jss(TextLinePure)>
   <Image
+    key="55"
     url="http://fastpic.ru/big/e.gif"
   />
-  <NewLine />
+  <NewLine
+    key="56"
+  />
   <Image
+    key="58"
     url="http://fastpic.ru/big/7.gif"
   />
-  <NewLine />
+  <NewLine
+    key="59"
+  />
   <Image
+    key="61"
     url="http://fastpic.ru/big/c.gif"
   />
-  <NewLine />
+  <NewLine
+    key="62"
+  />
   <Image
+    key="64"
     url="http://fastpic.ru/big/3.gif"
   />
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="66"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="68"
     url="http://fastpic.ru/2015/0.png"
   >
     http://fastpic.ru/2015/0.png
   </Jss(UrlPure)>
-  <NewLine />
+  <NewLine
+    key="69"
+  />
   <Jss(UrlPure)
+    key="71"
     url="http://fastpic.ru/2015/0.gif "
   >
     http://fastpic.ru/2015/0.gif 
   </Jss(UrlPure)>
   <Jss(QuotePure)
+    key="73"
     options=""
   >
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="74"
+    >
        quote 
     </Jss(TextLinePure)>
     <Jss(QuotePure)
+      key="75"
       options="kto"
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="76"
+      >
          and subQuote 
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="77"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="78"
+        >
           with 
         </Jss(TextLinePure)>
         <BaseSpan
           className="default-BbCodePresenter-underline"
+          key="79"
           style={Object {}}
         >
-          <Jss(TextLinePure)>
+          <Jss(TextLinePure)
+            key="80"
+          >
             some
           </Jss(TextLinePure)>
         </BaseSpan>
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="82"
+        >
           tags
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="84"
+      >
          param
       </Jss(TextLinePure)>
     </Jss(QuotePure)>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="86"
+    >
        
     </Jss(TextLinePure)>
     <BaseSpan
       className="default-BbCodePresenter-bold"
+      key="87"
       style={Object {}}
     >
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="88"
+      >
         some
       </Jss(TextLinePure)>
       <BaseSpan
         className="default-BbCodePresenter-italic"
+        key="89"
         style={Object {}}
       >
-        <Jss(TextLinePure)>
+        <Jss(TextLinePure)
+          key="90"
+        >
           other
         </Jss(TextLinePure)>
       </BaseSpan>
-      <Jss(TextLinePure)>
+      <Jss(TextLinePure)
+        key="92"
+      >
         text
       </Jss(TextLinePure)>
     </BaseSpan>
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="94"
+    >
        with tags
     </Jss(TextLinePure)>
   </Jss(QuotePure)>
-  <Jss(TextLinePure)>
+  <Jss(TextLinePure)
+    key="96"
+  >
      
   </Jss(TextLinePure)>
   <Jss(UrlPure)
+    key="97"
     url="http://fastpic.ru/10/0.png"
   >
     <Image
+      key="99"
       url="http://fastpic.ru/e.gif"
     />
-    <Jss(TextLinePure)>
+    <Jss(TextLinePure)
+      key="101"
+    >
        Link with 2 images as link 
     </Jss(TextLinePure)>
     <Image
+      key="103"
       url="http://fastpic.ru/big/7b40.gif"
     />
   </Jss(UrlPure)>

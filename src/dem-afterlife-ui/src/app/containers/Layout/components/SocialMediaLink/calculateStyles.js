@@ -1,10 +1,9 @@
-const calculateStyles = ({themeName, focus}) => ({
+const calculateStyles = ({focus}) => ({
     focus: {
         '&:focus': {
             outlineColor: focus.colorLight
         }
-    },
-    options: {meta: 'SocialMediaLink', themeName}
+    }
 });
 
 export default calculateStyles;

@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('SubForum calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         subForum: {
             marginTop: 0.5,
             backgroundColor: 'red',

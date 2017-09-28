@@ -32,9 +32,5 @@ Object {
       "display": "none !important",
     },
   },
-  "options": Object {
-    "meta": "Hidden",
-    "themeName": "default",
-  },
 }
 `;

@@ -7,10 +7,6 @@ Object {
     "display": "flex",
     "flexDirection": "row",
   },
-  "options": Object {
-    "meta": "User",
-    "themeName": "default",
-  },
   "userNameStyle": Object {
     "paddingLeft": 0.4,
   },

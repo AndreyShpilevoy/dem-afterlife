@@ -253,6 +253,139 @@ exports[`CollapsibleSection Pure not default collapseSettings 1`] = `
 </div>
 `;
 
+exports[`CollapsibleSection Pure should change style to collapsed 1`] = `
+<div
+  className="default-CollapsibleSection-general"
+>
+  <Jss(RowPure)
+    className="default-CollapsibleSection-header"
+    onClick={[Function]}
+    reverse={false}
+  >
+    <Jss(ColumnPure)
+      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
+      lg={6}
+      lgOffset=""
+      md={11}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
+    >
+      <span
+        className="default-CollapsibleSection-titleClass"
+      />
+    </Jss(ColumnPure)>
+    <Jss(ColumnPure)
+      className="default-CollapsibleSection-headerHolder"
+      lg={6}
+      lgOffset=""
+      md={1}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs=""
+      xsOffset=""
+    >
+      <Jss(HiddenPure)
+        className="default-CollapsibleSection-termedSection"
+        lg=""
+        md="down"
+        sm=""
+        xl=""
+        xs=""
+      >
+        <Jss(RowPure)
+          className=""
+          reverse={false}
+        >
+          <Jss(ColumnPure)
+            className="default-CollapsibleSection-headerColumn"
+            lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
+          >
+            <div
+              className="default-CollapsibleSection-headerText"
+            />
+          </Jss(ColumnPure)>
+          <Jss(ColumnPure)
+            className="default-CollapsibleSection-headerColumn"
+            lg={3}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
+          >
+            <div
+              className="default-CollapsibleSection-headerText"
+            />
+          </Jss(ColumnPure)>
+          <Jss(ColumnPure)
+            className="default-CollapsibleSection-headerColumn"
+            lg={6}
+            lgOffset=""
+            md=""
+            mdOffset=""
+            sm=""
+            smOffset=""
+            xl=""
+            xlOffset=""
+            xs=""
+            xsOffset=""
+          >
+            <div
+              className="default-CollapsibleSection-headerText"
+            />
+          </Jss(ColumnPure)>
+        </Jss(RowPure)>
+      </Jss(HiddenPure)>
+      <Jss(HiddenPure)
+        className="default-CollapsibleSection-headerArrowHolder"
+        lg="up"
+        md=""
+        sm="down"
+        xl=""
+        xs=""
+      >
+        <SvgIconsMapper
+          className="default-CollapsibleSection-headerArrow closed"
+          iconName="SortLeft"
+        />
+      </Jss(HiddenPure)>
+    </Jss(ColumnPure)>
+  </Jss(RowPure)>
+  <div
+    className="default-CollapsibleSection-bodyHolder default-CollapsibleSection-headerCursor closed"
+  >
+    <div
+      className="default-CollapsibleSection-body"
+    >
+      <div>
+        Column content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`CollapsibleSection Pure with headerSettings 1`] = `
 <div
   className="default-CollapsibleSection-general"
@@ -395,139 +528,6 @@ exports[`CollapsibleSection Pure with headerSettings 1`] = `
 `;
 
 exports[`CollapsibleSection Pure without headerSettings 1`] = `
-<div
-  className="default-CollapsibleSection-general"
->
-  <Jss(RowPure)
-    className="default-CollapsibleSection-header"
-    onClick={[Function]}
-    reverse={false}
-  >
-    <Jss(ColumnPure)
-      className="default-CollapsibleSection-headerText default-CollapsibleSection-headerHolder"
-      lg={6}
-      lgOffset=""
-      md={11}
-      mdOffset=""
-      sm=""
-      smOffset=""
-      xl=""
-      xlOffset=""
-      xs=""
-      xsOffset=""
-    >
-      <span
-        className="default-CollapsibleSection-titleClass"
-      />
-    </Jss(ColumnPure)>
-    <Jss(ColumnPure)
-      className="default-CollapsibleSection-headerHolder"
-      lg={6}
-      lgOffset=""
-      md={1}
-      mdOffset=""
-      sm=""
-      smOffset=""
-      xl=""
-      xlOffset=""
-      xs=""
-      xsOffset=""
-    >
-      <Jss(HiddenPure)
-        className="default-CollapsibleSection-termedSection"
-        lg=""
-        md="down"
-        sm=""
-        xl=""
-        xs=""
-      >
-        <Jss(RowPure)
-          className=""
-          reverse={false}
-        >
-          <Jss(ColumnPure)
-            className="default-CollapsibleSection-headerColumn"
-            lg={3}
-            lgOffset=""
-            md=""
-            mdOffset=""
-            sm=""
-            smOffset=""
-            xl=""
-            xlOffset=""
-            xs=""
-            xsOffset=""
-          >
-            <div
-              className="default-CollapsibleSection-headerText"
-            />
-          </Jss(ColumnPure)>
-          <Jss(ColumnPure)
-            className="default-CollapsibleSection-headerColumn"
-            lg={3}
-            lgOffset=""
-            md=""
-            mdOffset=""
-            sm=""
-            smOffset=""
-            xl=""
-            xlOffset=""
-            xs=""
-            xsOffset=""
-          >
-            <div
-              className="default-CollapsibleSection-headerText"
-            />
-          </Jss(ColumnPure)>
-          <Jss(ColumnPure)
-            className="default-CollapsibleSection-headerColumn"
-            lg={6}
-            lgOffset=""
-            md=""
-            mdOffset=""
-            sm=""
-            smOffset=""
-            xl=""
-            xlOffset=""
-            xs=""
-            xsOffset=""
-          >
-            <div
-              className="default-CollapsibleSection-headerText"
-            />
-          </Jss(ColumnPure)>
-        </Jss(RowPure)>
-      </Jss(HiddenPure)>
-      <Jss(HiddenPure)
-        className="default-CollapsibleSection-headerArrowHolder"
-        lg="up"
-        md=""
-        sm="down"
-        xl=""
-        xs=""
-      >
-        <SvgIconsMapper
-          className="default-CollapsibleSection-headerArrow"
-          iconName="SortLeft"
-        />
-      </Jss(HiddenPure)>
-    </Jss(ColumnPure)>
-  </Jss(RowPure)>
-  <div
-    className="default-CollapsibleSection-bodyHolder default-CollapsibleSection-headerCursor"
-  >
-    <div
-      className="default-CollapsibleSection-body"
-    >
-      <div>
-        Column content
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`CollapsibleSection Pure without headerSettings 2`] = `
 <div
   className="default-CollapsibleSection-general"
 >

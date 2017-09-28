@@ -57,6 +57,10 @@ describe('bbCodesMap', () => {
         expect(bbCodesMap.li('some text', 0).props).toMatchSnapshot();
     });
 
+    it('media should match expected snapshot', () => {
+        expect(bbCodesMap.media('some text', 0).props).toMatchSnapshot();
+    });
+
     it('p should match expected snapshot', () => {
         expect(bbCodesMap.p('some text', 0).props).toMatchSnapshot();
     });

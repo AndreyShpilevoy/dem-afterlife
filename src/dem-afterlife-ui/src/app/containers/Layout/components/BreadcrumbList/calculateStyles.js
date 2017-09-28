@@ -1,10 +1,9 @@
-const calculateStyles = ({themeName, breadcrumbs}) => ({
+const calculateStyles = ({breadcrumbs}) => ({
     list: {
         display: 'flex',
         flexFlow: 'row wrap',
         marginTop: breadcrumbs.listMarginTop
-    },
-    options: {meta: 'BreadcrumbList', themeName}
+    }
 });
 
 export default calculateStyles;

@@ -3,7 +3,6 @@ import calculateStyles from './calculateStyles';
 
 describe('NavigationLinkListItem calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         focus: {
             colorLight: '#ffffff',
             colorDark: '#000000'

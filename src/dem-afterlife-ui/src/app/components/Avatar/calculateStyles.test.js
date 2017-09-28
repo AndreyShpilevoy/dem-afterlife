@@ -4,7 +4,6 @@ import calculateStyles from './calculateStyles';
 
 describe('Avatar calculateStyles', () => {
     const defaultThemeObject = {
-        themeName: 'default',
         avatar: {
             defaultImage: 'defaultAvatar.img',
             size: 2.5
