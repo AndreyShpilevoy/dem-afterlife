@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media scenario with error should match expected snapshot 1`] = `
+<Jss(ErrorPure)>
+  <Connect(Term)
+    term={
+      Object {
+        "id": 37,
+        "value": "Unsupported resource or invalid link",
+      }
+    }
+  />
+</Jss(ErrorPure)>
+`;
+
+exports[`Media scenario without error and shortHeight set to "false" should match expected snapshot 1`] = `
+<iframe
+  allowFullScreen={true}
+  frameBorder="0"
+  height={360}
+  src="some_url"
+  title="This is a unique title"
+  width={640}
+/>
+`;
+
+exports[`Media scenario without error and shortHeight set to "true" should match expected snapshot 1`] = `
+<iframe
+  allowFullScreen={true}
+  frameBorder="0"
+  height={100}
+  src="some_url"
+  title="This is a unique title"
+  width={640}
+/>
+`;
