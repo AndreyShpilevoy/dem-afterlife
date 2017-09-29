@@ -30,8 +30,12 @@ export const forumReducer = (state = initialState, {type, payload}) => {
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
 export const getTopicArrayForumIdNonBlockSaga = function* (forumId) {
-    const topicArray = yield call(getTopicArrayByForumIdApi, forumId);
-    yield put(getTopicArrayByForumIdSuccess(topicArray));
+    const {response, error} = yield call(getTopicArrayByForumIdApi, forumId);
+    if (response) {
+        yield put(getTopicArrayByForumIdSuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
 };
 
 export const getTopicArrayForumIdSaga = function* () {

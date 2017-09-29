@@ -21,7 +21,7 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 1`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
@@ -41,9 +41,54 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 2`] = `"getTopicArrayByForumIdApi"`;
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getTopicArrayByForumIdApi"`;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 3`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getTopicArrayByForumIdApi"`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
 Object {
   "done": false,
   "value": Object {
@@ -82,7 +127,7 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields. 3 yield should be in state Done 4`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
 Object {
   "done": true,
   "value": undefined,

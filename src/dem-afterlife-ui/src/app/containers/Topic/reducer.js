@@ -44,19 +44,31 @@ export const topicReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getUserArrayByUserIdArrayNonBlockSaga = function* (userIdArray) {
+    const {response, error} = yield call(getUserArrayByUserIdArrayApi, userIdArray);
+    if (response) {
+        yield put(getUserArrayByUserIdArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
 export const getUserArrayByUserIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_USER_ARRAY_BY_USER_ID_ARRAY);
-        const userArray = yield call(getUserArrayByUserIdArrayApi, payload.userIdArray);
-        yield put(getUserArrayByUserIdArraySuccess(userArray));
+        yield fork(getUserArrayByUserIdArrayNonBlockSaga, payload.userIdArray);
     }
 };
 
 export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
-    const postArray = yield call(getPostArrayByTopicIdApi, topicId);
-    yield put(getPostArrayByTopicIdSuccess(postArray));
-    const userIdArray = postArray.map(x => x.userId);
-    yield put(getUserArrayByUserIdArray(userIdArray));
+    const {response, error} = yield call(getPostArrayByTopicIdApi, topicId);
+    if (response) {
+        yield put(getPostArrayByTopicIdSuccess(response));
+        const userIdArray = response.map(x => x.userId);
+        yield put(getUserArrayByUserIdArray(userIdArray));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
 };
 
 export const getPostArrayByTopicIdSaga = function* () {

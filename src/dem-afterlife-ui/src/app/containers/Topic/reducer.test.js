@@ -12,10 +12,11 @@ import {
     topicSaga,
     getPostArrayByTopicIdSaga,
     getPostArrayByTopicIdNonBlockSaga,
+    getUserArrayByUserIdArrayNonBlockSaga,
     getUserArrayByUserIdArraySaga
 } from './reducer';
 
-describe('Forum reducer', () => {
+describe('Topic reducer', () => {
     it('getPostArrayByTopicId should create expected object', () => {
         const expectedResult = {type: GET_POST_ARRAY_BY_TOPIC_ID, payload: {topicId: 1} };
         expect(getPostArrayByTopicId(1)).toEqual(expectedResult);
@@ -162,11 +163,11 @@ describe('Forum reducer', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getPostArrayByTopicIdNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
+    it('getPostArrayByTopicIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done', () => {
         const generator = getPostArrayByTopicIdNonBlockSaga(1);
 
         const firstYield = generator.next();
-        const secondYield = generator.next([{userId: 1}, {userId: 22}]);
+        const secondYield = generator.next({response: [{userId: 1}, {userId: 22}], error: null});
         const thirdYield = generator.next();
         const fourthYield = generator.next();
 
@@ -177,8 +178,34 @@ describe('Forum reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
+    it('getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getPostArrayByTopicIdNonBlockSaga(1);
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
     it('getUserArrayByUserIdArraySaga should be in loop and return expected values', () => {
         const generator = getUserArrayByUserIdArraySaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getUserArrayByUserIdArrayNonBlockSaga([1, 2, 3, 4, 5]);
         const userArray = [
             {id: 1, name: 'first'},
             {id: 3, name: 'second'},
@@ -186,15 +213,26 @@ describe('Forum reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({payload: {userIdArray: [1, 2, 3, 4, 5] } });
-        const thirdYield = generator.next(userArray);
-        const fourthYield = generator.next();
+        const secondYield = generator.next({response: userArray, error: null});
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getUserArrayByUserIdArrayNonBlockSaga([1, 2, 3, 4, 5]);
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {

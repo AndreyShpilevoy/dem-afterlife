@@ -11,7 +11,9 @@ import {
     GET_SOCIAL_MEDIA_LINK_ARRAY,
     GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS,
     getNavigationLinkArraySaga,
+    getNavigationLinkArrayNonBlockSaga,
     getSocialMediaLinkArraySaga,
+    getSocialMediaLinkArrayNonBlockSaga,
     layoutSaga
 } from './reducer';
 
@@ -44,9 +46,21 @@ describe('Layout reducer', () => {
         expect(getSocialMediaLinkArraySuccess([{id: 1, title: 'Steam - Ex Machina Community', svgImageName: 'Steam', href: 'http://steamcommunity.com/groups/Ex_Machina', order: 1}])).toEqual(expectedResult);
     });
 
+    it('layoutReducer with invalid (GET_LOCALE) action should return expected state', () => {
+        const defaultState = {
+            postArray: []
+        };
+        const action = {
+            type: 'GET_LOCALE',
+            payload: 'ru'
+        };
+        const expectedResult = {
+            postArray: []
+        };
+        expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
+    });
 
-
-    it('sharedReducer with action GET_NAVIGATION_LINK_ARRAY_SUCCESS should return expected state', () => {
+    it('layoutReducer with action GET_NAVIGATION_LINK_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
             socialMediaLinkArray: ['test'],
             navigationLinkArray: []
@@ -75,7 +89,7 @@ describe('Layout reducer', () => {
         expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('sharedReducer with action GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS should return expected state', () => {
+    it('layoutReducer with action GET_SOCIAL_MEDIA_LINK_ARRAY_SUCCESS should return expected state', () => {
         const defaultState = {
             navigationLinkArray: ['test']
         };
@@ -96,23 +110,61 @@ describe('Layout reducer', () => {
         };
         expect(layoutReducer(defaultState, action)).toEqual(expectedResult);
     });
+
     it('getNavigationLinkArraySaga should be in loop and return expected values', () => {
         const generator = getNavigationLinkArraySaga();
 
         const firstYield = generator.next();
         const secondYield = generator.next();
-        const thirdYield = generator.next([{id: 1}, {id: 2}]);
-        const fourthYield = generator.next();
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getNavigationLinkArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getNavigationLinkArrayNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: [{id: 1}, {id: 2}], error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getNavigationLinkArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getNavigationLinkArrayNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('getSocialMediaLinkArraySaga should be in loop and return expected values', () => {
         const generator = getSocialMediaLinkArraySaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getSocialMediaLinkArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getSocialMediaLinkArrayNonBlockSaga();
         const socialMediaLinkArray = [
             {id: 1, title: 'first'},
             {id: 3, title: 'second'},
@@ -120,15 +172,26 @@ describe('Layout reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next();
-        const thirdYield = generator.next(socialMediaLinkArray);
-        const fourthYield = generator.next();
+        const secondYield = generator.next({response: socialMediaLinkArray, error: null});
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getSocialMediaLinkArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getSocialMediaLinkArrayNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {

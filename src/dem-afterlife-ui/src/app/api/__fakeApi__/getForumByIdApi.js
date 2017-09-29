@@ -7,7 +7,7 @@ const getForumByIdApi = forumId => {
     const result = forumArray.find(x => x.id === forumId);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(result);
+            resolve({response: result, error: null});
         }, delay);
     });
 };

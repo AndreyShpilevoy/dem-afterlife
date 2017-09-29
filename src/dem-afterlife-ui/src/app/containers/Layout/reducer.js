@@ -1,4 +1,4 @@
-import {all, call, put, take} from 'redux-saga/effects';
+import {all, call, put, take, fork} from 'redux-saga/effects';
 import {
     getNavigationLinkArrayApi,
     getSocialMediaLinkArrayApi
@@ -40,19 +40,34 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getNavigationLinkArrayNonBlockSaga = function* () {
+    const {response, error} = yield call(getNavigationLinkArrayApi);
+    if (response) {
+        yield put(getNavigationLinkArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
 export const getNavigationLinkArraySaga = function* () {
     for (;;) {
         yield take(GET_NAVIGATION_LINK_ARRAY);
-        const navigationLinkArray = yield call(getNavigationLinkArrayApi);
-        yield put(getNavigationLinkArraySuccess(navigationLinkArray));
+        yield fork(getNavigationLinkArrayNonBlockSaga);
+    }
+};
+export const getSocialMediaLinkArrayNonBlockSaga = function* () {
+    const {response, error} = yield call(getSocialMediaLinkArrayApi);
+    if (response) {
+        yield put(getSocialMediaLinkArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }
 };
 
 export const getSocialMediaLinkArraySaga = function* () {
     for (;;) {
         yield take(GET_SOCIAL_MEDIA_LINK_ARRAY);
-        const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
-        yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
+        yield fork(getSocialMediaLinkArrayNonBlockSaga);
     }
 };
 
