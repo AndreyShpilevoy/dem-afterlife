@@ -1,7 +1,6 @@
 import React from 'react';
 import {node, shape, string} from 'prop-types';
 import {sharedPropTypes, root} from 'utils';
-import Notification from 'containers/Notification';
 import Container from 'components/Container';
 import Row from 'components/Row';
 import Column from 'components/Column';
@@ -18,7 +17,6 @@ export const PresentationPure = ({children, navigationLinkArray, socialMediaLink
         <div className={contentWrapper}>
             <Container className={container}>
                 {/* title */}
-                <Notification />
                 <Row>
                     <Header navigationLinkArray={navigationLinkArray} />
                 </Row>
