@@ -39,28 +39,28 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getNavigationLinkArraySaga() {
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getNavigationLinkArraySaga = function* () {
     for (;;) {
         yield take(GET_NAVIGATION_LINK_ARRAY);
         const navigationLinkArray = yield call(getNavigationLinkArrayApi);
         yield put(getNavigationLinkArraySuccess(navigationLinkArray));
     }
-}
+};
 
-export function* getSocialMediaLinkArraySaga() {
+export const getSocialMediaLinkArraySaga = function* () {
     for (;;) {
         yield take(GET_SOCIAL_MEDIA_LINK_ARRAY);
         const socialMediaLinkArray = yield call(getSocialMediaLinkArrayApi);
         yield put(getSocialMediaLinkArraySuccess(socialMediaLinkArray));
     }
-}
+};
 
-export function* layoutSaga() {
+export const layoutSaga = function* () {
     yield all([
         getNavigationLinkArraySaga(),
         getSocialMediaLinkArraySaga()
     ]);
-}
+};
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

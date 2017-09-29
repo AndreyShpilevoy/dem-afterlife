@@ -43,33 +43,33 @@ export const topicReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getUserArrayByUserIdArraySaga() {
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getUserArrayByUserIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_USER_ARRAY_BY_USER_ID_ARRAY);
         const userArray = yield call(getUserArrayByUserIdArrayApi, payload.userIdArray);
         yield put(getUserArrayByUserIdArraySuccess(userArray));
     }
-}
+};
 
-export function* getPostArrayByTopicIdNonBlockSaga(topicId) {
+export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
     const postArray = yield call(getPostArrayByTopicIdApi, topicId);
     yield put(getPostArrayByTopicIdSuccess(postArray));
     const userIdArray = postArray.map(x => x.userId);
     yield put(getUserArrayByUserIdArray(userIdArray));
-}
+};
 
-export function* getPostArrayByTopicIdSaga() {
+export const getPostArrayByTopicIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_POST_ARRAY_BY_TOPIC_ID);
         yield fork(getPostArrayByTopicIdNonBlockSaga, payload.topicId);
     }
-}
+};
 
-export function* topicSaga() {
+export const topicSaga = function* () {
     yield all([
         getPostArrayByTopicIdSaga(),
         getUserArrayByUserIdArraySaga()
     ]);
-}
+};
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

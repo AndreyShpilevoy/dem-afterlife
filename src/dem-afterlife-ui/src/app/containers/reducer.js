@@ -120,80 +120,80 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getLocaleSaga() {
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getLocaleSaga = function* () {
     for (;;) {
         yield take(GET_LOCALE);
         const locale = yield call(getLocaleApi);
         yield put(getLocaleSuccess(locale));
     }
-}
+};
 
-export function* getForumByIdSaga() {
+export const getForumByIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BY_ID);
         const selectedForum = yield call(getForumByIdApi, payload.forumId);
         yield put(getForumByIdSuccess(selectedForum));
     }
-}
+};
 
-export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
+export const getForumsByChapterIdArrayNonBlockSaga = function* (chapterIdArray) {
     const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
     yield put(getForumArrayByChapterIdArraySuccess(forumArray));
     const forumsIdArray = forumArray.map(x => x.id);
     yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
-}
+};
 
-export function* getForumsByChapterIdArraySaga() {
+export const getForumsByChapterIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY);
         yield fork(getForumsByChapterIdArrayNonBlockSaga, payload.chapterIdArray);
     }
-}
+};
 
-export function* getSubForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
+export const getSubForumsByParentForumIdArrayNonBlockSaga = function* (parentForumIdArray) {
     const forumArray = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
     yield put(getSubForumArrayByParentForumIdArraySuccess(forumArray));
-}
+};
 
-export function* getSubForumsByParentForumIdArraySaga() {
+export const getSubForumsByParentForumIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
         yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
     }
-}
+};
 
-export function* getForumsByParentForumIdNonBlockSaga(parentForumId) {
+export const getForumsByParentForumIdNonBlockSaga = function* (parentForumId) {
     const forumArray = yield call(getForumArrayByParentForumIdApi, parentForumId);
     yield put(getForumArrayByParentForumIdSuccess(forumArray));
     const forumsIdArray = forumArray.map(x => x.id);
     yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
-}
+};
 
-export function* getForumsByParentForumIdSaga() {
+export const getForumsByParentForumIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_ARRAY_BY_PARENT_FORUM_ID);
         yield fork(getForumsByParentForumIdNonBlockSaga, payload.parentForumId);
     }
-}
+};
 
-export function* getForumBreadcrumbArraySaga() {
+export const getForumBreadcrumbArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BREADCRUMB_ARRAY);
         const breadcrumbArray = yield call(getForumBreadcrumbsArrayByForumIdApi, payload.forumId);
         yield put(getBreadcrumbArraySuccess(breadcrumbArray));
     }
-}
+};
 
-export function* getTopicBreadcrumbArraySaga() {
+export const getTopicBreadcrumbArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_TOPIC_BREADCRUMB_ARRAY);
         const breadcrumbArray = yield call(getTopicBreadcrumbsArrayByTopicIdApi, payload.topicId);
         yield put(getBreadcrumbArraySuccess(breadcrumbArray));
     }
-}
+};
 
-export function* sharedSaga() {
+export const sharedSaga = function* () {
     yield all([
         getLocaleSaga(),
         getForumByIdSaga(),
@@ -203,6 +203,6 @@ export function* sharedSaga() {
         getForumBreadcrumbArraySaga(),
         getTopicBreadcrumbArraySaga()
     ]);
-}
+};
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
