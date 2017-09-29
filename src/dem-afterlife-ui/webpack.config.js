@@ -33,7 +33,6 @@ const entryPoints = {
         'react',
         'react-dom',
         'react-jss',
-        'react-notification-system',
         'react-redux',
         'react-router-dom',
         'react-router-redux',

@@ -7,7 +7,6 @@ exports[`Layout Presentation Pure component match expected snapshot 1`] = `
   <Jss(ContainerPure)
     className="default-LayoutContainer-container"
   >
-    <Connect(NotificationPure) />
     <Jss(RowPure)
       className=""
       reverse={false}

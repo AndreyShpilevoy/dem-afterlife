@@ -26,5 +26,5 @@ export const postArrayWithMappedUserSelector = createSelector(
 
 export const sortedPostArrayWithUsersSelector = createSelector(
     postArrayWithMappedUserSelector,
-    postArray => R.sort((first, second) => first.postTime.getTime() - second.postTime.getTime(), postArray) // todo: sort by id
+    postArray => R.sort((first, second) => first.postTime.getTime() - second.postTime.getTime(), postArray)
 );
