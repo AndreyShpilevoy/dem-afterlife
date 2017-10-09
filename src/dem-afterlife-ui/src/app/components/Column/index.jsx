@@ -1,6 +1,7 @@
 import React from 'react';
 import {func, node, number, string, oneOfType, shape} from 'prop-types';
 import {injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, classes) =>
@@ -26,9 +27,10 @@ export const ColumnPure = (
     classes);
 
     const localClassName = `${classesNames} ${className || ''}`;
+    const handleKeyDown = event => handleEnterKeyDown(event) ? onClick() : () => ({});
     return onClick ?
         (
-            <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+            <div className={localClassName} onClick={onClick} onKeyDown={handleKeyDown} role='button' tabIndex={0}>
                 {children}
             </div>
         ) : (

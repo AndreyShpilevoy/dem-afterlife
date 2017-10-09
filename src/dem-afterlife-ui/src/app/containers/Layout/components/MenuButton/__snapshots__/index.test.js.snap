@@ -4,6 +4,7 @@ exports[`MenuButton Pure after click on button child div's should added open css
 <div
   className="default-MenuButton-container"
   onClick={[Function]}
+  onKeyDown={[Function]}
   role="button"
   tabIndex={0}
 >
@@ -26,6 +27,7 @@ exports[`MenuButton Pure component match expected snapshot 1`] = `
 <div
   className="default-MenuButton-container"
   onClick={[Function]}
+  onKeyDown={[Function]}
   role="button"
   tabIndex={0}
 >

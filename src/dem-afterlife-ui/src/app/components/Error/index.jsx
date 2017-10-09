@@ -9,7 +9,7 @@ const errorTerm = {id: 36, value: 'Error'};
 
 export const ErrorPure = ({classes, children}) => (
     <div className={classes.container}>
-        <SvgIconsMapper className={classes.image} iconName={'Error'} />
+        <SvgIconsMapper className={classes.image} iconName='Error' />
         <div>
             {children}
         </div>

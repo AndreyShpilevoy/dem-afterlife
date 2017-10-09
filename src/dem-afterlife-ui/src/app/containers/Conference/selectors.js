@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import R from 'ramda';
+import {sort} from 'ramda';
 import {sortObjectArrayByOrderProperty} from 'utils';
 import {sortedForumArrayWithSubForumsSelector} from 'containers/selectors';
 
@@ -13,7 +13,7 @@ export const sortedChapterArraySelector = createSelector(
 
 export const sortedLastActiveTopicsArraySelector = createSelector(
     lastActiveTopicArraySelector,
-    lastActiveTopicArray => R.sort((first, second) => {
+    lastActiveTopicArray => sort((first, second) => {
         if (first && second && first.lastPostInfo && second.lastPostInfo) {
             return second.lastPostInfo.timeCreation.getTime() - first.lastPostInfo.timeCreation.getTime();
         }

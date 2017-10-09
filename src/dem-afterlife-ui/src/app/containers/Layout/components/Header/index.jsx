@@ -66,7 +66,7 @@ export class HeaderPure extends PureComponent {
                                 <Logotype className={headerLogoContainerClassName} />
                             </Column>
                             <Column xs={2} xsOffset={3} sm={1} smOffset={7} lg={0} lgOffset={0} className={headerColumn}>
-                                <Hidden lg={'up'} className={headerMenuButtonContainer}>
+                                <Hidden lg='up' className={headerMenuButtonContainer}>
                                     <MenuButton onClick={menuButtonOnClick} />
                                 </Hidden>
                             </Column>

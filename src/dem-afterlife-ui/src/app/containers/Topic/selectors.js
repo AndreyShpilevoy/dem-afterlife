@@ -1,5 +1,5 @@
 import {createSelector} from 'reselect';
-import R from 'ramda';
+import {sort} from 'ramda';
 
 export const postArraySelector = state => state.topicReducer.postArray;
 export const userArraySelector = state => state.topicReducer.userArray;
@@ -26,5 +26,5 @@ export const postArrayWithMappedUserSelector = createSelector(
 
 export const sortedPostArrayWithUsersSelector = createSelector(
     postArrayWithMappedUserSelector,
-    postArray => R.sort((first, second) => first.postTime.getTime() - second.postTime.getTime(), postArray)
+    postArray => sort((first, second) => first.postTime.getTime() - second.postTime.getTime(), postArray)
 );

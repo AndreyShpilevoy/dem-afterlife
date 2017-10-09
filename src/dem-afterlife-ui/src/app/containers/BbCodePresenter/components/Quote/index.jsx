@@ -12,9 +12,9 @@ export const QuotePure = ({children, options, classes}) => (
         className={classes.quote}>
         {<div>
             <span className={classes.author}>
-                {options || <Term term={quoteTerm} untermedPostfix={':'} />}
+                {options || <Term term={quoteTerm} untermedPostfix=':' />}
             </span>
-            {options ? <Term spaceBefore term={wroteTerm} untermedPostfix={':'} /> : ''}
+            {options ? <Term spaceBefore term={wroteTerm} untermedPostfix=':' /> : ''}
         </div>}
         {children}
     </blockquote>

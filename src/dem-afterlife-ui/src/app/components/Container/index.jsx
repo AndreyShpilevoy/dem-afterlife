@@ -1,13 +1,15 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
 import {injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 export const ContainerPure = ({children, classes, className, onClick}) => {
     const localClassName = `${classes.container} ${className}`;
+    const handleKeyDown = event => handleEnterKeyDown(event) ? onClick() : () => ({});
     return onClick ?
         (
-            <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+            <div className={localClassName} onClick={onClick} onKeyDown={handleKeyDown} role='button' tabIndex={0}>
                 {children}
             </div>
         ) : (

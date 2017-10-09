@@ -3,6 +3,7 @@
 import React, {PureComponent} from 'react';
 import {func, shape} from 'prop-types';
 import {concatStyleNames, injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 
@@ -25,6 +26,13 @@ export class MenuButtonPure extends PureComponent {
         }
     }
 
+    menuButtonOnClick = () => {
+        const {opened} = this.state;
+        this.onClickLocal(!opened);
+    };
+
+    handleKeyDown = event => handleEnterKeyDown(event) ? this.menuButtonOnClick() : () => ({});
+
     render() {
         const {classes} = this.props;
         const {container, firstLine, secondLine, thirdLine, fourthLine, allLines} = classes;
@@ -34,9 +42,8 @@ export class MenuButtonPure extends PureComponent {
         const secondLineStyle = concatStyleNames([secondLine, allLines, openedClassName]);
         const thirdLineStyle = concatStyleNames([thirdLine, allLines, openedClassName]);
         const fourthLineStyle = concatStyleNames([fourthLine, allLines, openedClassName]);
-        const menuButtonOnClick = () => this.onClickLocal(!opened);
         return (
-            <div className={container} onClick={menuButtonOnClick} role={'button'} tabIndex={0}>
+            <div className={container} onClick={this.menuButtonOnClick} onKeyDown={this.handleKeyDown} role='button' tabIndex={0}>
                 <div className={firstLineStyle} />
                 <div className={secondLineStyle} />
                 <div className={thirdLineStyle} />

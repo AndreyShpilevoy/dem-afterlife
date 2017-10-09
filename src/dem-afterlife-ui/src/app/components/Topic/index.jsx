@@ -38,7 +38,7 @@ export const TopicPure = ({topic, classes}) => {
                                             parentForumTitle && forumId ?
                                                 <Column xs={12} md={7} lg={12}>
                                                     <span className={parentForumWrapper}>
-                                                        <Term term={forumTerm} untermedPostfix={':'} spaceAfter />
+                                                        <Term term={forumTerm} untermedPostfix=':' spaceAfter />
                                                         <Link className={parentForumTitleStyle} to={linkToParentForum}>
                                                             {parentForumTitle}
                                                         </Link>
@@ -47,20 +47,20 @@ export const TopicPure = ({topic, classes}) => {
                                                 ''
                                         }
                                         <Column md={5}>
-                                            <Hidden lg={'up'} sm={'down'} className={noWrap}>
-                                                <Term term={postTerm} untermedPostfix={':'} spaceAfter />
+                                            <Hidden lg='up' sm='down' className={noWrap}>
+                                                <Term term={postTerm} untermedPostfix=':' spaceAfter />
                                                 {postsCount}
                                             </Hidden>
                                         </Column>
                                     </Row>
                                 </Column>
                                 <Column lg={2} className={centerRow}>
-                                    <Hidden md={'down'}>
+                                    <Hidden md='down'>
                                         {postsCount}
                                     </Hidden>
                                 </Column>
                                 <Column lg={2} className={centerRow}>
-                                    <Hidden md={'down'}>
+                                    <Hidden md='down'>
                                         {topicViewsCount}
                                     </Hidden>
                                 </Column>
@@ -73,13 +73,13 @@ export const TopicPure = ({topic, classes}) => {
                                         name={lastPostInfo.authorName}
                                         id={lastPostInfo.authorId}
                                         color={lastPostInfo.authorGroupColor} />
-                                    <Hidden lg={'up'}>
-                                        <Term doNotTerm untermedPostfix={'-'} spaceBefore indentBefore spaceAfter indentAfter />
+                                    <Hidden lg='up'>
+                                        <Term doNotTerm untermedPostfix='-' spaceBefore indentBefore spaceAfter indentAfter />
                                     </Hidden>
                                     <RelativeDateTime relativeDateTime={lastPostInfo.timeCreation} />
                                 </Column>
                                 <Column lg={2}>
-                                    <Hidden md={'down'} className={lastPostInfoStyle}>
+                                    <Hidden md='down' className={lastPostInfoStyle}>
                                         <Avatar id={lastPostInfo.authorId} avatarUrl={lastPostInfo.authorAvatar} size={2.5} />
                                     </Hidden>
                                 </Column>

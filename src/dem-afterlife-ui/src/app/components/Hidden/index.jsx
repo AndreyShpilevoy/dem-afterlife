@@ -1,6 +1,7 @@
 import React from 'react';
 import {node, string, func, shape} from 'prop-types';
 import {injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNames = (sizesArray, classes) =>
@@ -22,9 +23,10 @@ export const HiddenPure = ({xs, sm, md, lg, xl, children, classes, className, on
     );
 
     const localClassName = `${classesNames} ${className}`;
+    const handleKeyDown = event => handleEnterKeyDown(event) ? onClick() : () => ({});
     return onClick ?
         (
-            <span className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+            <span className={localClassName} onClick={onClick} onKeyDown={handleKeyDown} role='button' tabIndex={0}>
                 {children}
             </span>
         ) : (

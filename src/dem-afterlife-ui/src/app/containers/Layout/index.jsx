@@ -40,7 +40,7 @@ class Layout extends PureComponent {
         const {navigationLinkArray, socialMediaLinkArray, breadcrumbArray, locale} = this.props;
         const title = this.constructTitle(breadcrumbArray, locale);
         return (
-            <ThemeProvider themeName={'default'}>
+            <ThemeProvider themeName='default'>
                 <Presentation
                     title={title}
                     navigationLinkArray={navigationLinkArray}

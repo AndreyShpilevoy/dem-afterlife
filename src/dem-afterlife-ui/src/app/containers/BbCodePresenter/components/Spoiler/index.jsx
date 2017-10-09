@@ -4,6 +4,7 @@ import React, {PureComponent} from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
 import {injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 export class SpoilerPure extends PureComponent {
@@ -26,13 +27,15 @@ export class SpoilerPure extends PureComponent {
         this.setState({isOpen: !this.state.isOpen});
     }
 
+    handleKeyDown = event => handleEnterKeyDown(event) ? this.toggle() : () => ({});
+
     render() {
         const spoilerTerm = {id: 35, value: 'Spoiler'};
         const {children, options, classes} = this.props;
         const {isOpen} = this.state;
         return (
             <div className={classes.spoiler}>
-                <div className={classes.focus} onClick={this.toggle} role={'button'} tabIndex={0}>
+                <div className={classes.focus} onClick={this.toggle} onKeyDown={this.handleKeyDown} role='button' tabIndex={0}>
                     <span className={classes.title}>
                         {options || <Term term={spoilerTerm} />}
                     </span>

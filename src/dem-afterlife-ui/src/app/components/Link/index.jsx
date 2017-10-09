@@ -1,6 +1,6 @@
 /* eslint no-console:0, fp/no-unused-expression:0 */
 import React from 'react';
-import {shape, string} from 'prop-types';
+import {node, shape, string} from 'prop-types';
 import {Link as NativeLink} from 'react-router-dom';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
@@ -23,12 +23,12 @@ export const LinkPure = props => {
 
 LinkPure.propTypes = {
     classes: shape().isRequired,
-    className: string
+    className: string,
+    children: node
 };
 
 LinkPure.defaultProps = {
     className: '',
-    style: {},
     children: ''
 };
 

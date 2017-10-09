@@ -12,7 +12,7 @@ export const CodePure = ({children, options, classes}) => {
         <div className={main}>
             <div className={header}>
                 <div className={headerLeft}>
-                    <Term spaceAfter term={codeTerm} untermedPostfix={':'} />
+                    <Term spaceAfter term={codeTerm} untermedPostfix=':' />
                 </div>
                 <div className={headerRight}>
                     {options}

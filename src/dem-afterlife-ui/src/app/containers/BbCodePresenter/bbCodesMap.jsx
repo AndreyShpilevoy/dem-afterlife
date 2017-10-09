@@ -46,7 +46,7 @@ const bbCodesMap = {
         <BaseSpan key={key} className={concatStyleNames([options.classes.position, options.classes.right])}>{children}</BaseSpan>,
     size: (children, key, options) => {
         const fontSizeByDefault = 16;
-        const value = options.value;
+        const {value} = options;
         const style = value <= 150 && value > 0 ? {fontSize: `${value / fontSizeByDefault}rem`} : {fontSize: '1rem'};
         return (
             <BaseSpan key={key} style={style}>
