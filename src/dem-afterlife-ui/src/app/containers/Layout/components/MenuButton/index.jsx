@@ -18,17 +18,13 @@ export class MenuButtonPure extends PureComponent {
         this.state = {opened: false};
     }
 
-    onClickLocal = value => {
+    menuButtonOnClick = () => {
+        const {opened} = this.state;
         const {onClick} = this.props;
-        this.setState({opened: value});
+        this.setState({opened: !opened});
         if (onClick) {
             onClick();
         }
-    }
-
-    menuButtonOnClick = () => {
-        const {opened} = this.state;
-        this.onClickLocal(!opened);
     };
 
     handleKeyDown = event => handleEnterKeyDown(event) ? this.menuButtonOnClick() : () => ({});
