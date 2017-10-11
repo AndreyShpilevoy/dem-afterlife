@@ -20,7 +20,6 @@ exports[`BreadcrumbListItem Pure component should mach Breadcrumb snapshot 1`] =
 >
   <Jss(LinkPure)
     className="arrow,"
-    style={Object {}}
     to="/"
   >
     <div>

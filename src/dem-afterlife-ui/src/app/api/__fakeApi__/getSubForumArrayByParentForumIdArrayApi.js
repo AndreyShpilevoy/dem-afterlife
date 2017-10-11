@@ -8,7 +8,7 @@ const getSubForumArrayByParentForumIdArrayApi = forumIdArray => {
         [...previous, ...forumArray.filter(x => x.parentForumId === current)], []);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(result);
+            resolve({response: result, error: null});
         }, delay);
     });
 };

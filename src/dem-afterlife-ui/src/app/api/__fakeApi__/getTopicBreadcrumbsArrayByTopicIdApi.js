@@ -18,7 +18,7 @@ const getTopicBreadcrumbsArrayByTopicIdApi = topicId => new Promise(resolve => {
     const selectedTopic = topicArray.find(x => x.id === topicId);
     const result = getForumBreadcrumbsRecursively(forumArray, selectedTopic.forumId, [{path: `/Topic/${topicId}`, title: selectedTopic.title, order: 1000}], 999);
     setTimeout(() => {
-        resolve(result);
+        resolve({response: result, error: null});
     }, delay);
 });
 

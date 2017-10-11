@@ -6,7 +6,7 @@ import postArray from 'api/__fakeData__/postArray';
 const getPostArrayByTopicIdApi = topicId =>
     new Promise(resolve => {
         setTimeout(() => {
-            resolve(postArray);
+            resolve({response: postArray, error: null});
         }, delay);
     });
 

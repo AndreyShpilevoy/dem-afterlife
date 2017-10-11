@@ -12,8 +12,9 @@ import {
     conferenceReducer,
     getChapterArraySaga,
     getChapterArrayNonBlockSaga,
-    conferenceSaga,
-    getLastActiveTopicArraySaga
+    getLastActiveTopicArraySaga,
+    getLastActiveTopicArrayNonBlockSaga,
+    conferenceSaga
 } from './reducer';
 
 describe('Conference reducer', () => {
@@ -138,7 +139,7 @@ describe('Conference reducer', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getChapterArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
+    it('getChapterArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done', () => {
         const generator = getChapterArrayNonBlockSaga();
         const chapterArray = [
             {id: 1, title: 'Ex Machina', order: 1},
@@ -147,7 +148,7 @@ describe('Conference reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next(chapterArray);
+        const secondYield = generator.next({response: chapterArray, error: null});
         const thirdYield = generator.next(chapterArray);
         const fourthYield = generator.next();
 
@@ -158,8 +159,34 @@ describe('Conference reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
+    it('getChapterArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getChapterArrayNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
     it('getLastActiveTopicArraySaga should be in loop and return expected values', () => {
         const generator = getLastActiveTopicArraySaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next();
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getLastActiveTopicArrayNonBlockSaga should return 2 expected yields with success response. 4 yield should be in state Done', () => {
+        const generator = getLastActiveTopicArrayNonBlockSaga();
         const lastActiveTopicArray = [
             {id: 1, title: 'first', parentForumId: 10, parentForumTitle: 'one'},
             {id: 3, title: 'second', parentForumId: 11, parentForumTitle: 'two'},
@@ -167,15 +194,26 @@ describe('Conference reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next();
-        const thirdYield = generator.next(lastActiveTopicArray);
-        const fourthYield = generator.next();
+        const secondYield = generator.next({response: lastActiveTopicArray, error: null});
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getLastActiveTopicArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getLastActiveTopicArrayNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('default saga should return 1 yield with 2 sagas. 2 yield should be in state Done', () => {

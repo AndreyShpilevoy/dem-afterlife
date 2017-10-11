@@ -88,7 +88,7 @@ describe('Forum reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getTopicArrayForumIdNonBlockSaga should return 2 expected yields. 3 yield should be in state Done', () => {
+    it('getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
         const forumIdArray = [1, 2, 3];
         const generator = getTopicArrayForumIdNonBlockSaga(forumIdArray);
         const topicsByForumId = [
@@ -99,7 +99,21 @@ describe('Forum reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next(topicsByForumId);
+        const secondYield = generator.next({response: topicsByForumId, error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const forumIdArray = [1, 2, 3];
+        const generator = getTopicArrayForumIdNonBlockSaga(forumIdArray);
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();

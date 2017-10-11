@@ -4,7 +4,7 @@ import navigationLinkArray from 'api/__fakeData__/navigationLinkArray';
 
 const getNavigationLinkArrayApi = () => new Promise(resolve => {
     setTimeout(() => {
-        resolve(navigationLinkArray);
+        resolve({response: navigationLinkArray, error: null});
     }, delay);
 });
 

@@ -4,7 +4,6 @@ exports[`Link Pure component match expected snapshot 1`] = `
 <Link
   className="default-Link-link"
   replace={false}
-  style={Object {}}
   to="/"
 >
   <div>
@@ -17,7 +16,6 @@ exports[`Link Pure component match expected snapshot with className prop 1`] = `
 <Link
   className="default-Link-link testClassName"
   replace={false}
-  style={Object {}}
   to="/"
 >
   <div>

@@ -14,7 +14,7 @@ export const AvatarPure = ({avatarUrl, size, classes, className, id}) => {
     return (
         <div className={localClassName} style={getContainerStyles(size)}>
             <Link className={classes.avatar} to={linkToProfile} style={getImageStyles(size)}>
-                {avatarUrl ? <img src={avatarUrl} alt={'Avatar'} /> : <div className={classes.avatarDefault} />}
+                {avatarUrl ? <img src={avatarUrl} alt='Avatar' /> : <div className={classes.avatarDefault} />}
             </Link>
         </div>
     );

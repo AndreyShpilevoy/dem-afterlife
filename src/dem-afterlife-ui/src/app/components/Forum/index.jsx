@@ -35,12 +35,12 @@ export const ForumPure = ({forum, classes}) => {
                             <Link className={bigText} to={linkToForum}>
                                 {title}
                             </Link>
-                            <Hidden md={'down'}>
+                            <Hidden md='down'>
                                 <div className={smallText}>
                                     {description}
                                 </div>
                             </Hidden>
-                            <Hidden md={'down'}>
+                            <Hidden md='down'>
                                 {
                                     subForumArray ?
                                         <div className={subForumContainer}>
@@ -51,14 +51,14 @@ export const ForumPure = ({forum, classes}) => {
                             </Hidden>
                         </Column>
                         <Column lg={2} className={centerAndRow}>
-                            <Hidden lg={'up'}>
-                                <Term indentAfter term={topicsTerm} untermedPostfix={':'} />
+                            <Hidden lg='up'>
+                                <Term indentAfter term={topicsTerm} untermedPostfix=':' />
                             </Hidden>
                             {topicsCount}
                         </Column>
                         <Column lg={2} className={centerAndRow}>
-                            <Hidden lg={'up'}>
-                                <Term indentBefore indentAfter term={postsTerm} untermedPostfix={':'} />
+                            <Hidden lg='up'>
+                                <Term indentBefore indentAfter term={postsTerm} untermedPostfix=':' />
                             </Hidden>
                             {postsCount}
                         </Column>
@@ -67,21 +67,21 @@ export const ForumPure = ({forum, classes}) => {
                 <Column xs={12} md={7} lg={3} className={centerMdUp}>
                     <Row className={disableRowOnSmXs}>
                         <Column md={6} lg={12} className={center}>
-                            <Hidden sm={'down'}>
-                                <Hidden md={'down'}>
+                            <Hidden sm='down'>
+                                <Hidden md='down'>
                                     <UserName
                                         color={lastTopicInfo.latestPostAuthorGroupColor}
                                         id={lastTopicInfo.latestPostAuthorId}
                                         name={lastTopicInfo.latestPostAuthorName} />
-                                    <Term doNotTerm untermedPostfix={'-'} spaceBefore indentBefore spaceAfter indentAfter />
+                                    <Term doNotTerm untermedPostfix='-' spaceBefore indentBefore spaceAfter indentAfter />
                                 </Hidden>
                                 <RelativeDateTime spaceBefore relativeDateTime={lastTopicInfo.latestPostTimeCreation} />
                             </Hidden>
                         </Column>
                         <Column md={6} lg={12} className={lastTopicInfoWrapper}>
                             <div>
-                                <Hidden lg={'up'}>
-                                    <Term indentAfter term={lastPostTerm} untermedPostfix={':'} />
+                                <Hidden lg='up'>
+                                    <Term indentAfter term={lastPostTerm} untermedPostfix=':' />
                                 </Hidden>
                                 <Link to={linkToLastActiveTopic} className={smallTextAndInline}>
                                     {lastTopicInfo.topicDescription}

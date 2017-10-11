@@ -4,7 +4,7 @@ import chapterArray from 'api/__fakeData__/chapterArray';
 
 const getChapterArrayApi = () => new Promise(resolve => {
     setTimeout(() => {
-        resolve(chapterArray);
+        resolve({response: chapterArray, error: null});
     }, delay);
 });
 

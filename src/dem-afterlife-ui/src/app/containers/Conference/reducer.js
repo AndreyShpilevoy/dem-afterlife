@@ -41,34 +41,46 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getChapterArrayNonBlockSaga() {
-    const chapterArray = yield call(getChapterArrayApi);
-    yield put(getChapterArraySuccess(chapterArray));
-    const chapterIdArray = chapterArray.map(x => x.id);
-    yield put(getForumArrayByChapterIdArray(chapterIdArray));
-}
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getChapterArrayNonBlockSaga = function* () {
+    const {response, error} = yield call(getChapterArrayApi);
+    if (response) {
+        yield put(getChapterArraySuccess(response));
+        const chapterIdArray = response.map(x => x.id);
+        yield put(getForumArrayByChapterIdArray(chapterIdArray));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
 
-export function* getChapterArraySaga() {
+export const getChapterArraySaga = function* () {
     for (;;) {
         yield take(GET_CHAPTER_ARRAY);
         yield fork(getChapterArrayNonBlockSaga);
     }
-}
+};
 
-export function* getLastActiveTopicArraySaga() {
+export const getLastActiveTopicArrayNonBlockSaga = function* () {
+    const {response, error} = yield call(getLastActiveTopicArrayApi);
+    if (response) {
+        yield put(getLastActiveTopicArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
+export const getLastActiveTopicArraySaga = function* () {
     for (;;) {
         yield take(GET_LAST_ACTIVE_TOPICS_ARRAY);
-        const lastActiveTopicArray = yield call(getLastActiveTopicArrayApi);
-        yield put(getLastActiveTopicArraySuccess(lastActiveTopicArray));
+        yield fork(getLastActiveTopicArrayNonBlockSaga);
     }
-}
+};
 
-export function* conferenceSaga() {
+export const conferenceSaga = function* () {
     yield all([
         getChapterArraySaga(),
         getLastActiveTopicArraySaga()
     ]);
-}
+};
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

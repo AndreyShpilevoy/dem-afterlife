@@ -6,6 +6,7 @@ import {
     getLocale,
     getLocaleSuccess,
     getLocaleSaga,
+    getLocaleNonBlockSaga,
     GET_FORUM_BY_ID,
     GET_FORUM_BY_ID_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
@@ -19,8 +20,11 @@ import {
     getSubForumArrayByParentForumIdArray,
     getSubForumArrayByParentForumIdArraySuccess,
     getForumByIdSaga,
+    getForumByIdNonBlockSaga,
     getForumsByChapterIdArraySaga,
     getForumsByChapterIdArrayNonBlockSaga,
+    getForumsByParentForumIdSaga,
+    getForumsByParentForumIdNonBlockSaga,
     getSubForumsByParentForumIdArraySaga,
     getSubForumsByParentForumIdArrayNonBlockSaga,
     GET_BREADCRUMB_ARRAY_SUCCESS,
@@ -30,7 +34,9 @@ import {
     getConferenceBreadcrumbs,
     getForumBreadcrumbArray,
     getTopicBreadcrumbArray,
+    getForumBreadcrumbArrayNonBlockSaga,
     getForumBreadcrumbArraySaga,
+    getTopicBreadcrumbArrayNonBlockSaga,
     getTopicBreadcrumbArraySaga,
     sharedReducer,
     sharedSaga
@@ -71,14 +77,38 @@ describe('Shared Locale Sagas', () => {
 
         const firstYield = generator.next();
         const secondYield = generator.next();
-        const thirdYield = generator.next('en');
-        const fourthYield = generator.next();
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getLocaleNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getLocaleNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: 'en', error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getLocaleNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getLocaleNonBlockSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 });
 
@@ -223,14 +253,38 @@ describe('Shared Forums Sagas', () => {
 
         const firstYield = generator.next();
         const secondYield = generator.next({payload: {forumId: 1} });
-        const thirdYield = generator.next({id: 1, title: 'Ex Machina', order: 1});
-        const fourthYield = generator.next();
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getForumByIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getForumByIdNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: {id: 1, title: 'Ex Machina', order: 1}, error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getForumByIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getForumByIdNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('getForumsByChapterIdArraySaga should be in loop and return expected values', () => {
@@ -246,7 +300,7 @@ describe('Shared Forums Sagas', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields. 4 yield should be in state Done', () => {
+    it('getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done', () => {
         const generator = getForumsByChapterIdArrayNonBlockSaga([4, 5]);
         const forumArray = [
             {id: 1, title: 'Ex Machina', order: 1},
@@ -255,7 +309,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next(forumArray);
+        const secondYield = generator.next({response: forumArray, error: null});
         const thirdYield = generator.next([1, 2, 3]);
         const fourthYield = generator.next();
 
@@ -264,6 +318,65 @@ describe('Shared Forums Sagas', () => {
         expect(secondYield).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
         expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getForumsByChapterIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getForumsByChapterIdArrayNonBlockSaga([4, 5]);
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getForumsByParentForumIdSaga should be in loop and return expected values', () => {
+        const generator = getForumsByParentForumIdSaga();
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({payload: {parentForumId: 1 } });
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done', () => {
+        const generator = getForumsByParentForumIdNonBlockSaga(4);
+        const forumArray = [
+            {id: 1, title: 'Ex Machina', order: 1},
+            {id: 3, title: 'Ex Machina: Arcade', order: 3},
+            {id: 2, title: 'Ex Machina Меридиан 113', order: 2}
+        ];
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: forumArray, error: null});
+        const thirdYield = generator.next([1, 2, 3]);
+        const fourthYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getForumsByParentForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getForumsByParentForumIdNonBlockSaga(4);
+
+        const firstYield = generator.next();
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('getSubForumsByParentForumIdArraySaga should be in loop and return expected values', () => {
@@ -279,7 +392,7 @@ describe('Shared Forums Sagas', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields. 3 yield should be in state Done', () => {
+    it('getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
         const forumIdArray = [1, 2, 3];
         const generator = getSubForumsByParentForumIdArrayNonBlockSaga(forumIdArray);
         const forumsByParentForumId = [
@@ -289,7 +402,21 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next(forumIdArray);
-        const secondYield = generator.next(forumsByParentForumId);
+        const secondYield = generator.next({response: forumsByParentForumId, error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const forumIdArray = [1, 2, 3];
+        const generator = getSubForumsByParentForumIdArrayNonBlockSaga(forumIdArray);
+
+        const firstYield = generator.next(forumIdArray);
+        const secondYield = generator.next({response: null, error: 'failed response'});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -367,14 +494,38 @@ describe('Shared Breadcrumb Sagas', () => {
 
         const firstYield = generator.next();
         const secondYield = generator.next({payload: {forumId: 1} });
-        const thirdYield = generator.next([{path: '/Forum_1', title: 'Forum 1', order: 1}]);
-        const fourthYield = generator.next();
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getForumBreadcrumbArrayNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: [{path: '/Forum_1', title: 'Forum 1', order: 1}], error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getForumBreadcrumbArrayNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 
     it('getTopicBreadcrumbArraySaga should be in loop and return expected values', () => {
@@ -382,14 +533,38 @@ describe('Shared Breadcrumb Sagas', () => {
 
         const firstYield = generator.next();
         const secondYield = generator.next({payload: {topicId: 1} });
-        const thirdYield = generator.next([{path: '/Topic_1', title: 'Topic 1', order: 1}]);
-        const fourthYield = generator.next();
+        const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
-        expect(secondYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield.value.FORK.fn.name).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
-        expect(fourthYield).toMatchSnapshot();
+    });
+
+    it('getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
+        const generator = getTopicBreadcrumbArrayNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: [{path: '/Topic_1', title: 'Topic 1', order: 1}], error: null});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
+    });
+
+    it('getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
+        const generator = getTopicBreadcrumbArrayNonBlockSaga(1);
+
+        const firstYield = generator.next(1);
+        const secondYield = generator.next({response: null, error: 'failed response'});
+        const thirdYield = generator.next();
+
+        expect(firstYield).toMatchSnapshot();
+        expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
+        expect(secondYield).toMatchSnapshot();
+        expect(thirdYield).toMatchSnapshot();
     });
 });
 

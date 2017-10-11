@@ -3,8 +3,9 @@ import {string, shape} from 'prop-types';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
+const getEmail = email => `mailto:${email}`;
 export const EmailPure = ({email, classes}) => (
-    <a className={classes.email} href={`mailto:${email}`} rel='nofollow'>
+    <a className={classes.email} href={getEmail(email)} rel='nofollow'>
         {email}
     </a>
 );

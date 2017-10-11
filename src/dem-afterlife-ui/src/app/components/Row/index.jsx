@@ -1,6 +1,7 @@
 import React from 'react';
 import {bool, node, string, func, shape} from 'prop-types';
 import {concatStyleNames, injectSheet} from 'styles';
+import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 const constructClassNameString = (reverse, classes) =>
@@ -8,9 +9,10 @@ const constructClassNameString = (reverse, classes) =>
 
 export const RowPure = ({reverse, children, classes, className, onClick}) => {
     const localClassName = `${constructClassNameString(reverse, classes)} ${className}`;
+    const handleKeyDown = event => handleEnterKeyDown(event) ? onClick() : () => ({});
     return onClick ?
         (
-            <div className={localClassName} onClick={onClick} role={'button'} tabIndex={0}>
+            <div className={localClassName} onClick={onClick} onKeyDown={handleKeyDown} role='button' tabIndex={0}>
                 {children}
             </div>
         ) : (

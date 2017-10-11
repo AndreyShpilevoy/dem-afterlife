@@ -120,80 +120,124 @@ export const sharedReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getLocaleSaga() {
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getLocaleNonBlockSaga = function* () {
+    const {response, error} = yield call(getLocaleApi);
+    if (response) {
+        yield put(getLocaleSuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
+export const getLocaleSaga = function* () {
     for (;;) {
         yield take(GET_LOCALE);
-        const locale = yield call(getLocaleApi);
-        yield put(getLocaleSuccess(locale));
+        yield fork(getLocaleNonBlockSaga);
     }
-}
+};
 
-export function* getForumByIdSaga() {
+export const getForumByIdNonBlockSaga = function* (forumId) {
+    const {response, error} = yield call(getForumByIdApi, forumId);
+    if (response) {
+        yield put(getForumByIdSuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
+export const getForumByIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BY_ID);
-        const selectedForum = yield call(getForumByIdApi, payload.forumId);
-        yield put(getForumByIdSuccess(selectedForum));
+        yield fork(getForumByIdNonBlockSaga, payload.forumId);
     }
-}
+};
 
-export function* getForumsByChapterIdArrayNonBlockSaga(chapterIdArray) {
-    const forumArray = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
-    yield put(getForumArrayByChapterIdArraySuccess(forumArray));
-    const forumsIdArray = forumArray.map(x => x.id);
-    yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
-}
+export const getForumsByChapterIdArrayNonBlockSaga = function* (chapterIdArray) {
+    const {response, error} = yield call(getForumArrayByChapterIdArrayApi, chapterIdArray);
+    if (response) {
+        yield put(getForumArrayByChapterIdArraySuccess(response));
+        const forumsIdArray = response.map(x => x.id);
+        yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
 
-export function* getForumsByChapterIdArraySaga() {
+export const getForumsByChapterIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY);
         yield fork(getForumsByChapterIdArrayNonBlockSaga, payload.chapterIdArray);
     }
-}
+};
 
-export function* getSubForumsByParentForumIdArrayNonBlockSaga(parentForumIdArray) {
-    const forumArray = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
-    yield put(getSubForumArrayByParentForumIdArraySuccess(forumArray));
-}
+export const getSubForumsByParentForumIdArrayNonBlockSaga = function* (parentForumIdArray) {
+    const {response, error} = yield call(getSubForumArrayByParentForumIdArrayApi, parentForumIdArray);
+    if (response) {
+        yield put(getSubForumArrayByParentForumIdArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
 
-export function* getSubForumsByParentForumIdArraySaga() {
+export const getSubForumsByParentForumIdArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY);
         yield fork(getSubForumsByParentForumIdArrayNonBlockSaga, payload.parentForumIdArray);
     }
-}
+};
 
-export function* getForumsByParentForumIdNonBlockSaga(parentForumId) {
-    const forumArray = yield call(getForumArrayByParentForumIdApi, parentForumId);
-    yield put(getForumArrayByParentForumIdSuccess(forumArray));
-    const forumsIdArray = forumArray.map(x => x.id);
-    yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
-}
+export const getForumsByParentForumIdNonBlockSaga = function* (parentForumId) {
+    const {response, error} = yield call(getForumArrayByParentForumIdApi, parentForumId);
+    if (response) {
+        yield put(getForumArrayByParentForumIdSuccess(response));
+        const forumsIdArray = response.map(x => x.id);
+        yield put(getSubForumArrayByParentForumIdArray(forumsIdArray));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
 
-export function* getForumsByParentForumIdSaga() {
+export const getForumsByParentForumIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_ARRAY_BY_PARENT_FORUM_ID);
         yield fork(getForumsByParentForumIdNonBlockSaga, payload.parentForumId);
     }
-}
+};
 
-export function* getForumBreadcrumbArraySaga() {
+export const getForumBreadcrumbArrayNonBlockSaga = function* (forumId) {
+    const {response, error} = yield call(getForumBreadcrumbsArrayByForumIdApi, forumId);
+    if (response) {
+        yield put(getBreadcrumbArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
+export const getForumBreadcrumbArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_FORUM_BREADCRUMB_ARRAY);
-        const breadcrumbArray = yield call(getForumBreadcrumbsArrayByForumIdApi, payload.forumId);
-        yield put(getBreadcrumbArraySuccess(breadcrumbArray));
+        yield fork(getForumBreadcrumbArrayNonBlockSaga, payload.forumId);
     }
-}
+};
 
-export function* getTopicBreadcrumbArraySaga() {
+export const getTopicBreadcrumbArrayNonBlockSaga = function* (topicId) {
+    const {response, error} = yield call(getTopicBreadcrumbsArrayByTopicIdApi, topicId);
+    if (response) {
+        yield put(getBreadcrumbArraySuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
+
+export const getTopicBreadcrumbArraySaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_TOPIC_BREADCRUMB_ARRAY);
-        const breadcrumbArray = yield call(getTopicBreadcrumbsArrayByTopicIdApi, payload.topicId);
-        yield put(getBreadcrumbArraySuccess(breadcrumbArray));
+        yield fork(getTopicBreadcrumbArrayNonBlockSaga, payload.topicId);
     }
-}
+};
 
-export function* sharedSaga() {
+export const sharedSaga = function* () {
     yield all([
         getLocaleSaga(),
         getForumByIdSaga(),
@@ -203,6 +247,6 @@ export function* sharedSaga() {
         getForumBreadcrumbArraySaga(),
         getTopicBreadcrumbArraySaga()
     ]);
-}
+};
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */

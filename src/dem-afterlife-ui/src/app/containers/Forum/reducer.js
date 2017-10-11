@@ -28,24 +28,28 @@ export const forumReducer = (state = initialState, {type, payload}) => {
     return state;
 };
 
-/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
-export function* getTopicArrayForumIdNonBlockSaga(forumId) {
-    const topicArray = yield call(getTopicArrayByForumIdApi, forumId);
-    yield put(getTopicArrayByForumIdSuccess(topicArray));
-}
+/* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
+export const getTopicArrayForumIdNonBlockSaga = function* (forumId) {
+    const {response, error} = yield call(getTopicArrayByForumIdApi, forumId);
+    if (response) {
+        yield put(getTopicArrayByForumIdSuccess(response));
+    } else {
+        yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
+    }
+};
 
-export function* getTopicArrayForumIdSaga() {
+export const getTopicArrayForumIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_TOPIC_ARRAY_BY_FORUM_ID);
         yield fork(getTopicArrayForumIdNonBlockSaga, payload.forumId);
         yield put(getForumArrayByParentForumId(payload.forumId));
     }
-}
+};
 
-export function* forumSaga() {
+export const forumSaga = function* () {
     yield all([
         getTopicArrayForumIdSaga()
     ]);
-}
+};
 
 /* eslint-enable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression */
