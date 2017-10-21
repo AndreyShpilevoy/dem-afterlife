@@ -8,9 +8,11 @@ const getStyles = color => ({
 
 const UserName = ({name, color, id, className}) => {
     const linkToProfile = `/UserProfile/${id}`;
-    return (<Link className={className} style={getStyles(color)} to={linkToProfile}>
-        {name}
-    </Link>);
+    return (
+        <Link className={className} style={getStyles(color)} to={linkToProfile}>
+            {name}
+        </Link>
+    );
 };
 
 UserName.propTypes = {

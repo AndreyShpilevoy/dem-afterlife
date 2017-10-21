@@ -15,8 +15,8 @@ const mapSocialMediaArray = (socialMediaLinkArray, className) =>
     socialMediaLinkArray.map(item =>
         <SocialMediaLink key={item.id} className={className} socialMediaLinkItem={item} />);
 
-export const FooterPure = ({classes, socialMediaLinkArray}) =>
-    (<Container>
+export const FooterPure = ({classes, socialMediaLinkArray}) => (
+    <Container>
         <Row>
             <Column xs={12}>
                 <div className={classes.footer}>
@@ -38,7 +38,8 @@ export const FooterPure = ({classes, socialMediaLinkArray}) =>
                 </div>
             </Column>
         </Row>
-    </Container>);
+    </Container>
+);
 
 FooterPure.propTypes = {
     classes: shape().isRequired,

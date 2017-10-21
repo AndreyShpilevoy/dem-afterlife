@@ -9,12 +9,14 @@ import calculateStyles from './calculateStyles';
 export const SubForumPure = ({subForum, classes}) => {
     const {id, title} = subForum;
     const linkToSubForum = `/Forum/${id}`;
-    return (<div className={classes.container}>
-        <SvgIconsMapper className={classes.icon} iconName='SubForum' />
-        <Link className={classes.link} to={linkToSubForum}>
-            {title}
-        </Link>
-    </div>);
+    return (
+        <div className={classes.container}>
+            <SvgIconsMapper className={classes.icon} iconName='SubForum' />
+            <Link className={classes.link} to={linkToSubForum}>
+                {title}
+            </Link>
+        </div>
+    );
 };
 
 SubForumPure.propTypes = {

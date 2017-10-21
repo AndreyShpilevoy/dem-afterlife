@@ -23,10 +23,11 @@ const collapseSettings = {
 
 const mapTopics = lastActiveTopicArray => lastActiveTopicArray.map(x => <Topic key={x.id} topic={x} />);
 
-const LastActiveTopics = ({lastActiveTopicArray}) =>
-    (<CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
+const LastActiveTopics = ({lastActiveTopicArray}) => (
+    <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
         {lastActiveTopicArray ? mapTopics(lastActiveTopicArray) : ''}
-    </CollapsibleSection>);
+    </CollapsibleSection>
+);
 
 
 LastActiveTopics.propTypes = {

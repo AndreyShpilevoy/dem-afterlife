@@ -4,11 +4,12 @@ import BbCodePresenter from 'containers/BbCodePresenter';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const SignaturePure = ({signature, classes}) =>
-    (<div className={classes.container}>
+export const SignaturePure = ({signature, classes}) => (
+    <div className={classes.container}>
         <div className={classes.separator} />
         <BbCodePresenter text={signature} />
-    </div>);
+    </div>
+);
 
 SignaturePure.propTypes = {
     signature: string.isRequired,

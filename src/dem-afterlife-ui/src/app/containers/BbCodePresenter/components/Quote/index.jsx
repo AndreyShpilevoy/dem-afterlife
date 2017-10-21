@@ -10,12 +10,14 @@ const quoteTerm = {id: 33, value: 'Quote:'};
 export const QuotePure = ({children, options, classes}) => (
     <blockquote
         className={classes.quote}>
-        {<div>
-            <span className={classes.author}>
-                {options || <Term term={quoteTerm} untermedPostfix=':' />}
-            </span>
-            {options ? <Term spaceBefore term={wroteTerm} untermedPostfix=':' /> : ''}
-        </div>}
+        {
+            <div>
+                <span className={classes.author}>
+                    {options || <Term term={quoteTerm} untermedPostfix=':' />}
+                </span>
+                {options ? <Term spaceBefore term={wroteTerm} untermedPostfix=':' /> : ''}
+            </div>
+        }
         {children}
     </blockquote>
 );
