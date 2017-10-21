@@ -1,5 +1,5 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {func} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
@@ -10,7 +10,7 @@ import LastActiveTopics from './components/LastActiveTopics';
 import {getChapterArray, getLastActiveTopicArray} from './reducer';
 import {chaptersWithForumsArraySelector, sortedLastActiveTopicsArraySelector} from './selectors';
 
-class Conference extends PureComponent {
+class Conference extends Component {
     static propTypes = {
         getChapterArray: func.isRequired,
         getLastActiveTopicArray: func.isRequired,

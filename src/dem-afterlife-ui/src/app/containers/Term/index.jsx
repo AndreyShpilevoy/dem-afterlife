@@ -1,12 +1,12 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {shape, number, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
 import {localization} from 'utils';
 import {localeSelector} from 'containers/selectors';
 
-class Term extends PureComponent {
+class Term extends Component {
     static propTypes = {
         term: shape({
             id: number.isRequired,

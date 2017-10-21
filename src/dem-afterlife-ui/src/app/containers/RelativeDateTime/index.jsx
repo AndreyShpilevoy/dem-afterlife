@@ -1,12 +1,12 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {instanceOf, string, bool} from 'prop-types';
 import {connect} from 'react-redux';
 import {localization} from 'utils';
 import {localeSelector} from 'containers/selectors';
 
-class RelativeDateTime extends PureComponent {
+class RelativeDateTime extends Component {
     static propTypes = {
         relativeDateTime: instanceOf(Date).isRequired,
         locale: string.isRequired,

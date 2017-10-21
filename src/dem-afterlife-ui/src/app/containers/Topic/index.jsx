@@ -1,5 +1,5 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {func, shape, string} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
@@ -13,7 +13,7 @@ import {getPostArrayByTopicId} from './reducer';
 
 const titleTerm = {id: 30, value: 'Posts'};
 
-export class TopicPure extends PureComponent {
+export class TopicPure extends Component {
     static propTypes = {
         getPostArrayByTopicId: func.isRequired,
         getTopicBreadcrumbArray: func.isRequired,

@@ -1,13 +1,13 @@
 /* eslint-disable fp/no-class, fp/no-this, fp/no-unused-expression, fp/no-nil, fp/no-mutation */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {node, string, shape} from 'prop-types';
 import Term from 'containers/Term';
 import {injectSheet} from 'styles';
 import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
-export class SpoilerPure extends PureComponent {
+export class SpoilerPure extends Component {
     static propTypes = {
         classes: shape().isRequired,
         children: node.isRequired,

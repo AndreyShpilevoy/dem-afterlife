@@ -1,5 +1,5 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {func, shape, string} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
@@ -19,7 +19,7 @@ const postsTerm = {id: 2, value: 'Posts'};
 const viewsTerm = {id: 22, value: 'Views'};
 const lastMessageTerm = {id: 3, value: 'Last message in'};
 
-export class ForumPure extends PureComponent {
+export class ForumPure extends Component {
     static propTypes = {
         getTopicArrayByForumId: func.isRequired,
         getForumBreadcrumbArray: func.isRequired,
