@@ -7,7 +7,7 @@ const getForumArrayByParentForumIdApi = parentForumId => {
     const result = forumArray.filter(x => x.parentForumId === parentForumId);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve({response: result, error: null});
+            resolve({response: {data: result}, error: null});
         }, delay);
     });
 };

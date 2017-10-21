@@ -1,6 +1,7 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getPostArrayByTopicIdApi, getUserArrayByUserIdArrayApi} from 'api';
 import {mergeTwoArraysOfObjectMatchById} from 'utils';
+import {setPaginationTotalItemsCount} from 'containers/reducer';
 
 const initialState = {
     postArray: [],
@@ -47,7 +48,7 @@ export const topicReducer = (state = initialState, {type, payload}) => {
 export const getUserArrayByUserIdArrayNonBlockSaga = function* (userIdArray) {
     const {response, error} = yield call(getUserArrayByUserIdArrayApi, userIdArray);
     if (response) {
-        yield put(getUserArrayByUserIdArraySuccess(response));
+        yield put(getUserArrayByUserIdArraySuccess(response.data));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }
@@ -61,10 +62,12 @@ export const getUserArrayByUserIdArraySaga = function* () {
 };
 
 export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
-    const {response, error} = yield call(getPostArrayByTopicIdApi, topicId);
+    const {response, error} = yield call(getPostArrayByTopicIdApi, topicId); // TODO: pass params for oData pagination, from url and store
     if (response) {
-        yield put(getPostArrayByTopicIdSuccess(response));
-        const userIdArray = response.map(x => x.userId);
+        const {data, totalItemsCount} = response;
+        yield put(getPostArrayByTopicIdSuccess(data));
+        yield put(setPaginationTotalItemsCount(totalItemsCount));
+        const userIdArray = data.map(x => x.userId);
         yield put(getUserArrayByUserIdArray(userIdArray));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});

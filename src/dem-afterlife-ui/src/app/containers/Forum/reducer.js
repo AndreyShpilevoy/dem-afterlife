@@ -1,6 +1,6 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getTopicArrayByForumIdApi} from 'api';
-import {getForumArrayByParentForumId} from 'containers/reducer';
+import {getForumArrayByParentForumId, setPaginationTotalItemsCount} from 'containers/reducer';
 
 const initialState = {
     topicArray: []
@@ -30,9 +30,11 @@ export const forumReducer = (state = initialState, {type, payload}) => {
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
 export const getTopicArrayForumIdNonBlockSaga = function* (forumId) {
-    const {response, error} = yield call(getTopicArrayByForumIdApi, forumId);
+    const {response, error} = yield call(getTopicArrayByForumIdApi, forumId); // TODO: pass params for oData pagination, from url and store
     if (response) {
-        yield put(getTopicArrayByForumIdSuccess(response));
+        const {data, totalItemsCount} = response;
+        yield put(getTopicArrayByForumIdSuccess(data));
+        yield put(setPaginationTotalItemsCount(totalItemsCount));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }

@@ -3,10 +3,11 @@
 import delay from 'api/__fakeApi__/delay';
 import postArray from 'api/__fakeData__/postArray';
 
-const getPostArrayByTopicIdApi = topicId =>
+const getPostArrayByTopicIdApi = (topicId, pageSize, pageNumber) =>
     new Promise(resolve => {
+        const oDataParams = `?$top=${pageSize}&$skip=${pageSize * pageNumber}`;
         setTimeout(() => {
-            resolve({response: postArray, error: null});
+            resolve({response: {data: postArray, totalItemsCount: 452}, error: null});
         }, delay);
     });
 
