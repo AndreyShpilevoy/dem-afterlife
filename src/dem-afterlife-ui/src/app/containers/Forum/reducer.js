@@ -7,9 +7,9 @@ const initialState = {
 };
 
 export const GET_TOPIC_ARRAY_BY_FORUM_ID = 'GET_TOPIC_ARRAY_BY_FORUM_ID';
-export const getTopicArrayByForumId = forumId => ({
+export const getTopicArrayByForumId = (forumId, pageNumber) => ({
     type: GET_TOPIC_ARRAY_BY_FORUM_ID,
-    payload: {forumId}
+    payload: {forumId, pageNumber}
 });
 
 export const GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS = 'GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS';

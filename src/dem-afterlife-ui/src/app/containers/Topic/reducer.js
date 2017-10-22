@@ -9,9 +9,9 @@ const initialState = {
 };
 
 export const GET_POST_ARRAY_BY_TOPIC_ID = 'GET_POST_ARRAY_BY_TOPIC_ID';
-export const getPostArrayByTopicId = topicId => ({
+export const getPostArrayByTopicId = (topicId, pageNumber) => ({
     type: GET_POST_ARRAY_BY_TOPIC_ID,
-    payload: {topicId}
+    payload: {topicId, pageNumber}
 });
 
 export const GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS = 'GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS';

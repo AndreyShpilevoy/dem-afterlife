@@ -20,22 +20,26 @@ export class TopicPure extends Component {
         postArray: sharedPropTypes.postArray.isRequired,
         match: shape({
             params: shape({
-                topicId: string.isRequired
+                topicId: string.isRequired,
+                page: string
             }).isRequired
         }).isRequired
     };
 
     componentDidMount = () => {
         const topicId = Number.parseInt(this.props.match.params.topicId, 10);
+        const pageNumber = Number.parseInt(this.props.match.params.page, 10);
         this.props.getTopicBreadcrumbArray(topicId);
-        this.props.getPostArrayByTopicId(topicId);
+        this.props.getPostArrayByTopicId(topicId, pageNumber || 0);
     }
 
     componentWillReceiveProps = nextProps => {
-        if (nextProps.match.params.topicId !== this.props.match.params.topicId) {
+        if (nextProps.match.params.topicId !== this.props.match.params.topicId ||
+            nextProps.match.params.page !== this.props.match.params.page) {
             const topicId = Number.parseInt(nextProps.match.params.topicId, 10);
+            const pageNumber = Number.parseInt(nextProps.match.params.page, 10);
             this.props.getTopicBreadcrumbArray(topicId);
-            this.props.getPostArrayByTopicId(topicId);
+            this.props.getPostArrayByTopicId(topicId, pageNumber || 0);
         }
     }
 

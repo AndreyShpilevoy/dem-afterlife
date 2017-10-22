@@ -27,22 +27,26 @@ export class ForumPure extends Component {
         forumArray: sharedPropTypes.forumArray.isRequired,
         match: shape({
             params: shape({
-                forumId: string.isRequired
+                forumId: string.isRequired,
+                page: string
             }).isRequired
         }).isRequired
     };
 
     componentDidMount = () => {
         const forumId = Number.parseInt(this.props.match.params.forumId, 10);
+        const pageNumber = Number.parseInt(this.props.match.params.page, 10);
         this.props.getForumBreadcrumbArray(forumId);
-        this.props.getTopicArrayByForumId(forumId);
+        this.props.getTopicArrayByForumId(forumId, pageNumber || 0);
     }
 
     componentWillReceiveProps = nextProps => {
-        if (nextProps.match.params.forumId !== this.props.match.params.forumId) {
+        if (nextProps.match.params.forumId !== this.props.match.params.forumId ||
+            nextProps.match.params.page !== this.props.match.params.page) {
             const forumId = Number.parseInt(nextProps.match.params.forumId, 10);
+            const pageNumber = Number.parseInt(nextProps.match.params.page, 10);
             this.props.getForumBreadcrumbArray(forumId);
-            this.props.getTopicArrayByForumId(forumId);
+            this.props.getTopicArrayByForumId(forumId, pageNumber || 0);
         }
     }
 
