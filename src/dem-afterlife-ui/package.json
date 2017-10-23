@@ -18,7 +18,7 @@
         "buildOnly": "cross-env BABEL_ENV=production webpack --progress --colors",
         "prebuild": "yarn run clean-wwwroot && yarn run test",
         "build": "cross-env BABEL_ENV=production babel-node --presets es2015 tools/distServer.js",
-        "prestart1": "yarn run test",
+        "prestart": "yarn run test",
         "start": "cross-env BABEL_ENV=development babel-node --presets es2015 tools/srcServer.js"
     },
     "quokka": {
