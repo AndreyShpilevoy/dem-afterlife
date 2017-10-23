@@ -6,9 +6,9 @@ import forumArray from 'api/__fakeData__/forumArray';
 const getForumBreadcrumbsRecursively = (array, forumId, result = [], index = 1000) => {
     const selectedForum = array.find(x => x.id === forumId);
     if (selectedForum && selectedForum.parentForumId) {
-        return getForumBreadcrumbsRecursively(array, selectedForum.parentForumId, [{path: `/Forum/${forumId}`, title: selectedForum.title, order: index}, ...result], index - 1);
+        return getForumBreadcrumbsRecursively(array, selectedForum.parentForumId, [{path: `/Forum/forumId=${forumId}`, title: selectedForum.title, order: index}, ...result], index - 1);
     } else if (selectedForum) {
-        return [{path: `/Forum/${forumId}`, title: selectedForum.title, order: index}, ...result];
+        return [{path: `/Forum/forumId=${forumId}`, title: selectedForum.title, order: index}, ...result];
     }
     return result;
 };

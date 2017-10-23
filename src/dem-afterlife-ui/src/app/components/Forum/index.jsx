@@ -21,8 +21,8 @@ export const ForumPure = ({forum, classes}) => {
         displayInline, subForumContainer, disableRowOnSmXs} = classes;
     const centerAndRow = `${center} ${topicsMessages}`;
     const smallTextAndInline = `${smallText} ${displayInline}`;
-    const linkToForum = `/Forum/${id}`;
-    const linkToLastActiveTopic = `/Topic/${lastTopicInfo.topicId}`;
+    const linkToForum = `/Forum/forumId=${id}`;
+    const linkToLastActiveTopic = `/Topic/topicId=${lastTopicInfo.topicId}`;
     const topicsTerm = {id: 1, value: 'Topics'};
     const postsTerm = {id: 2, value: 'Posts'};
     const lastPostTerm = {id: 3, value: 'Last message'};

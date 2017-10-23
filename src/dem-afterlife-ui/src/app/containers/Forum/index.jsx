@@ -1,10 +1,10 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 import React, {Component} from 'react';
-import {func, shape, string} from 'prop-types';
+import {func, shape, string, number} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {sortedForumArrayWithSubForumsSelector} from 'containers/selectors';
+import {sortedForumArrayWithSubForumsSelector, pageSizeSelector} from 'containers/selectors';
 import Chapter from 'components/Chapter';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
@@ -25,28 +25,39 @@ export class ForumPure extends Component {
         getForumBreadcrumbArray: func.isRequired,
         topicArray: sharedPropTypes.topicArray.isRequired,
         forumArray: sharedPropTypes.forumArray.isRequired,
+        pageSize: number.isRequired,
         match: shape({
             params: shape({
                 forumId: string.isRequired,
-                page: string
+                pageNumber: string
             }).isRequired
         }).isRequired
     };
 
     componentDidMount = () => {
+        const {
+            getTopicArrayByForumId: getTopicArrayByForumIdLocal,
+            getForumBreadcrumbArray: getForumBreadcrumbArrayLocal,
+            pageSize
+        } = this.props;
         const forumId = Number.parseInt(this.props.match.params.forumId, 10);
-        const pageNumber = Number.parseInt(this.props.match.params.page, 10);
-        this.props.getForumBreadcrumbArray(forumId);
-        this.props.getTopicArrayByForumId(forumId, pageNumber || 0);
+        const pageNumber = Number.parseInt(this.props.match.params.pageNumber, 10);
+        getForumBreadcrumbArrayLocal(forumId);
+        getTopicArrayByForumIdLocal(forumId, pageNumber || 0, pageSize);
     }
 
     componentWillReceiveProps = nextProps => {
+        const {
+            getTopicArrayByForumId: getTopicArrayByForumIdLocal,
+            getForumBreadcrumbArray: getForumBreadcrumbArrayLocal,
+            pageSize
+        } = this.props;
         if (nextProps.match.params.forumId !== this.props.match.params.forumId ||
-            nextProps.match.params.page !== this.props.match.params.page) {
+            nextProps.match.params.pageNumber !== this.props.match.params.pageNumber) {
             const forumId = Number.parseInt(nextProps.match.params.forumId, 10);
-            const pageNumber = Number.parseInt(nextProps.match.params.page, 10);
-            this.props.getForumBreadcrumbArray(forumId);
-            this.props.getTopicArrayByForumId(forumId, pageNumber || 0);
+            const pageNumber = Number.parseInt(nextProps.match.params.pageNumber, 10);
+            getForumBreadcrumbArrayLocal(forumId);
+            getTopicArrayByForumIdLocal(forumId, pageNumber || 0, pageSize);
         }
     }
 
@@ -87,7 +98,8 @@ export class ForumPure extends Component {
 
 const mapStateToProps = state => ({
     topicArray: sortedTopicArraySelector(state),
-    forumArray: sortedForumArrayWithSubForumsSelector(state)
+    forumArray: sortedForumArrayWithSubForumsSelector(state),
+    pageSize: pageSizeSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>

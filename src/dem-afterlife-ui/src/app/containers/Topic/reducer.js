@@ -1,7 +1,7 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getPostArrayByTopicIdApi, getUserArrayByUserIdArrayApi} from 'api';
 import {mergeTwoArraysOfObjectMatchById} from 'utils';
-import {setPaginationTotalItemsCount} from 'containers/reducer';
+import {setPaginationTotalItemsCount, setPaginationPageNumber} from 'containers/reducer';
 
 const initialState = {
     postArray: [],
@@ -9,9 +9,9 @@ const initialState = {
 };
 
 export const GET_POST_ARRAY_BY_TOPIC_ID = 'GET_POST_ARRAY_BY_TOPIC_ID';
-export const getPostArrayByTopicId = (topicId, pageNumber) => ({
+export const getPostArrayByTopicId = (topicId, pageNumber, pageSize) => ({
     type: GET_POST_ARRAY_BY_TOPIC_ID,
-    payload: {topicId, pageNumber}
+    payload: {topicId, pageNumber, pageSize}
 });
 
 export const GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS = 'GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS';
@@ -61,11 +61,12 @@ export const getUserArrayByUserIdArraySaga = function* () {
     }
 };
 
-export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
-    const {response, error} = yield call(getPostArrayByTopicIdApi, topicId); // TODO: pass params for oData pagination, from url and store
+export const getPostArrayByTopicIdNonBlockSaga = function* ({topicId, pageNumber, pageSize}) {
+    const {response, error} = yield call(getPostArrayByTopicIdApi, {topicId, pageNumber, pageSize});
     if (response) {
         const {data, totalItemsCount} = response;
         yield put(getPostArrayByTopicIdSuccess(data));
+        yield put(setPaginationPageNumber(pageNumber));
         yield put(setPaginationTotalItemsCount(totalItemsCount));
         const userIdArray = data.map(x => x.userId);
         yield put(getUserArrayByUserIdArray(userIdArray));
@@ -77,7 +78,7 @@ export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
 export const getPostArrayByTopicIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_POST_ARRAY_BY_TOPIC_ID);
-        yield fork(getPostArrayByTopicIdNonBlockSaga, payload.topicId);
+        yield fork(getPostArrayByTopicIdNonBlockSaga, payload);
     }
 };
 

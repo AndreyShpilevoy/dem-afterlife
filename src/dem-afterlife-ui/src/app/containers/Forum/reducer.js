@@ -1,15 +1,15 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getTopicArrayByForumIdApi} from 'api';
-import {getForumArrayByParentForumId, setPaginationTotalItemsCount} from 'containers/reducer';
+import {getForumArrayByParentForumId, setPaginationTotalItemsCount, setPaginationPageNumber} from 'containers/reducer';
 
 const initialState = {
     topicArray: []
 };
 
 export const GET_TOPIC_ARRAY_BY_FORUM_ID = 'GET_TOPIC_ARRAY_BY_FORUM_ID';
-export const getTopicArrayByForumId = (forumId, pageNumber) => ({
+export const getTopicArrayByForumId = (forumId, pageNumber, pageSize) => ({
     type: GET_TOPIC_ARRAY_BY_FORUM_ID,
-    payload: {forumId, pageNumber}
+    payload: {forumId, pageNumber, pageSize}
 });
 
 export const GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS = 'GET_TOPIC_ARRAY_BY_FORUM_ID_SUCCESS';
@@ -29,11 +29,12 @@ export const forumReducer = (state = initialState, {type, payload}) => {
 };
 
 /* eslint-disable func-style, fp/no-nil, fp/no-loops, fp/no-unused-expression, func-names */
-export const getTopicArrayForumIdNonBlockSaga = function* (forumId) {
-    const {response, error} = yield call(getTopicArrayByForumIdApi, forumId); // TODO: pass params for oData pagination, from url and store
+export const getTopicArrayForumIdNonBlockSaga = function* ({forumId, pageNumber, pageSize}) {
+    const {response, error} = yield call(getTopicArrayByForumIdApi, {forumId, pageNumber, pageSize});
     if (response) {
         const {data, totalItemsCount} = response;
         yield put(getTopicArrayByForumIdSuccess(data));
+        yield put(setPaginationPageNumber(pageNumber));
         yield put(setPaginationTotalItemsCount(totalItemsCount));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
@@ -43,7 +44,7 @@ export const getTopicArrayForumIdNonBlockSaga = function* (forumId) {
 export const getTopicArrayForumIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_TOPIC_ARRAY_BY_FORUM_ID);
-        yield fork(getTopicArrayForumIdNonBlockSaga, payload.forumId);
+        yield fork(getTopicArrayForumIdNonBlockSaga, payload);
         yield put(getForumArrayByParentForumId(payload.forumId));
     }
 };

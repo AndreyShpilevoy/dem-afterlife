@@ -1,12 +1,13 @@
 /* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 import React, {Component} from 'react';
-import {func, shape, string} from 'prop-types';
+import {func, shape, string, number} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Term from 'containers/Term';
 import {getTopicBreadcrumbArray} from 'containers/reducer';
+import {pageSizeSelector} from 'containers/selectors';
 import Post from './components/Post';
 import {sortedPostArrayWithUsersSelector} from './selectors';
 import {getPostArrayByTopicId} from './reducer';
@@ -18,28 +19,39 @@ export class TopicPure extends Component {
         getPostArrayByTopicId: func.isRequired,
         getTopicBreadcrumbArray: func.isRequired,
         postArray: sharedPropTypes.postArray.isRequired,
+        pageSize: number.isRequired,
         match: shape({
             params: shape({
                 topicId: string.isRequired,
-                page: string
+                pageNumber: string
             }).isRequired
         }).isRequired
     };
 
     componentDidMount = () => {
+        const {
+            getPostArrayByTopicId: getPostArrayByTopicIdLocal,
+            getTopicBreadcrumbArray: getTopicBreadcrumbArrayLocal,
+            pageSize
+        } = this.props;
         const topicId = Number.parseInt(this.props.match.params.topicId, 10);
-        const pageNumber = Number.parseInt(this.props.match.params.page, 10);
-        this.props.getTopicBreadcrumbArray(topicId);
-        this.props.getPostArrayByTopicId(topicId, pageNumber || 0);
+        const pageNumber = Number.parseInt(this.props.match.params.pageNumber, 10);
+        getTopicBreadcrumbArrayLocal(topicId);
+        getPostArrayByTopicIdLocal(topicId, pageNumber || 0, pageSize);
     }
 
     componentWillReceiveProps = nextProps => {
+        const {
+            getPostArrayByTopicId: getPostArrayByTopicIdLocal,
+            getTopicBreadcrumbArray: getTopicBreadcrumbArrayLocal,
+            pageSize
+        } = this.props;
         if (nextProps.match.params.topicId !== this.props.match.params.topicId ||
-            nextProps.match.params.page !== this.props.match.params.page) {
+            nextProps.match.params.pageNumber !== this.props.match.params.pageNumber) {
             const topicId = Number.parseInt(nextProps.match.params.topicId, 10);
-            const pageNumber = Number.parseInt(nextProps.match.params.page, 10);
-            this.props.getTopicBreadcrumbArray(topicId);
-            this.props.getPostArrayByTopicId(topicId, pageNumber || 0);
+            const pageNumber = Number.parseInt(nextProps.match.params.pageNumber, 10);
+            getTopicBreadcrumbArrayLocal(topicId);
+            getPostArrayByTopicIdLocal(topicId, pageNumber || 0, pageSize);
         }
     }
 
@@ -64,7 +76,8 @@ export class TopicPure extends Component {
 }
 
 const mapStateToProps = state => ({
-    postArray: sortedPostArrayWithUsersSelector(state)
+    postArray: sortedPostArrayWithUsersSelector(state),
+    pageSize: pageSizeSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
