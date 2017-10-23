@@ -10,7 +10,7 @@ exports[`SubForumPure component match expected snapshot 1`] = `
   />
   <Jss(LinkPure)
     className="default-SubForum-link"
-    to="/Forum/forumId=51"
+    to="/Forum/id=51"
   >
     FAQ
   </Jss(LinkPure)>

@@ -7,16 +7,16 @@ import topicArray from 'api/__fakeData__/topicArray';
 const getForumBreadcrumbsRecursively = (array, forumId, result = [], index = 1000) => {
     const selectedForum = array.find(x => x.id === forumId);
     if (selectedForum && selectedForum.parentForumId) {
-        return getForumBreadcrumbsRecursively(array, selectedForum.parentForumId, [{path: `/Forum/forumId=${forumId}`, title: selectedForum.title, order: index}, ...result], index - 1);
+        return getForumBreadcrumbsRecursively(array, selectedForum.parentForumId, [{path: `/Forum/id=${forumId}`, title: selectedForum.title, order: index}, ...result], index - 1);
     } else if (selectedForum) {
-        return [{path: `/Forum/forumId=${forumId}`, title: selectedForum.title, order: index}, ...result];
+        return [{path: `/Forum/id=${forumId}`, title: selectedForum.title, order: index}, ...result];
     }
     return result;
 };
 
 const getTopicBreadcrumbsArrayByTopicIdApi = topicId => new Promise(resolve => {
     const selectedTopic = topicArray.find(x => x.id === topicId);
-    const result = getForumBreadcrumbsRecursively(forumArray, selectedTopic.forumId, [{path: `/Topic/topicId=${topicId}`, title: selectedTopic.title, order: 1000}], 999);
+    const result = getForumBreadcrumbsRecursively(forumArray, selectedTopic.forumId, [{path: `/Topic/id=${topicId}`, title: selectedTopic.title, order: 1000}], 999);
     setTimeout(() => {
         resolve({response: {data: result}, error: null});
     }, delay);

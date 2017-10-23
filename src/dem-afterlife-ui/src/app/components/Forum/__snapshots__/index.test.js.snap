@@ -40,7 +40,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
         >
           <Jss(LinkPure)
             className="default-Forum-bigText"
-            to="/Forum/forumId=40"
+            to="/Forum/id=40"
           >
             Вопросы по созданию моделей
           </Jss(LinkPure)>
@@ -305,7 +305,7 @@ exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
             </Jss(HiddenPure)>
             <Jss(LinkPure)
               className="default-Forum-smallText default-Forum-displayInline"
-              to="/Topic/topicId=4"
+              to="/Topic/id=4"
             >
               Exporter Ex Machina for Maya
             </Jss(LinkPure)>
@@ -360,7 +360,7 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
         >
           <Jss(LinkPure)
             className="default-Forum-bigText"
-            to="/Forum/forumId=40"
+            to="/Forum/id=40"
           >
             Вопросы по созданию моделей
           </Jss(LinkPure)>
@@ -560,7 +560,7 @@ exports[`ForumPure component match expected snapshot without subForumArray 1`] =
             </Jss(HiddenPure)>
             <Jss(LinkPure)
               className="default-Forum-smallText default-Forum-displayInline"
-              to="/Topic/topicId=4"
+              to="/Topic/id=4"
             >
               Exporter Ex Machina for Maya
             </Jss(LinkPure)>
