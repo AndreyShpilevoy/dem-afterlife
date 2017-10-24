@@ -6,6 +6,7 @@ export const forumArraySelector = state => state.sharedReducer.forumArray;
 export const breadcrumbArraySelector = state => state.sharedReducer.breadcrumbArray;
 export const localeSelector = state => state.sharedReducer.locale;
 export const pageSizeSelector = state => state.sharedReducer.pagination.pageSize;
+export const totalItemsCountSelector = state => state.sharedReducer.pagination.totalItemsCount;
 
 
 export const sortedSubForumArraySelector = createSelector(

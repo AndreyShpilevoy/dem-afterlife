@@ -10,7 +10,7 @@ const getTopicArrayByForumIdApi = ({forumId, pageNumber, pageSize}) => {
     const result = topicArray.filter(x => x.forumId === parseInt(forumId / 10, 10) * 10);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve({response: {data: result, totalItemsCount: 25}, error: null});
+            resolve({response: {data: result, totalItemsCount: 250}, error: null});
         }, delay);
     });
 };

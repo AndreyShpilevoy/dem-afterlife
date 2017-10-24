@@ -3,35 +3,27 @@ import {string, shape, number, bool} from 'prop-types';
 import {injectSheet} from 'styles';
 import Link from 'components/Link';
 import calculateStyles from './calculateStyles';
+import generatePaginationList from './paginationArrayGenerators';
 
-const getPaginationList = ({pageNumber, pageSize, totalItemsCount}, shortList) => {
+const mapPaginationList = (containerName, containerId, paginationList) =>
+    paginationList.map(item => {
+        const link = `/${containerName}/id=${containerId}&page=${item.page}`;
+        return (
+            <Link key={item.key} to={link} >
+                {item.page}
+            </Link>
+        );
+    });
+
+export const PaginationListPure = ({classes, className, pagination, containerName, containerId}) => {
+    const {pageNumber, pageSize, totalItemsCount} = pagination;
     const paginationItemsCount = Math.ceil(totalItemsCount / pageSize);
-    const maxListLength = shortList ? 5 : 10;
-    const offsetListLength = shortList ? 3 : 7;
-
-    if (totalItemsCount <= maxListLength) { // - draw all items
-
-    } else if (pageNumber >= 1 && pageNumber < offsetListLength) { // - draw 9/4 first items and 1 last item
-
-    } else if (pageNumber >= offsetListLength && pageNumber < paginationItemsCount - offsetListLength) { // - draw 1 first item, 7/3 items in the middle and 1 last item
-
-    } else { // - draw 1 last item and 9/4 1 first items
-
-    }
-
-    return [];
-};
-
-const mapNavigationLinks = (containerName, paginationList) =>
-    paginationList.map(item =>
-        <Link key={item.id} to={`/${containerName}/id=${10}&page=${2}`} />
-    );
-
-export const PaginationListPure = ({classes, className, pagination, containerName, shortList}) => {
-    const paginationList = getPaginationList(pagination, shortList);
+    const maxListLength = 9;
+    const offsetListLength = 6;
+    const paginationList = generatePaginationList(paginationItemsCount, pageNumber, maxListLength, offsetListLength);
     return (
         <ul>
-            {mapNavigationLinks(containerName, paginationList)}
+            {mapPaginationList(containerName, containerId, paginationList)}
         </ul>
     );
 };
@@ -40,17 +32,16 @@ PaginationListPure.propTypes = {
     classes: shape().isRequired,
     className: string,
     containerName: string.isRequired,
+    containerId: number.isRequired,
     pagination: shape({
         pageNumber: number.isRequired,
         pageSize: number.isRequired,
         totalItemsCount: number.isRequired
-    }).isRequired,
-    shortList: bool
+    }).isRequired
 };
 
 PaginationListPure.defaultProps = {
-    className: '',
-    shortList: false
+    className: ''
 };
 
 export default injectSheet(calculateStyles, {componentName: 'PaginationList'})(PaginationListPure);

@@ -4,11 +4,12 @@ import {func, shape, string, number} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {sortedForumArrayWithSubForumsSelector, pageSizeSelector} from 'containers/selectors';
+import {sortedForumArrayWithSubForumsSelector, pageSizeSelector, totalItemsCountSelector} from 'containers/selectors';
 import Chapter from 'components/Chapter';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
 import Term from 'containers/Term';
+import PaginationList from 'components/PaginationList';
 import {getForumBreadcrumbArray} from 'containers/reducer';
 import {sortedTopicArraySelector} from './selectors';
 import {getTopicArrayByForumId} from './reducer';
@@ -26,6 +27,7 @@ export class ForumPure extends Component {
         topicArray: sharedPropTypes.topicArray.isRequired,
         forumArray: sharedPropTypes.forumArray.isRequired,
         pageSize: number.isRequired,
+        totalItemsCount: number.isRequired,
         match: shape({
             params: shape({
                 forumId: string.isRequired,
@@ -65,7 +67,7 @@ export class ForumPure extends Component {
         topicArray.map(x => <Topic key={x.id} topic={x} />);
 
     render() {
-        const {forumArray, topicArray} = this.props;
+        const {forumArray, topicArray, pageSize, totalItemsCount} = this.props;
         const subForumsChapter = {
             id: 0,
             title: <Term term={subForumsTerm} />,
@@ -88,6 +90,14 @@ export class ForumPure extends Component {
         return (
             <div>
                 {forumArray.length > 0 ? <Chapter chapter={subForumsChapter} /> : ''}
+                <PaginationList
+                    containerName='Forum'
+                    containerId={Number.parseInt(this.props.match.params.forumId, 10)}
+                    pagination={{
+                        pageNumber: Number.parseInt(this.props.match.params.pageNumber, 10),
+                        pageSize,
+                        totalItemsCount
+                    }} />
                 <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
                     {this.mapTopics(topicArray)}
                 </CollapsibleSection>
@@ -99,7 +109,8 @@ export class ForumPure extends Component {
 const mapStateToProps = state => ({
     topicArray: sortedTopicArraySelector(state),
     forumArray: sortedForumArrayWithSubForumsSelector(state),
-    pageSize: pageSizeSelector(state)
+    pageSize: pageSizeSelector(state),
+    totalItemsCount: totalItemsCountSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>

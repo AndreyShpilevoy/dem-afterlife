@@ -9,7 +9,7 @@ const getPostArrayByTopicIdApi = ({topicId, pageNumber, pageSize}) =>
         const oDataParams = `?$top=${pageSize}&$skip=${skip}`;
         console.log(oDataParams);
         setTimeout(() => {
-            resolve({response: {data: postArray, totalItemsCount: 452}, error: null});
+            resolve({response: {data: postArray, totalItemsCount: 400}, error: null});
         }, delay);
     });
 

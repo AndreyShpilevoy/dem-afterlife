@@ -6,8 +6,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Term from 'containers/Term';
+import PaginationList from 'components/PaginationList';
 import {getTopicBreadcrumbArray} from 'containers/reducer';
-import {pageSizeSelector} from 'containers/selectors';
+import {pageSizeSelector, totalItemsCountSelector} from 'containers/selectors';
 import Post from './components/Post';
 import {sortedPostArrayWithUsersSelector} from './selectors';
 import {getPostArrayByTopicId} from './reducer';
@@ -20,6 +21,7 @@ export class TopicPure extends Component {
         getTopicBreadcrumbArray: func.isRequired,
         postArray: sharedPropTypes.postArray.isRequired,
         pageSize: number.isRequired,
+        totalItemsCount: number.isRequired,
         match: shape({
             params: shape({
                 topicId: string.isRequired,
@@ -58,7 +60,7 @@ export class TopicPure extends Component {
     mapPostsToComponent = postArray => postArray.map(post => <Post key={post.id} post={post} />)
 
     render() {
-        const {postArray} = this.props;
+        const {postArray, pageSize, totalItemsCount} = this.props;
         const headerSettings = {
             title: <Term term={titleTerm} />
         };
@@ -68,16 +70,27 @@ export class TopicPure extends Component {
             isCollapsible: false
         };
         return (
-            <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-                {this.mapPostsToComponent(postArray)}
-            </CollapsibleSection>
+            <span>
+                <PaginationList
+                    containerName='Topic'
+                    containerId={Number.parseInt(this.props.match.params.topicId, 10)}
+                    pagination={{
+                        pageNumber: Number.parseInt(this.props.match.params.pageNumber, 10),
+                        pageSize,
+                        totalItemsCount
+                    }} />
+                <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
+                    {this.mapPostsToComponent(postArray)}
+                </CollapsibleSection>
+            </span>
         );
     }
 }
 
 const mapStateToProps = state => ({
     postArray: sortedPostArrayWithUsersSelector(state),
-    pageSize: pageSizeSelector(state)
+    pageSize: pageSizeSelector(state),
+    totalItemsCount: totalItemsCountSelector(state)
 });
 
 const mapDispatchToProps = dispatch =>
