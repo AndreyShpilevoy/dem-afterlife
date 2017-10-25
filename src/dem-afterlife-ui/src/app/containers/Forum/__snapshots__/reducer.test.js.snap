@@ -28,11 +28,11 @@ Object {
     "@@redux-saga/IO": true,
     "CALL": Object {
       "args": Array [
-        Array [
-          1,
-          2,
-          3,
-        ],
+        Object {
+          "forumId": 1,
+          "pageNumber": 2,
+          "pageSize": 50,
+        },
       ],
       "context": null,
       "fn": [Function],
@@ -66,18 +66,18 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 1`] = `
 Object {
   "done": false,
   "value": Object {
     "@@redux-saga/IO": true,
     "CALL": Object {
       "args": Array [
-        Array [
-          1,
-          2,
-          3,
-        ],
+        Object {
+          "forumId": 1,
+          "pageNumber": 2,
+          "pageSize": 50,
+        },
       ],
       "context": null,
       "fn": [Function],
@@ -86,9 +86,9 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getTopicArrayByForumIdApi"`;
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 2`] = `"getTopicArrayByForumIdApi"`;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 3`] = `
 Object {
   "done": false,
   "value": Object {
@@ -127,7 +127,43 @@ Object {
 }
 `;
 
-exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "pageNumber": 2,
+        },
+        "type": "SET_PAGINATION_PAGE_NUMBER",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "totalItemsCount": 300,
+        },
+        "type": "SET_PAGINATION_TOTAL_ITEMS_COUNT",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Forum reducer getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done 6`] = `
 Object {
   "done": true,
   "value": undefined,
@@ -153,7 +189,11 @@ Object {
     "@@redux-saga/IO": true,
     "FORK": Object {
       "args": Array [
-        1,
+        Object {
+          "forumId": 1,
+          "pageNumber": 2,
+          "pageSize": 50,
+        },
       ],
       "context": null,
       "fn": [Function],

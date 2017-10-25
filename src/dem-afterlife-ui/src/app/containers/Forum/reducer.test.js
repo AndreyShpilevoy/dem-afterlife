@@ -13,8 +13,8 @@ import {
 
 describe('Forum reducer', () => {
     it('getTopicArrayByForumId should create expected object', () => {
-        const expectedResult = {type: GET_TOPIC_ARRAY_BY_FORUM_ID, payload: {forumId: 1} };
-        expect(getTopicArrayByForumId(1)).toEqual(expectedResult);
+        const expectedResult = {type: GET_TOPIC_ARRAY_BY_FORUM_ID, payload: {forumId: 1, pageNumber: 2, pageSize: 50} };
+        expect(getTopicArrayByForumId(1, 2, 50)).toEqual(expectedResult);
     });
 
     it('getTopicArrayByForumIdSuccess should create expected object', () => {
@@ -77,7 +77,7 @@ describe('Forum reducer', () => {
         const generator = getTopicArrayForumIdSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({payload: {forumId: 1} });
+        const secondYield = generator.next({payload: {forumId: 1, pageNumber: 2, pageSize: 50} });
         const thirdYield = generator.next({payload: {forumId: [1] } });
         const fourthYield = generator.next();
 
@@ -88,9 +88,11 @@ describe('Forum reducer', () => {
         expect(fourthYield).toMatchSnapshot();
     });
 
-    it('getTopicArrayForumIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done', () => {
-        const forumIdArray = [1, 2, 3];
-        const generator = getTopicArrayForumIdNonBlockSaga(forumIdArray);
+    it('getTopicArrayForumIdNonBlockSaga should return 4 expected yields with success response. 5 yield should be in state Done', () => {
+        const forumId = 1;
+        const pageNumber = 2;
+        const pageSize = 50;
+        const generator = getTopicArrayForumIdNonBlockSaga({forumId, pageNumber, pageSize});
         const topicsByForumId = [
             {id: 1, forumId: 1, title: 'First'},
             {id: 2, forumId: 2, title: 'Second'},
@@ -99,18 +101,24 @@ describe('Forum reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: topicsByForumId, error: null});
+        const secondYield = generator.next({response: {data: topicsByForumId, totalItemsCount: 300}, error: null});
         const thirdYield = generator.next();
+        const fourthYield = generator.next();
+        const fifthYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
         expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
+        expect(fourthYield).toMatchSnapshot();
+        expect(fifthYield).toMatchSnapshot();
     });
 
     it('getTopicArrayForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
-        const forumIdArray = [1, 2, 3];
-        const generator = getTopicArrayForumIdNonBlockSaga(forumIdArray);
+        const forumId = 1;
+        const pageNumber = 2;
+        const pageSize = 50;
+        const generator = getTopicArrayForumIdNonBlockSaga({forumId, pageNumber, pageSize});
 
         const firstYield = generator.next();
         const secondYield = generator.next({response: null, error: 'failed response'});

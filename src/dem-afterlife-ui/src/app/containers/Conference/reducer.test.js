@@ -148,7 +148,7 @@ describe('Conference reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: chapterArray, error: null});
+        const secondYield = generator.next({response: {data: chapterArray}, error: null});
         const thirdYield = generator.next(chapterArray);
         const fourthYield = generator.next();
 
@@ -194,7 +194,7 @@ describe('Conference reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: lastActiveTopicArray, error: null});
+        const secondYield = generator.next({response: {data: lastActiveTopicArray}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();

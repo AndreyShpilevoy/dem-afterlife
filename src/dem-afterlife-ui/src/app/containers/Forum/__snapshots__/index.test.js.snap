@@ -6,6 +6,7 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
     Object {
       "params": Object {
         "forumId": "10",
+        "pageNumber": "1",
       },
     }
   }
@@ -28,9 +29,11 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       Object {
         "params": Object {
           "forumId": "10",
+          "pageNumber": "1",
         },
       }
     }
+    pageSize={20}
     store={
       Object {
         "clearActions": [Function],
@@ -63,8 +66,22 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       }
     }
     topicArray={Array []}
+    totalItemsCount={400}
   >
     <div>
+      <PaginationList
+        containerId={10}
+        containerName="Forum"
+        pagination={
+          Object {
+            "pageNumber": 1,
+            "pageSize": 20,
+            "totalItemsCount": 400,
+          }
+        }
+      >
+        <div />
+      </PaginationList>
       <CollapsibleSection
         collapseSettings={
           Object {
@@ -111,6 +128,19 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       >
         <div />
       </CollapsibleSection>
+      <PaginationList
+        containerId={10}
+        containerName="Forum"
+        pagination={
+          Object {
+            "pageNumber": 1,
+            "pageSize": 20,
+            "totalItemsCount": 400,
+          }
+        }
+      >
+        <div />
+      </PaginationList>
     </div>
   </ForumPure>
 </Connect(ForumPure)>
@@ -167,6 +197,17 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
             }
           }
         />,
+      }
+    }
+  />
+  <PaginationList
+    containerId={10}
+    containerName="Forum"
+    pagination={
+      Object {
+        "pageNumber": 1,
+        "pageSize": 20,
+        "totalItemsCount": 400,
       }
     }
   />
@@ -255,5 +296,16 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
       }
     />
   </CollapsibleSection>
+  <PaginationList
+    containerId={10}
+    containerName="Forum"
+    pagination={
+      Object {
+        "pageNumber": 1,
+        "pageSize": 20,
+        "totalItemsCount": 400,
+      }
+    }
+  />
 </div>
 `;

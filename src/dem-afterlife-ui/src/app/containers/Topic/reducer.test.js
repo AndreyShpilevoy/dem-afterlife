@@ -18,8 +18,8 @@ import {
 
 describe('Topic reducer', () => {
     it('getPostArrayByTopicId should create expected object', () => {
-        const expectedResult = {type: GET_POST_ARRAY_BY_TOPIC_ID, payload: {topicId: 1} };
-        expect(getPostArrayByTopicId(1)).toEqual(expectedResult);
+        const expectedResult = {type: GET_POST_ARRAY_BY_TOPIC_ID, payload: {topicId: 1, pageNumber: 2, pageSize: 50} };
+        expect(getPostArrayByTopicId(1, 2, 50)).toEqual(expectedResult);
     });
 
     it('getPostArrayByTopicIdSuccess should create expected object', () => {
@@ -154,7 +154,7 @@ describe('Topic reducer', () => {
         const generator = getPostArrayByTopicIdSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({payload: {topicId: 1} });
+        const secondYield = generator.next({payload: {topicId: 1, pageNumber: 2, pageSize: 50} });
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -163,23 +163,28 @@ describe('Topic reducer', () => {
         expect(thirdYield).toMatchSnapshot();
     });
 
-    it('getPostArrayByTopicIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done', () => {
-        const generator = getPostArrayByTopicIdNonBlockSaga(1);
+    it('getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done', () => {
+        const generator = getPostArrayByTopicIdNonBlockSaga({topicId: 1, pageNumber: 2, pageSize: 50});
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: [{userId: 1}, {userId: 22}], error: null});
+        const secondYield = generator.next({response: {data: [{userId: 1}, {userId: 22}], totalItemsCount: 300}, error: null});
         const thirdYield = generator.next();
         const fourthYield = generator.next();
+        const fifthYield = generator.next();
+        const sixthYield = generator.next();
+
 
         expect(firstYield).toMatchSnapshot();
         expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
         expect(fourthYield).toMatchSnapshot();
+        expect(fifthYield).toMatchSnapshot();
+        expect(sixthYield).toMatchSnapshot();
     });
 
     it('getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done', () => {
-        const generator = getPostArrayByTopicIdNonBlockSaga(1);
+        const generator = getPostArrayByTopicIdNonBlockSaga({topicId: 1, pageNumber: 2, pageSize: 50});
 
         const firstYield = generator.next();
         const secondYield = generator.next({response: null, error: 'failed response'});
@@ -213,7 +218,7 @@ describe('Topic reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: userArray, error: null});
+        const secondYield = generator.next({response: {data: userArray}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();

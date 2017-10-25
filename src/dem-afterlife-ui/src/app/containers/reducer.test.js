@@ -89,7 +89,7 @@ describe('Shared Locale Sagas', () => {
         const generator = getLocaleNonBlockSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: 'en', error: null});
+        const secondYield = generator.next({response: {data: 'en'}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -265,7 +265,7 @@ describe('Shared Forums Sagas', () => {
         const generator = getForumByIdNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: {id: 1, title: 'Ex Machina', order: 1}, error: null});
+        const secondYield = generator.next({response: {data: {id: 1, title: 'Ex Machina', order: 1}}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -309,7 +309,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: forumArray, error: null});
+        const secondYield = generator.next({response: {data: forumArray}, error: null});
         const thirdYield = generator.next([1, 2, 3]);
         const fourthYield = generator.next();
 
@@ -337,7 +337,7 @@ describe('Shared Forums Sagas', () => {
         const generator = getForumsByParentForumIdSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({payload: {parentForumId: 1 } });
+        const secondYield = generator.next({payload: {parentForumId: 1} });
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -355,7 +355,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: forumArray, error: null});
+        const secondYield = generator.next({response: {data: forumArray}, error: null});
         const thirdYield = generator.next([1, 2, 3]);
         const fourthYield = generator.next();
 
@@ -402,7 +402,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next(forumIdArray);
-        const secondYield = generator.next({response: forumsByParentForumId, error: null});
+        const secondYield = generator.next({response: {data: forumsByParentForumId}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -506,7 +506,7 @@ describe('Shared Breadcrumb Sagas', () => {
         const generator = getForumBreadcrumbArrayNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: [{path: '/Forum_1', title: 'Forum 1', order: 1}], error: null});
+        const secondYield = generator.next({response: {data: [{path: '/Forum_1', title: 'Forum 1', order: 1}] }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -545,7 +545,7 @@ describe('Shared Breadcrumb Sagas', () => {
         const generator = getTopicBreadcrumbArrayNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: [{path: '/Topic_1', title: 'Topic 1', order: 1}], error: null});
+        const secondYield = generator.next({response: {data: [{path: '/Topic_1', title: 'Topic 1', order: 1}] }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();

@@ -21,6 +21,11 @@ jest.mock('components/CollapsibleSection', () => {
     return CollapsibleSection;
 });
 
+jest.mock('components/PaginationList', () => {
+    const PaginationList = ({children}) => <div>{children}</div>;
+    return PaginationList;
+});
+
 describe('Forum', () => {
     const mockStore = configureMockStore();
 
@@ -28,11 +33,11 @@ describe('Forum', () => {
         const props = {
             store: mockStore({
                 forumReducer: {topicArray: [] },
-                sharedReducer: {forumArray: [], subForumArray: [] }
+                sharedReducer: {forumArray: [], subForumArray: [], pagination: {pageNumber: 1, pageSize: 20, totalItemsCount: 400} }
             }),
-            match: {params: {forumId: '10'} }
+            match: {params: {forumId: '10', pageNumber: '1'} }
         };
-        expect(mount(<Forum {...props}><div>{'Forum content'}</div></Forum>)).toMatchSnapshot();
+        expect(mount(<Forum {...props}><div>Forum content</div></Forum>)).toMatchSnapshot();
     });
 
     it('Pure component with filled chapter and forum arrays match expected snapshot', () => {
@@ -109,15 +114,25 @@ describe('Forum', () => {
                     }
                 }
             ],
-            match: {params: {forumId: '10'} }
+            pageSize: 20,
+            totalItemsCount: 400,
+            match: {params: {forumId: '10', pageNumber: '1'} }
         };
-        expect(shallow(<ForumPure {...props}><div>{'Forum content'}</div></ForumPure>)).toMatchSnapshot();
+        expect(shallow(<ForumPure {...props}><div>Forum content</div></ForumPure>)).toMatchSnapshot();
     });
 
     it('Pure component should call mocked action twice', () => {
         const getTopicArrayByForumId = jest.fn();
         const getForumBreadcrumbArray = jest.fn();
-        const props = {getTopicArrayByForumId, getForumBreadcrumbArray, topicArray: [], forumArray: [], match: {params: {forumId: '10'} } };
+        const props = {
+            getTopicArrayByForumId,
+            getForumBreadcrumbArray,
+            topicArray: [],
+            forumArray: [],
+            pageSize: 20,
+            totalItemsCount: 400,
+            match: {params: {forumId: '10', pageNumber: '1'} }
+        };
         const topicArray = [
             {
                 id: 1,
@@ -187,7 +202,7 @@ describe('Forum', () => {
             }
         ];
 
-        const wrapper = shallow(<ForumPure {...props}><div>{'Forum content'}</div></ForumPure>, {lifecycleExperimental: true});
+        const wrapper = shallow(<ForumPure {...props}><div>Forum content</div></ForumPure>, {lifecycleExperimental: true});
         wrapper.setProps({topicArray, forumArray, match: {params: {forumId: '11'} } });
         expect(getTopicArrayByForumId.mock.calls.length).toEqual(2);
         expect(getForumBreadcrumbArray.mock.calls.length).toEqual(2);
