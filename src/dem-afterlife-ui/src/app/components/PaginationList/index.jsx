@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, shape, number, bool} from 'prop-types';
+import {string, shape, number} from 'prop-types';
 import {injectSheet} from 'styles';
 import Link from 'components/Link';
 import calculateStyles from './calculateStyles';
@@ -7,7 +7,7 @@ import generatePaginationList from './paginationArrayGenerators';
 
 const mapPaginationList = (containerName, containerId, paginationList) =>
     paginationList.map(item => {
-        const link = `/${containerName}/id=${containerId}&page=${item.page}`;
+        const link = `/${containerName}/${containerId}/page${item.page}`;
         return (
             <Link key={item.key} to={link} >
                 {item.page}

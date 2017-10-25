@@ -36,38 +36,36 @@ export class ForumPure extends Component {
         }).isRequired
     };
 
+    constructor(props) {
+        super(props);
+        this.state = {forumId: 0, pageNumber: 0};
+    }
+
     componentDidMount = () => {
-        const {
-            getTopicArrayByForumId: getTopicArrayByForumIdLocal,
-            getForumBreadcrumbArray: getForumBreadcrumbArrayLocal,
-            pageSize
-        } = this.props;
-        const forumId = Number.parseInt(this.props.match.params.forumId, 10);
-        const pageNumber = Number.parseInt(this.props.match.params.pageNumber, 10);
-        getForumBreadcrumbArrayLocal(forumId);
-        getTopicArrayByForumIdLocal(forumId, pageNumber || 0, pageSize);
+        this.updatePaginationParamsParams(this.props);
     }
 
     componentWillReceiveProps = nextProps => {
-        const {
-            getTopicArrayByForumId: getTopicArrayByForumIdLocal,
-            getForumBreadcrumbArray: getForumBreadcrumbArrayLocal,
-            pageSize
-        } = this.props;
         if (nextProps.match.params.forumId !== this.props.match.params.forumId ||
             nextProps.match.params.pageNumber !== this.props.match.params.pageNumber) {
-            const forumId = Number.parseInt(nextProps.match.params.forumId, 10);
-            const pageNumber = Number.parseInt(nextProps.match.params.pageNumber, 10);
-            getForumBreadcrumbArrayLocal(forumId);
-            getTopicArrayByForumIdLocal(forumId, pageNumber || 0, pageSize);
+            this.updatePaginationParamsParams(nextProps);
         }
     }
+
+        updatePaginationParamsParams = ({match, pageSize}) => {
+            const forumId = Number.parseInt(match.params.forumId, 10);
+            const pageNumber = Number.parseInt(match.params.pageNumber, 10) || 1;
+            this.setState({forumId, pageNumber});
+            this.props.getForumBreadcrumbArray(forumId);
+            this.props.getTopicArrayByForumId(forumId, pageNumber, pageSize);
+        }
 
     mapTopics = topicArray =>
         topicArray.map(x => <Topic key={x.id} topic={x} />);
 
     render() {
         const {forumArray, topicArray, pageSize, totalItemsCount} = this.props;
+        const {forumId, pageNumber} = this.state;
         const subForumsChapter = {
             id: 0,
             title: <Term term={subForumsTerm} />,
@@ -92,9 +90,9 @@ export class ForumPure extends Component {
                 {forumArray.length > 0 ? <Chapter chapter={subForumsChapter} /> : ''}
                 <PaginationList
                     containerName='Forum'
-                    containerId={Number.parseInt(this.props.match.params.forumId, 10)}
+                    containerId={forumId}
                     pagination={{
-                        pageNumber: Number.parseInt(this.props.match.params.pageNumber, 10),
+                        pageNumber,
                         pageSize,
                         totalItemsCount
                     }} />

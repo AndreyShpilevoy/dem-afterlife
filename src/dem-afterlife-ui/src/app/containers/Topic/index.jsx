@@ -30,37 +30,35 @@ export class TopicPure extends Component {
         }).isRequired
     };
 
+    constructor(props) {
+        super(props);
+        this.state = {topicId: 0, pageNumber: 0};
+    }
+
     componentDidMount = () => {
-        const {
-            getPostArrayByTopicId: getPostArrayByTopicIdLocal,
-            getTopicBreadcrumbArray: getTopicBreadcrumbArrayLocal,
-            pageSize
-        } = this.props;
-        const topicId = Number.parseInt(this.props.match.params.topicId, 10);
-        const pageNumber = Number.parseInt(this.props.match.params.pageNumber, 10);
-        getTopicBreadcrumbArrayLocal(topicId);
-        getPostArrayByTopicIdLocal(topicId, pageNumber || 0, pageSize);
+        this.updatePaginationParamsParams(this.props);
     }
 
     componentWillReceiveProps = nextProps => {
-        const {
-            getPostArrayByTopicId: getPostArrayByTopicIdLocal,
-            getTopicBreadcrumbArray: getTopicBreadcrumbArrayLocal,
-            pageSize
-        } = this.props;
         if (nextProps.match.params.topicId !== this.props.match.params.topicId ||
             nextProps.match.params.pageNumber !== this.props.match.params.pageNumber) {
-            const topicId = Number.parseInt(nextProps.match.params.topicId, 10);
-            const pageNumber = Number.parseInt(nextProps.match.params.pageNumber, 10);
-            getTopicBreadcrumbArrayLocal(topicId);
-            getPostArrayByTopicIdLocal(topicId, pageNumber || 0, pageSize);
+            this.updatePaginationParamsParams(nextProps);
         }
+    }
+
+    updatePaginationParamsParams = ({match, pageSize}) => {
+        const topicId = Number.parseInt(match.params.topicId, 10);
+        const pageNumber = Number.parseInt(match.params.pageNumber, 10) || 1;
+        this.setState({topicId, pageNumber});
+        this.props.getTopicBreadcrumbArray(topicId);
+        this.props.getPostArrayByTopicId(topicId, pageNumber, pageSize);
     }
 
     mapPostsToComponent = postArray => postArray.map(post => <Post key={post.id} post={post} />)
 
     render() {
         const {postArray, pageSize, totalItemsCount} = this.props;
+        const {topicId, pageNumber} = this.state;
         const headerSettings = {
             title: <Term term={titleTerm} />
         };
@@ -73,9 +71,9 @@ export class TopicPure extends Component {
             <span>
                 <PaginationList
                     containerName='Topic'
-                    containerId={Number.parseInt(this.props.match.params.topicId, 10)}
+                    containerId={topicId}
                     pagination={{
-                        pageNumber: Number.parseInt(this.props.match.params.pageNumber, 10),
+                        pageNumber,
                         pageSize,
                         totalItemsCount
                     }} />
