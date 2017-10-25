@@ -8,11 +8,11 @@ const calculateStyles = ({error}) => ({
         padding: error.padding
     },
     image: {
-        width: error.widthAndheight,
-        height: error.widthAndheight,
+        width: error.widthAndHeight,
+        height: error.widthAndHeight,
         '& > .SVGInline-svg': {
-            width: error.widthAndheight,
-            height: error.widthAndheight,
+            width: error.widthAndHeight,
+            height: error.widthAndHeight,
             fill: error.color
         }
     }

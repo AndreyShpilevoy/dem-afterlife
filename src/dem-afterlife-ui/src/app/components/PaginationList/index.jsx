@@ -1,36 +1,30 @@
 import React from 'react';
 import {string, shape, number} from 'prop-types';
 import {injectSheet} from 'styles';
-import Link from 'components/Link';
+import PaginationItem from 'components/PaginationItem';
 import calculateStyles from './calculateStyles';
 import generatePaginationList from './paginationArrayGenerators';
 
 const mapPaginationList = (containerName, containerId, paginationList) =>
-    paginationList.map(item => {
-        const link = `/${containerName}/${containerId}/page${item.page}`;
-        return (
-            <Link key={item.key} to={link} >
-                {item.page}
-            </Link>
-        );
-    });
+    paginationList.map(item =>
+        <PaginationItem key={item.key} containerName={containerName} containerId={containerId} value={item} />
+    );
 
-export const PaginationListPure = ({classes, className, pagination, containerName, containerId}) => {
+export const PaginationListPure = ({classes, pagination, containerName, containerId}) => {
     const {pageNumber, pageSize, totalItemsCount} = pagination;
     const paginationItemsCount = Math.ceil(totalItemsCount / pageSize);
     const maxListLength = 9;
     const offsetListLength = 6;
     const paginationList = generatePaginationList(paginationItemsCount, pageNumber, maxListLength, offsetListLength);
     return (
-        <ul>
+        <div className={classes.list}>
             {mapPaginationList(containerName, containerId, paginationList)}
-        </ul>
+        </div>
     );
 };
 
 PaginationListPure.propTypes = {
     classes: shape().isRequired,
-    className: string,
     containerName: string.isRequired,
     containerId: number.isRequired,
     pagination: shape({
@@ -38,10 +32,6 @@ PaginationListPure.propTypes = {
         pageSize: number.isRequired,
         totalItemsCount: number.isRequired
     }).isRequired
-};
-
-PaginationListPure.defaultProps = {
-    className: ''
 };
 
 export default injectSheet(calculateStyles, {componentName: 'PaginationList'})(PaginationListPure);

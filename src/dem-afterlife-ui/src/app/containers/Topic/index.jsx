@@ -80,6 +80,14 @@ export class TopicPure extends Component {
                 <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
                     {this.mapPostsToComponent(postArray)}
                 </CollapsibleSection>
+                <PaginationList
+                    containerName='Topic'
+                    containerId={topicId}
+                    pagination={{
+                        pageNumber,
+                        pageSize,
+                        totalItemsCount
+                    }} />
             </span>
         );
     }

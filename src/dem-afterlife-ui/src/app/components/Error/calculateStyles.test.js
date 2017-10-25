@@ -8,7 +8,7 @@ describe('Error calculateStyles', () => {
             color: 'orange',
             borderWidth: 0.125,
             padding: 0.25,
-            widthAndheight: 3
+            widthAndHeight: 3
         }
     };
 

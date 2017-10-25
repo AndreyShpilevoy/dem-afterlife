@@ -99,6 +99,14 @@ export class ForumPure extends Component {
                 <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
                     {this.mapTopics(topicArray)}
                 </CollapsibleSection>
+                <PaginationList
+                    containerName='Forum'
+                    containerId={forumId}
+                    pagination={{
+                        pageNumber,
+                        pageSize,
+                        totalItemsCount
+                    }} />
             </div>
         );
     }

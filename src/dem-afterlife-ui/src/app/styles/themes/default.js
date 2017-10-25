@@ -37,8 +37,8 @@ const colors = {
     bbCodeThinkBorderColor: '#ffffff',
     focusColorLight: '#D4D4D4',
     focusColorDark: '#44423f',
-    breadcrumbBackgroundColor: '#5D5956',
-    breadcrumbHoveredBackgroundColor: '#564B41',
+    breadcrumbAndPaginationBackgroundColor: '#5D5956',
+    breadcrumbAndPaginationHoveredBackgroundColor: '#564B41',
     errorColor: '#de762a'
 };
 
@@ -120,6 +120,12 @@ const link = {
     textDecoration: 'none',
     hoveredColor: colors.yellowTextColorHovered,
     hoveredTextDecoration: 'underline'
+};
+
+const breadcrumbAndPagination = {
+    height: 1.25,
+    fontSize: 0.9,
+    marginAndPaddingRight: 0.19
 };
 
 const defaultTheme = {
@@ -271,14 +277,12 @@ const defaultTheme = {
     },
     breadcrumbs: {
         listMarginTop: sizes.marginBetweenBlocks,
-        bgColor: colors.breadcrumbBackgroundColor,
-        hoveredBgColor: colors.breadcrumbHoveredBackgroundColor,
+        bgColor: colors.breadcrumbAndPaginationBackgroundColor,
+        hoveredBgColor: colors.breadcrumbAndPaginationHoveredBackgroundColor,
         mainBg: colors.backgroundColor,
         textColor: colors.yellowTextColor,
-        height: 1.25,
-        fontSize: 0.9,
+        ...breadcrumbAndPagination,
         lineHeight: 1.4,
-        marginAndPaddingRight: 0.1875,
         paddingLeft: 0.9375
     },
     focus: {
@@ -289,7 +293,21 @@ const defaultTheme = {
         color: colors.errorColor,
         borderWidth: 0.125,
         padding: 0.25,
-        widthAndheight: 3
+        widthAndHeight: 3
+    },
+    pagination: {
+        listMarginTop: sizes.marginBetweenBlocks,
+        bgColor: colors.breadcrumbAndPaginationBackgroundColor,
+        hoveredBgColor: colors.breadcrumbAndPaginationHoveredBackgroundColor,
+        textColor: colors.yellowTextColor,
+        ...breadcrumbAndPagination,
+        small: {
+            height: 1,
+            paddingRight: 0.25,
+            paddingLeft: 0.25,
+            fontSize: 0.8,
+            lineHeight: 1.4
+        }
     }
 };
 
