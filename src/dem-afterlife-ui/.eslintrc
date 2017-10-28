@@ -92,7 +92,8 @@
             "components": [ "Link" ],
             "specialLink": [ "to" ]
           }],
-          "react/no-typos": 0
+          "react/no-typos": 0,
+          "default-case": [2, { "commentPattern": "^skip\\sdefault" }]
     },
     "settings": {
         "import/resolver": {
