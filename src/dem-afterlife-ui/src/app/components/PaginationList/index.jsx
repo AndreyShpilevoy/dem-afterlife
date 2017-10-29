@@ -3,7 +3,7 @@ import {string, shape, number} from 'prop-types';
 import {injectSheet} from 'styles';
 import PaginationItem from 'components/PaginationItem';
 import calculateStyles from './calculateStyles';
-import generatePaginationList from './paginationArrayGenerators';
+import createPaginationList from './createPaginationList';
 
 const mapPaginationList = (containerName, containerId, paginationList) =>
     paginationList.map(item =>
@@ -15,7 +15,7 @@ export const PaginationListPure = ({classes, pagination, containerName, containe
     const paginationItemsCount = Math.ceil(totalItemsCount / pageSize);
     const maxListLength = 9;
     const offsetListLength = 6;
-    const paginationList = generatePaginationList(paginationItemsCount, pageNumber, maxListLength, offsetListLength);
+    const paginationList = createPaginationList(paginationItemsCount, pageNumber, maxListLength, offsetListLength);
     return (
         <div className={classes.list}>
             {mapPaginationList(containerName, containerId, paginationList)}

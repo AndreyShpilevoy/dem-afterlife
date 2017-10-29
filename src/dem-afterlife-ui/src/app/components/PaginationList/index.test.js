@@ -4,13 +4,13 @@ import React from 'react';
 import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {PaginationListPure} from './index';
-import * as paginationArrayGenerators from './paginationArrayGenerators';
+import * as createPaginationList from './createPaginationList';
 
 configure({adapter: new Adapter()});
 
 describe('PaginationList Pure', () => {
     const classes = {list: 'list'};
-    paginationArrayGenerators.default = () => [
+    createPaginationList.default = () => [
         {key: 1, page: 1, active: true, isEllipsis: false},
         {key: 2, page: 2, active: false, isEllipsis: false},
         {key: 3, page: 3, active: false, isEllipsis: false}
