@@ -33,6 +33,22 @@ describe('PaginationItem Pure', () => {
     });
 
 
+    it('component with not active and isSmall state and page #11 match expected snapshot', () => {
+        expect(shallow(
+            <PaginationItemPure
+                containerName='SomeContainer'
+                containerId={1990}
+                value={{
+                    key: 11,
+                    page: 11,
+                    active: false,
+                    isEllipsis: false
+                }}
+                isSmall
+                classes={classes} />
+        )).toMatchSnapshot();
+    });
+
     it('component with active state and page #11 match expected snapshot', () => {
         expect(shallow(
             <PaginationItemPure

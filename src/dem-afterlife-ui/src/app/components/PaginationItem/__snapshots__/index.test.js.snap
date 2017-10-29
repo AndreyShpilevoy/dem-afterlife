@@ -16,6 +16,15 @@ exports[`PaginationItem Pure component with isEllipsis state true match expected
 </span>
 `;
 
+exports[`PaginationItem Pure component with not active and isSmall state and page #11 match expected snapshot 1`] = `
+<Jss(LinkPure)
+  className="item small"
+  to="/SomeContainer/1990/page11"
+>
+  11
+</Jss(LinkPure)>
+`;
+
 exports[`PaginationItem Pure component with not active state and page #11 match expected snapshot 1`] = `
 <Jss(LinkPure)
   className="item"

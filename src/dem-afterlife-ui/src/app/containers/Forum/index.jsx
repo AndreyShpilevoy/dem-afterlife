@@ -52,16 +52,26 @@ export class ForumPure extends Component {
         }
     }
 
-        updatePaginationParamsParams = ({match, pageSize}) => {
-            const forumId = Number.parseInt(match.params.forumId, 10);
-            const pageNumber = Number.parseInt(match.params.pageNumber, 10) || 1;
-            this.setState({forumId, pageNumber});
-            this.props.getForumBreadcrumbArray(forumId);
-            this.props.getTopicArrayByForumId(forumId, pageNumber, pageSize);
-        }
+    getPagination = (forumId, pageNumber, pageSize, totalItemsCount) => (
+        <PaginationList
+            containerName='Forum'
+            containerId={forumId}
+            pageNumber={pageNumber}
+            pageSize={pageSize}
+            totalItemsCount={totalItemsCount}
+        />
+    )
 
-    mapTopics = topicArray =>
-        topicArray.map(x => <Topic key={x.id} topic={x} />);
+    updatePaginationParamsParams = ({match, pageSize}) => {
+        const forumId = Number.parseInt(match.params.forumId, 10);
+        const pageNumber = Number.parseInt(match.params.pageNumber, 10) || 1;
+        this.setState({forumId, pageNumber});
+        this.props.getForumBreadcrumbArray(forumId);
+        this.props.getTopicArrayByForumId(forumId, pageNumber, pageSize);
+    }
+
+    mapTopics = (topicArray, pageSize) =>
+        topicArray.map(x => <Topic key={x.id} topic={x} pageSize={pageSize} />);
 
     render() {
         const {forumArray, topicArray, pageSize, totalItemsCount} = this.props;
@@ -84,29 +94,16 @@ export class ForumPure extends Component {
             collapsedByDefault: false,
             isCollapsible: false
         };
+        const pagination = this.getPagination(forumId, pageNumber, pageSize, totalItemsCount);
 
         return (
             <div>
                 {forumArray.length > 0 ? <Chapter chapter={subForumsChapter} /> : ''}
-                <PaginationList
-                    containerName='Forum'
-                    containerId={forumId}
-                    pagination={{
-                        pageNumber,
-                        pageSize,
-                        totalItemsCount
-                    }} />
+                {pagination}
                 <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-                    {this.mapTopics(topicArray)}
+                    {this.mapTopics(topicArray, pageSize)}
                 </CollapsibleSection>
-                <PaginationList
-                    containerName='Forum'
-                    containerId={forumId}
-                    pagination={{
-                        pageNumber,
-                        pageSize,
-                        totalItemsCount
-                    }} />
+                {pagination}
             </div>
         );
     }

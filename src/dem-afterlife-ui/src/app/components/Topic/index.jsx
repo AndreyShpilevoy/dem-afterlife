@@ -1,5 +1,5 @@
 import React from 'react';
-import {shape} from 'prop-types';
+import {shape, number} from 'prop-types';
 import Link from 'components/Link';
 import Row from 'components/Row';
 import Column from 'components/Column';
@@ -7,19 +7,21 @@ import Hidden from 'components/Hidden';
 import UserName from 'components/UserName';
 import Avatar from 'components/Avatar';
 import Term from 'containers/Term';
+import PaginationList from 'components/PaginationList';
 import RelativeDateTime from 'containers/RelativeDateTime';
 import {sharedPropTypes} from 'utils';
 import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export const TopicPure = ({topic, classes}) => {
-    const {id, title, postsCount, topicViewsCount, lastPostInfo, forumId, parentForumTitle} = topic;
+export const TopicPure = ({topic, classes, pageSize}) => {
+    const {id, title, postsCount, topicViewsCount, lastPostInfo, forumId, parentForumTitle, totalPostsCount} = topic;
     const {separator, wrapper, centerRow, titleContainer, titleStyle, parentForumWrapper, lastPostInfoStyle,
-        parentForumTitleStyle, heightFull, noWrap, textSmallMd} = classes;
+        parentForumTitleStyle, heightFull, noWrap, textSmallMd, paginationLastActive, paginationTopic} = classes;
     const forumTerm = {id: 25, value: 'Forum:'};
     const postTerm = {id: 2, value: 'Posts'};
     const linkToTopic = `/Topic/${id}`;
     const linkToParentForum = `/Forum/${forumId}`;
+    const paginationClassName = parentForumTitle && forumId ? paginationLastActive : paginationTopic;
     return (
         <div className={wrapper}>
             <Row>
@@ -31,6 +33,16 @@ export const TopicPure = ({topic, classes}) => {
                                     <Row>
                                         <Column xs={12}>
                                             <Link className={titleStyle} to={linkToTopic}>{title}</Link>
+                                        </Column>
+                                    </Row>
+                                    <Row className={paginationClassName}>
+                                        <Column xs={12}>
+                                            <PaginationList
+                                                containerName='Topic'
+                                                containerId={id}
+                                                shortList
+                                                pageSize={pageSize}
+                                                totalItemsCount={totalPostsCount} />
                                         </Column>
                                     </Row>
                                     <Row className={textSmallMd}>
@@ -95,7 +107,8 @@ export const TopicPure = ({topic, classes}) => {
 
 TopicPure.propTypes = {
     topic: sharedPropTypes.topic.isRequired,
-    classes: shape().isRequired
+    classes: shape().isRequired,
+    pageSize: number.isRequired
 };
 
 export default injectSheet(calculateStyles, {componentName: 'Topic'})(TopicPure);

@@ -46,6 +46,16 @@ export class TopicPure extends Component {
         }
     }
 
+    getPagination = (topicId, pageNumber, pageSize, totalItemsCount) => (
+        <PaginationList
+            containerName='Topic'
+            containerId={topicId}
+            pageNumber={pageNumber}
+            pageSize={pageSize}
+            totalItemsCount={totalItemsCount}
+        />
+    )
+
     updatePaginationParamsParams = ({match, pageSize}) => {
         const topicId = Number.parseInt(match.params.topicId, 10);
         const pageNumber = Number.parseInt(match.params.pageNumber, 10) || 1;
@@ -67,27 +77,14 @@ export class TopicPure extends Component {
             collapsedByDefault: false,
             isCollapsible: false
         };
+        const pagination = this.getPagination(topicId, pageNumber, pageSize, totalItemsCount);
         return (
             <span>
-                <PaginationList
-                    containerName='Topic'
-                    containerId={topicId}
-                    pagination={{
-                        pageNumber,
-                        pageSize,
-                        totalItemsCount
-                    }} />
+                {pagination}
                 <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
                     {this.mapPostsToComponent(postArray)}
                 </CollapsibleSection>
-                <PaginationList
-                    containerName='Topic'
-                    containerId={topicId}
-                    pagination={{
-                        pageNumber,
-                        pageSize,
-                        totalItemsCount
-                    }} />
+                {pagination}
             </span>
         );
     }

@@ -61,7 +61,8 @@ const topic = shape({
         authorAvatar: string,
         authorGroupColor: string.isRequired
     }).isRequired,
-    parentForumTitle: string
+    parentForumTitle: string,
+    totalPostsCount: number.isRequired
 });
 
 const user = shape({

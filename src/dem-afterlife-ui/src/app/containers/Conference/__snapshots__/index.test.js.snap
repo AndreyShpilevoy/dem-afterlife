@@ -19,6 +19,7 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
     getConferenceBreadcrumbs={[Function]}
     getLastActiveTopicArray={[Function]}
     lastActiveTopicArray={Array []}
+    pageSize={20}
     store={
       Object {
         "clearActions": [Function],
@@ -54,6 +55,7 @@ exports[`Conference HOC component with empty chapter and forum arrays match expe
     <div>
       <LastActiveTopic
         lastActiveTopicArray={Array []}
+        pageSize={20}
       >
         <div />
       </LastActiveTopic>
@@ -192,6 +194,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
           "postsCount": 57,
           "title": "Как активировать бомбу.",
           "topicViewsCount": 847,
+          "totalPostsCount": 8,
         },
         Object {
           "forumId": 10,
@@ -207,9 +210,11 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
           "postsCount": 215,
           "title": "Как деактивировать бомбу",
           "topicViewsCount": 1315,
+          "totalPostsCount": 8,
         },
       ]
     }
+    pageSize={20}
     store={
       Object {
         "clearActions": [Function],
@@ -260,6 +265,7 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
               "postsCount": 57,
               "title": "Как активировать бомбу.",
               "topicViewsCount": 847,
+              "totalPostsCount": 8,
             },
             Object {
               "forumId": 10,
@@ -275,9 +281,11 @@ exports[`Conference HOC component with filled chapter and forum arrays match exp
               "postsCount": 215,
               "title": "Как деактивировать бомбу",
               "topicViewsCount": 1315,
+              "totalPostsCount": 8,
             },
           ]
         }
+        pageSize={20}
       >
         <div />
       </LastActiveTopic>

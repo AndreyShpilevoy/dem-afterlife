@@ -3,6 +3,7 @@ import {createMediaQueryMax} from 'utils';
 const getLastPostInfoStyleMdMax = size => createMediaQueryMax(size, {flexDirection: 'row'});
 const getLastPostInfoStyleSmMax = (mediaSize, fontSize) => createMediaQueryMax(mediaSize, {justifyContent: 'left', fontSize});
 const getTextSizeMax = (mediaSize, fontSize) => createMediaQueryMax(mediaSize, {fontSize});
+const getPaginationHeight = mediaSize => createMediaQueryMax(mediaSize, {height: 0});
 
 const calculateStyles = ({grid, topic}) => {
     const mdSize = grid.containers.find(x => x.gridSize === 'md').mediaMaxString;
@@ -23,6 +24,12 @@ const calculateStyles = ({grid, topic}) => {
         },
         noWrap: {
             whiteSpace: 'nowrap'
+        },
+        paginationLastActive: {
+            height: 0
+        },
+        paginationTopic: {
+            ...getPaginationHeight(mdSize)
         },
         titleStyle: {
             display: 'block',

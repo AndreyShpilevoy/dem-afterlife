@@ -11,6 +11,8 @@ jest.mock('components/Avatar');
 jest.mock('components/UserName');
 
 const classes = {
+    paginationTopic: 'paginationTopic',
+    paginationLastActive: 'paginationLastActive',
     '.default-Topic-parentForumTitleStyle:hover': 'default-Topic-parentForumTitleStyle:hover',
     '.default-Topic-parentForumTitleStyle:visited': 'default-Topic-parentForumTitleStyle:visited',
     '.default-Topic-parentForumTitleStyle:visited:hover': 'default-Topic-parentForumTitleStyle:visited:hover',
@@ -43,9 +45,10 @@ describe('TopicPure', () => {
                 authorName: 'Buba',
                 authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                 authorGroupColor: '#00AA00'
-            }
+            },
+            totalPostsCount: 8
         };
-        expect(shallow(<TopicPure className={'topicClassName'} classes={classes} topic={topic} />)).toMatchSnapshot();
+        expect(shallow(<TopicPure className='topicClassName' pageSize={20} classes={classes} topic={topic} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot with parent forum information', () => {
@@ -62,8 +65,9 @@ describe('TopicPure', () => {
                 authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                 authorGroupColor: '#00AA00'
             },
+            totalPostsCount: 8,
             parentForumTitle: 'Общие вопросы'
         };
-        expect(shallow(<TopicPure className={'topicClassName'} classes={classes} topic={topic} />)).toMatchSnapshot();
+        expect(shallow(<TopicPure className='topicClassName' pageSize={20} classes={classes} topic={topic} />)).toMatchSnapshot();
     });
 });

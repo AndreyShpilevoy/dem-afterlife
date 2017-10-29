@@ -30,6 +30,14 @@ Object {
   "noWrap": Object {
     "whiteSpace": "nowrap",
   },
+  "paginationLastActive": Object {
+    "height": 0,
+  },
+  "paginationTopic": Object {
+    "@media (max-width: 575px)": Object {
+      "height": 0,
+    },
+  },
   "parentForumTitleStyle": Object {
     "&:hover": Object {
       "color": "blue",

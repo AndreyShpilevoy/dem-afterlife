@@ -71,13 +71,9 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
       <PaginationList
         containerId={10}
         containerName="Topic"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>
@@ -106,13 +102,9 @@ exports[`Topic HOC component with empty post and user arrays match expected snap
       <PaginationList
         containerId={10}
         containerName="Topic"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>
@@ -300,13 +292,9 @@ _______ooO-(_)-o o____
       <PaginationList
         containerId={10}
         containerName="Topic"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>
@@ -455,13 +443,9 @@ _______ooO-(_)-o o____
       <PaginationList
         containerId={10}
         containerName="Topic"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>

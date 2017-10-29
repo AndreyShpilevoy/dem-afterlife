@@ -4,6 +4,9 @@ const calculateStyles = ({pagination}) => ({
         flexFlow: 'row wrap',
         justifyContent: 'flex-end',
         marginTop: pagination.listMarginTop
+    },
+    small: {
+        marginTop: 0.0625
     }
 });
 

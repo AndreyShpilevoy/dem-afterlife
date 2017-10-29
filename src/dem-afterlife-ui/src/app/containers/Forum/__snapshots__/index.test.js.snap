@@ -72,13 +72,9 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       <PaginationList
         containerId={10}
         containerName="Forum"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>
@@ -131,13 +127,9 @@ exports[`Forum HOC component with empty chapter and forum arrays match expected 
       <PaginationList
         containerId={10}
         containerName="Forum"
-        pagination={
-          Object {
-            "pageNumber": 1,
-            "pageSize": 20,
-            "totalItemsCount": 400,
-          }
-        }
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
       >
         <div />
       </PaginationList>
@@ -203,13 +195,9 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
   <PaginationList
     containerId={10}
     containerName="Forum"
-    pagination={
-      Object {
-        "pageNumber": 1,
-        "pageSize": 20,
-        "totalItemsCount": 400,
-      }
-    }
+    pageNumber={1}
+    pageSize={20}
+    totalItemsCount={400}
   />
   <CollapsibleSection
     collapseSettings={
@@ -257,6 +245,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
   >
     <Jss(TopicPure)
       key="1"
+      pageSize={20}
       topic={
         Object {
           "forumId": 10,
@@ -272,11 +261,13 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
           "postsCount": 215,
           "title": "Как деактивировать бомбу",
           "topicViewsCount": 1315,
+          "totalPostsCount": 8,
         }
       }
     />
     <Jss(TopicPure)
       key="2"
+      pageSize={20}
       topic={
         Object {
           "forumId": 10,
@@ -292,6 +283,7 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
           "postsCount": 57,
           "title": "Как активировать бомбу.",
           "topicViewsCount": 847,
+          "totalPostsCount": 8,
         }
       }
     />
@@ -299,13 +291,9 @@ exports[`Forum Pure component with filled chapter and forum arrays match expecte
   <PaginationList
     containerId={10}
     containerName="Forum"
-    pagination={
-      Object {
-        "pageNumber": 1,
-        "pageSize": 20,
-        "totalItemsCount": 400,
-      }
-    }
+    pageNumber={1}
+    pageSize={20}
+    totalItemsCount={400}
   />
 </div>
 `;

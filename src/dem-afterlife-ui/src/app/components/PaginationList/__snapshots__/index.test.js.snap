@@ -7,6 +7,7 @@ exports[`PaginationList Pure component match expected snapshot 1`] = `
   <Jss(PaginationItemPure)
     containerId={1990}
     containerName="SomeContainer"
+    isSmall={false}
     key="1"
     value={
       Object {
@@ -20,6 +21,7 @@ exports[`PaginationList Pure component match expected snapshot 1`] = `
   <Jss(PaginationItemPure)
     containerId={1990}
     containerName="SomeContainer"
+    isSmall={false}
     key="2"
     value={
       Object {
@@ -33,6 +35,56 @@ exports[`PaginationList Pure component match expected snapshot 1`] = `
   <Jss(PaginationItemPure)
     containerId={1990}
     containerName="SomeContainer"
+    isSmall={false}
+    key="3"
+    value={
+      Object {
+        "active": false,
+        "isEllipsis": false,
+        "key": 3,
+        "page": 3,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`PaginationList Pure component with shortList flag match expected snapshot 1`] = `
+<div
+  className="list small"
+>
+  <Jss(PaginationItemPure)
+    containerId={1990}
+    containerName="SomeContainer"
+    isSmall={true}
+    key="1"
+    value={
+      Object {
+        "active": true,
+        "isEllipsis": false,
+        "key": 1,
+        "page": 1,
+      }
+    }
+  />
+  <Jss(PaginationItemPure)
+    containerId={1990}
+    containerName="SomeContainer"
+    isSmall={true}
+    key="2"
+    value={
+      Object {
+        "active": false,
+        "isEllipsis": false,
+        "key": 2,
+        "page": 2,
+      }
+    }
+  />
+  <Jss(PaginationItemPure)
+    containerId={1990}
+    containerName="SomeContainer"
+    isSmall={true}
     key="3"
     value={
       Object {

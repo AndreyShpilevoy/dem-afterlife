@@ -60,7 +60,8 @@ describe('Forum', () => {
                         authorName: 'Buba',
                         authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                         authorGroupColor: '#00AA00'
-                    }
+                    },
+                    totalPostsCount: 8
                 },
                 {
                     id: 2,
@@ -75,7 +76,8 @@ describe('Forum', () => {
                         authorName: 'Bykawka',
                         authorAvatar: null,
                         authorGroupColor: '#fbeab2'
-                    }
+                    },
+                    totalPostsCount: 8
                 }
             ],
             forumArray: [
@@ -147,7 +149,8 @@ describe('Forum', () => {
                     authorName: 'Buba',
                     authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                     authorGroupColor: '#00AA00'
-                }
+                },
+                totalPostsCount: 8
             },
             {
                 id: 2,
@@ -162,7 +165,8 @@ describe('Forum', () => {
                     authorName: 'Bykawka',
                     authorAvatar: null,
                     authorGroupColor: '#fbeab2'
-                }
+                },
+                totalPostsCount: 8
             }
         ];
         const forumArray = [

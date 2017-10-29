@@ -81,6 +81,33 @@ exports[`TopicPure component match expected snapshot with parent forum informati
                 </Jss(ColumnPure)>
               </Jss(RowPure)>
               <Jss(RowPure)
+                className="paginationLastActive"
+                reverse={false}
+              >
+                <Jss(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
+                  md=""
+                  mdOffset=""
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
+                  xs={12}
+                  xsOffset=""
+                >
+                  <Jss(PaginationListPure)
+                    containerId={1}
+                    containerName="Topic"
+                    pageNumber={0}
+                    pageSize={20}
+                    shortList={true}
+                    totalItemsCount={8}
+                  />
+                </Jss(ColumnPure)>
+              </Jss(RowPure)>
+              <Jss(RowPure)
                 className="default-Topic-textSmallMd"
                 reverse={false}
               >
@@ -379,6 +406,33 @@ exports[`TopicPure component match expected snapshot without parent forum inform
                   >
                     Как деактивировать бомбу
                   </Jss(LinkPure)>
+                </Jss(ColumnPure)>
+              </Jss(RowPure)>
+              <Jss(RowPure)
+                className="paginationTopic"
+                reverse={false}
+              >
+                <Jss(ColumnPure)
+                  className=""
+                  lg=""
+                  lgOffset=""
+                  md=""
+                  mdOffset=""
+                  sm=""
+                  smOffset=""
+                  xl=""
+                  xlOffset=""
+                  xs={12}
+                  xsOffset=""
+                >
+                  <Jss(PaginationListPure)
+                    containerId={1}
+                    containerName="Topic"
+                    pageNumber={0}
+                    pageSize={20}
+                    shortList={true}
+                    totalItemsCount={8}
+                  />
                 </Jss(ColumnPure)>
               </Jss(RowPure)>
               <Jss(RowPure)

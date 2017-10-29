@@ -6,29 +6,31 @@ import calculateStyles from './calculateStyles';
 
 const ellipsisString = '...';
 
-const getEllipsis = classes => {
-    const ellipsisClasses = concatStyleNames([classes.item, classes.ellipsis]);
+const getEllipsis = (classes, smallClassName) => {
+    const ellipsisClassName = concatStyleNames([classes.item, classes.ellipsis, smallClassName]);
     return (
-        <span className={ellipsisClasses}>
+        <span className={ellipsisClassName}>
             {ellipsisString}
         </span>
     );
 };
-const getButton = (value, path, classes) => {
-    const activeClasses = concatStyleNames([classes.item, classes.active]);
+const getButton = (value, path, classes, smallClassName) => {
+    const itemClassName = concatStyleNames([classes.item, smallClassName]);
+    const activeClassName = concatStyleNames([itemClassName, classes.active]);
     return value.active ?
-        <span className={activeClasses}>
+        <span className={activeClassName}>
             {value.page}
         </span> :
-        <Link className={classes.item} to={path}>
+        <Link className={itemClassName} to={path}>
             {value.page}
         </Link>;
 };
 
-export const PaginationItemPure = ({classes, value, containerName, containerId}) => {
+export const PaginationItemPure = ({classes, value, containerName, containerId, isSmall}) => {
     const path = `/${containerName}/${containerId}/page${value.page}`;
+    const smallClassName = isSmall ? classes.small : {};
     return (
-        value.isEllipsis ? getEllipsis(classes) : getButton(value, path, classes)
+        value.isEllipsis ? getEllipsis(classes, smallClassName) : getButton(value, path, classes, smallClassName)
     );
 };
 
@@ -41,7 +43,12 @@ PaginationItemPure.propTypes = {
         page: oneOfType([string, number]).isRequired,
         active: bool.isRequired,
         isEllipsis: bool.isRequired
-    }).isRequired
+    }).isRequired,
+    isSmall: bool
+};
+
+PaginationItemPure.defaultProps = {
+    isSmall: false
 };
 
 export default injectSheet(calculateStyles, {componentName: 'PaginationItem'})(PaginationItemPure);

@@ -8,5 +8,8 @@ Object {
     "justifyContent": "flex-end",
     "marginTop": 1.11,
   },
+  "small": Object {
+    "marginTop": 0.0625,
+  },
 }
 `;
