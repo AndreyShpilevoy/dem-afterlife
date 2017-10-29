@@ -1,14 +1,30 @@
 export const generateFullPaginationList = (paginationItemsCount, pageNumber) =>
     Array.from(Array(paginationItemsCount)).reduce((previous, current, index) => {
         const currentPageNumber = index + 1;
-        return [...previous, {key: currentPageNumber, page: currentPageNumber, active: currentPageNumber === pageNumber, isEllipsis: false}];
+        return [
+            ...previous,
+            {
+                key: currentPageNumber,
+                page: currentPageNumber,
+                active: currentPageNumber === pageNumber,
+                isEllipsis: false
+            }
+        ];
     }, []);
 
 export const generateStartPaginationList = (paginationItemsCount, pageNumber, maxListLength) =>
     Array.from(Array(paginationItemsCount)).reduce((previous, current, index) => {
         const currentPageNumber = index + 1;
         if (currentPageNumber < maxListLength) {
-            return [...previous, {key: currentPageNumber, page: currentPageNumber, active: currentPageNumber === pageNumber, isEllipsis: false}];
+            return [
+                ...previous,
+                {
+                    key: currentPageNumber,
+                    page: currentPageNumber,
+                    active: currentPageNumber === pageNumber,
+                    isEllipsis: false
+                }
+            ];
         } else if (currentPageNumber === paginationItemsCount) {
             return [
                 ...previous,
@@ -30,7 +46,15 @@ export const generateMiddlePaginationList = (paginationItemsCount, pageNumber, m
                 {key: 0, page: '...', active: false, isEllipsis: true}
             ];
         } else if (currentPageNumber >= pageNumber - offset && currentPageNumber <= pageNumber + offset) {
-            return [...previous, {key: currentPageNumber, page: currentPageNumber, active: currentPageNumber === pageNumber, isEllipsis: false}];
+            return [
+                ...previous,
+                {
+                    key: currentPageNumber,
+                    page: currentPageNumber,
+                    active: currentPageNumber === pageNumber,
+                    isEllipsis: false
+                }
+            ];
         } else if (currentPageNumber === paginationItemsCount) {
             return [
                 ...previous,
@@ -51,7 +75,15 @@ export const generateEndPaginationList = (paginationItemsCount, pageNumber, maxL
                 {key: 0, page: '...', active: false, isEllipsis: true}
             ];
         } else if (currentPageNumber >= paginationItemsCount - offsetListLength - 1) {
-            return [...previous, {key: currentPageNumber, page: currentPageNumber, active: currentPageNumber === pageNumber, isEllipsis: false}];
+            return [
+                ...previous,
+                {
+                    key: currentPageNumber,
+                    page: currentPageNumber,
+                    active: currentPageNumber === pageNumber,
+                    isEllipsis: false
+                }
+            ];
         }
         return previous;
     }, []);
