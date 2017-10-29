@@ -2,7 +2,7 @@
 
 import calculateStyles from './paginationArrayGenerators';
 
-describe('Column calculateStyles', () => {
+describe('PaginationList arrayGenerator', () => {
     it('should create expected object', () => {
         // expect(calculateStyles(defaultThemeObject)).toMatchSnapshot();
     });
