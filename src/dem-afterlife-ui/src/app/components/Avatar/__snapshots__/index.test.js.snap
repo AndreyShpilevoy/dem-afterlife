@@ -51,3 +51,28 @@ exports[`AvatarPure component match expected snapshot without className 1`] = `
   </Jss(LinkPure)>
 </div>
 `;
+
+exports[`AvatarPure component match expected snapshot without url 1`] = `
+<div
+  className="default-UserAvatar-container"
+  style={
+    Object {
+      "width": "3rem",
+    }
+  }
+>
+  <Jss(LinkPure)
+    className="default-UserAvatar-avatar"
+    style={
+      Object {
+        "height": "3rem",
+      }
+    }
+    to="/111"
+  >
+    <div
+      className="default-UserAvatar-avatarDefault"
+    />
+  </Jss(LinkPure)>
+</div>
+`;
