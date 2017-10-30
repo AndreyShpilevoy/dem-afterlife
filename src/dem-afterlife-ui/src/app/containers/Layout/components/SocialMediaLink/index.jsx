@@ -5,10 +5,11 @@ import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const SocialMediaLinkPure = ({className, socialMediaLinkItem, classes}) =>
-    (<a className={classes.focus} href={socialMediaLinkItem.href} title={socialMediaLinkItem.title} target='_blank' rel='noopener noreferrer'>
+export const SocialMediaLinkPure = ({className, socialMediaLinkItem, classes}) => (
+    <a className={classes.focus} href={socialMediaLinkItem.href} title={socialMediaLinkItem.title} target='_blank' rel='noopener noreferrer'>
         <SvgIconsMapper className={className} iconName={socialMediaLinkItem.svgImageName} />
-    </a>);
+    </a>
+);
 
 SocialMediaLinkPure.propTypes = {
     className: string,

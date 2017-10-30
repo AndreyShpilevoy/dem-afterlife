@@ -25,6 +25,7 @@ describe('LastActiveTopics', () => {
                     authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                     authorGroupColor: '#00AA00'
                 },
+                totalPostsCount: 8,
                 parentForumId: 10,
                 parentForumTitle: 'Общие вопросы'
             },
@@ -41,10 +42,11 @@ describe('LastActiveTopics', () => {
                     authorAvatar: null,
                     authorGroupColor: '#fbeab2'
                 },
+                totalPostsCount: 8,
                 parentForumId: 20,
                 parentForumTitle: 'Технические вопросы'
             }
         ];
-        expect(shallow(<LastActiveTopics className={'lastActiveTopicArrayClassName'} lastActiveTopicArray={lastActiveTopicArray} />)).toMatchSnapshot();
+        expect(shallow(<LastActiveTopics className='lastActiveTopicArrayClassName' pageSize={20} lastActiveTopicArray={lastActiveTopicArray} />)).toMatchSnapshot();
     });
 });

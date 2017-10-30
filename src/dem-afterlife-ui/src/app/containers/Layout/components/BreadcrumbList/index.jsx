@@ -20,10 +20,11 @@ const mapArrayToComponents = array =>
         ];
     }, []);
 
-export const BreadcrumbListPure = ({breadcrumbArray, classes}) =>
-    (<div className={classes.list}>
+export const BreadcrumbListPure = ({breadcrumbArray, classes}) => (
+    <div className={classes.list}>
         {mapArrayToComponents(breadcrumbArray)}
-    </div>);
+    </div>
+);
 
 BreadcrumbListPure.propTypes = {
     classes: shape().isRequired,

@@ -9,9 +9,11 @@ const ellipsisString = '...';
 
 const getEllipsis = classes => {
     const ellipsisClasses = concatStyleNames([classes.arrow, classes.ellipsis]);
-    return (<div className={ellipsisClasses}>
-        {ellipsisString}
-    </div>);
+    return (
+        <div className={ellipsisClasses}>
+            {ellipsisString}
+        </div>
+    );
 };
 const getButton = (breadcrumb, classes, isActive) => {
     const activeClasses = concatStyleNames([classes.arrow, classes.active]);
@@ -24,10 +26,11 @@ const getButton = (breadcrumb, classes, isActive) => {
         </Link>;
 };
 
-export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, isActive, classes}) =>
-    (<div className={classes.item}>
+export const BreadcrumbListItemPure = ({breadcrumb, ellipsis, isActive, classes}) => (
+    <div className={classes.item}>
         { ellipsis ? getEllipsis(classes) : getButton(breadcrumb, classes, isActive) }
-    </div>);
+    </div>
+);
 
 BreadcrumbListItemPure.propTypes = {
     classes: shape().isRequired,

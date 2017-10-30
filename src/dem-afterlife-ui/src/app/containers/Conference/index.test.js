@@ -25,10 +25,10 @@ describe('Conference HOC', () => {
         const props = {
             store: mockStore({
                 conferenceReducer: {chapterArray: [], lastActiveTopicArray: [] },
-                sharedReducer: {forumArray: [], subForumArray: [] }
+                sharedReducer: {forumArray: [], subForumArray: [], pagination: {pageSize: 20} }
             })
         };
-        expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Conference {...props}><div>Conference content</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component with filled chapter and forum arrays match expected snapshot', () => {
@@ -53,7 +53,8 @@ describe('Conference HOC', () => {
                             authorName: 'Buba',
                             authorAvatar: 'http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg',
                             authorGroupColor: '#00AA00'
-                        }
+                        },
+                        totalPostsCount: 8
                     },
                     {
                         id: 2,
@@ -68,10 +69,12 @@ describe('Conference HOC', () => {
                             authorName: 'Bykawka',
                             authorAvatar: null,
                             authorGroupColor: '#fbeab2'
-                        }
+                        },
+                        totalPostsCount: 8
                     }
                 ] },
             sharedReducer: {
+                pagination: {pageSize: 20},
                 forumArray: [
                     {
                         id: 10,
@@ -147,6 +150,6 @@ describe('Conference HOC', () => {
                     }]
             } })
         };
-        expect(mount(<Conference {...props}><div>{'Conference content'}</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Conference {...props}><div>Conference content</div></Conference>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

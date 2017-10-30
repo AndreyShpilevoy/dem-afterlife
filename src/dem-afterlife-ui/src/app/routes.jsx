@@ -19,12 +19,22 @@ const routes = [
         component: Conference
     },
     {
-        path: '/Forum/:forumId',
+        path: '/Forum/:forumId(\\d+)/page:pageNumber(\\d+)',
         exact: false,
         component: Forum
     },
     {
-        path: '/Topic/:topicId',
+        path: '/Forum/:forumId(\\d+)',
+        exact: false,
+        component: Forum
+    },
+    {
+        path: '/Topic/:topicId(\\d+)/page:pageNumber(\\d+)',
+        exact: false,
+        component: Topic
+    },
+    {
+        path: '/Topic/:topicId(\\d+)',
         exact: false,
         component: Topic
     }

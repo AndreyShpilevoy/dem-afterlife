@@ -1,13 +1,13 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {func, shape} from 'prop-types';
 import {concatStyleNames, injectSheet} from 'styles';
 import {handleEnterKeyDown} from 'utils';
 import calculateStyles from './calculateStyles';
 
 
-export class MenuButtonPure extends PureComponent {
+export class MenuButtonPure extends Component {
     static propTypes = {
         classes: shape().isRequired,
         onClick: func.isRequired

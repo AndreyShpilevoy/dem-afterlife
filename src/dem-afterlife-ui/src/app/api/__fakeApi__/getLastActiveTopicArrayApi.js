@@ -11,7 +11,7 @@ const LastActiveTopicArrayApi = () => new Promise(resolve => {
             {...topicArray[3], ...{forumId: 40, parentForumTitle: 'Вопросы по созданию моделей'} },
             {...topicArray[4], ...{forumId: 50, parentForumTitle: 'Системный раздел для главной'} }
         ];
-        resolve({response: result, error: null});
+        resolve({response: {data: result}, error: null});
     }, delay);
 });
 

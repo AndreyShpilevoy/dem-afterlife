@@ -8,7 +8,7 @@ const getUserArrayByUserIdArrayApi = userIdArray => {
         [...previous, ...userArray.filter(x => x.id === current)], []);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve({response: result, error: null});
+            resolve({response: {data: result}, error: null});
         }, delay);
     });
 };

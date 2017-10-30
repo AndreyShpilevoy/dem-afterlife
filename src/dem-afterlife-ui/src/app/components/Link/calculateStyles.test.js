@@ -2,7 +2,7 @@
 
 import calculateStyles from './calculateStyles';
 
-describe('Column calculateStyles', () => {
+describe('Link calculateStyles', () => {
     const defaultThemeObject = {
         focus: {
             colorLight: '#ffffff',

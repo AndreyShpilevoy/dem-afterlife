@@ -45,8 +45,9 @@ export const conferenceReducer = (state = initialState, {type, payload}) => {
 export const getChapterArrayNonBlockSaga = function* () {
     const {response, error} = yield call(getChapterArrayApi);
     if (response) {
-        yield put(getChapterArraySuccess(response));
-        const chapterIdArray = response.map(x => x.id);
+        const {data} = response;
+        yield put(getChapterArraySuccess(data));
+        const chapterIdArray = data.map(x => x.id);
         yield put(getForumArrayByChapterIdArray(chapterIdArray));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
@@ -63,7 +64,7 @@ export const getChapterArraySaga = function* () {
 export const getLastActiveTopicArrayNonBlockSaga = function* () {
     const {response, error} = yield call(getLastActiveTopicArrayApi);
     if (response) {
-        yield put(getLastActiveTopicArraySuccess(response));
+        yield put(getLastActiveTopicArraySuccess(response.data));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }

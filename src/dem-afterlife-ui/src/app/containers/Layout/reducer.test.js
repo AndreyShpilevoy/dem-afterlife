@@ -128,7 +128,7 @@ describe('Layout reducer', () => {
         const generator = getNavigationLinkArrayNonBlockSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: [{id: 1}, {id: 2}], error: null});
+        const secondYield = generator.next({response: {data: [{id: 1}, {id: 2}] }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -172,7 +172,7 @@ describe('Layout reducer', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: socialMediaLinkArray, error: null});
+        const secondYield = generator.next({response: {data: socialMediaLinkArray}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();

@@ -22,10 +22,11 @@ const collapseSettings = {
 
 const mapForums = forumArray => forumArray.map(x => <Forum key={x.id} forum={x} />);
 
-const Chapter = ({chapter}) =>
-    (<CollapsibleSection headerSettings={headerSettings(chapter.title)} collapseSettings={collapseSettings}>
+const Chapter = ({chapter}) => (
+    <CollapsibleSection headerSettings={headerSettings(chapter.title)} collapseSettings={collapseSettings}>
         {chapter.forumArray ? mapForums(chapter.forumArray) : ''}
-    </CollapsibleSection>);
+    </CollapsibleSection>
+);
 
 
 Chapter.propTypes = {

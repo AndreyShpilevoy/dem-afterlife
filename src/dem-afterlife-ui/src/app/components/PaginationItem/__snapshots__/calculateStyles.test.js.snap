@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationItem calculateStyles should create expected object 1`] = `
+Object {
+  "active": Object {
+    "backgroundColor": "blue",
+    "color": "yellow",
+    "textDecoration": "none",
+  },
+  "ellipsis": Object {
+    "&:hover": Object {
+      "backgroundColor": "red",
+    },
+  },
+  "item": Object {
+    "&:hover": Object {
+      "backgroundColor": "blue",
+    },
+    "backgroundColor": "red",
+    "display": "block",
+    "fontSize": 0.9,
+    "fontWeight": "bold",
+    "height": 1.25,
+    "lineHeight": undefined,
+    "marginLeft": 0.19,
+    "paddingLeft": 0.3125,
+    "paddingRight": 0.3125,
+    "position": "relative",
+    "textAlign": "center",
+    "textDecoration": "none",
+  },
+  "small": Object {
+    "fontSize": 0.8,
+    "height": 1,
+    "lineHeight": 1.4,
+    "paddingLeft": 0.25,
+    "paddingRight": 0.25,
+  },
+}
+`;

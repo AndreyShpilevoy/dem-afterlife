@@ -4,7 +4,7 @@ import locale from 'api/__fakeData__/locale';
 
 const getLocaleApi = () => new Promise(resolve => {
     setTimeout(() => {
-        resolve({response: locale, error: null});
+        resolve({response: {data: locale}, error: null});
     }, delay);
 });
 

@@ -1,6 +1,6 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {shape} from 'prop-types';
 import {throttle, root, sharedPropTypes} from 'utils';
 import Container from 'components/Container';
@@ -13,7 +13,7 @@ import MenuButton from '../MenuButton';
 import NavigationLinkList from '../NavigationLinkList';
 import calculateStyles from './calculateStyles';
 
-export class HeaderPure extends PureComponent {
+export class HeaderPure extends Component {
     static propTypes = {
         classes: shape().isRequired,
         navigationLinkArray: sharedPropTypes.navigationLinkArray.isRequired

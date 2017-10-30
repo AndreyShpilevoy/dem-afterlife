@@ -1,6 +1,6 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {node, bool, string, shape, oneOfType} from 'prop-types';
 import Column from 'components/Column';
 import Hidden from 'components/Hidden';
@@ -9,7 +9,7 @@ import SvgIconsMapper from 'containers/SvgIconsMapper';
 import {concatStyleNames, injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
-export class CollapsibleSectionPure extends PureComponent {
+export class CollapsibleSectionPure extends Component {
     static propTypes = {
         classes: shape().isRequired,
         children: node.isRequired,

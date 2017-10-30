@@ -8,7 +8,7 @@ const getForumArrayByChapterIdArrayApi = chapterIdArray => {
         [...previous, ...forumArray.filter(x => x.chapterId === current)], []);
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve({response: result, error: null});
+            resolve({response: {data: result}, error: null});
         }, delay);
     });
 };

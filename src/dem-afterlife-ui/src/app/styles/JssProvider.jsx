@@ -26,10 +26,11 @@ jss.use(jssVendorPrefixer());
 jss.use(jssPropsSort());
 jss.use(jssIsolate({isolate: false}));
 
-const JssProvider = ({children}) =>
-    (<JssProviderBase jss={jss}>
+const JssProvider = ({children}) => (
+    <JssProviderBase jss={jss}>
         {children}
-    </JssProviderBase>);
+    </JssProviderBase>
+);
 
 JssProvider.propTypes = {
     children: node.isRequired

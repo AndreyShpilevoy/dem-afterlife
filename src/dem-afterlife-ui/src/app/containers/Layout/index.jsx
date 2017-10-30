@@ -1,6 +1,6 @@
-/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-mutation: 0, fp/no-this: 0 */
+/* eslint fp/no-class: 0, fp/no-nil: 0, fp/no-unused-expression: 0, fp/no-this: 0 */
 
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {node, func, string} from 'prop-types';
 import {localization, sharedPropTypes} from 'utils';
 import {connect} from 'react-redux';
@@ -12,7 +12,7 @@ import {getNavigationLinkArray, getSocialMediaLinkArray} from './reducer';
 import Presentation from './Presentation';
 import {sortedNavigationLinkSelector, sortedSocialMediaLinkSelector} from './selectors';
 
-class Layout extends PureComponent {
+class Layout extends Component {
     static propTypes = {
         children: node.isRequired,
         getLocale: func.isRequired,

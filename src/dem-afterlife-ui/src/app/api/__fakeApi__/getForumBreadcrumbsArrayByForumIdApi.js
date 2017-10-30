@@ -16,7 +16,7 @@ const getForumBreadcrumbsRecursively = (array, forumId, result = [], index = 100
 const getForumBreadcrumbsArrayByForumIdApi = forumId => new Promise(resolve => {
     const result = getForumBreadcrumbsRecursively(forumArray, forumId);
     setTimeout(() => {
-        resolve({response: result, error: null});
+        resolve({response: {data: result}, error: null});
     }, delay);
 });
 

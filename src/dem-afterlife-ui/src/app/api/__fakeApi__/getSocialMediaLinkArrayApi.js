@@ -4,7 +4,7 @@ import socialMediaLinkArray from 'api/__fakeData__/socialMediaLinkArray';
 
 const getSocialMediaLinkArrayApi = () => new Promise(resolve => {
     setTimeout(() => {
-        resolve({response: socialMediaLinkArray, error: null});
+        resolve({response: {data: socialMediaLinkArray}, error: null});
     }, delay);
 });
 

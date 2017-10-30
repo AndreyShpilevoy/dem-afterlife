@@ -19,12 +19,17 @@ describe('AvatarPure', () => {
     it('component match expected snapshot with className', () => {
         const avatarUrl = 'urlToImg.png';
         const size = 3;
-        expect(shallow(<AvatarPure avatarUrl={avatarUrl} classes={classes} className={'AvatarClassName'} size={size} id={111} />)).toMatchSnapshot();
+        expect(shallow(<AvatarPure avatarUrl={avatarUrl} classes={classes} className='AvatarClassName' size={size} id={111} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot without className', () => {
         const avatarUrl = 'urlToImg.png';
         const size = 3;
         expect(shallow(<AvatarPure avatarUrl={avatarUrl} classes={classes} size={size} id={111} />)).toMatchSnapshot();
+    });
+
+    it('component match expected snapshot without url', () => {
+        const size = 3;
+        expect(shallow(<AvatarPure classes={classes} size={size} id={111} />)).toMatchSnapshot();
     });
 });

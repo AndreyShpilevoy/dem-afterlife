@@ -28,7 +28,6 @@ const calculateStyles = ({breadcrumbs}) => ({
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
-            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             height: '100%'

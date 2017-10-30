@@ -5,12 +5,13 @@ import {injectSheet} from 'styles';
 import calculateStyles from './calculateStyles';
 
 
-export const NavigationLinkListItemPure = ({classes, navigationLinkItem}) =>
-    (<li>
+export const NavigationLinkListItemPure = ({classes, navigationLinkItem}) => (
+    <li>
         <Link className={classes.link} to={navigationLinkItem.href}>
             {navigationLinkItem.title}
         </Link>
-    </li>);
+    </li>
+);
 
 NavigationLinkListItemPure.propTypes = {
     classes: shape().isRequired,

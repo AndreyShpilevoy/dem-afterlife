@@ -43,7 +43,7 @@ export const layoutReducer = (state = initialState, {type, payload}) => {
 export const getNavigationLinkArrayNonBlockSaga = function* () {
     const {response, error} = yield call(getNavigationLinkArrayApi);
     if (response) {
-        yield put(getNavigationLinkArraySuccess(response));
+        yield put(getNavigationLinkArraySuccess(response.data));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }
@@ -58,7 +58,7 @@ export const getNavigationLinkArraySaga = function* () {
 export const getSocialMediaLinkArrayNonBlockSaga = function* () {
     const {response, error} = yield call(getSocialMediaLinkArrayApi);
     if (response) {
-        yield put(getSocialMediaLinkArraySuccess(response));
+        yield put(getSocialMediaLinkArraySuccess(response.data));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }

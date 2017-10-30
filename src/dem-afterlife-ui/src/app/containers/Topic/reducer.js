@@ -1,6 +1,7 @@
 import {all, call, put, take, fork} from 'redux-saga/effects';
 import {getPostArrayByTopicIdApi, getUserArrayByUserIdArrayApi} from 'api';
 import {mergeTwoArraysOfObjectMatchById} from 'utils';
+import {setPaginationTotalItemsCount, setPaginationPageNumber} from 'containers/reducer';
 
 const initialState = {
     postArray: [],
@@ -8,9 +9,9 @@ const initialState = {
 };
 
 export const GET_POST_ARRAY_BY_TOPIC_ID = 'GET_POST_ARRAY_BY_TOPIC_ID';
-export const getPostArrayByTopicId = topicId => ({
+export const getPostArrayByTopicId = (topicId, pageNumber, pageSize) => ({
     type: GET_POST_ARRAY_BY_TOPIC_ID,
-    payload: {topicId}
+    payload: {topicId, pageNumber, pageSize}
 });
 
 export const GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS = 'GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS';
@@ -47,7 +48,7 @@ export const topicReducer = (state = initialState, {type, payload}) => {
 export const getUserArrayByUserIdArrayNonBlockSaga = function* (userIdArray) {
     const {response, error} = yield call(getUserArrayByUserIdArrayApi, userIdArray);
     if (response) {
-        yield put(getUserArrayByUserIdArraySuccess(response));
+        yield put(getUserArrayByUserIdArraySuccess(response.data));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
     }
@@ -60,11 +61,14 @@ export const getUserArrayByUserIdArraySaga = function* () {
     }
 };
 
-export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
-    const {response, error} = yield call(getPostArrayByTopicIdApi, topicId);
+export const getPostArrayByTopicIdNonBlockSaga = function* ({topicId, pageNumber, pageSize}) {
+    const {response, error} = yield call(getPostArrayByTopicIdApi, {topicId, pageNumber, pageSize});
     if (response) {
-        yield put(getPostArrayByTopicIdSuccess(response));
-        const userIdArray = response.map(x => x.userId);
+        const {data, totalItemsCount} = response;
+        yield put(getPostArrayByTopicIdSuccess(data));
+        yield put(setPaginationPageNumber(pageNumber));
+        yield put(setPaginationTotalItemsCount(totalItemsCount));
+        const userIdArray = data.map(x => x.userId);
         yield put(getUserArrayByUserIdArray(userIdArray));
     } else {
         yield put({type: 'PRODUCTS_REQUEST_FAILED', error});
@@ -74,7 +78,7 @@ export const getPostArrayByTopicIdNonBlockSaga = function* (topicId) {
 export const getPostArrayByTopicIdSaga = function* () {
     for (;;) {
         const {payload} = yield take(GET_POST_ARRAY_BY_TOPIC_ID);
-        yield fork(getPostArrayByTopicIdNonBlockSaga, payload.topicId);
+        yield fork(getPostArrayByTopicIdNonBlockSaga, payload);
     }
 };
 

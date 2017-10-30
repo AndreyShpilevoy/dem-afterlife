@@ -1,4 +1,4 @@
-/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0, 
+/* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation: 0,
 react/no-multi-comp:0, react/prop-types:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
@@ -21,17 +21,23 @@ jest.mock('components/CollapsibleSection', () => {
     return CollapsibleSection;
 });
 
+jest.mock('components/PaginationList', () => {
+    const PaginationList = ({children}) => <div>{children}</div>;
+    return PaginationList;
+});
+
 describe('Topic HOC', () => {
     const mockStore = configureMockStore();
 
     it('component with empty post and user arrays match expected snapshot', () => {
         const props = {
             store: mockStore({
-                topicReducer: {postArray: [], userArray: [] }
+                topicReducer: {postArray: [], userArray: [] },
+                sharedReducer: {pagination: {pageNumber: 1, pageSize: 20, totalItemsCount: 400} }
             }),
-            match: {params: {topicId: '10'} }
+            match: {params: {topicId: '10', pageNumber: '1'} }
         };
-        expect(mount(<Topic {...props}><div>{'Topic content'}</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Topic {...props}><div>Topic content</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('component with filled post and user arrays match expected snapshot', () => {
@@ -111,16 +117,25 @@ describe('Topic HOC', () => {
                             groupColor: '#ffa510'
                         }
                     ]
-                } }),
-            match: {params: {topicId: '10'} }
+                },
+                sharedReducer: {pagination: {pageNumber: 1, pageSize: 20, totalItemsCount: 400} }
+            }),
+            match: {params: {topicId: '10', pageNumber: '1'} }
         };
-        expect(mount(<Topic {...props}><div>{'Topic content'}</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Topic {...props}><div>Topic content</div></Topic>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 
     it('Pure component should call mocked action twice', () => {
         const getPostArrayByTopicId = jest.fn();
         const getTopicBreadcrumbArray = jest.fn();
-        const props = {getPostArrayByTopicId, getTopicBreadcrumbArray, postArray: [], userArray: [], match: {params: {topicId: '10'} } };
+        const props = {
+            getPostArrayByTopicId,
+            getTopicBreadcrumbArray,
+            postArray: [],
+            userArray: [],
+            pageSize: 20,
+            totalItemsCount: 400,
+            match: {params: {topicId: '10', pageNumber: '1'} } };
         const postArray = [
             {
                 id: 4,
@@ -194,8 +209,8 @@ describe('Topic HOC', () => {
                 groupColor: '#ffa510'
             }
         ];
-        const wrapper = shallow(<TopicPure {...props}><div>{'Topic content'}</div></TopicPure>, {lifecycleExperimental: true});
-        wrapper.setProps({postArray, userArray, match: {params: {topicId: '11'} } });
+        const wrapper = shallow(<TopicPure {...props}><div>Topic content</div></TopicPure>, {lifecycleExperimental: true});
+        wrapper.setProps({postArray, userArray, match: {params: {topicId: '11', pageNumber: '1'} } });
         expect(getPostArrayByTopicId.mock.calls.length).toEqual(2);
         expect(getTopicBreadcrumbArray.mock.calls.length).toEqual(2);
     });
@@ -203,9 +218,17 @@ describe('Topic HOC', () => {
     it('Pure component should call mocked action once', () => {
         const getPostArrayByTopicId = jest.fn();
         const getTopicBreadcrumbArray = jest.fn();
-        const props = {getPostArrayByTopicId, getTopicBreadcrumbArray, postArray: [], userArray: [], match: {params: {topicId: '10'} } };
-        const wrapper = shallow(<TopicPure {...props}><div>{'Topic content'}</div></TopicPure>, {lifecycleExperimental: true});
-        wrapper.setProps({match: {params: {topicId: '10'} } });
+        const props = {
+            getPostArrayByTopicId,
+            getTopicBreadcrumbArray,
+            postArray: [],
+            userArray: [],
+            pageSize: 20,
+            totalItemsCount: 400,
+            match: {params: {topicId: '10', pageNumber: '1'} }
+        };
+        const wrapper = shallow(<TopicPure {...props}><div>Topic content</div></TopicPure>, {lifecycleExperimental: true});
+        wrapper.setProps({match: {params: {topicId: '10', pageNumber: '1'} } });
         expect(getPostArrayByTopicId.mock.calls.length).toEqual(1);
         expect(getTopicBreadcrumbArray.mock.calls.length).toEqual(1);
     });

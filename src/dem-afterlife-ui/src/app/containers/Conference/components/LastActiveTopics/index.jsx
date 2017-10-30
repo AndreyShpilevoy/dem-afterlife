@@ -1,4 +1,5 @@
 import React from 'react';
+import {number} from 'prop-types';
 import {sharedPropTypes} from 'utils';
 import CollapsibleSection from 'components/CollapsibleSection';
 import Topic from 'components/Topic';
@@ -21,16 +22,19 @@ const collapseSettings = {
     isCollapsible: true
 };
 
-const mapTopics = lastActiveTopicArray => lastActiveTopicArray.map(x => <Topic key={x.id} topic={x} />);
+const mapTopics = (lastActiveTopicArray, pageSize) =>
+    lastActiveTopicArray.map(x => <Topic key={x.id} topic={x} pageSize={pageSize} />);
 
-const LastActiveTopics = ({lastActiveTopicArray}) =>
-    (<CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
-        {lastActiveTopicArray ? mapTopics(lastActiveTopicArray) : ''}
-    </CollapsibleSection>);
+const LastActiveTopics = ({lastActiveTopicArray, pageSize}) => (
+    <CollapsibleSection headerSettings={headerSettings} collapseSettings={collapseSettings}>
+        {lastActiveTopicArray ? mapTopics(lastActiveTopicArray, pageSize) : ''}
+    </CollapsibleSection>
+);
 
 
 LastActiveTopics.propTypes = {
-    lastActiveTopicArray: sharedPropTypes.topicArray.isRequired
+    lastActiveTopicArray: sharedPropTypes.topicArray.isRequired,
+    pageSize: number.isRequired
 };
 
 export default LastActiveTopics;

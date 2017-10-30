@@ -6,11 +6,12 @@ import NavigationLinkListItem from '../NavigationLinkListItem';
 import calculateStyles from './calculateStyles';
 
 const mapNavigationLinks = (navigationLinkArray = [], separatorClassName) =>
-    navigationLinkArray.map(item =>
-        (<div key={item.id}>
+    navigationLinkArray.map(item => (
+        <div key={item.id}>
             <NavigationLinkListItem navigationLinkItem={item} />
             <div className={separatorClassName} />
-        </div>));
+        </div>
+    ));
 
 export const NavigationLinkListPure = ({classes, className, navigationLinkArray}) => {
     const {list, separator} = classes;

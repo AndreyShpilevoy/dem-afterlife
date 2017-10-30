@@ -7,6 +7,7 @@ import {
     getLocaleSuccess,
     getLocaleSaga,
     getLocaleNonBlockSaga,
+    localeReducer,
     GET_FORUM_BY_ID,
     GET_FORUM_BY_ID_SUCCESS,
     GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY,
@@ -27,6 +28,7 @@ import {
     getForumsByParentForumIdNonBlockSaga,
     getSubForumsByParentForumIdArraySaga,
     getSubForumsByParentForumIdArrayNonBlockSaga,
+    forumReducer,
     GET_BREADCRUMB_ARRAY_SUCCESS,
     GET_FORUM_BREADCRUMB_ARRAY,
     GET_TOPIC_BREADCRUMB_ARRAY,
@@ -38,6 +40,14 @@ import {
     getForumBreadcrumbArraySaga,
     getTopicBreadcrumbArrayNonBlockSaga,
     getTopicBreadcrumbArraySaga,
+    breadcrumbReducer,
+    SET_PAGINATION_PAGE_SIZE,
+    SET_PAGINATION_PAGE_NUMBER,
+    SET_PAGINATION_TOTAL_ITEMS_COUNT,
+    setPaginationPageSize,
+    setPaginationPageNumber,
+    setPaginationTotalItemsCount,
+    paginationReducer,
     sharedReducer,
     sharedSaga
 } from './reducer';
@@ -57,7 +67,20 @@ describe('Shared Locale Actions', () => {
     });
 });
 describe('Shared Locale Reducers', () => {
-    it('sharedReducer with action GET_LOCALE_SUCCESS should return expected state', () => {
+    it('localeReducer with invalid (GET_SMTH) action should return expected state', () => {
+        const defaultState = {
+            forumArray: []
+        };
+        const action = {
+            type: 'GET_SMTH',
+            payload: 'lol'
+        };
+        const expectedResult = {
+            forumArray: []
+        };
+        expect(localeReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action GET_LOCALE_SUCCESS should call localeReducer return expected state', () => {
         const defaultState = {
             locale: 'en'
         };
@@ -89,7 +112,7 @@ describe('Shared Locale Sagas', () => {
         const generator = getLocaleNonBlockSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: 'en', error: null});
+        const secondYield = generator.next({response: {data: 'en'}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -175,7 +198,20 @@ describe('Shared Forums Actions', () => {
     });
 });
 describe('Shared Forums Reducers', () => {
-    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should return expected state', () => {
+    it('forumReducer with invalid (GET_SMTH) action should return expected state', () => {
+        const defaultState = {
+            forumArray: []
+        };
+        const action = {
+            type: 'GET_SMTH',
+            payload: 'lol'
+        };
+        const expectedResult = {
+            forumArray: []
+        };
+        expect(forumReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and empty forumArray should call forumReducer and return expected state', () => {
         const defaultState = {
             selectedForum: {}
         };
@@ -187,7 +223,7 @@ describe('Shared Forums Reducers', () => {
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and not empty forumArray should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_BY_ID_SUCCESS and not empty forumArray should call forumReducer and return expected state', () => {
         const defaultState = {
             selectedForum: {id: 2, title: 'Ex Machina 2', order: 2}
         };
@@ -199,7 +235,7 @@ describe('Shared Forums Reducers', () => {
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('sharedReducer with action GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS should call forumReducer and return expected state', () => {
         const defaultState = {
             forumArray: []
         };
@@ -223,7 +259,7 @@ describe('Shared Forums Reducers', () => {
         expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 
-    it('sharedReducer with action GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should return expected state', () => {
+    it('sharedReducer with action GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS should call forumReducer and return expected state', () => {
         const defaultState = {
             subForumArray: []
         };
@@ -265,7 +301,7 @@ describe('Shared Forums Sagas', () => {
         const generator = getForumByIdNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: {id: 1, title: 'Ex Machina', order: 1}, error: null});
+        const secondYield = generator.next({response: {data: {id: 1, title: 'Ex Machina', order: 1} }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -309,7 +345,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: forumArray, error: null});
+        const secondYield = generator.next({response: {data: forumArray}, error: null});
         const thirdYield = generator.next([1, 2, 3]);
         const fourthYield = generator.next();
 
@@ -337,7 +373,7 @@ describe('Shared Forums Sagas', () => {
         const generator = getForumsByParentForumIdSaga();
 
         const firstYield = generator.next();
-        const secondYield = generator.next({payload: {parentForumId: 1 } });
+        const secondYield = generator.next({payload: {parentForumId: 1} });
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -355,7 +391,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next();
-        const secondYield = generator.next({response: forumArray, error: null});
+        const secondYield = generator.next({response: {data: forumArray}, error: null});
         const thirdYield = generator.next([1, 2, 3]);
         const fourthYield = generator.next();
 
@@ -402,7 +438,7 @@ describe('Shared Forums Sagas', () => {
         ];
 
         const firstYield = generator.next(forumIdArray);
-        const secondYield = generator.next({response: forumsByParentForumId, error: null});
+        const secondYield = generator.next({response: {data: forumsByParentForumId}, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -465,7 +501,20 @@ describe('Shared Breadcrumb Actions', () => {
     });
 });
 describe('Shared Breadcrumb Reducers', () => {
-    it('sharedReducer with action GET_BREADCRUMB_ARRAY_SUCCESS should return expected state', () => {
+    it('breadcrumbReducer with invalid (GET_SMTH) action should return expected state', () => {
+        const defaultState = {
+            forumArray: []
+        };
+        const action = {
+            type: 'GET_SMTH',
+            payload: 'lol'
+        };
+        const expectedResult = {
+            forumArray: []
+        };
+        expect(breadcrumbReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action GET_BREADCRUMB_ARRAY_SUCCESS should call breadcrumbReducer and return expected state', () => {
         const defaultState = {
             breadcrumbArray: [
                 {path: '/Conference', title: 'Conference', order: 1},
@@ -506,7 +555,7 @@ describe('Shared Breadcrumb Sagas', () => {
         const generator = getForumBreadcrumbArrayNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: [{path: '/Forum_1', title: 'Forum 1', order: 1}], error: null});
+        const secondYield = generator.next({response: {data: [{path: '/Forum_1', title: 'Forum 1', order: 1}] }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -545,7 +594,7 @@ describe('Shared Breadcrumb Sagas', () => {
         const generator = getTopicBreadcrumbArrayNonBlockSaga(1);
 
         const firstYield = generator.next(1);
-        const secondYield = generator.next({response: [{path: '/Topic_1', title: 'Topic 1', order: 1}], error: null});
+        const secondYield = generator.next({response: {data: [{path: '/Topic_1', title: 'Topic 1', order: 1}] }, error: null});
         const thirdYield = generator.next();
 
         expect(firstYield).toMatchSnapshot();
@@ -565,6 +614,73 @@ describe('Shared Breadcrumb Sagas', () => {
         expect(firstYield.value.CALL.fn.name).toMatchSnapshot();
         expect(secondYield).toMatchSnapshot();
         expect(thirdYield).toMatchSnapshot();
+    });
+});
+
+
+describe('Shared Pagination Actions', () => {
+    it('setPaginationPageSize should create expected object', () => {
+        const expectedResult = {
+            type: SET_PAGINATION_PAGE_SIZE,
+            payload: {pageSize: 10}
+        };
+        expect(setPaginationPageSize(10)).toEqual(expectedResult);
+    });
+    it('setPaginationPageNumber should create expected object', () => {
+        const expectedResult = {
+            type: SET_PAGINATION_PAGE_NUMBER,
+            payload: {pageNumber: 10}
+        };
+        expect(setPaginationPageNumber(10)).toEqual(expectedResult);
+    });
+    it('setPaginationTotalItemsCount should create expected object', () => {
+        const expectedResult = {
+            type: SET_PAGINATION_TOTAL_ITEMS_COUNT,
+            payload: {totalItemsCount: 10}
+        };
+        expect(setPaginationTotalItemsCount(10)).toEqual(expectedResult);
+    });
+});
+describe('Shared Pagination Reducers', () => {
+    it('paginationReducer with invalid (GET_SMTH) action should return expected state', () => {
+        const defaultState = {
+            forumArray: []
+        };
+        const action = {
+            type: 'GET_SMTH',
+            payload: 'lol'
+        };
+        const expectedResult = {
+            forumArray: []
+        };
+        expect(paginationReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action SET_PAGINATION_PAGE_SIZE should call paginationReducer and return expected state', () => {
+        const defaultState = {pagination: {pageSize: 0} };
+        const action = {
+            type: SET_PAGINATION_PAGE_SIZE,
+            payload: {pageSize: 10}
+        };
+        const expectedResult = {pagination: {pageSize: 10} };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action SET_PAGINATION_PAGE_NUMBER should call paginationReducer and return expected state', () => {
+        const defaultState = {pagination: {pageNumber: 0} };
+        const action = {
+            type: SET_PAGINATION_PAGE_NUMBER,
+            payload: {pageNumber: 10}
+        };
+        const expectedResult = {pagination: {pageNumber: 10} };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
+    });
+    it('sharedReducer with action SET_PAGINATION_TOTAL_ITEMS_COUNT should call paginationReducer and return expected state', () => {
+        const defaultState = {pagination: {totalItemsCount: 0} };
+        const action = {
+            type: SET_PAGINATION_TOTAL_ITEMS_COUNT,
+            payload: {totalItemsCount: 10}
+        };
+        const expectedResult = {pagination: {totalItemsCount: 10} };
+        expect(sharedReducer(defaultState, action)).toEqual(expectedResult);
     });
 });
 
