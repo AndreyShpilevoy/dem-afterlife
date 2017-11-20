@@ -16,4 +16,5 @@ script:
 before_install:
 - export TZ=Europe/Kiev
 after_script:
+  - cd ../../
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
