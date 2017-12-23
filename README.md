@@ -28,5 +28,3 @@ It's new engine for [DeusExMachina](http://dem.org.ua) website
 
 ### Features
 - ASP.NET Core ```4.6.2```
-
-
