@@ -1,18 +1,15 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import Chapter from './index';
-
-configure({adapter: new Adapter()});
 
 jest.mock('components/Forum');
 
 describe('Chapter', () => {
     it('component match expected snapshot without forumArray', () => {
         const chapter = {id: 2, title: 'Ex Machina Меридиан 113', order: 2, forumArray: [] };
-        expect(shallow(<Chapter className={'chapterClassName'} chapter={chapter} />)).toMatchSnapshot();
+        expect(shallow(<Chapter className='chapterClassName' chapter={chapter} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot with forumArray', () => {
@@ -38,6 +35,6 @@ describe('Chapter', () => {
                 } }
             ]
         };
-        expect(shallow(<Chapter className={'chapterClassName'} chapter={chapter} />)).toMatchSnapshot();
+        expect(shallow(<Chapter className='chapterClassName' chapter={chapter} />)).toMatchSnapshot();
     });
 });

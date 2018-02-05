@@ -1,12 +1,11 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0, import/first:0 */
 jest.mock('./processor');
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
+
 import Media from './index';
 import processTextLineContentViaParsers from './processor';
 
-configure({adapter: new Adapter()});
 
 describe('Media', () => {
     it('scenario without error and shortHeight set to "true" should match expected snapshot', () => {
@@ -16,7 +15,7 @@ describe('Media', () => {
             url: 'some_url',
             isShortHeight: true
         }));
-        expect(shallow(<Media>{'test'}</Media>)).toMatchSnapshot();
+        expect(shallow(<Media>test</Media>)).toMatchSnapshot();
     });
 
     it('scenario without error and shortHeight set to "false" should match expected snapshot', () => {
@@ -26,7 +25,7 @@ describe('Media', () => {
             url: 'some_url',
             isShortHeight: false
         }));
-        expect(shallow(<Media>{'test'}</Media>)).toMatchSnapshot();
+        expect(shallow(<Media>test</Media>)).toMatchSnapshot();
     });
 
     it('scenario with error should match expected snapshot', () => {
@@ -35,6 +34,6 @@ describe('Media', () => {
             success: false,
             url: ''
         }));
-        expect(shallow(<Media>{'test'}</Media>)).toMatchSnapshot();
+        expect(shallow(<Media>test</Media>)).toMatchSnapshot();
     });
 });

@@ -1,12 +1,9 @@
 /* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, react/no-multi-comp, react/prop-types, react/jsx-filename-extension */
 
 import React from 'react';
-import {mount, shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount, shallow} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Forum, {ForumPure} from './index';
-
-configure({adapter: new Adapter()});
 
 jest.mock('react-router-dom');
 jest.mock('containers/Term');

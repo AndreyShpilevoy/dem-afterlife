@@ -22,15 +22,15 @@ describe('Media processTextLineContentViaParsers', () => {
     });
 
     it('should return default result if sent empty array as second argument', () => {
-        expect(processTextLineContentViaParsers(<TextLine>{'valid'}</TextLine>, [])).toMatchSnapshot();
+        expect(processTextLineContentViaParsers(<TextLine>valid</TextLine>, [])).toMatchSnapshot();
     });
 
     it('should return default result if sent correct arguments, but with wrong data', () => {
-        expect(processTextLineContentViaParsers(<TextLine>{'some wrong content'}</TextLine>, [firstParser])).toMatchSnapshot();
+        expect(processTextLineContentViaParsers(<TextLine>some wrong content</TextLine>, [firstParser])).toMatchSnapshot();
     });
 
     it('should return handled result if data was correct', () => {
-        expect(processTextLineContentViaParsers(<TextLine>{'valid'}</TextLine>,
+        expect(processTextLineContentViaParsers(<TextLine>valid</TextLine>,
             [secondParser, firstParser, thirdParser])).toMatchSnapshot();
     });
 });

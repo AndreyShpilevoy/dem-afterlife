@@ -46,7 +46,7 @@
         "no-constant-condition": [1, { "checkLoops": false }],
         "no-debugger": 1,
         "no-empty-character-class": 1,
-        "no-extra-parens": [1, "all", { "ignoreJSX": "multi-line" }],
+        "no-extra-parens": [1, "all", { "ignoreJSX": "all" }],
         "no-implicit-coercion": [1,{"boolean":true,"number":true}],
         "no-irregular-whitespace": [1, { "skipRegExps": true }],
         "no-multiple-empty-lines": [1,{"max":2}],
@@ -69,11 +69,11 @@
         "jsx-a11y/alt-text": 1,
         "jsx-a11y/no-static-element-interactions": 1,
         "react/jsx-key": 1,
-        "react/jsx-no-literals": 1,
+        "react/jsx-no-literals": 0,
         "react/no-direct-mutation-state": 1,
         "react/no-multi-comp": 1,
         "space-unary-ops": [
-            2,
+            1,
             {
                 "words":true,
                 "nonwords":true,
@@ -88,6 +88,11 @@
         "object-curly-newline": 0,
         "function-paren-newline": 0,
         "react/jsx-closing-tag-location": 1,
+        "react/no-unused-prop-types": 1,
+        "react/no-unused-state": 1,
+        "import/no-unresolved": [2, {"caseSensitive": false}],
+        "no-underscore-dangle": 0,
+        "func-names": [1, "as-needed"],
         "jsx-a11y/anchor-is-valid": [ "error", {
             "components": [ "Link" ],
             "specialLink": [ "to" ]

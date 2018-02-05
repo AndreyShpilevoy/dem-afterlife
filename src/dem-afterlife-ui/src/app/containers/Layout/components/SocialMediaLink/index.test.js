@@ -1,11 +1,9 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import {SocialMediaLinkPure} from './index';
 
-configure({adapter: new Adapter()});
 
 describe('SocialMediaLink', () => {
     const socialMediaLinkItem = {
@@ -22,6 +20,6 @@ describe('SocialMediaLink', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<SocialMediaLinkPure className={'linkIconClassName'} classes={classes} socialMediaLinkItem={socialMediaLinkItem} />)).toMatchSnapshot();
+        expect(shallow(<SocialMediaLinkPure className='linkIconClassName' classes={classes} socialMediaLinkItem={socialMediaLinkItem} />)).toMatchSnapshot();
     });
 });
