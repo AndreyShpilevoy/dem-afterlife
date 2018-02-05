@@ -39,7 +39,7 @@ export class HeaderPure extends Component {
     handleScroll = throttle(
         ({target}) => {
             target.scrollingElement.scrollTop > 25 ? // eslint-disable-line no-unused-expressions
-            this.setState({shrinkedHeader: true}) :
+                this.setState({shrinkedHeader: true}) :
                 this.setState({shrinkedHeader: false});
         },
         250);

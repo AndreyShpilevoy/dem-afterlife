@@ -1,12 +1,10 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import * as styles from 'styles';
 import {PresentationPure} from './Presentation';
 
-configure({adapter: new Adapter()});
 
 const ThemeProvider = () => <ThemeProvider />;
 styles.ThemeProvider = ThemeProvider;
@@ -21,7 +19,7 @@ describe('Layout Presentation Pure', () => {
     it('component match expected snapshot', () => {
         expect(shallow(
             <PresentationPure
-                themeName={'default'}
+                themeName='default'
                 navigationLinkArray={[]}
                 socialMediaLinkArray={[]}
                 breadcrumbArray={[]}

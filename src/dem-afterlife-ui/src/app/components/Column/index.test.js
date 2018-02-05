@@ -1,11 +1,8 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import {ColumnPure} from './index';
-
-configure({adapter: new Adapter()});
 
 
 describe('Column Pure', () => {
@@ -143,14 +140,14 @@ describe('Column Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<ColumnPure classes={classes}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure classes={classes}><div>Column content</div></ColumnPure>)).toMatchSnapshot();
     });
 
     it('component with xs="1" md="3" xl="12" xsOffset="1" mdOffset="3" xlOffset="12" match expected snapshot', () => {
-        expect(shallow(<ColumnPure xs={1} md={3} xl='12' xsOffset='1' mdOffset='3' xlOffset='12' classes={classes}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure xs={1} md={3} xl='12' xsOffset='1' mdOffset='3' xlOffset='12' classes={classes}><div>Column content</div></ColumnPure>)).toMatchSnapshot();
     });
 
     it('component with wrong xs="wrong" match expected snapshot', () => {
-        expect(shallow(<ColumnPure xs='wrong' classes={classes}><div>{'Column content'}</div></ColumnPure>)).toMatchSnapshot();
+        expect(shallow(<ColumnPure xs='wrong' classes={classes}><div>Column content</div></ColumnPure>)).toMatchSnapshot();
     });
 });

@@ -2,11 +2,10 @@
 
 import React from 'react';
 import {mount, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+
 import configureMockStore from 'redux-mock-store';
 import Conference from './index';
 
-configure({adapter: new Adapter()});
 
 jest.mock('components/Chapter', () => {
     const Chapter = ({children}) => <div>{children}</div>;

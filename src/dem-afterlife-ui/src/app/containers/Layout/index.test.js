@@ -1,12 +1,10 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import Layout from './index';
 
-configure({adapter: new Adapter()});
 
 jest.mock('styles/themes/default', () => ({}));
 
@@ -20,6 +18,6 @@ describe('Layout HOC', () => {
 
     it('component match expected snapshot', () => {
         const props = {store: mockStore({layoutReducer: {navigationLinkArray: [], socialMediaLinkArray: [] }, sharedReducer: {locale: 'ru', breadcrumbArray: [] } })};
-        expect(mount(<Layout {...props}><div>{'Layout content'}</div></Layout>, {lifecycleExperimental: true})).toMatchSnapshot();
+        expect(mount(<Layout {...props}><div>Layout content</div></Layout>, {lifecycleExperimental: true})).toMatchSnapshot();
     });
 });

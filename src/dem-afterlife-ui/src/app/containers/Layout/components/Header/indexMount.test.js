@@ -1,12 +1,10 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {mount, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {mount} from 'enzyme';
 import {root} from 'utils';
 import {HeaderPure} from './index';
 
-configure({adapter: new Adapter()});
 
 jest.mock('react-router-dom/Link');
 jest.mock('components/Container');

@@ -1,11 +1,9 @@
-/* eslint-disable no-undef, fp/no-unused-expression, fp/no-nil, fp/no-mutation, react/jsx-filename-extension, react/prop-types, jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-undef, fp/no-unused-expression, jsx-a11y/click-events-have-key-events, fp/no-nil, fp/no-mutation, react/jsx-filename-extension, react/prop-types, jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import {HeaderPure} from './index';
 
-configure({adapter: new Adapter()});
 
 jest.mock('../MenuButton', () => {
     const MenuButton = ({onClick}) => <div onClick={onClick} />;

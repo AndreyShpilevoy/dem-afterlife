@@ -1,11 +1,9 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, fp/no-mutation:0 , react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import {ForumPure} from './index';
 
-configure({adapter: new Adapter()});
 
 jest.mock('components/SubForum');
 
@@ -45,7 +43,7 @@ describe('ForumPure', () => {
                 latestPostAuthorGroupColor: '#00AA00'
             }
         };
-        expect(shallow(<ForumPure className={'forumClassName'} classes={classes} forum={forum} />)).toMatchSnapshot();
+        expect(shallow(<ForumPure className='forumClassName' classes={classes} forum={forum} />)).toMatchSnapshot();
     });
 
     it('component match expected snapshot with subForumArray', () => {
@@ -74,6 +72,6 @@ describe('ForumPure', () => {
                 {id: 56, title: 'Каталог файлов', order: 56}
             ]
         };
-        expect(shallow(<ForumPure className={'forumClassName'} classes={classes} forum={forum} />)).toMatchSnapshot();
+        expect(shallow(<ForumPure className='forumClassName' classes={classes} forum={forum} />)).toMatchSnapshot();
     });
 });

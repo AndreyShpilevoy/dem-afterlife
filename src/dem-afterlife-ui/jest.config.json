@@ -8,6 +8,8 @@
             "lines": 80
         }
     },
+    "setupTestFrameworkScriptFile": "<rootDir>/tools/setupTestFramework",
+    "setupFiles": [ "<rootDir>/tools/testSetup"],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "testRegex": "src/.*/.*test.js",

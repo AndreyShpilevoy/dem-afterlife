@@ -1,11 +1,9 @@
 /* eslint no-undef: 0, fp/no-unused-expression: 0, fp/no-nil: 0, react/jsx-filename-extension:0 */
 
 import React from 'react';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import {HiddenPure} from './index';
 
-configure({adapter: new Adapter()});
 
 describe('Hidden Pure', () => {
     const classes = {
@@ -27,10 +25,10 @@ describe('Hidden Pure', () => {
     };
 
     it('component match expected snapshot', () => {
-        expect(shallow(<HiddenPure classes={classes}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
+        expect(shallow(<HiddenPure classes={classes}><div>hidden content</div></HiddenPure>)).toMatchSnapshot();
     });
 
     it('component with xs="down" md="exact" xl="up" match expected snapshot', () => {
-        expect(shallow(<HiddenPure classes={classes} xs={'down'} md={'exact'} xl={'up'}><div>{'hidden content'}</div></HiddenPure>)).toMatchSnapshot();
+        expect(shallow(<HiddenPure classes={classes} xs='down' md='exact' xl='up'><div>hidden content</div></HiddenPure>)).toMatchSnapshot();
     });
 });

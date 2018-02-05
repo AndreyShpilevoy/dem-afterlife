@@ -1,4 +1,4 @@
-/* eslint no-undef: "off", complexity: 0, no-unused-vars:0 */
+/* eslint-disable no-undef, complexity, no-unused-vars */
 
 import delay from 'api/__fakeApi__/delay';
 import postArray from 'api/__fakeData__/postArray';
