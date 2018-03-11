@@ -13,13 +13,12 @@ const getWebpackAliasPreprocessor = src => {
     return src.replace(regexp, (match, p1, p2) => `${p1}'${resolve(p2)}'`);
 };
 
-const createTransformer = () => ({
+module.exports = {
     canInstrument: true,
     getCacheKey(...rest) {
         return babelJest.getCacheKey(...rest);
     },
-    process(src, filename, config, transformOptions) {
-        return babelJest.process(getWebpackAliasPreprocessor(src), filename, config, transformOptions);
+    process(src, ...rest) {
+        return babelJest.process(getWebpackAliasPreprocessor(src), ...rest);
     }
-});
-module.exports = createTransformer();
+};
