@@ -1,16 +1,16 @@
 /* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies */
 const babelJest = require('babel-jest');
-const transform = require('transform-jest-deps');
 const {resolve} = require('./webpackAliasResolver');
 
-const getWebpackAliasPreprocessor = () => ({
-    process(src) {
-        return transform(src, resolve);
+const getWebpackAliasPreprocessor = src => src.replace(/(require|jest.mock)\('([^)]+)'/g, (match, p1, p2) => `${p1}('${resolve(p2)}'`);
+
+const createTransformer = () => ({
+    canInstrument: true,
+    getCacheKey(fileData, filename, configString, _ref) {
+        return babelJest.getCacheKey(fileData, filename, configString, _ref);
+    },
+    process(src, filename, config, transformOptions) {
+        return getWebpackAliasPreprocessor(babelJest.process(src, filename, config, transformOptions));
     }
 });
-
-module.exports = {
-    process(src, filePath, ...rest) {
-        return getWebpackAliasPreprocessor().process(babelJest.process(src, filePath, ...rest), filePath);
-    }
-};
+module.exports = createTransformer();
