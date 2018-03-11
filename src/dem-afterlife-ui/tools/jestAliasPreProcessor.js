@@ -1,16 +1,25 @@
-/* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies */
+/* eslint-disable no-undef, no-console, max-statements, import/no-extraneous-dependencies, no-useless-escape */
 const babelJest = require('babel-jest');
 const {resolve} = require('./webpackAliasResolver');
 
-const getWebpackAliasPreprocessor = src => src.replace(/(require|jest.mock)\('([^)]+)'/g, (match, p1, p2) => `${p1}('${resolve(p2)}'`);
+const getWebpackAliasPreprocessor = src => {
+    const anyChartersNotPresentInSet = '[^,;]+';
+    const requireOrJestMockWithOpenBracketPart = '(?:require|jest.mock)\\(';
+    const ImportAllAsSomethingOptional = '(?:\\*\\s+as\\s+)?';
+    const importByName = '(?:\\s+)?{(?:\\s+)?[\\w ,\\n\\r]+(?:\\s+)?}(?:\\s+)?';
+    const fullImportPart = `import(?:\\s+${ImportAllAsSomethingOptional}\\w*\\s+|${importByName})from(?:\\s+)?`;
+    const regexp = new RegExp(`(${fullImportPart}|${requireOrJestMockWithOpenBracketPart})'(${anyChartersNotPresentInSet})'`, 'g');
+
+    return src.replace(regexp, (match, p1, p2) => `${p1}'${resolve(p2)}'`);
+};
 
 const createTransformer = () => ({
     canInstrument: true,
-    getCacheKey(fileData, filename, configString, _ref) {
-        return babelJest.getCacheKey(fileData, filename, configString, _ref);
+    getCacheKey(...rest) {
+        return babelJest.getCacheKey(...rest);
     },
     process(src, filename, config, transformOptions) {
-        return getWebpackAliasPreprocessor(babelJest.process(src, filename, config, transformOptions));
+        return babelJest.process(getWebpackAliasPreprocessor(src), filename, config, transformOptions);
     }
 });
 module.exports = createTransformer();
