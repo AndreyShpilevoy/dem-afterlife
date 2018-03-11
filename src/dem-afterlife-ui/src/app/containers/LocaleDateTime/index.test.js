@@ -3,8 +3,10 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
+import * as utils from 'utils';
 import LocaleDateTime from './index';
 
+utils.localization.getLocaleDateTime = jest.fn(() => 'Jun 2, 2017, 3:00 AM');
 
 describe('LocaleDateTime', () => {
     const mockStore = configureMockStore();

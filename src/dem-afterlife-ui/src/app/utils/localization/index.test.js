@@ -21,6 +21,8 @@ const milliseconds = {
     perYear: 31536000000
 };
 
+Date.prototype.toLocaleDateString = Date.prototype.toISOString; //eslint-disable-line
+
 describe('EN dateTimeDeclension', () => {
     it('getTermTranslation should return right translation for ru locale', () => {
         expect(getTermTranslation({id: 1, value: 'Topics'}, 'ru')).toEqual('Тем');
@@ -95,7 +97,7 @@ describe('EN dateTimeDeclension', () => {
     });
 
     it('getRelativeDateTime should return expected string for wrong locale', () => {
-        expect(getRelativeDateTime('Tue May 30 2017 12:32:49', 'ururur')).toEqual('5/30/2017 12:32');
+        expect(getRelativeDateTime('Tue May 30 2017 12:32:49', 'ururur')).toEqual('2017-05-30T09:32:49.000Z 12:32');
     });
 
     it('getRelativeDateTime should return expected string for right params', () => {
