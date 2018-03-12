@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/AndreyShpilevoy/dem-afterlife.svg?branch=master)](https://travis-ci.org/AndreyShpilevoy/dem-afterlife)
-[![Test Coverage](https://codeclimate.com/github/AndreyShpilevoy/dem-afterlife/badges/coverage.svg)](https://codeclimate.com/github/AndreyShpilevoy/dem-afterlife/coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/802ab4a1c02126df4bda/maintainability)](https://codeclimate.com/github/AndreyShpilevoy/dem-afterlife/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/802ab4a1c02126df4bda/test_coverage)](https://codeclimate.com/github/AndreyShpilevoy/dem-afterlife/test_coverage)
 
 # dem-afterlife
 It's new engine for [DeusExMachina](http://dem.org.ua) website
