@@ -12,7 +12,7 @@
     "setupFiles": [ "<rootDir>/tools/testSetup"],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
-    "testRegex": "src/.*/.*test.js",
+    "testRegex": "src/.*/.*test.js$",
     "transform": {
         ".*": "<rootDir>/tools/jestAliasPreProcessor"
     },
