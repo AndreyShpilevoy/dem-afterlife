@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "react-app",
+        "airbnb-base"
+    ],
+    "rules": {
+        "class-methods-use-this": [1, { "exceptMethods": ["render"] }],
+        "linebreak-style": 0
+    }
+}
