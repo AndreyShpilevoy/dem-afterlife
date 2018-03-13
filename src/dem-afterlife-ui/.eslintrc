@@ -1,10 +1,13 @@
 {
     "extends": [
         "react-app",
-        "airbnb-base"
+        "airbnb-base",
+        "prettier"
     ],
+    "plugins": ["prettier"],
     "rules": {
         "class-methods-use-this": [1, { "exceptMethods": ["render"] }],
-        "linebreak-style": 0
+        "linebreak-style": 0,        
+        "prettier/prettier": 2
     }
 }
