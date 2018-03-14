@@ -8,17 +8,46 @@
     "plugins": ["prettier"],
     "rules": {
         "class-methods-use-this": [1, { "exceptMethods": ["render"] }],
-        "linebreak-style": 0,        
-        "prettier/prettier": 2
+        "complexity": [1, {"max": 11}],
+        "curly": [1,"all"],
+        "func-names": [1, "as-needed"],
+        "func-style": [1, "expression"],
+        "import/extensions": [1, "never" ],
+        "import/no-unresolved": [2, {"caseSensitive": false}],
+        "import/prefer-default-export": 2,
+        "jsx-a11y/anchor-is-valid": [ "error", {"components": [ "Link" ], "specialLink": [ "to" ]}],
+        "jsx-a11y/no-static-element-interactions": 1,
+        "linebreak-style": 0,
+        "lines-around-comment": [1,{"beforeBlockComment":true,"afterBlockComment":false,"beforeLineComment":true,"afterLineComment":false,"allowBlockStart":true,"allowBlockEnd":true}],
+        "max-depth": [1,{"max": 4}],
+        "max-len":  [1, 140, 2],
+        "max-nested-callbacks": [1,{"max": 10}],
+        "max-params": [1,{"max": 5}],
+        "max-statements": [1,{"max": 10}],
+        "no-bitwise": 1,
+        "no-constant-condition": [1, { "checkLoops": false }],
+        "no-debugger": 1,
+        "no-extra-parens": [1, "all", { "ignoreJSX": "all" }],
+        "no-implicit-coercion": [1,{"boolean":true,"number":true, "string": true}],
+        "no-param-reassign": [2,{"props":true}],
+        "no-warning-comments": [1,{"terms":["TODO", "todo", "FIXME", "fixme"],"location":"anywhere"}],
+        "prettier/prettier": 2,
+        "react/display-name": [1,{ "ignoreTranspilerName": false }],
+        "react/forbid-prop-types": [2, { "forbid": ["any", "array", "object"] }],
+        "react/jsx-key": 1,
+        "react/no-multi-comp": 1,
+        "react/no-unused-prop-types": 1,
+        "react/no-unused-state": 1,
+        "react/require-default-props": 1
     },
     "settings": {
-    "import/resolver": {
-      "node": {
-        "moduleDirectory": [
-          "node_modules",
-          "src"
-        ]
-      }
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": [
+                "node_modules",
+                "src"
+                ]
+            }
+        }
     }
-  }
 }
