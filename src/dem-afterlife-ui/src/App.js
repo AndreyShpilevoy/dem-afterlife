@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import lol from "utils/lol";
 import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
   render() {
+    lol();
     return (
       <div className="App">
         <header className="App-header">
