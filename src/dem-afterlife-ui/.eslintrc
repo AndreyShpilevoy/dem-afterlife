@@ -10,5 +10,15 @@
         "class-methods-use-this": [1, { "exceptMethods": ["render"] }],
         "linebreak-style": 0,        
         "prettier/prettier": 2
+    },
+    "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
     }
+  }
 }
