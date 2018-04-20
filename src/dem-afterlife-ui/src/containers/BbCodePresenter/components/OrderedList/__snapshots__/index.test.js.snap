@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderedList component match expected snapshot 1`] = `
+<ol>
+  Test content
+</ol>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vimeoVideo should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`vimeoVideo should return valid result if pass iframe html code 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://player.vimeo.com/video/231557692",
+}
+`;
+
+exports[`vimeoVideo should return valid result if pass link html code 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://player.vimeo.com/video/231557692",
+}
+`;

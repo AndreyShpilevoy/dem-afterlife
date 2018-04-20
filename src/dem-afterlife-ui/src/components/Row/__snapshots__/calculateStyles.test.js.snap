@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row calculateStyles should create expected object 1`] = `
+Object {
+  "row": Object {
+    "&.reverse": Object {
+      "flexDirection": "row-reverse",
+    },
+    "boxSizing": "border-box",
+    "display": "flex",
+    "flex": "0 1 auto",
+    "flexDirection": "row",
+    "flexWrap": "wrap",
+    "width": "100%",
+  },
+}
+`;

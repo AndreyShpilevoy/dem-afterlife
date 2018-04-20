@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar calculateStyles should create expected object 1`] = `
+Object {
+  "avatar": Object {
+    "&>img": Object {
+      "alignSelf": "center",
+      "flex": "0 0 auto",
+      "margin": "auto",
+      "maxHeight": "100%",
+      "maxWidth": "100%",
+      "objectFit": "scale-down",
+    },
+    "display": "flex",
+    "flexDirection": "row",
+    "height": 2.5,
+    "justifyContent": "center",
+    "marginLeft": "auto",
+    "marginRight": "auto",
+    "width": "100%",
+  },
+  "avatarDefault": Object {
+    "&>img": Object {
+      "alignSelf": "center",
+      "flex": "0 0 auto",
+      "margin": "auto",
+      "maxHeight": "100%",
+      "maxWidth": "100%",
+      "objectFit": "scale-down",
+    },
+    "backgroundImage": "url(defaultAvatar.img)",
+    "backgroundRepeat": "no-repeat",
+    "backgroundSize": "contain",
+    "minHeight": "100%",
+    "minWidth": "100%",
+  },
+  "container": Object {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "center",
+    "width": 2.5,
+  },
+}
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationItem Pure component with active state and page #11 match expected snapshot 1`] = `
+<span
+  className="item active"
+>
+  11
+</span>
+`;
+
+exports[`PaginationItem Pure component with isEllipsis state true match expected snapshot 1`] = `
+<span
+  className="item ellipsis"
+>
+  ...
+</span>
+`;
+
+exports[`PaginationItem Pure component with not active and isSmall state and page #11 match expected snapshot 1`] = `
+<Jss(LinkPure)
+  className="item small"
+  to="/SomeContainer/1990/page11"
+>
+  11
+</Jss(LinkPure)>
+`;
+
+exports[`PaginationItem Pure component with not active state and page #11 match expected snapshot 1`] = `
+<Jss(LinkPure)
+  className="item"
+  to="/SomeContainer/1990/page11"
+>
+  11
+</Jss(LinkPure)>
+`;

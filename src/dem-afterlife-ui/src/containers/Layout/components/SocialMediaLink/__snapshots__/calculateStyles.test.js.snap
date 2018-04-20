@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMediaLink calculateStyles should create expected object 1`] = `
+Object {
+  "focus": Object {
+    "&:focus": Object {
+      "outlineColor": "red",
+    },
+  },
+}
+`;

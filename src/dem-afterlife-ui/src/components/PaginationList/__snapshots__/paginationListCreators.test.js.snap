@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationList creator generateEndPaginationList should match expected snapshot 1`] = `
+Array [
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 1,
+    "page": 1,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": true,
+    "key": 0,
+    "page": "...",
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 13,
+    "page": 13,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 14,
+    "page": 14,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 15,
+    "page": 15,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 16,
+    "page": 16,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 17,
+    "page": 17,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 18,
+    "page": 18,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 19,
+    "page": 19,
+  },
+  Object {
+    "active": true,
+    "isEllipsis": false,
+    "key": 20,
+    "page": 20,
+  },
+]
+`;
+
+exports[`PaginationList creator generateFullPaginationList should match expected snapshot 1`] = `
+Array [
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 1,
+    "page": 1,
+  },
+  Object {
+    "active": true,
+    "isEllipsis": false,
+    "key": 2,
+    "page": 2,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 3,
+    "page": 3,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 4,
+    "page": 4,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 5,
+    "page": 5,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 6,
+    "page": 6,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 7,
+    "page": 7,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 8,
+    "page": 8,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 9,
+    "page": 9,
+  },
+]
+`;
+
+exports[`PaginationList creator generateMiddlePaginationList should match expected snapshot 1`] = `
+Array [
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 1,
+    "page": 1,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": true,
+    "key": 0,
+    "page": "...",
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 5,
+    "page": 5,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 6,
+    "page": 6,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 7,
+    "page": 7,
+  },
+  Object {
+    "active": true,
+    "isEllipsis": false,
+    "key": 8,
+    "page": 8,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 9,
+    "page": 9,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 10,
+    "page": 10,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 11,
+    "page": 11,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": true,
+    "key": 21,
+    "page": "...",
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 20,
+    "page": 20,
+  },
+]
+`;
+
+exports[`PaginationList creator generateStartPaginationList should match expected snapshot 1`] = `
+Array [
+  Object {
+    "active": true,
+    "isEllipsis": false,
+    "key": 1,
+    "page": 1,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 2,
+    "page": 2,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 3,
+    "page": 3,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 4,
+    "page": 4,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 5,
+    "page": 5,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 6,
+    "page": 6,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 7,
+    "page": 7,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 8,
+    "page": 8,
+  },
+  Object {
+    "active": false,
+    "isEllipsis": true,
+    "key": 0,
+    "page": "...",
+  },
+  Object {
+    "active": false,
+    "isEllipsis": false,
+    "key": 20,
+    "page": 20,
+  },
+]
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chapter component match expected snapshot without forumArray 1`] = `
+<Jss(LinkPure)
+  className="chapterClassName"
+  style={
+    Object {
+      "color": "#ffffff",
+    }
+  }
+  to="/UserProfile/256"
+>
+  kto
+</Jss(LinkPure)>
+`;

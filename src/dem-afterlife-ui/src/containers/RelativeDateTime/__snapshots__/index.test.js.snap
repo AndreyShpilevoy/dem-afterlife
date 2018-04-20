@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelativeDateTime component match expected snapshot for relative date 1`] = `
+<Connect(RelativeDateTime)
+  relativeDateTime={2017-06-02T00:00:00.000Z}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <RelativeDateTime
+    className=""
+    dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
+    locale="ru"
+    relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={false}
+    spaceBefore={false}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span
+      className=""
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+      some time ago
+    </span>
+  </RelativeDateTime>
+</Connect(RelativeDateTime)>
+`;
+
+exports[`RelativeDateTime component match expected snapshot for relative date with space after 1`] = `
+<Connect(RelativeDateTime)
+  relativeDateTime={2017-06-02T00:00:00.000Z}
+  spaceAfter={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <RelativeDateTime
+    className=""
+    dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
+    locale="ru"
+    relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={true}
+    spaceBefore={false}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span
+      className=""
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+      some time ago 
+    </span>
+  </RelativeDateTime>
+</Connect(RelativeDateTime)>
+`;
+
+exports[`RelativeDateTime component match expected snapshot for relative date with space before 1`] = `
+<Connect(RelativeDateTime)
+  relativeDateTime={2017-06-02T00:00:00.000Z}
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <RelativeDateTime
+    className=""
+    dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
+    locale="ru"
+    relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={false}
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span
+      className=""
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+       some time ago
+    </span>
+  </RelativeDateTime>
+</Connect(RelativeDateTime)>
+`;
+
+exports[`RelativeDateTime component match expected snapshot for relative date with space before and after 1`] = `
+<Connect(RelativeDateTime)
+  relativeDateTime={2017-06-02T00:00:00.000Z}
+  spaceAfter={true}
+  spaceBefore={true}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <RelativeDateTime
+    className=""
+    dispatch={[Function]}
+    indentAfter={false}
+    indentBefore={false}
+    locale="ru"
+    relativeDateTime={2017-06-02T00:00:00.000Z}
+    spaceAfter={true}
+    spaceBefore={true}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <span
+      className=""
+      style={
+        Object {
+          "paddingLeft": "",
+          "paddingRight": "",
+        }
+      }
+    >
+       some time ago 
+    </span>
+  </RelativeDateTime>
+</Connect(RelativeDateTime)>
+`;

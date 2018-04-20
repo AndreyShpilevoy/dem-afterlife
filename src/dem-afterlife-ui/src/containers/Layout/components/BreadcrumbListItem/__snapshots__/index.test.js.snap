@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbListItem Pure component should mach Active Breadcrumb snapshot 1`] = `
+<div
+  className="item,"
+>
+  <span
+    className="arrow, active"
+  >
+    <div>
+      Conference
+    </div>
+  </span>
+</div>
+`;
+
+exports[`BreadcrumbListItem Pure component should mach Breadcrumb snapshot 1`] = `
+<div
+  className="item,"
+>
+  <Jss(LinkPure)
+    className="arrow,"
+    to="/"
+  >
+    <div>
+      Conference
+    </div>
+  </Jss(LinkPure)>
+</div>
+`;
+
+exports[`BreadcrumbListItem Pure component should mach Ellipsis snapshot 1`] = `
+<div
+  className="item,"
+>
+  <div
+    className="arrow, ellipsis,"
+  >
+    ...
+  </div>
+</div>
+`;

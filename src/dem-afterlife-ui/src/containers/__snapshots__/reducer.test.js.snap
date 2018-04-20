@@ -1,0 +1,1057 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getForumBreadcrumbsArrayByForumIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getForumBreadcrumbsArrayByForumIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "breadcrumbArray": Array [
+            Object {
+              "order": 1,
+              "path": "/Conference",
+              "title": "Conference",
+            },
+            Object {
+              "order": 1,
+              "path": "/Forum_1",
+              "title": "Forum 1",
+            },
+          ],
+        },
+        "type": "GET_BREADCRUMB_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 3`] = `"getForumBreadcrumbArrayNonBlockSaga"`;
+
+exports[`Shared Breadcrumb Sagas getForumBreadcrumbArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getTopicBreadcrumbsArrayByTopicIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getTopicBreadcrumbsArrayByTopicIdApi"`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "breadcrumbArray": Array [
+            Object {
+              "order": 1,
+              "path": "/Conference",
+              "title": "Conference",
+            },
+            Object {
+              "order": 1,
+              "path": "/Topic_1",
+              "title": "Topic 1",
+            },
+          ],
+        },
+        "type": "GET_BREADCRUMB_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_TOPIC_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 3`] = `"getTopicBreadcrumbArrayNonBlockSaga"`;
+
+exports[`Shared Breadcrumb Sagas getTopicBreadcrumbArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_TOPIC_BREADCRUMB_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Default Reducer and Saga default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Shared Default Reducer and Saga default saga should return 1 yield with 7 sagas. 2 yield should be in state Done 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getForumByIdApi"`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getForumByIdApi"`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "selectedForum": Object {
+            "id": 1,
+            "order": 1,
+            "title": "Ex Machina",
+          },
+        },
+        "type": "GET_FORUM_BY_ID_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BY_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 3`] = `"getForumByIdNonBlockSaga"`;
+
+exports[`Shared Forums Sagas getForumByIdSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_BY_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getForumArrayByChapterIdArrayApi"`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 2`] = `"getForumArrayByChapterIdArrayApi"`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "forumArray": Array [
+            Object {
+              "id": 1,
+              "order": 1,
+              "title": "Ex Machina",
+            },
+            Object {
+              "id": 3,
+              "order": 3,
+              "title": "Ex Machina: Arcade",
+            },
+            Object {
+              "id": 2,
+              "order": 2,
+              "title": "Ex Machina Меридиан 113",
+            },
+          ],
+        },
+        "type": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "parentForumIdArray": Array [
+            1,
+            3,
+            2,
+          ],
+        },
+        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArrayNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 5`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 3`] = `"getForumsByChapterIdArrayNonBlockSaga"`;
+
+exports[`Shared Forums Sagas getForumsByChapterIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_CHAPTER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        4,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getForumArrayByParentForumIdApi"`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        4,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 2`] = `"getForumArrayByParentForumIdApi"`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "forumArray": Array [
+            Object {
+              "id": 1,
+              "order": 1,
+              "title": "Ex Machina",
+            },
+            Object {
+              "id": 3,
+              "order": 3,
+              "title": "Ex Machina: Arcade",
+            },
+            Object {
+              "id": 2,
+              "order": 2,
+              "title": "Ex Machina Меридиан 113",
+            },
+          ],
+        },
+        "type": "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "parentForumIdArray": Array [
+            1,
+            3,
+            2,
+          ],
+        },
+        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdNonBlockSaga should return 3 expected yields with success response. 4 yield should be in state Done 5`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        1,
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdSaga should be in loop and return expected values 3`] = `"getForumsByParentForumIdNonBlockSaga"`;
+
+exports[`Shared Forums Sagas getForumsByParentForumIdSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_FORUM_ARRAY_BY_PARENT_FORUM_ID",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getSubForumArrayByParentForumIdArrayApi"`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getSubForumArrayByParentForumIdArrayApi"`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "subForumArray": Array [
+            Object {
+              "id": 10,
+              "parentForumId": 1,
+              "parentForumTitle": "one",
+              "title": "first",
+            },
+            Object {
+              "id": 30,
+              "parentForumId": 2,
+              "parentForumTitle": "two",
+              "title": "second",
+            },
+            Object {
+              "id": 20,
+              "parentForumId": 3,
+              "parentForumTitle": "three",
+              "title": "third",
+            },
+          ],
+        },
+        "type": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 3`] = `"getSubForumsByParentForumIdArrayNonBlockSaga"`;
+
+exports[`Shared Forums Sagas getSubForumsByParentForumIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_SUB_FORUM_ARRAY_BY_PARENT_FORUM_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getLocaleApi"`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getLocaleApi"`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": "en",
+        "type": "GET_LOCALE_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 3`] = `"getLocaleNonBlockSaga"`;
+
+exports[`Shared Locale Sagas getLocaleSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_LOCALE",
+    },
+  },
+}
+`;

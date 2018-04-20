@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post calculateStyles should create expected object 1`] = `
+Object {
+  "inLine": Object {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "row",
+    "whiteSpace": "nowrap",
+  },
+  "separator": Object {
+    "backgroundColor": "red",
+    "height": 0.125,
+    "marginBottom": 0.3,
+    "marginLeft": 0,
+    "marginRight": 0,
+    "marginTop": 0.3,
+  },
+  "textEllipsis": Object {
+    "overflow": "hidden",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
+    "width": "initial",
+  },
+}
+`;

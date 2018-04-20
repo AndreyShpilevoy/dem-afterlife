@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logotype Pure component match expected snapshot 1`] = `
+<Jss(LinkPure)
+  className="default-Logotype-logotypeContainer "
+  to="/"
+>
+  <div
+    className="default-Logotype-logotype"
+  />
+</Jss(LinkPure)>
+`;

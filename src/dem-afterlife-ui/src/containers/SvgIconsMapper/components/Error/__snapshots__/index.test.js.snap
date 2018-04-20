@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component match expected snapshot 1`] = `
+<SVGInline
+  className="errorIconClassName"
+  classSuffix="-svg"
+  cleanup={Array []}
+  cleanupExceptions={Array []}
+  component="span"
+  svg="test-file-stub"
+/>
+`;
