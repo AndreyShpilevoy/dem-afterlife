@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseSpan component with options match expected snapshot 1`] = `
+<span
+  className="testClassName"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Test content
+</span>
+`;
+
+exports[`BaseSpan component without options match expected snapshot 1`] = `
+<span
+  className=""
+  style={Object {}}
+>
+  Test content
+</span>
+`;

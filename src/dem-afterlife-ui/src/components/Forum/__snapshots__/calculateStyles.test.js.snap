@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forum calculateStyles should create expected object 1`] = `
+Object {
+  "bigText": Object {
+    "display": "block",
+    "fontSize": 1.3125,
+    "overflow": "hidden",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
+  },
+  "center": Object {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "justifyContent": "center",
+  },
+  "centerMdUp": Object {
+    "@media (max-width: 100vw)": Object {
+      "alignItems": "initial",
+      "display": "initial",
+      "flexDirection": "initial",
+      "justifyContent": "initial",
+    },
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "justifyContent": "center",
+  },
+  "disableRowOnSmXs": Object {
+    "@media (max-width: 100vw)": Object {
+      "boxSizing": "initial",
+      "display": "initial",
+      "flex": "initial",
+      "flexDirection": "initial",
+      "flexWrap": "initial",
+      "width": "initial",
+    },
+  },
+  "displayInline": Object {
+    "@media (max-width: 100vw)": Object {
+      "display": "inline",
+    },
+  },
+  "lastTopicInfoWrapper": Object {
+    "&>div": Object {
+      "@media (max-width: 100vw)": Object {
+        "overflow": "hidden",
+        "textAlign": "initial",
+        "textOverflow": "ellipsis",
+        "whiteSpace": "nowrap",
+      },
+      "textAlign": "center",
+      "width": "100%",
+    },
+    "@media (max-width: 100vw)": Object {
+      "fontSize": 0.8,
+    },
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "justifyContent": "center",
+  },
+  "mainContainer": Object {
+    "&:last-child": Object {
+      "&>$separator": Object {
+        "display": "none",
+      },
+    },
+  },
+  "separator": Object {
+    "backgroundColor": "red",
+    "height": 0.125,
+    "marginBottom": 0.3,
+    "marginLeft": 0,
+    "marginRight": 0,
+    "marginTop": 0.3,
+  },
+  "smallText": Object {
+    "display": "block",
+    "fontSize": 0.8,
+    "overflow": "hidden",
+    "textOverflow": "ellipsis",
+    "whiteSpace": "nowrap",
+  },
+  "subForumContainer": Object {
+    "marginTop": 0.5,
+  },
+  "topicsMessages": Object {
+    "@media (max-width: 575px)": Object {
+      "flexDirection": "row",
+      "fontSize": 0.8,
+    },
+  },
+}
+`;

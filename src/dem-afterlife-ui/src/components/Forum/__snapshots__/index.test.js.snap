@@ -1,0 +1,576 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForumPure component match expected snapshot with subForumArray 1`] = `
+<div
+  className="default-Forum-mainContainer"
+>
+  <Jss(RowPure)
+    className=""
+    reverse={false}
+  >
+    <Jss(ColumnPure)
+      className=""
+      lg={9}
+      lgOffset=""
+      md={5}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <Jss(RowPure)
+        className=""
+        reverse={false}
+      >
+        <Jss(ColumnPure)
+          className=""
+          lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs={12}
+          xsOffset=""
+        >
+          <Jss(LinkPure)
+            className="default-Forum-bigText"
+            to="/Forum/40"
+          >
+            Вопросы по созданию моделей
+          </Jss(LinkPure)>
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md="down"
+            sm=""
+            xl=""
+            xs=""
+          >
+            <div
+              className="default-Forum-smallText"
+            >
+              Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.
+            </div>
+          </Jss(HiddenPure)>
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md="down"
+            sm=""
+            xl=""
+            xs=""
+          >
+            <div
+              className="default-Forum-subForumContainer"
+            >
+              <Jss(SubForumPure)
+                key="51"
+                subForum={
+                  Object {
+                    "id": 51,
+                    "order": 57,
+                    "title": "FAQ",
+                  }
+                }
+              />
+              <Jss(SubForumPure)
+                key="52"
+                subForum={
+                  Object {
+                    "id": 52,
+                    "order": 52,
+                    "title": "Юзербары",
+                  }
+                }
+              />
+              <Jss(SubForumPure)
+                key="53"
+                subForum={
+                  Object {
+                    "id": 53,
+                    "order": 53,
+                    "title": "О игре",
+                  }
+                }
+              />
+              <Jss(SubForumPure)
+                key="54"
+                subForum={
+                  Object {
+                    "id": 54,
+                    "order": 51,
+                    "title": "Видео",
+                  }
+                }
+              />
+              <Jss(SubForumPure)
+                key="55"
+                subForum={
+                  Object {
+                    "id": 55,
+                    "order": 55,
+                    "title": "Рассказы",
+                  }
+                }
+              />
+              <Jss(SubForumPure)
+                key="56"
+                subForum={
+                  Object {
+                    "id": 56,
+                    "order": 56,
+                    "title": "Каталог файлов",
+                  }
+                }
+              />
+            </div>
+          </Jss(HiddenPure)>
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-center default-Forum-topicsMessages"
+          lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg="up"
+            md=""
+            sm=""
+            xl=""
+            xs=""
+          >
+            <Connect(Term)
+              indentAfter={true}
+              term={
+                Object {
+                  "id": 1,
+                  "value": "Topics",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </Jss(HiddenPure)>
+          4
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-center default-Forum-topicsMessages"
+          lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg="up"
+            md=""
+            sm=""
+            xl=""
+            xs=""
+          >
+            <Connect(Term)
+              indentAfter={true}
+              indentBefore={true}
+              term={
+                Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </Jss(HiddenPure)>
+          864
+        </Jss(ColumnPure)>
+      </Jss(RowPure)>
+    </Jss(ColumnPure)>
+    <Jss(ColumnPure)
+      className="default-Forum-centerMdUp"
+      lg={3}
+      lgOffset=""
+      md={7}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <Jss(RowPure)
+        className="default-Forum-disableRowOnSmXs"
+        reverse={false}
+      >
+        <Jss(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          lgOffset=""
+          md={6}
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md=""
+            sm="down"
+            xl=""
+            xs=""
+          >
+            <Jss(HiddenPure)
+              className=""
+              lg=""
+              md="down"
+              sm=""
+              xl=""
+              xs=""
+            >
+              <UserName
+                className=""
+                color="#00AA00"
+                id={4}
+                name="Buba"
+              />
+              <Connect(Term)
+                doNotTerm={true}
+                indentAfter={true}
+                indentBefore={true}
+                spaceAfter={true}
+                spaceBefore={true}
+                untermedPostfix="-"
+              />
+            </Jss(HiddenPure)>
+            <Connect(RelativeDateTime)
+              relativeDateTime={2007-09-06T19:33:09.000Z}
+              spaceBefore={true}
+            />
+          </Jss(HiddenPure)>
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-lastTopicInfoWrapper"
+          lg={12}
+          lgOffset=""
+          md={6}
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <div>
+            <Jss(HiddenPure)
+              className=""
+              lg="up"
+              md=""
+              sm=""
+              xl=""
+              xs=""
+            >
+              <Connect(Term)
+                indentAfter={true}
+                term={
+                  Object {
+                    "id": 3,
+                    "value": "Last message",
+                  }
+                }
+                untermedPostfix=":"
+              />
+            </Jss(HiddenPure)>
+            <Jss(LinkPure)
+              className="default-Forum-smallText default-Forum-displayInline"
+              to="/Topic/4"
+            >
+              Exporter Ex Machina for Maya
+            </Jss(LinkPure)>
+          </div>
+        </Jss(ColumnPure)>
+      </Jss(RowPure)>
+    </Jss(ColumnPure)>
+  </Jss(RowPure)>
+  <div
+    className="default-Forum-separator"
+  />
+</div>
+`;
+
+exports[`ForumPure component match expected snapshot without subForumArray 1`] = `
+<div
+  className="default-Forum-mainContainer"
+>
+  <Jss(RowPure)
+    className=""
+    reverse={false}
+  >
+    <Jss(ColumnPure)
+      className=""
+      lg={9}
+      lgOffset=""
+      md={5}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <Jss(RowPure)
+        className=""
+        reverse={false}
+      >
+        <Jss(ColumnPure)
+          className=""
+          lg={8}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs={12}
+          xsOffset=""
+        >
+          <Jss(LinkPure)
+            className="default-Forum-bigText"
+            to="/Forum/40"
+          >
+            Вопросы по созданию моделей
+          </Jss(LinkPure)>
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md="down"
+            sm=""
+            xl=""
+            xs=""
+          >
+            <div
+              className="default-Forum-smallText"
+            >
+              Вопросы по созданию моделей, конвертированию в игру и всего что с этим связано.
+            </div>
+          </Jss(HiddenPure)>
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md="down"
+            sm=""
+            xl=""
+            xs=""
+          />
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-center default-Forum-topicsMessages"
+          lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg="up"
+            md=""
+            sm=""
+            xl=""
+            xs=""
+          >
+            <Connect(Term)
+              indentAfter={true}
+              term={
+                Object {
+                  "id": 1,
+                  "value": "Topics",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </Jss(HiddenPure)>
+          4
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-center default-Forum-topicsMessages"
+          lg={2}
+          lgOffset=""
+          md=""
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg="up"
+            md=""
+            sm=""
+            xl=""
+            xs=""
+          >
+            <Connect(Term)
+              indentAfter={true}
+              indentBefore={true}
+              term={
+                Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
+              }
+              untermedPostfix=":"
+            />
+          </Jss(HiddenPure)>
+          864
+        </Jss(ColumnPure)>
+      </Jss(RowPure)>
+    </Jss(ColumnPure)>
+    <Jss(ColumnPure)
+      className="default-Forum-centerMdUp"
+      lg={3}
+      lgOffset=""
+      md={7}
+      mdOffset=""
+      sm=""
+      smOffset=""
+      xl=""
+      xlOffset=""
+      xs={12}
+      xsOffset=""
+    >
+      <Jss(RowPure)
+        className="default-Forum-disableRowOnSmXs"
+        reverse={false}
+      >
+        <Jss(ColumnPure)
+          className="default-Forum-center"
+          lg={12}
+          lgOffset=""
+          md={6}
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <Jss(HiddenPure)
+            className=""
+            lg=""
+            md=""
+            sm="down"
+            xl=""
+            xs=""
+          >
+            <Jss(HiddenPure)
+              className=""
+              lg=""
+              md="down"
+              sm=""
+              xl=""
+              xs=""
+            >
+              <UserName
+                className=""
+                color="#00AA00"
+                id={4}
+                name="Buba"
+              />
+              <Connect(Term)
+                doNotTerm={true}
+                indentAfter={true}
+                indentBefore={true}
+                spaceAfter={true}
+                spaceBefore={true}
+                untermedPostfix="-"
+              />
+            </Jss(HiddenPure)>
+            <Connect(RelativeDateTime)
+              relativeDateTime={2007-09-06T19:33:09.000Z}
+              spaceBefore={true}
+            />
+          </Jss(HiddenPure)>
+        </Jss(ColumnPure)>
+        <Jss(ColumnPure)
+          className="default-Forum-lastTopicInfoWrapper"
+          lg={12}
+          lgOffset=""
+          md={6}
+          mdOffset=""
+          sm=""
+          smOffset=""
+          xl=""
+          xlOffset=""
+          xs=""
+          xsOffset=""
+        >
+          <div>
+            <Jss(HiddenPure)
+              className=""
+              lg="up"
+              md=""
+              sm=""
+              xl=""
+              xs=""
+            >
+              <Connect(Term)
+                indentAfter={true}
+                term={
+                  Object {
+                    "id": 3,
+                    "value": "Last message",
+                  }
+                }
+                untermedPostfix=":"
+              />
+            </Jss(HiddenPure)>
+            <Jss(LinkPure)
+              className="default-Forum-smallText default-Forum-displayInline"
+              to="/Topic/4"
+            >
+              Exporter Ex Machina for Maya
+            </Jss(LinkPure)>
+          </div>
+        </Jss(ColumnPure)>
+      </Jss(RowPure)>
+    </Jss(ColumnPure)>
+  </Jss(RowPure)>
+  <div
+    className="default-Forum-separator"
+  />
+</div>
+`;

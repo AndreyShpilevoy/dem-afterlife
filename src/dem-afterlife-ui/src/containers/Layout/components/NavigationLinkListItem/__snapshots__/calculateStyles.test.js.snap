@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkListItem calculateStyles should create expected object 1`] = `
+Object {
+  "@media (min-width: 0px) and (max-width: 575px)": Object {
+    "link": Object {
+      "&:focus": Object {
+        "outlineColor": "#ffffff",
+      },
+      "&:hover": Object {
+        "color": "#EF9853 !important",
+      },
+      "color": "#AC6B37 !important",
+      "display": "block",
+      "fontSize": 1.3125,
+      "overflow": "hidden",
+      "padding": 0.5,
+      "paddingLeft": 0.5,
+      "textOverflow": "ellipsis",
+      "whiteSpace": "nowrap",
+    },
+  },
+  "@media (min-width: 1200px) and (max-width: 100vw)": Object {
+    "link": Object {
+      "&:focus": Object {
+        "outlineColor": "#ffffff",
+      },
+      "paddingLeft": 0.5,
+    },
+  },
+}
+`;

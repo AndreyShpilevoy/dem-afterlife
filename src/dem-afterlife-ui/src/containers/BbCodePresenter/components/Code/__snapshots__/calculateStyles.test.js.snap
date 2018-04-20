@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code calculateStyles should create expected object 1`] = `
+Object {
+  "content": Object {
+    "color": "red",
+    "fontFamily": "monospace",
+    "whiteSpace": "pre-wrap",
+  },
+  "header": Object {
+    "color": "blue",
+    "display": "flex",
+  },
+  "headerLeft": Object {
+    "marginRight": "auto",
+  },
+  "headerRight": Object {
+    "marginLeft": "auto",
+  },
+  "main": Object {
+    "backgroundColor": "green",
+    "borderColor": "grey",
+    "borderStyle": "solid",
+    "borderWidth": 0.0625,
+    "marginBottom": 0.3125,
+    "marginLeft": 1.25,
+    "marginRight": 1.25,
+    "marginTop": 0.3125,
+    "padding": 0.4,
+  },
+}
+`;

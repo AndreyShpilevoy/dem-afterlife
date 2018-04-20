@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Topic HOC component with empty post and user arrays match expected snapshot 1`] = `
+<Connect(TopicPure)
+  match={
+    Object {
+      "params": Object {
+        "pageNumber": "1",
+        "topicId": "10",
+      },
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <TopicPure
+    getPostArrayByTopicId={[Function]}
+    getTopicBreadcrumbArray={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "pageNumber": "1",
+          "topicId": "10",
+        },
+      }
+    }
+    pageSize={20}
+    postArray={Array []}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    totalItemsCount={400}
+  >
+    <span>
+      <PaginationList
+        containerId={10}
+        containerName="Topic"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+      <CollapsibleSection
+        collapseSettings={
+          Object {
+            "collapsedByDefault": false,
+            "isCollapsible": false,
+          }
+        }
+        headerSettings={
+          Object {
+            "title": <Connect(Term)
+              term={
+                Object {
+                  "id": 30,
+                  "value": "Posts",
+                }
+              }
+            />,
+          }
+        }
+      >
+        <div />
+      </CollapsibleSection>
+      <PaginationList
+        containerId={10}
+        containerName="Topic"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+    </span>
+  </TopicPure>
+</Connect(TopicPure)>
+`;
+
+exports[`Topic HOC component with filled post and user arrays match expected snapshot 1`] = `
+<Connect(TopicPure)
+  match={
+    Object {
+      "params": Object {
+        "pageNumber": "1",
+        "topicId": "10",
+      },
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <TopicPure
+    getPostArrayByTopicId={[Function]}
+    getTopicBreadcrumbArray={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "pageNumber": "1",
+          "topicId": "10",
+        },
+      }
+    }
+    pageSize={20}
+    postArray={
+      Array [
+        Object {
+          "editInfo": null,
+          "id": 4,
+          "message": "[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]
+[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
+          "postTime": 2015-01-04T08:10:10.000Z,
+          "rate": 343,
+          "subject": "subject 5",
+          "topicId": 1,
+          "user": Object {
+            "avatar": "http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png",
+            "birthday": 2015-01-02T08:10:10.000Z,
+            "email": "ololoid@lol.ua",
+            "emailConfirmed": true,
+            "fb": undefined,
+            "from": undefined,
+            "gender": 1,
+            "groupColor": "#99ccff",
+            "icq": undefined,
+            "id": 4,
+            "interests": undefined,
+            "name": "ololoid",
+            "profession": undefined,
+            "rank": "Боец",
+            "registrationDate": 2015-01-04T08:10:10.000Z,
+            "signature": undefined,
+            "skype": undefined,
+            "steam": undefined,
+            "vk": undefined,
+            "website": undefined,
+          },
+          "userId": 4,
+        },
+        Object {
+          "editInfo": Object {
+            "editCount": 1,
+            "editReason": "gust for lulz",
+            "editTime": 2015-01-03T08:10:10.000Z,
+            "user": Object {
+              "avatar": "http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif",
+              "birthday": 2015-01-02T08:10:10.000Z,
+              "email": "4252744@ukr.net",
+              "emailConfirmed": true,
+              "fb": undefined,
+              "from": undefined,
+              "gender": 1,
+              "groupColor": "#ffa510",
+              "icq": undefined,
+              "id": 5,
+              "interests": undefined,
+              "name": "kto",
+              "profession": undefined,
+              "rank": "Официально сумасшедший",
+              "registrationDate": 2015-01-04T08:10:10.000Z,
+              "signature": "__________!///_ _____
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
+              "skype": undefined,
+              "steam": undefined,
+              "vk": undefined,
+              "website": undefined,
+            },
+            "userId": 5,
+          },
+          "id": 5,
+          "message": "[url]i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url] text [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url]
+[url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
+text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
+ [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
+          "postTime": 2015-01-05T08:10:10.000Z,
+          "rate": 0,
+          "subject": "subject 1",
+          "topicId": 1,
+          "user": Object {
+            "avatar": "http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif",
+            "birthday": 2015-01-02T08:10:10.000Z,
+            "email": "4252744@ukr.net",
+            "emailConfirmed": true,
+            "fb": undefined,
+            "from": undefined,
+            "gender": 1,
+            "groupColor": "#ffa510",
+            "icq": undefined,
+            "id": 5,
+            "interests": undefined,
+            "name": "kto",
+            "profession": undefined,
+            "rank": "Официально сумасшедший",
+            "registrationDate": 2015-01-04T08:10:10.000Z,
+            "signature": "__________!///_ _____
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
+            "skype": undefined,
+            "steam": undefined,
+            "vk": undefined,
+            "website": undefined,
+          },
+          "userId": 5,
+        },
+      ]
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    totalItemsCount={400}
+  >
+    <span>
+      <PaginationList
+        containerId={10}
+        containerName="Topic"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+      <CollapsibleSection
+        collapseSettings={
+          Object {
+            "collapsedByDefault": false,
+            "isCollapsible": false,
+          }
+        }
+        headerSettings={
+          Object {
+            "title": <Connect(Term)
+              term={
+                Object {
+                  "id": 30,
+                  "value": "Posts",
+                }
+              }
+            />,
+          }
+        }
+      >
+        <div>
+          <Post
+            key="4"
+            post={
+              Object {
+                "editInfo": null,
+                "id": 4,
+                "message": "[u][center][b]Ну[/b] [i]надо[/i] [u]же[/u], [s]работает[/s][/center][/u]
+[spoiler][media]https://youtu.be/WHBbt-Qk6mk[/media][/spoiler]",
+                "postTime": 2015-01-04T08:10:10.000Z,
+                "rate": 343,
+                "subject": "subject 5",
+                "topicId": 1,
+                "user": Object {
+                  "avatar": "http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png",
+                  "birthday": 2015-01-02T08:10:10.000Z,
+                  "email": "ololoid@lol.ua",
+                  "emailConfirmed": true,
+                  "fb": undefined,
+                  "from": undefined,
+                  "gender": 1,
+                  "groupColor": "#99ccff",
+                  "icq": undefined,
+                  "id": 4,
+                  "interests": undefined,
+                  "name": "ololoid",
+                  "profession": undefined,
+                  "rank": "Боец",
+                  "registrationDate": 2015-01-04T08:10:10.000Z,
+                  "signature": undefined,
+                  "skype": undefined,
+                  "steam": undefined,
+                  "vk": undefined,
+                  "website": undefined,
+                },
+                "userId": 4,
+              }
+            }
+          >
+            <div />
+          </Post>
+          <Post
+            key="5"
+            post={
+              Object {
+                "editInfo": Object {
+                  "editCount": 1,
+                  "editReason": "gust for lulz",
+                  "editTime": 2015-01-03T08:10:10.000Z,
+                  "user": Object {
+                    "avatar": "http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif",
+                    "birthday": 2015-01-02T08:10:10.000Z,
+                    "email": "4252744@ukr.net",
+                    "emailConfirmed": true,
+                    "fb": undefined,
+                    "from": undefined,
+                    "gender": 1,
+                    "groupColor": "#ffa510",
+                    "icq": undefined,
+                    "id": 5,
+                    "interests": undefined,
+                    "name": "kto",
+                    "profession": undefined,
+                    "rank": "Официально сумасшедший",
+                    "registrationDate": 2015-01-04T08:10:10.000Z,
+                    "signature": "__________!///_ _____
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
+                    "skype": undefined,
+                    "steam": undefined,
+                    "vk": undefined,
+                    "website": undefined,
+                  },
+                  "userId": 5,
+                },
+                "id": 5,
+                "message": "[url]i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url] text [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png[/url]
+[url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png]Link[/url] [url=http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png][img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img][/url] tag 01 [U]text in [color=\\"red\\"]tag[/color] 11 [b]text in tag 21[/b] [u]text in tag 22[/u]
+text beetwin tags 12 [b]text in tag 23[/b] [/U][code='kto']ss[b]g[/b]fsfdgdfg[/code] tar
+ [img]http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif[/img] [url]http://i72.fastpic.ru/big/2015/0522/10/f93fff451e934900bfb1463615b5b310.png
+http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif [/url][quote]blah blah [quote=\\"kto\\"]blah  blah [i]ta[u]r[/u]am[/i] param[/quote] [b]ta[i]r[/i]am[/b] param[/quote]",
+                "postTime": 2015-01-05T08:10:10.000Z,
+                "rate": 0,
+                "subject": "subject 1",
+                "topicId": 1,
+                "user": Object {
+                  "avatar": "http://i69.fastpic.ru/big/2015/0729/7e/6a397a33426917b4087e403270383c7e.gif",
+                  "birthday": 2015-01-02T08:10:10.000Z,
+                  "email": "4252744@ukr.net",
+                  "emailConfirmed": true,
+                  "fb": undefined,
+                  "from": undefined,
+                  "gender": 1,
+                  "groupColor": "#ffa510",
+                  "icq": undefined,
+                  "id": 5,
+                  "interests": undefined,
+                  "name": "kto",
+                  "profession": undefined,
+                  "rank": "Официально сумасшедший",
+                  "registrationDate": 2015-01-04T08:10:10.000Z,
+                  "signature": "__________!///_ _____
+_________( @@ )_____
+_______ooO-(_)-o o____
+Пришёл, увидел, забанил. Ещё вопросы?",
+                  "skype": undefined,
+                  "steam": undefined,
+                  "vk": undefined,
+                  "website": undefined,
+                },
+                "userId": 5,
+              }
+            }
+          >
+            <div />
+          </Post>
+        </div>
+      </CollapsibleSection>
+      <PaginationList
+        containerId={10}
+        containerName="Topic"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+    </span>
+  </TopicPure>
+</Connect(TopicPure)>
+`;

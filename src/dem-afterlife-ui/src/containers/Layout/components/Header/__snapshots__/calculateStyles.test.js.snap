@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header calculateStyles should create expected object 1`] = `
+Object {
+  "@media (min-width: 0px) and (max-width: 575px)": Object {
+    "header": Object {
+      "backgroundColor": "#322C27",
+      "display": "flex",
+      "height": 3.4375,
+      "width": "100%",
+    },
+    "headerLogoContainer": Object {
+      "marginLeft": 0.3125,
+      "marginRight": "auto",
+      "width": 11.25,
+    },
+    "headerMenuButtonContainer": Object {
+      "marginLeft": "auto",
+      "marginRight": 0.3125,
+    },
+    "headerPadding": Object {
+      "paddingTop": 3.4375,
+    },
+    "navigationLinks": Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "listStyleType": "none",
+    },
+    "navigationLinksContainer": Object {
+      "&.closed": Object {
+        "transform": "scaleY(0)",
+      },
+      "transformOrigin": "top",
+      "transition": "0.35s ease-in-out",
+    },
+  },
+  "@media (min-width: 1200px) and (max-width: 100vw)": Object {
+    "header": Object {
+      "&.shrinkedHeader": Object {
+        "backgroundPositionY": "50%",
+        "height": 2.5,
+      },
+      "backgroundImage": "url(headerBackgroundImageXl.png)",
+      "display": "flex",
+      "height": 5,
+      "transition": "all 400ms linear",
+      "width": "100%",
+    },
+    "headerLogoContainer": Object {
+      "&.shrinkedHeader": Object {
+        "transition": "all 400ms linear",
+        "width": 8,
+      },
+      "marginLeft": 0.3125,
+      "marginRight": "auto",
+      "width": 16,
+    },
+    "headerMenuButtonContainer": Object {
+      "marginLeft": "auto",
+      "marginRight": 0.3125,
+    },
+    "headerPadding": Object {
+      "paddingTop": 5,
+    },
+    "navigationLinks": Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "listStyleType": "none",
+      "marginBottom": "auto",
+      "marginLeft": "auto",
+      "marginRight": 0.3125,
+      "marginTop": "auto",
+    },
+    "navigationLinksContainer": Object {},
+  },
+  "fixedOnTheTop": Object {
+    "position": "fixed",
+    "top": 0,
+    "zIndex": 1030,
+  },
+  "headerColumn": Object {
+    "display": "flex",
+    "flexDirection": "column",
+    "justifyContent": "center",
+    "minHeight": "100%",
+  },
+}
+`;

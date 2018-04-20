@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root calculateStyles should create expected object 1`] = `
+Object {
+  "root": Object {
+    "width": "100%",
+    "wordBreak": "break-word",
+  },
+}
+`;

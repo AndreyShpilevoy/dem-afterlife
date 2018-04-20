@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bbCodesMap b should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "bold style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap br should match expected snapshot 1`] = `Object {}`;
+
+exports[`bbCodesMap center should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "center style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap code should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "id": 0,
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap color should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "red",
+}
+`;
+
+exports[`bbCodesMap email with right Email should match expected snapshot 1`] = `
+Object {
+  "children": "goodLink@gmail.com",
+  "email": "goodLink@gmail.com",
+}
+`;
+
+exports[`bbCodesMap email with wrong Email should return array with string 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap email with wrong and right Emails should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap email with wrong and right Emails should return array with 2 items and match expected snapshot 2`] = `
+Object {
+  "children": "goodLink@gmail.com",
+  "email": "goodLink@gmail.com",
+}
+`;
+
+exports[`bbCodesMap function bbCodesMapNames array should match expected snapshot 1`] = `
+Array [
+  "b",
+  "i",
+  "u",
+  "s",
+  "offtopic",
+  "think",
+  "color",
+  "center",
+  "left",
+  "right",
+  "size",
+  "code",
+  "spoiler",
+  "quote",
+  "email",
+  "url",
+  "img",
+  "ol",
+  "ul",
+  "li",
+  "media",
+  "p",
+  "br",
+  "textline",
+  "root",
+]
+`;
+
+exports[`bbCodesMap i should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "italic style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap img with right link should match expected snapshot 1`] = `
+Object {
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap img with wrong and right links should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap img with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
+Object {
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap img with wrong link should return array with string 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap left should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "left style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap li should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap media should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "fullHeight": 360,
+  "listOfParsers": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "shortHeight": 100,
+  "width": 640,
+}
+`;
+
+exports[`bbCodesMap offtopic should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap ol should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap p should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap quote should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap right should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "right style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap root should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap s should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "lineThrough style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap size with size equal 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "style": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size with size less then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "style": Object {
+    "fontSize": "0.625rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size with size more then 16 px should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "style": Object {
+    "fontSize": "1.25rem",
+  },
+}
+`;
+
+exports[`bbCodesMap size without size should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "",
+  "style": Object {
+    "fontSize": "1rem",
+  },
+}
+`;
+
+exports[`bbCodesMap spoiler should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "options": "some options",
+}
+`;
+
+exports[`bbCodesMap textline should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap think should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap u should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+  "className": "underline style",
+  "style": Object {},
+}
+`;
+
+exports[`bbCodesMap ul should match expected snapshot 1`] = `
+Object {
+  "children": "some text",
+}
+`;
+
+exports[`bbCodesMap url with right link in options and single child should match expected snapshot 1`] = `
+<Jss(UrlPure)
+  url="https://github.com/AndreyShpilevoy/"
+>
+  anything
+</Jss(UrlPure)>
+`;
+
+exports[`bbCodesMap url with single right link as child should match expected snapshot 1`] = `
+Array [
+  <Jss(UrlPure)
+    url="https://github.com/AndreyShpilevoy/"
+  >
+    https://github.com/AndreyShpilevoy/
+  </Jss(UrlPure)>,
+]
+`;
+
+exports[`bbCodesMap url with single wrong link as child should match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap url with wrong and right links should return array with 2 items and match expected snapshot 1`] = `"fakeLink.com"`;
+
+exports[`bbCodesMap url with wrong and right links should return array with 2 items and match expected snapshot 2`] = `
+Object {
+  "children": "https://github.com/AndreyShpilevoy/",
+  "url": "https://github.com/AndreyShpilevoy/",
+}
+`;
+
+exports[`bbCodesMap url with wrong link in options and single child should match expected snapshot 1`] = `"anything"`;

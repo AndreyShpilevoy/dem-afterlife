@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`googleMaps should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`googleMaps should return valid result if pass iframe source 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d10155.412578773336!2d30.6050358!3d50.4810776!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1506026613652",
+}
+`;
+
+exports[`googleMaps should return valid result if pass link (map view) 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://maps.google.com/maps?ll=50.4810776,30.6050358&t=m&z=15&output=embed",
+}
+`;
+
+exports[`googleMaps should return valid result if pass link (photo view) 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://maps.google.com/maps?ll=50.4810776,30.6050358&t=h&z=15&output=embed",
+}
+`;

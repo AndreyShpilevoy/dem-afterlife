@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuotePure component with options should match expected snapshot 1`] = `
+<blockquote
+  className="default-Quote-quote"
+>
+  <div>
+    <span
+      className="default-Quote-author"
+    >
+      test
+    </span>
+    <Connect(Term)
+      spaceBefore={true}
+      term={
+        Object {
+          "id": 32,
+          "value": "wrote:",
+        }
+      }
+      untermedPostfix=":"
+    />
+  </div>
+  content
+</blockquote>
+`;
+
+exports[`QuotePure component without options should match expected snapshot 1`] = `
+<blockquote
+  className="default-Quote-quote"
+>
+  <div>
+    <span
+      className="default-Quote-author"
+    >
+      <Connect(Term)
+        term={
+          Object {
+            "id": 33,
+            "value": "Quote:",
+          }
+        }
+        untermedPostfix=":"
+      />
+    </span>
+  </div>
+  content
+</blockquote>
+`;

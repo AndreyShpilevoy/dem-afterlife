@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Pure component match expected snapshot 1`] = `
+<Link
+  className="default-Link-link"
+  replace={false}
+  to="/"
+>
+  <div>
+    row content
+  </div>
+</Link>
+`;
+
+exports[`Link Pure component match expected snapshot with className prop 1`] = `
+<Link
+  className="default-Link-link testClassName"
+  replace={false}
+  to="/"
+>
+  <div>
+    row content
+  </div>
+</Link>
+`;
+
+exports[`Link Pure component match expected snapshot with styles prop 1`] = `
+<Link
+  className="default-Link-link"
+  replace={false}
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+  to="/"
+>
+  <div>
+    row content
+  </div>
+</Link>
+`;

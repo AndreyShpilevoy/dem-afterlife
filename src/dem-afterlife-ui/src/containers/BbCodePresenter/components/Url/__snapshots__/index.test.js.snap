@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UrlPure component with correct message should match expected snapshot 1`] = `
+<a
+  className="default-Url-url"
+  href="test"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  content
+</a>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container calculateStyles should create expected object 1`] = `
+Object {
+  "@media (min-width: 0px)": Object {
+    "container": Object {
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "width": "100%",
+    },
+  },
+  "@media (min-width: 576px)": Object {
+    "container": Object {
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "width": "540px",
+    },
+  },
+}
+`;

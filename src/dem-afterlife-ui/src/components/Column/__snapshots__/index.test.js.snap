@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column Pure component match expected snapshot 1`] = `
+<div
+  className=" "
+>
+  <div>
+    Column content
+  </div>
+</div>
+`;
+
+exports[`Column Pure component with wrong xs="wrong" match expected snapshot 1`] = `
+<div
+  className=" "
+>
+  <div>
+    Column content
+  </div>
+</div>
+`;
+
+exports[`Column Pure component with xs="1" md="3" xl="12" xsOffset="1" mdOffset="3" xlOffset="12" match expected snapshot 1`] = `
+<div
+  className=" default-Column-col-xs-1 default-Column-col-md-3 default-Column-col-xl-12 default-Column-col-xsOffset-1 default-Column-col-mdOffset-3 default-Column-col-xlOffset-12 "
+>
+  <div>
+    Column content
+  </div>
+</div>
+`;

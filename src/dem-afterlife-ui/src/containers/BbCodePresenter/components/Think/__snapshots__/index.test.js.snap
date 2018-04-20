@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThinkPure component with correct message should match expected snapshot 1`] = `
+<div
+  className="default-Think-think"
+>
+  <span
+    className="default-Think-content"
+  >
+    content
+  </span>
+  <div
+    className="default-Think-image"
+  />
+</div>
+`;

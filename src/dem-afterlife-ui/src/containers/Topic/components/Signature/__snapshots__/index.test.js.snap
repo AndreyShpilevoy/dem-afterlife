@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignaturePure component with options should match expected snapshot 1`] = `
+<div
+  className="default-Signature-container"
+>
+  <div
+    className="default-Signature-separator"
+  />
+  <Jss(BbCodePresenterPure)
+    text="test"
+  />
+</div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User calculateStyles should create expected object 1`] = `
+Object {
+  "inLine": Object {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "row",
+  },
+  "userNameStyle": Object {
+    "paddingLeft": 0.4,
+  },
+}
+`;

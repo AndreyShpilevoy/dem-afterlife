@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbListItem calculateStyles should create expected object 1`] = `
+Object {
+  "active": Object {
+    "backgroundColor": "green",
+    "color": "yellow",
+    "textDecoration": "none",
+  },
+  "arrow": Object {
+    "&:after": Object {
+      "borderBottomColor": "transparent",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": 0.625,
+      "borderLeftColor": "red",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": 0.625,
+      "borderTopColor": "transparent",
+      "borderTopStyle": "solid",
+      "borderTopWidth": 0.625,
+      "content": "\\"\\"",
+      "position": "absolute",
+      "right": -0.625,
+      "top": 0,
+      "zIndex": 1,
+    },
+    "&:before": Object {
+      "borderBottomColor": "transparent",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": 0.625,
+      "borderLeftColor": "blue",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": 0.625,
+      "borderTopColor": "transparent",
+      "borderTopStyle": "solid",
+      "borderTopWidth": 0.625,
+      "content": "\\"\\"",
+      "left": 0,
+      "position": "absolute",
+      "top": 0,
+    },
+    "&:hover": Object {
+      "&:after": Object {
+        "borderLeftColor": "green",
+      },
+      "backgroundColor": "green",
+    },
+    "&>div": Object {
+      "alignItems": "center",
+      "height": "100%",
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "textOverflow": "ellipsis",
+      "whiteSpace": "nowrap",
+    },
+    "backgroundColor": "red",
+    "display": "block",
+    "fontSize": 0.9,
+    "fontWeight": "bold",
+    "height": 1.25,
+    "lineHeight": 1.4,
+    "marginRight": 0.1875,
+    "paddingLeft": 0.9375,
+    "paddingRight": 0.1875,
+    "position": "relative",
+    "textAlign": "center",
+    "textDecoration": "none",
+  },
+  "ellipsis": Object {
+    "&:hover": Object {
+      "&:after": Object {
+        "borderLeftColor": "red",
+      },
+      "backgroundColor": "red",
+    },
+  },
+  "item": Object {
+    "&:first-child": Object {
+      "&>$arrow": Object {
+        "&:before": Object {
+          "display": "none",
+        },
+        "paddingLeft": 0.625,
+      },
+    },
+    "&:last-child": Object {
+      "&>$arrow": Object {
+        "&:after": Object {
+          "content": "none",
+        },
+        "paddingRight": 0.625,
+      },
+    },
+    "maxWidth": "24%",
+    "minWidth": "4%",
+  },
+}
+`;

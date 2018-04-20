@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media processTextLineContentViaParsers should return default result if sent correct arguments, but with wrong data 1`] = `
+Object {
+  "success": false,
+  "type": "none",
+  "url": "",
+}
+`;
+
+exports[`Media processTextLineContentViaParsers should return default result if sent empty array as second argument 1`] = `
+Object {
+  "success": false,
+  "type": "none",
+  "url": "",
+}
+`;
+
+exports[`Media processTextLineContentViaParsers should return default result if sent wrong first argument 1`] = `
+Object {
+  "success": false,
+  "type": "none",
+  "url": "",
+}
+`;
+
+exports[`Media processTextLineContentViaParsers should return handled result if data was correct 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://Valid",
+}
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMediaLink component match expected snapshot 1`] = `
+<a
+  className="default-SocialMediaLink-focus"
+  href="http://steamcommunity.com/groups/Ex_Machina"
+  rel="noopener noreferrer"
+  target="_blank"
+  title="Steam - Ex Machina Community"
+>
+  <SvgIconsMapper
+    className="linkIconClassName"
+    iconName="Steam"
+  />
+</a>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Audio component match expected snapshot 1`] = `
+<audio
+  controls={true}
+>
+  <source
+    src="http://example.mp3"
+    type="audio/mp3"
+  />
+  <a
+    href="http://example.mp3"
+  >
+    <Connect(Term)
+      term={
+        Object {
+          "id": 28,
+          "value": "Audio",
+        }
+      }
+    />
+  </a>
+</audio>
+`;

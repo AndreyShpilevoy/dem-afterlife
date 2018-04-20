@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextLine calculateStyles should create expected object 1`] = `
+Object {
+  "text": Object {
+    "whiteSpace": "pre-wrap",
+  },
+}
+`;
