@@ -19,6 +19,8 @@ export const SubForumPure = ({ subForum, classes }) => {
   );
 };
 
+SubForumPure.displayName = "SubForumPure";
+
 SubForumPure.propTypes = {
   subForum: sharedPropTypes.subForum.isRequired,
   classes: shape().isRequired

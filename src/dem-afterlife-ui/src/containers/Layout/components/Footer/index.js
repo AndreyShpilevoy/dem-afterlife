@@ -47,6 +47,8 @@ export const FooterPure = ({ classes, socialMediaLinkArray }) => (
   </Container>
 );
 
+FooterPure.displayName = "FooterPure";
+
 FooterPure.propTypes = {
   classes: shape().isRequired,
   socialMediaLinkArray: arrayOf(

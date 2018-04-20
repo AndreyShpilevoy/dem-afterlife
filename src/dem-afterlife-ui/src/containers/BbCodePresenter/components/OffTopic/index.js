@@ -15,6 +15,8 @@ export const OffTopicPure = ({ children, classes }) => (
   </div>
 );
 
+OffTopicPure.displayName = "OffTopicPure";
+
 OffTopicPure.propTypes = {
   children: node.isRequired,
   classes: shape().isRequired

@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SubForum component match expected snapshot 1`] = `
-<SVGInline
+<InlineSVG
+  baseURL=""
+  cacheGetRequests={false}
   className="steamIconClassName"
-  classSuffix="-svg"
-  cleanup={Array []}
-  cleanupExceptions={Array []}
-  component="span"
-  svg="test-file-stub"
+  onLoad={[Function]}
+  src="sub-forum.svg"
+  supportTest={[Function]}
+  uniquifyIDs={true}
+  wrapper={[Function]}
 />
 `;

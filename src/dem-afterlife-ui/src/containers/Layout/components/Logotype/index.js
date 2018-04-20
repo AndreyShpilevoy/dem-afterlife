@@ -13,6 +13,8 @@ export const LogotypePure = ({ classes, className }) => {
   );
 };
 
+LogotypePure.displayName = "LogotypePure";
+
 LogotypePure.propTypes = {
   classes: shape().isRequired,
   className: string

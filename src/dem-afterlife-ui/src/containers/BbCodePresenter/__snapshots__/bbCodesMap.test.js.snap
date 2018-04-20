@@ -273,9 +273,9 @@ exports[`bbCodesMap url with single right link as child should match expected sn
 Array [
   <Jss(UrlPure)
     url="https://github.com/AndreyShpilevoy/"
-  >
+>
     https://github.com/AndreyShpilevoy/
-  </Jss(UrlPure)>,
+</Jss(UrlPure)>,
 ]
 `;
 

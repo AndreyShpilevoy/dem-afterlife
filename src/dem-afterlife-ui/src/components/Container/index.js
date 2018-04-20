@@ -23,6 +23,8 @@ export const ContainerPure = ({ children, classes, className, onClick }) => {
   );
 };
 
+ContainerPure.displayName = "ContainerPure";
+
 ContainerPure.propTypes = {
   className: string,
   classes: shape().isRequired,

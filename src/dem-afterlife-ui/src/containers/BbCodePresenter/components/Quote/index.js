@@ -25,6 +25,8 @@ export const QuotePure = ({ children, options, classes }) => (
   </blockquote>
 );
 
+QuotePure.displayName = "QuotePure";
+
 QuotePure.propTypes = {
   classes: shape().isRequired,
   children: node.isRequired,

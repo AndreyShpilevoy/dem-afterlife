@@ -26,6 +26,8 @@ export const LinkPure = props => {
   );
 };
 
+LinkPure.displayName = "LinkPure";
+
 LinkPure.propTypes = {
   classes: shape().isRequired,
   className: string,
@@ -36,6 +38,8 @@ LinkPure.defaultProps = {
   className: "",
   children: ""
 };
+
+LinkPure.displayName = "LinkPure";
 
 export default injectSheet(calculateStyles, { componentName: "Link" })(
   LinkPure

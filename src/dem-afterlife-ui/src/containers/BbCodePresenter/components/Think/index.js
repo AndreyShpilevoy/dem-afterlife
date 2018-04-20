@@ -10,6 +10,8 @@ export const ThinkPure = ({ children, classes }) => (
   </div>
 );
 
+ThinkPure.displayName = "ThinkPure";
+
 ThinkPure.propTypes = {
   classes: shape().isRequired,
   children: node.isRequired

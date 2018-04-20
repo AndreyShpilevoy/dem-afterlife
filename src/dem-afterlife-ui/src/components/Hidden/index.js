@@ -59,6 +59,8 @@ export const HiddenPure = ({
   );
 };
 
+HiddenPure.displayName = "HiddenPure";
+
 HiddenPure.propTypes = {
   onClick: func, // eslint-disable-line react/require-default-props
   className: string,

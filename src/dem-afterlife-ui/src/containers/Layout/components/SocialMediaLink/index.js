@@ -23,6 +23,8 @@ export const SocialMediaLinkPure = ({
   </a>
 );
 
+SocialMediaLinkPure.displayName = "SocialMediaLinkPure";
+
 SocialMediaLinkPure.propTypes = {
   className: string,
   classes: shape().isRequired,

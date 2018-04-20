@@ -50,6 +50,8 @@ export const PaginationListPure = ({
   );
 };
 
+PaginationListPure.displayName = "PaginationListPure";
+
 PaginationListPure.propTypes = {
   classes: shape().isRequired,
   containerName: string.isRequired,

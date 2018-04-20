@@ -29,6 +29,8 @@ export const AvatarPure = ({ avatarUrl, size, classes, className, id }) => {
   );
 };
 
+AvatarPure.displayName = "AvatarPure";
+
 AvatarPure.propTypes = {
   id: number.isRequired,
   avatarUrl: string,

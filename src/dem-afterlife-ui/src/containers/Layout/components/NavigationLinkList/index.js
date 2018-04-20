@@ -27,6 +27,8 @@ export const NavigationLinkListPure = ({
   );
 };
 
+NavigationLinkListPure.displayName = "NavigationLinkListPure";
+
 NavigationLinkListPure.propTypes = {
   classes: shape().isRequired,
   className: string,

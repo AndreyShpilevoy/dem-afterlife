@@ -11,6 +11,8 @@ export const SignaturePure = ({ signature, classes }) => (
   </div>
 );
 
+SignaturePure.displayName = "SignaturePure";
+
 SignaturePure.propTypes = {
   signature: string.isRequired,
   classes: shape().isRequired
