@@ -148,6 +148,8 @@ export const TopicPure = ({ topic, classes, pageSize }) => {
   );
 };
 
+TopicPure.displayName = "TopicPure";
+
 TopicPure.propTypes = {
   topic: sharedPropTypes.topic.isRequired,
   classes: shape().isRequired,

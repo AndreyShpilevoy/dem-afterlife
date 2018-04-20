@@ -29,6 +29,8 @@ export const RowPure = ({ reverse, children, classes, className, onClick }) => {
   );
 };
 
+RowPure.displayName = "RowPure";
+
 RowPure.propTypes = {
   className: string,
   classes: shape().isRequired,

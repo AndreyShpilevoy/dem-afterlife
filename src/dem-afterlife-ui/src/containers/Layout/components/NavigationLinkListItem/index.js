@@ -12,6 +12,8 @@ export const NavigationLinkListItemPure = ({ classes, navigationLinkItem }) => (
   </li>
 );
 
+NavigationLinkListItemPure.displayName = "NavigationLinkListItemPure";
+
 NavigationLinkListItemPure.propTypes = {
   classes: shape().isRequired,
   navigationLinkItem: shape({

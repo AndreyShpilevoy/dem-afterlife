@@ -6,7 +6,7 @@ Object {
     "marginTop": -0.5,
   },
   "icon": Object {
-    "& > .SVGInline-svg": Object {
+    "& > svg": Object {
       "fill": "red",
       "height": 1.3125,
       "transform": "translateY(-0.125rem)",

@@ -7,6 +7,8 @@ export const TextLinePure = ({ children, classes }) => (
   <span className={classes.text}>{children}</span>
 );
 
+TextLinePure.displayName = "TextLinePure";
+
 TextLinePure.propTypes = {
   classes: shape().isRequired,
   children: node.isRequired

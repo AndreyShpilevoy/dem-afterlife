@@ -21,6 +21,8 @@ export const CodePure = ({ children, options, classes }) => {
   );
 };
 
+CodePure.displayName = "CodePure";
+
 CodePure.propTypes = {
   classes: shape().isRequired,
   children: node.isRequired,

@@ -79,7 +79,7 @@ export class CollapsibleSectionPure extends Component {
     const classNameForClosedClass = collapsedState ? "closed" : "";
     const bodyHolderClass = concatStyleNames([
       bodyHolder,
-      ...(isCollapsible ? headerCursor : ""),
+      isCollapsible ? headerCursor : "",
       classNameForClosedClass
     ]);
     const headerArrowClass = concatStyleNames([

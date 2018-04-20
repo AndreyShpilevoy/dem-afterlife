@@ -11,13 +11,11 @@ Object {
     "width": "fit-content",
   },
   "image": Object {
-    "& > .SVGInline-svg": Object {
+    "& > svg": Object {
       "fill": "orange",
       "height": 3,
       "width": 3,
     },
-    "height": 3,
-    "width": 3,
   },
 }
 `;

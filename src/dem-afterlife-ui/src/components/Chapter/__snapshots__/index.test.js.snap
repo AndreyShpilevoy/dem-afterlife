@@ -12,28 +12,28 @@ exports[`Chapter component match expected snapshot with forumArray 1`] = `
     Object {
       "firstColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 1,
-            "value": "Topics",
-          }
+            Object {
+                "id": 1,
+                "value": "Topics",
+              }
         }
-      />,
+    />,
       "secondColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 2,
-            "value": "Posts",
-          }
+            Object {
+                "id": 2,
+                "value": "Posts",
+              }
         }
-      />,
+    />,
       "thirdColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 3,
-            "value": "Last message in",
-          }
+            Object {
+                "id": 3,
+                "value": "Last message in",
+              }
         }
-      />,
+    />,
       "title": "Ex Machina Меридиан 113",
     }
   }
@@ -75,28 +75,28 @@ exports[`Chapter component match expected snapshot without forumArray 1`] = `
     Object {
       "firstColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 1,
-            "value": "Topics",
-          }
+            Object {
+                "id": 1,
+                "value": "Topics",
+              }
         }
-      />,
+    />,
       "secondColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 2,
-            "value": "Posts",
-          }
+            Object {
+                "id": 2,
+                "value": "Posts",
+              }
         }
-      />,
+    />,
       "thirdColumnTerm": <Connect(Term)
         term={
-          Object {
-            "id": 3,
-            "value": "Last message in",
-          }
+            Object {
+                "id": 3,
+                "value": "Last message in",
+              }
         }
-      />,
+    />,
       "title": "Ex Machina Меридиан 113",
     }
   }

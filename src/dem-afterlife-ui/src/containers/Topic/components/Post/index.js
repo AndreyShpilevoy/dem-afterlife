@@ -31,6 +31,8 @@ export const PostPure = ({ post, classes }) => {
   );
 };
 
+PostPure.displayName = "PostPure";
+
 PostPure.propTypes = {
   post: sharedPropTypes.post.isRequired,
   classes: shape().isRequired

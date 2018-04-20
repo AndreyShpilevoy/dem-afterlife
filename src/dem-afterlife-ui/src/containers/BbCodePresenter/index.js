@@ -37,6 +37,8 @@ const mapTextToComponentsTree = (text, classes) => {
 export const BbCodePresenterPure = ({ text, classes }) =>
   mapTextToComponentsTree(text, classes);
 
+BbCodePresenterPure.displayName = "BbCodePresenterPure";
+
 BbCodePresenterPure.propTypes = {
   classes: shape().isRequired,
   text: string.isRequired

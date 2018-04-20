@@ -35,6 +35,8 @@ export const BreadcrumbListItemPure = ({
   </div>
 );
 
+BreadcrumbListItemPure.displayName = "BreadcrumbListItemPure";
+
 BreadcrumbListItemPure.propTypes = {
   classes: shape().isRequired,
   breadcrumb: sharedPropTypes.breadcrumb.isRequired,

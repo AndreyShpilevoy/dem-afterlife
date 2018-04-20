@@ -40,6 +40,8 @@ export const PaginationItemPure = ({
     : getButton(value, path, classes, smallClassName);
 };
 
+PaginationItemPure.displayName = "PaginationItemPure";
+
 PaginationItemPure.propTypes = {
   classes: shape().isRequired,
   containerName: string.isRequired,

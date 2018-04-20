@@ -10,6 +10,8 @@ export const EmailPure = ({ email, classes }) => (
   </a>
 );
 
+EmailPure.displayName = "EmailPure";
+
 EmailPure.propTypes = {
   classes: shape().isRequired,
   email: string.isRequired

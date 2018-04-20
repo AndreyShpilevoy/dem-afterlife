@@ -14,6 +14,8 @@ export const UrlPure = ({ children, classes, url }) => (
   </a>
 );
 
+UrlPure.displayName = "UrlPure";
+
 UrlPure.propTypes = {
   url: string.isRequired,
   children: node.isRequired,

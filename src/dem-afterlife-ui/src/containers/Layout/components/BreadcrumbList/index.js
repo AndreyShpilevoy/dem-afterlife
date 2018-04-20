@@ -25,6 +25,8 @@ export const BreadcrumbListPure = ({ breadcrumbArray, classes }) => (
   <div className={classes.list}>{mapArrayToComponents(breadcrumbArray)}</div>
 );
 
+BreadcrumbListPure.displayName = "BreadcrumbListPure";
+
 BreadcrumbListPure.propTypes = {
   classes: shape().isRequired,
   breadcrumbArray: sharedPropTypes.breadcrumbArray.isRequired

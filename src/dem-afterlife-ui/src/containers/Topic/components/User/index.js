@@ -22,6 +22,8 @@ export const UserPure = ({ user, classes }) => {
   );
 };
 
+UserPure.displayName = "UserPure";
+
 UserPure.propTypes = {
   user: sharedPropTypes.user.isRequired,
   classes: shape().isRequired

@@ -14,6 +14,8 @@ export const ErrorPure = ({ classes, children }) => (
   </div>
 );
 
+ErrorPure.displayName = "ErrorPure";
+
 ErrorPure.propTypes = {
   classes: shape().isRequired,
   children: node

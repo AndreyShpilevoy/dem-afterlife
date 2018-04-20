@@ -64,6 +64,8 @@ export const ColumnPure = ({
   );
 };
 
+ColumnPure.displayName = "ColumnPure";
+
 ColumnPure.propTypes = {
   className: string,
   classes: shape().isRequired,

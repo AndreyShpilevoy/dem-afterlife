@@ -127,6 +127,8 @@ export const ForumPure = ({ forum, classes }) => {
   );
 };
 
+ForumPure.displayName = "ForumPure";
+
 ForumPure.propTypes = {
   forum: sharedPropTypes.forum.isRequired,
   classes: shape().isRequired
