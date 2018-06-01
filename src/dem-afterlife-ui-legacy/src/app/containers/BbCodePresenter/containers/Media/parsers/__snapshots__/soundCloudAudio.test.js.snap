@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`soundCloudAudio should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`soundCloudAudio should return valid Album result if pass iframe html code 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/127854788&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true",
+}
+`;
+
+exports[`soundCloudAudio should return valid Single result if pass iframe html code 1`] = `
+Object {
+  "isShortHeight": true,
+  "success": true,
+  "type": "iframe",
+  "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/232504408&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true",
+}
+`;

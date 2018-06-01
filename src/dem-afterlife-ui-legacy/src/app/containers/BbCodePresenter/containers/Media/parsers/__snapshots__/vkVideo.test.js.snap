@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vkVideo should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`vkVideo should return valid result if pass iframe html code 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://vk.com/video_ext.php?oid=70064228&id=171121044&hash=2d049ab27cc95634",
+}
+`;

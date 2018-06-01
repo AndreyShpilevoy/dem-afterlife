@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationList calculateStyles should create expected object 1`] = `
+Object {
+  "list": Object {
+    "display": "flex",
+    "flexFlow": "row wrap",
+    "justifyContent": "flex-end",
+    "marginTop": 1.11,
+  },
+  "small": Object {
+    "marginTop": 0.0625,
+  },
+}
+`;

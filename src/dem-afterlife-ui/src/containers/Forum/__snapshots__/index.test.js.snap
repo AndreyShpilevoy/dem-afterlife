@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forum HOC component with empty chapter and forum arrays match expected snapshot 1`] = `
+<Connect(ForumPure)
+  match={
+    Object {
+      "params": Object {
+        "forumId": "10",
+        "pageNumber": "1",
+      },
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ForumPure
+    forumArray={Array []}
+    getForumBreadcrumbArray={[Function]}
+    getTopicArrayByForumId={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "forumId": "10",
+          "pageNumber": "1",
+        },
+      }
+    }
+    pageSize={20}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    topicArray={Array []}
+    totalItemsCount={400}
+  >
+    <div>
+      <PaginationList
+        containerId={10}
+        containerName="Forum"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+      <CollapsibleSection
+        collapseSettings={
+          Object {
+            "collapsedByDefault": false,
+            "isCollapsible": false,
+          }
+        }
+        headerSettings={
+          Object {
+            "firstColumnTerm": <Connect(Term)
+              term={
+                  Object {
+                      "id": 2,
+                      "value": "Posts",
+                    }
+              }
+          />,
+            "secondColumnTerm": <Connect(Term)
+              term={
+                  Object {
+                      "id": 22,
+                      "value": "Views",
+                    }
+              }
+          />,
+            "thirdColumnTerm": <Connect(Term)
+              term={
+                  Object {
+                      "id": 3,
+                      "value": "Last message in",
+                    }
+              }
+          />,
+            "title": <Connect(Term)
+              term={
+                  Object {
+                      "id": 23,
+                      "value": "Topics",
+                    }
+              }
+          />,
+          }
+        }
+      >
+        <div />
+      </CollapsibleSection>
+      <PaginationList
+        containerId={10}
+        containerName="Forum"
+        pageNumber={1}
+        pageSize={20}
+        totalItemsCount={400}
+      >
+        <div />
+      </PaginationList>
+    </div>
+  </ForumPure>
+</Connect(ForumPure)>
+`;
+
+exports[`Forum Pure component with filled chapter and forum arrays match expected snapshot 1`] = `
+<div>
+  <Chapter
+    chapter={
+      Object {
+        "forumArray": Array [
+          Object {
+            "chapterId": 1,
+            "description": "Все вопросы касательно геймплея и мира игры Ex Machina в целом.",
+            "id": 10,
+            "lastTopicInfo": Object {
+              "latestPostAuthorGroupColor": "#ffa510",
+              "latestPostAuthorId": 1,
+              "latestPostAuthorName": "kto",
+              "latestPostTimeCreation": 2015-08-17T10:42:32.000Z,
+              "topicDescription": "Идеи к Ex Machina -2 часть четвертая",
+              "topicId": 1,
+            },
+            "order": 1,
+            "postsCount": 4113,
+            "title": "Общие вопросы",
+            "topicsCount": 26,
+          },
+          Object {
+            "chapterId": 2,
+            "description": "Вопросы технического характера по игре Ex Machina.",
+            "id": 20,
+            "lastTopicInfo": Object {
+              "latestPostAuthorGroupColor": "#fbeab2",
+              "latestPostAuthorId": 2,
+              "latestPostAuthorName": "Bykawka",
+              "latestPostTimeCreation": 2016-09-22T09:53:09.000Z,
+              "topicDescription": "Проблемы с игрой",
+              "topicId": 2,
+            },
+            "order": 2,
+            "postsCount": 857,
+            "title": "Технические вопросы",
+            "topicsCount": 13,
+          },
+        ],
+        "id": 0,
+        "order": 0,
+        "title": <Connect(Term)
+          term={
+              Object {
+                  "id": 24,
+                  "value": "Sub-Forums",
+                }
+          }
+      />,
+      }
+    }
+  />
+  <PaginationList
+    containerId={10}
+    containerName="Forum"
+    pageNumber={1}
+    pageSize={20}
+    totalItemsCount={400}
+  />
+  <CollapsibleSection
+    collapseSettings={
+      Object {
+        "collapsedByDefault": false,
+        "isCollapsible": false,
+      }
+    }
+    headerSettings={
+      Object {
+        "firstColumnTerm": <Connect(Term)
+          term={
+              Object {
+                  "id": 2,
+                  "value": "Posts",
+                }
+          }
+      />,
+        "secondColumnTerm": <Connect(Term)
+          term={
+              Object {
+                  "id": 22,
+                  "value": "Views",
+                }
+          }
+      />,
+        "thirdColumnTerm": <Connect(Term)
+          term={
+              Object {
+                  "id": 3,
+                  "value": "Last message in",
+                }
+          }
+      />,
+        "title": <Connect(Term)
+          term={
+              Object {
+                  "id": 23,
+                  "value": "Topics",
+                }
+          }
+      />,
+      }
+    }
+  >
+    <Jss(TopicPure)
+      key="1"
+      pageSize={20}
+      topic={
+        Object {
+          "forumId": 10,
+          "id": 1,
+          "lastPostInfo": Object {
+            "authorAvatar": "http://i70.fastpic.ru/big/2015/0628/36/ccbb1e2cb8ba8dbd379a6a12dc6b8336.jpg",
+            "authorGroupColor": "#00AA00",
+            "authorId": 4,
+            "authorName": "Buba",
+            "timeCreation": 2016-09-19T10:42:32.000Z,
+          },
+          "parentForumTitle": "Общие вопросы",
+          "postsCount": 215,
+          "title": "Как деактивировать бомбу",
+          "topicViewsCount": 1315,
+          "totalPostsCount": 8,
+        }
+      }
+    />
+    <Jss(TopicPure)
+      key="2"
+      pageSize={20}
+      topic={
+        Object {
+          "forumId": 10,
+          "id": 2,
+          "lastPostInfo": Object {
+            "authorAvatar": null,
+            "authorGroupColor": "#fbeab2",
+            "authorId": 2,
+            "authorName": "Bykawka",
+            "timeCreation": 2017-01-22T10:53:09.000Z,
+          },
+          "parentForumTitle": "Общие вопросы",
+          "postsCount": 57,
+          "title": "Как активировать бомбу.",
+          "topicViewsCount": 847,
+          "totalPostsCount": 8,
+        }
+      }
+    />
+  </CollapsibleSection>
+  <PaginationList
+    containerId={10}
+    containerName="Forum"
+    pageNumber={1}
+    pageSize={20}
+    totalItemsCount={400}
+  />
+</div>
+`;

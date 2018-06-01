@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarPure component match expected snapshot with className 1`] = `
+<div
+  className="AvatarClassName default-UserAvatar-container"
+  style={
+    Object {
+      "width": "3rem",
+    }
+  }
+>
+  <Jss(LinkPure)
+    className="default-UserAvatar-avatar"
+    style={
+      Object {
+        "height": "3rem",
+      }
+    }
+    to="/111"
+  >
+    <img
+      alt="Avatar"
+      src="urlToImg.png"
+    />
+  </Jss(LinkPure)>
+</div>
+`;
+
+exports[`AvatarPure component match expected snapshot without className 1`] = `
+<div
+  className="default-UserAvatar-container"
+  style={
+    Object {
+      "width": "3rem",
+    }
+  }
+>
+  <Jss(LinkPure)
+    className="default-UserAvatar-avatar"
+    style={
+      Object {
+        "height": "3rem",
+      }
+    }
+    to="/111"
+  >
+    <img
+      alt="Avatar"
+      src="urlToImg.png"
+    />
+  </Jss(LinkPure)>
+</div>
+`;
+
+exports[`AvatarPure component match expected snapshot without url 1`] = `
+<div
+  className="default-UserAvatar-container"
+  style={
+    Object {
+      "width": "3rem",
+    }
+  }
+>
+  <Jss(LinkPure)
+    className="default-UserAvatar-avatar"
+    style={
+      Object {
+        "height": "3rem",
+      }
+    }
+    to="/111"
+  >
+    <div
+      className="default-UserAvatar-avatarDefault"
+    />
+  </Jss(LinkPure)>
+</div>
+`;

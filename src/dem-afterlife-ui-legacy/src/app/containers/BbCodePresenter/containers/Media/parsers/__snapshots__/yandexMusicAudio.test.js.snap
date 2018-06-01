@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`yandexMusicAudio should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`yandexMusicAudio should return valid result if pass iframe html code for playlist 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://music.yandex.ua/iframe/#album/1683701",
+}
+`;
+
+exports[`yandexMusicAudio should return valid result if pass iframe html code for single song 1`] = `
+Object {
+  "isShortHeight": true,
+  "success": true,
+  "type": "iframe",
+  "url": "https://music.yandex.ua/iframe/#track/26800290/1683701",
+}
+`;

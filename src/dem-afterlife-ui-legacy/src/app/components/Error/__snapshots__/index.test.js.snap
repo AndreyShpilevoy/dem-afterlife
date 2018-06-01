@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Pure component match expected snapshot 1`] = `
+<div>
+  <SvgIconsMapper
+    className=""
+    iconName="Error"
+  />
+  <div>
+    <div>
+      Error content
+    </div>
+  </div>
+</div>
+`;

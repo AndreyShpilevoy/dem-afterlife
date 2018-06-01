@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link calculateStyles should create expected object 1`] = `
+Object {
+  "link": Object {
+    "&:focus": Object {
+      "outlineColor": "#000000",
+    },
+    "&:hover": Object {
+      "color": "green",
+      "textDecoration": "underline",
+    },
+    "&:visited": Object {
+      "color": "red",
+      "textDecoration": "none",
+    },
+    "&:visited:hover": Object {
+      "color": "green",
+      "textDecoration": "underline",
+    },
+    "color": "red",
+    "textDecoration": "none",
+  },
+}
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Pure Mount component with scrolled down document since to "scrollTop: 24" match expected snapshot 1`] = `
+<HeaderPure
+  classes={
+    Object {
+      ".default-Header-header.shrinkedHeader": "default-Header-header.shrinkedHeader",
+      ".default-Header-headerLogoContainer.shrinkedHeader": "default-Header-headerLogoContainer.shrinkedHeader",
+      ".default-Header-navigationLinksContainer.closed": "default-Header-navigationLinksContainer.closed",
+      "fixedOnTheTop": "default-Header-fixedOnTheTop",
+      "header": "default-Header-header",
+      "headerColumn": "default-Header-headerColumn",
+      "headerLogoContainer": "default-Header-headerLogoContainer",
+      "headerMenuButtonContainer": "default-Header-headerMenuButtonContainer",
+      "headerPadding": "default-Header-headerPadding",
+      "navigationLinks": "default-Header-navigationLinks",
+      "navigationLinksContainer": "default-Header-navigationLinksContainer",
+    }
+  }
+  navigationLinkArray={Array []}
+>
+  <div>
+    <Jss(ContainerPure)
+      className="default-Header-fixedOnTheTop"
+    />
+    <div
+      className="default-Header-headerPadding"
+    />
+  </div>
+</HeaderPure>
+`;
+
+exports[`Header Pure Mount component with scrolled down document since to "scrollTop: 100" match expected snapshot 1`] = `
+<HeaderPure
+  classes={
+    Object {
+      ".default-Header-header.shrinkedHeader": "default-Header-header.shrinkedHeader",
+      ".default-Header-headerLogoContainer.shrinkedHeader": "default-Header-headerLogoContainer.shrinkedHeader",
+      ".default-Header-navigationLinksContainer.closed": "default-Header-navigationLinksContainer.closed",
+      "fixedOnTheTop": "default-Header-fixedOnTheTop",
+      "header": "default-Header-header",
+      "headerColumn": "default-Header-headerColumn",
+      "headerLogoContainer": "default-Header-headerLogoContainer",
+      "headerMenuButtonContainer": "default-Header-headerMenuButtonContainer",
+      "headerPadding": "default-Header-headerPadding",
+      "navigationLinks": "default-Header-navigationLinks",
+      "navigationLinksContainer": "default-Header-navigationLinksContainer",
+    }
+  }
+  navigationLinkArray={Array []}
+>
+  <div>
+    <Jss(ContainerPure)
+      className="default-Header-fixedOnTheTop"
+    />
+    <div
+      className="default-Header-headerPadding"
+    />
+  </div>
+</HeaderPure>
+`;

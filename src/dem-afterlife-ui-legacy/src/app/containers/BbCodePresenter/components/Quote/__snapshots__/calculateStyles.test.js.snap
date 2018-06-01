@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote calculateStyles should create expected object 1`] = `
+Object {
+  "author": Object {
+    "fontWeight": "bold",
+  },
+  "quote": Object {
+    "backgroundColor": "red",
+    "borderColor": "green",
+    "borderStyle": "solid",
+    "borderWidth": 0.0625,
+    "marginBottom": 0.3125,
+    "marginLeft": 1.25,
+    "marginRight": 1.25,
+    "marginTop": 0.3125,
+    "padding": 0.4,
+  },
+}
+`;

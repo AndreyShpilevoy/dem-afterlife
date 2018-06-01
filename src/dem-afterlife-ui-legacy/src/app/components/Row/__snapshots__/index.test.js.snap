@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row Pure component match expected snapshot 1`] = `
+<div
+  className="default-Row-row "
+>
+  <div>
+    row content
+  </div>
+</div>
+`;
+
+exports[`Row Pure component match expected snapshot with reverse prop 1`] = `
+<div
+  className="default-Row-row reverse "
+>
+  <div>
+    row content
+  </div>
+</div>
+`;

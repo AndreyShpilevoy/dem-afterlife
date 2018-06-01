@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component match expected snapshot 1`] = `
+<InlineSVG
+  baseURL=""
+  cacheGetRequests={false}
+  className="linkIconClassName"
+  onLoad={[Function]}
+  src="link.svg"
+  supportTest={[Function]}
+  uniquifyIDs={true}
+  wrapper={[Function]}
+/>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BbCodePresenter calculateStyles should create expected object 1`] = `
+Object {
+  "bold": Object {
+    "fontWeight": "bold",
+  },
+  "center": Object {
+    "&:last-child": Object {
+      "marginLeft": "auto",
+      "marginRight": "auto",
+    },
+  },
+  "italic": Object {
+    "fontStyle": "italic",
+  },
+  "left": Object {
+    "&:last-child": Object {
+      "marginRight": "auto",
+    },
+  },
+  "lineThrough": Object {
+    "textDecoration": "lineThrough",
+  },
+  "position": Object {
+    "display": "inline-flex",
+    "width": "100%",
+  },
+  "right": Object {
+    "&:last-child": Object {
+      "marginLeft": "auto",
+    },
+  },
+  "underline": Object {
+    "textDecoration": "underline",
+  },
+}
+`;

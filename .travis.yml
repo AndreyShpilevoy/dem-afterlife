@@ -12,7 +12,7 @@ before_script:
   - yarn
 script:
   - yarn test-runInBand
-  - yarn buildOnly
+  - yarn build
 before_install:
 - export TZ=Europe/Kiev
 after_script:

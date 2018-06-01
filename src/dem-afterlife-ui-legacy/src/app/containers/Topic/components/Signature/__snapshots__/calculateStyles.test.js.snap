@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signature calculateStyles should create expected object 1`] = `
+Object {
+  "container": Object {
+    "& img": Object {
+      "verticalAlign": "sub",
+    },
+  },
+  "separator": Object {
+    "backgroundColor": "red",
+    "height": 0.0625,
+    "marginBottom": 0.3,
+    "marginLeft": 0,
+    "marginRight": 0,
+    "marginTop": 0.3,
+  },
+}
+`;

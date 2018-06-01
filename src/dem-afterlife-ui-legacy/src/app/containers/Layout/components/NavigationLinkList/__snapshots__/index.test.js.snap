@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationLinkList Pure component match expected snapshot 1`] = `
+<ul
+  className="default-NavigationLinkList-list "
+/>
+`;
+
+exports[`NavigationLinkList Pure component with many navigationLinkItems match expected snapshot 1`] = `
+<ul
+  className="default-NavigationLinkList-list "
+>
+  <div
+    key="1"
+  >
+    <Jss(NavigationLinkListItemPure)
+      navigationLinkItem={
+        Object {
+          "href": "/",
+          "id": 1,
+          "order": 1,
+          "title": "Conference",
+        }
+      }
+    />
+    <div
+      className="default-NavigationLinkList-separator"
+    />
+  </div>
+  <div
+    key="2"
+  >
+    <Jss(NavigationLinkListItemPure)
+      navigationLinkItem={
+        Object {
+          "href": "/",
+          "id": 2,
+          "order": 2,
+          "title": "Link 2 generated",
+        }
+      }
+    />
+    <div
+      className="default-NavigationLinkList-separator"
+    />
+  </div>
+</ul>
+`;

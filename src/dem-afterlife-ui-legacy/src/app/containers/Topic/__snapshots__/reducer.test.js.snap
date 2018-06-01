@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Topic reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "ALL": Array [
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+      GeneratorFunctionPrototype {
+        "_invoke": [Function],
+      },
+    ],
+  },
+}
+`;
+
+exports[`Topic reducer default saga should return 1 yield with 2 sagas. 2 yield should be in state Done 2`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Object {
+          "pageNumber": 2,
+          "pageSize": 50,
+          "topicId": 1,
+        },
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getPostArrayByTopicIdApi"`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Object {
+          "pageNumber": 2,
+          "pageSize": 50,
+          "topicId": 1,
+        },
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 2`] = `"getPostArrayByTopicIdApi"`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "postArray": Array [
+            Object {
+              "userId": 1,
+            },
+            Object {
+              "userId": 22,
+            },
+          ],
+        },
+        "type": "GET_POST_ARRAY_BY_TOPIC_ID_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "pageNumber": 2,
+        },
+        "type": "SET_PAGINATION_PAGE_NUMBER",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 5`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "totalItemsCount": 300,
+        },
+        "type": "SET_PAGINATION_TOTAL_ITEMS_COUNT",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 6`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "userIdArray": Array [
+            1,
+            22,
+          ],
+        },
+        "type": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdNonBlockSaga should return 5 expected yields with success response. 6 yield should be in state Done 7`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdSaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_POST_ARRAY_BY_TOPIC_ID",
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdSaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Object {
+          "pageNumber": 2,
+          "pageSize": 50,
+          "topicId": 1,
+        },
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getPostArrayByTopicIdSaga should be in loop and return expected values 3`] = `"getPostArrayByTopicIdNonBlockSaga"`;
+
+exports[`Topic reducer getPostArrayByTopicIdSaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_POST_ARRAY_BY_TOPIC_ID",
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 2`] = `"getUserArrayByUserIdArrayApi"`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "error": "failed response",
+        "type": "PRODUCTS_REQUEST_FAILED",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with failed response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "CALL": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 2`] = `"getUserArrayByUserIdArrayApi"`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 3`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "PUT": Object {
+      "action": Object {
+        "payload": Object {
+          "userArray": Array [
+            Object {
+              "id": 1,
+              "name": "first",
+            },
+            Object {
+              "id": 3,
+              "name": "second",
+            },
+            Object {
+              "id": 2,
+              "name": "third",
+            },
+          ],
+        },
+        "type": "GET_USER_ARRAY_BY_USER_ID_ARRAY_SUCCESS",
+      },
+      "channel": null,
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArrayNonBlockSaga should return 2 expected yields with success response. 3 yield should be in state Done 4`] = `
+Object {
+  "done": true,
+  "value": undefined,
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 1`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 2`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "FORK": Object {
+      "args": Array [
+        Array [
+          1,
+          2,
+          3,
+          4,
+          5,
+        ],
+      ],
+      "context": null,
+      "fn": [Function],
+    },
+  },
+}
+`;
+
+exports[`Topic reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 3`] = `"getUserArrayByUserIdArrayNonBlockSaga"`;
+
+exports[`Topic reducer getUserArrayByUserIdArraySaga should be in loop and return expected values 4`] = `
+Object {
+  "done": false,
+  "value": Object {
+    "@@redux-saga/IO": true,
+    "TAKE": Object {
+      "pattern": "GET_USER_ARRAY_BY_USER_ID_ARRAY",
+    },
+  },
+}
+`;

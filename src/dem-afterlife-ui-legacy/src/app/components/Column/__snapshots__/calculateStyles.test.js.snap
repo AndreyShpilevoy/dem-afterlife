@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column calculateStyles should create expected object 1`] = `
+Object {
+  "@media (min-width: 0px)": Object {
+    "col-xs-0": Object {
+      "flexBasis": "0%",
+      "maxWidth": "0%",
+    },
+    "col-xs-1": Object {
+      "flexBasis": "8.333333333333334%",
+      "maxWidth": "8.333333333333334%",
+    },
+    "col-xs-10": Object {
+      "flexBasis": "83.33333333333334%",
+      "maxWidth": "83.33333333333334%",
+    },
+    "col-xs-11": Object {
+      "flexBasis": "91.66666666666667%",
+      "maxWidth": "91.66666666666667%",
+    },
+    "col-xs-12": Object {
+      "flexBasis": "100%",
+      "maxWidth": "100%",
+    },
+    "col-xs-2": Object {
+      "flexBasis": "16.666666666666668%",
+      "maxWidth": "16.666666666666668%",
+    },
+    "col-xs-3": Object {
+      "flexBasis": "25%",
+      "maxWidth": "25%",
+    },
+    "col-xs-4": Object {
+      "flexBasis": "33.333333333333336%",
+      "maxWidth": "33.333333333333336%",
+    },
+    "col-xs-5": Object {
+      "flexBasis": "41.66666666666667%",
+      "maxWidth": "41.66666666666667%",
+    },
+    "col-xs-6": Object {
+      "flexBasis": "50%",
+      "maxWidth": "50%",
+    },
+    "col-xs-7": Object {
+      "flexBasis": "58.333333333333336%",
+      "maxWidth": "58.333333333333336%",
+    },
+    "col-xs-8": Object {
+      "flexBasis": "66.66666666666667%",
+      "maxWidth": "66.66666666666667%",
+    },
+    "col-xs-9": Object {
+      "flexBasis": "75%",
+      "maxWidth": "75%",
+    },
+    "col-xsOffset-0": Object {
+      "marginLeft": "0%",
+    },
+    "col-xsOffset-1": Object {
+      "marginLeft": "8.333333333333334%",
+    },
+    "col-xsOffset-10": Object {
+      "marginLeft": "83.33333333333334%",
+    },
+    "col-xsOffset-11": Object {
+      "marginLeft": "91.66666666666667%",
+    },
+    "col-xsOffset-12": Object {
+      "marginLeft": "100%",
+    },
+    "col-xsOffset-2": Object {
+      "marginLeft": "16.666666666666668%",
+    },
+    "col-xsOffset-3": Object {
+      "marginLeft": "25%",
+    },
+    "col-xsOffset-4": Object {
+      "marginLeft": "33.333333333333336%",
+    },
+    "col-xsOffset-5": Object {
+      "marginLeft": "41.66666666666667%",
+    },
+    "col-xsOffset-6": Object {
+      "marginLeft": "50%",
+    },
+    "col-xsOffset-7": Object {
+      "marginLeft": "58.333333333333336%",
+    },
+    "col-xsOffset-8": Object {
+      "marginLeft": "66.66666666666667%",
+    },
+    "col-xsOffset-9": Object {
+      "marginLeft": "75%",
+    },
+  },
+  "@media (min-width: 576px)": Object {
+    "col-sm-0": Object {
+      "flexBasis": "0%",
+      "maxWidth": "0%",
+    },
+    "col-sm-1": Object {
+      "flexBasis": "8.333333333333334%",
+      "maxWidth": "8.333333333333334%",
+    },
+    "col-sm-10": Object {
+      "flexBasis": "83.33333333333334%",
+      "maxWidth": "83.33333333333334%",
+    },
+    "col-sm-11": Object {
+      "flexBasis": "91.66666666666667%",
+      "maxWidth": "91.66666666666667%",
+    },
+    "col-sm-12": Object {
+      "flexBasis": "100%",
+      "maxWidth": "100%",
+    },
+    "col-sm-2": Object {
+      "flexBasis": "16.666666666666668%",
+      "maxWidth": "16.666666666666668%",
+    },
+    "col-sm-3": Object {
+      "flexBasis": "25%",
+      "maxWidth": "25%",
+    },
+    "col-sm-4": Object {
+      "flexBasis": "33.333333333333336%",
+      "maxWidth": "33.333333333333336%",
+    },
+    "col-sm-5": Object {
+      "flexBasis": "41.66666666666667%",
+      "maxWidth": "41.66666666666667%",
+    },
+    "col-sm-6": Object {
+      "flexBasis": "50%",
+      "maxWidth": "50%",
+    },
+    "col-sm-7": Object {
+      "flexBasis": "58.333333333333336%",
+      "maxWidth": "58.333333333333336%",
+    },
+    "col-sm-8": Object {
+      "flexBasis": "66.66666666666667%",
+      "maxWidth": "66.66666666666667%",
+    },
+    "col-sm-9": Object {
+      "flexBasis": "75%",
+      "maxWidth": "75%",
+    },
+    "col-smOffset-0": Object {
+      "marginLeft": "0%",
+    },
+    "col-smOffset-1": Object {
+      "marginLeft": "8.333333333333334%",
+    },
+    "col-smOffset-10": Object {
+      "marginLeft": "83.33333333333334%",
+    },
+    "col-smOffset-11": Object {
+      "marginLeft": "91.66666666666667%",
+    },
+    "col-smOffset-12": Object {
+      "marginLeft": "100%",
+    },
+    "col-smOffset-2": Object {
+      "marginLeft": "16.666666666666668%",
+    },
+    "col-smOffset-3": Object {
+      "marginLeft": "25%",
+    },
+    "col-smOffset-4": Object {
+      "marginLeft": "33.333333333333336%",
+    },
+    "col-smOffset-5": Object {
+      "marginLeft": "41.66666666666667%",
+    },
+    "col-smOffset-6": Object {
+      "marginLeft": "50%",
+    },
+    "col-smOffset-7": Object {
+      "marginLeft": "58.333333333333336%",
+    },
+    "col-smOffset-8": Object {
+      "marginLeft": "66.66666666666667%",
+    },
+    "col-smOffset-9": Object {
+      "marginLeft": "75%",
+    },
+  },
+}
+`;

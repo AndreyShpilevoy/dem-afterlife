@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbList calculateStyles should create expected object 1`] = `
+Object {
+  "list": Object {
+    "display": "flex",
+    "flexFlow": "row wrap",
+    "marginTop": 2,
+  },
+}
+`;

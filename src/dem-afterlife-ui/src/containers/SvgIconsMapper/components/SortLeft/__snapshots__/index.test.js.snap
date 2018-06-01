@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortLeft component match expected snapshot 1`] = `
+<InlineSVG
+  baseURL=""
+  cacheGetRequests={false}
+  className="sortLeftIconClassName"
+  onLoad={[Function]}
+  src="sort-left.svg"
+  supportTest={[Function]}
+  uniquifyIDs={true}
+  wrapper={[Function]}
+/>
+`;

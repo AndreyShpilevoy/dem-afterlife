@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`youtubePlaylist should return unsuccessful result if pass wrong string 1`] = `
+Object {
+  "success": false,
+}
+`;
+
+exports[`youtubePlaylist should return valid result if pass link 1`] = `
+Object {
+  "isShortHeight": false,
+  "success": true,
+  "type": "iframe",
+  "url": "https://www.youtube.com/embed/videoseries?list=PL7y5d3VOW3rg6nn0bXii79-92jmLYechP",
+}
+`;

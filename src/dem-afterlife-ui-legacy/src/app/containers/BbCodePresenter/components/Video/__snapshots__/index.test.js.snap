@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video component match expected snapshot 1`] = `
+<video
+  controls={true}
+  height={360}
+  width={640}
+>
+  <source
+    src="http://example.mp4"
+    type="video/mp4"
+  />
+  <a
+    href="http://example.mp4"
+  >
+    <Connect(Term)
+      term={
+        Object {
+          "id": 29,
+          "value": "Video",
+        }
+      }
+    />
+  </a>
+</video>
+`;
