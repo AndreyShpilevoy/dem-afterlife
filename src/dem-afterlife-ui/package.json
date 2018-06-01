@@ -5,6 +5,7 @@
     "dependencies": {
         "babel-polyfill": "6.26.0",
         "classnames": "2.2.5",
+        "cross-env": "5.1.6",
         "history": "4.7.2",
         "jss-camel-case": "6.1.0",
         "jss-default-unit": "8.0.2",
@@ -54,7 +55,8 @@
         "precommit": "lint-staged",
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom"
+        "test": "react-scripts test --env=jsdom",
+        "test-runInBand": "cross-env CI=true react-scripts test --env=jsdom --runInBand"
     },
     "jest": {
         "coverageThreshold": {
